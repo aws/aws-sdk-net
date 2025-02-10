@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,124 +49,140 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalyses())
             {
                 context.Writer.WritePropertyName("Analyses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAnalysesListValue in requestObject.Analyses)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobAnalysisOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectAnalysesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDashboards())
             {
                 context.Writer.WritePropertyName("Dashboards");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDashboardsListValue in requestObject.Dashboards)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobDashboardOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectDashboardsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSets())
             {
                 context.Writer.WritePropertyName("DataSets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSetsListValue in requestObject.DataSets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobDataSetOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataSetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSources())
             {
                 context.Writer.WritePropertyName("DataSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSourcesListValue in requestObject.DataSources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobDataSourceOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetFolders())
+            {
+                context.Writer.WritePropertyName("Folders");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectFoldersListValue in requestObject.Folders)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AssetBundleImportJobFolderOverrideParametersMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFoldersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRefreshSchedules())
             {
                 context.Writer.WritePropertyName("RefreshSchedules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRefreshSchedulesListValue in requestObject.RefreshSchedules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobRefreshScheduleOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectRefreshSchedulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceIdOverrideConfiguration())
             {
                 context.Writer.WritePropertyName("ResourceIdOverrideConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssetBundleImportJobResourceIdOverrideConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceIdOverrideConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThemes())
             {
                 context.Writer.WritePropertyName("Themes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectThemesListValue in requestObject.Themes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobThemeOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectThemesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVPCConnections())
             {
                 context.Writer.WritePropertyName("VPCConnections");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVPCConnectionsListValue in requestObject.VPCConnections)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetBundleImportJobVPCConnectionOverrideParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectVPCConnectionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

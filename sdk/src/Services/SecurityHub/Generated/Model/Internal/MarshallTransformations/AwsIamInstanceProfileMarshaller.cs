@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetCreateDate())
             {
                 context.Writer.WritePropertyName("CreateDate");
-                context.Writer.Write(requestObject.CreateDate);
+                context.Writer.WriteStringValue(requestObject.CreateDate);
             }
 
             if(requestObject.IsSetInstanceProfileId())
             {
                 context.Writer.WritePropertyName("InstanceProfileId");
-                context.Writer.Write(requestObject.InstanceProfileId);
+                context.Writer.WriteStringValue(requestObject.InstanceProfileId);
             }
 
             if(requestObject.IsSetInstanceProfileName())
             {
                 context.Writer.WritePropertyName("InstanceProfileName");
-                context.Writer.Write(requestObject.InstanceProfileName);
+                context.Writer.WriteStringValue(requestObject.InstanceProfileName);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetRoles())
             {
                 context.Writer.WritePropertyName("Roles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRolesListValue in requestObject.Roles)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamInstanceProfileRoleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRolesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

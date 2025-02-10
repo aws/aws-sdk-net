@@ -29,119 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LustreFileSystemConfiguration Object
     /// </summary>  
-    public class LustreFileSystemConfigurationUnmarshaller : IUnmarshaller<LustreFileSystemConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LustreFileSystemConfiguration, JsonUnmarshallerContext>
+    public class LustreFileSystemConfigurationUnmarshaller : IJsonUnmarshaller<LustreFileSystemConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LustreFileSystemConfiguration IUnmarshaller<LustreFileSystemConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LustreFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public LustreFileSystemConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LustreFileSystemConfiguration unmarshalledObject = new LustreFileSystemConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CopyTagsToBackups", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataCompressionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataRepositoryConfiguration", targetDepth))
                 {
                     var unmarshaller = DataRepositoryConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataRepositoryConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataRepositoryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DriveCacheType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DriveCacheType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DriveCacheType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("EfaEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EfaEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogConfiguration", targetDepth))
                 {
                     var unmarshaller = LustreLogConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetadataConfiguration", targetDepth))
                 {
                     var unmarshaller = FileSystemLustreMetadataConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MountName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PerUnitStorageThroughput", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PerUnitStorageThroughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PerUnitStorageThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RootSquashConfiguration", targetDepth))
                 {
                     var unmarshaller = LustreRootSquashConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RootSquashConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RootSquashConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

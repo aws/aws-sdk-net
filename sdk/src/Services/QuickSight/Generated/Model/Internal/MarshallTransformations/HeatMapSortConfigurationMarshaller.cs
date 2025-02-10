@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeatMapColumnItemsLimitConfiguration())
             {
                 context.Writer.WritePropertyName("HeatMapColumnItemsLimitConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ItemsLimitConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HeatMapColumnItemsLimitConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeatMapColumnSort())
             {
                 context.Writer.WritePropertyName("HeatMapColumnSort");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeatMapColumnSortListValue in requestObject.HeatMapColumnSort)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldSortOptionsMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeatMapColumnSortListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHeatMapRowItemsLimitConfiguration())
             {
                 context.Writer.WritePropertyName("HeatMapRowItemsLimitConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ItemsLimitConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HeatMapRowItemsLimitConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeatMapRowSort())
             {
                 context.Writer.WritePropertyName("HeatMapRowSort");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeatMapRowSortListValue in requestObject.HeatMapRowSort)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldSortOptionsMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeatMapRowSortListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

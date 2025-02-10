@@ -31,7 +31,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Specifies the minimum and maximum for the <c>NetworkBandwidthGbps</c> object when
-    /// you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    /// you specify <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
+    /// for an Auto Scaling group.
     /// 
     ///  <note> 
     /// <para>

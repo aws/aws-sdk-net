@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCollectionName())
             {
                 context.Writer.WritePropertyName("CollectionName");
-                context.Writer.Write(requestObject.CollectionName);
+                context.Writer.WriteStringValue(requestObject.CollectionName);
             }
 
             if(requestObject.IsSetCollectionParameters())
             {
                 context.Writer.WritePropertyName("CollectionParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCollectionParametersKvp in requestObject.CollectionParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectCollectionParametersKvp.Key);
                     var requestObjectCollectionParametersValue = requestObjectCollectionParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectCollectionParametersValue);
+                        context.Writer.WriteStringValue(requestObjectCollectionParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
@@ -64,37 +67,42 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 throw new AmazonNeptuneGraphException("Request object does not have required field GraphIdentifier set");
             request.AddPathResource("{graphIdentifier}", StringUtils.FromString(publicRequest.GraphIdentifier));
             request.ResourcePath = "/graphs/{graphIdentifier}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeletionProtection())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeletionProtection())
-                    {
-                        context.Writer.WritePropertyName("deletionProtection");
-                        context.Writer.Write(publicRequest.DeletionProtection.Value);
-                    }
-
-                    if(publicRequest.IsSetProvisionedMemory())
-                    {
-                        context.Writer.WritePropertyName("provisionedMemory");
-                        context.Writer.Write(publicRequest.ProvisionedMemory.Value);
-                    }
-
-                    if(publicRequest.IsSetPublicConnectivity())
-                    {
-                        context.Writer.WritePropertyName("publicConnectivity");
-                        context.Writer.Write(publicRequest.PublicConnectivity.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("deletionProtection");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtection.Value);
             }
+
+            if(publicRequest.IsSetProvisionedMemory())
+            {
+                context.Writer.WritePropertyName("provisionedMemory");
+                context.Writer.WriteNumberValue(publicRequest.ProvisionedMemory.Value);
+            }
+
+            if(publicRequest.IsSetPublicConnectivity())
+            {
+                context.Writer.WritePropertyName("publicConnectivity");
+                context.Writer.WriteBooleanValue(publicRequest.PublicConnectivity.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

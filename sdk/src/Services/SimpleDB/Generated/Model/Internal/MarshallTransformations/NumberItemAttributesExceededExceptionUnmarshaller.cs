@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NumberItemAttributesExceededException operation
     /// </summary>  
-    public class NumberItemAttributesExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<NumberItemAttributesExceededException, XmlUnmarshallerContext>
+    public class NumberItemAttributesExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NumberItemAttributesExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

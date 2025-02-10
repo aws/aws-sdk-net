@@ -17,6 +17,10 @@ using System;
 using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
+using Amazon.Runtime.Telemetry.Tracing;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -36,7 +40,8 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public interface IBatchWrite<T> : IBatchWrite
+    public interface IBatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : IBatchWrite
+
     {
         /// <summary>
         /// Creates a MultiTableBatchWrite object that is a combination
@@ -96,13 +101,15 @@ namespace Amazon.DynamoDBv2.DataModel
     public abstract partial class BatchWrite : IBatchWrite
     {
         internal DocumentBatchWrite DocumentBatch { get; set; }
+
+        internal TracerProvider TracerProvider { get; set; }
     }
 
     /// <summary>
     /// Represents a strongly-typed object for writing/deleting a batch of items
     /// in a single DynamoDB table
     /// </summary>
-    public partial class BatchWrite<T> : BatchWrite, IBatchWrite<T>
+    public partial class BatchWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : BatchWrite, IBatchWrite<T>
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
@@ -113,7 +120,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
         }
 
-        internal BatchWrite(DynamoDBContext context, Type valuesType, DynamoDBFlatConfig config)
+        internal BatchWrite(DynamoDBContext context, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type valuesType, DynamoDBFlatConfig config)
         {
             _context = context;
             _config = config;
@@ -132,6 +139,9 @@ namespace Amazon.DynamoDBv2.DataModel
             // Table.CreateBatchWrite() returns the IDocumentBatchWrite interface.
             // But since we rely on the internal behavior of DocumentBatchWrite, we instantiate it via the constructor.
             DocumentBatch = new DocumentBatchWrite(table);
+
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         /// <inheritdoc/>
@@ -228,6 +238,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         private List<IBatchWrite> allBatches = new();
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// Constructs a MultiTableBatchWrite object from a number of
         /// BatchWrite objects
@@ -236,6 +248,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableBatchWrite(params IBatchWrite[] batches)
         {
             allBatches = new List<IBatchWrite>(batches);
+            TracerProvider = GetTracerProvider(allBatches);
         }
 
         internal MultiTableBatchWrite(IBatchWrite first, params IBatchWrite[] rest)
@@ -243,6 +256,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches = new List<IBatchWrite>();
             allBatches.Add(first);
             allBatches.AddRange(rest);
+            TracerProvider = GetTracerProvider(allBatches);
         }
 
         /// <inheritdoc/>
@@ -276,5 +290,19 @@ namespace Amazon.DynamoDBv2.DataModel
             return superBatch.ExecuteHelperAsync(cancellationToken);
         }
 #endif
+
+        private TracerProvider GetTracerProvider(List<IBatchWrite> allBatches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (allBatches.Count > 0)
+            {
+                var firstBatch = allBatches[0];
+                if (firstBatch is BatchWrite batchWrite)
+                {
+                    tracerProvider = batchWrite.TracerProvider;
+                }
+            }
+            return tracerProvider;
+        }
     }
 }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -63,291 +66,302 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArtifactsOverride())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArtifactsOverride())
-                    {
-                        context.Writer.WritePropertyName("artifactsOverride");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("artifactsOverride");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ProjectArtifactsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ArtifactsOverride, context);
+                var marshaller = ProjectArtifactsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ArtifactsOverride, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBuildspecOverride())
-                    {
-                        context.Writer.WritePropertyName("buildspecOverride");
-                        context.Writer.Write(publicRequest.BuildspecOverride);
-                    }
-
-                    if(publicRequest.IsSetBuildStatusConfigOverride())
-                    {
-                        context.Writer.WritePropertyName("buildStatusConfigOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BuildStatusConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BuildStatusConfigOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCacheOverride())
-                    {
-                        context.Writer.WritePropertyName("cacheOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProjectCacheMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CacheOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCertificateOverride())
-                    {
-                        context.Writer.WritePropertyName("certificateOverride");
-                        context.Writer.Write(publicRequest.CertificateOverride);
-                    }
-
-                    if(publicRequest.IsSetComputeTypeOverride())
-                    {
-                        context.Writer.WritePropertyName("computeTypeOverride");
-                        context.Writer.Write(publicRequest.ComputeTypeOverride);
-                    }
-
-                    if(publicRequest.IsSetDebugSessionEnabled())
-                    {
-                        context.Writer.WritePropertyName("debugSessionEnabled");
-                        context.Writer.Write(publicRequest.DebugSessionEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetEncryptionKeyOverride())
-                    {
-                        context.Writer.WritePropertyName("encryptionKeyOverride");
-                        context.Writer.Write(publicRequest.EncryptionKeyOverride);
-                    }
-
-                    if(publicRequest.IsSetEnvironmentTypeOverride())
-                    {
-                        context.Writer.WritePropertyName("environmentTypeOverride");
-                        context.Writer.Write(publicRequest.EnvironmentTypeOverride);
-                    }
-
-                    if(publicRequest.IsSetEnvironmentVariablesOverride())
-                    {
-                        context.Writer.WritePropertyName("environmentVariablesOverride");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEnvironmentVariablesOverrideListValue in publicRequest.EnvironmentVariablesOverride)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EnvironmentVariableMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEnvironmentVariablesOverrideListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFleetOverride())
-                    {
-                        context.Writer.WritePropertyName("fleetOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProjectFleetMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FleetOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGitCloneDepthOverride())
-                    {
-                        context.Writer.WritePropertyName("gitCloneDepthOverride");
-                        context.Writer.Write(publicRequest.GitCloneDepthOverride.Value);
-                    }
-
-                    if(publicRequest.IsSetGitSubmodulesConfigOverride())
-                    {
-                        context.Writer.WritePropertyName("gitSubmodulesConfigOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GitSubmodulesConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GitSubmodulesConfigOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIdempotencyToken())
-                    {
-                        context.Writer.WritePropertyName("idempotencyToken");
-                        context.Writer.Write(publicRequest.IdempotencyToken);
-                    }
-
-                    if(publicRequest.IsSetImageOverride())
-                    {
-                        context.Writer.WritePropertyName("imageOverride");
-                        context.Writer.Write(publicRequest.ImageOverride);
-                    }
-
-                    if(publicRequest.IsSetImagePullCredentialsTypeOverride())
-                    {
-                        context.Writer.WritePropertyName("imagePullCredentialsTypeOverride");
-                        context.Writer.Write(publicRequest.ImagePullCredentialsTypeOverride);
-                    }
-
-                    if(publicRequest.IsSetInsecureSslOverride())
-                    {
-                        context.Writer.WritePropertyName("insecureSslOverride");
-                        context.Writer.Write(publicRequest.InsecureSslOverride.Value);
-                    }
-
-                    if(publicRequest.IsSetLogsConfigOverride())
-                    {
-                        context.Writer.WritePropertyName("logsConfigOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogsConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogsConfigOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPrivilegedModeOverride())
-                    {
-                        context.Writer.WritePropertyName("privilegedModeOverride");
-                        context.Writer.Write(publicRequest.PrivilegedModeOverride.Value);
-                    }
-
-                    if(publicRequest.IsSetProjectName())
-                    {
-                        context.Writer.WritePropertyName("projectName");
-                        context.Writer.Write(publicRequest.ProjectName);
-                    }
-
-                    if(publicRequest.IsSetQueuedTimeoutInMinutesOverride())
-                    {
-                        context.Writer.WritePropertyName("queuedTimeoutInMinutesOverride");
-                        context.Writer.Write(publicRequest.QueuedTimeoutInMinutesOverride.Value);
-                    }
-
-                    if(publicRequest.IsSetRegistryCredentialOverride())
-                    {
-                        context.Writer.WritePropertyName("registryCredentialOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RegistryCredentialMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RegistryCredentialOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReportBuildStatusOverride())
-                    {
-                        context.Writer.WritePropertyName("reportBuildStatusOverride");
-                        context.Writer.Write(publicRequest.ReportBuildStatusOverride.Value);
-                    }
-
-                    if(publicRequest.IsSetSecondaryArtifactsOverride())
-                    {
-                        context.Writer.WritePropertyName("secondaryArtifactsOverride");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecondaryArtifactsOverrideListValue in publicRequest.SecondaryArtifactsOverride)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectArtifactsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSecondaryArtifactsOverrideListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSecondarySourcesOverride())
-                    {
-                        context.Writer.WritePropertyName("secondarySourcesOverride");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecondarySourcesOverrideListValue in publicRequest.SecondarySourcesOverride)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSecondarySourcesOverrideListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSecondarySourcesVersionOverride())
-                    {
-                        context.Writer.WritePropertyName("secondarySourcesVersionOverride");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecondarySourcesVersionOverrideListValue in publicRequest.SecondarySourcesVersionOverride)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProjectSourceVersionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSecondarySourcesVersionOverrideListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceRoleOverride())
-                    {
-                        context.Writer.WritePropertyName("serviceRoleOverride");
-                        context.Writer.Write(publicRequest.ServiceRoleOverride);
-                    }
-
-                    if(publicRequest.IsSetSourceAuthOverride())
-                    {
-                        context.Writer.WritePropertyName("sourceAuthOverride");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SourceAuthMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceAuthOverride, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceLocationOverride())
-                    {
-                        context.Writer.WritePropertyName("sourceLocationOverride");
-                        context.Writer.Write(publicRequest.SourceLocationOverride);
-                    }
-
-                    if(publicRequest.IsSetSourceTypeOverride())
-                    {
-                        context.Writer.WritePropertyName("sourceTypeOverride");
-                        context.Writer.Write(publicRequest.SourceTypeOverride);
-                    }
-
-                    if(publicRequest.IsSetSourceVersion())
-                    {
-                        context.Writer.WritePropertyName("sourceVersion");
-                        context.Writer.Write(publicRequest.SourceVersion);
-                    }
-
-                    if(publicRequest.IsSetTimeoutInMinutesOverride())
-                    {
-                        context.Writer.WritePropertyName("timeoutInMinutesOverride");
-                        context.Writer.Write(publicRequest.TimeoutInMinutesOverride.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAutoRetryLimitOverride())
+            {
+                context.Writer.WritePropertyName("autoRetryLimitOverride");
+                context.Writer.WriteNumberValue(publicRequest.AutoRetryLimitOverride.Value);
+            }
+
+            if(publicRequest.IsSetBuildspecOverride())
+            {
+                context.Writer.WritePropertyName("buildspecOverride");
+                context.Writer.WriteStringValue(publicRequest.BuildspecOverride);
+            }
+
+            if(publicRequest.IsSetBuildStatusConfigOverride())
+            {
+                context.Writer.WritePropertyName("buildStatusConfigOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BuildStatusConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BuildStatusConfigOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCacheOverride())
+            {
+                context.Writer.WritePropertyName("cacheOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProjectCacheMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CacheOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCertificateOverride())
+            {
+                context.Writer.WritePropertyName("certificateOverride");
+                context.Writer.WriteStringValue(publicRequest.CertificateOverride);
+            }
+
+            if(publicRequest.IsSetComputeTypeOverride())
+            {
+                context.Writer.WritePropertyName("computeTypeOverride");
+                context.Writer.WriteStringValue(publicRequest.ComputeTypeOverride);
+            }
+
+            if(publicRequest.IsSetDebugSessionEnabled())
+            {
+                context.Writer.WritePropertyName("debugSessionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DebugSessionEnabled.Value);
+            }
+
+            if(publicRequest.IsSetEncryptionKeyOverride())
+            {
+                context.Writer.WritePropertyName("encryptionKeyOverride");
+                context.Writer.WriteStringValue(publicRequest.EncryptionKeyOverride);
+            }
+
+            if(publicRequest.IsSetEnvironmentTypeOverride())
+            {
+                context.Writer.WritePropertyName("environmentTypeOverride");
+                context.Writer.WriteStringValue(publicRequest.EnvironmentTypeOverride);
+            }
+
+            if(publicRequest.IsSetEnvironmentVariablesOverride())
+            {
+                context.Writer.WritePropertyName("environmentVariablesOverride");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnvironmentVariablesOverrideListValue in publicRequest.EnvironmentVariablesOverride)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EnvironmentVariableMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEnvironmentVariablesOverrideListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFleetOverride())
+            {
+                context.Writer.WritePropertyName("fleetOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProjectFleetMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FleetOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGitCloneDepthOverride())
+            {
+                context.Writer.WritePropertyName("gitCloneDepthOverride");
+                context.Writer.WriteNumberValue(publicRequest.GitCloneDepthOverride.Value);
+            }
+
+            if(publicRequest.IsSetGitSubmodulesConfigOverride())
+            {
+                context.Writer.WritePropertyName("gitSubmodulesConfigOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GitSubmodulesConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GitSubmodulesConfigOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIdempotencyToken())
+            {
+                context.Writer.WritePropertyName("idempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
+            }
+
+            if(publicRequest.IsSetImageOverride())
+            {
+                context.Writer.WritePropertyName("imageOverride");
+                context.Writer.WriteStringValue(publicRequest.ImageOverride);
+            }
+
+            if(publicRequest.IsSetImagePullCredentialsTypeOverride())
+            {
+                context.Writer.WritePropertyName("imagePullCredentialsTypeOverride");
+                context.Writer.WriteStringValue(publicRequest.ImagePullCredentialsTypeOverride);
+            }
+
+            if(publicRequest.IsSetInsecureSslOverride())
+            {
+                context.Writer.WritePropertyName("insecureSslOverride");
+                context.Writer.WriteBooleanValue(publicRequest.InsecureSslOverride.Value);
+            }
+
+            if(publicRequest.IsSetLogsConfigOverride())
+            {
+                context.Writer.WritePropertyName("logsConfigOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogsConfigOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPrivilegedModeOverride())
+            {
+                context.Writer.WritePropertyName("privilegedModeOverride");
+                context.Writer.WriteBooleanValue(publicRequest.PrivilegedModeOverride.Value);
+            }
+
+            if(publicRequest.IsSetProjectName())
+            {
+                context.Writer.WritePropertyName("projectName");
+                context.Writer.WriteStringValue(publicRequest.ProjectName);
+            }
+
+            if(publicRequest.IsSetQueuedTimeoutInMinutesOverride())
+            {
+                context.Writer.WritePropertyName("queuedTimeoutInMinutesOverride");
+                context.Writer.WriteNumberValue(publicRequest.QueuedTimeoutInMinutesOverride.Value);
+            }
+
+            if(publicRequest.IsSetRegistryCredentialOverride())
+            {
+                context.Writer.WritePropertyName("registryCredentialOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegistryCredentialMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RegistryCredentialOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReportBuildStatusOverride())
+            {
+                context.Writer.WritePropertyName("reportBuildStatusOverride");
+                context.Writer.WriteBooleanValue(publicRequest.ReportBuildStatusOverride.Value);
+            }
+
+            if(publicRequest.IsSetSecondaryArtifactsOverride())
+            {
+                context.Writer.WritePropertyName("secondaryArtifactsOverride");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecondaryArtifactsOverrideListValue in publicRequest.SecondaryArtifactsOverride)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectArtifactsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSecondaryArtifactsOverrideListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSecondarySourcesOverride())
+            {
+                context.Writer.WritePropertyName("secondarySourcesOverride");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecondarySourcesOverrideListValue in publicRequest.SecondarySourcesOverride)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSecondarySourcesOverrideListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSecondarySourcesVersionOverride())
+            {
+                context.Writer.WritePropertyName("secondarySourcesVersionOverride");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecondarySourcesVersionOverrideListValue in publicRequest.SecondarySourcesVersionOverride)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProjectSourceVersionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSecondarySourcesVersionOverrideListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetServiceRoleOverride())
+            {
+                context.Writer.WritePropertyName("serviceRoleOverride");
+                context.Writer.WriteStringValue(publicRequest.ServiceRoleOverride);
+            }
+
+            if(publicRequest.IsSetSourceAuthOverride())
+            {
+                context.Writer.WritePropertyName("sourceAuthOverride");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceAuthMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceAuthOverride, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceLocationOverride())
+            {
+                context.Writer.WritePropertyName("sourceLocationOverride");
+                context.Writer.WriteStringValue(publicRequest.SourceLocationOverride);
+            }
+
+            if(publicRequest.IsSetSourceTypeOverride())
+            {
+                context.Writer.WritePropertyName("sourceTypeOverride");
+                context.Writer.WriteStringValue(publicRequest.SourceTypeOverride);
+            }
+
+            if(publicRequest.IsSetSourceVersion())
+            {
+                context.Writer.WritePropertyName("sourceVersion");
+                context.Writer.WriteStringValue(publicRequest.SourceVersion);
+            }
+
+            if(publicRequest.IsSetTimeoutInMinutesOverride())
+            {
+                context.Writer.WritePropertyName("timeoutInMinutesOverride");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutInMinutesOverride.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

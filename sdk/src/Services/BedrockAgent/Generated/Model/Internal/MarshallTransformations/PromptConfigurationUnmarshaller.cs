@@ -29,77 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PromptConfiguration Object
     /// </summary>  
-    public class PromptConfigurationUnmarshaller : IUnmarshaller<PromptConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PromptConfiguration, JsonUnmarshallerContext>
+    public class PromptConfigurationUnmarshaller : IJsonUnmarshaller<PromptConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PromptConfiguration IUnmarshaller<PromptConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PromptConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PromptConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PromptConfiguration unmarshalledObject = new PromptConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("basePromptTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BasePromptTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BasePromptTemplate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("foundationModel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inferenceConfiguration", targetDepth))
                 {
                     var unmarshaller = InferenceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parserMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParserMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParserMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("promptCreationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromptCreationMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PromptCreationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("promptState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromptState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PromptState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("promptType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromptType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PromptType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -87,6 +87,11 @@ namespace Amazon.Omics.Model
         IListReferenceStoresPaginator ListReferenceStores(ListReferenceStoresRequest request);
 
         /// <summary>
+        /// Paginator for ListRunCaches operation
+        ///</summary>
+        IListRunCachesPaginator ListRunCaches(ListRunCachesRequest request);
+
+        /// <summary>
         /// Paginator for ListRunGroups operation
         ///</summary>
         IListRunGroupsPaginator ListRunGroups(ListRunGroupsRequest request);

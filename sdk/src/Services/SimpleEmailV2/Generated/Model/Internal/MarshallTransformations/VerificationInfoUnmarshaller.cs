@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VerificationInfo Object
     /// </summary>  
-    public class VerificationInfoUnmarshaller : IUnmarshaller<VerificationInfo, XmlUnmarshallerContext>, IUnmarshaller<VerificationInfo, JsonUnmarshallerContext>
+    public class VerificationInfoUnmarshaller : IJsonUnmarshaller<VerificationInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VerificationInfo IUnmarshaller<VerificationInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VerificationInfo Unmarshall(JsonUnmarshallerContext context)
+        public VerificationInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VerificationInfo unmarshalledObject = new VerificationInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ErrorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastCheckedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastCheckedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastCheckedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSuccessTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SOARecord", targetDepth))
                 {
                     var unmarshaller = SOARecordUnmarshaller.Instance;
-                    unmarshalledObject.SOARecord = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SOARecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -55,6 +55,7 @@ namespace Amazon.GameLift.Model
         /// ID, not the fleet ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }

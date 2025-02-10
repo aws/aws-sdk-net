@@ -201,8 +201,12 @@ namespace Amazon.Outposts.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IN_PROGRESS</c> - Order is either being built, shipped, or installed. To get more
-        /// details, see the line item status.
+        ///  <c>IN_PROGRESS</c> - Order is either being built or shipped. To get more details,
+        /// see the line item status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELIVERED</c> - Order was delivered to the Outpost site.
         /// </para>
         ///  </li> <li> 
         /// <para>

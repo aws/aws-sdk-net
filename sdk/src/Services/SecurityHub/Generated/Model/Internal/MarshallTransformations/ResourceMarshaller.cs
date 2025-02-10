@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationArn())
             {
                 context.Writer.WritePropertyName("ApplicationArn");
-                context.Writer.Write(requestObject.ApplicationArn);
+                context.Writer.WriteStringValue(requestObject.ApplicationArn);
             }
 
             if(requestObject.IsSetApplicationName())
             {
                 context.Writer.WritePropertyName("ApplicationName");
-                context.Writer.Write(requestObject.ApplicationName);
+                context.Writer.WriteStringValue(requestObject.ApplicationName);
             }
 
             if(requestObject.IsSetDataClassification())
             {
                 context.Writer.WritePropertyName("DataClassification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataClassificationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataClassification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDetails())
             {
                 context.Writer.WritePropertyName("Details");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Details, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetPartition())
             {
                 context.Writer.WritePropertyName("Partition");
-                context.Writer.Write(requestObject.Partition);
+                context.Writer.WriteStringValue(requestObject.Partition);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetResourceRole())
             {
                 context.Writer.WritePropertyName("ResourceRole");
-                context.Writer.Write(requestObject.ResourceRole);
+                context.Writer.WriteStringValue(requestObject.ResourceRole);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

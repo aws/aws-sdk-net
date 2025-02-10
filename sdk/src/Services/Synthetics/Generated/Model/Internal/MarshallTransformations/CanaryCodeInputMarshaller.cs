@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHandler())
             {
                 context.Writer.WritePropertyName("Handler");
-                context.Writer.Write(requestObject.Handler);
+                context.Writer.WriteStringValue(requestObject.Handler);
             }
 
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3Key())
             {
                 context.Writer.WritePropertyName("S3Key");
-                context.Writer.Write(requestObject.S3Key);
+                context.Writer.WriteStringValue(requestObject.S3Key);
             }
 
             if(requestObject.IsSetS3Version())
             {
                 context.Writer.WritePropertyName("S3Version");
-                context.Writer.Write(requestObject.S3Version);
+                context.Writer.WriteStringValue(requestObject.S3Version);
             }
 
             if(requestObject.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.ZipFile));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ZipFile));
             }
 
         }

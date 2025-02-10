@@ -32,10 +32,27 @@ namespace Amazon.TimestreamQuery.Model
     /// <summary>
     /// Container for the parameters to the Query operation.
     /// <c>Query</c> is a synchronous operation that enables you to run a query against your
-    /// Amazon Timestream data. <c>Query</c> will time out after 60 seconds. You must update
-    /// the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
-    /// sample</a> for details. 
+    /// Amazon Timestream data.
     /// 
+    ///  
+    /// <para>
+    /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+    /// to the query that you executed. <c>QueryInsights</c> helps with performance tuning
+    /// of your query. For more information about <c>QueryInsights</c>, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using
+    /// query insights to optimize queries in Amazon Timestream</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The maximum number of <c>Query</c> API requests you're allowed to make with <c>QueryInsights</c>
+    /// enabled is 1 query per second (QPS). If you exceed this query rate, it might result
+    /// in throttling.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  <c>Query</c> will time out after 60 seconds. You must update the default timeout
+    /// in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
+    /// sample</a> for details. 
+    /// </para>
     ///  
     /// <para>
     /// Your query request will fail in the following cases:
@@ -74,6 +91,7 @@ namespace Amazon.TimestreamQuery.Model
         private string _clientToken;
         private int? _maxRows;
         private string _nextToken;
+        private QueryInsights _queryInsights;
         private string _queryString;
 
         /// <summary>
@@ -222,6 +240,30 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryInsights. 
+        /// <para>
+        /// Encapsulates settings for enabling <c>QueryInsights</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Enabling <c>QueryInsights</c> returns insights and metrics in addition to query results
+        /// for the query that you executed. You can use <c>QueryInsights</c> to tune your query
+        /// performance.
+        /// </para>
+        /// </summary>
+        public QueryInsights QueryInsights
+        {
+            get { return this._queryInsights; }
+            set { this._queryInsights = value; }
+        }
+
+        // Check to see if QueryInsights property is set
+        internal bool IsSetQueryInsights()
+        {
+            return this._queryInsights != null;
         }
 
         /// <summary>

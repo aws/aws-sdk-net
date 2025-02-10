@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,88 +49,88 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatePublicIpAddress())
             {
                 context.Writer.WritePropertyName("associatePublicIpAddress");
-                context.Writer.Write(requestObject.AssociatePublicIpAddress.Value);
+                context.Writer.WriteBooleanValue(requestObject.AssociatePublicIpAddress.Value);
             }
 
             if(requestObject.IsSetConfigureScript())
             {
                 context.Writer.WritePropertyName("configureScript");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfigureScript, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfigureScriptType())
             {
                 context.Writer.WritePropertyName("configureScriptType");
-                context.Writer.Write(requestObject.ConfigureScriptType);
+                context.Writer.WriteStringValue(requestObject.ConfigureScriptType);
             }
 
             if(requestObject.IsSetEc2KeyName())
             {
                 context.Writer.WritePropertyName("ec2KeyName");
-                context.Writer.Write(requestObject.Ec2KeyName);
+                context.Writer.WriteStringValue(requestObject.Ec2KeyName);
             }
 
             if(requestObject.IsSetIamInstanceProfileName())
             {
                 context.Writer.WritePropertyName("iamInstanceProfileName");
-                context.Writer.Write(requestObject.IamInstanceProfileName);
+                context.Writer.WriteStringValue(requestObject.IamInstanceProfileName);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetLogicalId())
             {
                 context.Writer.WritePropertyName("logicalId");
-                context.Writer.Write(requestObject.LogicalId);
+                context.Writer.WriteStringValue(requestObject.LogicalId);
             }
 
             if(requestObject.IsSetSecurityGroup())
             {
                 context.Writer.WritePropertyName("securityGroup");
-                context.Writer.Write(requestObject.SecurityGroup);
+                context.Writer.WriteStringValue(requestObject.SecurityGroup);
             }
 
             if(requestObject.IsSetServer())
             {
                 context.Writer.WritePropertyName("server");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServerMarshaller.Instance;
                 marshaller.Marshall(requestObject.Server, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubnet())
             {
                 context.Writer.WritePropertyName("subnet");
-                context.Writer.Write(requestObject.Subnet);
+                context.Writer.WriteStringValue(requestObject.Subnet);
             }
 
             if(requestObject.IsSetUserData())
             {
                 context.Writer.WritePropertyName("userData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UserDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpc())
             {
                 context.Writer.WritePropertyName("vpc");
-                context.Writer.Write(requestObject.Vpc);
+                context.Writer.WriteStringValue(requestObject.Vpc);
             }
 
         }

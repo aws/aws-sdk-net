@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputChannels())
             {
                 context.Writer.WritePropertyName("inputChannels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputChannelsListValue in requestObject.InputChannels)
                 {
-                        context.Writer.Write(requestObjectInputChannelsListValue);
+                        context.Writer.WriteNumberValue(requestObjectInputChannelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputChannelsFineTune())
             {
                 context.Writer.WritePropertyName("inputChannelsFineTune");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputChannelsFineTuneListValue in requestObject.InputChannelsFineTune)
                 {
-                        context.Writer.Write(requestObjectInputChannelsFineTuneListValue);
+                        context.Writer.WriteNumberValue(requestObjectInputChannelsFineTuneListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

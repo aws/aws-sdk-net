@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBusinessRepresentativeName())
             {
                 context.Writer.WritePropertyName("businessRepresentativeName");
-                context.Writer.Write(requestObject.BusinessRepresentativeName);
+                context.Writer.WriteStringValue(requestObject.BusinessRepresentativeName);
             }
 
             if(requestObject.IsSetItemOfBusiness())
             {
                 context.Writer.WritePropertyName("itemOfBusiness");
-                context.Writer.Write(requestObject.ItemOfBusiness);
+                context.Writer.WriteStringValue(requestObject.ItemOfBusiness);
             }
 
             if(requestObject.IsSetLineOfBusiness())
             {
                 context.Writer.WritePropertyName("lineOfBusiness");
-                context.Writer.Write(requestObject.LineOfBusiness);
+                context.Writer.WriteStringValue(requestObject.LineOfBusiness);
             }
 
         }

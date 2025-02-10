@@ -61,7 +61,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.ContentStream = new MemoryStream(Encoding.UTF8.GetBytes(putBucketPolicyRequest.Policy));
 
-            ChecksumUtils.SetChecksumData(request, putBucketPolicyRequest.ChecksumAlgorithm);
+            ChecksumUtils.SetChecksumData(
+                request, 
+                putBucketPolicyRequest.ChecksumAlgorithm, 
+                fallbackToMD5: false, 
+                isRequestChecksumRequired: true,
+                headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+            );
 
             return request;
         }

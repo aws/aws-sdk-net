@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLabel())
             {
                 context.Writer.WritePropertyName("Label");
-                context.Writer.Write(requestObject.Label);
+                context.Writer.WriteStringValue(requestObject.Label);
             }
 
             if(requestObject.IsSetNormalized())
             {
                 context.Writer.WritePropertyName("Normalized");
-                context.Writer.Write(requestObject.Normalized.Value);
+                context.Writer.WriteNumberValue(requestObject.Normalized.Value);
             }
 
             if(requestObject.IsSetOriginal())
             {
                 context.Writer.WritePropertyName("Original");
-                context.Writer.Write(requestObject.Original);
+                context.Writer.WriteStringValue(requestObject.Original);
             }
 
             if(requestObject.IsSetProduct())
@@ -71,11 +69,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Product");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Product.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Product.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Product.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Product.Value);
+                    context.Writer.WriteNumberValue(requestObject.Product.Value);
                 }
             }
 

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HumanEvaluationConfig Object
     /// </summary>  
-    public class HumanEvaluationConfigUnmarshaller : IUnmarshaller<HumanEvaluationConfig, XmlUnmarshallerContext>, IUnmarshaller<HumanEvaluationConfig, JsonUnmarshallerContext>
+    public class HumanEvaluationConfigUnmarshaller : IJsonUnmarshaller<HumanEvaluationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HumanEvaluationConfig IUnmarshaller<HumanEvaluationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HumanEvaluationConfig Unmarshall(JsonUnmarshallerContext context)
+        public HumanEvaluationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HumanEvaluationConfig unmarshalledObject = new HumanEvaluationConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HumanEvaluationCustomMetric, HumanEvaluationCustomMetricUnmarshaller>(HumanEvaluationCustomMetricUnmarshaller.Instance);
-                    unmarshalledObject.CustomMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HumanEvaluationCustomMetric, HumanEvaluationCustomMetricUnmarshaller>(HumanEvaluationCustomMetricUnmarshaller.Instance);
+                    unmarshalledObject.CustomMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("datasetMetricConfigs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EvaluationDatasetMetricConfig, EvaluationDatasetMetricConfigUnmarshaller>(EvaluationDatasetMetricConfigUnmarshaller.Instance);
-                    unmarshalledObject.DatasetMetricConfigs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EvaluationDatasetMetricConfig, EvaluationDatasetMetricConfigUnmarshaller>(EvaluationDatasetMetricConfigUnmarshaller.Instance);
+                    unmarshalledObject.DatasetMetricConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("humanWorkflowConfig", targetDepth))
                 {
                     var unmarshaller = HumanWorkflowConfigUnmarshaller.Instance;
-                    unmarshalledObject.HumanWorkflowConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HumanWorkflowConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

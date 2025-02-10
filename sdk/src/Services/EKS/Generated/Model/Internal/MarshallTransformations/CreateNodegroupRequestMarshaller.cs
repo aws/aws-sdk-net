@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -64,182 +67,198 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field ClusterName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{name}/node-groups";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAmiType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAmiType())
-                    {
-                        context.Writer.WritePropertyName("amiType");
-                        context.Writer.Write(publicRequest.AmiType);
-                    }
-
-                    if(publicRequest.IsSetCapacityType())
-                    {
-                        context.Writer.WritePropertyName("capacityType");
-                        context.Writer.Write(publicRequest.CapacityType);
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDiskSize())
-                    {
-                        context.Writer.WritePropertyName("diskSize");
-                        context.Writer.Write(publicRequest.DiskSize.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceTypes())
-                    {
-                        context.Writer.WritePropertyName("instanceTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInstanceTypesListValue in publicRequest.InstanceTypes)
-                        {
-                                context.Writer.Write(publicRequestInstanceTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLabels())
-                    {
-                        context.Writer.WritePropertyName("labels");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestLabelsKvp in publicRequest.Labels)
-                        {
-                            context.Writer.WritePropertyName(publicRequestLabelsKvp.Key);
-                            var publicRequestLabelsValue = publicRequestLabelsKvp.Value;
-
-                                context.Writer.Write(publicRequestLabelsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLaunchTemplate())
-                    {
-                        context.Writer.WritePropertyName("launchTemplate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LaunchTemplate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNodegroupName())
-                    {
-                        context.Writer.WritePropertyName("nodegroupName");
-                        context.Writer.Write(publicRequest.NodegroupName);
-                    }
-
-                    if(publicRequest.IsSetNodeRole())
-                    {
-                        context.Writer.WritePropertyName("nodeRole");
-                        context.Writer.Write(publicRequest.NodeRole);
-                    }
-
-                    if(publicRequest.IsSetReleaseVersion())
-                    {
-                        context.Writer.WritePropertyName("releaseVersion");
-                        context.Writer.Write(publicRequest.ReleaseVersion);
-                    }
-
-                    if(publicRequest.IsSetRemoteAccess())
-                    {
-                        context.Writer.WritePropertyName("remoteAccess");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RemoteAccessConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RemoteAccess, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetScalingConfig())
-                    {
-                        context.Writer.WritePropertyName("scalingConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodegroupScalingConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScalingConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnets())
-                    {
-                        context.Writer.WritePropertyName("subnets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
-                        {
-                                context.Writer.Write(publicRequestSubnetsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTaints())
-                    {
-                        context.Writer.WritePropertyName("taints");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTaintsListValue in publicRequest.Taints)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TaintMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTaintsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUpdateConfig())
-                    {
-                        context.Writer.WritePropertyName("updateConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodegroupUpdateConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.UpdateConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVersion())
-                    {
-                        context.Writer.WritePropertyName("version");
-                        context.Writer.Write(publicRequest.Version);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("amiType");
+                context.Writer.WriteStringValue(publicRequest.AmiType);
             }
+
+            if(publicRequest.IsSetCapacityType())
+            {
+                context.Writer.WritePropertyName("capacityType");
+                context.Writer.WriteStringValue(publicRequest.CapacityType);
+            }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDiskSize())
+            {
+                context.Writer.WritePropertyName("diskSize");
+                context.Writer.WriteNumberValue(publicRequest.DiskSize.Value);
+            }
+
+            if(publicRequest.IsSetInstanceTypes())
+            {
+                context.Writer.WritePropertyName("instanceTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceTypesListValue in publicRequest.InstanceTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestInstanceTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLabels())
+            {
+                context.Writer.WritePropertyName("labels");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestLabelsKvp in publicRequest.Labels)
+                {
+                    context.Writer.WritePropertyName(publicRequestLabelsKvp.Key);
+                    var publicRequestLabelsValue = publicRequestLabelsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestLabelsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLaunchTemplate())
+            {
+                context.Writer.WritePropertyName("launchTemplate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LaunchTemplate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNodegroupName())
+            {
+                context.Writer.WritePropertyName("nodegroupName");
+                context.Writer.WriteStringValue(publicRequest.NodegroupName);
+            }
+
+            if(publicRequest.IsSetNodeRepairConfig())
+            {
+                context.Writer.WritePropertyName("nodeRepairConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodeRepairConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NodeRepairConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNodeRole())
+            {
+                context.Writer.WritePropertyName("nodeRole");
+                context.Writer.WriteStringValue(publicRequest.NodeRole);
+            }
+
+            if(publicRequest.IsSetReleaseVersion())
+            {
+                context.Writer.WritePropertyName("releaseVersion");
+                context.Writer.WriteStringValue(publicRequest.ReleaseVersion);
+            }
+
+            if(publicRequest.IsSetRemoteAccess())
+            {
+                context.Writer.WritePropertyName("remoteAccess");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RemoteAccessConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RemoteAccess, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScalingConfig())
+            {
+                context.Writer.WritePropertyName("scalingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodegroupScalingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSubnets())
+            {
+                context.Writer.WritePropertyName("subnets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTaints())
+            {
+                context.Writer.WritePropertyName("taints");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTaintsListValue in publicRequest.Taints)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TaintMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTaintsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUpdateConfig())
+            {
+                context.Writer.WritePropertyName("updateConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodegroupUpdateConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UpdateConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("version");
+                context.Writer.WriteStringValue(publicRequest.Version);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

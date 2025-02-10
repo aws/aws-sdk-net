@@ -39,7 +39,21 @@ namespace Amazon.QBusiness.Model
     /// are also available in Amazon Q Business Lite. For information on what's included in
     /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
     /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
-    /// tiers to users.
+    /// tiers to users. 
+    /// </para>
+    ///  
+    /// <para>
+    /// An Amazon Q Apps service linked role will be created if it's absent in the Amazon
+    /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+    /// Using service-linked roles for Q Apps</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you create an application, Amazon Q Business may securely transmit data for processing
+    /// from your selected Amazon Web Services region, but within your geography. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+    /// region inference in Amazon Q Business</a>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -56,6 +70,7 @@ namespace Amazon.QBusiness.Model
         private IdentityType _identityType;
         private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
+        private QuickSightConfiguration _quickSightConfiguration;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -269,10 +284,33 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuickSightConfiguration. 
+        /// <para>
+        /// The Amazon QuickSight configuration for an Amazon Q Business application that uses
+        /// QuickSight for authentication. This configuration is required if your application
+        /// uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
+        /// an Amazon QuickSight integrated application</a>.
+        /// </para>
+        /// </summary>
+        public QuickSightConfiguration QuickSightConfiguration
+        {
+            get { return this._quickSightConfiguration; }
+            set { this._quickSightConfiguration = value; }
+        }
+
+        // Check to see if QuickSightConfiguration property is set
+        internal bool IsSetQuickSightConfiguration()
+        {
+            return this._quickSightConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon
-        /// CloudWatch logs and metrics.
+        /// CloudWatch logs and metrics. If this property is not specified, Amazon Q Business
+        /// will create a <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles.html#slr-permissions">service
+        /// linked role (SLR)</a> and use it as the application's role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

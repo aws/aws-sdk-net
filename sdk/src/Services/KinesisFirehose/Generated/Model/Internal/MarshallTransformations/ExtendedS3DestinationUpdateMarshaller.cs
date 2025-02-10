@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,126 +49,126 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketARN())
             {
                 context.Writer.WritePropertyName("BucketARN");
-                context.Writer.Write(requestObject.BucketARN);
+                context.Writer.WriteStringValue(requestObject.BucketARN);
             }
 
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BufferingHintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BufferingHints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompressionFormat())
             {
                 context.Writer.WritePropertyName("CompressionFormat");
-                context.Writer.Write(requestObject.CompressionFormat);
+                context.Writer.WriteStringValue(requestObject.CompressionFormat);
             }
 
             if(requestObject.IsSetCustomTimeZone())
             {
                 context.Writer.WritePropertyName("CustomTimeZone");
-                context.Writer.Write(requestObject.CustomTimeZone);
+                context.Writer.WriteStringValue(requestObject.CustomTimeZone);
             }
 
             if(requestObject.IsSetDataFormatConversionConfiguration())
             {
                 context.Writer.WritePropertyName("DataFormatConversionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataFormatConversionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataFormatConversionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamicPartitioningConfiguration())
             {
                 context.Writer.WritePropertyName("DynamicPartitioningConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamicPartitioningConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamicPartitioningConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetErrorOutputPrefix())
             {
                 context.Writer.WritePropertyName("ErrorOutputPrefix");
-                context.Writer.Write(requestObject.ErrorOutputPrefix);
+                context.Writer.WriteStringValue(requestObject.ErrorOutputPrefix);
             }
 
             if(requestObject.IsSetFileExtension())
             {
                 context.Writer.WritePropertyName("FileExtension");
-                context.Writer.Write(requestObject.FileExtension);
+                context.Writer.WriteStringValue(requestObject.FileExtension);
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetProcessingConfiguration())
             {
                 context.Writer.WritePropertyName("ProcessingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("RoleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WriteStringValue(requestObject.RoleARN);
             }
 
             if(requestObject.IsSetS3BackupMode())
             {
                 context.Writer.WritePropertyName("S3BackupMode");
-                context.Writer.Write(requestObject.S3BackupMode);
+                context.Writer.WriteStringValue(requestObject.S3BackupMode);
             }
 
             if(requestObject.IsSetS3BackupUpdate())
             {
                 context.Writer.WritePropertyName("S3BackupUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3BackupUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

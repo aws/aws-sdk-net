@@ -42,12 +42,15 @@ namespace Amazon.Glue.Model
         private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private PhysicalConnectionRequirements _physicalConnectionRequirements;
+        private Dictionary<string, string> _pythonProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _sparkProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _validateCredentials;
+        private List<string> _validateForComputeEnvironments = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AthenaProperties. 
         /// <para>
-        /// This field is not currently used.
+        /// Connection properties specific to the Athena compute environment.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AthenaProperties
@@ -65,7 +68,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AuthenticationConfiguration. 
         /// <para>
-        /// The authentication properties of the connection. Used for a Salesforce connection.
+        /// The authentication properties of the connection.
         /// </para>
         /// </summary>
         public AuthenticationConfigurationInput AuthenticationConfiguration
@@ -184,14 +187,6 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>SALESFORCE</c> - Designates a connection to Salesforce using OAuth authencation.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Requires the <c>AuthenticationConfiguration</c> member to be configured.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
         ///  <c>VIEW_VALIDATION_REDSHIFT</c> - Designates a connection used for view validation
         /// by Amazon Redshift.
         /// </para>
@@ -236,6 +231,98 @@ namespace Amazon.Glue.Model
         /// from and write to data stores that are not natively supported by Glue.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Additionally, a <c>ConnectionType</c> for the following SaaS connectors is supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FACEBOOKADS</c> - Designates a connection to Facebook Ads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GOOGLEADS</c> - Designates a connection to Google Ads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GOOGLESHEETS</c> - Designates a connection to Google Sheets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GOOGLEANALYTICS4</c> - Designates a connection to Google Analytics 4.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HUBSPOT</c> - Designates a connection to HubSpot.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INSTAGRAMADS</c> - Designates a connection to Instagram Ads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INTERCOM</c> - Designates a connection to Intercom.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>JIRACLOUD</c> - Designates a connection to Jira Cloud.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MARKETO</c> - Designates a connection to Adobe Marketo Engage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NETSUITEERP</c> - Designates a connection to Oracle NetSuite.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SALESFORCE</c> - Designates a connection to Salesforce using OAuth authentication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SALESFORCEMARKETINGCLOUD</c> - Designates a connection to Salesforce Marketing
+        /// Cloud.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SALESFORCEPARDOT</c> - Designates a connection to Salesforce Marketing Cloud Account
+        /// Engagement (MCAE).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SAPODATA</c> - Designates a connection to SAP OData.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SERVICENOW</c> - Designates a connection to ServiceNow.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SLACK</c> - Designates a connection to Slack.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SNAPCHATADS</c> - Designates a connection to Snapchat Ads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STRIPE</c> - Designates a connection to Stripe.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ZENDESK</c> - Designates a connection to Zendesk.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ZOHOCRM</c> - Designates a connection to Zoho CRM.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information on the connection parameters needed for a particular connector,
+        /// see the documentation for the connector in <a href="https://docs.aws.amazon.com/glue/latest/dg/console-connections.html">Adding
+        /// an Glue connection</a>in the Glue User Guide.
+        /// </para>
+        ///  
         /// <para>
         ///  <c>SFTP</c> is not supported.
         /// </para>
@@ -342,10 +429,45 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PythonProperties. 
+        /// <para>
+        /// Connection properties specific to the Python compute environment.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> PythonProperties
+        {
+            get { return this._pythonProperties; }
+            set { this._pythonProperties = value; }
+        }
+
+        // Check to see if PythonProperties property is set
+        internal bool IsSetPythonProperties()
+        {
+            return this._pythonProperties != null && (this._pythonProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SparkProperties. 
+        /// <para>
+        /// Connection properties specific to the Spark compute environment.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> SparkProperties
+        {
+            get { return this._sparkProperties; }
+            set { this._sparkProperties = value; }
+        }
+
+        // Check to see if SparkProperties property is set
+        internal bool IsSetSparkProperties()
+        {
+            return this._sparkProperties != null && (this._sparkProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ValidateCredentials. 
         /// <para>
-        /// A flag to validate the credentials during create connection. Used for a Salesforce
-        /// connection. Default is true. 
+        /// A flag to validate the credentials during create connection. Default is true. 
         /// </para>
         /// </summary>
         public bool? ValidateCredentials
@@ -358,6 +480,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetValidateCredentials()
         {
             return this._validateCredentials.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidateForComputeEnvironments. 
+        /// <para>
+        /// The compute environments that the specified connection properties are validated against.
+        /// </para>
+        /// </summary>
+        public List<string> ValidateForComputeEnvironments
+        {
+            get { return this._validateForComputeEnvironments; }
+            set { this._validateForComputeEnvironments = value; }
+        }
+
+        // Check to see if ValidateForComputeEnvironments property is set
+        internal bool IsSetValidateForComputeEnvironments()
+        {
+            return this._validateForComputeEnvironments != null && (this._validateForComputeEnvironments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

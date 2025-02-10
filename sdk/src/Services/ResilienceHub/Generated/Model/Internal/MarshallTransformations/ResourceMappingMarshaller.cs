@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppRegistryAppName())
             {
                 context.Writer.WritePropertyName("appRegistryAppName");
-                context.Writer.Write(requestObject.AppRegistryAppName);
+                context.Writer.WriteStringValue(requestObject.AppRegistryAppName);
             }
 
             if(requestObject.IsSetEksSourceName())
             {
                 context.Writer.WritePropertyName("eksSourceName");
-                context.Writer.Write(requestObject.EksSourceName);
+                context.Writer.WriteStringValue(requestObject.EksSourceName);
             }
 
             if(requestObject.IsSetLogicalStackName())
             {
                 context.Writer.WritePropertyName("logicalStackName");
-                context.Writer.Write(requestObject.LogicalStackName);
+                context.Writer.WriteStringValue(requestObject.LogicalStackName);
             }
 
             if(requestObject.IsSetMappingType())
             {
                 context.Writer.WritePropertyName("mappingType");
-                context.Writer.Write(requestObject.MappingType);
+                context.Writer.WriteStringValue(requestObject.MappingType);
             }
 
             if(requestObject.IsSetPhysicalResourceId())
             {
                 context.Writer.WritePropertyName("physicalResourceId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PhysicalResourceIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.PhysicalResourceId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceGroupName())
             {
                 context.Writer.WritePropertyName("resourceGroupName");
-                context.Writer.Write(requestObject.ResourceGroupName);
+                context.Writer.WriteStringValue(requestObject.ResourceGroupName);
             }
 
             if(requestObject.IsSetResourceName())
             {
                 context.Writer.WritePropertyName("resourceName");
-                context.Writer.Write(requestObject.ResourceName);
+                context.Writer.WriteStringValue(requestObject.ResourceName);
             }
 
             if(requestObject.IsSetTerraformSourceName())
             {
                 context.Writer.WritePropertyName("terraformSourceName");
-                context.Writer.Write(requestObject.TerraformSourceName);
+                context.Writer.WriteStringValue(requestObject.TerraformSourceName);
             }
 
         }

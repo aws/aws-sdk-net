@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchTrafficPolicyInstanceException operation
     /// </summary>  
-    public class NoSuchTrafficPolicyInstanceExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchTrafficPolicyInstanceException, XmlUnmarshallerContext>
+    public class NoSuchTrafficPolicyInstanceExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchTrafficPolicyInstanceException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

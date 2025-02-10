@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -64,64 +67,69 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field AuthorizerName set");
             request.AddPathResource("{authorizerName}", StringUtils.FromString(publicRequest.AuthorizerName));
             request.ResourcePath = "/authorizer/{authorizerName}/test";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetHttpContext())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetHttpContext())
-                    {
-                        context.Writer.WritePropertyName("httpContext");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("httpContext");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = HttpContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HttpContext, context);
+                var marshaller = HttpContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HttpContext, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMqttContext())
-                    {
-                        context.Writer.WritePropertyName("mqttContext");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MqttContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MqttContext, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTlsContext())
-                    {
-                        context.Writer.WritePropertyName("tlsContext");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TlsContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TlsContext, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetToken())
-                    {
-                        context.Writer.WritePropertyName("token");
-                        context.Writer.Write(publicRequest.Token);
-                    }
-
-                    if(publicRequest.IsSetTokenSignature())
-                    {
-                        context.Writer.WritePropertyName("tokenSignature");
-                        context.Writer.Write(publicRequest.TokenSignature);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMqttContext())
+            {
+                context.Writer.WritePropertyName("mqttContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MqttContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MqttContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTlsContext())
+            {
+                context.Writer.WritePropertyName("tlsContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TlsContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TlsContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetToken())
+            {
+                context.Writer.WritePropertyName("token");
+                context.Writer.WriteStringValue(publicRequest.Token);
+            }
+
+            if(publicRequest.IsSetTokenSignature())
+            {
+                context.Writer.WritePropertyName("tokenSignature");
+                context.Writer.WriteStringValue(publicRequest.TokenSignature);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

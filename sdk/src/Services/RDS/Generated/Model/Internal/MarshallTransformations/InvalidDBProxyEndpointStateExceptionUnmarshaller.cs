@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBProxyEndpointStateException operation
     /// </summary>  
-    public class InvalidDBProxyEndpointStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBProxyEndpointStateException, XmlUnmarshallerContext>
+    public class InvalidDBProxyEndpointStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBProxyEndpointStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

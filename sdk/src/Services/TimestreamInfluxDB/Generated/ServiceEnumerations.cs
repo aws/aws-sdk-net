@@ -203,6 +203,64 @@ namespace Amazon.TimestreamInfluxDB
 
 
     /// <summary>
+    /// Constants used for properties of type DurationType.
+    /// </summary>
+    public class DurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Hours for DurationType
+        /// </summary>
+        public static readonly DurationType Hours = new DurationType("hours");
+        /// <summary>
+        /// Constant Milliseconds for DurationType
+        /// </summary>
+        public static readonly DurationType Milliseconds = new DurationType("milliseconds");
+        /// <summary>
+        /// Constant Minutes for DurationType
+        /// </summary>
+        public static readonly DurationType Minutes = new DurationType("minutes");
+        /// <summary>
+        /// Constant Seconds for DurationType
+        /// </summary>
+        public static readonly DurationType Seconds = new DurationType("seconds");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DurationType FindValue(string value)
+        {
+            return FindValue<DurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogLevel.
     /// </summary>
     public class LogLevel : ConstantClass
@@ -250,6 +308,56 @@ namespace Amazon.TimestreamInfluxDB
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NetworkType.
+    /// </summary>
+    public class NetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUAL for NetworkType
+        /// </summary>
+        public static readonly NetworkType DUAL = new NetworkType("DUAL");
+        /// <summary>
+        /// Constant IPV4 for NetworkType
+        /// </summary>
+        public static readonly NetworkType IPV4 = new NetworkType("IPV4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkType FindValue(string value)
+        {
+            return FindValue<NetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkType(string value)
         {
             return FindValue(value);
         }

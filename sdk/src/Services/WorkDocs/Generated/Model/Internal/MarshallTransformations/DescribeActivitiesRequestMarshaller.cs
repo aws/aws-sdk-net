@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
@@ -63,8 +66,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetActivityTypes())
                 request.Parameters.Add("activityTypes", StringUtils.FromString(publicRequest.ActivityTypes));
             
-            if (publicRequest.IsSetEndTimeUtc())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
+            if (publicRequest.IsSetEndTime())
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetIncludeIndirectActivities())
                 request.Parameters.Add("includeIndirectActivities", StringUtils.FromBool(publicRequest.IncludeIndirectActivities));
@@ -81,8 +84,8 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetResourceId())
                 request.Parameters.Add("resourceId", StringUtils.FromString(publicRequest.ResourceId));
             
-            if (publicRequest.IsSetStartTimeUtc())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
+            if (publicRequest.IsSetStartTime())
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AquaConfiguration Object
     /// </summary>  
-    public class AquaConfigurationUnmarshaller : IUnmarshaller<AquaConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AquaConfiguration, JsonUnmarshallerContext>
+    public class AquaConfigurationUnmarshaller : IXmlUnmarshaller<AquaConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AquaConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AquaConfigurationUnmarshaller _instance = new AquaConfigurationUnmarshaller();        
 

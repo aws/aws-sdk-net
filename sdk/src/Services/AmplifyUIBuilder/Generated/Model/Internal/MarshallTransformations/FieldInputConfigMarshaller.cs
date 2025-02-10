@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultChecked())
             {
                 context.Writer.WritePropertyName("defaultChecked");
-                context.Writer.Write(requestObject.DefaultChecked.Value);
+                context.Writer.WriteBooleanValue(requestObject.DefaultChecked.Value);
             }
 
             if(requestObject.IsSetDefaultCountryCode())
             {
                 context.Writer.WritePropertyName("defaultCountryCode");
-                context.Writer.Write(requestObject.DefaultCountryCode);
+                context.Writer.WriteStringValue(requestObject.DefaultCountryCode);
             }
 
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue);
+                context.Writer.WriteStringValue(requestObject.DefaultValue);
             }
 
             if(requestObject.IsSetDescriptiveText())
             {
                 context.Writer.WritePropertyName("descriptiveText");
-                context.Writer.Write(requestObject.DescriptiveText);
+                context.Writer.WriteStringValue(requestObject.DescriptiveText);
             }
 
             if(requestObject.IsSetFileUploaderConfig())
             {
                 context.Writer.WritePropertyName("fileUploaderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileUploaderFieldConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileUploaderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsArray())
             {
                 context.Writer.WritePropertyName("isArray");
-                context.Writer.Write(requestObject.IsArray.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsArray.Value);
             }
 
             if(requestObject.IsSetMaxValue())
@@ -94,11 +92,11 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("maxValue");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MaxValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MaxValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxValue.Value);
                 }
             }
 
@@ -107,36 +105,36 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("minValue");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinValue.Value);
                 }
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPlaceholder())
             {
                 context.Writer.WritePropertyName("placeholder");
-                context.Writer.Write(requestObject.Placeholder);
+                context.Writer.WriteStringValue(requestObject.Placeholder);
             }
 
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("readOnly");
-                context.Writer.Write(requestObject.ReadOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required.Value);
+                context.Writer.WriteBooleanValue(requestObject.Required.Value);
             }
 
             if(requestObject.IsSetStep())
@@ -144,35 +142,35 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("step");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Step.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Step.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Step.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Step.Value);
+                    context.Writer.WriteNumberValue(requestObject.Step.Value);
                 }
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
             if(requestObject.IsSetValueMappings())
             {
                 context.Writer.WritePropertyName("valueMappings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ValueMappingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValueMappings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -31,8 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
-    /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
-    /// website.
+    /// Deletes a queue.
     /// </summary>
     public partial class DeleteQueueRequest : AmazonConnectRequest
     {

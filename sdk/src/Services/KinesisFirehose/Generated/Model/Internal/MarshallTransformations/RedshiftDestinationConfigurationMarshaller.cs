@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,108 +49,108 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClusterJDBCURL())
             {
                 context.Writer.WritePropertyName("ClusterJDBCURL");
-                context.Writer.Write(requestObject.ClusterJDBCURL);
+                context.Writer.WriteStringValue(requestObject.ClusterJDBCURL);
             }
 
             if(requestObject.IsSetCopyCommand())
             {
                 context.Writer.WritePropertyName("CopyCommand");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CopyCommandMarshaller.Instance;
                 marshaller.Marshall(requestObject.CopyCommand, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetProcessingConfiguration())
             {
                 context.Writer.WritePropertyName("ProcessingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryOptions())
             {
                 context.Writer.WritePropertyName("RetryOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftRetryOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("RoleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WriteStringValue(requestObject.RoleARN);
             }
 
             if(requestObject.IsSetS3BackupConfiguration())
             {
                 context.Writer.WritePropertyName("S3BackupConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3BackupConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3BackupMode())
             {
                 context.Writer.WritePropertyName("S3BackupMode");
-                context.Writer.Write(requestObject.S3BackupMode);
+                context.Writer.WriteStringValue(requestObject.S3BackupMode);
             }
 
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretsManagerConfiguration())
             {
                 context.Writer.WritePropertyName("SecretsManagerConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SecretsManagerConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecretsManagerConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

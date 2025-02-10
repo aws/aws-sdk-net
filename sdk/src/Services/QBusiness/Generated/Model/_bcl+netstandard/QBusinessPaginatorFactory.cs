@@ -53,11 +53,27 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListAttachments operation
+        ///</summary>
+        public IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request) 
+        {
+            return new ListAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConversations operation
         ///</summary>
         public IListConversationsPaginator ListConversations(ListConversationsRequest request) 
         {
             return new ListConversationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDataAccessors operation
+        ///</summary>
+        public IListDataAccessorsPaginator ListDataAccessors(ListDataAccessorsRequest request) 
+        {
+            return new ListDataAccessorsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -109,11 +125,35 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListPluginActions operation
+        ///</summary>
+        public IListPluginActionsPaginator ListPluginActions(ListPluginActionsRequest request) 
+        {
+            return new ListPluginActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlugins operation
         ///</summary>
         public IListPluginsPaginator ListPlugins(ListPluginsRequest request) 
         {
             return new ListPluginsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPluginTypeActions operation
+        ///</summary>
+        public IListPluginTypeActionsPaginator ListPluginTypeActions(ListPluginTypeActionsRequest request) 
+        {
+            return new ListPluginTypeActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPluginTypeMetadata operation
+        ///</summary>
+        public IListPluginTypeMetadataPaginator ListPluginTypeMetadata(ListPluginTypeMetadataRequest request) 
+        {
+            return new ListPluginTypeMetadataPaginator(this.client, request);
         }
 
         /// <summary>
@@ -125,11 +165,27 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListSubscriptions operation
+        ///</summary>
+        public IListSubscriptionsPaginator ListSubscriptions(ListSubscriptionsRequest request) 
+        {
+            return new ListSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWebExperiences operation
         ///</summary>
         public IListWebExperiencesPaginator ListWebExperiences(ListWebExperiencesRequest request) 
         {
             return new ListWebExperiencesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchRelevantContent operation
+        ///</summary>
+        public ISearchRelevantContentPaginator SearchRelevantContent(SearchRelevantContentRequest request) 
+        {
+            return new SearchRelevantContentPaginator(this.client, request);
         }
     }
 }

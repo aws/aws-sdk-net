@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
 {
@@ -61,142 +64,147 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ml/modeltraining";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBaseProcessingInstanceType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBaseProcessingInstanceType())
-                    {
-                        context.Writer.WritePropertyName("baseProcessingInstanceType");
-                        context.Writer.Write(publicRequest.BaseProcessingInstanceType);
-                    }
-
-                    if(publicRequest.IsSetCustomModelTrainingParameters())
-                    {
-                        context.Writer.WritePropertyName("customModelTrainingParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CustomModelTrainingParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CustomModelTrainingParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataProcessingJobId())
-                    {
-                        context.Writer.WritePropertyName("dataProcessingJobId");
-                        context.Writer.Write(publicRequest.DataProcessingJobId);
-                    }
-
-                    if(publicRequest.IsSetEnableManagedSpotTraining())
-                    {
-                        context.Writer.WritePropertyName("enableManagedSpotTraining");
-                        context.Writer.Write(publicRequest.EnableManagedSpotTraining.Value);
-                    }
-
-                    if(publicRequest.IsSetId())
-                    {
-                        context.Writer.WritePropertyName("id");
-                        context.Writer.Write(publicRequest.Id);
-                    }
-
-                    if(publicRequest.IsSetMaxHPONumberOfTrainingJobs())
-                    {
-                        context.Writer.WritePropertyName("maxHPONumberOfTrainingJobs");
-                        context.Writer.Write(publicRequest.MaxHPONumberOfTrainingJobs.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxHPOParallelTrainingJobs())
-                    {
-                        context.Writer.WritePropertyName("maxHPOParallelTrainingJobs");
-                        context.Writer.Write(publicRequest.MaxHPOParallelTrainingJobs.Value);
-                    }
-
-                    if(publicRequest.IsSetNeptuneIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("neptuneIamRoleArn");
-                        context.Writer.Write(publicRequest.NeptuneIamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetPreviousModelTrainingJobId())
-                    {
-                        context.Writer.WritePropertyName("previousModelTrainingJobId");
-                        context.Writer.Write(publicRequest.PreviousModelTrainingJobId);
-                    }
-
-                    if(publicRequest.IsSetS3OutputEncryptionKMSKey())
-                    {
-                        context.Writer.WritePropertyName("s3OutputEncryptionKMSKey");
-                        context.Writer.Write(publicRequest.S3OutputEncryptionKMSKey);
-                    }
-
-                    if(publicRequest.IsSetSagemakerIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("sagemakerIamRoleArn");
-                        context.Writer.Write(publicRequest.SagemakerIamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("securityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnets())
-                    {
-                        context.Writer.WritePropertyName("subnets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
-                        {
-                                context.Writer.Write(publicRequestSubnetsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTrainingInstanceType())
-                    {
-                        context.Writer.WritePropertyName("trainingInstanceType");
-                        context.Writer.Write(publicRequest.TrainingInstanceType);
-                    }
-
-                    if(publicRequest.IsSetTrainingInstanceVolumeSizeInGB())
-                    {
-                        context.Writer.WritePropertyName("trainingInstanceVolumeSizeInGB");
-                        context.Writer.Write(publicRequest.TrainingInstanceVolumeSizeInGB.Value);
-                    }
-
-                    if(publicRequest.IsSetTrainingTimeOutInSeconds())
-                    {
-                        context.Writer.WritePropertyName("trainingTimeOutInSeconds");
-                        context.Writer.Write(publicRequest.TrainingTimeOutInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetTrainModelS3Location())
-                    {
-                        context.Writer.WritePropertyName("trainModelS3Location");
-                        context.Writer.Write(publicRequest.TrainModelS3Location);
-                    }
-
-                    if(publicRequest.IsSetVolumeEncryptionKMSKey())
-                    {
-                        context.Writer.WritePropertyName("volumeEncryptionKMSKey");
-                        context.Writer.Write(publicRequest.VolumeEncryptionKMSKey);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("baseProcessingInstanceType");
+                context.Writer.WriteStringValue(publicRequest.BaseProcessingInstanceType);
             }
+
+            if(publicRequest.IsSetCustomModelTrainingParameters())
+            {
+                context.Writer.WritePropertyName("customModelTrainingParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomModelTrainingParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomModelTrainingParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataProcessingJobId())
+            {
+                context.Writer.WritePropertyName("dataProcessingJobId");
+                context.Writer.WriteStringValue(publicRequest.DataProcessingJobId);
+            }
+
+            if(publicRequest.IsSetEnableManagedSpotTraining())
+            {
+                context.Writer.WritePropertyName("enableManagedSpotTraining");
+                context.Writer.WriteBooleanValue(publicRequest.EnableManagedSpotTraining.Value);
+            }
+
+            if(publicRequest.IsSetId())
+            {
+                context.Writer.WritePropertyName("id");
+                context.Writer.WriteStringValue(publicRequest.Id);
+            }
+
+            if(publicRequest.IsSetMaxHPONumberOfTrainingJobs())
+            {
+                context.Writer.WritePropertyName("maxHPONumberOfTrainingJobs");
+                context.Writer.WriteNumberValue(publicRequest.MaxHPONumberOfTrainingJobs.Value);
+            }
+
+            if(publicRequest.IsSetMaxHPOParallelTrainingJobs())
+            {
+                context.Writer.WritePropertyName("maxHPOParallelTrainingJobs");
+                context.Writer.WriteNumberValue(publicRequest.MaxHPOParallelTrainingJobs.Value);
+            }
+
+            if(publicRequest.IsSetNeptuneIamRoleArn())
+            {
+                context.Writer.WritePropertyName("neptuneIamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.NeptuneIamRoleArn);
+            }
+
+            if(publicRequest.IsSetPreviousModelTrainingJobId())
+            {
+                context.Writer.WritePropertyName("previousModelTrainingJobId");
+                context.Writer.WriteStringValue(publicRequest.PreviousModelTrainingJobId);
+            }
+
+            if(publicRequest.IsSetS3OutputEncryptionKMSKey())
+            {
+                context.Writer.WritePropertyName("s3OutputEncryptionKMSKey");
+                context.Writer.WriteStringValue(publicRequest.S3OutputEncryptionKMSKey);
+            }
+
+            if(publicRequest.IsSetSagemakerIamRoleArn())
+            {
+                context.Writer.WritePropertyName("sagemakerIamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.SagemakerIamRoleArn);
+            }
+
+            if(publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("securityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubnets())
+            {
+                context.Writer.WritePropertyName("subnets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTrainingInstanceType())
+            {
+                context.Writer.WritePropertyName("trainingInstanceType");
+                context.Writer.WriteStringValue(publicRequest.TrainingInstanceType);
+            }
+
+            if(publicRequest.IsSetTrainingInstanceVolumeSizeInGB())
+            {
+                context.Writer.WritePropertyName("trainingInstanceVolumeSizeInGB");
+                context.Writer.WriteNumberValue(publicRequest.TrainingInstanceVolumeSizeInGB.Value);
+            }
+
+            if(publicRequest.IsSetTrainingTimeOutInSeconds())
+            {
+                context.Writer.WritePropertyName("trainingTimeOutInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.TrainingTimeOutInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetTrainModelS3Location())
+            {
+                context.Writer.WritePropertyName("trainModelS3Location");
+                context.Writer.WriteStringValue(publicRequest.TrainModelS3Location);
+            }
+
+            if(publicRequest.IsSetVolumeEncryptionKMSKey())
+            {
+                context.Writer.WritePropertyName("volumeEncryptionKMSKey");
+                context.Writer.WriteStringValue(publicRequest.VolumeEncryptionKMSKey);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

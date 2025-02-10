@@ -38,6 +38,7 @@ namespace Amazon.EKS.Model
         private string _arn;
         private Certificate _certificateAuthority;
         private string _clientRequestToken;
+        private ComputeConfigResponse _computeConfig;
         private ConnectorConfigResponse _connectorConfig;
         private DateTime? _createdAt;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
@@ -50,12 +51,15 @@ namespace Amazon.EKS.Model
         private string _name;
         private OutpostConfigResponse _outpostConfig;
         private string _platformVersion;
+        private RemoteNetworkConfigResponse _remoteNetworkConfig;
         private VpcConfigResponse _resourcesVpcConfig;
         private string _roleArn;
         private ClusterStatus _status;
+        private StorageConfigResponse _storageConfig;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UpgradePolicyResponse _upgradePolicy;
         private string _version;
+        private ZonalShiftConfigResponse _zonalShiftConfig;
 
         /// <summary>
         /// Gets and sets the property AccessConfig. 
@@ -128,6 +132,28 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfig. 
+        /// <para>
+        /// Indicates the current configuration of the compute capability on your EKS Auto Mode
+        /// cluster. For example, if the capability is enabled or disabled. If the compute capability
+        /// is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon
+        /// Web Services account. For more information, see EKS Auto Mode compute capability in
+        /// the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ComputeConfigResponse ComputeConfig
+        {
+            get { return this._computeConfig; }
+            set { this._computeConfig = value; }
+        }
+
+        // Check to see if ComputeConfig property is set
+        internal bool IsSetComputeConfig()
+        {
+            return this._computeConfig != null;
         }
 
         /// <summary>
@@ -355,6 +381,25 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoteNetworkConfig. 
+        /// <para>
+        /// The configuration in the cluster for EKS Hybrid Nodes. You can't change or update
+        /// this configuration after the cluster is created.
+        /// </para>
+        /// </summary>
+        public RemoteNetworkConfigResponse RemoteNetworkConfig
+        {
+            get { return this._remoteNetworkConfig; }
+            set { this._remoteNetworkConfig = value; }
+        }
+
+        // Check to see if RemoteNetworkConfig property is set
+        internal bool IsSetRemoteNetworkConfig()
+        {
+            return this._remoteNetworkConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourcesVpcConfig. 
         /// <para>
         /// The VPC configuration used by the cluster control plane. Amazon EKS VPC resources
@@ -414,6 +459,28 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageConfig. 
+        /// <para>
+        /// Indicates the current configuration of the block storage capability on your EKS Auto
+        /// Mode cluster. For example, if the capability is enabled or disabled. If the block
+        /// storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in
+        /// your Amazon Web Services account. For more information, see EKS Auto Mode block storage
+        /// capability in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        public StorageConfigResponse StorageConfig
+        {
+            get { return this._storageConfig; }
+            set { this._storageConfig = value; }
+        }
+
+        // Check to see if StorageConfig property is set
+        internal bool IsSetStorageConfig()
+        {
+            return this._storageConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// Metadata that assists with categorization and organization. Each tag consists of a
@@ -442,7 +509,7 @@ namespace Amazon.EKS.Model
         ///  
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/extended-support-control.html">Learn
-        /// more about EKS Extended Support in the EKS User Guide.</a> 
+        /// more about EKS Extended Support in the <i>Amazon EKS User Guide</i>.</a> 
         /// </para>
         /// </summary>
         public UpgradePolicyResponse UpgradePolicy
@@ -473,6 +540,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZonalShiftConfig. 
+        /// <para>
+        /// The configuration for zonal shift for the cluster.
+        /// </para>
+        /// </summary>
+        public ZonalShiftConfigResponse ZonalShiftConfig
+        {
+            get { return this._zonalShiftConfig; }
+            set { this._zonalShiftConfig = value; }
+        }
+
+        // Check to see if ZonalShiftConfig property is set
+        internal bool IsSetZonalShiftConfig()
+        {
+            return this._zonalShiftConfig != null;
         }
 
     }

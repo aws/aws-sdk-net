@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListenerNotFoundException operation
     /// </summary>  
-    public class ListenerNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ListenerNotFoundException, XmlUnmarshallerContext>
+    public class ListenerNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ListenerNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

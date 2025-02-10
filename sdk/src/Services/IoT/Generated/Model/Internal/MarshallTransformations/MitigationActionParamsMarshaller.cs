@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddThingsToThingGroupParams())
             {
                 context.Writer.WritePropertyName("addThingsToThingGroupParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddThingsToThingGroupParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddThingsToThingGroupParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnableIoTLoggingParams())
             {
                 context.Writer.WritePropertyName("enableIoTLoggingParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnableIoTLoggingParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnableIoTLoggingParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPublishFindingToSnsParams())
             {
                 context.Writer.WritePropertyName("publishFindingToSnsParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PublishFindingToSnsParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublishFindingToSnsParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReplaceDefaultPolicyVersionParams())
             {
                 context.Writer.WritePropertyName("replaceDefaultPolicyVersionParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReplaceDefaultPolicyVersionParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReplaceDefaultPolicyVersionParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpdateCACertificateParams())
             {
                 context.Writer.WritePropertyName("updateCACertificateParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateCACertificateParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpdateCACertificateParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpdateDeviceCertificateParams())
             {
                 context.Writer.WritePropertyName("updateDeviceCertificateParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateDeviceCertificateParamsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpdateDeviceCertificateParams, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -34,6 +34,8 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class PackageDetails
     {
+        private List<string> _allowListedUserList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private PackageConfiguration _availablePackageConfiguration;
         private string _availablePackageVersion;
         private PluginProperties _availablePluginProperties;
         private DateTime? _createdAt;
@@ -41,10 +43,50 @@ namespace Amazon.OpenSearchService.Model
         private ErrorDetails _errorDetails;
         private DateTime? _lastUpdatedAt;
         private string _packageDescription;
+        private PackageEncryptionOptions _packageEncryptionOptions;
         private string _packageID;
         private string _packageName;
+        private string _packageOwner;
         private PackageStatus _packageStatus;
         private PackageType _packageType;
+        private PackageVendingOptions _packageVendingOptions;
+
+        /// <summary>
+        /// Gets and sets the property AllowListedUserList. 
+        /// <para>
+        ///  A list of users who are allowed to view and associate the package. This field is
+        /// only visible to the owner of a package.
+        /// </para>
+        /// </summary>
+        public List<string> AllowListedUserList
+        {
+            get { return this._allowListedUserList; }
+            set { this._allowListedUserList = value; }
+        }
+
+        // Check to see if AllowListedUserList property is set
+        internal bool IsSetAllowListedUserList()
+        {
+            return this._allowListedUserList != null && (this._allowListedUserList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailablePackageConfiguration. 
+        /// <para>
+        /// This represents the available configuration parameters for the package.
+        /// </para>
+        /// </summary>
+        public PackageConfiguration AvailablePackageConfiguration
+        {
+            get { return this._availablePackageConfiguration; }
+            set { this._availablePackageConfiguration = value; }
+        }
+
+        // Check to see if AvailablePackageConfiguration property is set
+        internal bool IsSetAvailablePackageConfiguration()
+        {
+            return this._availablePackageConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailablePackageVersion. 
@@ -176,6 +218,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PackageEncryptionOptions. 
+        /// <para>
+        /// Package Encryption Options for a package.
+        /// </para>
+        /// </summary>
+        public PackageEncryptionOptions PackageEncryptionOptions
+        {
+            get { return this._packageEncryptionOptions; }
+            set { this._packageEncryptionOptions = value; }
+        }
+
+        // Check to see if PackageEncryptionOptions property is set
+        internal bool IsSetPackageEncryptionOptions()
+        {
+            return this._packageEncryptionOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
         /// The unique identifier of the package.
@@ -210,6 +270,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageName()
         {
             return this._packageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageOwner. 
+        /// <para>
+        /// The owner of the package who is allowed to create/update a package and add users to
+        /// the package scope.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string PackageOwner
+        {
+            get { return this._packageOwner; }
+            set { this._packageOwner = value; }
+        }
+
+        // Check to see if PackageOwner property is set
+        internal bool IsSetPackageOwner()
+        {
+            return this._packageOwner != null;
         }
 
         /// <summary>
@@ -248,6 +328,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageType()
         {
             return this._packageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageVendingOptions. 
+        /// <para>
+        /// Package Vending Options for a package.
+        /// </para>
+        /// </summary>
+        public PackageVendingOptions PackageVendingOptions
+        {
+            get { return this._packageVendingOptions; }
+            set { this._packageVendingOptions = value; }
+        }
+
+        // Check to see if PackageVendingOptions property is set
+        internal bool IsSetPackageVendingOptions()
+        {
+            return this._packageVendingOptions != null;
         }
 
     }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAthenaDatasetDefinition())
             {
                 context.Writer.WritePropertyName("AthenaDatasetDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AthenaDatasetDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AthenaDatasetDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataDistributionType())
             {
                 context.Writer.WritePropertyName("DataDistributionType");
-                context.Writer.Write(requestObject.DataDistributionType);
+                context.Writer.WriteStringValue(requestObject.DataDistributionType);
             }
 
             if(requestObject.IsSetInputMode())
             {
                 context.Writer.WritePropertyName("InputMode");
-                context.Writer.Write(requestObject.InputMode);
+                context.Writer.WriteStringValue(requestObject.InputMode);
             }
 
             if(requestObject.IsSetLocalPath())
             {
                 context.Writer.WritePropertyName("LocalPath");
-                context.Writer.Write(requestObject.LocalPath);
+                context.Writer.WriteStringValue(requestObject.LocalPath);
             }
 
             if(requestObject.IsSetRedshiftDatasetDefinition())
             {
                 context.Writer.WritePropertyName("RedshiftDatasetDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftDatasetDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftDatasetDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

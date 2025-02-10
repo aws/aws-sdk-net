@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EsamManifestConfirmConditionNotification Object
     /// </summary>  
-    public class EsamManifestConfirmConditionNotificationUnmarshaller : IUnmarshaller<EsamManifestConfirmConditionNotification, XmlUnmarshallerContext>, IUnmarshaller<EsamManifestConfirmConditionNotification, JsonUnmarshallerContext>
+    public class EsamManifestConfirmConditionNotificationUnmarshaller : IJsonUnmarshaller<EsamManifestConfirmConditionNotification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EsamManifestConfirmConditionNotification IUnmarshaller<EsamManifestConfirmConditionNotification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EsamManifestConfirmConditionNotification Unmarshall(JsonUnmarshallerContext context)
+        public EsamManifestConfirmConditionNotification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EsamManifestConfirmConditionNotification unmarshalledObject = new EsamManifestConfirmConditionNotification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("mccXml", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MccXml = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MccXml = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

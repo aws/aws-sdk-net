@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneAlreadyExistsException operation
     /// </summary>  
-    public class HostedZoneAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<HostedZoneAlreadyExistsException, XmlUnmarshallerContext>
+    public class HostedZoneAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HostedZoneAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

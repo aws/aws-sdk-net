@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidPaginationTokenException operation
     /// </summary>  
-    public class InvalidPaginationTokenExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidPaginationTokenException, XmlUnmarshallerContext>
+    public class InvalidPaginationTokenExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidPaginationTokenException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

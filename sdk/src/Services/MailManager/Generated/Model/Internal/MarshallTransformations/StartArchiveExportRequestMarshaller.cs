@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,76 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArchiveId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArchiveId())
-                    {
-                        context.Writer.WritePropertyName("ArchiveId");
-                        context.Writer.Write(publicRequest.ArchiveId);
-                    }
-
-                    if(publicRequest.IsSetExportDestinationConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ExportDestinationConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExportDestinationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExportDestinationConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("Filters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ArchiveFiltersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Filters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFromTimestamp())
-                    {
-                        context.Writer.WritePropertyName("FromTimestamp");
-                        context.Writer.Write(publicRequest.FromTimestamp.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetToTimestamp())
-                    {
-                        context.Writer.WritePropertyName("ToTimestamp");
-                        context.Writer.Write(publicRequest.ToTimestamp.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ArchiveId");
+                context.Writer.WriteStringValue(publicRequest.ArchiveId);
             }
+
+            if(publicRequest.IsSetExportDestinationConfiguration())
+            {
+                context.Writer.WritePropertyName("ExportDestinationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExportDestinationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExportDestinationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ArchiveFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFromTimestamp())
+            {
+                context.Writer.WritePropertyName("FromTimestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.FromTimestamp.Value)));
+            }
+
+            if(publicRequest.IsSetIncludeMetadata())
+            {
+                context.Writer.WritePropertyName("IncludeMetadata");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeMetadata.Value);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetToTimestamp())
+            {
+                context.Writer.WritePropertyName("ToTimestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ToTimestamp.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

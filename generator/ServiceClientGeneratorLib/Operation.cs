@@ -1072,5 +1072,18 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Determines if the payload shouldn't be signed.
+        /// </summary>
+        public bool UnsignedPayload
+        {
+            get
+            {
+                if (data[ServiceModel.UnsignedPayloadKey] != null && data[ServiceModel.UnsignedPayloadKey].IsBoolean)
+                    return (bool)data[ServiceModel.UnsignedPayloadKey];
+
+                return false;
+            }
+        }
     }
 }

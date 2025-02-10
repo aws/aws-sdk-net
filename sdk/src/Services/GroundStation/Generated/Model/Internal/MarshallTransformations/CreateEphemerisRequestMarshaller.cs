@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -61,80 +64,85 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ephemeris";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnabled())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetEphemeris())
-                    {
-                        context.Writer.WritePropertyName("ephemeris");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EphemerisDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Ephemeris, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExpirationTime())
-                    {
-                        context.Writer.WritePropertyName("expirationTime");
-                        context.Writer.Write(publicRequest.ExpirationTime.Value);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyArn())
-                    {
-                        context.Writer.WritePropertyName("kmsKeyArn");
-                        context.Writer.Write(publicRequest.KmsKeyArn);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPriority())
-                    {
-                        context.Writer.WritePropertyName("priority");
-                        context.Writer.Write(publicRequest.Priority.Value);
-                    }
-
-                    if(publicRequest.IsSetSatelliteId())
-                    {
-                        context.Writer.WritePropertyName("satelliteId");
-                        context.Writer.Write(publicRequest.SatelliteId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
             }
+
+            if(publicRequest.IsSetEphemeris())
+            {
+                context.Writer.WritePropertyName("ephemeris");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EphemerisDataMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Ephemeris, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExpirationTime())
+            {
+                context.Writer.WritePropertyName("expirationTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpirationTime.Value)));
+            }
+
+            if(publicRequest.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+
+            if(publicRequest.IsSetSatelliteId())
+            {
+                context.Writer.WritePropertyName("satelliteId");
+                context.Writer.WriteStringValue(publicRequest.SatelliteId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

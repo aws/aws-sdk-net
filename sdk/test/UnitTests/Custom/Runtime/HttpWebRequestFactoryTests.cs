@@ -188,7 +188,7 @@ namespace AWSSDK.UnitTests
             var contentTypeHeader = _fixture.Create<string>();
             var contentLength = 0;
             var userAgentHeader = _fixture.Create<string>();
-            var date = DateTime.Now.ToUniversalTime();
+            var date = DateTime.UtcNow;
             var rangeHeader = _fixture.Create<string>();
             var contentRangeHeader = _fixture.Create<string>();
             var nonStandardHeader = _fixture.Create<string>();

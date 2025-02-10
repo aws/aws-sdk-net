@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WordCloudChartConfiguration Object
     /// </summary>  
-    public class WordCloudChartConfigurationUnmarshaller : IUnmarshaller<WordCloudChartConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WordCloudChartConfiguration, JsonUnmarshallerContext>
+    public class WordCloudChartConfigurationUnmarshaller : IJsonUnmarshaller<WordCloudChartConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WordCloudChartConfiguration IUnmarshaller<WordCloudChartConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WordCloudChartConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WordCloudChartConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WordCloudChartConfiguration unmarshalledObject = new WordCloudChartConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoryLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CategoryLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldWells", targetDepth))
                 {
                     var unmarshaller = WordCloudFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Interactions", targetDepth))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortConfiguration", targetDepth))
                 {
                     var unmarshaller = WordCloudSortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WordCloudOptions", targetDepth))
                 {
                     var unmarshaller = WordCloudOptionsUnmarshaller.Instance;
-                    unmarshalledObject.WordCloudOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WordCloudOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

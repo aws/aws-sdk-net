@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWorkGroupNames())
             {
                 context.Writer.WritePropertyName("WorkGroupNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWorkGroupNamesListValue in requestObject.WorkGroupNames)
                 {
-                        context.Writer.Write(requestObjectWorkGroupNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectWorkGroupNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

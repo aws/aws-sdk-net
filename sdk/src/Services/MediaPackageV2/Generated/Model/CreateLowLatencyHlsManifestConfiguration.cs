@@ -40,6 +40,7 @@ namespace Amazon.MediaPackageV2.Model
         private int? _manifestWindowSeconds;
         private int? _programDateTimeIntervalSeconds;
         private ScteHls _scteHls;
+        private StartTag _startTag;
 
         /// <summary>
         /// Gets and sets the property ChildManifestName. 
@@ -128,8 +129,7 @@ namespace Amazon.MediaPackageV2.Model
         /// Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you
         /// specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included
         /// in the manifest. The tags sync the stream to the wall clock so that viewers can seek
-        /// to a specific time in the playback timeline on the player. ID3Timed metadata messages
-        /// generate every 5 seconds whenever the content is ingested.
+        /// to a specific time in the playback timeline on the player.
         /// </para>
         ///  
         /// <para>
@@ -163,6 +163,21 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetScteHls()
         {
             return this._scteHls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTag.
+        /// </summary>
+        public StartTag StartTag
+        {
+            get { return this._startTag; }
+            set { this._startTag = value; }
+        }
+
+        // Check to see if StartTag property is set
+        internal bool IsSetStartTag()
+        {
+            return this._startTag != null;
         }
 
     }

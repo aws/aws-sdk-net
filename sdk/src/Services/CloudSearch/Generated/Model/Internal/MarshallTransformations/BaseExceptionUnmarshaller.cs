@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BaseException operation
     /// </summary>  
-    public class BaseExceptionUnmarshaller : IErrorResponseUnmarshaller<BaseException, XmlUnmarshallerContext>
+    public class BaseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BaseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

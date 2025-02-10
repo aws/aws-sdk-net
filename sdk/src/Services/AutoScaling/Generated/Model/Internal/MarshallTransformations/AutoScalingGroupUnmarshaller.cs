@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AutoScalingGroup Object
     /// </summary>  
-    public class AutoScalingGroupUnmarshaller : IUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroup, JsonUnmarshallerContext>
+    public class AutoScalingGroupUnmarshaller : IXmlUnmarshaller<AutoScalingGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -67,6 +67,18 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AvailabilityZoneDistribution", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneDistributionUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneDistribution = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("AvailabilityZoneImpairmentPolicy", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneImpairmentPolicyUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneImpairmentPolicy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -82,6 +94,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CapacityReservationSpecification", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationSpecification = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Context", targetDepth))
@@ -319,17 +337,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AutoScalingGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AutoScalingGroupUnmarshaller _instance = new AutoScalingGroupUnmarshaller();        
 

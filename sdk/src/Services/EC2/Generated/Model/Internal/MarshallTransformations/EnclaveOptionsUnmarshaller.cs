@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EnclaveOptions Object
     /// </summary>  
-    public class EnclaveOptionsUnmarshaller : IUnmarshaller<EnclaveOptions, XmlUnmarshallerContext>, IUnmarshaller<EnclaveOptions, JsonUnmarshallerContext>
+    public class EnclaveOptionsUnmarshaller : IXmlUnmarshaller<EnclaveOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EnclaveOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EnclaveOptionsUnmarshaller _instance = new EnclaveOptionsUnmarshaller();        
 

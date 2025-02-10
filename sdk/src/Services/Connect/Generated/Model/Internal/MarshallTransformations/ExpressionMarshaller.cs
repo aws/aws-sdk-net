@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,55 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAndExpression())
             {
                 context.Writer.WritePropertyName("AndExpression");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAndExpressionListValue in requestObject.AndExpression)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExpressionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAndExpressionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAttributeCondition())
             {
                 context.Writer.WritePropertyName("AttributeCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetNotAttributeCondition())
+            {
+                context.Writer.WritePropertyName("NotAttributeCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AttributeConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.NotAttributeCondition, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrExpression())
             {
                 context.Writer.WritePropertyName("OrExpression");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrExpressionListValue in requestObject.OrExpression)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExpressionMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrExpressionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

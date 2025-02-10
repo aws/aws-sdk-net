@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The subnet and security groups that DataSync uses to access your Amazon EFS file system.
+    /// The subnet and security groups that DataSync uses to connect to one of your Amazon
+    /// EFS file system's <a href="https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html">mount
+    /// targets</a>.
     /// </summary>
     public partial class Ec2Config
     {

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatedTranscriptsPassword())
             {
                 context.Writer.WritePropertyName("associatedTranscriptsPassword");
-                context.Writer.Write(requestObject.AssociatedTranscriptsPassword);
+                context.Writer.WriteStringValue(requestObject.AssociatedTranscriptsPassword);
             }
 
             if(requestObject.IsSetBotLocaleExportPassword())
             {
                 context.Writer.WritePropertyName("botLocaleExportPassword");
-                context.Writer.Write(requestObject.BotLocaleExportPassword);
+                context.Writer.WriteStringValue(requestObject.BotLocaleExportPassword);
             }
 
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
         }

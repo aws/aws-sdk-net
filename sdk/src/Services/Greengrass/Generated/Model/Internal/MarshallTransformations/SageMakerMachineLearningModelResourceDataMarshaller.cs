@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationPath())
             {
                 context.Writer.WritePropertyName("DestinationPath");
-                context.Writer.Write(requestObject.DestinationPath);
+                context.Writer.WriteStringValue(requestObject.DestinationPath);
             }
 
             if(requestObject.IsSetOwnerSetting())
             {
                 context.Writer.WritePropertyName("OwnerSetting");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceDownloadOwnerSettingMarshaller.Instance;
                 marshaller.Marshall(requestObject.OwnerSetting, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSageMakerJobArn())
             {
                 context.Writer.WritePropertyName("SageMakerJobArn");
-                context.Writer.Write(requestObject.SageMakerJobArn);
+                context.Writer.WriteStringValue(requestObject.SageMakerJobArn);
             }
 
         }

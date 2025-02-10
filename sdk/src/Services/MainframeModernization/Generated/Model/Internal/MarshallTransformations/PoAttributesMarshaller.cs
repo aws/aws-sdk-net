@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncoding())
             {
                 context.Writer.WritePropertyName("encoding");
-                context.Writer.Write(requestObject.Encoding);
+                context.Writer.WriteStringValue(requestObject.Encoding);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetMemberFileExtensions())
             {
                 context.Writer.WritePropertyName("memberFileExtensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMemberFileExtensionsListValue in requestObject.MemberFileExtensions)
                 {
-                        context.Writer.Write(requestObjectMemberFileExtensionsListValue);
+                        context.Writer.WriteStringValue(requestObjectMemberFileExtensionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

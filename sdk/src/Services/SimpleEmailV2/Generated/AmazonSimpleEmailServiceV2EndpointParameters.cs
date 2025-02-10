@@ -75,5 +75,14 @@ namespace Amazon.SimpleEmailV2.Endpoints
             get { return (string)this["Endpoint"]; }
             set { this["Endpoint"] = value; } 
         }
+
+        /// <summary>
+        /// EndpointId parameter
+        /// </summary>
+        public string EndpointId 
+        { 
+            get { return (string)this["EndpointId"]; }
+            set { this["EndpointId"] = value; } 
+        }
     }
 }

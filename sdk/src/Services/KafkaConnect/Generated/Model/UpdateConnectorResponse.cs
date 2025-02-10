@@ -35,6 +35,7 @@ namespace Amazon.KafkaConnect.Model
     public partial class UpdateConnectorResponse : AmazonWebServiceResponse
     {
         private string _connectorArn;
+        private string _connectorOperationArn;
         private ConnectorState _connectorState;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetConnectorArn()
         {
             return this._connectorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorOperationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the connector operation.
+        /// </para>
+        /// </summary>
+        public string ConnectorOperationArn
+        {
+            get { return this._connectorOperationArn; }
+            set { this._connectorOperationArn = value; }
+        }
+
+        // Check to see if ConnectorOperationArn property is set
+        internal bool IsSetConnectorOperationArn()
+        {
+            return this._connectorOperationArn != null;
         }
 
         /// <summary>

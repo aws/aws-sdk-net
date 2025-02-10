@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Meeting Object
     /// </summary>  
-    public class MeetingUnmarshaller : IUnmarshaller<Meeting, XmlUnmarshallerContext>, IUnmarshaller<Meeting, JsonUnmarshallerContext>
+    public class MeetingUnmarshaller : IJsonUnmarshaller<Meeting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Meeting IUnmarshaller<Meeting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Meeting Unmarshall(JsonUnmarshallerContext context)
+        public Meeting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Meeting unmarshalledObject = new Meeting();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExternalMeetingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalMeetingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalMeetingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaPlacement", targetDepth))
                 {
                     var unmarshaller = MediaPlacementUnmarshaller.Instance;
-                    unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeetingArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeetingArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeetingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeetingFeatures", targetDepth))
                 {
                     var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeetingHostId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeetingHostId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeetingHostId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeetingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrimaryMeetingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryMeetingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrimaryMeetingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TenantIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TenantIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TenantIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

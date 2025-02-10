@@ -14,7 +14,9 @@
  */
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -176,7 +178,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBPropertyAttribute(Type converter)
+        public DynamoDBPropertyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
         {
             Converter = converter;
         }
@@ -203,7 +205,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBPropertyAttribute(string attributeName, Type converter)
+        public DynamoDBPropertyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(attributeName)
         {
             Converter = converter;
@@ -230,6 +232,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Type of the custom converter.
         /// Cannot be set at the same time as StoreAsEpoch.
         /// </summary>
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
         public Type Converter { get; set; }
 
         /// <summary>
@@ -244,7 +247,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// DynamoDB property that marks up current member as a hash key element.
     /// Exactly one member in a class must be marked with this attribute.
     /// 
-    /// Members that are marked as hash key must be convertible to
+    /// Members that are marked as a hash key must be convertible to
     /// a Primitive object.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
@@ -275,7 +278,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBHashKeyAttribute(Type converter)
+        public DynamoDBHashKeyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(converter)
         {
         }
@@ -289,7 +292,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBHashKeyAttribute(string attributeName, Type converter)
+        public DynamoDBHashKeyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(attributeName, converter)
         {
         }
@@ -330,7 +333,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Converter must be the type of a class that implements IPropertyConverter.
         /// </summary>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBRangeKeyAttribute(Type converter)
+        public DynamoDBRangeKeyAttribute([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(converter)
         {
         }
@@ -344,7 +347,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Name of attribute to be associated with property or field.
         /// </param>
         /// <param name="converter">Custom converter type.</param>
-        public DynamoDBRangeKeyAttribute(string attributeName, Type converter)
+        public DynamoDBRangeKeyAttribute(string attributeName, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)] Type converter)
             : base(attributeName, converter)
         {
         }
@@ -358,14 +361,14 @@ namespace Amazon.DynamoDBv2.DataModel
     public class DynamoDBGlobalSecondaryIndexHashKeyAttribute : DynamoDBHashKeyAttribute
     {
         /// <summary>
-        /// Index associated with this range key
+        /// Indexes associated with this hash key.
         /// </summary>
         public string[] IndexNames { get; set; }
 
         /// <summary>
-        /// Constructor that accepts a single inde name.
+        /// Constructor that accepts a single index name.
         /// </summary>
-        /// <param name="indexName">Name of the Local Secondary Index this range key belongs to.</param>
+        /// <param name="indexName">Name of the Global Secondary Index this hash key belongs to.</param>
         public DynamoDBGlobalSecondaryIndexHashKeyAttribute(string indexName)
             : base()
         {
@@ -375,7 +378,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Constructor that accepts multiple index names.
         /// </summary>
-        /// <param name="indexNames">Names of the Local Secondary Indexes this range key belongs to.</param>
+        /// <param name="indexNames">Names of the Global Secondary Indexes this hash key belongs to.</param>
         public DynamoDBGlobalSecondaryIndexHashKeyAttribute(params string[] indexNames)
             : base()
         {
@@ -390,14 +393,14 @@ namespace Amazon.DynamoDBv2.DataModel
     public class DynamoDBGlobalSecondaryIndexRangeKeyAttribute : DynamoDBRangeKeyAttribute
     {
         /// <summary>
-        /// Index associated with this range key
+        /// Indexes associated with this range key.
         /// </summary>
         public string[] IndexNames { get; set; }
 
         /// <summary>
-        /// Constructor that accepts a single inde name.
+        /// Constructor that accepts a single index name.
         /// </summary>
-        /// <param name="indexName">Name of the Local Secondary Index this range key belongs to.</param>
+        /// <param name="indexName">Name of the Global Secondary Index this range key belongs to.</param>
         public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(string indexName)
             : base()
         {
@@ -407,7 +410,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Constructor that accepts multiple index names.
         /// </summary>
-        /// <param name="indexNames">Names of the Local Secondary Indexes this range key belongs to.</param>
+        /// <param name="indexNames">Names of the Global Secondary Indexes this range key belongs to.</param>
         public DynamoDBGlobalSecondaryIndexRangeKeyAttribute(params string[] indexNames)
             : base()
         {
@@ -425,12 +428,12 @@ namespace Amazon.DynamoDBv2.DataModel
     public sealed class DynamoDBLocalSecondaryIndexRangeKeyAttribute : DynamoDBPropertyAttribute
     {
         /// <summary>
-        /// Index associated with this range key
+        /// Indexes associated with this range key.
         /// </summary>
         public string[] IndexNames { get; set; }
 
         /// <summary>
-        /// Constructor that accepts a single inde name.
+        /// Constructor that accepts a single index name.
         /// </summary>
         /// <param name="indexName">Name of the Local Secondary Index this range key belongs to.</param>
         public DynamoDBLocalSecondaryIndexRangeKeyAttribute(string indexName)

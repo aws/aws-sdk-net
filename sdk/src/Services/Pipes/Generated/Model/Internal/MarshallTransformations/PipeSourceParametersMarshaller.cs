@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveMQBrokerParameters())
             {
                 context.Writer.WritePropertyName("ActiveMQBrokerParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceActiveMQBrokerParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActiveMQBrokerParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamoDBStreamParameters())
             {
                 context.Writer.WritePropertyName("DynamoDBStreamParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceDynamoDBStreamParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDBStreamParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterCriteria())
             {
                 context.Writer.WritePropertyName("FilterCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisStreamParameters())
             {
                 context.Writer.WritePropertyName("KinesisStreamParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceKinesisStreamParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisStreamParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManagedStreamingKafkaParameters())
             {
                 context.Writer.WritePropertyName("ManagedStreamingKafkaParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceManagedStreamingKafkaParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedStreamingKafkaParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRabbitMQBrokerParameters())
             {
                 context.Writer.WritePropertyName("RabbitMQBrokerParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceRabbitMQBrokerParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RabbitMQBrokerParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelfManagedKafkaParameters())
             {
                 context.Writer.WritePropertyName("SelfManagedKafkaParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceSelfManagedKafkaParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelfManagedKafkaParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqsQueueParameters())
             {
                 context.Writer.WritePropertyName("SqsQueueParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PipeSourceSqsQueueParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqsQueueParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

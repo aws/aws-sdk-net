@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockEmail())
             {
                 context.Writer.WritePropertyName("BlockEmail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotifyEmailTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.BlockEmail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("From");
-                context.Writer.Write(requestObject.From);
+                context.Writer.WriteStringValue(requestObject.From);
             }
 
             if(requestObject.IsSetMfaEmail())
             {
                 context.Writer.WritePropertyName("MfaEmail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotifyEmailTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MfaEmail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoActionEmail())
             {
                 context.Writer.WritePropertyName("NoActionEmail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotifyEmailTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.NoActionEmail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReplyTo())
             {
                 context.Writer.WritePropertyName("ReplyTo");
-                context.Writer.Write(requestObject.ReplyTo);
+                context.Writer.WriteStringValue(requestObject.ReplyTo);
             }
 
             if(requestObject.IsSetSourceArn())
             {
                 context.Writer.WritePropertyName("SourceArn");
-                context.Writer.Write(requestObject.SourceArn);
+                context.Writer.WriteStringValue(requestObject.SourceArn);
             }
 
         }

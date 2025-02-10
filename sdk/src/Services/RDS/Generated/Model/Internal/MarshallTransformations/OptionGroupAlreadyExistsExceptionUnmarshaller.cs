@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OptionGroupAlreadyExistsException operation
     /// </summary>  
-    public class OptionGroupAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<OptionGroupAlreadyExistsException, XmlUnmarshallerContext>
+    public class OptionGroupAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OptionGroupAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

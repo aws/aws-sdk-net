@@ -46,7 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The number of replicas you want in this node group at the end of this operation. The
         /// maximum value for <c>NewReplicaCount</c> is 5. The minimum value depends upon the
-        /// type of Redis OSS replication group you are working with.
+        /// type of Valkey or Redis OSS replication group you are working with.
         /// </para>
         ///  
         /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Redis OSS (cluster mode disabled)
+        /// Valkey or Redis OSS (cluster mode disabled)
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -66,8 +66,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a
-        /// replica if your primary node fails)
+        /// Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover
+        /// to a replica if your primary node fails)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -87,9 +87,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroupId. 
         /// <para>
-        /// The 4-digit id for the node group you are configuring. For Redis OSS (cluster mode
-        /// disabled) replication groups, the node group id is always 0001. To find a Redis OSS
-        /// (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+        /// The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster
+        /// mode disabled) replication groups, the node group id is always 0001. To find a Valkey
+        /// or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/shard-find-id.html">Finding
         /// a Shard's Id</a>.
         /// </para>
         /// </summary>
@@ -112,8 +112,8 @@ namespace Amazon.ElastiCache.Model
         /// A list of <c>PreferredAvailabilityZone</c> strings that specify which availability
         /// zones the replication group's nodes are to be in. The nummber of <c>PreferredAvailabilityZone</c>
         /// values must equal the value of <c>NewReplicaCount</c> plus 1 to account for the primary
-        /// node. If this member of <c>ReplicaConfiguration</c> is omitted, ElastiCache (Redis
-        /// OSS) selects the availability zone for each of the replicas.
+        /// node. If this member of <c>ReplicaConfiguration</c> is omitted, ElastiCache selects
+        /// the availability zone for each of the replicas.
         /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -63,100 +66,105 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChildPolicy())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChildPolicy())
-                    {
-                        context.Writer.WritePropertyName("childPolicy");
-                        context.Writer.Write(publicRequest.ChildPolicy);
-                    }
-
-                    if(publicRequest.IsSetDomain())
-                    {
-                        context.Writer.WritePropertyName("domain");
-                        context.Writer.Write(publicRequest.Domain);
-                    }
-
-                    if(publicRequest.IsSetExecutionStartToCloseTimeout())
-                    {
-                        context.Writer.WritePropertyName("executionStartToCloseTimeout");
-                        context.Writer.Write(publicRequest.ExecutionStartToCloseTimeout);
-                    }
-
-                    if(publicRequest.IsSetInput())
-                    {
-                        context.Writer.WritePropertyName("input");
-                        context.Writer.Write(publicRequest.Input);
-                    }
-
-                    if(publicRequest.IsSetLambdaRole())
-                    {
-                        context.Writer.WritePropertyName("lambdaRole");
-                        context.Writer.Write(publicRequest.LambdaRole);
-                    }
-
-                    if(publicRequest.IsSetTagList())
-                    {
-                        context.Writer.WritePropertyName("tagList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagListListValue in publicRequest.TagList)
-                        {
-                                context.Writer.Write(publicRequestTagListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskList())
-                    {
-                        context.Writer.WritePropertyName("taskList");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TaskListMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TaskList, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskPriority())
-                    {
-                        context.Writer.WritePropertyName("taskPriority");
-                        context.Writer.Write(publicRequest.TaskPriority);
-                    }
-
-                    if(publicRequest.IsSetTaskStartToCloseTimeout())
-                    {
-                        context.Writer.WritePropertyName("taskStartToCloseTimeout");
-                        context.Writer.Write(publicRequest.TaskStartToCloseTimeout);
-                    }
-
-                    if(publicRequest.IsSetWorkflowId())
-                    {
-                        context.Writer.WritePropertyName("workflowId");
-                        context.Writer.Write(publicRequest.WorkflowId);
-                    }
-
-                    if(publicRequest.IsSetWorkflowType())
-                    {
-                        context.Writer.WritePropertyName("workflowType");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WorkflowTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.WorkflowType, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("childPolicy");
+                context.Writer.WriteStringValue(publicRequest.ChildPolicy);
             }
+
+            if(publicRequest.IsSetDomain())
+            {
+                context.Writer.WritePropertyName("domain");
+                context.Writer.WriteStringValue(publicRequest.Domain);
+            }
+
+            if(publicRequest.IsSetExecutionStartToCloseTimeout())
+            {
+                context.Writer.WritePropertyName("executionStartToCloseTimeout");
+                context.Writer.WriteStringValue(publicRequest.ExecutionStartToCloseTimeout);
+            }
+
+            if(publicRequest.IsSetInput())
+            {
+                context.Writer.WritePropertyName("input");
+                context.Writer.WriteStringValue(publicRequest.Input);
+            }
+
+            if(publicRequest.IsSetLambdaRole())
+            {
+                context.Writer.WritePropertyName("lambdaRole");
+                context.Writer.WriteStringValue(publicRequest.LambdaRole);
+            }
+
+            if(publicRequest.IsSetTagList())
+            {
+                context.Writer.WritePropertyName("tagList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                {
+                        context.Writer.WriteStringValue(publicRequestTagListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTaskList())
+            {
+                context.Writer.WritePropertyName("taskList");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TaskListMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TaskList, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTaskPriority())
+            {
+                context.Writer.WritePropertyName("taskPriority");
+                context.Writer.WriteStringValue(publicRequest.TaskPriority);
+            }
+
+            if(publicRequest.IsSetTaskStartToCloseTimeout())
+            {
+                context.Writer.WritePropertyName("taskStartToCloseTimeout");
+                context.Writer.WriteStringValue(publicRequest.TaskStartToCloseTimeout);
+            }
+
+            if(publicRequest.IsSetWorkflowId())
+            {
+                context.Writer.WritePropertyName("workflowId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowId);
+            }
+
+            if(publicRequest.IsSetWorkflowType())
+            {
+                context.Writer.WritePropertyName("workflowType");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WorkflowType, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

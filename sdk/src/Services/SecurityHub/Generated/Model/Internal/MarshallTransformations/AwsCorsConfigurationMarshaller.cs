@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowCredentials())
             {
                 context.Writer.WritePropertyName("AllowCredentials");
-                context.Writer.Write(requestObject.AllowCredentials.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowCredentials.Value);
             }
 
             if(requestObject.IsSetAllowHeaders())
             {
                 context.Writer.WritePropertyName("AllowHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowHeadersListValue in requestObject.AllowHeaders)
                 {
-                        context.Writer.Write(requestObjectAllowHeadersListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowHeadersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowMethods())
             {
                 context.Writer.WritePropertyName("AllowMethods");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowMethodsListValue in requestObject.AllowMethods)
                 {
-                        context.Writer.Write(requestObjectAllowMethodsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowMethodsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowOrigins())
             {
                 context.Writer.WritePropertyName("AllowOrigins");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowOriginsListValue in requestObject.AllowOrigins)
                 {
-                        context.Writer.Write(requestObjectAllowOriginsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowOriginsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExposeHeaders())
             {
                 context.Writer.WritePropertyName("ExposeHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExposeHeadersListValue in requestObject.ExposeHeaders)
                 {
-                        context.Writer.Write(requestObjectExposeHeadersListValue);
+                        context.Writer.WriteStringValue(requestObjectExposeHeadersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxAge())
             {
                 context.Writer.WritePropertyName("MaxAge");
-                context.Writer.Write(requestObject.MaxAge.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAge.Value);
             }
 
         }

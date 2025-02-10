@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClassifierEvaluationMetrics Object
     /// </summary>  
-    public class ClassifierEvaluationMetricsUnmarshaller : IUnmarshaller<ClassifierEvaluationMetrics, XmlUnmarshallerContext>, IUnmarshaller<ClassifierEvaluationMetrics, JsonUnmarshallerContext>
+    public class ClassifierEvaluationMetricsUnmarshaller : IJsonUnmarshaller<ClassifierEvaluationMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClassifierEvaluationMetrics IUnmarshaller<ClassifierEvaluationMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClassifierEvaluationMetrics Unmarshall(JsonUnmarshallerContext context)
+        public ClassifierEvaluationMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClassifierEvaluationMetrics unmarshalledObject = new ClassifierEvaluationMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Accuracy", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Accuracy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Accuracy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("F1Score", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.F1Score = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.F1Score = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HammingLoss", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.HammingLoss = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HammingLoss = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicroF1Score", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MicroF1Score = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicroF1Score = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicroPrecision", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MicroPrecision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicroPrecision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicroRecall", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MicroRecall = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicroRecall = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Precision", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Recall", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Recall = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Recall = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

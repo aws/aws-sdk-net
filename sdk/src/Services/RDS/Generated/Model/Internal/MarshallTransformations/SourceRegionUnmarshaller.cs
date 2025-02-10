@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SourceRegion Object
     /// </summary>  
-    public class SourceRegionUnmarshaller : IUnmarshaller<SourceRegion, XmlUnmarshallerContext>, IUnmarshaller<SourceRegion, JsonUnmarshallerContext>
+    public class SourceRegionUnmarshaller : IXmlUnmarshaller<SourceRegion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SourceRegion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SourceRegionUnmarshaller _instance = new SourceRegionUnmarshaller();        
 

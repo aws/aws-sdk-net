@@ -59,6 +59,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Tags. A collection of key-value pairs.
         /// </summary>
+        [Obsolete("This API is deprecated. You must use UpdateTagsForResource instead.")]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

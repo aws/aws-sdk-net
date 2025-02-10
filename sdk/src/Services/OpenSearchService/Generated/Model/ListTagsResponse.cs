@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// List of resource tags associated with the specified domain.
+        /// List of resource tags associated with the specified domain, data source, or application.
         /// </para>
         /// </summary>
         public List<Tag> TagList

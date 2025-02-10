@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchDelegationSetException operation
     /// </summary>  
-    public class NoSuchDelegationSetExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchDelegationSetException, XmlUnmarshallerContext>
+    public class NoSuchDelegationSetExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchDelegationSetException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

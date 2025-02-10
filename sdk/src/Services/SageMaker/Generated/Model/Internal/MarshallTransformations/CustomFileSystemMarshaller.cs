@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEFSFileSystem())
             {
                 context.Writer.WritePropertyName("EFSFileSystem");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EFSFileSystemMarshaller.Instance;
                 marshaller.Marshall(requestObject.EFSFileSystem, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetFSxLustreFileSystem())
+            {
+                context.Writer.WritePropertyName("FSxLustreFileSystem");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FSxLustreFileSystemMarshaller.Instance;
+                marshaller.Marshall(requestObject.FSxLustreFileSystem, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

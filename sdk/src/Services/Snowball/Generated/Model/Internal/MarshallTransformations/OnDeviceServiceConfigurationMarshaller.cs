@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEKSOnDeviceService())
             {
                 context.Writer.WritePropertyName("EKSOnDeviceService");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EKSOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EKSOnDeviceService, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNFSOnDeviceService())
             {
                 context.Writer.WritePropertyName("NFSOnDeviceService");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NFSOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NFSOnDeviceService, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3OnDeviceService())
             {
                 context.Writer.WritePropertyName("S3OnDeviceService");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3OnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OnDeviceService, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTGWOnDeviceService())
             {
                 context.Writer.WritePropertyName("TGWOnDeviceService");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TGWOnDeviceServiceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TGWOnDeviceService, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

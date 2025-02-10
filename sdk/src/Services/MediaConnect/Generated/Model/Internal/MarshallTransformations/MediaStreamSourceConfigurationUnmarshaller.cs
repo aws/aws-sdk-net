@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaStreamSourceConfiguration Object
     /// </summary>  
-    public class MediaStreamSourceConfigurationUnmarshaller : IUnmarshaller<MediaStreamSourceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MediaStreamSourceConfiguration, JsonUnmarshallerContext>
+    public class MediaStreamSourceConfigurationUnmarshaller : IJsonUnmarshaller<MediaStreamSourceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaStreamSourceConfiguration IUnmarshaller<MediaStreamSourceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaStreamSourceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MediaStreamSourceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaStreamSourceConfiguration unmarshalledObject = new MediaStreamSourceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("encodingName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncodingName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncodingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputConfiguration, InputConfigurationUnmarshaller>(InputConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.InputConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputConfiguration, InputConfigurationUnmarshaller>(InputConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.InputConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaStreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaStreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

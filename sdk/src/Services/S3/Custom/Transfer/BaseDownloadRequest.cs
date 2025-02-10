@@ -37,8 +37,6 @@ namespace Amazon.S3.Transfer
         private string versionId;
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
-        private DateTime? modifiedSinceDateUtc;
-        private DateTime? unmodifiedSinceDateUtc;
         private ChecksumMode checksumMode;
 
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
@@ -115,108 +113,48 @@ namespace Amazon.S3.Transfer
         internal bool IsSetVersionId()
         {
             return !System.String.IsNullOrEmpty(this.versionId);
-        }
+        }        
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or
-        /// ModifiedSinceDateUtc results in both ModifiedSinceDate and ModifiedSinceDateUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// ModifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// 	Gets or sets the <c>ModifiedSinceDate</c> property.
         /// </summary>
         /// <value>
         /// 	The <c>ModifiedSinceDate</c> property. 
         /// </value>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or ModifiedSinceDateUtc results in both ModifiedSinceDate and " +
-            "ModifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. ModifiedSinceDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate.GetValueOrDefault(); }
+            get { return this.modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
             set
             {
-                this.modifiedSinceDate = value;
-                this.modifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
-            }
-        }
-
-        /// <summary>
-        /// 	Gets or sets the <c>ModifiedSinceDate</c> property.
-        /// </summary>
-        /// <value>
-        /// 	The <c>ModifiedSinceDate</c> property. 
-        /// </value>
-        public DateTime ModifiedSinceDateUtc
-        {
-            get { return this.modifiedSinceDateUtc ?? default(DateTime); }
-            set
-            {
-                this.modifiedSinceDateUtc = value;
                 this.modifiedSinceDate = value;
             }
         }
 
-        // Check to see if ModifiedSinceDateUtc property is set
-        internal bool IsSetModifiedSinceDateUtc()
+        // Check to see if ModifiedSinceDate property is set
+        internal bool IsSetModifiedSinceDate()
         {
-            return this.modifiedSinceDateUtc.HasValue;
+            return this.modifiedSinceDate.HasValue;
         }
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or
-        /// UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and UnmodifiedSinceDateUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// UnmodifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// 	Gets or sets the <c>UnmodifiedSinceDate</c> property.
         /// </summary>
         /// <value>
         /// 	The <c>UnmodifiedSinceDate</c> property.
         /// </value>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and " +
-            "UnmodifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. UnmodifiedSinceDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate.GetValueOrDefault(); }
+            get { return this.unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
             set
             {
-                this.unmodifiedSinceDate = value;
-                this.unmodifiedSinceDateUtc = new DateTime(value.Ticks, DateTimeKind.Utc);
-            }
-        }
-
-        /// <summary>
-        /// 	Gets or sets the <c>UnmodifiedSinceDate</c> property.
-        /// </summary>
-        /// <value>
-        /// 	The <c>UnmodifiedSinceDate</c> property.
-        /// </value>
-        public DateTime UnmodifiedSinceDateUtc
-        {
-            get { return this.unmodifiedSinceDateUtc ?? default(DateTime); }
-            set
-            {
-                this.unmodifiedSinceDateUtc = value;
                 this.unmodifiedSinceDate = value;
             }
         }
 
-        // Check to see if UnmodifiedSinceDateUtc property is set
-        internal bool IsSetUnmodifiedSinceDateUtc()
+        // Check to see if UnmodifiedSinceDate property is set
+        internal bool IsSetUnmodifiedSinceDate()
         {
-            return this.unmodifiedSinceDateUtc.HasValue;
+            return this.unmodifiedSinceDate.HasValue;
         }
 
         /// <summary>

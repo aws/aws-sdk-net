@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventTypeCategories())
             {
                 context.Writer.WritePropertyName("eventTypeCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventTypeCategoriesListValue in requestObject.EventTypeCategories)
                 {
-                        context.Writer.Write(requestObjectEventTypeCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectEventTypeCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventTypeCodes())
             {
                 context.Writer.WritePropertyName("eventTypeCodes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventTypeCodesListValue in requestObject.EventTypeCodes)
                 {
-                        context.Writer.Write(requestObjectEventTypeCodesListValue);
+                        context.Writer.WriteStringValue(requestObjectEventTypeCodesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetServices())
             {
                 context.Writer.WritePropertyName("services");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServicesListValue in requestObject.Services)
                 {
-                        context.Writer.Write(requestObjectServicesListValue);
+                        context.Writer.WriteStringValue(requestObjectServicesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

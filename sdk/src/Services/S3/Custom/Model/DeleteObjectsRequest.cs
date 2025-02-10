@@ -32,12 +32,12 @@ namespace Amazon.S3.Model
     /// 
     ///  
     /// <para>
-    /// The request can contain a list of up to 1000 keys that you want to delete. In the
+    /// The request can contain a list of up to 1,000 keys that you want to delete. In the
     /// XML, you provide the object key names, and optionally, version IDs if you want to
     /// delete a specific version of the object from a versioning-enabled bucket. For each
     /// key, Amazon S3 performs a delete operation and returns the result of that delete,
-    /// success or failure, in the response. Note that if the object specified in the request
-    /// is not found, Amazon S3 returns the result as deleted.
+    /// success or failure, in the response. If the object specified in the request
+    /// isn't found, Amazon S3 confirms the deletion by returning the result as deleted.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
@@ -258,19 +258,23 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CRC32
+        /// CRC-32
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CRC32C
+        /// CRC-32C
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SHA1
+        /// CRC-64NVME
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SHA256
+        /// SHA-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SHA-256
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -281,9 +285,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// If the individual checksum value you provide through <c>x-amz-checksum-<i>algorithm</i>
         /// </c> doesn't match the checksum algorithm you set through <c>x-amz-sdk-checksum-algorithm</c>,
-        /// Amazon S3 ignores any provided <c>ChecksumAlgorithm</c> parameter and uses the
-        /// checksum algorithm that matches the provided value in <c>x-amz-checksum-<i>algorithm</i>
-        /// </c>.
+        /// Amazon S3 fails the request with a <c>BadDigest</c> error.
         /// </para>
         ///  
         /// <para>

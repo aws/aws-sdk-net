@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -64,173 +67,178 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
             request.ResourcePath = "/jobs/{jobId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAbortConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAbortConfig())
-                    {
-                        context.Writer.WritePropertyName("abortConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("abortConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AbortConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AbortConfig, context);
+                var marshaller = AbortConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AbortConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDestinationPackageVersions())
-                    {
-                        context.Writer.WritePropertyName("destinationPackageVersions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationPackageVersionsListValue in publicRequest.DestinationPackageVersions)
-                        {
-                                context.Writer.Write(publicRequestDestinationPackageVersionsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDocument())
-                    {
-                        context.Writer.WritePropertyName("document");
-                        context.Writer.Write(publicRequest.Document);
-                    }
-
-                    if(publicRequest.IsSetDocumentParameters())
-                    {
-                        context.Writer.WritePropertyName("documentParameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDocumentParametersKvp in publicRequest.DocumentParameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDocumentParametersKvp.Key);
-                            var publicRequestDocumentParametersValue = publicRequestDocumentParametersKvp.Value;
-
-                                context.Writer.Write(publicRequestDocumentParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDocumentSource())
-                    {
-                        context.Writer.WritePropertyName("documentSource");
-                        context.Writer.Write(publicRequest.DocumentSource);
-                    }
-
-                    if(publicRequest.IsSetJobExecutionsRetryConfig())
-                    {
-                        context.Writer.WritePropertyName("jobExecutionsRetryConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobExecutionsRetryConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobExecutionsRetryConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobExecutionsRolloutConfig())
-                    {
-                        context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobExecutionsRolloutConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobTemplateArn())
-                    {
-                        context.Writer.WritePropertyName("jobTemplateArn");
-                        context.Writer.Write(publicRequest.JobTemplateArn);
-                    }
-
-                    if(publicRequest.IsSetNamespaceId())
-                    {
-                        context.Writer.WritePropertyName("namespaceId");
-                        context.Writer.Write(publicRequest.NamespaceId);
-                    }
-
-                    if(publicRequest.IsSetPresignedUrlConfig())
-                    {
-                        context.Writer.WritePropertyName("presignedUrlConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PresignedUrlConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PresignedUrlConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchedulingConfig())
-                    {
-                        context.Writer.WritePropertyName("schedulingConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SchedulingConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SchedulingConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargets())
-                    {
-                        context.Writer.WritePropertyName("targets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
-                        {
-                                context.Writer.Write(publicRequestTargetsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetSelection())
-                    {
-                        context.Writer.WritePropertyName("targetSelection");
-                        context.Writer.Write(publicRequest.TargetSelection);
-                    }
-
-                    if(publicRequest.IsSetTimeoutConfig())
-                    {
-                        context.Writer.WritePropertyName("timeoutConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeoutConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TimeoutConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDestinationPackageVersions())
+            {
+                context.Writer.WritePropertyName("destinationPackageVersions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationPackageVersionsListValue in publicRequest.DestinationPackageVersions)
+                {
+                        context.Writer.WriteStringValue(publicRequestDestinationPackageVersionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDocument())
+            {
+                context.Writer.WritePropertyName("document");
+                context.Writer.WriteStringValue(publicRequest.Document);
+            }
+
+            if(publicRequest.IsSetDocumentParameters())
+            {
+                context.Writer.WritePropertyName("documentParameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDocumentParametersKvp in publicRequest.DocumentParameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestDocumentParametersKvp.Key);
+                    var publicRequestDocumentParametersValue = publicRequestDocumentParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestDocumentParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDocumentSource())
+            {
+                context.Writer.WritePropertyName("documentSource");
+                context.Writer.WriteStringValue(publicRequest.DocumentSource);
+            }
+
+            if(publicRequest.IsSetJobExecutionsRetryConfig())
+            {
+                context.Writer.WritePropertyName("jobExecutionsRetryConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobExecutionsRetryConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobExecutionsRetryConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobExecutionsRolloutConfig())
+            {
+                context.Writer.WritePropertyName("jobExecutionsRolloutConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobExecutionsRolloutConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobTemplateArn())
+            {
+                context.Writer.WritePropertyName("jobTemplateArn");
+                context.Writer.WriteStringValue(publicRequest.JobTemplateArn);
+            }
+
+            if(publicRequest.IsSetNamespaceId())
+            {
+                context.Writer.WritePropertyName("namespaceId");
+                context.Writer.WriteStringValue(publicRequest.NamespaceId);
+            }
+
+            if(publicRequest.IsSetPresignedUrlConfig())
+            {
+                context.Writer.WritePropertyName("presignedUrlConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PresignedUrlConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PresignedUrlConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchedulingConfig())
+            {
+                context.Writer.WritePropertyName("schedulingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchedulingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargets())
+            {
+                context.Writer.WritePropertyName("targets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                {
+                        context.Writer.WriteStringValue(publicRequestTargetsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetSelection())
+            {
+                context.Writer.WritePropertyName("targetSelection");
+                context.Writer.WriteStringValue(publicRequest.TargetSelection);
+            }
+
+            if(publicRequest.IsSetTimeoutConfig())
+            {
+                context.Writer.WritePropertyName("timeoutConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeoutConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TimeoutConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

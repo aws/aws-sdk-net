@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterArn())
             {
                 context.Writer.WritePropertyName("filterArn");
-                context.Writer.Write(requestObject.FilterArn);
+                context.Writer.WriteStringValue(requestObject.FilterArn);
             }
 
             if(requestObject.IsSetFilterValues())
             {
                 context.Writer.WritePropertyName("filterValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFilterValuesKvp in requestObject.FilterValues)
                 {
                     context.Writer.WritePropertyName(requestObjectFilterValuesKvp.Key);
                     var requestObjectFilterValuesValue = requestObjectFilterValuesKvp.Value;
 
-                        context.Writer.Write(requestObjectFilterValuesValue);
+                        context.Writer.WriteStringValue(requestObjectFilterValuesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPercentPromotedItems())
             {
                 context.Writer.WritePropertyName("percentPromotedItems");
-                context.Writer.Write(requestObject.PercentPromotedItems.Value);
+                context.Writer.WriteNumberValue(requestObject.PercentPromotedItems.Value);
             }
 
         }

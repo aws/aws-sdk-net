@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneNotEmptyException operation
     /// </summary>  
-    public class HostedZoneNotEmptyExceptionUnmarshaller : IErrorResponseUnmarshaller<HostedZoneNotEmptyException, XmlUnmarshallerContext>
+    public class HostedZoneNotEmptyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HostedZoneNotEmptyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

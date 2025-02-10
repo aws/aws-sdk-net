@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FormatConfiguration Object
     /// </summary>  
-    public class FormatConfigurationUnmarshaller : IUnmarshaller<FormatConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FormatConfiguration, JsonUnmarshallerContext>
+    public class FormatConfigurationUnmarshaller : IJsonUnmarshaller<FormatConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FormatConfiguration IUnmarshaller<FormatConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FormatConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public FormatConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FormatConfiguration unmarshalledObject = new FormatConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DateTimeFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = DateTimeFormatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DateTimeFormatConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateTimeFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = NumberFormatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NumberFormatConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StringFormatConfiguration", targetDepth))
                 {
                     var unmarshaller = StringFormatConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.StringFormatConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

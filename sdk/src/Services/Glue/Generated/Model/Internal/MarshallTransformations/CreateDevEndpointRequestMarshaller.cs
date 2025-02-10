@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,135 +66,140 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArguments())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Arguments");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestArgumentsKvp in publicRequest.Arguments)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArguments())
-                    {
-                        context.Writer.WritePropertyName("Arguments");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestArgumentsKvp in publicRequest.Arguments)
-                        {
-                            context.Writer.WritePropertyName(publicRequestArgumentsKvp.Key);
-                            var publicRequestArgumentsValue = publicRequestArgumentsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestArgumentsKvp.Key);
+                    var publicRequestArgumentsValue = publicRequestArgumentsKvp.Value;
 
-                                context.Writer.Write(publicRequestArgumentsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEndpointName())
-                    {
-                        context.Writer.WritePropertyName("EndpointName");
-                        context.Writer.Write(publicRequest.EndpointName);
-                    }
-
-                    if(publicRequest.IsSetExtraJarsS3Path())
-                    {
-                        context.Writer.WritePropertyName("ExtraJarsS3Path");
-                        context.Writer.Write(publicRequest.ExtraJarsS3Path);
-                    }
-
-                    if(publicRequest.IsSetExtraPythonLibsS3Path())
-                    {
-                        context.Writer.WritePropertyName("ExtraPythonLibsS3Path");
-                        context.Writer.Write(publicRequest.ExtraPythonLibsS3Path);
-                    }
-
-                    if(publicRequest.IsSetGlueVersion())
-                    {
-                        context.Writer.WritePropertyName("GlueVersion");
-                        context.Writer.Write(publicRequest.GlueVersion);
-                    }
-
-                    if(publicRequest.IsSetNumberOfNodes())
-                    {
-                        context.Writer.WritePropertyName("NumberOfNodes");
-                        context.Writer.Write(publicRequest.NumberOfNodes.Value);
-                    }
-
-                    if(publicRequest.IsSetNumberOfWorkers())
-                    {
-                        context.Writer.WritePropertyName("NumberOfWorkers");
-                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                    }
-
-                    if(publicRequest.IsSetPublicKey())
-                    {
-                        context.Writer.WritePropertyName("PublicKey");
-                        context.Writer.Write(publicRequest.PublicKey);
-                    }
-
-                    if(publicRequest.IsSetPublicKeys())
-                    {
-                        context.Writer.WritePropertyName("PublicKeys");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPublicKeysListValue in publicRequest.PublicKeys)
-                        {
-                                context.Writer.Write(publicRequestPublicKeysListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSecurityConfiguration())
-                    {
-                        context.Writer.WritePropertyName("SecurityConfiguration");
-                        context.Writer.Write(publicRequest.SecurityConfiguration);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("SecurityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnetId())
-                    {
-                        context.Writer.WritePropertyName("SubnetId");
-                        context.Writer.Write(publicRequest.SubnetId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkerType())
-                    {
-                        context.Writer.WritePropertyName("WorkerType");
-                        context.Writer.Write(publicRequest.WorkerType);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestArgumentsValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEndpointName())
+            {
+                context.Writer.WritePropertyName("EndpointName");
+                context.Writer.WriteStringValue(publicRequest.EndpointName);
+            }
+
+            if(publicRequest.IsSetExtraJarsS3Path())
+            {
+                context.Writer.WritePropertyName("ExtraJarsS3Path");
+                context.Writer.WriteStringValue(publicRequest.ExtraJarsS3Path);
+            }
+
+            if(publicRequest.IsSetExtraPythonLibsS3Path())
+            {
+                context.Writer.WritePropertyName("ExtraPythonLibsS3Path");
+                context.Writer.WriteStringValue(publicRequest.ExtraPythonLibsS3Path);
+            }
+
+            if(publicRequest.IsSetGlueVersion())
+            {
+                context.Writer.WritePropertyName("GlueVersion");
+                context.Writer.WriteStringValue(publicRequest.GlueVersion);
+            }
+
+            if(publicRequest.IsSetNumberOfNodes())
+            {
+                context.Writer.WritePropertyName("NumberOfNodes");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfNodes.Value);
+            }
+
+            if(publicRequest.IsSetNumberOfWorkers())
+            {
+                context.Writer.WritePropertyName("NumberOfWorkers");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfWorkers.Value);
+            }
+
+            if(publicRequest.IsSetPublicKey())
+            {
+                context.Writer.WritePropertyName("PublicKey");
+                context.Writer.WriteStringValue(publicRequest.PublicKey);
+            }
+
+            if(publicRequest.IsSetPublicKeys())
+            {
+                context.Writer.WritePropertyName("PublicKeys");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPublicKeysListValue in publicRequest.PublicKeys)
+                {
+                        context.Writer.WriteStringValue(publicRequestPublicKeysListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSecurityConfiguration())
+            {
+                context.Writer.WritePropertyName("SecurityConfiguration");
+                context.Writer.WriteStringValue(publicRequest.SecurityConfiguration);
+            }
+
+            if(publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("SecurityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubnetId())
+            {
+                context.Writer.WritePropertyName("SubnetId");
+                context.Writer.WriteStringValue(publicRequest.SubnetId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWorkerType())
+            {
+                context.Writer.WritePropertyName("WorkerType");
+                context.Writer.WriteStringValue(publicRequest.WorkerType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

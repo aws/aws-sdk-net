@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -64,99 +67,104 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                 throw new AmazonPipesException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/v1/pipes/{Name}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDesiredState())
-                    {
-                        context.Writer.WritePropertyName("DesiredState");
-                        context.Writer.Write(publicRequest.DesiredState);
-                    }
-
-                    if(publicRequest.IsSetEnrichment())
-                    {
-                        context.Writer.WritePropertyName("Enrichment");
-                        context.Writer.Write(publicRequest.Enrichment);
-                    }
-
-                    if(publicRequest.IsSetEnrichmentParameters())
-                    {
-                        context.Writer.WritePropertyName("EnrichmentParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PipeEnrichmentParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EnrichmentParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetKmsKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyIdentifier");
-                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetLogConfiguration())
-                    {
-                        context.Writer.WritePropertyName("LogConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PipeLogConfigurationParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSourceParameters())
-                    {
-                        context.Writer.WritePropertyName("SourceParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdatePipeSourceParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTarget())
-                    {
-                        context.Writer.WritePropertyName("Target");
-                        context.Writer.Write(publicRequest.Target);
-                    }
-
-                    if(publicRequest.IsSetTargetParameters())
-                    {
-                        context.Writer.WritePropertyName("TargetParameters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PipeTargetParametersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TargetParameters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetDesiredState())
+            {
+                context.Writer.WritePropertyName("DesiredState");
+                context.Writer.WriteStringValue(publicRequest.DesiredState);
+            }
+
+            if(publicRequest.IsSetEnrichment())
+            {
+                context.Writer.WritePropertyName("Enrichment");
+                context.Writer.WriteStringValue(publicRequest.Enrichment);
+            }
+
+            if(publicRequest.IsSetEnrichmentParameters())
+            {
+                context.Writer.WritePropertyName("EnrichmentParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PipeEnrichmentParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EnrichmentParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKmsKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("KmsKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetLogConfiguration())
+            {
+                context.Writer.WritePropertyName("LogConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PipeLogConfigurationParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSourceParameters())
+            {
+                context.Writer.WritePropertyName("SourceParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatePipeSourceParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTarget())
+            {
+                context.Writer.WritePropertyName("Target");
+                context.Writer.WriteStringValue(publicRequest.Target);
+            }
+
+            if(publicRequest.IsSetTargetParameters())
+            {
+                context.Writer.WritePropertyName("TargetParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PipeTargetParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

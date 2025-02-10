@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBrightness())
             {
                 context.Writer.WritePropertyName("brightness");
-                context.Writer.Write(requestObject.Brightness.Value);
+                context.Writer.WriteNumberValue(requestObject.Brightness.Value);
             }
 
             if(requestObject.IsSetClipLimits())
             {
                 context.Writer.WritePropertyName("clipLimits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClipLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClipLimits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColorSpaceConversion())
             {
                 context.Writer.WritePropertyName("colorSpaceConversion");
-                context.Writer.Write(requestObject.ColorSpaceConversion);
+                context.Writer.WriteStringValue(requestObject.ColorSpaceConversion);
             }
 
             if(requestObject.IsSetContrast())
             {
                 context.Writer.WritePropertyName("contrast");
-                context.Writer.Write(requestObject.Contrast.Value);
+                context.Writer.WriteNumberValue(requestObject.Contrast.Value);
             }
 
             if(requestObject.IsSetHdr10Metadata())
             {
                 context.Writer.WritePropertyName("hdr10Metadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Hdr10MetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hdr10Metadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHdrToSdrToneMapper())
             {
                 context.Writer.WritePropertyName("hdrToSdrToneMapper");
-                context.Writer.Write(requestObject.HdrToSdrToneMapper);
+                context.Writer.WriteStringValue(requestObject.HdrToSdrToneMapper);
             }
 
             if(requestObject.IsSetHue())
             {
                 context.Writer.WritePropertyName("hue");
-                context.Writer.Write(requestObject.Hue.Value);
+                context.Writer.WriteNumberValue(requestObject.Hue.Value);
             }
 
             if(requestObject.IsSetMaxLuminance())
             {
                 context.Writer.WritePropertyName("maxLuminance");
-                context.Writer.Write(requestObject.MaxLuminance.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLuminance.Value);
             }
 
             if(requestObject.IsSetSampleRangeConversion())
             {
                 context.Writer.WritePropertyName("sampleRangeConversion");
-                context.Writer.Write(requestObject.SampleRangeConversion);
+                context.Writer.WriteStringValue(requestObject.SampleRangeConversion);
             }
 
             if(requestObject.IsSetSaturation())
             {
                 context.Writer.WritePropertyName("saturation");
-                context.Writer.Write(requestObject.Saturation.Value);
+                context.Writer.WriteNumberValue(requestObject.Saturation.Value);
             }
 
             if(requestObject.IsSetSdrReferenceWhiteLevel())
             {
                 context.Writer.WritePropertyName("sdrReferenceWhiteLevel");
-                context.Writer.Write(requestObject.SdrReferenceWhiteLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.SdrReferenceWhiteLevel.Value);
             }
 
         }

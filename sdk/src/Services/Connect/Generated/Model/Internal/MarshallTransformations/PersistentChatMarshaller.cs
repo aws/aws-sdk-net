@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRehydrationType())
             {
                 context.Writer.WritePropertyName("RehydrationType");
-                context.Writer.Write(requestObject.RehydrationType);
+                context.Writer.WriteStringValue(requestObject.RehydrationType);
             }
 
             if(requestObject.IsSetSourceContactId())
             {
                 context.Writer.WritePropertyName("SourceContactId");
-                context.Writer.Write(requestObject.SourceContactId);
+                context.Writer.WriteStringValue(requestObject.SourceContactId);
             }
 
         }

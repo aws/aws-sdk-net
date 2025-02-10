@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoCodecSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodecSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRespondToAfd())
             {
                 context.Writer.WritePropertyName("respondToAfd");
-                context.Writer.Write(requestObject.RespondToAfd);
+                context.Writer.WriteStringValue(requestObject.RespondToAfd);
             }
 
             if(requestObject.IsSetScalingBehavior())
             {
                 context.Writer.WritePropertyName("scalingBehavior");
-                context.Writer.Write(requestObject.ScalingBehavior);
+                context.Writer.WriteStringValue(requestObject.ScalingBehavior);
             }
 
             if(requestObject.IsSetSharpness())
             {
                 context.Writer.WritePropertyName("sharpness");
-                context.Writer.Write(requestObject.Sharpness.Value);
+                context.Writer.WriteNumberValue(requestObject.Sharpness.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

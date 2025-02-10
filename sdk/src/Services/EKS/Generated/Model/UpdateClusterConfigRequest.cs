@@ -66,6 +66,11 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  
     /// <para>
+    /// You can also use this API operation to enable or disable ARC zonal shift. If zonal
+    /// shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.
+    /// </para>
+    ///  
+    /// <para>
     /// Cluster updates are asynchronous, and they should finish within a few minutes. During
     /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
     /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
@@ -76,10 +81,14 @@ namespace Amazon.EKS.Model
     {
         private UpdateAccessConfigRequest _accessConfig;
         private string _clientRequestToken;
+        private ComputeConfigRequest _computeConfig;
+        private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
+        private StorageConfigRequest _storageConfig;
         private UpgradePolicyRequest _upgradePolicy;
+        private ZonalShiftConfigRequest _zonalShiftConfig;
 
         /// <summary>
         /// Gets and sets the property AccessConfig. 
@@ -119,11 +128,45 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComputeConfig. 
+        /// <para>
+        /// Update the configuration of the compute capability of your EKS Auto Mode cluster.
+        /// For example, enable the capability.
+        /// </para>
+        /// </summary>
+        public ComputeConfigRequest ComputeConfig
+        {
+            get { return this._computeConfig; }
+            set { this._computeConfig = value; }
+        }
+
+        // Check to see if ComputeConfig property is set
+        internal bool IsSetComputeConfig()
+        {
+            return this._computeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesNetworkConfig.
+        /// </summary>
+        public KubernetesNetworkConfigRequest KubernetesNetworkConfig
+        {
+            get { return this._kubernetesNetworkConfig; }
+            set { this._kubernetesNetworkConfig = value; }
+        }
+
+        // Check to see if KubernetesNetworkConfig property is set
+        internal bool IsSetKubernetesNetworkConfig()
+        {
+            return this._kubernetesNetworkConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Logging. 
         /// <para>
         /// Enable or disable exporting the Kubernetes control plane logs for your cluster to
-        /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch
-        /// Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+        /// CloudWatch Logs . By default, cluster control plane logs aren't exported to CloudWatch
+        /// Logs . For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
         /// EKS cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  <note> 
@@ -181,6 +224,25 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StorageConfig. 
+        /// <para>
+        /// Update the configuration of the block storage capability of your EKS Auto Mode cluster.
+        /// For example, enable the capability.
+        /// </para>
+        /// </summary>
+        public StorageConfigRequest StorageConfig
+        {
+            get { return this._storageConfig; }
+            set { this._storageConfig = value; }
+        }
+
+        // Check to see if StorageConfig property is set
+        internal bool IsSetStorageConfig()
+        {
+            return this._storageConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UpgradePolicy. 
         /// <para>
         /// You can enable or disable extended support for clusters currently on standard support.
@@ -198,6 +260,44 @@ namespace Amazon.EKS.Model
         internal bool IsSetUpgradePolicy()
         {
             return this._upgradePolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZonalShiftConfig. 
+        /// <para>
+        /// Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon
+        /// Web Services configures zonal autoshift for the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal
+        /// shift is designed to be a temporary measure that allows you to move traffic for a
+        /// resource away from an impaired AZ until the zonal shift expires or you cancel it.
+        /// You can extend the zonal shift if necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services
+        /// to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of
+        /// east-to-west network traffic in your cluster to only consider network endpoints for
+        /// Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling
+        /// ingress traffic for applications in your EKS cluster will automatically route traffic
+        /// to targets in the healthy AZs. For more information about zonal shift in EKS, see
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about
+        /// Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the
+        /// <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public ZonalShiftConfigRequest ZonalShiftConfig
+        {
+            get { return this._zonalShiftConfig; }
+            set { this._zonalShiftConfig = value; }
+        }
+
+        // Check to see if ZonalShiftConfig property is set
+        internal bool IsSetZonalShiftConfig()
+        {
+            return this._zonalShiftConfig != null;
         }
 
     }

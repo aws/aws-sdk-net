@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableOCSPCheck())
             {
                 context.Writer.WritePropertyName("enableOCSPCheck");
-                context.Writer.Write(requestObject.EnableOCSPCheck.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableOCSPCheck.Value);
+            }
+
+            if(requestObject.IsSetOcspAuthorizedResponderArn())
+            {
+                context.Writer.WritePropertyName("ocspAuthorizedResponderArn");
+                context.Writer.WriteStringValue(requestObject.OcspAuthorizedResponderArn);
+            }
+
+            if(requestObject.IsSetOcspLambdaArn())
+            {
+                context.Writer.WritePropertyName("ocspLambdaArn");
+                context.Writer.WriteStringValue(requestObject.OcspLambdaArn);
             }
 
         }

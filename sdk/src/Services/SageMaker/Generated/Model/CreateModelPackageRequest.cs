@@ -69,6 +69,7 @@ namespace Amazon.SageMaker.Model
         private MetadataProperties _metadataProperties;
         private ModelApprovalStatus _modelApprovalStatus;
         private ModelPackageModelCard _modelCard;
+        private ModelLifeCycle _modelLifeCycle;
         private ModelMetrics _modelMetrics;
         private string _modelPackageDescription;
         private string _modelPackageGroupName;
@@ -305,6 +306,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelCard()
         {
             return this._modelCard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelLifeCycle. 
+        /// <para>
+        ///  A structure describing the current state of the model in its life cycle. 
+        /// </para>
+        /// </summary>
+        public ModelLifeCycle ModelLifeCycle
+        {
+            get { return this._modelLifeCycle; }
+            set { this._modelLifeCycle = value; }
+        }
+
+        // Check to see if ModelLifeCycle property is set
+        internal bool IsSetModelLifeCycle()
+        {
+            return this._modelLifeCycle != null;
         }
 
         /// <summary>

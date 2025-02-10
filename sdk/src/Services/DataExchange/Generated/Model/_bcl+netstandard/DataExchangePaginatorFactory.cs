@@ -37,6 +37,14 @@ namespace Amazon.DataExchange.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataGrants operation
+        ///</summary>
+        public IListDataGrantsPaginator ListDataGrants(ListDataGrantsRequest request) 
+        {
+            return new ListDataGrantsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataSetRevisions operation
         ///</summary>
         public IListDataSetRevisionsPaginator ListDataSetRevisions(ListDataSetRevisionsRequest request) 
@@ -66,6 +74,14 @@ namespace Amazon.DataExchange.Model
         public IListJobsPaginator ListJobs(ListJobsRequest request) 
         {
             return new ListJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReceivedDataGrants operation
+        ///</summary>
+        public IListReceivedDataGrantsPaginator ListReceivedDataGrants(ListReceivedDataGrantsRequest request) 
+        {
+            return new ListReceivedDataGrantsPaginator(this.client, request);
         }
 
         /// <summary>

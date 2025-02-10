@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsCloudFrontDistributionOriginGroupFailoverStatusCodes Object
     /// </summary>  
-    public class AwsCloudFrontDistributionOriginGroupFailoverStatusCodesUnmarshaller : IUnmarshaller<AwsCloudFrontDistributionOriginGroupFailoverStatusCodes, XmlUnmarshallerContext>, IUnmarshaller<AwsCloudFrontDistributionOriginGroupFailoverStatusCodes, JsonUnmarshallerContext>
+    public class AwsCloudFrontDistributionOriginGroupFailoverStatusCodesUnmarshaller : IJsonUnmarshaller<AwsCloudFrontDistributionOriginGroupFailoverStatusCodes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsCloudFrontDistributionOriginGroupFailoverStatusCodes IUnmarshaller<AwsCloudFrontDistributionOriginGroupFailoverStatusCodes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsCloudFrontDistributionOriginGroupFailoverStatusCodes Unmarshall(JsonUnmarshallerContext context)
+        public AwsCloudFrontDistributionOriginGroupFailoverStatusCodes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsCloudFrontDistributionOriginGroupFailoverStatusCodes unmarshalledObject = new AwsCloudFrontDistributionOriginGroupFailoverStatusCodes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Items", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.Items = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Quantity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Quantity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

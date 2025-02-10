@@ -41,7 +41,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Clusters. 
         /// <para>
         /// A list of all of the clusters for your account in the specified Amazon Web Services
-        /// Region.
+        /// Region .
         /// </para>
         /// </summary>
         public List<string> Clusters

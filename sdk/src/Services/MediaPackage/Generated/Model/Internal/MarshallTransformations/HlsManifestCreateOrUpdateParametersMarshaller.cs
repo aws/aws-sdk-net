@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");
-                context.Writer.Write(requestObject.AdMarkers);
+                context.Writer.WriteStringValue(requestObject.AdMarkers);
             }
 
             if(requestObject.IsSetAdsOnDeliveryRestrictions())
             {
                 context.Writer.WritePropertyName("adsOnDeliveryRestrictions");
-                context.Writer.Write(requestObject.AdsOnDeliveryRestrictions);
+                context.Writer.WriteStringValue(requestObject.AdsOnDeliveryRestrictions);
             }
 
             if(requestObject.IsSetAdTriggers())
             {
                 context.Writer.WritePropertyName("adTriggers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdTriggersListValue in requestObject.AdTriggers)
                 {
-                        context.Writer.Write(requestObjectAdTriggersListValue);
+                        context.Writer.WriteStringValue(requestObjectAdTriggersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("manifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetPlaylistType())
             {
                 context.Writer.WritePropertyName("playlistType");
-                context.Writer.Write(requestObject.PlaylistType);
+                context.Writer.WriteStringValue(requestObject.PlaylistType);
             }
 
             if(requestObject.IsSetPlaylistWindowSeconds())
             {
                 context.Writer.WritePropertyName("playlistWindowSeconds");
-                context.Writer.Write(requestObject.PlaylistWindowSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.PlaylistWindowSeconds.Value);
             }
 
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("programDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
         }

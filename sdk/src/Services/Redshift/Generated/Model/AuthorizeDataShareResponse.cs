@@ -37,6 +37,7 @@ namespace Amazon.Redshift.Model
         private bool? _allowPubliclyAccessibleConsumers;
         private string _dataShareArn;
         private List<DataShareAssociation> _dataShareAssociations = AWSConfigs.InitializeCollections ? new List<DataShareAssociation>() : null;
+        private DataShareType _dataShareType;
         private string _managedBy;
         private string _producerArn;
 
@@ -95,6 +96,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetDataShareAssociations()
         {
             return this._dataShareAssociations != null && (this._dataShareAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataShareType. 
+        /// <para>
+        ///  The type of the datashare created by RegisterNamespace.
+        /// </para>
+        /// </summary>
+        public DataShareType DataShareType
+        {
+            get { return this._dataShareType; }
+            set { this._dataShareType = value; }
+        }
+
+        // Check to see if DataShareType property is set
+        internal bool IsSetDataShareType()
+        {
+            return this._dataShareType != null;
         }
 
         /// <summary>

@@ -32,9 +32,15 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Container for the parameters to the CreateRegistrationAttachment operation.
     /// Create a new registration attachment to use for uploading a file or a URL to a file.
-    /// The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG. For
+    /// The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For
     /// example, many sender ID registrations require a signed “letter of authorization” (LOA)
     /// to be submitted.
+    /// 
+    ///  
+    /// <para>
+    /// Use either <c>AttachmentUrl</c> or <c>AttachmentBody</c> to upload your attachment.
+    /// If both are specified then an exception is returned.
+    /// </para>
     /// </summary>
     public partial class CreateRegistrationAttachmentRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -46,7 +52,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property AttachmentBody. 
         /// <para>
-        /// The registration file to upload. The maximum file size is 1MiB and valid file extensions
+        /// The registration file to upload. The maximum file size is 500KB and valid file extensions
         /// are PDF, JPEG and PNG.
         /// </para>
         /// </summary>
@@ -66,8 +72,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property AttachmentUrl. 
         /// <para>
-        /// A URL to the required registration file. For example, you can provide the S3 object
-        /// URL.
+        /// Registration files have to be stored in an Amazon S3 bucket. The URI to use when sending
+        /// is in the format <c>s3://BucketName/FileName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

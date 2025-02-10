@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RemixSettings Object
     /// </summary>  
-    public class RemixSettingsUnmarshaller : IUnmarshaller<RemixSettings, XmlUnmarshallerContext>, IUnmarshaller<RemixSettings, JsonUnmarshallerContext>
+    public class RemixSettingsUnmarshaller : IJsonUnmarshaller<RemixSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RemixSettings IUnmarshaller<RemixSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RemixSettings Unmarshall(JsonUnmarshallerContext context)
+        public RemixSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RemixSettings unmarshalledObject = new RemixSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("channelMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioChannelMapping, AudioChannelMappingUnmarshaller>(AudioChannelMappingUnmarshaller.Instance);
-                    unmarshalledObject.ChannelMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AudioChannelMapping, AudioChannelMappingUnmarshaller>(AudioChannelMappingUnmarshaller.Instance);
+                    unmarshalledObject.ChannelMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelsIn", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ChannelsIn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelsIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelsOut", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ChannelsOut = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelsOut = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

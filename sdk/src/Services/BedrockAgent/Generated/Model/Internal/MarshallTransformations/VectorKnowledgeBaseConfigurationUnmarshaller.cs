@@ -29,53 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VectorKnowledgeBaseConfiguration Object
     /// </summary>  
-    public class VectorKnowledgeBaseConfigurationUnmarshaller : IUnmarshaller<VectorKnowledgeBaseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<VectorKnowledgeBaseConfiguration, JsonUnmarshallerContext>
+    public class VectorKnowledgeBaseConfigurationUnmarshaller : IJsonUnmarshaller<VectorKnowledgeBaseConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VectorKnowledgeBaseConfiguration IUnmarshaller<VectorKnowledgeBaseConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VectorKnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public VectorKnowledgeBaseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VectorKnowledgeBaseConfiguration unmarshalledObject = new VectorKnowledgeBaseConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("embeddingModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddingModelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmbeddingModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("embeddingModelConfiguration", targetDepth))
                 {
                     var unmarshaller = EmbeddingModelConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddingModelConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmbeddingModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("supplementalDataStorageConfiguration", targetDepth))
+                {
+                    var unmarshaller = SupplementalDataStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SupplementalDataStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

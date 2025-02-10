@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostProperties Object
     /// </summary>  
-    public class HostPropertiesUnmarshaller : IUnmarshaller<HostProperties, XmlUnmarshallerContext>, IUnmarshaller<HostProperties, JsonUnmarshallerContext>
+    public class HostPropertiesUnmarshaller : IXmlUnmarshaller<HostProperties, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HostProperties Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HostPropertiesUnmarshaller _instance = new HostPropertiesUnmarshaller();        
 

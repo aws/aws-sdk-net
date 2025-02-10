@@ -45,9 +45,9 @@ namespace Amazon.CloudFormation
     /// CloudFormation allows you to create and manage Amazon Web Services infrastructure
     /// deployments predictably and repeatedly. You can use CloudFormation to leverage Amazon
     /// Web Services products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block
-    /// Store, Amazon Simple Notification Service, Elastic Load Balancing, and Auto Scaling
-    /// to build highly reliable, highly scalable, cost-effective applications without creating
-    /// or configuring the underlying Amazon Web Services infrastructure.
+    /// Store, Amazon Simple Notification Service, Elastic Load Balancing, and Amazon EC2
+    /// Auto Scaling to build highly reliable, highly scalable, cost-effective applications
+    /// without creating or configuring the underlying Amazon Web Services infrastructure.
     /// </para>
     ///  
     /// <para>
@@ -353,17 +353,11 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Activates a public third-party extension, making it available for use in stack templates.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
-        /// public extensions</a> in the <i>CloudFormation User Guide</i>.
-        /// 
-        ///  
-        /// <para>
         /// Once you have activated a public third-party extension in your account and Region,
         /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
-        /// </para>
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+        /// public extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateType service method.</param>
         /// <param name="cancellationToken">
@@ -408,8 +402,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+        /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDescribeTypeConfigurations service method.</param>
@@ -496,8 +491,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// For a specified stack that's in the <c>UPDATE_ROLLBACK_FAILED</c> state, continues
         /// rolling it back to the <c>UPDATE_ROLLBACK_COMPLETE</c> state. Depending on the cause
-        /// of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
-        /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
+        /// of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">fix
+        /// the error</a> and continue the rollback. By continuing the rollback, you can return
         /// your stack to a working state (the <c>UPDATE_ROLLBACK_COMPLETE</c> state), and then
         /// try to update the stack again.
         /// 
@@ -682,6 +677,14 @@ namespace Amazon.CloudFormation
         /// Creates a stack as specified in the template. After the call completes successfully,
         /// the stack creation starts. You can check the status of the stack through the <a>DescribeStacks</a>
         /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about creating a stack and monitoring stack progress, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Managing
+        /// Amazon Web Services resources as a single unit with CloudFormation stacks</a> in the
+        /// <i>CloudFormation User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// <param name="cancellationToken">
@@ -1033,6 +1036,12 @@ namespace Amazon.CloudFormation
         /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
         /// Deleted stacks don't show up in the <a>DescribeStacks</a> operation if the deletion
         /// has been completed successfully.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about deleting a stack, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html">Delete
+        /// a stack from the CloudFormation console</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStack service method.</param>
         /// <param name="cancellationToken">
@@ -1226,8 +1235,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Retrieves your account's CloudFormation limits, such as the maximum number of stacks
         /// that you can create in your account. For more information about account limits, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
-        /// Quotas</a> in the <i>CloudFormation User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand
+        /// CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountLimits service method.</param>
         /// <param name="cancellationToken">
@@ -1262,8 +1271,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the inputs for the change set and a list of changes that CloudFormation will
-        /// make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-        /// Stacks Using Change Sets</a> in the <i>CloudFormation User Guide</i>.
+        /// make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Update
+        /// CloudFormation stacks using change sets</a> in the <i>CloudFormation User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSet service method.</param>
         /// <param name="cancellationToken">
@@ -1442,8 +1451,8 @@ namespace Amazon.CloudFormation
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
-        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
-        /// User Guide</i> 
+        /// extensions to make them available for public use</a> in the <i>CloudFormation Command
+        /// Line Interface (CLI) User Guide</i> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1524,8 +1533,8 @@ namespace Amazon.CloudFormation
         /// from its expected configuration, as defined in the stack template and any values specified
         /// as template parameters. A stack is considered to have drifted if one or more of its
         /// resources have drifted. For more information about stack and resource drift, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+        /// unmanaged configuration changes to stacks and resources with drift detection</a>.
         /// 
         ///  
         /// <para>
@@ -1569,8 +1578,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
-        /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+        /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1707,8 +1716,8 @@ namespace Amazon.CloudFormation
         /// that has been checked for drift. Resources that haven't yet been checked for drift
         /// aren't included. Resources that don't currently support drift detection aren't checked,
         /// and so not included. For a list of resources that support drift detection, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-        /// that Support Drift Detection</a>.
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support for imports and drift detection</a>.
         /// </para>
         ///  
         /// <para>
@@ -1768,7 +1777,7 @@ namespace Amazon.CloudFormation
         /// You must specify either <c>StackName</c> or <c>PhysicalResourceId</c>, but not both.
         /// In addition, you can specify <c>LogicalResourceId</c> to filter the returned result.
         /// For more information about resources, the <c>LogicalResourceId</c> and <c>PhysicalResourceId</c>,
-        /// go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
+        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
         /// User Guide</a>.
         /// </para>
         ///  <note> 
@@ -1815,8 +1824,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created. For more information about
-        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+        /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -1840,8 +1849,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created. For more information about
-        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+        /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -2061,8 +2070,8 @@ namespace Amazon.CloudFormation
         /// template configuration. Only resource properties explicitly defined in the stack template
         /// are checked for drift. A stack is considered to have drifted if one or more of its
         /// resources differ from their expected template configurations. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+        /// unmanaged configuration changes to stacks and resources with drift detection</a>.
         /// 
         ///  
         /// <para>
@@ -2071,8 +2080,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// For a list of stack resources that currently support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-        /// that Support Drift Detection</a>.
+        /// For a list of stack resources that currently support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support for imports and drift detection</a>.
         /// </para>
         ///  
         /// <para>
@@ -2126,8 +2135,8 @@ namespace Amazon.CloudFormation
         /// and any values specified as template parameters. This information includes actual
         /// and expected property values for resources in which CloudFormation detects drift.
         /// Only resource properties explicitly defined in the stack template are checked for
-        /// drift. For more information about stack and resource drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// drift. For more information about stack and resource drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+        /// unmanaged configuration changes to stacks and resources with drift detection</a>.
         /// 
         ///  
         /// <para>
@@ -2137,8 +2146,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// Resources that don't currently support drift detection can't be checked. For a list
-        /// of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-        /// that Support Drift Detection</a>.
+        /// of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support for imports and drift detection</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectStackResourceDrift service method.</param>
@@ -2653,8 +2662,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
-        /// CloudFormation export stack output values</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">Get
+        /// exported outputs from a deployed CloudFormation stack</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
@@ -2705,6 +2714,44 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = ListGeneratedTemplatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListGeneratedTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHookResults
+
+        internal virtual ListHookResultsResponse ListHookResults(ListHookResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHookResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHookResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHookResultsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns summaries of invoked Hooks when a change set or Cloud Control API operation
+        /// target is provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHookResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHookResults service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.HookResultNotFoundException">
+        /// The specified target doesn't have any requested Hook invocations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">REST API Reference for ListHookResults Operation</seealso>
+        public virtual Task<ListHookResultsResponse> ListHookResultsAsync(ListHookResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHookResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHookResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHookResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3357,8 +3404,8 @@ namespace Amazon.CloudFormation
         /// Publishes the specified extension to the CloudFormation registry as a public extension
         /// in this Region. Public extensions are available for use by all CloudFormation users.
         /// For more information about publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
-        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
-        /// User Guide</i>.
+        /// extensions to make them available for public use</a> in the <i>CloudFormation Command
+        /// Line Interface (CLI) User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -3459,9 +3506,9 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// For information about requirements for registering as a public extension publisher,
-        /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
-        /// your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI
-        /// User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Prerequisite:
+        /// Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation
+        /// Command Line Interface (CLI) User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterPublisher service method.</param>
@@ -3519,7 +3566,8 @@ namespace Amazon.CloudFormation
         /// <para>
         /// For more information about how to develop extensions and ready them for registration,
         /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
-        /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// resource types using the CloudFormation CLI</a> in the <i>CloudFormation Command Line
+        /// Interface (CLI) User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3536,8 +3584,9 @@ namespace Amazon.CloudFormation
         /// <para>
         /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+        /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterType service method.</param>
@@ -3688,15 +3737,17 @@ namespace Amazon.CloudFormation
         /// <para>
         /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
         /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-        /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+        /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+        /// Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// It's strongly recommended that you use dynamic references to restrict sensitive configuration
         /// definitions, such as third-party credentials. For more details on dynamic references,
-        /// see <a href="https://docs.aws.amazon.com/">Using dynamic references to specify template
-        /// values</a> in the <i>CloudFormation User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html">Specify
+        /// values stored in other services using dynamic references</a> in the <i>CloudFormation
+        /// User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3935,7 +3986,8 @@ namespace Amazon.CloudFormation
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
-        /// your public extension prior to publishing</a> in the <i>CloudFormation CLI User Guide</i>.
+        /// your public extension before publishing</a> in the <i>CloudFormation Command Line
+        /// Interface (CLI) User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -3957,8 +4009,8 @@ namespace Amazon.CloudFormation
         /// <para>
         /// An extension must have a test status of <c>PASSED</c> before it can be published.
         /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
-        /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
-        /// User Guide</i>.
+        /// extensions to make them available for public use</a> in the <i>CloudFormation Command
+        /// Line Interface (CLI) User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestType service method.</param>
@@ -4062,9 +4114,10 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// For more information about creating an update template, updating a stack, and monitoring
-        /// the progress of the update, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">Updating
-        /// a Stack</a>.
+        /// For more information about updating a stack and monitoring the progress of the update,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Managing
+        /// Amazon Web Services resources as a single unit with CloudFormation stacks</a> in the
+        /// <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStack service method.</param>
@@ -4249,8 +4302,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Updates termination protection for the specified stack. If a user attempts to delete
         /// a stack with termination protection enabled, the operation fails and the stack remains
-        /// unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-        /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
+        /// unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect
+        /// a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  
         /// <para>

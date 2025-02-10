@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndBehavior())
             {
                 context.Writer.WritePropertyName("endBehavior");
-                context.Writer.Write(requestObject.EndBehavior);
+                context.Writer.WriteStringValue(requestObject.EndBehavior);
             }
 
             if(requestObject.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("endTime");
-                context.Writer.Write(requestObject.EndTime);
+                context.Writer.WriteStringValue(requestObject.EndTime);
             }
 
             if(requestObject.IsSetMaintenanceWindows())
             {
                 context.Writer.WritePropertyName("maintenanceWindows");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMaintenanceWindowsListValue in requestObject.MaintenanceWindows)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MaintenanceWindowMarshaller.Instance;
                     marshaller.Marshall(requestObjectMaintenanceWindowsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.Write(requestObject.StartTime);
+                context.Writer.WriteStringValue(requestObject.StartTime);
             }
 
         }

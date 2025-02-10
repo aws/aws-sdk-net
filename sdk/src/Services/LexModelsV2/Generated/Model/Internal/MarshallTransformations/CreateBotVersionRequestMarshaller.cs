@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -64,44 +67,49 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/botversions/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBotVersionLocaleSpecification())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("botVersionLocaleSpecification");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestBotVersionLocaleSpecificationKvp in publicRequest.BotVersionLocaleSpecification)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBotVersionLocaleSpecification())
-                    {
-                        context.Writer.WritePropertyName("botVersionLocaleSpecification");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestBotVersionLocaleSpecificationKvp in publicRequest.BotVersionLocaleSpecification)
-                        {
-                            context.Writer.WritePropertyName(publicRequestBotVersionLocaleSpecificationKvp.Key);
-                            var publicRequestBotVersionLocaleSpecificationValue = publicRequestBotVersionLocaleSpecificationKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestBotVersionLocaleSpecificationKvp.Key);
+                    var publicRequestBotVersionLocaleSpecificationValue = publicRequestBotVersionLocaleSpecificationKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = BotVersionLocaleDetailsMarshaller.Instance;
-                            marshaller.Marshall(publicRequestBotVersionLocaleSpecificationValue, context);
+                    var marshaller = BotVersionLocaleDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBotVersionLocaleSpecificationValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

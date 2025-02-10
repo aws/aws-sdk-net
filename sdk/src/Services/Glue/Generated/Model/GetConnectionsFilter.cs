@@ -35,8 +35,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetConnectionsFilter
     {
+        private int? _connectionSchemaVersion;
         private ConnectionType _connectionType;
         private List<string> _matchCriteria = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionSchemaVersion. 
+        /// <para>
+        /// Denotes if the connection was created with schema version 1 or 2.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public int? ConnectionSchemaVersion
+        {
+            get { return this._connectionSchemaVersion; }
+            set { this._connectionSchemaVersion = value; }
+        }
+
+        // Check to see if ConnectionSchemaVersion property is set
+        internal bool IsSetConnectionSchemaVersion()
+        {
+            return this._connectionSchemaVersion.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConnectionType. 

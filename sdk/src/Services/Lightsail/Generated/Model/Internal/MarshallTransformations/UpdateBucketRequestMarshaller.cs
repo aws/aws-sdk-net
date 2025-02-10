@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -63,64 +66,69 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessLogConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessLogConfig())
-                    {
-                        context.Writer.WritePropertyName("accessLogConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("accessLogConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BucketAccessLogConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AccessLogConfig, context);
+                var marshaller = BucketAccessLogConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AccessLogConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAccessRules())
-                    {
-                        context.Writer.WritePropertyName("accessRules");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AccessRulesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AccessRules, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBucketName())
-                    {
-                        context.Writer.WritePropertyName("bucketName");
-                        context.Writer.Write(publicRequest.BucketName);
-                    }
-
-                    if(publicRequest.IsSetReadonlyAccessAccounts())
-                    {
-                        context.Writer.WritePropertyName("readonlyAccessAccounts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReadonlyAccessAccountsListValue in publicRequest.ReadonlyAccessAccounts)
-                        {
-                                context.Writer.Write(publicRequestReadonlyAccessAccountsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVersioning())
-                    {
-                        context.Writer.WritePropertyName("versioning");
-                        context.Writer.Write(publicRequest.Versioning);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAccessRules())
+            {
+                context.Writer.WritePropertyName("accessRules");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AccessRulesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AccessRules, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetBucketName())
+            {
+                context.Writer.WritePropertyName("bucketName");
+                context.Writer.WriteStringValue(publicRequest.BucketName);
+            }
+
+            if(publicRequest.IsSetReadonlyAccessAccounts())
+            {
+                context.Writer.WritePropertyName("readonlyAccessAccounts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReadonlyAccessAccountsListValue in publicRequest.ReadonlyAccessAccounts)
+                {
+                        context.Writer.WriteStringValue(publicRequestReadonlyAccessAccountsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVersioning())
+            {
+                context.Writer.WritePropertyName("versioning");
+                context.Writer.WriteStringValue(publicRequest.Versioning);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

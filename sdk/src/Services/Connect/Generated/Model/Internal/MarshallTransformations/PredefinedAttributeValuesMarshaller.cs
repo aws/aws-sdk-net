@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStringList())
             {
                 context.Writer.WritePropertyName("StringList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringListListValue in requestObject.StringList)
                 {
-                        context.Writer.Write(requestObjectStringListListValue);
+                        context.Writer.WriteStringValue(requestObjectStringListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

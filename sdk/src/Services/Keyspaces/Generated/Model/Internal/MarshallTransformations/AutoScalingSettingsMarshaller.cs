@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingDisabled())
             {
                 context.Writer.WritePropertyName("autoScalingDisabled");
-                context.Writer.Write(requestObject.AutoScalingDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoScalingDisabled.Value);
             }
 
             if(requestObject.IsSetMaximumUnits())
             {
                 context.Writer.WritePropertyName("maximumUnits");
-                context.Writer.Write(requestObject.MaximumUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumUnits.Value);
             }
 
             if(requestObject.IsSetMinimumUnits())
             {
                 context.Writer.WritePropertyName("minimumUnits");
-                context.Writer.Write(requestObject.MinimumUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumUnits.Value);
             }
 
             if(requestObject.IsSetScalingPolicy())
             {
                 context.Writer.WritePropertyName("scalingPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoScalingPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScalingPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

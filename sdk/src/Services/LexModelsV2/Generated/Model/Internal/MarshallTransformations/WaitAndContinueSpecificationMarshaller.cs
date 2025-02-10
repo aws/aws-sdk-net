@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("active");
-                context.Writer.Write(requestObject.Active.Value);
+                context.Writer.WriteBooleanValue(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetContinueResponse())
             {
                 context.Writer.WritePropertyName("continueResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContinueResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStillWaitingResponse())
             {
                 context.Writer.WritePropertyName("stillWaitingResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StillWaitingResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StillWaitingResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWaitingResponse())
             {
                 context.Writer.WritePropertyName("waitingResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.WaitingResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

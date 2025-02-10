@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -65,6 +68,9 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobRunId())
                 throw new AmazonEMRServerlessException("Request object does not have required field JobRunId set");
             request.AddPathResource("{jobRunId}", StringUtils.FromString(publicRequest.JobRunId));
+            
+            if (publicRequest.IsSetAccessSystemProfileLogs())
+                request.Parameters.Add("accessSystemProfileLogs", StringUtils.FromBool(publicRequest.AccessSystemProfileLogs));
             
             if (publicRequest.IsSetAttempt())
                 request.Parameters.Add("attempt", StringUtils.FromInt(publicRequest.Attempt));

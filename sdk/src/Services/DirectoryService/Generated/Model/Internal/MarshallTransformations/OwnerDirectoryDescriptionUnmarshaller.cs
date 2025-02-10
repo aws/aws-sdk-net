@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OwnerDirectoryDescription Object
     /// </summary>  
-    public class OwnerDirectoryDescriptionUnmarshaller : IUnmarshaller<OwnerDirectoryDescription, XmlUnmarshallerContext>, IUnmarshaller<OwnerDirectoryDescription, JsonUnmarshallerContext>
+    public class OwnerDirectoryDescriptionUnmarshaller : IJsonUnmarshaller<OwnerDirectoryDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OwnerDirectoryDescription IUnmarshaller<OwnerDirectoryDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OwnerDirectoryDescription Unmarshall(JsonUnmarshallerContext context)
+        public OwnerDirectoryDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OwnerDirectoryDescription unmarshalledObject = new OwnerDirectoryDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DirectoryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsIpAddrs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RadiusSettings", targetDepth))
                 {
                     var unmarshaller = RadiusSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RadiusSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RadiusSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RadiusStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RadiusStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RadiusStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcSettings", targetDepth))
                 {
                     var unmarshaller = DirectoryVpcSettingsDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.VpcSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

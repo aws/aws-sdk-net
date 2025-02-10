@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmitInterval())
             {
                 context.Writer.WritePropertyName("EmitInterval");
-                context.Writer.Write(requestObject.EmitInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.EmitInterval.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
             if(requestObject.IsSetS3BucketPrefix())
             {
                 context.Writer.WritePropertyName("S3BucketPrefix");
-                context.Writer.Write(requestObject.S3BucketPrefix);
+                context.Writer.WriteStringValue(requestObject.S3BucketPrefix);
             }
 
         }

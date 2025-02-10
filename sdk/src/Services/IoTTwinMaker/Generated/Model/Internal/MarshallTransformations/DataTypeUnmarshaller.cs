@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataType Object
     /// </summary>  
-    public class DataTypeUnmarshaller : IUnmarshaller<DataType, XmlUnmarshallerContext>, IUnmarshaller<DataType, JsonUnmarshallerContext>
+    public class DataTypeUnmarshaller : IJsonUnmarshaller<DataType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataType IUnmarshaller<DataType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataType Unmarshall(JsonUnmarshallerContext context)
+        public DataType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataType unmarshalledObject = new DataType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("allowedValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataValue, DataValueUnmarshaller>(DataValueUnmarshaller.Instance);
-                    unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataValue, DataValueUnmarshaller>(DataValueUnmarshaller.Instance);
+                    unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nestedType", targetDepth))
                 {
                     var unmarshaller = DataTypeUnmarshaller.Instance;
-                    unmarshalledObject.NestedType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NestedType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("relationship", targetDepth))
                 {
                     var unmarshaller = RelationshipUnmarshaller.Instance;
-                    unmarshalledObject.Relationship = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Relationship = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unitOfMeasure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UnitOfMeasure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnitOfMeasure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

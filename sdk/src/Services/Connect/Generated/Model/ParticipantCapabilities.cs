@@ -30,17 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The configuration for the allowed capabilities for participants present over the call.
+    /// The configuration for the allowed video and screen sharing capabilities for participants
+    /// present over the call. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
+    /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
+    /// Connect Administrator Guide</i>.
     /// </summary>
     public partial class ParticipantCapabilities
     {
+        private ScreenShareCapability _screenShare;
         private VideoCapability _video;
+
+        /// <summary>
+        /// Gets and sets the property ScreenShare. 
+        /// <para>
+        /// The screen sharing capability that is enabled for the participant. <c>SEND</c> indicates
+        /// the participant can share their screen.
+        /// </para>
+        /// </summary>
+        public ScreenShareCapability ScreenShare
+        {
+            get { return this._screenShare; }
+            set { this._screenShare = value; }
+        }
+
+        // Check to see if ScreenShare property is set
+        internal bool IsSetScreenShare()
+        {
+            return this._screenShare != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Video. 
         /// <para>
-        /// The configuration having the video sharing capabilities for participants over the
-        /// call.
+        /// The configuration having the video and screen sharing capabilities for participants
+        /// over the call.
         /// </para>
         /// </summary>
         public VideoCapability Video

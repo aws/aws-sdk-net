@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("Configuration");
-                context.Writer.Write(requestObject.Configuration);
+                context.Writer.WriteStringValue(requestObject.Configuration);
             }
 
             if(requestObject.IsSetTier())
             {
                 context.Writer.WritePropertyName("Tier");
-                context.Writer.Write(requestObject.Tier);
+                context.Writer.WriteStringValue(requestObject.Tier);
             }
 
             if(requestObject.IsSetWorkloadName())
             {
                 context.Writer.WritePropertyName("WorkloadName");
-                context.Writer.Write(requestObject.WorkloadName);
+                context.Writer.WriteStringValue(requestObject.WorkloadName);
             }
 
         }

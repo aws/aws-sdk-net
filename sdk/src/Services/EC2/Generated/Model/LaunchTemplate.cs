@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private long? _latestVersionNumber;
         private string _launchTemplateId;
         private string _launchTemplateName;
+        private OperatorResponse _operator;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -149,6 +150,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplateName()
         {
             return this._launchTemplateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the launch template.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

@@ -37,6 +37,11 @@ namespace Amazon.RedshiftServerless.Model
         IListEndpointAccessPaginator ListEndpointAccess(ListEndpointAccessRequest request);
 
         /// <summary>
+        /// Paginator for ListManagedWorkgroups operation
+        ///</summary>
+        IListManagedWorkgroupsPaginator ListManagedWorkgroups(ListManagedWorkgroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
         IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request);

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,29 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmbeddingModelArn())
             {
                 context.Writer.WritePropertyName("embeddingModelArn");
-                context.Writer.Write(requestObject.EmbeddingModelArn);
+                context.Writer.WriteStringValue(requestObject.EmbeddingModelArn);
             }
 
             if(requestObject.IsSetEmbeddingModelConfiguration())
             {
                 context.Writer.WritePropertyName("embeddingModelConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmbeddingModelConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmbeddingModelConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSupplementalDataStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("supplementalDataStorageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SupplementalDataStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SupplementalDataStorageConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

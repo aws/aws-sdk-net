@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateProviderType())
             {
                 context.Writer.WritePropertyName("certificateProviderType");
-                context.Writer.Write(requestObject.CertificateProviderType);
+                context.Writer.WriteStringValue(requestObject.CertificateProviderType);
             }
 
             if(requestObject.IsSetPrivateCertificateSecretArn())
             {
                 context.Writer.WritePropertyName("privateCertificateSecretArn");
-                context.Writer.Write(requestObject.PrivateCertificateSecretArn);
+                context.Writer.WriteStringValue(requestObject.PrivateCertificateSecretArn);
             }
 
             if(requestObject.IsSetPublicCertificateSecretArn())
             {
                 context.Writer.WritePropertyName("publicCertificateSecretArn");
-                context.Writer.Write(requestObject.PublicCertificateSecretArn);
+                context.Writer.WriteStringValue(requestObject.PublicCertificateSecretArn);
             }
 
         }

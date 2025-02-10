@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,63 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanSignal())
             {
                 context.Writer.WritePropertyName("canSignal");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CanSignalMarshaller.Instance;
                 marshaller.Marshall(requestObject.CanSignal, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetCustomDecodingSignal())
+            {
+                context.Writer.WritePropertyName("customDecodingSignal");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomDecodingSignalMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomDecodingSignal, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WriteStringValue(requestObject.FullyQualifiedName);
             }
 
             if(requestObject.IsSetInterfaceId())
             {
                 context.Writer.WritePropertyName("interfaceId");
-                context.Writer.Write(requestObject.InterfaceId);
+                context.Writer.WriteStringValue(requestObject.InterfaceId);
             }
 
             if(requestObject.IsSetMessageSignal())
             {
                 context.Writer.WritePropertyName("messageSignal");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MessageSignalMarshaller.Instance;
                 marshaller.Marshall(requestObject.MessageSignal, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetObdSignal())
             {
                 context.Writer.WritePropertyName("obdSignal");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ObdSignalMarshaller.Instance;
                 marshaller.Marshall(requestObject.ObdSignal, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

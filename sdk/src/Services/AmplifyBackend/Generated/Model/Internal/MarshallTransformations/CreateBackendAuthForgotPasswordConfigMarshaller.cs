@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeliveryMethod())
             {
                 context.Writer.WritePropertyName("deliveryMethod");
-                context.Writer.Write(requestObject.DeliveryMethod);
+                context.Writer.WriteStringValue(requestObject.DeliveryMethod);
             }
 
             if(requestObject.IsSetEmailSettings())
             {
                 context.Writer.WritePropertyName("emailSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmailSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmailSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSmsSettings())
             {
                 context.Writer.WritePropertyName("smsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SmsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SmsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

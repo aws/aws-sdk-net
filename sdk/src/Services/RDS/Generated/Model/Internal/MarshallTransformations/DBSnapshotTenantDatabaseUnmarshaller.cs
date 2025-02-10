@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSnapshotTenantDatabase Object
     /// </summary>  
-    public class DBSnapshotTenantDatabaseUnmarshaller : IUnmarshaller<DBSnapshotTenantDatabase, XmlUnmarshallerContext>, IUnmarshaller<DBSnapshotTenantDatabase, JsonUnmarshallerContext>
+    public class DBSnapshotTenantDatabaseUnmarshaller : IXmlUnmarshaller<DBSnapshotTenantDatabase, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -147,17 +147,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBSnapshotTenantDatabase Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBSnapshotTenantDatabaseUnmarshaller _instance = new DBSnapshotTenantDatabaseUnmarshaller();        
 

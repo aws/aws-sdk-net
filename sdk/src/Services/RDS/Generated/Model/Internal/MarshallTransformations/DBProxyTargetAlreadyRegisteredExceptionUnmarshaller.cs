@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBProxyTargetAlreadyRegisteredException operation
     /// </summary>  
-    public class DBProxyTargetAlreadyRegisteredExceptionUnmarshaller : IErrorResponseUnmarshaller<DBProxyTargetAlreadyRegisteredException, XmlUnmarshallerContext>
+    public class DBProxyTargetAlreadyRegisteredExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBProxyTargetAlreadyRegisteredException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdcInsertsAndUpdates())
             {
                 context.Writer.WritePropertyName("CdcInsertsAndUpdates");
-                context.Writer.Write(requestObject.CdcInsertsAndUpdates.Value);
+                context.Writer.WriteBooleanValue(requestObject.CdcInsertsAndUpdates.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetEnableMagneticStoreWrites())
             {
                 context.Writer.WritePropertyName("EnableMagneticStoreWrites");
-                context.Writer.Write(requestObject.EnableMagneticStoreWrites.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableMagneticStoreWrites.Value);
             }
 
             if(requestObject.IsSetMagneticDuration())
             {
                 context.Writer.WritePropertyName("MagneticDuration");
-                context.Writer.Write(requestObject.MagneticDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.MagneticDuration.Value);
             }
 
             if(requestObject.IsSetMemoryDuration())
             {
                 context.Writer.WritePropertyName("MemoryDuration");
-                context.Writer.Write(requestObject.MemoryDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.MemoryDuration.Value);
             }
 
         }

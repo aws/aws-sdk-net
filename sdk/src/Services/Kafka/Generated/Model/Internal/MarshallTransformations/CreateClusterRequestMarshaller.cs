@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -61,129 +64,134 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/clusters";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBrokerNodeGroupInfo())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBrokerNodeGroupInfo())
-                    {
-                        context.Writer.WritePropertyName("brokerNodeGroupInfo");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("brokerNodeGroupInfo");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BrokerNodeGroupInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BrokerNodeGroupInfo, context);
+                var marshaller = BrokerNodeGroupInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BrokerNodeGroupInfo, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientAuthentication())
-                    {
-                        context.Writer.WritePropertyName("clientAuthentication");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ClientAuthenticationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ClientAuthentication, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClusterName())
-                    {
-                        context.Writer.WritePropertyName("clusterName");
-                        context.Writer.Write(publicRequest.ClusterName);
-                    }
-
-                    if(publicRequest.IsSetConfigurationInfo())
-                    {
-                        context.Writer.WritePropertyName("configurationInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ConfigurationInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConfigurationInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEncryptionInfo())
-                    {
-                        context.Writer.WritePropertyName("encryptionInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEnhancedMonitoring())
-                    {
-                        context.Writer.WritePropertyName("enhancedMonitoring");
-                        context.Writer.Write(publicRequest.EnhancedMonitoring);
-                    }
-
-                    if(publicRequest.IsSetKafkaVersion())
-                    {
-                        context.Writer.WritePropertyName("kafkaVersion");
-                        context.Writer.Write(publicRequest.KafkaVersion);
-                    }
-
-                    if(publicRequest.IsSetLoggingInfo())
-                    {
-                        context.Writer.WritePropertyName("loggingInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LoggingInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LoggingInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNumberOfBrokerNodes())
-                    {
-                        context.Writer.WritePropertyName("numberOfBrokerNodes");
-                        context.Writer.Write(publicRequest.NumberOfBrokerNodes.Value);
-                    }
-
-                    if(publicRequest.IsSetOpenMonitoring())
-                    {
-                        context.Writer.WritePropertyName("openMonitoring");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OpenMonitoringInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OpenMonitoring, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStorageMode())
-                    {
-                        context.Writer.WritePropertyName("storageMode");
-                        context.Writer.Write(publicRequest.StorageMode);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientAuthentication())
+            {
+                context.Writer.WritePropertyName("clientAuthentication");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClientAuthenticationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ClientAuthentication, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClusterName())
+            {
+                context.Writer.WritePropertyName("clusterName");
+                context.Writer.WriteStringValue(publicRequest.ClusterName);
+            }
+
+            if(publicRequest.IsSetConfigurationInfo())
+            {
+                context.Writer.WritePropertyName("configurationInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfigurationInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConfigurationInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEncryptionInfo())
+            {
+                context.Writer.WritePropertyName("encryptionInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEnhancedMonitoring())
+            {
+                context.Writer.WritePropertyName("enhancedMonitoring");
+                context.Writer.WriteStringValue(publicRequest.EnhancedMonitoring);
+            }
+
+            if(publicRequest.IsSetKafkaVersion())
+            {
+                context.Writer.WritePropertyName("kafkaVersion");
+                context.Writer.WriteStringValue(publicRequest.KafkaVersion);
+            }
+
+            if(publicRequest.IsSetLoggingInfo())
+            {
+                context.Writer.WritePropertyName("loggingInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LoggingInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoggingInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNumberOfBrokerNodes())
+            {
+                context.Writer.WritePropertyName("numberOfBrokerNodes");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfBrokerNodes.Value);
+            }
+
+            if(publicRequest.IsSetOpenMonitoring())
+            {
+                context.Writer.WritePropertyName("openMonitoring");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpenMonitoringInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OpenMonitoring, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStorageMode())
+            {
+                context.Writer.WritePropertyName("storageMode");
+                context.Writer.WriteStringValue(publicRequest.StorageMode);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

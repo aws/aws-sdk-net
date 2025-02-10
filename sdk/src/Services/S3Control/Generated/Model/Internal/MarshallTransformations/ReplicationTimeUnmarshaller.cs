@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationTime Object
     /// </summary>  
-    public class ReplicationTimeUnmarshaller : IUnmarshaller<ReplicationTime, XmlUnmarshallerContext>, IUnmarshaller<ReplicationTime, JsonUnmarshallerContext>
+    public class ReplicationTimeUnmarshaller : IXmlUnmarshaller<ReplicationTime, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReplicationTime Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ReplicationTimeUnmarshaller _instance = new ReplicationTimeUnmarshaller();        
 
         /// <summary>

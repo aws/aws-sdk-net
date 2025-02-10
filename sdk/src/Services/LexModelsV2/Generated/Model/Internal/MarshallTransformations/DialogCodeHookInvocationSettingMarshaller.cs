@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("active");
-                context.Writer.Write(requestObject.Active.Value);
+                context.Writer.WriteBooleanValue(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetEnableCodeHookInvocation())
             {
                 context.Writer.WritePropertyName("enableCodeHookInvocation");
-                context.Writer.Write(requestObject.EnableCodeHookInvocation.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableCodeHookInvocation.Value);
             }
 
             if(requestObject.IsSetInvocationLabel())
             {
                 context.Writer.WritePropertyName("invocationLabel");
-                context.Writer.Write(requestObject.InvocationLabel);
+                context.Writer.WriteStringValue(requestObject.InvocationLabel);
             }
 
             if(requestObject.IsSetPostCodeHookSpecification())
             {
                 context.Writer.WritePropertyName("postCodeHookSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PostDialogCodeHookInvocationSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostCodeHookSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -44,7 +44,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This operation also returns information about instances in Auto Scaling groups. To
-    /// retrieve information about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+    /// retrieve information about the instances in a warm pool, you must call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeWarmPool.html">DescribeWarmPool</a>
     /// API. 
     /// </para>
     /// </summary>

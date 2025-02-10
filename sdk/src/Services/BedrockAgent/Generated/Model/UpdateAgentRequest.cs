@@ -35,17 +35,38 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class UpdateAgentRequest : AmazonBedrockAgentRequest
     {
+        private AgentCollaboration _agentCollaboration;
         private string _agentId;
         private string _agentName;
         private string _agentResourceRoleArn;
         private string _customerEncryptionKeyArn;
+        private CustomOrchestration _customOrchestration;
         private string _description;
         private string _foundationModel;
         private GuardrailConfiguration _guardrailConfiguration;
         private int? _idleSessionTTLInSeconds;
         private string _instruction;
         private MemoryConfiguration _memoryConfiguration;
+        private OrchestrationType _orchestrationType;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        /// The agent's collaboration role.
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentId. 
@@ -125,6 +146,24 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomOrchestration. 
+        /// <para>
+        ///  Contains details of the custom orchestration configured for the agent. 
+        /// </para>
+        /// </summary>
+        public CustomOrchestration CustomOrchestration
+        {
+            get { return this._customOrchestration; }
+            set { this._customOrchestration = value; }
+        }
+
+        // Check to see if CustomOrchestration property is set
+        internal bool IsSetCustomOrchestration()
+        {
+            return this._customOrchestration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// Specifies a new description of the agent.
@@ -146,8 +185,46 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property FoundationModel. 
         /// <para>
-        /// Specifies a new foundation model to be used for orchestration by the agent.
+        /// The identifier for the model that you want to be used for orchestration by the agent
+        /// you create.
         /// </para>
+        ///  
+        /// <para>
+        /// The <c>modelId</c> to provide depends on the type of model or throughput that you
+        /// use:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you use a base model, specify the model ID or its ARN. For a list of model IDs
+        /// for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon
+        /// Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use an inference profile, specify the inference profile ID or its ARN. For
+        /// a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported
+        /// Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use a provisioned model, specify the ARN of the Provisioned Throughput. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html">Run
+        /// inference using a Provisioned Throughput</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use a custom model, first purchase Provisioned Throughput for it. Then specify
+        /// the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
+        /// a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use an <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
+        /// model</a>, specify the ARN of the imported model. You can get the model ARN from a
+        /// successful call to <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>
+        /// or from the Imported models page in the Amazon Bedrock console.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string FoundationModel
@@ -242,6 +319,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetMemoryConfiguration()
         {
             return this._memoryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationType. 
+        /// <para>
+        ///  Specifies the type of orchestration strategy for the agent. This is set to <c>DEFAULT</c>
+        /// orchestration type, by default. 
+        /// </para>
+        /// </summary>
+        public OrchestrationType OrchestrationType
+        {
+            get { return this._orchestrationType; }
+            set { this._orchestrationType = value; }
+        }
+
+        // Check to see if OrchestrationType property is set
+        internal bool IsSetOrchestrationType()
+        {
+            return this._orchestrationType != null;
         }
 
         /// <summary>

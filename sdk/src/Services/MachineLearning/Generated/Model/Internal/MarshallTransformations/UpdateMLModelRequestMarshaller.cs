@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -63,44 +66,49 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMLModelId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMLModelId())
-                    {
-                        context.Writer.WritePropertyName("MLModelId");
-                        context.Writer.Write(publicRequest.MLModelId);
-                    }
-
-                    if(publicRequest.IsSetMLModelName())
-                    {
-                        context.Writer.WritePropertyName("MLModelName");
-                        context.Writer.Write(publicRequest.MLModelName);
-                    }
-
-                    if(publicRequest.IsSetScoreThreshold())
-                    {
-                        context.Writer.WritePropertyName("ScoreThreshold");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.ScoreThreshold.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ScoreThreshold.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.ScoreThreshold.Value);
-                        }
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("MLModelId");
+                context.Writer.WriteStringValue(publicRequest.MLModelId);
             }
+
+            if(publicRequest.IsSetMLModelName())
+            {
+                context.Writer.WritePropertyName("MLModelName");
+                context.Writer.WriteStringValue(publicRequest.MLModelName);
+            }
+
+            if(publicRequest.IsSetScoreThreshold())
+            {
+                context.Writer.WritePropertyName("ScoreThreshold");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.ScoreThreshold.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.ScoreThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.ScoreThreshold.Value);
+                }
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

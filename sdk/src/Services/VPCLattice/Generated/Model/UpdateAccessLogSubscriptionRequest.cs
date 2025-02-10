@@ -41,7 +41,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property AccessLogSubscriptionIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the access log subscription.
+        /// The ID or ARN of the access log subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]

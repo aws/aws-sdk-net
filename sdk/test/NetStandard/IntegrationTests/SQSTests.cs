@@ -31,7 +31,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
             var createQueueRequest = new CreateQueueRequest()
             {
-                QueueName = "aws-sdk-net-" + DateTime.Now.Ticks
+                QueueName = "aws-sdk-net-" + DateTime.UtcNow.Ticks
             };
             var createQueueResponse = await Client.CreateQueueAsync(createQueueRequest);
             try

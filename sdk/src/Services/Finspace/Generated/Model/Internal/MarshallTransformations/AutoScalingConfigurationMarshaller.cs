@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingMetric())
             {
                 context.Writer.WritePropertyName("autoScalingMetric");
-                context.Writer.Write(requestObject.AutoScalingMetric);
+                context.Writer.WriteStringValue(requestObject.AutoScalingMetric);
             }
 
             if(requestObject.IsSetMaxNodeCount())
             {
                 context.Writer.WritePropertyName("maxNodeCount");
-                context.Writer.Write(requestObject.MaxNodeCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxNodeCount.Value);
             }
 
             if(requestObject.IsSetMetricTarget())
@@ -65,18 +63,18 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("metricTarget");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MetricTarget.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MetricTarget.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricTarget.Value);
+                    context.Writer.WriteNumberValue(requestObject.MetricTarget.Value);
                 }
             }
 
             if(requestObject.IsSetMinNodeCount())
             {
                 context.Writer.WritePropertyName("minNodeCount");
-                context.Writer.Write(requestObject.MinNodeCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MinNodeCount.Value);
             }
 
             if(requestObject.IsSetScaleInCooldownSeconds())
@@ -84,11 +82,11 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scaleInCooldownSeconds");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ScaleInCooldownSeconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ScaleInCooldownSeconds.Value);
+                    context.Writer.WriteNumberValue(requestObject.ScaleInCooldownSeconds.Value);
                 }
             }
 
@@ -97,11 +95,11 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scaleOutCooldownSeconds");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ScaleOutCooldownSeconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ScaleOutCooldownSeconds.Value);
+                    context.Writer.WriteNumberValue(requestObject.ScaleOutCooldownSeconds.Value);
                 }
             }
 

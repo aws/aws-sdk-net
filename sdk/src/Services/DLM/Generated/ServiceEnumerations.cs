@@ -377,6 +377,10 @@ namespace Amazon.DLM
         /// </summary>
         public static readonly LocationValues CLOUD = new LocationValues("CLOUD");
         /// <summary>
+        /// Constant LOCAL_ZONE for LocationValues
+        /// </summary>
+        public static readonly LocationValues LOCAL_ZONE = new LocationValues("LOCAL_ZONE");
+        /// <summary>
         /// Constant OUTPOST_LOCAL for LocationValues
         /// </summary>
         public static readonly LocationValues OUTPOST_LOCAL = new LocationValues("OUTPOST_LOCAL");
@@ -530,6 +534,10 @@ namespace Amazon.DLM
         /// Constant CLOUD for ResourceLocationValues
         /// </summary>
         public static readonly ResourceLocationValues CLOUD = new ResourceLocationValues("CLOUD");
+        /// <summary>
+        /// Constant LOCAL_ZONE for ResourceLocationValues
+        /// </summary>
+        public static readonly ResourceLocationValues LOCAL_ZONE = new ResourceLocationValues("LOCAL_ZONE");
         /// <summary>
         /// Constant OUTPOST for ResourceLocationValues
         /// </summary>

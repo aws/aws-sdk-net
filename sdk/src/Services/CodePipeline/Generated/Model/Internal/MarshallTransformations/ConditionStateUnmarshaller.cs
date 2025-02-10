@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConditionState Object
     /// </summary>  
-    public class ConditionStateUnmarshaller : IUnmarshaller<ConditionState, XmlUnmarshallerContext>, IUnmarshaller<ConditionState, JsonUnmarshallerContext>
+    public class ConditionStateUnmarshaller : IJsonUnmarshaller<ConditionState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConditionState IUnmarshaller<ConditionState, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConditionState Unmarshall(JsonUnmarshallerContext context)
+        public ConditionState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConditionState unmarshalledObject = new ConditionState();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("latestExecution", targetDepth))
                 {
                     var unmarshaller = ConditionExecutionUnmarshaller.Instance;
-                    unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ruleStates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RuleState, RuleStateUnmarshaller>(RuleStateUnmarshaller.Instance);
-                    unmarshalledObject.RuleStates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RuleState, RuleStateUnmarshaller>(RuleStateUnmarshaller.Instance);
+                    unmarshalledObject.RuleStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

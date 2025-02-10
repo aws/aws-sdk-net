@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationOverrides())
             {
                 context.Writer.WritePropertyName("configurationOverrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParametricConfigurationOverridesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfigurationOverrides, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("executionRoleArn");
-                context.Writer.Write(requestObject.ExecutionRoleArn);
+                context.Writer.WriteStringValue(requestObject.ExecutionRoleArn);
             }
 
             if(requestObject.IsSetJobDriver())
             {
                 context.Writer.WritePropertyName("jobDriver");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobDriverMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobDriver, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobTags())
             {
                 context.Writer.WritePropertyName("jobTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectJobTagsKvp in requestObject.JobTags)
                 {
                     context.Writer.WritePropertyName(requestObjectJobTagsKvp.Key);
                     var requestObjectJobTagsValue = requestObjectJobTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectJobTagsValue);
+                        context.Writer.WriteStringValue(requestObjectJobTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameterConfiguration())
             {
                 context.Writer.WritePropertyName("parameterConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParameterConfigurationKvp in requestObject.ParameterConfiguration)
                 {
                     context.Writer.WritePropertyName(requestObjectParameterConfigurationKvp.Key);
                     var requestObjectParameterConfigurationValue = requestObjectParameterConfigurationKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TemplateParameterConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectParameterConfigurationValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReleaseLabel())
             {
                 context.Writer.WritePropertyName("releaseLabel");
-                context.Writer.Write(requestObject.ReleaseLabel);
+                context.Writer.WriteStringValue(requestObject.ReleaseLabel);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyPrefixes())
             {
                 context.Writer.WritePropertyName("KeyPrefixes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeyPrefixesListValue in requestObject.KeyPrefixes)
                 {
-                        context.Writer.Write(requestObjectKeyPrefixesListValue);
+                        context.Writer.WriteStringValue(requestObjectKeyPrefixesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeys())
             {
                 context.Writer.WritePropertyName("Keys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeysListValue in requestObject.Keys)
                 {
-                        context.Writer.Write(requestObjectKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

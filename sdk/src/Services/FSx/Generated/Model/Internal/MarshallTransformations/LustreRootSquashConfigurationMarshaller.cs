@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNoSquashNids())
             {
                 context.Writer.WritePropertyName("NoSquashNids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNoSquashNidsListValue in requestObject.NoSquashNids)
                 {
-                        context.Writer.Write(requestObjectNoSquashNidsListValue);
+                        context.Writer.WriteStringValue(requestObjectNoSquashNidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRootSquash())
             {
                 context.Writer.WritePropertyName("RootSquash");
-                context.Writer.Write(requestObject.RootSquash);
+                context.Writer.WriteStringValue(requestObject.RootSquash);
             }
 
         }

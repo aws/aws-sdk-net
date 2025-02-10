@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AssessmentRunAgent Object
     /// </summary>  
-    public class AssessmentRunAgentUnmarshaller : IUnmarshaller<AssessmentRunAgent, XmlUnmarshallerContext>, IUnmarshaller<AssessmentRunAgent, JsonUnmarshallerContext>
+    public class AssessmentRunAgentUnmarshaller : IJsonUnmarshaller<AssessmentRunAgent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AssessmentRunAgent IUnmarshaller<AssessmentRunAgent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssessmentRunAgent Unmarshall(JsonUnmarshallerContext context)
+        public AssessmentRunAgent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AssessmentRunAgent unmarshalledObject = new AssessmentRunAgent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("agentHealth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentHealth = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentHealth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("agentHealthCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentHealthCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentHealthCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("agentHealthDetails", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentHealthDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentHealthDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assessmentRunArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssessmentRunArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssessmentRunArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("autoScalingGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScalingGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("telemetryMetadata", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TelemetryMetadata, TelemetryMetadataUnmarshaller>(TelemetryMetadataUnmarshaller.Instance);
-                    unmarshalledObject.TelemetryMetadata = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TelemetryMetadata, TelemetryMetadataUnmarshaller>(TelemetryMetadataUnmarshaller.Instance);
+                    unmarshalledObject.TelemetryMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SourceBuildInformation Object
     /// </summary>  
-    public class SourceBuildInformationUnmarshaller : IUnmarshaller<SourceBuildInformation, XmlUnmarshallerContext>, IUnmarshaller<SourceBuildInformation, JsonUnmarshallerContext>
+    public class SourceBuildInformationUnmarshaller : IXmlUnmarshaller<SourceBuildInformation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SourceBuildInformation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SourceBuildInformationUnmarshaller _instance = new SourceBuildInformationUnmarshaller();        
 

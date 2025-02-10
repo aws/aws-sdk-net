@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppIdClientRegex())
             {
                 context.Writer.WritePropertyName("AppIdClientRegex");
-                context.Writer.Write(requestObject.AppIdClientRegex);
+                context.Writer.WriteStringValue(requestObject.AppIdClientRegex);
             }
 
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("AwsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetDefaultAction())
             {
                 context.Writer.WritePropertyName("DefaultAction");
-                context.Writer.Write(requestObject.DefaultAction);
+                context.Writer.WriteStringValue(requestObject.DefaultAction);
             }
 
             if(requestObject.IsSetUserPoolId())
             {
                 context.Writer.WritePropertyName("UserPoolId");
-                context.Writer.Write(requestObject.UserPoolId);
+                context.Writer.WriteStringValue(requestObject.UserPoolId);
             }
 
         }

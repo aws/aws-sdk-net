@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -61,103 +64,108 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/greengrass/v2/deployments";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetComponents())
-                    {
-                        context.Writer.WritePropertyName("components");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestComponentsKvp in publicRequest.Components)
-                        {
-                            context.Writer.WritePropertyName(publicRequestComponentsKvp.Key);
-                            var publicRequestComponentsValue = publicRequestComponentsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ComponentDeploymentSpecificationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestComponentsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDeploymentName())
-                    {
-                        context.Writer.WritePropertyName("deploymentName");
-                        context.Writer.Write(publicRequest.DeploymentName);
-                    }
-
-                    if(publicRequest.IsSetDeploymentPolicies())
-                    {
-                        context.Writer.WritePropertyName("deploymentPolicies");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeploymentPoliciesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeploymentPolicies, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIotJobConfiguration())
-                    {
-                        context.Writer.WritePropertyName("iotJobConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeploymentIoTJobConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IotJobConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetParentTargetArn())
-                    {
-                        context.Writer.WritePropertyName("parentTargetArn");
-                        context.Writer.Write(publicRequest.ParentTargetArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetArn())
-                    {
-                        context.Writer.WritePropertyName("targetArn");
-                        context.Writer.Write(publicRequest.TargetArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetComponents())
+            {
+                context.Writer.WritePropertyName("components");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestComponentsKvp in publicRequest.Components)
+                {
+                    context.Writer.WritePropertyName(publicRequestComponentsKvp.Key);
+                    var publicRequestComponentsValue = publicRequestComponentsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ComponentDeploymentSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestComponentsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDeploymentName())
+            {
+                context.Writer.WritePropertyName("deploymentName");
+                context.Writer.WriteStringValue(publicRequest.DeploymentName);
+            }
+
+            if(publicRequest.IsSetDeploymentPolicies())
+            {
+                context.Writer.WritePropertyName("deploymentPolicies");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentPoliciesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentPolicies, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIotJobConfiguration())
+            {
+                context.Writer.WritePropertyName("iotJobConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentIoTJobConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IotJobConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetParentTargetArn())
+            {
+                context.Writer.WritePropertyName("parentTargetArn");
+                context.Writer.WriteStringValue(publicRequest.ParentTargetArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetArn())
+            {
+                context.Writer.WritePropertyName("targetArn");
+                context.Writer.WriteStringValue(publicRequest.TargetArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

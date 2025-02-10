@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
-                context.Writer.Write(requestObject.Compression);
+                context.Writer.WriteStringValue(requestObject.Compression);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetOutputType())
             {
                 context.Writer.WritePropertyName("OutputType");
-                context.Writer.Write(requestObject.OutputType);
+                context.Writer.WriteStringValue(requestObject.OutputType);
             }
 
             if(requestObject.IsSetOverwrite())
             {
                 context.Writer.WritePropertyName("Overwrite");
-                context.Writer.Write(requestObject.Overwrite);
+                context.Writer.WriteStringValue(requestObject.Overwrite);
             }
 
         }

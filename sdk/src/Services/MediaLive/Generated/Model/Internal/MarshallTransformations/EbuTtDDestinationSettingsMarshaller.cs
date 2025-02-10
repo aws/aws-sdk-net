@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyrightHolder())
             {
                 context.Writer.WritePropertyName("copyrightHolder");
-                context.Writer.Write(requestObject.CopyrightHolder);
+                context.Writer.WriteStringValue(requestObject.CopyrightHolder);
             }
 
             if(requestObject.IsSetFillLineGap())
             {
                 context.Writer.WritePropertyName("fillLineGap");
-                context.Writer.Write(requestObject.FillLineGap);
+                context.Writer.WriteStringValue(requestObject.FillLineGap);
             }
 
             if(requestObject.IsSetFontFamily())
             {
                 context.Writer.WritePropertyName("fontFamily");
-                context.Writer.Write(requestObject.FontFamily);
+                context.Writer.WriteStringValue(requestObject.FontFamily);
             }
 
             if(requestObject.IsSetStyleControl())
             {
                 context.Writer.WritePropertyName("styleControl");
-                context.Writer.Write(requestObject.StyleControl);
+                context.Writer.WriteStringValue(requestObject.StyleControl);
             }
 
         }

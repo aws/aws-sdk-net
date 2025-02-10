@@ -70,8 +70,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When integrating with Amazon Pinpoint, the Amazon Connect and Amazon Pinpoint instances
-        /// must be in the same account.
+        /// When integrating with Amazon Web Services End User Messaging, the Amazon Connect and
+        /// Amazon Web Services End User Messaging instances must be in the same account.
         /// </para>
         ///  </note>
         /// </summary>

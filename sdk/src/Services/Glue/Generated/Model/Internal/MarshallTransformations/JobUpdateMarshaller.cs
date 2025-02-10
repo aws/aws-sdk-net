@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,115 +49,115 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedCapacity())
             {
                 context.Writer.WritePropertyName("AllocatedCapacity");
-                context.Writer.Write(requestObject.AllocatedCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.AllocatedCapacity.Value);
             }
 
             if(requestObject.IsSetCodeGenConfigurationNodes())
             {
                 context.Writer.WritePropertyName("CodeGenConfigurationNodes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCodeGenConfigurationNodesKvp in requestObject.CodeGenConfigurationNodes)
                 {
                     context.Writer.WritePropertyName(requestObjectCodeGenConfigurationNodesKvp.Key);
                     var requestObjectCodeGenConfigurationNodesValue = requestObjectCodeGenConfigurationNodesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CodeGenConfigurationNodeMarshaller.Instance;
                     marshaller.Marshall(requestObjectCodeGenConfigurationNodesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("Command");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobCommandMarshaller.Instance;
                 marshaller.Marshall(requestObject.Command, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnections())
             {
                 context.Writer.WritePropertyName("Connections");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectionsListMarshaller.Instance;
                 marshaller.Marshall(requestObject.Connections, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultArguments())
             {
                 context.Writer.WritePropertyName("DefaultArguments");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDefaultArgumentsKvp in requestObject.DefaultArguments)
                 {
                     context.Writer.WritePropertyName(requestObjectDefaultArgumentsKvp.Key);
                     var requestObjectDefaultArgumentsValue = requestObjectDefaultArgumentsKvp.Value;
 
-                        context.Writer.Write(requestObjectDefaultArgumentsValue);
+                        context.Writer.WriteStringValue(requestObjectDefaultArgumentsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetExecutionClass())
             {
                 context.Writer.WritePropertyName("ExecutionClass");
-                context.Writer.Write(requestObject.ExecutionClass);
+                context.Writer.WriteStringValue(requestObject.ExecutionClass);
             }
 
             if(requestObject.IsSetExecutionProperty())
             {
                 context.Writer.WritePropertyName("ExecutionProperty");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExecutionPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExecutionProperty, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGlueVersion())
             {
                 context.Writer.WritePropertyName("GlueVersion");
-                context.Writer.Write(requestObject.GlueVersion);
+                context.Writer.WriteStringValue(requestObject.GlueVersion);
             }
 
             if(requestObject.IsSetJobMode())
             {
                 context.Writer.WritePropertyName("JobMode");
-                context.Writer.Write(requestObject.JobMode);
+                context.Writer.WriteStringValue(requestObject.JobMode);
             }
 
             if(requestObject.IsSetJobRunQueuingEnabled())
             {
                 context.Writer.WritePropertyName("JobRunQueuingEnabled");
-                context.Writer.Write(requestObject.JobRunQueuingEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.JobRunQueuingEnabled.Value);
             }
 
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("LogUri");
-                context.Writer.Write(requestObject.LogUri);
+                context.Writer.WriteStringValue(requestObject.LogUri);
             }
 
             if(requestObject.IsSetMaintenanceWindow())
             {
                 context.Writer.WritePropertyName("MaintenanceWindow");
-                context.Writer.Write(requestObject.MaintenanceWindow);
+                context.Writer.WriteStringValue(requestObject.MaintenanceWindow);
             }
 
             if(requestObject.IsSetMaxCapacity())
@@ -167,84 +165,84 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MaxCapacity");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MaxCapacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxCapacity.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaxCapacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxCapacity.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxCapacity.Value);
                 }
             }
 
             if(requestObject.IsSetMaxRetries())
             {
                 context.Writer.WritePropertyName("MaxRetries");
-                context.Writer.Write(requestObject.MaxRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRetries.Value);
             }
 
             if(requestObject.IsSetNonOverridableArguments())
             {
                 context.Writer.WritePropertyName("NonOverridableArguments");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectNonOverridableArgumentsKvp in requestObject.NonOverridableArguments)
                 {
                     context.Writer.WritePropertyName(requestObjectNonOverridableArgumentsKvp.Key);
                     var requestObjectNonOverridableArgumentsValue = requestObjectNonOverridableArgumentsKvp.Value;
 
-                        context.Writer.Write(requestObjectNonOverridableArgumentsValue);
+                        context.Writer.WriteStringValue(requestObjectNonOverridableArgumentsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotificationProperty())
             {
                 context.Writer.WritePropertyName("NotificationProperty");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotificationPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotificationProperty, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumberOfWorkers())
             {
                 context.Writer.WritePropertyName("NumberOfWorkers");
-                context.Writer.Write(requestObject.NumberOfWorkers.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfWorkers.Value);
             }
 
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");
-                context.Writer.Write(requestObject.Role);
+                context.Writer.WriteStringValue(requestObject.Role);
             }
 
             if(requestObject.IsSetSecurityConfiguration())
             {
                 context.Writer.WritePropertyName("SecurityConfiguration");
-                context.Writer.Write(requestObject.SecurityConfiguration);
+                context.Writer.WriteStringValue(requestObject.SecurityConfiguration);
             }
 
             if(requestObject.IsSetSourceControlDetails())
             {
                 context.Writer.WritePropertyName("SourceControlDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceControlDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceControlDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
             if(requestObject.IsSetWorkerType())
             {
                 context.Writer.WritePropertyName("WorkerType");
-                context.Writer.Write(requestObject.WorkerType);
+                context.Writer.WriteStringValue(requestObject.WorkerType);
             }
 
         }

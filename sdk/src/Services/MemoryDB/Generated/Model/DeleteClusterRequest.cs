@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
-    /// Deletes a cluster. It also deletes all associated nodes and node endpoints
+    /// Deletes a cluster. It also deletes all associated nodes and node endpoints.
     /// 
     ///  <note> 
     /// <para>
@@ -44,6 +44,7 @@ namespace Amazon.MemoryDB.Model
     {
         private string _clusterName;
         private string _finalSnapshotName;
+        private string _multiRegionClusterName;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -82,6 +83,24 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetFinalSnapshotName()
         {
             return this._finalSnapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionClusterName. 
+        /// <para>
+        /// The name of the multi-Region cluster to be deleted.
+        /// </para>
+        /// </summary>
+        public string MultiRegionClusterName
+        {
+            get { return this._multiRegionClusterName; }
+            set { this._multiRegionClusterName = value; }
+        }
+
+        // Check to see if MultiRegionClusterName property is set
+        internal bool IsSetMultiRegionClusterName()
+        {
+            return this._multiRegionClusterName != null;
         }
 
     }

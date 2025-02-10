@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CsrExtensions Object
     /// </summary>  
-    public class CsrExtensionsUnmarshaller : IUnmarshaller<CsrExtensions, XmlUnmarshallerContext>, IUnmarshaller<CsrExtensions, JsonUnmarshallerContext>
+    public class CsrExtensionsUnmarshaller : IJsonUnmarshaller<CsrExtensions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CsrExtensions IUnmarshaller<CsrExtensions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CsrExtensions Unmarshall(JsonUnmarshallerContext context)
+        public CsrExtensions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CsrExtensions unmarshalledObject = new CsrExtensions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("KeyUsage", targetDepth))
                 {
                     var unmarshaller = KeyUsageUnmarshaller.Instance;
-                    unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubjectInformationAccess", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AccessDescription, AccessDescriptionUnmarshaller>(AccessDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.SubjectInformationAccess = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AccessDescription, AccessDescriptionUnmarshaller>(AccessDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.SubjectInformationAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

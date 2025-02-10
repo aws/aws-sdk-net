@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// There are no configuration recorders available to provide the role needed to describe
-    /// your resources. Create a configuration recorder.
+    /// There are no customer managed configuration recorders available to record your resources.
+    /// Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html">PutConfigurationRecorder</a>
+    /// operation to create the customer managed configuration recorder.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

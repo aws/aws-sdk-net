@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedDBInstanceQuotaExceededException operation
     /// </summary>  
-    public class ReservedDBInstanceQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedDBInstanceQuotaExceededException, XmlUnmarshallerContext>
+    public class ReservedDBInstanceQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedDBInstanceQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

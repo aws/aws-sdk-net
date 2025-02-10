@@ -49,7 +49,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of items to return, between 1 and 100, inclusive. 
+        /// The maximum number of items to return, between 1 and 100, inclusive.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -95,11 +95,12 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Optional parameter to filter the results by the status of each created campaign in
-        /// your account. The status can be one of: <c>CREATING</c>, <c>WAITING_FOR_APPROVAL</c>,
+        /// An optional parameter to filter the results by the status of each created campaign
+        /// in your account. The status can be one of: <c>CREATING</c>, <c>WAITING_FOR_APPROVAL</c>,
         /// <c>RUNNING</c>, or <c>SUSPENDED</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=20)]
         public string Status
         {
             get { return this._status; }

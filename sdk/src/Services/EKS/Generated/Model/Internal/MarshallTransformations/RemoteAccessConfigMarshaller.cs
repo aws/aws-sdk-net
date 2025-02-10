@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEc2SshKey())
             {
                 context.Writer.WritePropertyName("ec2SshKey");
-                context.Writer.Write(requestObject.Ec2SshKey);
+                context.Writer.WriteStringValue(requestObject.Ec2SshKey);
             }
 
             if(requestObject.IsSetSourceSecurityGroups())
             {
                 context.Writer.WritePropertyName("sourceSecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceSecurityGroupsListValue in requestObject.SourceSecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSourceSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

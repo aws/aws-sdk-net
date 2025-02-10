@@ -30,22 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// A summary of the model evaluation job.
+    /// Summary information of an evaluation job.
     /// </summary>
     public partial class EvaluationSummary
     {
+        private ApplicationType _applicationType;
         private DateTime? _creationTime;
         private List<string> _evaluationTaskTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _evaluatorModelIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobArn;
         private string _jobName;
         private EvaluationJobType _jobType;
         private List<string> _modelIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ragIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EvaluationJobStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge
+        /// base (retrieval and response generation).
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the model evaluation job was created.
+        /// The time the evaluation job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +86,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property EvaluationTaskTypes. 
         /// <para>
-        /// What task type was used in the model evaluation job.
+        /// The type of task for model evaluation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -81,9 +103,29 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluatorModelIdentifiers. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge
+        /// base evaluation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> EvaluatorModelIdentifiers
+        {
+            get { return this._evaluatorModelIdentifiers; }
+            set { this._evaluatorModelIdentifiers = value; }
+        }
+
+        // Check to see if EvaluatorModelIdentifiers property is set
+        internal bool IsSetEvaluatorModelIdentifiers()
+        {
+            return this._evaluatorModelIdentifiers != null && (this._evaluatorModelIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the model evaluation job.
+        /// The Amazon Resource Name (ARN) of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -102,7 +144,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the model evaluation job.
+        /// The name for the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -121,7 +163,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// The type, either human or automatic, of model evaluation job.
+        /// Specifies whether the evaluation job is automated or human-based.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,10 +182,10 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelIdentifiers. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the model(s) used in the model evaluation job.
+        /// The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2)]
+        [AWSProperty(Min=0, Max=2)]
         public List<string> ModelIdentifiers
         {
             get { return this._modelIdentifiers; }
@@ -157,9 +199,29 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RagIdentifiers. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge
+        /// base evaluation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> RagIdentifiers
+        {
+            get { return this._ragIdentifiers; }
+            set { this._ragIdentifiers = value; }
+        }
+
+        // Check to see if RagIdentifiers property is set
+        internal bool IsSetRagIdentifiers()
+        {
+            return this._ragIdentifiers != null && (this._ragIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the model evaluation job. 
+        /// The current status of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

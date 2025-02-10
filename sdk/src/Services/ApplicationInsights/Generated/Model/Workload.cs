@@ -35,6 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class Workload
     {
         private string _componentName;
+        private bool? _missingWorkloadConfig;
         private Tier _tier;
         private string _workloadId;
         private string _workloadName;
@@ -57,6 +58,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetComponentName()
         {
             return this._componentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MissingWorkloadConfig. 
+        /// <para>
+        /// Indicates whether all of the component configurations required to monitor a workload
+        /// were provided.
+        /// </para>
+        /// </summary>
+        public bool? MissingWorkloadConfig
+        {
+            get { return this._missingWorkloadConfig; }
+            set { this._missingWorkloadConfig = value; }
+        }
+
+        // Check to see if MissingWorkloadConfig property is set
+        internal bool IsSetMissingWorkloadConfig()
+        {
+            return this._missingWorkloadConfig.HasValue; 
         }
 
         /// <summary>
@@ -103,7 +123,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the workload.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
+        [AWSProperty(Min=1, Max=12)]
         public string WorkloadName
         {
             get { return this._workloadName; }

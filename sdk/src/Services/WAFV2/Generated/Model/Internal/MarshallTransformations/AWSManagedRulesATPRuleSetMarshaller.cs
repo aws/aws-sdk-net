@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableRegexInPath())
             {
                 context.Writer.WritePropertyName("EnableRegexInPath");
-                context.Writer.Write(requestObject.EnableRegexInPath.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableRegexInPath.Value);
             }
 
             if(requestObject.IsSetLoginPath())
             {
                 context.Writer.WritePropertyName("LoginPath");
-                context.Writer.Write(requestObject.LoginPath);
+                context.Writer.WriteStringValue(requestObject.LoginPath);
             }
 
             if(requestObject.IsSetRequestInspection())
             {
                 context.Writer.WritePropertyName("RequestInspection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RequestInspectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequestInspection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResponseInspection())
             {
                 context.Writer.WritePropertyName("ResponseInspection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseInspectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResponseInspection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

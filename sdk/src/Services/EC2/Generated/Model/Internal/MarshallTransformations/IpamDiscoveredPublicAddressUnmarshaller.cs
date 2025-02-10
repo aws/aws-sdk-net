@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamDiscoveredPublicAddress Object
     /// </summary>  
-    public class IpamDiscoveredPublicAddressUnmarshaller : IUnmarshaller<IpamDiscoveredPublicAddress, XmlUnmarshallerContext>, IUnmarshaller<IpamDiscoveredPublicAddress, JsonUnmarshallerContext>
+    public class IpamDiscoveredPublicAddressUnmarshaller : IXmlUnmarshaller<IpamDiscoveredPublicAddress, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -183,17 +183,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamDiscoveredPublicAddress Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamDiscoveredPublicAddressUnmarshaller _instance = new IpamDiscoveredPublicAddressUnmarshaller();        
 

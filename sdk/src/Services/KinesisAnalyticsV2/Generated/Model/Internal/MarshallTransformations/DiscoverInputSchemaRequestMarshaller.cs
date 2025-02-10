@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -63,64 +66,69 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetInputProcessingConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetInputProcessingConfiguration())
-                    {
-                        context.Writer.WritePropertyName("InputProcessingConfiguration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("InputProcessingConfiguration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = InputProcessingConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InputProcessingConfiguration, context);
+                var marshaller = InputProcessingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InputProcessingConfiguration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInputStartingPositionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("InputStartingPositionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputStartingPositionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InputStartingPositionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceARN())
-                    {
-                        context.Writer.WritePropertyName("ResourceARN");
-                        context.Writer.Write(publicRequest.ResourceARN);
-                    }
-
-                    if(publicRequest.IsSetS3Configuration())
-                    {
-                        context.Writer.WritePropertyName("S3Configuration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3ConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3Configuration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceExecutionRole())
-                    {
-                        context.Writer.WritePropertyName("ServiceExecutionRole");
-                        context.Writer.Write(publicRequest.ServiceExecutionRole);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetInputStartingPositionConfiguration())
+            {
+                context.Writer.WritePropertyName("InputStartingPositionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InputStartingPositionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InputStartingPositionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceARN())
+            {
+                context.Writer.WritePropertyName("ResourceARN");
+                context.Writer.WriteStringValue(publicRequest.ResourceARN);
+            }
+
+            if(publicRequest.IsSetS3Configuration())
+            {
+                context.Writer.WritePropertyName("S3Configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3ConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetServiceExecutionRole())
+            {
+                context.Writer.WritePropertyName("ServiceExecutionRole");
+                context.Writer.WriteStringValue(publicRequest.ServiceExecutionRole);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

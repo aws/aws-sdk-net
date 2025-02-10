@@ -257,9 +257,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream,
+        /// If you upgrade Elasticsearch from 6.x to 7.x and don’t update your Firehose stream,
         /// Firehose still delivers data to Elasticsearch with the old index name and type name.
-        /// If you want to update your delivery stream with a new index name, provide an empty
+        /// If you want to update your Firehose stream with a new index name, provide an empty
         /// string for TypeName. 
         /// </para>
         /// </summary>

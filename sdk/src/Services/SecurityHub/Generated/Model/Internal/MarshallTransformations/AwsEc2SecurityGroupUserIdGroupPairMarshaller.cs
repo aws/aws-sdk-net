@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupId())
             {
                 context.Writer.WritePropertyName("GroupId");
-                context.Writer.Write(requestObject.GroupId);
+                context.Writer.WriteStringValue(requestObject.GroupId);
             }
 
             if(requestObject.IsSetGroupName())
             {
                 context.Writer.WritePropertyName("GroupName");
-                context.Writer.Write(requestObject.GroupName);
+                context.Writer.WriteStringValue(requestObject.GroupName);
             }
 
             if(requestObject.IsSetPeeringStatus())
             {
                 context.Writer.WritePropertyName("PeeringStatus");
-                context.Writer.Write(requestObject.PeeringStatus);
+                context.Writer.WriteStringValue(requestObject.PeeringStatus);
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
             if(requestObject.IsSetVpcPeeringConnectionId())
             {
                 context.Writer.WritePropertyName("VpcPeeringConnectionId");
-                context.Writer.Write(requestObject.VpcPeeringConnectionId);
+                context.Writer.WriteStringValue(requestObject.VpcPeeringConnectionId);
             }
 
         }

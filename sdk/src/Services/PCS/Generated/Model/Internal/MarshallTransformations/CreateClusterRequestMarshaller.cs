@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PCS.Model.Internal.MarshallTransformations
 {
@@ -63,89 +66,94 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetClusterName())
-                    {
-                        context.Writer.WritePropertyName("clusterName");
-                        context.Writer.Write(publicRequest.ClusterName);
-                    }
-
-                    if(publicRequest.IsSetNetworking())
-                    {
-                        context.Writer.WritePropertyName("networking");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NetworkingRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Networking, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetScheduler())
-                    {
-                        context.Writer.WritePropertyName("scheduler");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SchedulerRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Scheduler, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSize())
-                    {
-                        context.Writer.WritePropertyName("size");
-                        context.Writer.Write(publicRequest.Size);
-                    }
-
-                    if(publicRequest.IsSetSlurmConfiguration())
-                    {
-                        context.Writer.WritePropertyName("slurmConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ClusterSlurmConfigurationRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SlurmConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetClusterName())
+            {
+                context.Writer.WritePropertyName("clusterName");
+                context.Writer.WriteStringValue(publicRequest.ClusterName);
+            }
+
+            if(publicRequest.IsSetNetworking())
+            {
+                context.Writer.WritePropertyName("networking");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkingRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Networking, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScheduler())
+            {
+                context.Writer.WritePropertyName("scheduler");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulerRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Scheduler, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSize())
+            {
+                context.Writer.WritePropertyName("size");
+                context.Writer.WriteStringValue(publicRequest.Size);
+            }
+
+            if(publicRequest.IsSetSlurmConfiguration())
+            {
+                context.Writer.WritePropertyName("slurmConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterSlurmConfigurationRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SlurmConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

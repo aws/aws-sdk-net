@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetBiosName())
             {
                 context.Writer.WritePropertyName("NetBiosName");
-                context.Writer.Write(requestObject.NetBiosName);
+                context.Writer.WriteStringValue(requestObject.NetBiosName);
             }
 
             if(requestObject.IsSetSelfManagedActiveDirectoryConfiguration())
             {
                 context.Writer.WritePropertyName("SelfManagedActiveDirectoryConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelfManagedActiveDirectoryConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelfManagedActiveDirectoryConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

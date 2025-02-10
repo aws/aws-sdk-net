@@ -29,53 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SequenceStoreS3Access Object
     /// </summary>  
-    public class SequenceStoreS3AccessUnmarshaller : IUnmarshaller<SequenceStoreS3Access, XmlUnmarshallerContext>, IUnmarshaller<SequenceStoreS3Access, JsonUnmarshallerContext>
+    public class SequenceStoreS3AccessUnmarshaller : IJsonUnmarshaller<SequenceStoreS3Access, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SequenceStoreS3Access IUnmarshaller<SequenceStoreS3Access, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SequenceStoreS3Access Unmarshall(JsonUnmarshallerContext context)
+        public SequenceStoreS3Access Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SequenceStoreS3Access unmarshalledObject = new SequenceStoreS3Access();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("accessLogLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessLogLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("s3AccessPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3AccessPointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3AccessPointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

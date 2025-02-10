@@ -65,7 +65,7 @@ namespace Amazon.PrometheusService.Model
         /// Gets and sets the property LogGroupArn. 
         /// <para>
         /// The ARN of the CloudWatch log group to which the vended log data will be published.
-        /// This log group must exist prior to calling this API.
+        /// This log group must exist prior to calling this operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

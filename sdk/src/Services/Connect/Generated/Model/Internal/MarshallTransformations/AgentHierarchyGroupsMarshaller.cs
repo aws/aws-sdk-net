@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetL1Ids())
             {
                 context.Writer.WritePropertyName("L1Ids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectL1IdsListValue in requestObject.L1Ids)
                 {
-                        context.Writer.Write(requestObjectL1IdsListValue);
+                        context.Writer.WriteStringValue(requestObjectL1IdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetL2Ids())
             {
                 context.Writer.WritePropertyName("L2Ids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectL2IdsListValue in requestObject.L2Ids)
                 {
-                        context.Writer.Write(requestObjectL2IdsListValue);
+                        context.Writer.WriteStringValue(requestObjectL2IdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetL3Ids())
             {
                 context.Writer.WritePropertyName("L3Ids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectL3IdsListValue in requestObject.L3Ids)
                 {
-                        context.Writer.Write(requestObjectL3IdsListValue);
+                        context.Writer.WriteStringValue(requestObjectL3IdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetL4Ids())
             {
                 context.Writer.WritePropertyName("L4Ids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectL4IdsListValue in requestObject.L4Ids)
                 {
-                        context.Writer.Write(requestObjectL4IdsListValue);
+                        context.Writer.WriteStringValue(requestObjectL4IdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetL5Ids())
             {
                 context.Writer.WritePropertyName("L5Ids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectL5IdsListValue in requestObject.L5Ids)
                 {
-                        context.Writer.Write(requestObjectL5IdsListValue);
+                        context.Writer.WriteStringValue(requestObjectL5IdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DefaultRetention Object
     /// </summary>  
-    public class DefaultRetentionUnmarshaller : IUnmarshaller<DefaultRetention, XmlUnmarshallerContext>, IUnmarshaller<DefaultRetention, JsonUnmarshallerContext>
+    public class DefaultRetentionUnmarshaller : IXmlUnmarshaller<DefaultRetention, XmlUnmarshallerContext>, IXmlUnmarshaller<DefaultRetention, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,50 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionGroup())
             {
                 context.Writer.WritePropertyName("actionGroup");
-                context.Writer.Write(requestObject.ActionGroup);
+                context.Writer.WriteStringValue(requestObject.ActionGroup);
+            }
+
+            if(requestObject.IsSetAgentId())
+            {
+                context.Writer.WritePropertyName("agentId");
+                context.Writer.WriteStringValue(requestObject.AgentId);
             }
 
             if(requestObject.IsSetConfirmationState())
             {
                 context.Writer.WritePropertyName("confirmationState");
-                context.Writer.Write(requestObject.ConfirmationState);
+                context.Writer.WriteStringValue(requestObject.ConfirmationState);
             }
 
             if(requestObject.IsSetFunction())
             {
                 context.Writer.WritePropertyName("function");
-                context.Writer.Write(requestObject.Function);
+                context.Writer.WriteStringValue(requestObject.Function);
             }
 
             if(requestObject.IsSetResponseBody())
             {
                 context.Writer.WritePropertyName("responseBody");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectResponseBodyKvp in requestObject.ResponseBody)
                 {
                     context.Writer.WritePropertyName(requestObjectResponseBodyKvp.Key);
                     var requestObjectResponseBodyValue = requestObjectResponseBodyKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContentBodyMarshaller.Instance;
                     marshaller.Marshall(requestObjectResponseBodyValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResponseState())
             {
                 context.Writer.WritePropertyName("responseState");
-                context.Writer.Write(requestObject.ResponseState);
+                context.Writer.WriteStringValue(requestObject.ResponseState);
             }
 
         }

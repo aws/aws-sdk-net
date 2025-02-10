@@ -212,8 +212,6 @@ namespace Amazon.S3.Model
         private string expectedBucketOwner;
         DateTime? modifiedSinceDate;
         DateTime? unmodifiedSinceDate;
-        DateTime? modifiedSinceDateUtc;
-        DateTime? unmodifiedSinceDateUtc;
         string etagToMatch;
         string etagToNotMatch;
         private string key;
@@ -221,7 +219,6 @@ namespace Amazon.S3.Model
         private ByteRange byteRange;
         private RequestPayer requestPayer;
         private DateTime? responseExpires;
-        private DateTime? responseExpiresUtc;
         private ResponseHeaderOverrides responseHeaders;
         private ServerSideEncryptionCustomerMethod serverSideCustomerEncryption;
         private string serverSideEncryptionCustomerProvidedKey;
@@ -312,129 +309,55 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or
-        /// ModifiedSinceDateUtc results in both ModifiedSinceDate and ModifiedSinceDateUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// ModifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// Returns the object only if it has been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ModifiedSinceDateUtc instead. Setting either ModifiedSinceDate or ModifiedSinceDateUtc results in both ModifiedSinceDate and " +
-            "ModifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. ModifiedSinceDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? ModifiedSinceDate
         {
-            get { return this.modifiedSinceDate; }
+            get { return this.modifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
             set
             {
                 if (value == null)
                 {
-                    this.modifiedSinceDate = null;
-                    this.modifiedSinceDateUtc = null;
+                    this.modifiedSinceDate = null;                    
                 }
                 else
                 {
-                    this.modifiedSinceDate = value;
-                    this.modifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Returns the object only if it has been modified since the specified time, 
-        /// otherwise returns a PreconditionFailed.
-        /// </summary>
-        public DateTime? ModifiedSinceDateUtc
-        {
-            get { return this.modifiedSinceDateUtc ?? default(DateTime); }
-            set
-            {
-                if (value == null)
-                {
-                    this.modifiedSinceDate = null;
-                    this.modifiedSinceDateUtc = null;
-                }
-                else
-                {
-                    this.modifiedSinceDateUtc = value;
                     this.modifiedSinceDate = value;
                 }
             }
         }
 
-        // Check to see if ModifiedSinceDateUtc property is set
-        internal bool IsSetModifiedSinceDateUtc()
+        // Check to see if ModifiedSinceDate property is set
+        internal bool IsSetModifiedSinceDate()
         {
-            return this.modifiedSinceDateUtc.HasValue;
+            return this.modifiedSinceDate.HasValue;
         }
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or
-        /// UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and UnmodifiedSinceDateUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// UnmodifiedSinceDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// Returns the object only if it has not been modified since the specified time, 
         /// otherwise returns a PreconditionFailed.
         /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use UnmodifiedSinceDateUtc instead. Setting either UnmodifiedSinceDate or UnmodifiedSinceDateUtc results in both UnmodifiedSinceDate and " +
-            "UnmodifiedSinceDateUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. UnmodifiedSinceDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? UnmodifiedSinceDate
         {
-            get { return this.unmodifiedSinceDate ?? default(DateTime); }
+            get { return this.unmodifiedSinceDate ?? DateTime.SpecifyKind(default, DateTimeKind.Utc); }
             set
             {
                 if (value == null)
                 {
                     this.unmodifiedSinceDate = null;
-                    this.unmodifiedSinceDateUtc = null;
                 }
                 else
                 {
-                    this.unmodifiedSinceDate = value;
-                    this.unmodifiedSinceDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Returns the object only if it has not been modified since the specified time, 
-        /// otherwise returns a PreconditionFailed.
-        /// </summary>
-        public DateTime? UnmodifiedSinceDateUtc
-        {
-            get { return this.unmodifiedSinceDateUtc ?? default(DateTime); }
-            set
-            {
-                if (value == null)
-                {
-                    this.unmodifiedSinceDate = null;
-                    this.unmodifiedSinceDateUtc = null;
-                }
-                else
-                {
-                    this.unmodifiedSinceDateUtc = value;
                     this.unmodifiedSinceDate = value;
                 }
             }
         }
 
-        // Check to see if UnmodifiedSinceDateUtc property is set
-        internal bool IsSetUnmodifiedSinceDateUtc()
+        // Check to see if UnmodifiedSinceDate property is set
+        internal bool IsSetUnmodifiedSinceDate()
         {
-            return this.unmodifiedSinceDateUtc.HasValue;
+            return this.unmodifiedSinceDate.HasValue;
         }
 
         /// <summary>
@@ -517,21 +440,8 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ResponseExpiresUtc instead. Setting either ResponseExpires or
-        /// ResponseExpiresUtc results in both ResponseExpires and ResponseExpiresUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value of both.
-        /// ResponseExpires is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
         /// Sets the Expires header of the response.
         /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ResponseExpiresUtc instead. Setting either ResponseExpires or ResponseExpiresUtc results in both ResponseExpires and " +
-            "ResponseExpiresUtc being assigned, the latest assignment to either one of the two property is " +
-            "reflected in the value of both. ResponseExpires is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? ResponseExpires
         {
             get { return this.responseExpires; }
@@ -539,42 +449,19 @@ namespace Amazon.S3.Model
             {
                 if (value == null)
                 {
-                    this.responseExpires = null;
-                    this.responseExpiresUtc = null;
+                    this.responseExpires = null;                    
                 }
                 else
                 {
-                    this.responseExpires = value;
-                    this.responseExpiresUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Sets the Expires header of the response.
-        /// </summary>
-        public DateTime? ResponseExpiresUtc
-        {
-            get { return this.responseExpiresUtc; }
-            set
-            {
-                if (value == null)
-                {
-                    this.responseExpires = null;
-                    this.responseExpiresUtc = null;
-                }
-                else
-                {
-                    this.responseExpiresUtc = value;
                     this.responseExpires = value;
                 }
             }
         }
 
-        // Check to see if ResponseExpiresUtc property is set
-        internal bool IsSetResponseExpiresUtc()
+        // Check to see if ResponseExpires property is set
+        internal bool IsSetResponseExpires()
         {
-            return this.responseExpiresUtc.HasValue;
+            return this.responseExpires.HasValue;
         }
 
         /// <summary>
@@ -800,6 +687,7 @@ namespace Amazon.S3.Model
 
                 return CoreChecksumResponseBehavior.DISABLED;
             }
+            set { this.ChecksumMode = value.ToString(); }
         }
 
         private static List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>

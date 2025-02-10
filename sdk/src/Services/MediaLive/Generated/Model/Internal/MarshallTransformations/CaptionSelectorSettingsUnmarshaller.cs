@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CaptionSelectorSettings Object
     /// </summary>  
-    public class CaptionSelectorSettingsUnmarshaller : IUnmarshaller<CaptionSelectorSettings, XmlUnmarshallerContext>, IUnmarshaller<CaptionSelectorSettings, JsonUnmarshallerContext>
+    public class CaptionSelectorSettingsUnmarshaller : IJsonUnmarshaller<CaptionSelectorSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CaptionSelectorSettings IUnmarshaller<CaptionSelectorSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CaptionSelectorSettings Unmarshall(JsonUnmarshallerContext context)
+        public CaptionSelectorSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CaptionSelectorSettings unmarshalledObject = new CaptionSelectorSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ancillarySourceSettings", targetDepth))
                 {
                     var unmarshaller = AncillarySourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AncillarySourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AncillarySourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aribSourceSettings", targetDepth))
                 {
                     var unmarshaller = AribSourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AribSourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AribSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dvbSubSourceSettings", targetDepth))
                 {
                     var unmarshaller = DvbSubSourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DvbSubSourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DvbSubSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("embeddedSourceSettings", targetDepth))
                 {
                     var unmarshaller = EmbeddedSourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddedSourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmbeddedSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte20SourceSettings", targetDepth))
                 {
                     var unmarshaller = Scte20SourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Scte20SourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte20SourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte27SourceSettings", targetDepth))
                 {
                     var unmarshaller = Scte27SourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Scte27SourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte27SourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("teletextSourceSettings", targetDepth))
                 {
                     var unmarshaller = TeletextSourceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TeletextSourceSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TeletextSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

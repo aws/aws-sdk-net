@@ -22,6 +22,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
+using ThirdParty.RuntimeBackports;
 
 namespace AWSSDK.Runtime.Internal.Util
 {
@@ -37,13 +38,25 @@ namespace AWSSDK.Runtime.Internal.Util
         private static readonly object _lock = new object();
         private static volatile IChecksumProvider _instance;
 
+        /// <summary>
+        /// Returns whether the CRT checksum implementation is available for the .NET SDK to use.
+        /// </summary>
+        public static bool IsCrtAvailable()
+        {
+            try
+            {
+                return Instance != null;
+            }
+            catch (AWSCommonRuntimeException)
+            {
+                return false;
+            }
+        }
 
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2075",
             Justification = "Reflection code is only used as a fallback in case the SDK was not trimmed. Trimmed scenarios should register dependencies with Amazon.RuntimeDependencyRegistry.GlobalRuntimeDependencyRegistry")]
-#endif
         private static IChecksumProvider Instance
         {
             get

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,87 +49,87 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDrmSignaling())
             {
                 context.Writer.WritePropertyName("DrmSignaling");
-                context.Writer.Write(requestObject.DrmSignaling);
+                context.Writer.WriteStringValue(requestObject.DrmSignaling);
             }
 
             if(requestObject.IsSetFilterConfiguration())
             {
                 context.Writer.WritePropertyName("FilterConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("ManifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetMinBufferTimeSeconds())
             {
                 context.Writer.WritePropertyName("MinBufferTimeSeconds");
-                context.Writer.Write(requestObject.MinBufferTimeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MinBufferTimeSeconds.Value);
             }
 
             if(requestObject.IsSetMinUpdatePeriodSeconds())
             {
                 context.Writer.WritePropertyName("MinUpdatePeriodSeconds");
-                context.Writer.Write(requestObject.MinUpdatePeriodSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MinUpdatePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetPeriodTriggers())
             {
                 context.Writer.WritePropertyName("PeriodTriggers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPeriodTriggersListValue in requestObject.PeriodTriggers)
                 {
-                        context.Writer.Write(requestObjectPeriodTriggersListValue);
+                        context.Writer.WriteStringValue(requestObjectPeriodTriggersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetScteDash())
             {
                 context.Writer.WritePropertyName("ScteDash");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScteDashMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScteDash, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSegmentTemplateFormat())
             {
                 context.Writer.WritePropertyName("SegmentTemplateFormat");
-                context.Writer.Write(requestObject.SegmentTemplateFormat);
+                context.Writer.WriteStringValue(requestObject.SegmentTemplateFormat);
             }
 
             if(requestObject.IsSetSuggestedPresentationDelaySeconds())
             {
                 context.Writer.WritePropertyName("SuggestedPresentationDelaySeconds");
-                context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.SuggestedPresentationDelaySeconds.Value);
             }
 
             if(requestObject.IsSetUtcTiming())
             {
                 context.Writer.WritePropertyName("UtcTiming");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashUtcTimingMarshaller.Instance;
                 marshaller.Marshall(requestObject.UtcTiming, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

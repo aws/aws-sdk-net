@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitQueryFile())
             {
                 context.Writer.WritePropertyName("initQueryFile");
-                context.Writer.Write(requestObject.InitQueryFile);
+                context.Writer.WriteStringValue(requestObject.InitQueryFile);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");
-                context.Writer.Write(requestObject.Parameters);
+                context.Writer.WriteStringValue(requestObject.Parameters);
             }
 
             if(requestObject.IsSetQuery())
             {
                 context.Writer.WritePropertyName("query");
-                context.Writer.Write(requestObject.Query);
+                context.Writer.WriteStringValue(requestObject.Query);
             }
 
         }

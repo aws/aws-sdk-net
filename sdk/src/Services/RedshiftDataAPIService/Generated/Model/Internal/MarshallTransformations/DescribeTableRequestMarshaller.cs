@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 {
@@ -63,79 +66,84 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterIdentifier())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClusterIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ClusterIdentifier");
-                        context.Writer.Write(publicRequest.ClusterIdentifier);
-                    }
-
-                    if(publicRequest.IsSetConnectedDatabase())
-                    {
-                        context.Writer.WritePropertyName("ConnectedDatabase");
-                        context.Writer.Write(publicRequest.ConnectedDatabase);
-                    }
-
-                    if(publicRequest.IsSetDatabase())
-                    {
-                        context.Writer.WritePropertyName("Database");
-                        context.Writer.Write(publicRequest.Database);
-                    }
-
-                    if(publicRequest.IsSetDbUser())
-                    {
-                        context.Writer.WritePropertyName("DbUser");
-                        context.Writer.Write(publicRequest.DbUser);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetSchema())
-                    {
-                        context.Writer.WritePropertyName("Schema");
-                        context.Writer.Write(publicRequest.Schema);
-                    }
-
-                    if(publicRequest.IsSetSecretArn())
-                    {
-                        context.Writer.WritePropertyName("SecretArn");
-                        context.Writer.Write(publicRequest.SecretArn);
-                    }
-
-                    if(publicRequest.IsSetTable())
-                    {
-                        context.Writer.WritePropertyName("Table");
-                        context.Writer.Write(publicRequest.Table);
-                    }
-
-                    if(publicRequest.IsSetWorkgroupName())
-                    {
-                        context.Writer.WritePropertyName("WorkgroupName");
-                        context.Writer.Write(publicRequest.WorkgroupName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClusterIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
             }
+
+            if(publicRequest.IsSetConnectedDatabase())
+            {
+                context.Writer.WritePropertyName("ConnectedDatabase");
+                context.Writer.WriteStringValue(publicRequest.ConnectedDatabase);
+            }
+
+            if(publicRequest.IsSetDatabase())
+            {
+                context.Writer.WritePropertyName("Database");
+                context.Writer.WriteStringValue(publicRequest.Database);
+            }
+
+            if(publicRequest.IsSetDbUser())
+            {
+                context.Writer.WritePropertyName("DbUser");
+                context.Writer.WriteStringValue(publicRequest.DbUser);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("Schema");
+                context.Writer.WriteStringValue(publicRequest.Schema);
+            }
+
+            if(publicRequest.IsSetSecretArn())
+            {
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.WriteStringValue(publicRequest.SecretArn);
+            }
+
+            if(publicRequest.IsSetTable())
+            {
+                context.Writer.WritePropertyName("Table");
+                context.Writer.WriteStringValue(publicRequest.Table);
+            }
+
+            if(publicRequest.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("WorkgroupName");
+                context.Writer.WriteStringValue(publicRequest.WorkgroupName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

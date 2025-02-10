@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -64,81 +67,86 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
                 throw new AmazonIoTEventsException("Request object does not have required field AlarmModelName set");
             request.AddPathResource("{alarmModelName}", StringUtils.FromString(publicRequest.AlarmModelName));
             request.ResourcePath = "/alarm-models/{alarmModelName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlarmCapabilities())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlarmCapabilities())
-                    {
-                        context.Writer.WritePropertyName("alarmCapabilities");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("alarmCapabilities");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AlarmCapabilitiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmCapabilities, context);
+                var marshaller = AlarmCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmCapabilities, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAlarmEventActions())
-                    {
-                        context.Writer.WritePropertyName("alarmEventActions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AlarmEventActionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmEventActions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAlarmModelDescription())
-                    {
-                        context.Writer.WritePropertyName("alarmModelDescription");
-                        context.Writer.Write(publicRequest.AlarmModelDescription);
-                    }
-
-                    if(publicRequest.IsSetAlarmNotification())
-                    {
-                        context.Writer.WritePropertyName("alarmNotification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AlarmNotificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmNotification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAlarmRule())
-                    {
-                        context.Writer.WritePropertyName("alarmRule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AlarmRuleMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmRule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSeverity())
-                    {
-                        context.Writer.WritePropertyName("severity");
-                        context.Writer.Write(publicRequest.Severity.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAlarmEventActions())
+            {
+                context.Writer.WritePropertyName("alarmEventActions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AlarmEventActionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmEventActions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAlarmModelDescription())
+            {
+                context.Writer.WritePropertyName("alarmModelDescription");
+                context.Writer.WriteStringValue(publicRequest.AlarmModelDescription);
+            }
+
+            if(publicRequest.IsSetAlarmNotification())
+            {
+                context.Writer.WritePropertyName("alarmNotification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AlarmNotificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmNotification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAlarmRule())
+            {
+                context.Writer.WritePropertyName("alarmRule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AlarmRuleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmRule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSeverity())
+            {
+                context.Writer.WritePropertyName("severity");
+                context.Writer.WriteNumberValue(publicRequest.Severity.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

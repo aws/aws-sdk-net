@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The device type.
+    /// Information about a user's device that they've registered for device SRP authentication
+    /// in your application. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+    /// with user devices in your user pool</a>.
+    /// 
+    ///  
+    /// <para>
+    /// The data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html">AdminGetDevice</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html">AdminListDevices</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html">GetDevice</a>.
+    /// </para>
     /// </summary>
     public partial class DeviceType
     {
@@ -43,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceAttributes. 
         /// <para>
-        /// The device attributes.
+        /// Metadata about a user's device, like name and last-access source IP.
         /// </para>
         /// </summary>
         public List<AttributeType> DeviceAttributes
@@ -61,7 +70,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceCreateDate. 
         /// <para>
-        /// The creation date of the device.
+        /// The date and time when the item was created. Amazon Cognito returns this timestamp
+        /// in UNIX epoch time format. Your SDK might render the output in a human-readable format
+        /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
         public DateTime? DeviceCreateDate
@@ -79,7 +90,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceKey. 
         /// <para>
-        /// The device key.
+        /// The device key, for example <c>us-west-2_EXAMPLE-a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]
@@ -98,7 +109,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeviceLastAuthenticatedDate. 
         /// <para>
-        /// The date when the device was last authenticated.
+        /// The date when the user last signed in with the device.
         /// </para>
         /// </summary>
         public DateTime? DeviceLastAuthenticatedDate

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -48,10 +46,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetScreenShare())
+            {
+                context.Writer.WritePropertyName("ScreenShare");
+                context.Writer.WriteStringValue(requestObject.ScreenShare);
+            }
+
             if(requestObject.IsSetVideo())
             {
                 context.Writer.WritePropertyName("Video");
-                context.Writer.Write(requestObject.Video);
+                context.Writer.WriteStringValue(requestObject.Video);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,161 +49,161 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchitectures())
             {
                 context.Writer.WritePropertyName("Architectures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArchitecturesListValue in requestObject.Architectures)
                 {
-                        context.Writer.Write(requestObjectArchitecturesListValue);
+                        context.Writer.WriteStringValue(requestObjectArchitecturesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCode())
             {
                 context.Writer.WritePropertyName("Code");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsLambdaFunctionCodeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Code, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCodeSha256())
             {
                 context.Writer.WritePropertyName("CodeSha256");
-                context.Writer.Write(requestObject.CodeSha256);
+                context.Writer.WriteStringValue(requestObject.CodeSha256);
             }
 
             if(requestObject.IsSetDeadLetterConfig())
             {
                 context.Writer.WritePropertyName("DeadLetterConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsLambdaFunctionDeadLetterConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeadLetterConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsLambdaFunctionEnvironmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Environment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFunctionName())
             {
                 context.Writer.WritePropertyName("FunctionName");
-                context.Writer.Write(requestObject.FunctionName);
+                context.Writer.WriteStringValue(requestObject.FunctionName);
             }
 
             if(requestObject.IsSetHandler())
             {
                 context.Writer.WritePropertyName("Handler");
-                context.Writer.Write(requestObject.Handler);
+                context.Writer.WriteStringValue(requestObject.Handler);
             }
 
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("KmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetLastModified())
             {
                 context.Writer.WritePropertyName("LastModified");
-                context.Writer.Write(requestObject.LastModified);
+                context.Writer.WriteStringValue(requestObject.LastModified);
             }
 
             if(requestObject.IsSetLayers())
             {
                 context.Writer.WritePropertyName("Layers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLayersListValue in requestObject.Layers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsLambdaFunctionLayerMarshaller.Instance;
                     marshaller.Marshall(requestObjectLayersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMasterArn())
             {
                 context.Writer.WritePropertyName("MasterArn");
-                context.Writer.Write(requestObject.MasterArn);
+                context.Writer.WriteStringValue(requestObject.MasterArn);
             }
 
             if(requestObject.IsSetMemorySize())
             {
                 context.Writer.WritePropertyName("MemorySize");
-                context.Writer.Write(requestObject.MemorySize.Value);
+                context.Writer.WriteNumberValue(requestObject.MemorySize.Value);
             }
 
             if(requestObject.IsSetPackageType())
             {
                 context.Writer.WritePropertyName("PackageType");
-                context.Writer.Write(requestObject.PackageType);
+                context.Writer.WriteStringValue(requestObject.PackageType);
             }
 
             if(requestObject.IsSetRevisionId())
             {
                 context.Writer.WritePropertyName("RevisionId");
-                context.Writer.Write(requestObject.RevisionId);
+                context.Writer.WriteStringValue(requestObject.RevisionId);
             }
 
             if(requestObject.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");
-                context.Writer.Write(requestObject.Role);
+                context.Writer.WriteStringValue(requestObject.Role);
             }
 
             if(requestObject.IsSetRuntime())
             {
                 context.Writer.WritePropertyName("Runtime");
-                context.Writer.Write(requestObject.Runtime);
+                context.Writer.WriteStringValue(requestObject.Runtime);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
             if(requestObject.IsSetTracingConfig())
             {
                 context.Writer.WritePropertyName("TracingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsLambdaFunctionTracingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TracingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsLambdaFunctionVpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

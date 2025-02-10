@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
@@ -63,171 +66,188 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetACLName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetACLName())
-                    {
-                        context.Writer.WritePropertyName("ACLName");
-                        context.Writer.Write(publicRequest.ACLName);
-                    }
-
-                    if(publicRequest.IsSetAutoMinorVersionUpgrade())
-                    {
-                        context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                        context.Writer.Write(publicRequest.AutoMinorVersionUpgrade.Value);
-                    }
-
-                    if(publicRequest.IsSetClusterName())
-                    {
-                        context.Writer.WritePropertyName("ClusterName");
-                        context.Writer.Write(publicRequest.ClusterName);
-                    }
-
-                    if(publicRequest.IsSetDataTiering())
-                    {
-                        context.Writer.WritePropertyName("DataTiering");
-                        context.Writer.Write(publicRequest.DataTiering.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEngineVersion())
-                    {
-                        context.Writer.WritePropertyName("EngineVersion");
-                        context.Writer.Write(publicRequest.EngineVersion);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyId");
-                        context.Writer.Write(publicRequest.KmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetMaintenanceWindow())
-                    {
-                        context.Writer.WritePropertyName("MaintenanceWindow");
-                        context.Writer.Write(publicRequest.MaintenanceWindow);
-                    }
-
-                    if(publicRequest.IsSetNodeType())
-                    {
-                        context.Writer.WritePropertyName("NodeType");
-                        context.Writer.Write(publicRequest.NodeType);
-                    }
-
-                    if(publicRequest.IsSetNumReplicasPerShard())
-                    {
-                        context.Writer.WritePropertyName("NumReplicasPerShard");
-                        context.Writer.Write(publicRequest.NumReplicasPerShard.Value);
-                    }
-
-                    if(publicRequest.IsSetNumShards())
-                    {
-                        context.Writer.WritePropertyName("NumShards");
-                        context.Writer.Write(publicRequest.NumShards.Value);
-                    }
-
-                    if(publicRequest.IsSetParameterGroupName())
-                    {
-                        context.Writer.WritePropertyName("ParameterGroupName");
-                        context.Writer.Write(publicRequest.ParameterGroupName);
-                    }
-
-                    if(publicRequest.IsSetPort())
-                    {
-                        context.Writer.WritePropertyName("Port");
-                        context.Writer.Write(publicRequest.Port.Value);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("SecurityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSnapshotArns())
-                    {
-                        context.Writer.WritePropertyName("SnapshotArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSnapshotArnsListValue in publicRequest.SnapshotArns)
-                        {
-                                context.Writer.Write(publicRequestSnapshotArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSnapshotName())
-                    {
-                        context.Writer.WritePropertyName("SnapshotName");
-                        context.Writer.Write(publicRequest.SnapshotName);
-                    }
-
-                    if(publicRequest.IsSetSnapshotRetentionLimit())
-                    {
-                        context.Writer.WritePropertyName("SnapshotRetentionLimit");
-                        context.Writer.Write(publicRequest.SnapshotRetentionLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetSnapshotWindow())
-                    {
-                        context.Writer.WritePropertyName("SnapshotWindow");
-                        context.Writer.Write(publicRequest.SnapshotWindow);
-                    }
-
-                    if(publicRequest.IsSetSnsTopicArn())
-                    {
-                        context.Writer.WritePropertyName("SnsTopicArn");
-                        context.Writer.Write(publicRequest.SnsTopicArn);
-                    }
-
-                    if(publicRequest.IsSetSubnetGroupName())
-                    {
-                        context.Writer.WritePropertyName("SubnetGroupName");
-                        context.Writer.Write(publicRequest.SubnetGroupName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTLSEnabled())
-                    {
-                        context.Writer.WritePropertyName("TLSEnabled");
-                        context.Writer.Write(publicRequest.TLSEnabled.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ACLName");
+                context.Writer.WriteStringValue(publicRequest.ACLName);
             }
+
+            if(publicRequest.IsSetAutoMinorVersionUpgrade())
+            {
+                context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
+                context.Writer.WriteBooleanValue(publicRequest.AutoMinorVersionUpgrade.Value);
+            }
+
+            if(publicRequest.IsSetClusterName())
+            {
+                context.Writer.WritePropertyName("ClusterName");
+                context.Writer.WriteStringValue(publicRequest.ClusterName);
+            }
+
+            if(publicRequest.IsSetDataTiering())
+            {
+                context.Writer.WritePropertyName("DataTiering");
+                context.Writer.WriteBooleanValue(publicRequest.DataTiering.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEngine())
+            {
+                context.Writer.WritePropertyName("Engine");
+                context.Writer.WriteStringValue(publicRequest.Engine);
+            }
+
+            if(publicRequest.IsSetEngineVersion())
+            {
+                context.Writer.WritePropertyName("EngineVersion");
+                context.Writer.WriteStringValue(publicRequest.EngineVersion);
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
+            if(publicRequest.IsSetMaintenanceWindow())
+            {
+                context.Writer.WritePropertyName("MaintenanceWindow");
+                context.Writer.WriteStringValue(publicRequest.MaintenanceWindow);
+            }
+
+            if(publicRequest.IsSetMultiRegionClusterName())
+            {
+                context.Writer.WritePropertyName("MultiRegionClusterName");
+                context.Writer.WriteStringValue(publicRequest.MultiRegionClusterName);
+            }
+
+            if(publicRequest.IsSetNodeType())
+            {
+                context.Writer.WritePropertyName("NodeType");
+                context.Writer.WriteStringValue(publicRequest.NodeType);
+            }
+
+            if(publicRequest.IsSetNumReplicasPerShard())
+            {
+                context.Writer.WritePropertyName("NumReplicasPerShard");
+                context.Writer.WriteNumberValue(publicRequest.NumReplicasPerShard.Value);
+            }
+
+            if(publicRequest.IsSetNumShards())
+            {
+                context.Writer.WritePropertyName("NumShards");
+                context.Writer.WriteNumberValue(publicRequest.NumShards.Value);
+            }
+
+            if(publicRequest.IsSetParameterGroupName())
+            {
+                context.Writer.WritePropertyName("ParameterGroupName");
+                context.Writer.WriteStringValue(publicRequest.ParameterGroupName);
+            }
+
+            if(publicRequest.IsSetPort())
+            {
+                context.Writer.WritePropertyName("Port");
+                context.Writer.WriteNumberValue(publicRequest.Port.Value);
+            }
+
+            if(publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("SecurityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSnapshotArns())
+            {
+                context.Writer.WritePropertyName("SnapshotArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSnapshotArnsListValue in publicRequest.SnapshotArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestSnapshotArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSnapshotName())
+            {
+                context.Writer.WritePropertyName("SnapshotName");
+                context.Writer.WriteStringValue(publicRequest.SnapshotName);
+            }
+
+            if(publicRequest.IsSetSnapshotRetentionLimit())
+            {
+                context.Writer.WritePropertyName("SnapshotRetentionLimit");
+                context.Writer.WriteNumberValue(publicRequest.SnapshotRetentionLimit.Value);
+            }
+
+            if(publicRequest.IsSetSnapshotWindow())
+            {
+                context.Writer.WritePropertyName("SnapshotWindow");
+                context.Writer.WriteStringValue(publicRequest.SnapshotWindow);
+            }
+
+            if(publicRequest.IsSetSnsTopicArn())
+            {
+                context.Writer.WritePropertyName("SnsTopicArn");
+                context.Writer.WriteStringValue(publicRequest.SnsTopicArn);
+            }
+
+            if(publicRequest.IsSetSubnetGroupName())
+            {
+                context.Writer.WritePropertyName("SubnetGroupName");
+                context.Writer.WriteStringValue(publicRequest.SubnetGroupName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTLSEnabled())
+            {
+                context.Writer.WritePropertyName("TLSEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.TLSEnabled.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

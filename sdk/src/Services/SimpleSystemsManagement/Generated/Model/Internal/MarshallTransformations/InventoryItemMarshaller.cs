@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureTime())
             {
                 context.Writer.WritePropertyName("CaptureTime");
-                context.Writer.Write(requestObject.CaptureTime);
+                context.Writer.WriteStringValue(requestObject.CaptureTime);
             }
 
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContentListValue in requestObject.Content)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectContentListValueKvp in requestObjectContentListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectContentListValueKvp.Key);
                         var requestObjectContentListValueValue = requestObjectContentListValueKvp.Value;
 
-                            context.Writer.Write(requestObjectContentListValueValue);
+                            context.Writer.WriteStringValue(requestObjectContentListValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContentHash())
             {
                 context.Writer.WritePropertyName("ContentHash");
-                context.Writer.Write(requestObject.ContentHash);
+                context.Writer.WriteStringValue(requestObject.ContentHash);
             }
 
             if(requestObject.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectContextKvp in requestObject.Context)
                 {
                     context.Writer.WritePropertyName(requestObjectContextKvp.Key);
                     var requestObjectContextValue = requestObjectContextKvp.Value;
 
-                        context.Writer.Write(requestObjectContextValue);
+                        context.Writer.WriteStringValue(requestObjectContextValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaVersion())
             {
                 context.Writer.WritePropertyName("SchemaVersion");
-                context.Writer.Write(requestObject.SchemaVersion);
+                context.Writer.WriteStringValue(requestObject.SchemaVersion);
             }
 
             if(requestObject.IsSetTypeName())
             {
                 context.Writer.WritePropertyName("TypeName");
-                context.Writer.Write(requestObject.TypeName);
+                context.Writer.WriteStringValue(requestObject.TypeName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsActive())
             {
                 context.Writer.WritePropertyName("isActive");
-                context.Writer.Write(requestObject.IsActive.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsActive.Value);
             }
 
         }

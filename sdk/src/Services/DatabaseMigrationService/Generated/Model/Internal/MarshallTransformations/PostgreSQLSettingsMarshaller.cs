@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,145 +49,151 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterConnectScript())
             {
                 context.Writer.WritePropertyName("AfterConnectScript");
-                context.Writer.Write(requestObject.AfterConnectScript);
+                context.Writer.WriteStringValue(requestObject.AfterConnectScript);
             }
 
             if(requestObject.IsSetBabelfishDatabaseName())
             {
                 context.Writer.WritePropertyName("BabelfishDatabaseName");
-                context.Writer.Write(requestObject.BabelfishDatabaseName);
+                context.Writer.WriteStringValue(requestObject.BabelfishDatabaseName);
             }
 
             if(requestObject.IsSetCaptureDdls())
             {
                 context.Writer.WritePropertyName("CaptureDdls");
-                context.Writer.Write(requestObject.CaptureDdls.Value);
+                context.Writer.WriteBooleanValue(requestObject.CaptureDdls.Value);
             }
 
             if(requestObject.IsSetDatabaseMode())
             {
                 context.Writer.WritePropertyName("DatabaseMode");
-                context.Writer.Write(requestObject.DatabaseMode);
+                context.Writer.WriteStringValue(requestObject.DatabaseMode);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDdlArtifactsSchema())
             {
                 context.Writer.WritePropertyName("DdlArtifactsSchema");
-                context.Writer.Write(requestObject.DdlArtifactsSchema);
+                context.Writer.WriteStringValue(requestObject.DdlArtifactsSchema);
+            }
+
+            if(requestObject.IsSetDisableUnicodeSourceFilter())
+            {
+                context.Writer.WritePropertyName("DisableUnicodeSourceFilter");
+                context.Writer.WriteBooleanValue(requestObject.DisableUnicodeSourceFilter.Value);
             }
 
             if(requestObject.IsSetExecuteTimeout())
             {
                 context.Writer.WritePropertyName("ExecuteTimeout");
-                context.Writer.Write(requestObject.ExecuteTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.ExecuteTimeout.Value);
             }
 
             if(requestObject.IsSetFailTasksOnLobTruncation())
             {
                 context.Writer.WritePropertyName("FailTasksOnLobTruncation");
-                context.Writer.Write(requestObject.FailTasksOnLobTruncation.Value);
+                context.Writer.WriteBooleanValue(requestObject.FailTasksOnLobTruncation.Value);
             }
 
             if(requestObject.IsSetHeartbeatEnable())
             {
                 context.Writer.WritePropertyName("HeartbeatEnable");
-                context.Writer.Write(requestObject.HeartbeatEnable.Value);
+                context.Writer.WriteBooleanValue(requestObject.HeartbeatEnable.Value);
             }
 
             if(requestObject.IsSetHeartbeatFrequency())
             {
                 context.Writer.WritePropertyName("HeartbeatFrequency");
-                context.Writer.Write(requestObject.HeartbeatFrequency.Value);
+                context.Writer.WriteNumberValue(requestObject.HeartbeatFrequency.Value);
             }
 
             if(requestObject.IsSetHeartbeatSchema())
             {
                 context.Writer.WritePropertyName("HeartbeatSchema");
-                context.Writer.Write(requestObject.HeartbeatSchema);
+                context.Writer.WriteStringValue(requestObject.HeartbeatSchema);
             }
 
             if(requestObject.IsSetMapBooleanAsBoolean())
             {
                 context.Writer.WritePropertyName("MapBooleanAsBoolean");
-                context.Writer.Write(requestObject.MapBooleanAsBoolean.Value);
+                context.Writer.WriteBooleanValue(requestObject.MapBooleanAsBoolean.Value);
             }
 
             if(requestObject.IsSetMapJsonbAsClob())
             {
                 context.Writer.WritePropertyName("MapJsonbAsClob");
-                context.Writer.Write(requestObject.MapJsonbAsClob.Value);
+                context.Writer.WriteBooleanValue(requestObject.MapJsonbAsClob.Value);
             }
 
             if(requestObject.IsSetMapLongVarcharAs())
             {
                 context.Writer.WritePropertyName("MapLongVarcharAs");
-                context.Writer.Write(requestObject.MapLongVarcharAs);
+                context.Writer.WriteStringValue(requestObject.MapLongVarcharAs);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetPluginName())
             {
                 context.Writer.WritePropertyName("PluginName");
-                context.Writer.Write(requestObject.PluginName);
+                context.Writer.WriteStringValue(requestObject.PluginName);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecretId");
-                context.Writer.Write(requestObject.SecretsManagerSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecretId);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetSlotName())
             {
                 context.Writer.WritePropertyName("SlotName");
-                context.Writer.Write(requestObject.SlotName);
+                context.Writer.WriteStringValue(requestObject.SlotName);
             }
 
             if(requestObject.IsSetTrimSpaceInChar())
             {
                 context.Writer.WritePropertyName("TrimSpaceInChar");
-                context.Writer.Write(requestObject.TrimSpaceInChar.Value);
+                context.Writer.WriteBooleanValue(requestObject.TrimSpaceInChar.Value);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

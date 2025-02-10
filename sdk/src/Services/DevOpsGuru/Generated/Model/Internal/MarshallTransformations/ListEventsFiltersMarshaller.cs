@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
-                context.Writer.Write(requestObject.DataSource);
+                context.Writer.WriteStringValue(requestObject.DataSource);
             }
 
             if(requestObject.IsSetEventClass())
             {
                 context.Writer.WritePropertyName("EventClass");
-                context.Writer.Write(requestObject.EventClass);
+                context.Writer.WriteStringValue(requestObject.EventClass);
             }
 
             if(requestObject.IsSetEventSource())
             {
                 context.Writer.WritePropertyName("EventSource");
-                context.Writer.Write(requestObject.EventSource);
+                context.Writer.WriteStringValue(requestObject.EventSource);
             }
 
             if(requestObject.IsSetEventTimeRange())
             {
                 context.Writer.WritePropertyName("EventTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventTimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInsightId())
             {
                 context.Writer.WritePropertyName("InsightId");
-                context.Writer.Write(requestObject.InsightId);
+                context.Writer.WriteStringValue(requestObject.InsightId);
             }
 
             if(requestObject.IsSetResourceCollection())
             {
                 context.Writer.WritePropertyName("ResourceCollection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceCollectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResourceCollection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

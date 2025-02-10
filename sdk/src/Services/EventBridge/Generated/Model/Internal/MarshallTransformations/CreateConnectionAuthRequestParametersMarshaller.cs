@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,56 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiKeyAuthParameters())
             {
                 context.Writer.WritePropertyName("ApiKeyAuthParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateConnectionApiKeyAuthRequestParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApiKeyAuthParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBasicAuthParameters())
             {
                 context.Writer.WritePropertyName("BasicAuthParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateConnectionBasicAuthRequestParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.BasicAuthParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetConnectivityParameters())
+            {
+                context.Writer.WritePropertyName("ConnectivityParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectivityResourceParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectivityParameters, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInvocationHttpParameters())
             {
                 context.Writer.WritePropertyName("InvocationHttpParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectionHttpParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.InvocationHttpParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuthParameters())
             {
                 context.Writer.WritePropertyName("OAuthParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateConnectionOAuthRequestParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuthParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

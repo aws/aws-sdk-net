@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfTheWeek())
             {
                 context.Writer.WritePropertyName("DayOfTheWeek");
-                context.Writer.Write(requestObject.DayOfTheWeek);
+                context.Writer.WriteStringValue(requestObject.DayOfTheWeek);
             }
 
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.Write(requestObject.Time);
+                context.Writer.WriteStringValue(requestObject.Time);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");
-                context.Writer.Write(requestObject.EntityId);
+                context.Writer.WriteStringValue(requestObject.EntityId);
             }
 
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
-                context.Writer.Write(requestObject.MessageType);
+                context.Writer.WriteStringValue(requestObject.MessageType);
             }
 
             if(requestObject.IsSetOriginationNumber())
             {
                 context.Writer.WritePropertyName("OriginationNumber");
-                context.Writer.Write(requestObject.OriginationNumber);
+                context.Writer.WriteStringValue(requestObject.OriginationNumber);
             }
 
             if(requestObject.IsSetSenderId())
             {
                 context.Writer.WritePropertyName("SenderId");
-                context.Writer.Write(requestObject.SenderId);
+                context.Writer.WriteStringValue(requestObject.SenderId);
             }
 
             if(requestObject.IsSetTemplateId())
             {
                 context.Writer.WritePropertyName("TemplateId");
-                context.Writer.Write(requestObject.TemplateId);
+                context.Writer.WriteStringValue(requestObject.TemplateId);
             }
 
         }

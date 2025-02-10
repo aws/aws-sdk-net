@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PercentageValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PercentageValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PercentageValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PercentageValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PercentageValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.PercentageValue.Value);
                 }
             }
 

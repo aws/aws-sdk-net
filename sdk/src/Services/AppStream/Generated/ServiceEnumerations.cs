@@ -77,6 +77,10 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant AUTO_TIME_ZONE_REDIRECTION for Action
+        /// </summary>
+        public static readonly Action AUTO_TIME_ZONE_REDIRECTION = new Action("AUTO_TIME_ZONE_REDIRECTION");
+        /// <summary>
         /// Constant CLIPBOARD_COPY_FROM_LOCAL_DEVICE for Action
         /// </summary>
         public static readonly Action CLIPBOARD_COPY_FROM_LOCAL_DEVICE = new Action("CLIPBOARD_COPY_FROM_LOCAL_DEVICE");
@@ -1524,6 +1528,10 @@ namespace Amazon.AppStream
         /// Constant RHEL8 for PlatformType
         /// </summary>
         public static readonly PlatformType RHEL8 = new PlatformType("RHEL8");
+        /// <summary>
+        /// Constant ROCKY_LINUX8 for PlatformType
+        /// </summary>
+        public static readonly PlatformType ROCKY_LINUX8 = new PlatformType("ROCKY_LINUX8");
         /// <summary>
         /// Constant WINDOWS for PlatformType
         /// </summary>

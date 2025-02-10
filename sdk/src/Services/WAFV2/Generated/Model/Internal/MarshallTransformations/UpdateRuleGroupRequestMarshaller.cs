@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -63,95 +66,100 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomResponseBodies())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("CustomResponseBodies");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCustomResponseBodiesKvp in publicRequest.CustomResponseBodies)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomResponseBodies())
-                    {
-                        context.Writer.WritePropertyName("CustomResponseBodies");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestCustomResponseBodiesKvp in publicRequest.CustomResponseBodies)
-                        {
-                            context.Writer.WritePropertyName(publicRequestCustomResponseBodiesKvp.Key);
-                            var publicRequestCustomResponseBodiesValue = publicRequestCustomResponseBodiesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestCustomResponseBodiesKvp.Key);
+                    var publicRequestCustomResponseBodiesValue = publicRequestCustomResponseBodiesKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = CustomResponseBodyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCustomResponseBodiesValue, context);
+                    var marshaller = CustomResponseBodyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCustomResponseBodiesValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetId())
-                    {
-                        context.Writer.WritePropertyName("Id");
-                        context.Writer.Write(publicRequest.Id);
-                    }
-
-                    if(publicRequest.IsSetLockToken())
-                    {
-                        context.Writer.WritePropertyName("LockToken");
-                        context.Writer.Write(publicRequest.LockToken);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRules())
-                    {
-                        context.Writer.WritePropertyName("Rules");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRulesListValue in publicRequest.Rules)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRulesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetScope())
-                    {
-                        context.Writer.WritePropertyName("Scope");
-                        context.Writer.Write(publicRequest.Scope);
-                    }
-
-                    if(publicRequest.IsSetVisibilityConfig())
-                    {
-                        context.Writer.WritePropertyName("VisibilityConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VisibilityConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VisibilityConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetId())
+            {
+                context.Writer.WritePropertyName("Id");
+                context.Writer.WriteStringValue(publicRequest.Id);
+            }
+
+            if(publicRequest.IsSetLockToken())
+            {
+                context.Writer.WritePropertyName("LockToken");
+                context.Writer.WriteStringValue(publicRequest.LockToken);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRules())
+            {
+                context.Writer.WritePropertyName("Rules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("Scope");
+                context.Writer.WriteStringValue(publicRequest.Scope);
+            }
+
+            if(publicRequest.IsSetVisibilityConfig())
+            {
+                context.Writer.WritePropertyName("VisibilityConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VisibilityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VisibilityConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

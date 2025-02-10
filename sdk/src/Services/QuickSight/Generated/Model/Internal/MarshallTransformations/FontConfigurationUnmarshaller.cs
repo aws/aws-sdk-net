@@ -29,71 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FontConfiguration Object
     /// </summary>  
-    public class FontConfigurationUnmarshaller : IUnmarshaller<FontConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FontConfiguration, JsonUnmarshallerContext>
+    public class FontConfigurationUnmarshaller : IJsonUnmarshaller<FontConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FontConfiguration IUnmarshaller<FontConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FontConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public FontConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FontConfiguration unmarshalledObject = new FontConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FontColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FontDecoration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontDecoration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontDecoration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FontFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FontSize", targetDepth))
                 {
                     var unmarshaller = FontSizeUnmarshaller.Instance;
-                    unmarshalledObject.FontSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FontStyle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FontWeight", targetDepth))
                 {
                     var unmarshaller = FontWeightUnmarshaller.Instance;
-                    unmarshalledObject.FontWeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

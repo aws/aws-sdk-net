@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.PersonalizeEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionId())
             {
                 context.Writer.WritePropertyName("actionId");
-                context.Writer.Write(requestObject.ActionId);
+                context.Writer.WriteStringValue(requestObject.ActionId);
             }
 
             if(requestObject.IsSetEventId())
             {
                 context.Writer.WritePropertyName("eventId");
-                context.Writer.Write(requestObject.EventId);
+                context.Writer.WriteStringValue(requestObject.EventId);
             }
 
             if(requestObject.IsSetEventType())
             {
                 context.Writer.WritePropertyName("eventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WriteStringValue(requestObject.EventType);
             }
 
             if(requestObject.IsSetImpression())
             {
                 context.Writer.WritePropertyName("impression");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectImpressionListValue in requestObject.Impression)
                 {
-                        context.Writer.Write(requestObjectImpressionListValue);
+                        context.Writer.WriteStringValue(requestObjectImpressionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
-                context.Writer.Write(requestObject.Properties);
+                context.Writer.WriteStringValue(requestObject.Properties);
             }
 
             if(requestObject.IsSetRecommendationId())
             {
                 context.Writer.WritePropertyName("recommendationId");
-                context.Writer.Write(requestObject.RecommendationId);
+                context.Writer.WriteStringValue(requestObject.RecommendationId);
             }
 
             if(requestObject.IsSetSessionId())
             {
                 context.Writer.WritePropertyName("sessionId");
-                context.Writer.Write(requestObject.SessionId);
+                context.Writer.WriteStringValue(requestObject.SessionId);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("userId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaseInsensitive())
             {
                 context.Writer.WritePropertyName("CaseInsensitive");
-                context.Writer.Write(requestObject.CaseInsensitive.Value);
+                context.Writer.WriteBooleanValue(requestObject.CaseInsensitive.Value);
             }
 
             if(requestObject.IsSetColumnToJsonKeyMappings())
             {
                 context.Writer.WritePropertyName("ColumnToJsonKeyMappings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectColumnToJsonKeyMappingsKvp in requestObject.ColumnToJsonKeyMappings)
                 {
                     context.Writer.WritePropertyName(requestObjectColumnToJsonKeyMappingsKvp.Key);
                     var requestObjectColumnToJsonKeyMappingsValue = requestObjectColumnToJsonKeyMappingsKvp.Value;
 
-                        context.Writer.Write(requestObjectColumnToJsonKeyMappingsValue);
+                        context.Writer.WriteStringValue(requestObjectColumnToJsonKeyMappingsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConvertDotsInJsonKeysToUnderscores())
             {
                 context.Writer.WritePropertyName("ConvertDotsInJsonKeysToUnderscores");
-                context.Writer.Write(requestObject.ConvertDotsInJsonKeysToUnderscores.Value);
+                context.Writer.WriteBooleanValue(requestObject.ConvertDotsInJsonKeysToUnderscores.Value);
             }
 
         }

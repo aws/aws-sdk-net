@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("height");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Height.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Height.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Height.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Height.Value);
+                    context.Writer.WriteNumberValue(requestObject.Height.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("leftOffset");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.LeftOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LeftOffset.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.LeftOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LeftOffset.Value);
+                    context.Writer.WriteNumberValue(requestObject.LeftOffset.Value);
                 }
             }
 
@@ -79,11 +77,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("topOffset");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.TopOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.TopOffset.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TopOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TopOffset.Value);
+                    context.Writer.WriteNumberValue(requestObject.TopOffset.Value);
                 }
             }
 
@@ -92,11 +90,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("width");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Width.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Width.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Width.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Width.Value);
+                    context.Writer.WriteNumberValue(requestObject.Width.Value);
                 }
             }
 

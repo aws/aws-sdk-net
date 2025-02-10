@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Image Object
     /// </summary>  
-    public class ImageUnmarshaller : IUnmarshaller<Image, XmlUnmarshallerContext>, IUnmarshaller<Image, JsonUnmarshallerContext>
+    public class ImageUnmarshaller : IXmlUnmarshaller<Image, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,6 +112,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Hypervisor = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("imageAllowed", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.ImageAllowed = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("imageId", targetDepth))
@@ -215,6 +221,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.RootDeviceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sourceImageId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceImageId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("sourceImageRegion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceImageRegion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("sourceInstanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -277,17 +295,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Image Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ImageUnmarshaller _instance = new ImageUnmarshaller();        
 

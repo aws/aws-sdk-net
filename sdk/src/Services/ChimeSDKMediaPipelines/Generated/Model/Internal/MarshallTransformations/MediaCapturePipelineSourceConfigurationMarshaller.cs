@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChimeSdkMeetingConfiguration())
             {
                 context.Writer.WritePropertyName("ChimeSdkMeetingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChimeSdkMeetingConcatenationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ChimeSdkMeetingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMediaPipelineArn())
             {
                 context.Writer.WritePropertyName("MediaPipelineArn");
-                context.Writer.Write(requestObject.MediaPipelineArn);
+                context.Writer.WriteStringValue(requestObject.MediaPipelineArn);
             }
 
         }

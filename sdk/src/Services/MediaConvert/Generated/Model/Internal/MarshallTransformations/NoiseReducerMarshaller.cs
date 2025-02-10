@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");
-                context.Writer.Write(requestObject.Filter);
+                context.Writer.WriteStringValue(requestObject.Filter);
             }
 
             if(requestObject.IsSetFilterSettings())
             {
                 context.Writer.WritePropertyName("filterSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoiseReducerFilterSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSpatialFilterSettings())
             {
                 context.Writer.WritePropertyName("spatialFilterSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoiseReducerSpatialFilterSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpatialFilterSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemporalFilterSettings())
             {
                 context.Writer.WritePropertyName("temporalFilterSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoiseReducerTemporalFilterSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemporalFilterSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

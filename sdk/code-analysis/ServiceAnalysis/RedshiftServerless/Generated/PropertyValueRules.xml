@@ -216,6 +216,25 @@
     <pattern>(\d{12})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListManagedWorkgroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListManagedWorkgroupsRequest.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListManagedWorkgroupsRequest.SourceArn</property>
+    <pattern>^arn:aws[a-z-]*:glue:[a-z0-9-]+:\d+:(database|catalog)[a-z0-9-:]*(?:/[A-Za-z0-9-_]{1,255})*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ListManagedWorkgroupsResponse.NextToken</property>
+    <min>8</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.ListNamespacesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -446,10 +465,25 @@
     <max>235</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ManagedWorkgroupListItem.ManagedWorkgroupName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_:\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.ManagedWorkgroupListItem.SourceArn</property>
+    <pattern>^arn:aws[a-z-]*:glue:[a-z0-9-]+:\d+:(database|catalog)[a-z0-9-:]*(?:/[A-Za-z0-9-_]{1,255})*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.Namespace.NamespaceName</property>
     <min>3</min>
     <max>64</max>
     <pattern>^[a-z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RedshiftServerless.Model.PerformanceTarget.Level</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RedshiftServerless.Model.RecoveryPoint.NamespaceName</property>

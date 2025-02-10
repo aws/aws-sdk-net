@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomResponseBodyKey())
             {
                 context.Writer.WritePropertyName("CustomResponseBodyKey");
-                context.Writer.Write(requestObject.CustomResponseBodyKey);
+                context.Writer.WriteStringValue(requestObject.CustomResponseBodyKey);
             }
 
             if(requestObject.IsSetResponseCode())
             {
                 context.Writer.WritePropertyName("ResponseCode");
-                context.Writer.Write(requestObject.ResponseCode.Value);
+                context.Writer.WriteNumberValue(requestObject.ResponseCode.Value);
             }
 
             if(requestObject.IsSetResponseHeaders())
             {
                 context.Writer.WritePropertyName("ResponseHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResponseHeadersListValue in requestObject.ResponseHeaders)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CustomHTTPHeaderMarshaller.Instance;
                     marshaller.Marshall(requestObjectResponseHeadersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

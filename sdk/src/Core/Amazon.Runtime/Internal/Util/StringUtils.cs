@@ -181,7 +181,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Converts a DateTime to ISO8601 formatted string without milliseconds.
+        /// Converts a nullable DateTime to ISO8601 formatted string.
         /// </summary>
         public static string FromDateTimeToISO8601(DateTime? value)
         {
@@ -194,11 +194,24 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Converts a DateTime to ISO8601 formatted string.
+        /// Converts a DateTime to ISO8601 formatted string without milliseconds.
         /// </summary>
         public static string FromDateTimeToISO8601NoMs(DateTime value)
         {
             return value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormatNoMS, CultureInfo.InvariantCulture);
+        }
+
+        /// <summary>
+        /// Converts a nullable DateTime to ISO8601 formatted string without milliseconds.
+        /// </summary>
+        public static string FromDateTimeToISO8601NoMs(DateTime? value)
+        {
+            if (!value.HasValue)
+            {
+                return null;
+            }
+
+            return value.Value.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormatNoMS, CultureInfo.InvariantCulture);
         }
 
         /// <summary>
@@ -214,7 +227,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Converts a DateTime to ISO8601 formatted string with milliseconds
+        /// Converts a nullable DateTime to ISO8601 formatted string with milliseconds
         /// if they are not zero.
         /// </summary>
         public static string FromDateTimeToISO8601WithOptionalMs(DateTime? value)
@@ -240,7 +253,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Converts a DateTime to RFC822 formatted string.
+        /// Converts a nullable DateTime to RFC822 formatted string.
         /// </summary>
         public static string FromDateTimeToRFC822(DateTime? value)
         {
@@ -262,7 +275,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Converts a DateTime to Unix epoch time formatted string.
+        /// Converts a nullable DateTime to Unix epoch time formatted string.
         /// </summary>
         public static string FromDateTimeToUnixTimestamp(DateTime? value)
         {

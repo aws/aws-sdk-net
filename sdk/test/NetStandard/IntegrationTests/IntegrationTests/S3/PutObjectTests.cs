@@ -1,23 +1,20 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Amazon.S3;
-
-using Amazon.DNXCore.IntegrationTests;
 using Amazon.S3.Model;
 using System.Net;
 using System.Threading;
 using System.IO;
+using Amazon.S3.Util;
 
 namespace Amazon.DNXCore.IntegrationTests.S3
 {
     /// <summary>
     /// Summary description for PutObjectTest
     /// </summary>
-    
+
     public class PutObjectTest : TestBase<AmazonS3Client>
     {
         public static readonly long MEG_SIZE = (int)Math.Pow(2, 20);
@@ -34,7 +31,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             File.WriteAllText(filePath, "This is some sample text.!!");
             bucketName = UtilityMethods.CreateBucketAsync(Client, "PutObjectTest", true).Result;
         }
-        
+
         protected override void Dispose(bool disposing)
         {
             UtilityMethods.DeleteBucketWithObjectsAsync(Client, bucketName).Wait();
@@ -43,7 +40,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             {
                 File.Delete(filePath);
             }
-            
+
             base.Dispose(disposing);
         }
 
@@ -130,8 +127,8 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
             Console.WriteLine("S3 generated ETag: {0}", response.ETag);
             Assert.True(response.ETag.Length > 0);
-        } 
-         
+        }
+
         [Theory]
         [InlineData(true)]
         [InlineData(false)]
@@ -189,6 +186,48 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             Assert.Null(headers.ContentEncoding);
         }
 
+        /// <summary>
+        /// Reported in https://github.com/aws/aws-sdk-net/issues/3629
+        /// </summary>
+        [Fact]
+        public async Task TestResetStreamPosition()
+        {
+            var memoryStream = new MemoryStream();
+            long offset;
+
+            using (var writer = new StreamWriter(memoryStream, Encoding.UTF8, 1024, leaveOpen: true))
+            {
+                writer.AutoFlush = true;
+                await writer.WriteAsync("Hello");
+                offset = memoryStream.Position;
+                await writer.WriteAsync("World");
+                await writer.FlushAsync();
+            }
+
+            memoryStream.Seek(offset, SeekOrigin.Begin);
+
+            var putRequest = new PutObjectRequest
+            {
+                CannedACL = S3CannedACL.NoACL,
+                BucketName = bucketName,
+                Key = "test-file.txt",
+                AutoResetStreamPosition = false,
+                AutoCloseStream = !memoryStream.CanSeek,
+                InputStream = memoryStream.CanSeek ? memoryStream : AmazonS3Util.MakeStreamSeekable(memoryStream),
+                UseChunkEncoding = false,
+            };
+
+            var putResponse = await Client.PutObjectAsync(putRequest);
+            Assert.True(putResponse.HttpStatusCode == HttpStatusCode.OK);
+
+            var getResponse = await Client.GetObjectAsync(bucketName, "test-file.txt");
+            using (var reader = new StreamReader(getResponse.ResponseStream))
+            {
+                var content = await reader.ReadToEndAsync();
+                Assert.Equal("World", content);
+            }
+        }
+
         private async Task<HeadersCollection> TestPutAndGet(PutObjectRequest request)
         {
             await Client.PutObjectAsync(request);
@@ -217,7 +256,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
             var request = new PutObjectRequest
             {
                 BucketName = bucketName,
-                Key = DateTime.Now.ToFileTime() + testKey,
+                Key = DateTime.UtcNow.ToFileTime() + testKey,
                 ContentBody = testContent
             };
             return request;

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CoverageEksClusterDetails Object
     /// </summary>  
-    public class CoverageEksClusterDetailsUnmarshaller : IUnmarshaller<CoverageEksClusterDetails, XmlUnmarshallerContext>, IUnmarshaller<CoverageEksClusterDetails, JsonUnmarshallerContext>
+    public class CoverageEksClusterDetailsUnmarshaller : IJsonUnmarshaller<CoverageEksClusterDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CoverageEksClusterDetails IUnmarshaller<CoverageEksClusterDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CoverageEksClusterDetails Unmarshall(JsonUnmarshallerContext context)
+        public CoverageEksClusterDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CoverageEksClusterDetails unmarshalledObject = new CoverageEksClusterDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("addonDetails", targetDepth))
                 {
                     var unmarshaller = AddonDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AddonDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddonDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("compatibleNodes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CompatibleNodes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompatibleNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("coveredNodes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CoveredNodes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CoveredNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("managementType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManagementType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManagementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

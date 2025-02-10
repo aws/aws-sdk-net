@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBar())
             {
                 context.Writer.WritePropertyName("bar");
-                context.Writer.Write(requestObject.Bar);
+                context.Writer.WriteStringValue(requestObject.Bar);
             }
 
             if(requestObject.IsSetBaz())
             {
                 context.Writer.WritePropertyName("_baz");
-                context.Writer.Write(requestObject.Baz);
+                context.Writer.WriteStringValue(requestObject.Baz);
             }
 
             if(requestObject.IsSetFoo())
             {
                 context.Writer.WritePropertyName("FOO");
-                context.Writer.Write(requestObject.Foo);
+                context.Writer.WriteStringValue(requestObject.Foo);
             }
 
         }

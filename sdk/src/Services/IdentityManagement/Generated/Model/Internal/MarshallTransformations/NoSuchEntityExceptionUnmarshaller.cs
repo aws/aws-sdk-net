@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchEntityException operation
     /// </summary>  
-    public class NoSuchEntityExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchEntityException, XmlUnmarshallerContext>
+    public class NoSuchEntityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchEntityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

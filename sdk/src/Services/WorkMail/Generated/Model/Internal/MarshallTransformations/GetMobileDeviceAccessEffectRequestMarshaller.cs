@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -63,49 +66,54 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeviceModel())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeviceModel())
-                    {
-                        context.Writer.WritePropertyName("DeviceModel");
-                        context.Writer.Write(publicRequest.DeviceModel);
-                    }
-
-                    if(publicRequest.IsSetDeviceOperatingSystem())
-                    {
-                        context.Writer.WritePropertyName("DeviceOperatingSystem");
-                        context.Writer.Write(publicRequest.DeviceOperatingSystem);
-                    }
-
-                    if(publicRequest.IsSetDeviceType())
-                    {
-                        context.Writer.WritePropertyName("DeviceType");
-                        context.Writer.Write(publicRequest.DeviceType);
-                    }
-
-                    if(publicRequest.IsSetDeviceUserAgent())
-                    {
-                        context.Writer.WritePropertyName("DeviceUserAgent");
-                        context.Writer.Write(publicRequest.DeviceUserAgent);
-                    }
-
-                    if(publicRequest.IsSetOrganizationId())
-                    {
-                        context.Writer.WritePropertyName("OrganizationId");
-                        context.Writer.Write(publicRequest.OrganizationId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DeviceModel");
+                context.Writer.WriteStringValue(publicRequest.DeviceModel);
             }
+
+            if(publicRequest.IsSetDeviceOperatingSystem())
+            {
+                context.Writer.WritePropertyName("DeviceOperatingSystem");
+                context.Writer.WriteStringValue(publicRequest.DeviceOperatingSystem);
+            }
+
+            if(publicRequest.IsSetDeviceType())
+            {
+                context.Writer.WritePropertyName("DeviceType");
+                context.Writer.WriteStringValue(publicRequest.DeviceType);
+            }
+
+            if(publicRequest.IsSetDeviceUserAgent())
+            {
+                context.Writer.WritePropertyName("DeviceUserAgent");
+                context.Writer.WriteStringValue(publicRequest.DeviceUserAgent);
+            }
+
+            if(publicRequest.IsSetOrganizationId())
+            {
+                context.Writer.WritePropertyName("OrganizationId");
+                context.Writer.WriteStringValue(publicRequest.OrganizationId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

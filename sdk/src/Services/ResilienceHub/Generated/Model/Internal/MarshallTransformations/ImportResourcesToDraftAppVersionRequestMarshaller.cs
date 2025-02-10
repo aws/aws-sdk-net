@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -61,74 +64,79 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/import-resources-to-draft-app-version";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppArn())
-                    {
-                        context.Writer.WritePropertyName("appArn");
-                        context.Writer.Write(publicRequest.AppArn);
-                    }
-
-                    if(publicRequest.IsSetEksSources())
-                    {
-                        context.Writer.WritePropertyName("eksSources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEksSourcesListValue in publicRequest.EksSources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EksSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEksSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetImportStrategy())
-                    {
-                        context.Writer.WritePropertyName("importStrategy");
-                        context.Writer.Write(publicRequest.ImportStrategy);
-                    }
-
-                    if(publicRequest.IsSetSourceArns())
-                    {
-                        context.Writer.WritePropertyName("sourceArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourceArnsListValue in publicRequest.SourceArns)
-                        {
-                                context.Writer.Write(publicRequestSourceArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTerraformSources())
-                    {
-                        context.Writer.WritePropertyName("terraformSources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTerraformSourcesListValue in publicRequest.TerraformSources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TerraformSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTerraformSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("appArn");
+                context.Writer.WriteStringValue(publicRequest.AppArn);
             }
+
+            if(publicRequest.IsSetEksSources())
+            {
+                context.Writer.WritePropertyName("eksSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEksSourcesListValue in publicRequest.EksSources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EksSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEksSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetImportStrategy())
+            {
+                context.Writer.WritePropertyName("importStrategy");
+                context.Writer.WriteStringValue(publicRequest.ImportStrategy);
+            }
+
+            if(publicRequest.IsSetSourceArns())
+            {
+                context.Writer.WritePropertyName("sourceArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourceArnsListValue in publicRequest.SourceArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestSourceArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTerraformSources())
+            {
+                context.Writer.WritePropertyName("terraformSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTerraformSourcesListValue in publicRequest.TerraformSources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TerraformSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTerraformSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

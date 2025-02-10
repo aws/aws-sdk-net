@@ -35,6 +35,7 @@ namespace Amazon.MailManager.Model
     public partial class IngressBooleanToEvaluate
     {
         private IngressAnalysis _analysis;
+        private IngressIsInAddressList _isInAddressList;
 
         /// <summary>
         /// Gets and sets the property Analysis. 
@@ -53,6 +54,25 @@ namespace Amazon.MailManager.Model
         internal bool IsSetAnalysis()
         {
             return this._analysis != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsInAddressList. 
+        /// <para>
+        /// The structure type for a boolean condition that provides the address lists to evaluate
+        /// incoming traffic on.
+        /// </para>
+        /// </summary>
+        public IngressIsInAddressList IsInAddressList
+        {
+            get { return this._isInAddressList; }
+            set { this._isInAddressList = value; }
+        }
+
+        // Check to see if IsInAddressList property is set
+        internal bool IsSetIsInAddressList()
+        {
+            return this._isInAddressList != null;
         }
 
     }

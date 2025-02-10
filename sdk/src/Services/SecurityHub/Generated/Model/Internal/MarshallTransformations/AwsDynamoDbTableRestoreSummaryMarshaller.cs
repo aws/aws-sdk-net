@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestoreDateTime())
             {
                 context.Writer.WritePropertyName("RestoreDateTime");
-                context.Writer.Write(requestObject.RestoreDateTime);
+                context.Writer.WriteStringValue(requestObject.RestoreDateTime);
             }
 
             if(requestObject.IsSetRestoreInProgress())
             {
                 context.Writer.WritePropertyName("RestoreInProgress");
-                context.Writer.Write(requestObject.RestoreInProgress.Value);
+                context.Writer.WriteBooleanValue(requestObject.RestoreInProgress.Value);
             }
 
             if(requestObject.IsSetSourceBackupArn())
             {
                 context.Writer.WritePropertyName("SourceBackupArn");
-                context.Writer.Write(requestObject.SourceBackupArn);
+                context.Writer.WriteStringValue(requestObject.SourceBackupArn);
             }
 
             if(requestObject.IsSetSourceTableArn())
             {
                 context.Writer.WritePropertyName("SourceTableArn");
-                context.Writer.Write(requestObject.SourceTableArn);
+                context.Writer.WriteStringValue(requestObject.SourceTableArn);
             }
 
         }

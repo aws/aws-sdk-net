@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForgotPassword())
             {
                 context.Writer.WritePropertyName("forgotPassword");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateBackendAuthForgotPasswordConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ForgotPassword, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMfa())
             {
                 context.Writer.WritePropertyName("mfa");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateBackendAuthMFAConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mfa, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuth())
             {
                 context.Writer.WritePropertyName("oAuth");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateBackendAuthOAuthConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPasswordPolicy())
             {
                 context.Writer.WritePropertyName("passwordPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateBackendAuthPasswordPolicyConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PasswordPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequiredSignUpAttributes())
             {
                 context.Writer.WritePropertyName("requiredSignUpAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRequiredSignUpAttributesListValue in requestObject.RequiredSignUpAttributes)
                 {
-                        context.Writer.Write(requestObjectRequiredSignUpAttributesListValue);
+                        context.Writer.WriteStringValue(requestObjectRequiredSignUpAttributesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSignInMethod())
             {
                 context.Writer.WritePropertyName("signInMethod");
-                context.Writer.Write(requestObject.SignInMethod);
+                context.Writer.WriteStringValue(requestObject.SignInMethod);
             }
 
             if(requestObject.IsSetUserPoolName())
             {
                 context.Writer.WritePropertyName("userPoolName");
-                context.Writer.Write(requestObject.UserPoolName);
+                context.Writer.WriteStringValue(requestObject.UserPoolName);
             }
 
             if(requestObject.IsSetVerificationMessage())
             {
                 context.Writer.WritePropertyName("verificationMessage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateBackendAuthVerificationMessageConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VerificationMessage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

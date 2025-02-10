@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteSpec Object
     /// </summary>  
-    public class RouteSpecUnmarshaller : IUnmarshaller<RouteSpec, XmlUnmarshallerContext>, IUnmarshaller<RouteSpec, JsonUnmarshallerContext>
+    public class RouteSpecUnmarshaller : IJsonUnmarshaller<RouteSpec, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteSpec IUnmarshaller<RouteSpec, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteSpec Unmarshall(JsonUnmarshallerContext context)
+        public RouteSpec Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteSpec unmarshalledObject = new RouteSpec();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("grpcRoute", targetDepth))
                 {
                     var unmarshaller = GrpcRouteUnmarshaller.Instance;
-                    unmarshalledObject.GrpcRoute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GrpcRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("http2Route", targetDepth))
                 {
                     var unmarshaller = HttpRouteUnmarshaller.Instance;
-                    unmarshalledObject.Http2Route = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Http2Route = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("httpRoute", targetDepth))
                 {
                     var unmarshaller = HttpRouteUnmarshaller.Instance;
-                    unmarshalledObject.HttpRoute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HttpRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("priority", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tcpRoute", targetDepth))
                 {
                     var unmarshaller = TcpRouteUnmarshaller.Instance;
-                    unmarshalledObject.TcpRoute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TcpRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

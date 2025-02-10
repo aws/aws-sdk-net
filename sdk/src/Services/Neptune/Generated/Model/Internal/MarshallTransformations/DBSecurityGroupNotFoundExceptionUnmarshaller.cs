@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSecurityGroupNotFoundException operation
     /// </summary>  
-    public class DBSecurityGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSecurityGroupNotFoundException, XmlUnmarshallerContext>
+    public class DBSecurityGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSecurityGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

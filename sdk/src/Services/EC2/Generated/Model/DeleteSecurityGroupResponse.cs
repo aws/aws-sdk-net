@@ -34,6 +34,44 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteSecurityGroupResponse : AmazonWebServiceResponse
     {
+        private string _groupId;
+        private bool? _return;
+
+        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The ID of the deleted security group.
+        /// </para>
+        /// </summary>
+        public string GroupId
+        {
+            get { return this._groupId; }
+            set { this._groupId = value; }
+        }
+
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Return. 
+        /// <para>
+        /// Returns <c>true</c> if the request succeeds; otherwise, returns an error.
+        /// </para>
+        /// </summary>
+        public bool? Return
+        {
+            get { return this._return; }
+            set { this._return = value; }
+        }
+
+        // Check to see if Return property is set
+        internal bool IsSetReturn()
+        {
+            return this._return.HasValue; 
+        }
 
     }
 }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
-                context.Writer.Write(requestObject.Content);
+                context.Writer.WriteStringValue(requestObject.Content);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetDeliveryMethod())
             {
                 context.Writer.WritePropertyName("DeliveryMethod");
-                context.Writer.Write(requestObject.DeliveryMethod);
+                context.Writer.WriteStringValue(requestObject.DeliveryMethod);
             }
 
             if(requestObject.IsSetRecipient())
             {
                 context.Writer.WritePropertyName("Recipient");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotificationRecipientTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Recipient, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubject())
             {
                 context.Writer.WritePropertyName("Subject");
-                context.Writer.Write(requestObject.Subject);
+                context.Writer.WriteStringValue(requestObject.Subject);
             }
 
         }

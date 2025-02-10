@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -64,65 +67,70 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field ControlId set");
             request.AddPathResource("{controlId}", StringUtils.FromString(publicRequest.ControlId));
             request.ResourcePath = "/controls/{controlId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActionPlanInstructions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActionPlanInstructions())
-                    {
-                        context.Writer.WritePropertyName("actionPlanInstructions");
-                        context.Writer.Write(publicRequest.ActionPlanInstructions);
-                    }
-
-                    if(publicRequest.IsSetActionPlanTitle())
-                    {
-                        context.Writer.WritePropertyName("actionPlanTitle");
-                        context.Writer.Write(publicRequest.ActionPlanTitle);
-                    }
-
-                    if(publicRequest.IsSetControlMappingSources())
-                    {
-                        context.Writer.WritePropertyName("controlMappingSources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestControlMappingSourcesListValue in publicRequest.ControlMappingSources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ControlMappingSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestControlMappingSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetTestingInformation())
-                    {
-                        context.Writer.WritePropertyName("testingInformation");
-                        context.Writer.Write(publicRequest.TestingInformation);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("actionPlanInstructions");
+                context.Writer.WriteStringValue(publicRequest.ActionPlanInstructions);
             }
+
+            if(publicRequest.IsSetActionPlanTitle())
+            {
+                context.Writer.WritePropertyName("actionPlanTitle");
+                context.Writer.WriteStringValue(publicRequest.ActionPlanTitle);
+            }
+
+            if(publicRequest.IsSetControlMappingSources())
+            {
+                context.Writer.WritePropertyName("controlMappingSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestControlMappingSourcesListValue in publicRequest.ControlMappingSources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ControlMappingSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestControlMappingSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetTestingInformation())
+            {
+                context.Writer.WritePropertyName("testingInformation");
+                context.Writer.WriteStringValue(publicRequest.TestingInformation);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

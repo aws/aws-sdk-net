@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MultipleRegionsException operation
     /// </summary>  
-    public class MultipleRegionsExceptionUnmarshaller : IErrorResponseUnmarshaller<MultipleRegionsException, XmlUnmarshallerContext>
+    public class MultipleRegionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MultipleRegionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

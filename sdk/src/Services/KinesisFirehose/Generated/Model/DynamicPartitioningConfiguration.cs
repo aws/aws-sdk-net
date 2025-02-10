@@ -42,7 +42,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies that the dynamic partitioning is enabled for this Firehose delivery stream.
+        /// Specifies that the dynamic partitioning is enabled for this Firehose stream.
         /// </para>
         /// </summary>
         public bool? Enabled

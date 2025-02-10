@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BatchModifyClusterSnapshotsLimitExceededException operation
     /// </summary>  
-    public class BatchModifyClusterSnapshotsLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<BatchModifyClusterSnapshotsLimitExceededException, XmlUnmarshallerContext>
+    public class BatchModifyClusterSnapshotsLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BatchModifyClusterSnapshotsLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

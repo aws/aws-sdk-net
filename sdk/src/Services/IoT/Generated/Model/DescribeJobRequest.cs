@@ -47,8 +47,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property BeforeSubstitution. 
         /// <para>
-        /// A flag that provides a view of the job document before and after the substitution
-        /// parameters have been resolved with their exact values.
+        /// Provides a view of the job document before and after the substitution parameters have
+        /// been resolved with their exact values.
         /// </para>
         /// </summary>
         public bool? BeforeSubstitution

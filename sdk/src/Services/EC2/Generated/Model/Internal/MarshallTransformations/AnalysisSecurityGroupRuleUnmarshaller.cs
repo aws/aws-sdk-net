@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnalysisSecurityGroupRule Object
     /// </summary>  
-    public class AnalysisSecurityGroupRuleUnmarshaller : IUnmarshaller<AnalysisSecurityGroupRule, XmlUnmarshallerContext>, IUnmarshaller<AnalysisSecurityGroupRule, JsonUnmarshallerContext>
+    public class AnalysisSecurityGroupRuleUnmarshaller : IXmlUnmarshaller<AnalysisSecurityGroupRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnalysisSecurityGroupRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AnalysisSecurityGroupRuleUnmarshaller _instance = new AnalysisSecurityGroupRuleUnmarshaller();        
 

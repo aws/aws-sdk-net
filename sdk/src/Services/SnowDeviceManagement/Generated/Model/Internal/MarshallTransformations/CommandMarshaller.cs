@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReboot())
             {
                 context.Writer.WritePropertyName("reboot");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RebootMarshaller.Instance;
                 marshaller.Marshall(requestObject.Reboot, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnlock())
             {
                 context.Writer.WritePropertyName("unlock");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UnlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Unlock, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

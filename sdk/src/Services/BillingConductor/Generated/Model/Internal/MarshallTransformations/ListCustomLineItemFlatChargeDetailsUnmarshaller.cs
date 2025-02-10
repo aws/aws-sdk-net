@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ListCustomLineItemFlatChargeDetails Object
     /// </summary>  
-    public class ListCustomLineItemFlatChargeDetailsUnmarshaller : IUnmarshaller<ListCustomLineItemFlatChargeDetails, XmlUnmarshallerContext>, IUnmarshaller<ListCustomLineItemFlatChargeDetails, JsonUnmarshallerContext>
+    public class ListCustomLineItemFlatChargeDetailsUnmarshaller : IJsonUnmarshaller<ListCustomLineItemFlatChargeDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ListCustomLineItemFlatChargeDetails IUnmarshaller<ListCustomLineItemFlatChargeDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListCustomLineItemFlatChargeDetails Unmarshall(JsonUnmarshallerContext context)
+        public ListCustomLineItemFlatChargeDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ListCustomLineItemFlatChargeDetails unmarshalledObject = new ListCustomLineItemFlatChargeDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ChargeValue", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ChargeValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChargeValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

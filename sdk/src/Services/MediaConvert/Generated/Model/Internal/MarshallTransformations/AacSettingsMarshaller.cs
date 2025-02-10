@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDescriptionBroadcasterMix())
             {
                 context.Writer.WritePropertyName("audioDescriptionBroadcasterMix");
-                context.Writer.Write(requestObject.AudioDescriptionBroadcasterMix);
+                context.Writer.WriteStringValue(requestObject.AudioDescriptionBroadcasterMix);
             }
 
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");
-                context.Writer.Write(requestObject.Bitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
             }
 
             if(requestObject.IsSetCodecProfile())
             {
                 context.Writer.WritePropertyName("codecProfile");
-                context.Writer.Write(requestObject.CodecProfile);
+                context.Writer.WriteStringValue(requestObject.CodecProfile);
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetRateControlMode())
             {
                 context.Writer.WritePropertyName("rateControlMode");
-                context.Writer.Write(requestObject.RateControlMode);
+                context.Writer.WriteStringValue(requestObject.RateControlMode);
             }
 
             if(requestObject.IsSetRawFormat())
             {
                 context.Writer.WritePropertyName("rawFormat");
-                context.Writer.Write(requestObject.RawFormat);
+                context.Writer.WriteStringValue(requestObject.RawFormat);
             }
 
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate.Value);
+                context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
             }
 
             if(requestObject.IsSetSpecification())
             {
                 context.Writer.WritePropertyName("specification");
-                context.Writer.Write(requestObject.Specification);
+                context.Writer.WriteStringValue(requestObject.Specification);
             }
 
             if(requestObject.IsSetVbrQuality())
             {
                 context.Writer.WritePropertyName("vbrQuality");
-                context.Writer.Write(requestObject.VbrQuality);
+                context.Writer.WriteStringValue(requestObject.VbrQuality);
             }
 
         }

@@ -232,6 +232,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  Works with <c>WORKFLOW_JOB_QUEUED</c> events only. 
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For CodeBuild-hosted Buildkite runner builds, WORKFLOW_NAME filters will filter by
+        /// pipeline name.
+        /// </para>
         ///  </note> </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

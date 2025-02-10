@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("SnsTopicArn");
-                context.Writer.Write(requestObject.SnsTopicArn);
+                context.Writer.WriteStringValue(requestObject.SnsTopicArn);
             }
 
             if(requestObject.IsSetSqsQueueArn())
             {
                 context.Writer.WritePropertyName("SqsQueueArn");
-                context.Writer.Write(requestObject.SqsQueueArn);
+                context.Writer.WriteStringValue(requestObject.SqsQueueArn);
             }
 
         }

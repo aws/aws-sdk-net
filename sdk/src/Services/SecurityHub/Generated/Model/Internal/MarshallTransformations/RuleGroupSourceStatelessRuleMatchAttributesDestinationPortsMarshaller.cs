@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromPort())
             {
                 context.Writer.WritePropertyName("FromPort");
-                context.Writer.Write(requestObject.FromPort.Value);
+                context.Writer.WriteNumberValue(requestObject.FromPort.Value);
             }
 
             if(requestObject.IsSetToPort())
             {
                 context.Writer.WritePropertyName("ToPort");
-                context.Writer.Write(requestObject.ToPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ToPort.Value);
             }
 
         }

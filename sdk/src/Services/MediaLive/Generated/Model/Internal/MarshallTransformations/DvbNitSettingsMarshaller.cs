@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkId())
             {
                 context.Writer.WritePropertyName("networkId");
-                context.Writer.Write(requestObject.NetworkId.Value);
+                context.Writer.WriteNumberValue(requestObject.NetworkId.Value);
             }
 
             if(requestObject.IsSetNetworkName())
             {
                 context.Writer.WritePropertyName("networkName");
-                context.Writer.Write(requestObject.NetworkName);
+                context.Writer.WriteStringValue(requestObject.NetworkName);
             }
 
             if(requestObject.IsSetRepInterval())
             {
                 context.Writer.WritePropertyName("repInterval");
-                context.Writer.Write(requestObject.RepInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.RepInterval.Value);
             }
 
         }

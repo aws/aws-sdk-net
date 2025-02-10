@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IncompatibleVersionException operation
     /// </summary>  
-    public class IncompatibleVersionExceptionUnmarshaller : IErrorResponseUnmarshaller<IncompatibleVersionException, XmlUnmarshallerContext>
+    public class IncompatibleVersionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IncompatibleVersionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

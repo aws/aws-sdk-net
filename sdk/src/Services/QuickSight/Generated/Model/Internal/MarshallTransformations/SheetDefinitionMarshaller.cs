@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,127 +49,143 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFilterControls())
             {
                 context.Writer.WritePropertyName("FilterControls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilterControlsListValue in requestObject.FilterControls)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FilterControlMarshaller.Instance;
                     marshaller.Marshall(requestObjectFilterControlsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetImages())
+            {
+                context.Writer.WritePropertyName("Images");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectImagesListValue in requestObject.Images)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SheetImageMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImagesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLayouts())
             {
                 context.Writer.WritePropertyName("Layouts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLayoutsListValue in requestObject.Layouts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LayoutMarshaller.Instance;
                     marshaller.Marshall(requestObjectLayoutsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetParameterControls())
             {
                 context.Writer.WritePropertyName("ParameterControls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectParameterControlsListValue in requestObject.ParameterControls)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ParameterControlMarshaller.Instance;
                     marshaller.Marshall(requestObjectParameterControlsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSheetControlLayouts())
             {
                 context.Writer.WritePropertyName("SheetControlLayouts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSheetControlLayoutsListValue in requestObject.SheetControlLayouts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SheetControlLayoutMarshaller.Instance;
                     marshaller.Marshall(requestObjectSheetControlLayoutsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSheetId())
             {
                 context.Writer.WritePropertyName("SheetId");
-                context.Writer.Write(requestObject.SheetId);
+                context.Writer.WriteStringValue(requestObject.SheetId);
             }
 
             if(requestObject.IsSetTextBoxes())
             {
                 context.Writer.WritePropertyName("TextBoxes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTextBoxesListValue in requestObject.TextBoxes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SheetTextBoxMarshaller.Instance;
                     marshaller.Marshall(requestObjectTextBoxesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetVisuals())
             {
                 context.Writer.WritePropertyName("Visuals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVisualsListValue in requestObject.Visuals)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VisualMarshaller.Instance;
                     marshaller.Marshall(requestObjectVisualsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

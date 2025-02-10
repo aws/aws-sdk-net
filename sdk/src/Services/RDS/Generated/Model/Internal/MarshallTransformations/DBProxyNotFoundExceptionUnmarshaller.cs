@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBProxyNotFoundException operation
     /// </summary>  
-    public class DBProxyNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBProxyNotFoundException, XmlUnmarshallerContext>
+    public class DBProxyNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBProxyNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

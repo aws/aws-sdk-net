@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasicAuthCredentials())
             {
                 context.Writer.WritePropertyName("basicAuthCredentials");
-                context.Writer.Write(requestObject.BasicAuthCredentials);
+                context.Writer.WriteStringValue(requestObject.BasicAuthCredentials);
             }
 
             if(requestObject.IsSetBuildSpec())
             {
                 context.Writer.WritePropertyName("buildSpec");
-                context.Writer.Write(requestObject.BuildSpec);
+                context.Writer.WriteStringValue(requestObject.BuildSpec);
             }
 
             if(requestObject.IsSetEnableAutoBuild())
             {
                 context.Writer.WritePropertyName("enableAutoBuild");
-                context.Writer.Write(requestObject.EnableAutoBuild.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableAutoBuild.Value);
             }
 
             if(requestObject.IsSetEnableBasicAuth())
             {
                 context.Writer.WritePropertyName("enableBasicAuth");
-                context.Writer.Write(requestObject.EnableBasicAuth.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableBasicAuth.Value);
             }
 
             if(requestObject.IsSetEnablePerformanceMode())
             {
                 context.Writer.WritePropertyName("enablePerformanceMode");
-                context.Writer.Write(requestObject.EnablePerformanceMode.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnablePerformanceMode.Value);
             }
 
             if(requestObject.IsSetEnablePullRequestPreview())
             {
                 context.Writer.WritePropertyName("enablePullRequestPreview");
-                context.Writer.Write(requestObject.EnablePullRequestPreview.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnablePullRequestPreview.Value);
             }
 
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("environmentVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentVariablesKvp in requestObject.EnvironmentVariables)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentVariablesKvp.Key);
                     var requestObjectEnvironmentVariablesValue = requestObjectEnvironmentVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFramework())
             {
                 context.Writer.WritePropertyName("framework");
-                context.Writer.Write(requestObject.Framework);
+                context.Writer.WriteStringValue(requestObject.Framework);
             }
 
             if(requestObject.IsSetPullRequestEnvironmentName())
             {
                 context.Writer.WritePropertyName("pullRequestEnvironmentName");
-                context.Writer.Write(requestObject.PullRequestEnvironmentName);
+                context.Writer.WriteStringValue(requestObject.PullRequestEnvironmentName);
             }
 
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WriteStringValue(requestObject.Stage);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
+                context.Writer.WriteStringValue(requestObject.Database);
             }
 
             if(requestObject.IsSetFunction())
             {
                 context.Writer.WritePropertyName("Function");
-                context.Writer.Write(requestObject.Function);
+                context.Writer.WriteStringValue(requestObject.Function);
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("Schema");
-                context.Writer.Write(requestObject.Schema);
+                context.Writer.WriteStringValue(requestObject.Schema);
             }
 
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");
-                context.Writer.Write(requestObject.Table);
+                context.Writer.WriteStringValue(requestObject.Table);
             }
 
             if(requestObject.IsSetView())
             {
                 context.Writer.WritePropertyName("View");
-                context.Writer.Write(requestObject.View);
+                context.Writer.WriteStringValue(requestObject.View);
             }
 
         }

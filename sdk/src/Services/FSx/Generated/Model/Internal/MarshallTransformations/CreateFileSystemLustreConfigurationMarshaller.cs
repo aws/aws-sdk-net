@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,106 +49,112 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoImportPolicy())
             {
                 context.Writer.WritePropertyName("AutoImportPolicy");
-                context.Writer.Write(requestObject.AutoImportPolicy);
+                context.Writer.WriteStringValue(requestObject.AutoImportPolicy);
             }
 
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
             {
                 context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+                context.Writer.WriteStringValue(requestObject.DailyAutomaticBackupStartTime);
             }
 
             if(requestObject.IsSetDataCompressionType())
             {
                 context.Writer.WritePropertyName("DataCompressionType");
-                context.Writer.Write(requestObject.DataCompressionType);
+                context.Writer.WriteStringValue(requestObject.DataCompressionType);
             }
 
             if(requestObject.IsSetDeploymentType())
             {
                 context.Writer.WritePropertyName("DeploymentType");
-                context.Writer.Write(requestObject.DeploymentType);
+                context.Writer.WriteStringValue(requestObject.DeploymentType);
             }
 
             if(requestObject.IsSetDriveCacheType())
             {
                 context.Writer.WritePropertyName("DriveCacheType");
-                context.Writer.Write(requestObject.DriveCacheType);
+                context.Writer.WriteStringValue(requestObject.DriveCacheType);
+            }
+
+            if(requestObject.IsSetEfaEnabled())
+            {
+                context.Writer.WritePropertyName("EfaEnabled");
+                context.Writer.WriteBooleanValue(requestObject.EfaEnabled.Value);
             }
 
             if(requestObject.IsSetExportPath())
             {
                 context.Writer.WritePropertyName("ExportPath");
-                context.Writer.Write(requestObject.ExportPath);
+                context.Writer.WriteStringValue(requestObject.ExportPath);
             }
 
             if(requestObject.IsSetImportedFileChunkSize())
             {
                 context.Writer.WritePropertyName("ImportedFileChunkSize");
-                context.Writer.Write(requestObject.ImportedFileChunkSize.Value);
+                context.Writer.WriteNumberValue(requestObject.ImportedFileChunkSize.Value);
             }
 
             if(requestObject.IsSetImportPath())
             {
                 context.Writer.WritePropertyName("ImportPath");
-                context.Writer.Write(requestObject.ImportPath);
+                context.Writer.WriteStringValue(requestObject.ImportPath);
             }
 
             if(requestObject.IsSetLogConfiguration())
             {
                 context.Writer.WritePropertyName("LogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LustreLogCreateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetadataConfiguration())
             {
                 context.Writer.WritePropertyName("MetadataConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateFileSystemLustreMetadataConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetadataConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPerUnitStorageThroughput())
             {
                 context.Writer.WritePropertyName("PerUnitStorageThroughput");
-                context.Writer.Write(requestObject.PerUnitStorageThroughput.Value);
+                context.Writer.WriteNumberValue(requestObject.PerUnitStorageThroughput.Value);
             }
 
             if(requestObject.IsSetRootSquashConfiguration())
             {
                 context.Writer.WritePropertyName("RootSquashConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LustreRootSquashConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RootSquashConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.WeeklyMaintenanceStartTime);
             }
 
         }

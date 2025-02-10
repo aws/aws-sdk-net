@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -65,7 +68,11 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetExecutionId())
                 throw new AmazonMainframeModernizationException("Request object does not have required field ExecutionId set");
             request.AddPathResource("{executionId}", StringUtils.FromString(publicRequest.ExecutionId));
+            
+            if (publicRequest.IsSetAuthSecretsManagerArn())
+                request.Parameters.Add("authSecretsManagerArn", StringUtils.FromString(publicRequest.AuthSecretsManagerArn));
             request.ResourcePath = "/applications/{applicationId}/batch-job-executions/{executionId}/steps";
+            request.UseQueryString = true;
 
             return request;
         }

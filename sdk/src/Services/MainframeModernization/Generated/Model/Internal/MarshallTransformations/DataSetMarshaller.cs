@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetName())
             {
                 context.Writer.WritePropertyName("datasetName");
-                context.Writer.Write(requestObject.DatasetName);
+                context.Writer.WriteStringValue(requestObject.DatasetName);
             }
 
             if(requestObject.IsSetDatasetOrg())
             {
                 context.Writer.WritePropertyName("datasetOrg");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatasetOrgAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatasetOrg, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecordLength())
             {
                 context.Writer.WritePropertyName("recordLength");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordLengthMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordLength, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRelativePath())
             {
                 context.Writer.WritePropertyName("relativePath");
-                context.Writer.Write(requestObject.RelativePath);
+                context.Writer.WriteStringValue(requestObject.RelativePath);
             }
 
             if(requestObject.IsSetStorageType())
             {
                 context.Writer.WritePropertyName("storageType");
-                context.Writer.Write(requestObject.StorageType);
+                context.Writer.WriteStringValue(requestObject.StorageType);
             }
 
         }

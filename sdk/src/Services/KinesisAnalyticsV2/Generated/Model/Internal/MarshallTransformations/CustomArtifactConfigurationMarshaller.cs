@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArtifactType())
             {
                 context.Writer.WritePropertyName("ArtifactType");
-                context.Writer.Write(requestObject.ArtifactType);
+                context.Writer.WriteStringValue(requestObject.ArtifactType);
             }
 
             if(requestObject.IsSetMavenReference())
             {
                 context.Writer.WritePropertyName("MavenReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MavenReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.MavenReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3ContentLocation())
             {
                 context.Writer.WritePropertyName("S3ContentLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ContentLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3ContentLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

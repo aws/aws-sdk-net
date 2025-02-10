@@ -76,7 +76,7 @@ namespace AWSSDK.UnitTests
                     return new AssumeRoleWithSAMLResponse
                     {
                         Subject = "TestSubject",
-                        Credentials = new Credentials("Test", "Test", "Test", DateTime.Now)
+                        Credentials = new Credentials("Test", "Test", "Test", DateTime.UtcNow)
                     };
                 });
                             

@@ -44,6 +44,7 @@ namespace Amazon.SimpleEmail.Model
     {
         private AddHeaderAction _addHeaderAction;
         private BounceAction _bounceAction;
+        private ConnectAction _connectAction;
         private LambdaAction _lambdaAction;
         private S3Action _s3Action;
         private SNSAction _snsAction;
@@ -85,6 +86,25 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetBounceAction()
         {
             return this._bounceAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectAction. 
+        /// <para>
+        /// Parses the received message and starts an email contact in Amazon Connect on your
+        /// behalf.
+        /// </para>
+        /// </summary>
+        public ConnectAction ConnectAction
+        {
+            get { return this._connectAction; }
+            set { this._connectAction = value; }
+        }
+
+        // Check to see if ConnectAction property is set
+        internal bool IsSetConnectAction()
+        {
+            return this._connectAction != null;
         }
 
         /// <summary>

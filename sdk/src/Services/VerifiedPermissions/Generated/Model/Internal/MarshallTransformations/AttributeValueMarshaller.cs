@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,77 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("boolean");
-                context.Writer.Write(requestObject.Boolean.Value);
+                context.Writer.WriteBooleanValue(requestObject.Boolean.Value);
+            }
+
+            if(requestObject.IsSetDecimal())
+            {
+                context.Writer.WritePropertyName("decimal");
+                context.Writer.WriteStringValue(requestObject.Decimal);
             }
 
             if(requestObject.IsSetEntityIdentifier())
             {
                 context.Writer.WritePropertyName("entityIdentifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityIdentifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetIpaddr())
+            {
+                context.Writer.WritePropertyName("ipaddr");
+                context.Writer.WriteStringValue(requestObject.Ipaddr);
             }
 
             if(requestObject.IsSetLong())
             {
                 context.Writer.WritePropertyName("long");
-                context.Writer.Write(requestObject.Long.Value);
+                context.Writer.WriteNumberValue(requestObject.Long.Value);
             }
 
             if(requestObject.IsSetRecord())
             {
                 context.Writer.WritePropertyName("record");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRecordKvp in requestObject.Record)
                 {
                     context.Writer.WritePropertyName(requestObjectRecordKvp.Key);
                     var requestObjectRecordValue = requestObjectRecordKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectRecordValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSet())
             {
                 context.Writer.WritePropertyName("set");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSetListValue in requestObject.Set)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectSetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("string");
-                context.Writer.Write(requestObject.String);
+                context.Writer.WriteStringValue(requestObject.String);
             }
 
         }

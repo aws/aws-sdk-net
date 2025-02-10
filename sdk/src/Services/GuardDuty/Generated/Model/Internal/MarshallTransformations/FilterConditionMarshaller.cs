@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEqualsValue())
             {
                 context.Writer.WritePropertyName("equalsValue");
-                context.Writer.Write(requestObject.EqualsValue);
+                context.Writer.WriteStringValue(requestObject.EqualsValue);
             }
 
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("greaterThan");
-                context.Writer.Write(requestObject.GreaterThan.Value);
+                context.Writer.WriteNumberValue(requestObject.GreaterThan.Value);
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("lessThan");
-                context.Writer.Write(requestObject.LessThan.Value);
+                context.Writer.WriteNumberValue(requestObject.LessThan.Value);
             }
 
         }

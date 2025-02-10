@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -48,16 +46,27 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCopyFrom())
+            {
+                context.Writer.WritePropertyName("copyFrom");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CopyFromSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.CopyFrom, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("data");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Data));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Data));
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

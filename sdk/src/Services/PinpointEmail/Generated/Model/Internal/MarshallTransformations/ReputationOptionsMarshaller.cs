@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastFreshStart())
             {
                 context.Writer.WritePropertyName("LastFreshStart");
-                context.Writer.Write(requestObject.LastFreshStart.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastFreshStart.Value)));
             }
 
             if(requestObject.IsSetReputationMetricsEnabled())
             {
                 context.Writer.WritePropertyName("ReputationMetricsEnabled");
-                context.Writer.Write(requestObject.ReputationMetricsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReputationMetricsEnabled.Value);
             }
 
         }

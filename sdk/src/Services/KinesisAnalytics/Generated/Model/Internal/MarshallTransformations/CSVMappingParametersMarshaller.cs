@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordColumnDelimiter())
             {
                 context.Writer.WritePropertyName("RecordColumnDelimiter");
-                context.Writer.Write(requestObject.RecordColumnDelimiter);
+                context.Writer.WriteStringValue(requestObject.RecordColumnDelimiter);
             }
 
             if(requestObject.IsSetRecordRowDelimiter())
             {
                 context.Writer.WritePropertyName("RecordRowDelimiter");
-                context.Writer.Write(requestObject.RecordRowDelimiter);
+                context.Writer.WriteStringValue(requestObject.RecordRowDelimiter);
             }
 
         }

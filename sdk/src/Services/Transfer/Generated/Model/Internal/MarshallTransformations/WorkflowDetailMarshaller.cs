@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
-                context.Writer.Write(requestObject.ExecutionRole);
+                context.Writer.WriteStringValue(requestObject.ExecutionRole);
             }
 
             if(requestObject.IsSetWorkflowId())
             {
                 context.Writer.WritePropertyName("WorkflowId");
-                context.Writer.Write(requestObject.WorkflowId);
+                context.Writer.WriteStringValue(requestObject.WorkflowId);
             }
 
         }

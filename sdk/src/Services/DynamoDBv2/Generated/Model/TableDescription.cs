@@ -46,6 +46,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _latestStreamArn;
         private string _latestStreamLabel;
         private List<LocalSecondaryIndexDescription> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndexDescription>() : null;
+        private MultiRegionConsistency _multiRegionConsistency;
         private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughputDescription _provisionedThroughput;
         private List<ReplicaDescription> _replicas = AWSConfigs.InitializeCollections ? new List<ReplicaDescription>() : null;
@@ -58,6 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _tableName;
         private long? _tableSizeBytes;
         private TableStatus _tableStatus;
+        private TableWarmThroughputDescription _warmThroughput;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -518,6 +520,44 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MultiRegionConsistency. 
+        /// <para>
+        /// Indicates one of the following consistency modes for a global table:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EVENTUAL</c>: Indicates that the global table is configured for multi-Region eventual
+        /// consistency.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STRONG</c>: Indicates that the global table is configured for multi-Region strong
+        /// consistency (preview).
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Multi-Region strong consistency (MRSC) is a new DynamoDB global tables capability
+        /// currently available in preview mode. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/PreviewFeatures.html#multi-region-strong-consistency-gt">Global
+        /// tables multi-Region strong consistency</a>.
+        /// </para>
+        ///  </note> </li> </ul> 
+        /// <para>
+        /// If you don't specify this field, the global table consistency mode defaults to <c>EVENTUAL</c>.
+        /// </para>
+        /// </summary>
+        public MultiRegionConsistency MultiRegionConsistency
+        {
+            get { return this._multiRegionConsistency; }
+            set { this._multiRegionConsistency = value; }
+        }
+
+        // Check to see if MultiRegionConsistency property is set
+        internal bool IsSetMultiRegionConsistency()
+        {
+            return this._multiRegionConsistency != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OnDemandThroughput. 
         /// <para>
         /// The maximum number of read and write units for the specified on-demand table. If you
@@ -771,6 +811,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableStatus()
         {
             return this._tableStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// Describes the warm throughput value of the base table.
+        /// </para>
+        /// </summary>
+        public TableWarmThroughputDescription WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

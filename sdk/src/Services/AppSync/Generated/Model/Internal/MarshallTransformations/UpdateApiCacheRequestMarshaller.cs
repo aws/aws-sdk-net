@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -64,43 +67,48 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v1/apis/{apiId}/ApiCaches/update";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApiCachingBehavior())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApiCachingBehavior())
-                    {
-                        context.Writer.WritePropertyName("apiCachingBehavior");
-                        context.Writer.Write(publicRequest.ApiCachingBehavior);
-                    }
-
-                    if(publicRequest.IsSetHealthMetricsConfig())
-                    {
-                        context.Writer.WritePropertyName("healthMetricsConfig");
-                        context.Writer.Write(publicRequest.HealthMetricsConfig);
-                    }
-
-                    if(publicRequest.IsSetTtl())
-                    {
-                        context.Writer.WritePropertyName("ttl");
-                        context.Writer.Write(publicRequest.Ttl.Value);
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("apiCachingBehavior");
+                context.Writer.WriteStringValue(publicRequest.ApiCachingBehavior);
             }
+
+            if(publicRequest.IsSetHealthMetricsConfig())
+            {
+                context.Writer.WritePropertyName("healthMetricsConfig");
+                context.Writer.WriteStringValue(publicRequest.HealthMetricsConfig);
+            }
+
+            if(publicRequest.IsSetTtl())
+            {
+                context.Writer.WritePropertyName("ttl");
+                context.Writer.WriteNumberValue(publicRequest.Ttl.Value);
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

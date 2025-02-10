@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBias())
             {
                 context.Writer.WritePropertyName("Bias");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BiasMarshaller.Instance;
                 marshaller.Marshall(requestObject.Bias, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExplainability())
             {
                 context.Writer.WritePropertyName("Explainability");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExplainabilityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Explainability, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelDataQuality())
             {
                 context.Writer.WritePropertyName("ModelDataQuality");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelDataQualityMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelDataQuality, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelQuality())
             {
                 context.Writer.WritePropertyName("ModelQuality");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelQualityMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelQuality, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

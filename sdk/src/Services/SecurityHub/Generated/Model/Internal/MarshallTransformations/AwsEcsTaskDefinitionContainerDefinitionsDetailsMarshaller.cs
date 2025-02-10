@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,408 +49,408 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("Command");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandListValue in requestObject.Command)
                 {
-                        context.Writer.Write(requestObjectCommandListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("Cpu");
-                context.Writer.Write(requestObject.Cpu.Value);
+                context.Writer.WriteNumberValue(requestObject.Cpu.Value);
             }
 
             if(requestObject.IsSetDependsOn())
             {
                 context.Writer.WritePropertyName("DependsOn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDependsOnListValue in requestObject.DependsOn)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectDependsOnListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDisableNetworking())
             {
                 context.Writer.WritePropertyName("DisableNetworking");
-                context.Writer.Write(requestObject.DisableNetworking.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableNetworking.Value);
             }
 
             if(requestObject.IsSetDnsSearchDomains())
             {
                 context.Writer.WritePropertyName("DnsSearchDomains");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsSearchDomainsListValue in requestObject.DnsSearchDomains)
                 {
-                        context.Writer.Write(requestObjectDnsSearchDomainsListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsSearchDomainsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDnsServers())
             {
                 context.Writer.WritePropertyName("DnsServers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsServersListValue in requestObject.DnsServers)
                 {
-                        context.Writer.Write(requestObjectDnsServersListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsServersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDockerLabels())
             {
                 context.Writer.WritePropertyName("DockerLabels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDockerLabelsKvp in requestObject.DockerLabels)
                 {
                     context.Writer.WritePropertyName(requestObjectDockerLabelsKvp.Key);
                     var requestObjectDockerLabelsValue = requestObjectDockerLabelsKvp.Value;
 
-                        context.Writer.Write(requestObjectDockerLabelsValue);
+                        context.Writer.WriteStringValue(requestObjectDockerLabelsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDockerSecurityOptions())
             {
                 context.Writer.WritePropertyName("DockerSecurityOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDockerSecurityOptionsListValue in requestObject.DockerSecurityOptions)
                 {
-                        context.Writer.Write(requestObjectDockerSecurityOptionsListValue);
+                        context.Writer.WriteStringValue(requestObjectDockerSecurityOptionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntryPoint())
             {
                 context.Writer.WritePropertyName("EntryPoint");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntryPointListValue in requestObject.EntryPoint)
                 {
-                        context.Writer.Write(requestObjectEntryPointListValue);
+                        context.Writer.WriteStringValue(requestObjectEntryPointListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentListValue in requestObject.Environment)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsEnvironmentDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironmentFiles())
             {
                 context.Writer.WritePropertyName("EnvironmentFiles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentFilesListValue in requestObject.EnvironmentFiles)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsEnvironmentFilesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentFilesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("Essential");
-                context.Writer.Write(requestObject.Essential.Value);
+                context.Writer.WriteBooleanValue(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetExtraHosts())
             {
                 context.Writer.WritePropertyName("ExtraHosts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExtraHostsListValue in requestObject.ExtraHosts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectExtraHostsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFirelensConfiguration())
             {
                 context.Writer.WritePropertyName("FirelensConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FirelensConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("HealthCheck");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HealthCheck, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("Hostname");
-                context.Writer.Write(requestObject.Hostname);
+                context.Writer.WriteStringValue(requestObject.Hostname);
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetInteractive())
             {
                 context.Writer.WritePropertyName("Interactive");
-                context.Writer.Write(requestObject.Interactive.Value);
+                context.Writer.WriteBooleanValue(requestObject.Interactive.Value);
             }
 
             if(requestObject.IsSetLinks())
             {
                 context.Writer.WritePropertyName("Links");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLinksListValue in requestObject.Links)
                 {
-                        context.Writer.Write(requestObjectLinksListValue);
+                        context.Writer.WriteStringValue(requestObjectLinksListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLinuxParameters())
             {
                 context.Writer.WritePropertyName("LinuxParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LinuxParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogConfiguration())
             {
                 context.Writer.WritePropertyName("LogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("Memory");
-                context.Writer.Write(requestObject.Memory.Value);
+                context.Writer.WriteNumberValue(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetMemoryReservation())
             {
                 context.Writer.WritePropertyName("MemoryReservation");
-                context.Writer.Write(requestObject.MemoryReservation.Value);
+                context.Writer.WriteNumberValue(requestObject.MemoryReservation.Value);
             }
 
             if(requestObject.IsSetMountPoints())
             {
                 context.Writer.WritePropertyName("MountPoints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMountPointsListValue in requestObject.MountPoints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsMountPointsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectMountPointsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPortMappings())
             {
                 context.Writer.WritePropertyName("PortMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPortMappingsListValue in requestObject.PortMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectPortMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("Privileged");
-                context.Writer.Write(requestObject.Privileged.Value);
+                context.Writer.WriteBooleanValue(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetPseudoTerminal())
             {
                 context.Writer.WritePropertyName("PseudoTerminal");
-                context.Writer.Write(requestObject.PseudoTerminal.Value);
+                context.Writer.WriteBooleanValue(requestObject.PseudoTerminal.Value);
             }
 
             if(requestObject.IsSetReadonlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("ReadonlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadonlyRootFilesystem.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadonlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRepositoryCredentials())
             {
                 context.Writer.WritePropertyName("RepositoryCredentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RepositoryCredentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceRequirements())
             {
                 context.Writer.WritePropertyName("ResourceRequirements");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceRequirementsListValue in requestObject.ResourceRequirements)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsResourceRequirementsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceRequirementsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecrets())
             {
                 context.Writer.WritePropertyName("Secrets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecretsListValue in requestObject.Secrets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsSecretsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecretsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartTimeout())
             {
                 context.Writer.WritePropertyName("StartTimeout");
-                context.Writer.Write(requestObject.StartTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.StartTimeout.Value);
             }
 
             if(requestObject.IsSetStopTimeout())
             {
                 context.Writer.WritePropertyName("StopTimeout");
-                context.Writer.Write(requestObject.StopTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.StopTimeout.Value);
             }
 
             if(requestObject.IsSetSystemControls())
             {
                 context.Writer.WritePropertyName("SystemControls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSystemControlsListValue in requestObject.SystemControls)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsSystemControlsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectSystemControlsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUlimits())
             {
                 context.Writer.WritePropertyName("Ulimits");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUlimitsListValue in requestObject.Ulimits)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsUlimitsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectUlimitsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUser())
             {
                 context.Writer.WritePropertyName("User");
-                context.Writer.Write(requestObject.User);
+                context.Writer.WriteStringValue(requestObject.User);
             }
 
             if(requestObject.IsSetVolumesFrom())
             {
                 context.Writer.WritePropertyName("VolumesFrom");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVolumesFromListValue in requestObject.VolumesFrom)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectVolumesFromListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWorkingDirectory())
             {
                 context.Writer.WritePropertyName("WorkingDirectory");
-                context.Writer.Write(requestObject.WorkingDirectory);
+                context.Writer.WriteStringValue(requestObject.WorkingDirectory);
             }
 
         }

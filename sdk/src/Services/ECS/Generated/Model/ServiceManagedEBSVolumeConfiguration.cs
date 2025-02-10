@@ -32,7 +32,10 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// The configuration for the Amazon EBS volume that Amazon ECS creates and manages on
     /// your behalf. These settings are used to create each Amazon EBS volume, with one volume
-    /// created for each task in the service.
+    /// created for each task in the service. For information about the supported launch types
+    /// and operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volumes-configuration">Supported
+    /// operating systems and launch types</a> in the<i> Amazon Elastic Container Service
+    /// Developer Guide</i>.
     /// 
     ///  
     /// <para>
@@ -77,14 +80,18 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property FilesystemType. 
         /// <para>
-        /// The Linux filesystem type for the volume. For volumes created from a snapshot, you
-        /// must specify the same filesystem type that the volume was using when the snapshot
-        /// was created. If there is a filesystem type mismatch, the task will fail to start.
+        /// The filesystem type for the volume. For volumes created from a snapshot, you must
+        /// specify the same filesystem type that the volume was using when the snapshot was created.
+        /// If there is a filesystem type mismatch, the task will fail to start.
         /// </para>
         ///  
         /// <para>
-        /// The available filesystem types are&#x2028; <c>ext3</c>, <c>ext4</c>, and <c>xfs</c>.
+        /// The available Linux filesystem types are&#x2028; <c>ext3</c>, <c>ext4</c>, and <c>xfs</c>.
         /// If no value is specified, the <c>xfs</c> filesystem type is used by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// The available Windows filesystem types are <c>NTFS</c>.
         /// </para>
         /// </summary>
         public TaskFilesystemType FilesystemType

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldNames())
             {
                 context.Writer.WritePropertyName("FieldNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldNamesListValue in requestObject.FieldNames)
                 {
-                        context.Writer.Write(requestObjectFieldNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectFieldNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStandardIdentifiers())
             {
                 context.Writer.WritePropertyName("StandardIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStandardIdentifiersListValue in requestObject.StandardIdentifiers)
                 {
-                        context.Writer.Write(requestObjectStandardIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectStandardIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

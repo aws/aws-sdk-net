@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeleteServiceAttributes(Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeleteServiceAttributes(Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceAttributesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DeleteServiceAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Example: Delete service attribute by providing attribute key and service ID
+                </para>
+                <code
+                    title="DeleteServiceAttributes example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="example-delete-service-attributes-1587416462902" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DeregisterInstance(Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DeregisterInstance(Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.DeregisterInstanceRequest" />
@@ -263,6 +282,25 @@
                     title="GetService Example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="getservice-example-1590117234294" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetServiceAttributes(Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetServiceAttributes(Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceAttributesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.GetServiceAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example gets the attributes for a specified service.
+                </para>
+                <code
+                    title="GetServiceAttributes Example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="get-service-attributes-example-1590117234294" />
             </example>
         </value>
     </doc>
@@ -466,12 +504,12 @@
         <value>
             <example>
                 <para>
-                    The following example updates the description of a private DNS namespace.
+                    The following example updates the description of a public DNS namespace.
                 </para>
                 <code
-                    title="To update a private DNS namespace"
+                    title="To update a public DNS namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
-                    region="to-update-a-private-dns-namespace-1712868389604" />
+                    region="to-update-a-public-dns-namespace-1712868389604" />
             </example>
         </value>
     </doc>
@@ -485,12 +523,12 @@
         <value>
             <example>
                 <para>
-                    The following example updates the description of a public DNS namespace.
+                    The following example updates the description of a private DNS namespace.
                 </para>
                 <code
-                    title="To update a public DNS namespace"
+                    title="To update a private DNS namespace"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
-                    region="to-update-a-public-dns-namespace-1712868389604" />
+                    region="to-update-a-private-dns-namespace-1712868389604" />
             </example>
         </value>
     </doc>
@@ -510,6 +548,25 @@
                     title="UpdateService Example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="updateservice-example-1590117830880" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateServiceAttributes(Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateServiceAttributes(Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceAttributesRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateServiceAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example submits a request to update the specified service to add a port attribute with the value 80.
+                </para>
+                <code
+                    title="UpdateServiceAttributes Example"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="update-service-attributes-example-1590117830880" />
             </example>
         </value>
     </doc>

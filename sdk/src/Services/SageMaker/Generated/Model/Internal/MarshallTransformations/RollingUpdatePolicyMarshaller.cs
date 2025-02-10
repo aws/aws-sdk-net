@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumBatchSize())
             {
                 context.Writer.WritePropertyName("MaximumBatchSize");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CapacitySizeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaximumBatchSize, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumExecutionTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumExecutionTimeoutInSeconds");
-                context.Writer.Write(requestObject.MaximumExecutionTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumExecutionTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetRollbackMaximumBatchSize())
             {
                 context.Writer.WritePropertyName("RollbackMaximumBatchSize");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CapacitySizeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RollbackMaximumBatchSize, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWaitIntervalInSeconds())
             {
                 context.Writer.WritePropertyName("WaitIntervalInSeconds");
-                context.Writer.Write(requestObject.WaitIntervalInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.WaitIntervalInSeconds.Value);
             }
 
         }

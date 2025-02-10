@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information about users and groups associated with a topic control rule.
+    /// Provides information about users and group names associated with a topic control rule.
     /// </summary>
     public partial class UsersAndGroups
     {
@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The user groups associated with a topic control rule.
+        /// The user group names associated with a topic control rule.
         /// </para>
         /// </summary>
         public List<string> UserGroups

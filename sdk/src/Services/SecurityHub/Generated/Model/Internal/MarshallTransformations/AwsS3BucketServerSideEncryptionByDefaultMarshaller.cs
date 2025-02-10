@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKMSMasterKeyID())
             {
                 context.Writer.WritePropertyName("KMSMasterKeyID");
-                context.Writer.Write(requestObject.KMSMasterKeyID);
+                context.Writer.WriteStringValue(requestObject.KMSMasterKeyID);
             }
 
             if(requestObject.IsSetSSEAlgorithm())
             {
                 context.Writer.WritePropertyName("SSEAlgorithm");
-                context.Writer.Write(requestObject.SSEAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SSEAlgorithm);
             }
 
         }

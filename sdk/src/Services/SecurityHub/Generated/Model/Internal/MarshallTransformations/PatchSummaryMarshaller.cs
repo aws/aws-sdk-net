@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailedCount())
             {
                 context.Writer.WritePropertyName("FailedCount");
-                context.Writer.Write(requestObject.FailedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.FailedCount.Value);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetInstalledCount())
             {
                 context.Writer.WritePropertyName("InstalledCount");
-                context.Writer.Write(requestObject.InstalledCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstalledCount.Value);
             }
 
             if(requestObject.IsSetInstalledOtherCount())
             {
                 context.Writer.WritePropertyName("InstalledOtherCount");
-                context.Writer.Write(requestObject.InstalledOtherCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstalledOtherCount.Value);
             }
 
             if(requestObject.IsSetInstalledPendingReboot())
             {
                 context.Writer.WritePropertyName("InstalledPendingReboot");
-                context.Writer.Write(requestObject.InstalledPendingReboot.Value);
+                context.Writer.WriteNumberValue(requestObject.InstalledPendingReboot.Value);
             }
 
             if(requestObject.IsSetInstalledRejectedCount())
             {
                 context.Writer.WritePropertyName("InstalledRejectedCount");
-                context.Writer.Write(requestObject.InstalledRejectedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstalledRejectedCount.Value);
             }
 
             if(requestObject.IsSetMissingCount())
             {
                 context.Writer.WritePropertyName("MissingCount");
-                context.Writer.Write(requestObject.MissingCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MissingCount.Value);
             }
 
             if(requestObject.IsSetOperation())
             {
                 context.Writer.WritePropertyName("Operation");
-                context.Writer.Write(requestObject.Operation);
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
 
             if(requestObject.IsSetOperationEndTime())
             {
                 context.Writer.WritePropertyName("OperationEndTime");
-                context.Writer.Write(requestObject.OperationEndTime);
+                context.Writer.WriteStringValue(requestObject.OperationEndTime);
             }
 
             if(requestObject.IsSetOperationStartTime())
             {
                 context.Writer.WritePropertyName("OperationStartTime");
-                context.Writer.Write(requestObject.OperationStartTime);
+                context.Writer.WriteStringValue(requestObject.OperationStartTime);
             }
 
             if(requestObject.IsSetRebootOption())
             {
                 context.Writer.WritePropertyName("RebootOption");
-                context.Writer.Write(requestObject.RebootOption);
+                context.Writer.WriteStringValue(requestObject.RebootOption);
             }
 
         }

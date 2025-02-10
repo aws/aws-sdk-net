@@ -162,6 +162,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// An option to select the default or custom maintenance window.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MaintenanceWindowType Type
         {
             get { return this._type; }

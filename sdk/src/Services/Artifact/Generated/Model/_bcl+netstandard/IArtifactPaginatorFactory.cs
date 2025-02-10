@@ -27,6 +27,11 @@ namespace Amazon.Artifact.Model
     {
 
         /// <summary>
+        /// Paginator for ListCustomerAgreements operation
+        ///</summary>
+        IListCustomerAgreementsPaginator ListCustomerAgreements(ListCustomerAgreementsRequest request);
+
+        /// <summary>
         /// Paginator for ListReports operation
         ///</summary>
         IListReportsPaginator ListReports(ListReportsRequest request);

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -48,15 +46,62 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectAdditionalModelRequestFieldsKvp in requestObject.AdditionalModelRequestFields)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdditionalModelRequestFieldsKvp.Key);
+                    var requestObjectAdditionalModelRequestFieldsValue = requestObjectAdditionalModelRequestFieldsKvp.Value;
+
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectAdditionalModelRequestFieldsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetInferenceConfig())
+            {
+                context.Writer.WritePropertyName("inferenceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.InferenceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPerformanceConfig())
+            {
+                context.Writer.WritePropertyName("performanceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PerformanceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PerformanceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPromptTemplate())
+            {
+                context.Writer.WritePropertyName("promptTemplate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PromptTemplateMarshaller.Instance;
+                marshaller.Marshall(requestObject.PromptTemplate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetQueryTransformationConfiguration())
             {
                 context.Writer.WritePropertyName("queryTransformationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QueryTransformationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryTransformationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

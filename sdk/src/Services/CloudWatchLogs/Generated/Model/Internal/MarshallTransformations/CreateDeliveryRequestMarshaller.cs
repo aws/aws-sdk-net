@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeliveryDestinationArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeliveryDestinationArn())
-                    {
-                        context.Writer.WritePropertyName("deliveryDestinationArn");
-                        context.Writer.Write(publicRequest.DeliveryDestinationArn);
-                    }
-
-                    if(publicRequest.IsSetDeliverySourceName())
-                    {
-                        context.Writer.WritePropertyName("deliverySourceName");
-                        context.Writer.Write(publicRequest.DeliverySourceName);
-                    }
-
-                    if(publicRequest.IsSetFieldDelimiter())
-                    {
-                        context.Writer.WritePropertyName("fieldDelimiter");
-                        context.Writer.Write(publicRequest.FieldDelimiter);
-                    }
-
-                    if(publicRequest.IsSetRecordFields())
-                    {
-                        context.Writer.WritePropertyName("recordFields");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
-                        {
-                                context.Writer.Write(publicRequestRecordFieldsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetS3DeliveryConfiguration())
-                    {
-                        context.Writer.WritePropertyName("s3DeliveryConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3DeliveryConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("deliveryDestinationArn");
+                context.Writer.WriteStringValue(publicRequest.DeliveryDestinationArn);
             }
+
+            if(publicRequest.IsSetDeliverySourceName())
+            {
+                context.Writer.WritePropertyName("deliverySourceName");
+                context.Writer.WriteStringValue(publicRequest.DeliverySourceName);
+            }
+
+            if(publicRequest.IsSetFieldDelimiter())
+            {
+                context.Writer.WritePropertyName("fieldDelimiter");
+                context.Writer.WriteStringValue(publicRequest.FieldDelimiter);
+            }
+
+            if(publicRequest.IsSetRecordFields())
+            {
+                context.Writer.WritePropertyName("recordFields");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                {
+                        context.Writer.WriteStringValue(publicRequestRecordFieldsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetS3DeliveryConfiguration())
+            {
+                context.Writer.WritePropertyName("s3DeliveryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3DeliveryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

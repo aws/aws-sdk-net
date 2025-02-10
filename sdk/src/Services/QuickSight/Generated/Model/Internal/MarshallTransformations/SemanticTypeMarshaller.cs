@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFalseyCellValue())
             {
                 context.Writer.WritePropertyName("FalseyCellValue");
-                context.Writer.Write(requestObject.FalseyCellValue);
+                context.Writer.WriteStringValue(requestObject.FalseyCellValue);
             }
 
             if(requestObject.IsSetFalseyCellValueSynonyms())
             {
                 context.Writer.WritePropertyName("FalseyCellValueSynonyms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFalseyCellValueSynonymsListValue in requestObject.FalseyCellValueSynonyms)
                 {
-                        context.Writer.Write(requestObjectFalseyCellValueSynonymsListValue);
+                        context.Writer.WriteStringValue(requestObjectFalseyCellValueSynonymsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubTypeName())
             {
                 context.Writer.WritePropertyName("SubTypeName");
-                context.Writer.Write(requestObject.SubTypeName);
+                context.Writer.WriteStringValue(requestObject.SubTypeName);
             }
 
             if(requestObject.IsSetTruthyCellValue())
             {
                 context.Writer.WritePropertyName("TruthyCellValue");
-                context.Writer.Write(requestObject.TruthyCellValue);
+                context.Writer.WriteStringValue(requestObject.TruthyCellValue);
             }
 
             if(requestObject.IsSetTruthyCellValueSynonyms())
             {
                 context.Writer.WritePropertyName("TruthyCellValueSynonyms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTruthyCellValueSynonymsListValue in requestObject.TruthyCellValueSynonyms)
                 {
-                        context.Writer.Write(requestObjectTruthyCellValueSynonymsListValue);
+                        context.Writer.WriteStringValue(requestObjectTruthyCellValueSynonymsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTypeName())
             {
                 context.Writer.WritePropertyName("TypeName");
-                context.Writer.Write(requestObject.TypeName);
+                context.Writer.WriteStringValue(requestObject.TypeName);
             }
 
             if(requestObject.IsSetTypeParameters())
             {
                 context.Writer.WritePropertyName("TypeParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTypeParametersKvp in requestObject.TypeParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectTypeParametersKvp.Key);
                     var requestObjectTypeParametersValue = requestObjectTypeParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectTypeParametersValue);
+                        context.Writer.WriteStringValue(requestObjectTypeParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

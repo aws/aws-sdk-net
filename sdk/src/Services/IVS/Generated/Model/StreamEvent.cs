@@ -35,9 +35,83 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class StreamEvent
     {
+        private string _code;
         private DateTime? _eventTime;
         private string _name;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// Provides additional details about the stream event. There are several values; the
+        /// long descriptions are provided in the IVS console but not delivered through the IVS
+        /// API or EventBridge. Multitrack-related codes are used only for certain Session Ended
+        /// events.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MultitrackInputNotAllowed</c> — The broadcast client attempted to connect with
+        /// multitrack input, but multitrack input was not enabled on the channel. Check your
+        /// broadcast software settings or set <c>MultitrackInputConfiguration.Policy</c> to <c>ALLOW</c>
+        /// or <c>REQUIRE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MultitrackInputRequired</c> — The broadcast client attempted to connect with single-track
+        /// video, but multitrack input is required on this channel. Enable multitrack video in
+        /// your broadcast software or configure the channel’s <c>MultitrackInputConfiguration.Policy</c>
+        /// to <c>ALLOW</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InvalidGetClientConfigurationStreamKey</c> — The broadcast client attempted to
+        /// connect with an invalid, expired, or corrupt stream key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GetClientConfigurationStreamKeyRequired</c> — The broadcast client attempted to
+        /// stream multitrack video without providing an authenticated stream key from GetClientConfiguration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InvalidMultitrackInputTrackCount</c> — The multitrack input stream contained an
+        /// invalid number of tracks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InvalidMultitrackInputVideoTrackMediaProperties</c> — The multitrack input stream
+        /// contained one or more tracks with an invalid codec, resolution, bitrate, or framerate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StreamTakeoverMediaMismatch</c> — The broadcast client attempted to take over
+        /// with different media properties (e.g., codec, resolution, or video track type) from
+        /// the original stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StreamTakeoverInvalidPriority</c> — The broadcast client attempted a takeover
+        /// with either a priority integer value equal to or lower than the original stream's
+        /// value or a value outside the allowed range of 1 to 2,147,483,647.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>StreamTakeoverLimitBreached</c> — The broadcast client reached the maximum allowed
+        /// takeover attempts for this stream.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EventTime. 

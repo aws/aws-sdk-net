@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Transition Object
     /// </summary>  
-    public class TransitionUnmarshaller : IUnmarshaller<Transition, XmlUnmarshallerContext>, IUnmarshaller<Transition, JsonUnmarshallerContext>
+    public class TransitionUnmarshaller : IXmlUnmarshaller<Transition, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Transition Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static TransitionUnmarshaller _instance = new TransitionUnmarshaller();        
 
         /// <summary>

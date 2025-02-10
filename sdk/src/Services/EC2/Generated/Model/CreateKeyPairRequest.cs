@@ -32,10 +32,10 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateKeyPair operation.
     /// Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the specified
-    /// PEM or PPK format. Amazon EC2 stores the public key and displays the private key for
-    /// you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1
-    /// private key or an unencrypted PPK formatted private key for use with PuTTY. If a key
-    /// with the specified name already exists, Amazon EC2 returns an error.
+    /// format. Amazon EC2 stores the public key and displays the private key for you to save
+    /// to a file. The private key is returned as an unencrypted PEM encoded PKCS#1 private
+    /// key or an unencrypted PPK formatted private key for use with PuTTY. If a key with
+    /// the specified name already exists, Amazon EC2 returns an error.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-    /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EC2 key pairs</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateKeyPairRequest : AmazonEC2Request

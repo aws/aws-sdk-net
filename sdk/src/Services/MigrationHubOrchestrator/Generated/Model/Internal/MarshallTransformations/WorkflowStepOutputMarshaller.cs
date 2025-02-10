@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required.Value);
+                context.Writer.WriteBooleanValue(requestObject.Required.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WorkflowStepOutputUnionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

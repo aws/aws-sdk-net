@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ipv6CidrAssociation Object
     /// </summary>  
-    public class Ipv6CidrAssociationUnmarshaller : IUnmarshaller<Ipv6CidrAssociation, XmlUnmarshallerContext>, IUnmarshaller<Ipv6CidrAssociation, JsonUnmarshallerContext>
+    public class Ipv6CidrAssociationUnmarshaller : IXmlUnmarshaller<Ipv6CidrAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Ipv6CidrAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Ipv6CidrAssociationUnmarshaller _instance = new Ipv6CidrAssociationUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             if(requestObject.IsSetInverted())
             {
                 context.Writer.WritePropertyName("Inverted");
-                context.Writer.Write(requestObject.Inverted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Inverted.Value);
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.Write(requestObject.Threshold.Value);
+                context.Writer.WriteNumberValue(requestObject.Threshold.Value);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

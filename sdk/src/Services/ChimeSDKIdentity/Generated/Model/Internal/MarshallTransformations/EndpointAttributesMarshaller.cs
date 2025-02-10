@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceToken())
             {
                 context.Writer.WritePropertyName("DeviceToken");
-                context.Writer.Write(requestObject.DeviceToken);
+                context.Writer.WriteStringValue(requestObject.DeviceToken);
             }
 
             if(requestObject.IsSetVoipDeviceToken())
             {
                 context.Writer.WritePropertyName("VoipDeviceToken");
-                context.Writer.Write(requestObject.VoipDeviceToken);
+                context.Writer.WriteStringValue(requestObject.VoipDeviceToken);
             }
 
         }

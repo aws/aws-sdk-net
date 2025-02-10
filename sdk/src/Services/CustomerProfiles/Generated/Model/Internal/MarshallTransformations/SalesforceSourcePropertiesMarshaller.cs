@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableDynamicFieldUpdate())
             {
                 context.Writer.WritePropertyName("EnableDynamicFieldUpdate");
-                context.Writer.Write(requestObject.EnableDynamicFieldUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableDynamicFieldUpdate.Value);
             }
 
             if(requestObject.IsSetIncludeDeletedRecords())
             {
                 context.Writer.WritePropertyName("IncludeDeletedRecords");
-                context.Writer.Write(requestObject.IncludeDeletedRecords.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeDeletedRecords.Value);
             }
 
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("Object");
-                context.Writer.Write(requestObject.Object);
+                context.Writer.WriteStringValue(requestObject.Object);
             }
 
         }

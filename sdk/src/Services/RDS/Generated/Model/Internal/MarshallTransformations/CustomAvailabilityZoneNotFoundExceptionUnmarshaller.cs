@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomAvailabilityZoneNotFoundException operation
     /// </summary>  
-    public class CustomAvailabilityZoneNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomAvailabilityZoneNotFoundException, XmlUnmarshallerContext>
+    public class CustomAvailabilityZoneNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomAvailabilityZoneNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

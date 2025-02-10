@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnDescription())
             {
                 context.Writer.WritePropertyName("columnDescription");
-                context.Writer.Write(requestObject.ColumnDescription);
+                context.Writer.WriteStringValue(requestObject.ColumnDescription);
             }
 
             if(requestObject.IsSetColumnName())
             {
                 context.Writer.WritePropertyName("columnName");
-                context.Writer.Write(requestObject.ColumnName);
+                context.Writer.WriteStringValue(requestObject.ColumnName);
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
         }

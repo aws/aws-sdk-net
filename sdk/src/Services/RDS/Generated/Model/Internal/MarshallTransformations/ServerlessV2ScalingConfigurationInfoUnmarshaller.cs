@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerlessV2ScalingConfigurationInfo Object
     /// </summary>  
-    public class ServerlessV2ScalingConfigurationInfoUnmarshaller : IUnmarshaller<ServerlessV2ScalingConfigurationInfo, XmlUnmarshallerContext>, IUnmarshaller<ServerlessV2ScalingConfigurationInfo, JsonUnmarshallerContext>
+    public class ServerlessV2ScalingConfigurationInfoUnmarshaller : IXmlUnmarshaller<ServerlessV2ScalingConfigurationInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -67,6 +67,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SecondsUntilAutoPause", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.SecondsUntilAutoPause = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,17 +82,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServerlessV2ScalingConfigurationInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServerlessV2ScalingConfigurationInfoUnmarshaller _instance = new ServerlessV2ScalingConfigurationInfoUnmarshaller();        
 

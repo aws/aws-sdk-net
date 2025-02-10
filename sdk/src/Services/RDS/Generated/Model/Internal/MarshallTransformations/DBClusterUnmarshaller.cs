@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBCluster Object
     /// </summary>  
-    public class DBClusterUnmarshaller : IUnmarshaller<DBCluster, XmlUnmarshallerContext>, IUnmarshaller<DBCluster, JsonUnmarshallerContext>
+    public class DBClusterUnmarshaller : IXmlUnmarshaller<DBCluster, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -173,6 +173,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ClusterScalabilityType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterScalabilityType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -194,6 +200,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CustomEndpoints.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("DatabaseInsightsMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DatabaseInsightsMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DatabaseName", targetDepth))
@@ -599,17 +611,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBCluster Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBClusterUnmarshaller _instance = new DBClusterUnmarshaller();        
 

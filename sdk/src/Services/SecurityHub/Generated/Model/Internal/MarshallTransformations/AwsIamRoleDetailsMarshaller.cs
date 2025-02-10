@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,96 +49,96 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssumeRolePolicyDocument())
             {
                 context.Writer.WritePropertyName("AssumeRolePolicyDocument");
-                context.Writer.Write(requestObject.AssumeRolePolicyDocument);
+                context.Writer.WriteStringValue(requestObject.AssumeRolePolicyDocument);
             }
 
             if(requestObject.IsSetAttachedManagedPolicies())
             {
                 context.Writer.WritePropertyName("AttachedManagedPolicies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttachedManagedPoliciesListValue in requestObject.AttachedManagedPolicies)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamAttachedManagedPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttachedManagedPoliciesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreateDate())
             {
                 context.Writer.WritePropertyName("CreateDate");
-                context.Writer.Write(requestObject.CreateDate);
+                context.Writer.WriteStringValue(requestObject.CreateDate);
             }
 
             if(requestObject.IsSetInstanceProfileList())
             {
                 context.Writer.WritePropertyName("InstanceProfileList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceProfileListListValue in requestObject.InstanceProfileList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamInstanceProfileMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceProfileListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxSessionDuration())
             {
                 context.Writer.WritePropertyName("MaxSessionDuration");
-                context.Writer.Write(requestObject.MaxSessionDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSessionDuration.Value);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetPermissionsBoundary())
             {
                 context.Writer.WritePropertyName("PermissionsBoundary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsIamPermissionsBoundaryMarshaller.Instance;
                 marshaller.Marshall(requestObject.PermissionsBoundary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleId())
             {
                 context.Writer.WritePropertyName("RoleId");
-                context.Writer.Write(requestObject.RoleId);
+                context.Writer.WriteStringValue(requestObject.RoleId);
             }
 
             if(requestObject.IsSetRoleName())
             {
                 context.Writer.WritePropertyName("RoleName");
-                context.Writer.Write(requestObject.RoleName);
+                context.Writer.WriteStringValue(requestObject.RoleName);
             }
 
             if(requestObject.IsSetRolePolicyList())
             {
                 context.Writer.WritePropertyName("RolePolicyList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRolePolicyListListValue in requestObject.RolePolicyList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamRolePolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectRolePolicyListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

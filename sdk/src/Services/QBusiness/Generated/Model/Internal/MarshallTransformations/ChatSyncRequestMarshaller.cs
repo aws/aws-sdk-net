@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -71,114 +74,119 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/applications/{applicationId}/conversations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActionExecution())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActionExecution())
-                    {
-                        context.Writer.WritePropertyName("actionExecution");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("actionExecution");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ActionExecutionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ActionExecution, context);
+                var marshaller = ActionExecutionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ActionExecution, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAttachments())
-                    {
-                        context.Writer.WritePropertyName("attachments");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AttachmentInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAttachmentsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAttributeFilter())
-                    {
-                        context.Writer.WritePropertyName("attributeFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AttributeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AttributeFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthChallengeResponse())
-                    {
-                        context.Writer.WritePropertyName("authChallengeResponse");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AuthChallengeResponseMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AuthChallengeResponse, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetChatMode())
-                    {
-                        context.Writer.WritePropertyName("chatMode");
-                        context.Writer.Write(publicRequest.ChatMode);
-                    }
-
-                    if(publicRequest.IsSetChatModeConfiguration())
-                    {
-                        context.Writer.WritePropertyName("chatModeConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChatModeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ChatModeConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetConversationId())
-                    {
-                        context.Writer.WritePropertyName("conversationId");
-                        context.Writer.Write(publicRequest.ConversationId);
-                    }
-
-                    if(publicRequest.IsSetParentMessageId())
-                    {
-                        context.Writer.WritePropertyName("parentMessageId");
-                        context.Writer.Write(publicRequest.ParentMessageId);
-                    }
-
-                    if(publicRequest.IsSetUserMessage())
-                    {
-                        context.Writer.WritePropertyName("userMessage");
-                        context.Writer.Write(publicRequest.UserMessage);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAttachments())
+            {
+                context.Writer.WritePropertyName("attachments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AttachmentInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAttributeFilter())
+            {
+                context.Writer.WritePropertyName("attributeFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AttributeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AttributeFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAuthChallengeResponse())
+            {
+                context.Writer.WritePropertyName("authChallengeResponse");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuthChallengeResponseMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuthChallengeResponse, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetChatMode())
+            {
+                context.Writer.WritePropertyName("chatMode");
+                context.Writer.WriteStringValue(publicRequest.ChatMode);
+            }
+
+            if(publicRequest.IsSetChatModeConfiguration())
+            {
+                context.Writer.WritePropertyName("chatModeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChatModeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ChatModeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetConversationId())
+            {
+                context.Writer.WritePropertyName("conversationId");
+                context.Writer.WriteStringValue(publicRequest.ConversationId);
+            }
+
+            if(publicRequest.IsSetParentMessageId())
+            {
+                context.Writer.WritePropertyName("parentMessageId");
+                context.Writer.WriteStringValue(publicRequest.ParentMessageId);
+            }
+
+            if(publicRequest.IsSetUserMessage())
+            {
+                context.Writer.WritePropertyName("userMessage");
+                context.Writer.WriteStringValue(publicRequest.UserMessage);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

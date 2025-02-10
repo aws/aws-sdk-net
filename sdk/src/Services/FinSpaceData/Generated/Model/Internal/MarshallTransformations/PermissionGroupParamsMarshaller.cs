@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetPermissions())
             {
                 context.Writer.WritePropertyName("datasetPermissions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDatasetPermissionsListValue in requestObject.DatasetPermissions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ResourcePermissionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDatasetPermissionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPermissionGroupId())
             {
                 context.Writer.WritePropertyName("permissionGroupId");
-                context.Writer.Write(requestObject.PermissionGroupId);
+                context.Writer.WriteStringValue(requestObject.PermissionGroupId);
             }
 
         }

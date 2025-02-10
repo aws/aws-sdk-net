@@ -37,6 +37,8 @@ namespace Amazon.QBusiness.Model
     {
         private int? _beginOffset;
         private int? _endOffset;
+        private string _mediaId;
+        private string _mediaMimeType;
         private SnippetExcerpt _snippetExcerpt;
 
         /// <summary>
@@ -73,6 +75,46 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetEndOffset()
         {
             return this._endOffset.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaId. 
+        /// <para>
+        /// The identifier of the media object associated with the text segment in the source
+        /// attribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string MediaId
+        {
+            get { return this._mediaId; }
+            set { this._mediaId = value; }
+        }
+
+        // Check to see if MediaId property is set
+        internal bool IsSetMediaId()
+        {
+            return this._mediaId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaMimeType. 
+        /// <para>
+        /// The MIME type (image/png) of the media object associated with the text segment in
+        /// the source attribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string MediaMimeType
+        {
+            get { return this._mediaMimeType; }
+            set { this._mediaMimeType = value; }
+        }
+
+        // Check to see if MediaMimeType property is set
+        internal bool IsSetMediaMimeType()
+        {
+            return this._mediaMimeType != null;
         }
 
         /// <summary>

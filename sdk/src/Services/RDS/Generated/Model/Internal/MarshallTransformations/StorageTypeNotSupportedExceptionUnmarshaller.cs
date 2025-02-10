@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageTypeNotSupportedException operation
     /// </summary>  
-    public class StorageTypeNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<StorageTypeNotSupportedException, XmlUnmarshallerContext>
+    public class StorageTypeNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StorageTypeNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

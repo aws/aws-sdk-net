@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConnections())
             {
                 context.Writer.WritePropertyName("maxConnections");
-                context.Writer.Write(requestObject.MaxConnections.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxConnections.Value);
             }
 
             if(requestObject.IsSetMaxPendingRequests())
             {
                 context.Writer.WritePropertyName("maxPendingRequests");
-                context.Writer.Write(requestObject.MaxPendingRequests.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPendingRequests.Value);
             }
 
         }

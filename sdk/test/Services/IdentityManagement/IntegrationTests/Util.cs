@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
 
         public static string CreateTestUser(AmazonIdentityManagementServiceClient client)
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
             client.CreateUser(new CreateUserRequest() { UserName = username, Path = TEST_PATH });
             return username;
         }

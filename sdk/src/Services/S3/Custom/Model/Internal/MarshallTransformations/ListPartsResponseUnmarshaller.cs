@@ -152,6 +152,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.AbortRuleId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzAbortRuleIdHeader));
             if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
                 response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderChecksumType))
+                response.ChecksumType = ChecksumType.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderChecksumType));
 
             return;
         }

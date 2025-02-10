@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetLambdaAuthorizerConfig())
             {
                 context.Writer.WritePropertyName("LambdaAuthorizerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaAuthorizerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpenIdConnectConfig())
             {
                 context.Writer.WritePropertyName("OpenIdConnectConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenIdConnectConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserPoolConfig())
             {
                 context.Writer.WritePropertyName("UserPoolConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiUserPoolConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserPoolConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

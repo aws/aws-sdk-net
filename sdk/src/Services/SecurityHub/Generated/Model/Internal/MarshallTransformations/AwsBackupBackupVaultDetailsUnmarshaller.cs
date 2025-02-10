@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsBackupBackupVaultDetails Object
     /// </summary>  
-    public class AwsBackupBackupVaultDetailsUnmarshaller : IUnmarshaller<AwsBackupBackupVaultDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsBackupBackupVaultDetails, JsonUnmarshallerContext>
+    public class AwsBackupBackupVaultDetailsUnmarshaller : IJsonUnmarshaller<AwsBackupBackupVaultDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsBackupBackupVaultDetails IUnmarshaller<AwsBackupBackupVaultDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsBackupBackupVaultDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsBackupBackupVaultDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsBackupBackupVaultDetails unmarshalledObject = new AwsBackupBackupVaultDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupVaultArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupVaultArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupVaultName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EncryptionKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Notifications", targetDepth))
                 {
                     var unmarshaller = AwsBackupBackupVaultNotificationsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Notifications = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Notifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

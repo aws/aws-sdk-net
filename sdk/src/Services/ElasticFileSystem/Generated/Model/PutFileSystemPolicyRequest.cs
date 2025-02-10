@@ -37,8 +37,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// policy or an explicit policy set or updated using this API operation. EFS file system
     /// policies have a 20,000 character limit. When an explicit policy is set, it overrides
     /// the default policy. For more information about the default file system policy, see
-    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
-    /// EFS File System Policy</a>. 
+    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">
+    /// Default EFS file system policy</a>. 
     /// 
     ///  <note> 
     /// <para>
@@ -105,8 +105,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// The <c>FileSystemPolicy</c> that you're creating. Accepts a JSON formatted policy
         /// definition. EFS file system policies have a 20,000 character limit. To find out more
-        /// about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
-        /// Resource-based Policies</a>. 
+        /// about the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/security_iam_service-with-iam.html#security_iam_service-with-iam-resource-based-policies">Resource-based
+        /// policies within Amazon EFS</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20000)]

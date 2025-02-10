@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceScanNotFoundException operation
     /// </summary>  
-    public class ResourceScanNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceScanNotFoundException, XmlUnmarshallerContext>
+    public class ResourceScanNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceScanNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

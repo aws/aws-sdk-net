@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
@@ -63,78 +66,83 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttachmentSetId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttachmentSetId())
-                    {
-                        context.Writer.WritePropertyName("attachmentSetId");
-                        context.Writer.Write(publicRequest.AttachmentSetId);
-                    }
-
-                    if(publicRequest.IsSetCategoryCode())
-                    {
-                        context.Writer.WritePropertyName("categoryCode");
-                        context.Writer.Write(publicRequest.CategoryCode);
-                    }
-
-                    if(publicRequest.IsSetCcEmailAddresses())
-                    {
-                        context.Writer.WritePropertyName("ccEmailAddresses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
-                        {
-                                context.Writer.Write(publicRequestCcEmailAddressesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCommunicationBody())
-                    {
-                        context.Writer.WritePropertyName("communicationBody");
-                        context.Writer.Write(publicRequest.CommunicationBody);
-                    }
-
-                    if(publicRequest.IsSetIssueType())
-                    {
-                        context.Writer.WritePropertyName("issueType");
-                        context.Writer.Write(publicRequest.IssueType);
-                    }
-
-                    if(publicRequest.IsSetLanguage())
-                    {
-                        context.Writer.WritePropertyName("language");
-                        context.Writer.Write(publicRequest.Language);
-                    }
-
-                    if(publicRequest.IsSetServiceCode())
-                    {
-                        context.Writer.WritePropertyName("serviceCode");
-                        context.Writer.Write(publicRequest.ServiceCode);
-                    }
-
-                    if(publicRequest.IsSetSeverityCode())
-                    {
-                        context.Writer.WritePropertyName("severityCode");
-                        context.Writer.Write(publicRequest.SeverityCode);
-                    }
-
-                    if(publicRequest.IsSetSubject())
-                    {
-                        context.Writer.WritePropertyName("subject");
-                        context.Writer.Write(publicRequest.Subject);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("attachmentSetId");
+                context.Writer.WriteStringValue(publicRequest.AttachmentSetId);
             }
+
+            if(publicRequest.IsSetCategoryCode())
+            {
+                context.Writer.WritePropertyName("categoryCode");
+                context.Writer.WriteStringValue(publicRequest.CategoryCode);
+            }
+
+            if(publicRequest.IsSetCcEmailAddresses())
+            {
+                context.Writer.WritePropertyName("ccEmailAddresses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCcEmailAddressesListValue in publicRequest.CcEmailAddresses)
+                {
+                        context.Writer.WriteStringValue(publicRequestCcEmailAddressesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCommunicationBody())
+            {
+                context.Writer.WritePropertyName("communicationBody");
+                context.Writer.WriteStringValue(publicRequest.CommunicationBody);
+            }
+
+            if(publicRequest.IsSetIssueType())
+            {
+                context.Writer.WritePropertyName("issueType");
+                context.Writer.WriteStringValue(publicRequest.IssueType);
+            }
+
+            if(publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+
+            if(publicRequest.IsSetServiceCode())
+            {
+                context.Writer.WritePropertyName("serviceCode");
+                context.Writer.WriteStringValue(publicRequest.ServiceCode);
+            }
+
+            if(publicRequest.IsSetSeverityCode())
+            {
+                context.Writer.WritePropertyName("severityCode");
+                context.Writer.WriteStringValue(publicRequest.SeverityCode);
+            }
+
+            if(publicRequest.IsSetSubject())
+            {
+                context.Writer.WritePropertyName("subject");
+                context.Writer.WriteStringValue(publicRequest.Subject);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

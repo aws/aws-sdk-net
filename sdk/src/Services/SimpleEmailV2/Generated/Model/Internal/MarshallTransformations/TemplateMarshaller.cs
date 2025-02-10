@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,46 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("Headers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeadersListValue in requestObject.Headers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MessageHeaderMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeadersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTemplateArn())
             {
                 context.Writer.WritePropertyName("TemplateArn");
-                context.Writer.Write(requestObject.TemplateArn);
+                context.Writer.WriteStringValue(requestObject.TemplateArn);
+            }
+
+            if(requestObject.IsSetTemplateContent())
+            {
+                context.Writer.WritePropertyName("TemplateContent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EmailTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemplateContent, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateData())
             {
                 context.Writer.WritePropertyName("TemplateData");
-                context.Writer.Write(requestObject.TemplateData);
+                context.Writer.WriteStringValue(requestObject.TemplateData);
             }
 
             if(requestObject.IsSetTemplateName())
             {
                 context.Writer.WritePropertyName("TemplateName");
-                context.Writer.Write(requestObject.TemplateName);
+                context.Writer.WriteStringValue(requestObject.TemplateName);
             }
 
         }

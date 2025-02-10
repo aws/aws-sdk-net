@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScalingInstruction Object
     /// </summary>  
-    public class ScalingInstructionUnmarshaller : IUnmarshaller<ScalingInstruction, XmlUnmarshallerContext>, IUnmarshaller<ScalingInstruction, JsonUnmarshallerContext>
+    public class ScalingInstructionUnmarshaller : IJsonUnmarshaller<ScalingInstruction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScalingInstruction IUnmarshaller<ScalingInstruction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScalingInstruction Unmarshall(JsonUnmarshallerContext context)
+        public ScalingInstruction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScalingInstruction unmarshalledObject = new ScalingInstruction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomizedLoadMetricSpecification", targetDepth))
                 {
                     var unmarshaller = CustomizedLoadMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisableDynamicScaling", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableDynamicScaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisableDynamicScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxCapacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinCapacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredefinedLoadMetricSpecification", targetDepth))
                 {
                     var unmarshaller = PredefinedLoadMetricSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PredefinedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredefinedLoadMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredictiveScalingMaxCapacityBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PredictiveScalingMaxCapacityBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictiveScalingMaxCapacityBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredictiveScalingMaxCapacityBuffer", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PredictiveScalingMaxCapacityBuffer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictiveScalingMaxCapacityBuffer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredictiveScalingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PredictiveScalingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictiveScalingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalableDimension", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingPolicyUpdateBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScalingPolicyUpdateBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingPolicyUpdateBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduledActionBufferTime", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScheduledActionBufferTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduledActionBufferTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceNamespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetTrackingConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TargetTrackingConfiguration, TargetTrackingConfigurationUnmarshaller>(TargetTrackingConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.TargetTrackingConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TargetTrackingConfiguration, TargetTrackingConfigurationUnmarshaller>(TargetTrackingConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.TargetTrackingConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

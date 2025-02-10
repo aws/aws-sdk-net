@@ -37,6 +37,25 @@ namespace Amazon.JsonProtocol
     public partial interface IAmazonJsonProtocol : IAmazonService, IDisposable
     {
                 
+        #region  ContentTypeParameters
+
+
+
+        /// <summary>
+        /// The example tests how servers must support requests containing a <c>Content-Type</c>
+        /// header with parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContentTypeParameters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContentTypeParameters service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
+        Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DatetimeOffsets
 
 
@@ -195,6 +214,24 @@ namespace Amazon.JsonProtocol
         /// <returns>The response from the JsonEnums service method, as returned by JsonProtocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonEnums">REST API Reference for JsonEnums Operation</seealso>
         Task<JsonEnumsResponse> JsonEnumsAsync(JsonEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  JsonIntEnums
+
+
+
+        /// <summary>
+        /// This example serializes intEnums as top level properties, in lists, sets, and maps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the JsonIntEnums service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the JsonIntEnums service method, as returned by JsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/json-protocol-2018-01-01/JsonIntEnums">REST API Reference for JsonIntEnums Operation</seealso>
+        Task<JsonIntEnumsResponse> JsonIntEnumsAsync(JsonIntEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

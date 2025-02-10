@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for KinesisFirehoseDestination Object
     /// </summary>  
-    public class KinesisFirehoseDestinationUnmarshaller : IUnmarshaller<KinesisFirehoseDestination, XmlUnmarshallerContext>, IUnmarshaller<KinesisFirehoseDestination, JsonUnmarshallerContext>
+    public class KinesisFirehoseDestinationUnmarshaller : IXmlUnmarshaller<KinesisFirehoseDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public KinesisFirehoseDestination Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static KinesisFirehoseDestinationUnmarshaller _instance = new KinesisFirehoseDestinationUnmarshaller();        
 

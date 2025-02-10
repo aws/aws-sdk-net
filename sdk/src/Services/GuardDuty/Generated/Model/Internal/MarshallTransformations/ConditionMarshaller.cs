@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -51,93 +49,93 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("eq");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEqListValue in requestObject.Eq)
                 {
-                        context.Writer.Write(requestObjectEqListValue);
+                        context.Writer.WriteStringValue(requestObjectEqListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEquals())
             {
                 context.Writer.WritePropertyName("equals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEqualsListValue in requestObject.Equals)
                 {
-                        context.Writer.Write(requestObjectEqualsListValue);
+                        context.Writer.WriteStringValue(requestObjectEqualsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("greaterThan");
-                context.Writer.Write(requestObject.GreaterThan.Value);
+                context.Writer.WriteNumberValue(requestObject.GreaterThan.Value);
             }
 
             if(requestObject.IsSetGreaterThanOrEqual())
             {
                 context.Writer.WritePropertyName("greaterThanOrEqual");
-                context.Writer.Write(requestObject.GreaterThanOrEqual.Value);
+                context.Writer.WriteNumberValue(requestObject.GreaterThanOrEqual.Value);
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("gt");
-                context.Writer.Write(requestObject.Gt.Value);
+                context.Writer.WriteNumberValue(requestObject.Gt.Value);
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("gte");
-                context.Writer.Write(requestObject.Gte.Value);
+                context.Writer.WriteNumberValue(requestObject.Gte.Value);
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("lessThan");
-                context.Writer.Write(requestObject.LessThan.Value);
+                context.Writer.WriteNumberValue(requestObject.LessThan.Value);
             }
 
             if(requestObject.IsSetLessThanOrEqual())
             {
                 context.Writer.WritePropertyName("lessThanOrEqual");
-                context.Writer.Write(requestObject.LessThanOrEqual.Value);
+                context.Writer.WriteNumberValue(requestObject.LessThanOrEqual.Value);
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("lt");
-                context.Writer.Write(requestObject.Lt.Value);
+                context.Writer.WriteNumberValue(requestObject.Lt.Value);
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("lte");
-                context.Writer.Write(requestObject.Lte.Value);
+                context.Writer.WriteNumberValue(requestObject.Lte.Value);
             }
 
             if(requestObject.IsSetNeq())
             {
                 context.Writer.WritePropertyName("neq");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNeqListValue in requestObject.Neq)
                 {
-                        context.Writer.Write(requestObjectNeqListValue);
+                        context.Writer.WriteStringValue(requestObjectNeqListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotEquals())
             {
                 context.Writer.WritePropertyName("notEquals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotEqualsListValue in requestObject.NotEquals)
                 {
-                        context.Writer.Write(requestObjectNotEqualsListValue);
+                        context.Writer.WriteStringValue(requestObjectNotEqualsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

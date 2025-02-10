@@ -43,7 +43,6 @@ namespace Amazon.QBusiness.Model
         /// A list of phrases blocked from a Amazon Q Business web experience chat.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
         public List<string> BlockedPhrases
         {
             get { return this._blockedPhrases; }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerlessCacheAlreadyExistsException operation
     /// </summary>  
-    public class ServerlessCacheAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ServerlessCacheAlreadyExistsException, XmlUnmarshallerContext>
+    public class ServerlessCacheAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServerlessCacheAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

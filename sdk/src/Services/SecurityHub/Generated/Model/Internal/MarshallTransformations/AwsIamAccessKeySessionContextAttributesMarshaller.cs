@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
-                context.Writer.Write(requestObject.CreationDate);
+                context.Writer.WriteStringValue(requestObject.CreationDate);
             }
 
             if(requestObject.IsSetMfaAuthenticated())
             {
                 context.Writer.WritePropertyName("MfaAuthenticated");
-                context.Writer.Write(requestObject.MfaAuthenticated.Value);
+                context.Writer.WriteBooleanValue(requestObject.MfaAuthenticated.Value);
             }
 
         }

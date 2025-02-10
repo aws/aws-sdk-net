@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpV6Address())
             {
                 context.Writer.WritePropertyName("IpV6Address");
-                context.Writer.Write(requestObject.IpV6Address);
+                context.Writer.WriteStringValue(requestObject.IpV6Address);
             }
 
         }

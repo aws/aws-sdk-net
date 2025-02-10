@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ManagedActionHistoryItem Object
     /// </summary>  
-    public class ManagedActionHistoryItemUnmarshaller : IUnmarshaller<ManagedActionHistoryItem, XmlUnmarshallerContext>, IUnmarshaller<ManagedActionHistoryItem, JsonUnmarshallerContext>
+    public class ManagedActionHistoryItemUnmarshaller : IXmlUnmarshaller<ManagedActionHistoryItem, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ManagedActionHistoryItem Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ManagedActionHistoryItemUnmarshaller _instance = new ManagedActionHistoryItemUnmarshaller();        
 

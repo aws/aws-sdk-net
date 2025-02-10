@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAboutText())
             {
                 context.Writer.WritePropertyName("aboutText");
-                context.Writer.Write(requestObject.AboutText);
+                context.Writer.WriteStringValue(requestObject.AboutText);
             }
 
             if(requestObject.IsSetArchitectures())
             {
                 context.Writer.WritePropertyName("architectures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArchitecturesListValue in requestObject.Architectures)
                 {
-                        context.Writer.Write(requestObjectArchitecturesListValue);
+                        context.Writer.WriteStringValue(requestObjectArchitecturesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetLogoImageBlob())
             {
                 context.Writer.WritePropertyName("logoImageBlob");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.LogoImageBlob));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.LogoImageBlob));
             }
 
             if(requestObject.IsSetOperatingSystems())
             {
                 context.Writer.WritePropertyName("operatingSystems");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOperatingSystemsListValue in requestObject.OperatingSystems)
                 {
-                        context.Writer.Write(requestObjectOperatingSystemsListValue);
+                        context.Writer.WriteStringValue(requestObjectOperatingSystemsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUsageText())
             {
                 context.Writer.WritePropertyName("usageText");
-                context.Writer.Write(requestObject.UsageText);
+                context.Writer.WriteStringValue(requestObject.UsageText);
             }
 
         }

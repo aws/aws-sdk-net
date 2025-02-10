@@ -43,6 +43,7 @@ namespace Amazon.Transfer.Model
         private MdnSigningAlg _mdnSigningAlgorithm;
         private string _messageSubject;
         private string _partnerProfileId;
+        private PreserveContentType _preserveContentType;
         private SigningAlg _signingAlgorithm;
 
         /// <summary>
@@ -271,6 +272,27 @@ namespace Amazon.Transfer.Model
         internal bool IsSetPartnerProfileId()
         {
             return this._partnerProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreserveContentType. 
+        /// <para>
+        /// Allows you to use the Amazon S3 <c>Content-Type</c> that is associated with objects
+        /// in S3 instead of having the content type mapped based on the file extension. This
+        /// parameter is enabled by default when you create an AS2 connector from the console,
+        /// but disabled by default when you create an AS2 connector by calling the API directly.
+        /// </para>
+        /// </summary>
+        public PreserveContentType PreserveContentType
+        {
+            get { return this._preserveContentType; }
+            set { this._preserveContentType = value; }
+        }
+
+        // Check to see if PreserveContentType property is set
+        internal bool IsSetPreserveContentType()
+        {
+            return this._preserveContentType != null;
         }
 
         /// <summary>

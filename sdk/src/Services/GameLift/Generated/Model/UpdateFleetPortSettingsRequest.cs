@@ -43,11 +43,6 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// For a container fleet, inbound permissions must specify port numbers that are defined
-    /// in the fleet's connection port settings.
-    /// </para>
-    ///  
-    /// <para>
     /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
     /// locations, port setting updates can take time to propagate across all locations. You
     /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
@@ -76,7 +71,7 @@ namespace Amazon.GameLift.Model
         /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

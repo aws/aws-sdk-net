@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ParameterDeclaration Object
     /// </summary>  
-    public class ParameterDeclarationUnmarshaller : IUnmarshaller<ParameterDeclaration, XmlUnmarshallerContext>, IUnmarshaller<ParameterDeclaration, JsonUnmarshallerContext>
+    public class ParameterDeclarationUnmarshaller : IJsonUnmarshaller<ParameterDeclaration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ParameterDeclaration IUnmarshaller<ParameterDeclaration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ParameterDeclaration Unmarshall(JsonUnmarshallerContext context)
+        public ParameterDeclaration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ParameterDeclaration unmarshalledObject = new ParameterDeclaration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DateTimeParameterDeclaration", targetDepth))
                 {
                     var unmarshaller = DateTimeParameterDeclarationUnmarshaller.Instance;
-                    unmarshalledObject.DateTimeParameterDeclaration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateTimeParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DecimalParameterDeclaration", targetDepth))
                 {
                     var unmarshaller = DecimalParameterDeclarationUnmarshaller.Instance;
-                    unmarshalledObject.DecimalParameterDeclaration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DecimalParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IntegerParameterDeclaration", targetDepth))
                 {
                     var unmarshaller = IntegerParameterDeclarationUnmarshaller.Instance;
-                    unmarshalledObject.IntegerParameterDeclaration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntegerParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StringParameterDeclaration", targetDepth))
                 {
                     var unmarshaller = StringParameterDeclarationUnmarshaller.Instance;
-                    unmarshalledObject.StringParameterDeclaration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringParameterDeclaration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

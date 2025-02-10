@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConflictMetadata Object
     /// </summary>  
-    public class ConflictMetadataUnmarshaller : IUnmarshaller<ConflictMetadata, XmlUnmarshallerContext>, IUnmarshaller<ConflictMetadata, JsonUnmarshallerContext>
+    public class ConflictMetadataUnmarshaller : IJsonUnmarshaller<ConflictMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConflictMetadata IUnmarshaller<ConflictMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConflictMetadata Unmarshall(JsonUnmarshallerContext context)
+        public ConflictMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConflictMetadata unmarshalledObject = new ConflictMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("contentConflict", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ContentConflict = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileModeConflict", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.FileModeConflict = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileModeConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileModes", targetDepth))
                 {
                     var unmarshaller = FileModesUnmarshaller.Instance;
-                    unmarshalledObject.FileModes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileSizes", targetDepth))
                 {
                     var unmarshaller = FileSizesUnmarshaller.Instance;
-                    unmarshalledObject.FileSizes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileSizes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isBinaryFile", targetDepth))
                 {
                     var unmarshaller = IsBinaryFileUnmarshaller.Instance;
-                    unmarshalledObject.IsBinaryFile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsBinaryFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mergeOperations", targetDepth))
                 {
                     var unmarshaller = MergeOperationsUnmarshaller.Instance;
-                    unmarshalledObject.MergeOperations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergeOperations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfConflicts", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfConflicts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfConflicts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("objectTypeConflict", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ObjectTypeConflict = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectTypeConflict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("objectTypes", targetDepth))
                 {
                     var unmarshaller = ObjectTypesUnmarshaller.Instance;
-                    unmarshalledObject.ObjectTypes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

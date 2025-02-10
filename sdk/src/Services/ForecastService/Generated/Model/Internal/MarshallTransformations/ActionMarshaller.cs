@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("AttributeName");
-                context.Writer.Write(requestObject.AttributeName);
+                context.Writer.WriteStringValue(requestObject.AttributeName);
             }
 
             if(requestObject.IsSetOperation())
             {
                 context.Writer.WritePropertyName("Operation");
-                context.Writer.Write(requestObject.Operation);
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
 
             if(requestObject.IsSetValue())
@@ -65,11 +63,11 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Value");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value.Value);
+                    context.Writer.WriteNumberValue(requestObject.Value.Value);
                 }
             }
 

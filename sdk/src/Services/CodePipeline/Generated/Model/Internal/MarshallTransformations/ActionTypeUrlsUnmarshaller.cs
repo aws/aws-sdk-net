@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ActionTypeUrls Object
     /// </summary>  
-    public class ActionTypeUrlsUnmarshaller : IUnmarshaller<ActionTypeUrls, XmlUnmarshallerContext>, IUnmarshaller<ActionTypeUrls, JsonUnmarshallerContext>
+    public class ActionTypeUrlsUnmarshaller : IJsonUnmarshaller<ActionTypeUrls, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ActionTypeUrls IUnmarshaller<ActionTypeUrls, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionTypeUrls Unmarshall(JsonUnmarshallerContext context)
+        public ActionTypeUrls Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ActionTypeUrls unmarshalledObject = new ActionTypeUrls();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("configurationUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("entityUrlTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityUrlTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntityUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionUrlTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionUrlTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("revisionUrlTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionUrlTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionUrlTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

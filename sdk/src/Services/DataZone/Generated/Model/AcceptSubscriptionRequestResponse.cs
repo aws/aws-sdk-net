@@ -38,7 +38,9 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _decisionComment;
         private string _domainId;
+        private string _existingSubscriptionId;
         private string _id;
+        private List<FormOutput> _metadataForms = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private string _requestReason;
         private string _reviewerId;
         private SubscriptionRequestStatus _status;
@@ -125,6 +127,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExistingSubscriptionId. 
+        /// <para>
+        /// The ID of the existing subscription.
+        /// </para>
+        /// </summary>
+        public string ExistingSubscriptionId
+        {
+            get { return this._existingSubscriptionId; }
+            set { this._existingSubscriptionId = value; }
+        }
+
+        // Check to see if ExistingSubscriptionId property is set
+        internal bool IsSetExistingSubscriptionId()
+        {
+            return this._existingSubscriptionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the subscription request.
@@ -141,6 +161,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataForms. 
+        /// <para>
+        /// The metadata form in the subscription request.
+        /// </para>
+        /// </summary>
+        public List<FormOutput> MetadataForms
+        {
+            get { return this._metadataForms; }
+            set { this._metadataForms = value; }
+        }
+
+        // Check to see if MetadataForms property is set
+        internal bool IsSetMetadataForms()
+        {
+            return this._metadataForms != null && (this._metadataForms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

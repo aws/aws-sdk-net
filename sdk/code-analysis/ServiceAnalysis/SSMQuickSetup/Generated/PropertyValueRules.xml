@@ -13,6 +13,10 @@
     <pattern>^arn:aws:ssm-quicksetup:([^:]+):(\d{12}):configuration-manager/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSMQuickSetup.Model.GetConfigurationRequest.ConfigurationId</property>
+    <pattern>^[a-zA-Z0-9-_/:]{1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSMQuickSetup.Model.GetConfigurationManagerRequest.ManagerArn</property>
     <min>1</min>
     <pattern>^arn:aws:ssm-quicksetup:([^:]+):(\d{12}):configuration-manager/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$</pattern>
@@ -27,6 +31,25 @@
     <min>0</min>
     <max>1024</max>
     <pattern>^[A-Za-z0-9+=@_\/\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMQuickSetup.Model.ListConfigurationsRequest.ConfigurationDefinitionId</property>
+    <pattern>^[a-z0-9-]{1,20}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMQuickSetup.Model.ListConfigurationsRequest.ManagerArn</property>
+    <pattern>^arn:aws:ssm-quicksetup:([^:]+):(\d{12}):configuration-manager/[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMQuickSetup.Model.ListConfigurationsRequest.MaxItems</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSMQuickSetup.Model.ListConfigurationsRequest.StartingToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^[A-Za-z0-9+=@_|\/\s-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSMQuickSetup.Model.UpdateConfigurationDefinitionRequest.Id</property>

@@ -30,7 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for the UI customization information for a user pool's built-in app UI.
+    /// A container for the UI customization information for the hosted UI in a user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">GetUICustomization</a>.
+    /// </para>
     /// </summary>
     public partial class UICustomizationType
     {
@@ -45,7 +50,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client ID for the client app.
+        /// The app client ID for your UI customization. When this value isn't present, the customization
+        /// applies to all user pool app clients that don't have client-level settings..
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -84,7 +90,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CSS. 
         /// <para>
-        /// The CSS values in the UI customization.
+        /// The CSS values in the UI customization. To get a template with your UI customization
+        /// options, make a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUiCustomization.html">GetUiCustomization</a>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -121,7 +129,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ImageUrl. 
         /// <para>
-        /// The logo image for the UI customization.
+        /// A URL path to the hosted logo image of your UI customization.
         /// </para>
         /// </summary>
         public string ImageUrl
@@ -159,7 +167,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool with hosted UI customizations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

@@ -37,6 +37,54 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAIAgents operation
+        ///</summary>
+        public IListAIAgentsPaginator ListAIAgents(ListAIAgentsRequest request) 
+        {
+            return new ListAIAgentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIAgentVersions operation
+        ///</summary>
+        public IListAIAgentVersionsPaginator ListAIAgentVersions(ListAIAgentVersionsRequest request) 
+        {
+            return new ListAIAgentVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIGuardrails operation
+        ///</summary>
+        public IListAIGuardrailsPaginator ListAIGuardrails(ListAIGuardrailsRequest request) 
+        {
+            return new ListAIGuardrailsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIGuardrailVersions operation
+        ///</summary>
+        public IListAIGuardrailVersionsPaginator ListAIGuardrailVersions(ListAIGuardrailVersionsRequest request) 
+        {
+            return new ListAIGuardrailVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIPrompts operation
+        ///</summary>
+        public IListAIPromptsPaginator ListAIPrompts(ListAIPromptsRequest request) 
+        {
+            return new ListAIPromptsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIPromptVersions operation
+        ///</summary>
+        public IListAIPromptVersionsPaginator ListAIPromptVersions(ListAIPromptVersionsRequest request) 
+        {
+            return new ListAIPromptVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssistantAssociations operation
         ///</summary>
         public IListAssistantAssociationsPaginator ListAssistantAssociations(ListAssistantAssociationsRequest request) 
@@ -85,6 +133,30 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListMessages operation
+        ///</summary>
+        public IListMessagesPaginator ListMessages(ListMessagesRequest request) 
+        {
+            return new ListMessagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMessageTemplates operation
+        ///</summary>
+        public IListMessageTemplatesPaginator ListMessageTemplates(ListMessageTemplatesRequest request) 
+        {
+            return new ListMessageTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMessageTemplateVersions operation
+        ///</summary>
+        public IListMessageTemplateVersionsPaginator ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request) 
+        {
+            return new ListMessageTemplateVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListQuickResponses operation
         ///</summary>
         public IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request) 
@@ -106,6 +178,14 @@ namespace Amazon.QConnect.Model
         public ISearchContentPaginator SearchContent(SearchContentRequest request) 
         {
             return new SearchContentPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchMessageTemplates operation
+        ///</summary>
+        public ISearchMessageTemplatesPaginator SearchMessageTemplates(SearchMessageTemplatesRequest request) 
+        {
+            return new SearchMessageTemplatesPaginator(this.client, request);
         }
 
         /// <summary>

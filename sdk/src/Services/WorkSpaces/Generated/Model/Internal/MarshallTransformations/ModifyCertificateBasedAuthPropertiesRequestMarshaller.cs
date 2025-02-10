@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -63,47 +66,52 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCertificateBasedAuthProperties())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCertificateBasedAuthProperties())
-                    {
-                        context.Writer.WritePropertyName("CertificateBasedAuthProperties");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("CertificateBasedAuthProperties");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
+                var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPropertiesToDelete())
-                    {
-                        context.Writer.WritePropertyName("PropertiesToDelete");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPropertiesToDeleteListValue in publicRequest.PropertiesToDelete)
-                        {
-                                context.Writer.Write(publicRequestPropertiesToDeleteListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceId())
-                    {
-                        context.Writer.WritePropertyName("ResourceId");
-                        context.Writer.Write(publicRequest.ResourceId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetPropertiesToDelete())
+            {
+                context.Writer.WritePropertyName("PropertiesToDelete");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPropertiesToDeleteListValue in publicRequest.PropertiesToDelete)
+                {
+                        context.Writer.WriteStringValue(publicRequestPropertiesToDeleteListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceId())
+            {
+                context.Writer.WritePropertyName("ResourceId");
+                context.Writer.WriteStringValue(publicRequest.ResourceId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

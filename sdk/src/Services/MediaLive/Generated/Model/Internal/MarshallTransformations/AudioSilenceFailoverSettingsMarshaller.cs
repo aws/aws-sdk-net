@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioSelectorName())
             {
                 context.Writer.WritePropertyName("audioSelectorName");
-                context.Writer.Write(requestObject.AudioSelectorName);
+                context.Writer.WriteStringValue(requestObject.AudioSelectorName);
             }
 
             if(requestObject.IsSetAudioSilenceThresholdMsec())
             {
                 context.Writer.WritePropertyName("audioSilenceThresholdMsec");
-                context.Writer.Write(requestObject.AudioSilenceThresholdMsec.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioSilenceThresholdMsec.Value);
             }
 
         }

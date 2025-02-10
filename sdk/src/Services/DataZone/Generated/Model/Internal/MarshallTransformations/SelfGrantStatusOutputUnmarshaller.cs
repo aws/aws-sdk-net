@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SelfGrantStatusOutput Object
     /// </summary>  
-    public class SelfGrantStatusOutputUnmarshaller : IUnmarshaller<SelfGrantStatusOutput, XmlUnmarshallerContext>, IUnmarshaller<SelfGrantStatusOutput, JsonUnmarshallerContext>
+    public class SelfGrantStatusOutputUnmarshaller : IJsonUnmarshaller<SelfGrantStatusOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SelfGrantStatusOutput IUnmarshaller<SelfGrantStatusOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SelfGrantStatusOutput Unmarshall(JsonUnmarshallerContext context)
+        public SelfGrantStatusOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SelfGrantStatusOutput unmarshalledObject = new SelfGrantStatusOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("glueSelfGrantStatus", targetDepth))
                 {
                     var unmarshaller = GlueSelfGrantStatusOutputUnmarshaller.Instance;
-                    unmarshalledObject.GlueSelfGrantStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlueSelfGrantStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("redshiftSelfGrantStatus", targetDepth))
                 {
                     var unmarshaller = RedshiftSelfGrantStatusOutputUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftSelfGrantStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftSelfGrantStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

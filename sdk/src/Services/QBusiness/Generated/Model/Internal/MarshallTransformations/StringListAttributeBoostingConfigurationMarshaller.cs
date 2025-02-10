@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoostingLevel())
             {
                 context.Writer.WritePropertyName("boostingLevel");
-                context.Writer.Write(requestObject.BoostingLevel);
+                context.Writer.WriteStringValue(requestObject.BoostingLevel);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSeedUrls())
             {
                 context.Writer.WritePropertyName("SeedUrls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSeedUrlsListValue in requestObject.SeedUrls)
                 {
-                        context.Writer.Write(requestObjectSeedUrlsListValue);
+                        context.Writer.WriteStringValue(requestObjectSeedUrlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWebCrawlerMode())
             {
                 context.Writer.WritePropertyName("WebCrawlerMode");
-                context.Writer.Write(requestObject.WebCrawlerMode);
+                context.Writer.WriteStringValue(requestObject.WebCrawlerMode);
             }
 
         }

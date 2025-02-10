@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IcebergRetentionConfiguration Object
     /// </summary>  
-    public class IcebergRetentionConfigurationUnmarshaller : IUnmarshaller<IcebergRetentionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<IcebergRetentionConfiguration, JsonUnmarshallerContext>
+    public class IcebergRetentionConfigurationUnmarshaller : IJsonUnmarshaller<IcebergRetentionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IcebergRetentionConfiguration IUnmarshaller<IcebergRetentionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IcebergRetentionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public IcebergRetentionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IcebergRetentionConfiguration unmarshalledObject = new IcebergRetentionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cleanExpiredFiles", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CleanExpiredFiles = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CleanExpiredFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfSnapshotsToRetain", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfSnapshotsToRetain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfSnapshotsToRetain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("snapshotRetentionPeriodInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotRetentionPeriodInDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotRetentionPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

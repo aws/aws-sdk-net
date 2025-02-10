@@ -39,8 +39,10 @@ namespace Amazon.IVS.Model
     {
         private string _arn;
         private bool? _authorized;
+        private ContainerFormat _containerFormat;
         private bool? _insecureIngest;
         private ChannelLatencyMode _latencyMode;
+        private MultitrackInputConfiguration _multitrackInputConfiguration;
         private string _name;
         private string _playbackRestrictionPolicyArn;
         private TranscodePreset _preset;
@@ -85,6 +87,27 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContainerFormat. 
+        /// <para>
+        /// Indicates which content-packaging format is used (MPEG-TS or fMP4). If <c>multitrackInputConfiguration</c>
+        /// is specified and <c>enabled</c> is <c>true</c>, then <c>containerFormat</c> is required
+        /// and must be set to <c>FRAGMENTED_MP4</c>. Otherwise, <c>containerFormat</c> may be
+        /// set to <c>TS</c> or <c>FRAGMENTED_MP4</c>. Default: <c>TS</c>.
+        /// </para>
+        /// </summary>
+        public ContainerFormat ContainerFormat
+        {
+            get { return this._containerFormat; }
+            set { this._containerFormat = value; }
+        }
+
+        // Check to see if ContainerFormat property is set
+        internal bool IsSetContainerFormat()
+        {
+            return this._containerFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InsecureIngest. 
         /// <para>
         /// Whether the channel allows insecure RTMP and SRT ingest. Default: <c>false</c>.
@@ -119,6 +142,25 @@ namespace Amazon.IVS.Model
         internal bool IsSetLatencyMode()
         {
             return this._latencyMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultitrackInputConfiguration. 
+        /// <para>
+        /// Object specifying multitrack input configuration. Default: no multitrack input configuration
+        /// is specified.
+        /// </para>
+        /// </summary>
+        public MultitrackInputConfiguration MultitrackInputConfiguration
+        {
+            get { return this._multitrackInputConfiguration; }
+            set { this._multitrackInputConfiguration = value; }
+        }
+
+        // Check to see if MultitrackInputConfiguration property is set
+        internal bool IsSetMultitrackInputConfiguration()
+        {
+            return this._multitrackInputConfiguration != null;
         }
 
         /// <summary>

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains details about an ingestion job, which converts a data source to embeddings
-    /// for a vector store in knowledge base.
+    /// Contains details about a data ingestion job. Data sources are ingested into a knowledge
+    /// base so that Large Language Models (LLMs) can use your data.
     /// 
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The unique identifier of the ingested data source.
+        /// The unique identifier of the data source for the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +88,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the ingestion job.
+        /// The description of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -107,7 +107,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// A list of reasons that the ingestion job failed.
+        /// A list of reasons that the data ingestion job failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -126,7 +126,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property IngestionJobId. 
         /// <para>
-        /// The unique identifier of the ingestion job.
+        /// The unique identifier of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +145,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base to which the data source is being added.
+        /// The unique identifier of the knowledge for the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,7 +164,12 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time at which the ingestion job started.
+        /// The time the data ingestion job started.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you stop a data ingestion job, the <c>startedAt</c> time is the time the job was
+        /// started before the job was stopped.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -183,7 +188,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// Contains statistics about the ingestion job.
+        /// Contains statistics about the data ingestion job.
         /// </para>
         /// </summary>
         public IngestionJobStatistics Statistics
@@ -201,7 +206,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the ingestion job.
+        /// The status of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -220,7 +225,12 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time at which the ingestion job was last updated.
+        /// The time the data ingestion job was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you stop a data ingestion job, the <c>updatedAt</c> time is the time the job was
+        /// stopped.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

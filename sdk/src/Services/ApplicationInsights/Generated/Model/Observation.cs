@@ -341,7 +341,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property HealthEventArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the AWS Health Event-based observation.
+        ///  The Amazon Resource Name (ARN) of the Health Event-based observation.
         /// </para>
         /// </summary>
         public string HealthEventArn
@@ -359,7 +359,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property HealthEventDescription. 
         /// <para>
-        ///  The description of the AWS Health event provided by the service, such as Amazon EC2.
+        ///  The description of the Health event provided by the service, such as Amazon EC2.
         /// 
         /// </para>
         /// </summary>
@@ -378,7 +378,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property HealthEventTypeCategory. 
         /// <para>
-        ///  The category of the AWS Health event, such as <c>issue</c>. 
+        ///  The category of the Health event, such as <c>issue</c>. 
         /// </para>
         /// </summary>
         public string HealthEventTypeCategory
@@ -396,7 +396,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property HealthEventTypeCode. 
         /// <para>
-        ///  The type of the AWS Health event, for example, <c>AWS_EC2_POWER_CONNECTIVITY_ISSUE</c>.
+        ///  The type of the Health event, for example, <c>AWS_EC2_POWER_CONNECTIVITY_ISSUE</c>.
         /// 
         /// </para>
         /// </summary>
@@ -415,7 +415,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property HealthService. 
         /// <para>
-        ///  The service to which the AWS Health Event belongs, such as EC2. 
+        ///  The service to which the Health Event belongs, such as EC2. 
         /// </para>
         /// </summary>
         public string HealthService

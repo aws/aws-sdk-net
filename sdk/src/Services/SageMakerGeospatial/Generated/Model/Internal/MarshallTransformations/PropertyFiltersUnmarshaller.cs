@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PropertyFilters Object
     /// </summary>  
-    public class PropertyFiltersUnmarshaller : IUnmarshaller<PropertyFilters, XmlUnmarshallerContext>, IUnmarshaller<PropertyFilters, JsonUnmarshallerContext>
+    public class PropertyFiltersUnmarshaller : IJsonUnmarshaller<PropertyFilters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PropertyFilters IUnmarshaller<PropertyFilters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PropertyFilters Unmarshall(JsonUnmarshallerContext context)
+        public PropertyFilters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PropertyFilters unmarshalledObject = new PropertyFilters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LogicalOperator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalOperator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogicalOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Properties", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PropertyFilter, PropertyFilterUnmarshaller>(PropertyFilterUnmarshaller.Instance);
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PropertyFilter, PropertyFilterUnmarshaller>(PropertyFilterUnmarshaller.Instance);
+                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

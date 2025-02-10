@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -48,60 +46,77 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdditionalModelRequestFields())
+            {
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalModelRequestFields);
+            }
+
+            if(requestObject.IsSetGenAiResource())
+            {
+                context.Writer.WritePropertyName("genAiResource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PromptGenAiResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenAiResource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetInferenceConfiguration())
             {
                 context.Writer.WritePropertyName("inferenceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptInferenceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InferenceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetadataListValue in requestObject.Metadata)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PromptMetadataEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetadataListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetModelId())
             {
                 context.Writer.WritePropertyName("modelId");
-                context.Writer.Write(requestObject.ModelId);
+                context.Writer.WriteStringValue(requestObject.ModelId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("templateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptTemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateType())
             {
                 context.Writer.WritePropertyName("templateType");
-                context.Writer.Write(requestObject.TemplateType);
+                context.Writer.WriteStringValue(requestObject.TemplateType);
             }
 
         }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSigningStatusException operation
     /// </summary>  
-    public class InvalidSigningStatusExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSigningStatusException, XmlUnmarshallerContext>
+    public class InvalidSigningStatusExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSigningStatusException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

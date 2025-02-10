@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -68,6 +71,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMemoryId())
                 request.Parameters.Add("memoryId", StringUtils.FromString(publicRequest.MemoryId));
+            
+            if (publicRequest.IsSetSessionId())
+                request.Parameters.Add("sessionId", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/agents/{agentId}/agentAliases/{agentAliasId}/memories";
             request.UseQueryString = true;
 

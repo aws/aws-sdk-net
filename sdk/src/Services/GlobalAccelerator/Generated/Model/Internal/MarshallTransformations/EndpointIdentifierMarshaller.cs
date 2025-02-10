@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientIPPreservationEnabled())
             {
                 context.Writer.WritePropertyName("ClientIPPreservationEnabled");
-                context.Writer.Write(requestObject.ClientIPPreservationEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ClientIPPreservationEnabled.Value);
             }
 
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");
-                context.Writer.Write(requestObject.EndpointId);
+                context.Writer.WriteStringValue(requestObject.EndpointId);
             }
 
         }

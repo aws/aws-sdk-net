@@ -101,7 +101,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 new Product
                 {
                     Id = 1,
-                    LastStocked = DateTime.MinValue,
+                    LastStocked = DateTime.SpecifyKind(DateTime.MinValue, DateTimeKind.Utc),
                     Name = "A",
                     Price = 10,
                     Qty = 5,
@@ -112,7 +112,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 new Product
                 {
                     Id = 1,
-                    LastStocked = DateTime.MinValue,
+                    LastStocked = DateTime.SpecifyKind(DateTime.MinValue, DateTimeKind.Utc),
                     Name = "A",
                     Price = 10,
                     Qty = 5,
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 new Product
                 {
                     Id = 1,
-                    LastStocked = DateTime.MinValue,
+                    LastStocked = DateTime.SpecifyKind(DateTime.MinValue, DateTimeKind.Utc),
                     Name = "A",
                     Price = 10,
                     Qty = 5,
@@ -136,7 +136,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 new Product
                 {
                     Id = 1,
-                    LastStocked = DateTime.MinValue,
+                    LastStocked = DateTime.SpecifyKind(DateTime.MinValue, DateTimeKind.Utc),
                     Name = "A",
                     Price = 10,
                     Qty = 5,
@@ -149,7 +149,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 new Product
                 {
                     Id = 1,
-                    LastStocked = DateTime.MinValue,
+                    LastStocked = DateTime.SpecifyKind(DateTime.MinValue, DateTimeKind.Utc),
                     Name = "A",
                     Price = 10,
                     Qty = 5,
@@ -160,7 +160,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 new Product
                 {
                     Id = 1,
-                    LastStocked = DateTime.MinValue,
+                    LastStocked = DateTime.SpecifyKind(DateTime.MinValue, DateTimeKind.Utc),
                     Name = "A",
                     Price = 10,
                     Qty = 5,

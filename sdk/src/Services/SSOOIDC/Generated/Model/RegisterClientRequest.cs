@@ -32,9 +32,9 @@ namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterClient operation.
-    /// Registers a client with IAM Identity Center. This allows clients to initiate device
-    /// authorization. The output should be persisted for reuse through many authentication
-    /// requests.
+    /// Registers a public client with IAM Identity Center. This allows clients to perform
+    /// authorization using the authorization code grant with Proof Key for Code Exchange
+    /// (PKCE) or the device code grant.
     /// </summary>
     public partial class RegisterClientRequest : AmazonSSOOIDCRequest
     {
@@ -109,7 +109,20 @@ namespace Amazon.SSOOIDC.Model
         /// Gets and sets the property GrantTypes. 
         /// <para>
         /// The list of OAuth 2.0 grant types that are defined by the client. This list is used
-        /// to restrict the token granting flows available to the client.
+        /// to restrict the token granting flows available to the client. Supports the following
+        /// OAuth 2.0 grant types: Authorization Code, Device Code, and Refresh Token. 
+        /// </para>
+        ///  
+        /// <para>
+        /// * Authorization Code - <c>authorization_code</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// * Device Code - <c>urn:ietf:params:oauth:grant-type:device_code</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// * Refresh Token - <c>refresh_token</c> 
         /// </para>
         /// </summary>
         public List<string> GrantTypes

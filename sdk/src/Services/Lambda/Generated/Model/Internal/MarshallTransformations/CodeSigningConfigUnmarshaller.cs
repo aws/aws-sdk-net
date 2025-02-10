@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CodeSigningConfig Object
     /// </summary>  
-    public class CodeSigningConfigUnmarshaller : IUnmarshaller<CodeSigningConfig, XmlUnmarshallerContext>, IUnmarshaller<CodeSigningConfig, JsonUnmarshallerContext>
+    public class CodeSigningConfigUnmarshaller : IJsonUnmarshaller<CodeSigningConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CodeSigningConfig IUnmarshaller<CodeSigningConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CodeSigningConfig Unmarshall(JsonUnmarshallerContext context)
+        public CodeSigningConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CodeSigningConfig unmarshalledObject = new CodeSigningConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AllowedPublishers", targetDepth))
                 {
                     var unmarshaller = AllowedPublishersUnmarshaller.Instance;
-                    unmarshalledObject.AllowedPublishers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowedPublishers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CodeSigningConfigArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CodeSigningConfigArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeSigningConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CodeSigningConfigId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CodeSigningConfigId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeSigningConfigId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CodeSigningPolicies", targetDepth))
                 {
                     var unmarshaller = CodeSigningPoliciesUnmarshaller.Instance;
-                    unmarshalledObject.CodeSigningPolicies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeSigningPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

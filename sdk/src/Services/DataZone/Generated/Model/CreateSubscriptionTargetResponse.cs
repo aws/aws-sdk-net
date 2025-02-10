@@ -189,7 +189,6 @@ namespace Amazon.DataZone.Model
         /// The manage access role with which the subscription target was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ManageAccessRole
         {
             get { return this._manageAccessRole; }

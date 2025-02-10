@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArrayProperties())
             {
                 context.Writer.WritePropertyName("ArrayProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchArrayPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArrayProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainerOverrides())
             {
                 context.Writer.WritePropertyName("ContainerOverrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchContainerOverridesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerOverrides, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDependsOn())
             {
                 context.Writer.WritePropertyName("DependsOn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDependsOnListValue in requestObject.DependsOn)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BatchJobDependencyMarshaller.Instance;
                     marshaller.Marshall(requestObjectDependsOnListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJobDefinition())
             {
                 context.Writer.WritePropertyName("JobDefinition");
-                context.Writer.Write(requestObject.JobDefinition);
+                context.Writer.WriteStringValue(requestObject.JobDefinition);
             }
 
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");
-                context.Writer.Write(requestObject.JobName);
+                context.Writer.WriteStringValue(requestObject.JobName);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryStrategy())
             {
                 context.Writer.WritePropertyName("RetryStrategy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BatchRetryStrategyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryStrategy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

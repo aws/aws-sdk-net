@@ -69,6 +69,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListPublicKeys operation
+        ///</summary>
+        public IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request) 
+        {
+            return new ListPublicKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStreamingDistributions operation
         ///</summary>
         public IListStreamingDistributionsPaginator ListStreamingDistributions(ListStreamingDistributionsRequest request) 

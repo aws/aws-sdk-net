@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GridConfiguration Object
     /// </summary>  
-    public class GridConfigurationUnmarshaller : IUnmarshaller<GridConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GridConfiguration, JsonUnmarshallerContext>
+    public class GridConfigurationUnmarshaller : IJsonUnmarshaller<GridConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GridConfiguration IUnmarshaller<GridConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GridConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public GridConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GridConfiguration unmarshalledObject = new GridConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("featuredParticipantAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeaturedParticipantAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeaturedParticipantAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gridGap", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.GridGap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GridGap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("omitStoppedVideo", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OmitStoppedVideo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoAspectRatio", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VideoAspectRatio = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoAspectRatio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoFillMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VideoFillMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoFillMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

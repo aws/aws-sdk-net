@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcluded())
             {
                 context.Writer.WritePropertyName("excluded");
-                context.Writer.Write(requestObject.Excluded.Value);
+                context.Writer.WriteBooleanValue(requestObject.Excluded.Value);
             }
 
             if(requestObject.IsSetInputType())
             {
                 context.Writer.WritePropertyName("inputType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldInputConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabel())
             {
                 context.Writer.WritePropertyName("label");
-                context.Writer.Write(requestObject.Label);
+                context.Writer.WriteStringValue(requestObject.Label);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldPositionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Position, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidations())
             {
                 context.Writer.WritePropertyName("validations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValidationsListValue in requestObject.Validations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldValidationConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectValidationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

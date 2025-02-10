@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEksClusterArn())
             {
                 context.Writer.WritePropertyName("eksClusterArn");
-                context.Writer.Write(requestObject.EksClusterArn);
+                context.Writer.WriteStringValue(requestObject.EksClusterArn);
             }
 
             if(requestObject.IsSetNamespaces())
             {
                 context.Writer.WritePropertyName("namespaces");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNamespacesListValue in requestObject.Namespaces)
                 {
-                        context.Writer.Write(requestObjectNamespacesListValue);
+                        context.Writer.WriteStringValue(requestObjectNamespacesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

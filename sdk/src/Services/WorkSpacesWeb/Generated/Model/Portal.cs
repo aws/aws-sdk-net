@@ -40,6 +40,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private BrowserType _browserType;
         private DateTime? _creationDate;
         private string _customerManagedKey;
+        private string _dataProtectionSettingsArn;
         private string _displayName;
         private InstanceType _instanceType;
         private string _ipAccessSettingsArn;
@@ -176,6 +177,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetCustomerManagedKey()
         {
             return this._customerManagedKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProtectionSettingsArn. 
+        /// <para>
+        /// The ARN of the data protection settings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DataProtectionSettingsArn
+        {
+            get { return this._dataProtectionSettingsArn; }
+            set { this._dataProtectionSettingsArn = value; }
+        }
+
+        // Check to see if DataProtectionSettingsArn property is set
+        internal bool IsSetDataProtectionSettingsArn()
+        {
+            return this._dataProtectionSettingsArn != null;
         }
 
         /// <summary>

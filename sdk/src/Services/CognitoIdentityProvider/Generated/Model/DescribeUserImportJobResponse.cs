@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserImportJob. 
         /// <para>
-        /// The job object that represents the user import job.
+        /// The details of the user import job.
         /// </para>
         /// </summary>
         public UserImportJobType UserImportJob

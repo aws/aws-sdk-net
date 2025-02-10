@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for INDTaxDocuments Object
     /// </summary>  
-    public class INDTaxDocumentsUnmarshaller : IUnmarshaller<INDTaxDocuments, XmlUnmarshallerContext>, IUnmarshaller<INDTaxDocuments, JsonUnmarshallerContext>
+    public class INDTaxDocumentsUnmarshaller : IJsonUnmarshaller<INDTaxDocuments, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        INDTaxDocuments IUnmarshaller<INDTaxDocuments, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public INDTaxDocuments Unmarshall(JsonUnmarshallerContext context)
+        public INDTaxDocuments Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             INDTaxDocuments unmarshalledObject = new INDTaxDocuments();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("GSTIN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GSTIN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GSTIN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

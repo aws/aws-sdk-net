@@ -151,7 +151,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()) || httpRequestTestCase.hasTag("defaults"))
                     continue;
                 generateRequestTest(operation, httpRequestTestCase);
             }
@@ -295,7 +295,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults"))
                     continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }

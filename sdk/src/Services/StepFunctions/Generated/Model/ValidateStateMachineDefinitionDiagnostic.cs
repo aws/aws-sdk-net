@@ -30,8 +30,99 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Describes an error found during validation. Validation errors found in the definition
-    /// return in the response as <b>diagnostic elements</b>, rather than raise an exception.
+    /// Describes potential issues found during state machine validation. Rather than raise
+    /// an exception, validation will return a list of <b>diagnostic elements</b> containing
+    /// diagnostic information. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <a href="https://docs.aws.amazon.com/step-functions/latest/apireference/API_ValidateStateMachineDefinition.html">ValidateStateMachineDefinitionlAPI</a>
+    /// might add new diagnostics in the future, adjust diagnostic codes, or change the message
+    /// wording. Your automated processes should only rely on the value of the <b>result</b>
+    /// field value (OK, FAIL). Do <b>not</b> rely on the exact order, count, or wording of
+    /// diagnostic messages.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  <b>List of warning codes</b> 
+    /// </para>
+    ///  <dl> <dt>NO_DOLLAR</dt> <dd> 
+    /// <para>
+    /// No <c>.$</c> on a field that appears to be a JSONPath or Intrinsic Function.
+    /// </para>
+    ///  </dd> <dt>NO_PATH</dt> <dd> 
+    /// <para>
+    /// Field value looks like a path, but field name does not end with 'Path'.
+    /// </para>
+    ///  </dd> <dt>PASS_RESULT_IS_STATIC</dt> <dd> 
+    /// <para>
+    /// Attempt to use a path in the result of a pass state.
+    /// </para>
+    ///  </dd> </dl> 
+    /// <para>
+    ///  <b>List of error codes</b> 
+    /// </para>
+    ///  <dl> <dt>INVALID_JSON_DESCRIPTION</dt> <dd> 
+    /// <para>
+    /// JSON syntax problem found.
+    /// </para>
+    ///  </dd> <dt>MISSING_DESCRIPTION</dt> <dd> 
+    /// <para>
+    /// Received a null or empty workflow input.
+    /// </para>
+    ///  </dd> <dt>SCHEMA_VALIDATION_FAILED</dt> <dd> 
+    /// <para>
+    /// Schema validation reported errors.
+    /// </para>
+    ///  </dd> <dt>INVALID_RESOURCE</dt> <dd> 
+    /// <para>
+    /// The value of a Task-state resource field is invalid.
+    /// </para>
+    ///  </dd> <dt>MISSING_END_STATE</dt> <dd> 
+    /// <para>
+    /// The workflow does not have a terminal state.
+    /// </para>
+    ///  </dd> <dt>DUPLICATE_STATE_NAME</dt> <dd> 
+    /// <para>
+    /// The same state name appears more than once.
+    /// </para>
+    ///  </dd> <dt>INVALID_STATE_NAME</dt> <dd> 
+    /// <para>
+    /// The state name does not follow the naming convention.
+    /// </para>
+    ///  </dd> <dt>STATE_MACHINE_NAME_EMPTY</dt> <dd> 
+    /// <para>
+    /// The state machine name has not been specified.
+    /// </para>
+    ///  </dd> <dt>STATE_MACHINE_NAME_INVALID</dt> <dd> 
+    /// <para>
+    /// The state machine name does not follow the naming convention.
+    /// </para>
+    ///  </dd> <dt>STATE_MACHINE_NAME_TOO_LONG</dt> <dd> 
+    /// <para>
+    /// The state name exceeds the allowed length.
+    /// </para>
+    ///  </dd> <dt>STATE_MACHINE_NAME_ALREADY_EXISTS</dt> <dd> 
+    /// <para>
+    /// The state name already exists.
+    /// </para>
+    ///  </dd> <dt>DUPLICATE_LABEL_NAME</dt> <dd> 
+    /// <para>
+    /// A label name appears more than once.
+    /// </para>
+    ///  </dd> <dt>INVALID_LABEL_NAME</dt> <dd> 
+    /// <para>
+    /// You have provided an invalid label name.
+    /// </para>
+    ///  </dd> <dt>MISSING_TRANSITION_TARGET</dt> <dd> 
+    /// <para>
+    /// The value of "Next" field doesn't match a known state name.
+    /// </para>
+    ///  </dd> <dt>TOO_DEEPLY_NESTED</dt> <dd> 
+    /// <para>
+    /// The states are too deeply nested.
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class ValidateStateMachineDefinitionDiagnostic
     {
@@ -46,7 +137,7 @@ namespace Amazon.StepFunctions.Model
         /// Identifying code for the diagnostic.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Code
         {
             get { return this._code; }
@@ -70,6 +161,7 @@ namespace Amazon.StepFunctions.Model
         /// for example: <c>/States/FailState/ErrorPath</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Location
         {
             get { return this._location; }
@@ -88,7 +180,7 @@ namespace Amazon.StepFunctions.Model
         /// Message describing the diagnostic condition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Message
         {
             get { return this._message; }
@@ -106,6 +198,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// A value of <c>ERROR</c> means that you cannot create or update a state machine with
         /// this definition.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>WARNING</c> level diagnostics alert you to potential issues, but they will not
+        /// prevent you from creating or updating your state machine.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

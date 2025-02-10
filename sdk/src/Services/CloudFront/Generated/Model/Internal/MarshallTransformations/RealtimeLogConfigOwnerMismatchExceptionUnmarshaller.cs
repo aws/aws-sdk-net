@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RealtimeLogConfigOwnerMismatchException operation
     /// </summary>  
-    public class RealtimeLogConfigOwnerMismatchExceptionUnmarshaller : IErrorResponseUnmarshaller<RealtimeLogConfigOwnerMismatchException, XmlUnmarshallerContext>
+    public class RealtimeLogConfigOwnerMismatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RealtimeLogConfigOwnerMismatchException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

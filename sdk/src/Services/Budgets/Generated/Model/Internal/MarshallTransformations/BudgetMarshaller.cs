@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,118 +49,118 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoAdjustData())
             {
                 context.Writer.WritePropertyName("AutoAdjustData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoAdjustDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutoAdjustData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBudgetLimit())
             {
                 context.Writer.WritePropertyName("BudgetLimit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpendMarshaller.Instance;
                 marshaller.Marshall(requestObject.BudgetLimit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBudgetName())
             {
                 context.Writer.WritePropertyName("BudgetName");
-                context.Writer.Write(requestObject.BudgetName);
+                context.Writer.WriteStringValue(requestObject.BudgetName);
             }
 
             if(requestObject.IsSetBudgetType())
             {
                 context.Writer.WritePropertyName("BudgetType");
-                context.Writer.Write(requestObject.BudgetType);
+                context.Writer.WriteStringValue(requestObject.BudgetType);
             }
 
             if(requestObject.IsSetCalculatedSpend())
             {
                 context.Writer.WritePropertyName("CalculatedSpend");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CalculatedSpendMarshaller.Instance;
                 marshaller.Marshall(requestObject.CalculatedSpend, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCostFilters())
             {
                 context.Writer.WritePropertyName("CostFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCostFiltersKvp in requestObject.CostFilters)
                 {
                     context.Writer.WritePropertyName(requestObjectCostFiltersKvp.Key);
                     var requestObjectCostFiltersValue = requestObjectCostFiltersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectCostFiltersValueListValue in requestObjectCostFiltersValue)
                     {
-                            context.Writer.Write(requestObjectCostFiltersValueListValue);
+                            context.Writer.WriteStringValue(requestObjectCostFiltersValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCostTypes())
             {
                 context.Writer.WritePropertyName("CostTypes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CostTypesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CostTypes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastUpdatedTime())
             {
                 context.Writer.WritePropertyName("LastUpdatedTime");
-                context.Writer.Write(requestObject.LastUpdatedTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastUpdatedTime.Value)));
             }
 
             if(requestObject.IsSetPlannedBudgetLimits())
             {
                 context.Writer.WritePropertyName("PlannedBudgetLimits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPlannedBudgetLimitsKvp in requestObject.PlannedBudgetLimits)
                 {
                     context.Writer.WritePropertyName(requestObjectPlannedBudgetLimitsKvp.Key);
                     var requestObjectPlannedBudgetLimitsValue = requestObjectPlannedBudgetLimitsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SpendMarshaller.Instance;
                     marshaller.Marshall(requestObjectPlannedBudgetLimitsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimePeriod())
             {
                 context.Writer.WritePropertyName("TimePeriod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimePeriodMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimePeriod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeUnit())
             {
                 context.Writer.WritePropertyName("TimeUnit");
-                context.Writer.Write(requestObject.TimeUnit);
+                context.Writer.WriteStringValue(requestObject.TimeUnit);
             }
 
         }

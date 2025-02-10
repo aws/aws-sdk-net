@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         private string _fieldLevelEncryptionId;
         private ForwardedValues _forwardedValues;
         private FunctionAssociations _functionAssociations;
+        private GrpcConfig _grpcConfig;
         private LambdaFunctionAssociations _lambdaFunctionAssociations;
         private long? _maxTTL;
         private long? _minTTL;
@@ -231,6 +232,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetFunctionAssociations()
         {
             return this._functionAssociations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrpcConfig. 
+        /// <para>
+        /// The gRPC configuration for your cache behavior.
+        /// </para>
+        /// </summary>
+        public GrpcConfig GrpcConfig
+        {
+            get { return this._grpcConfig; }
+            set { this._grpcConfig = value; }
+        }
+
+        // Check to see if GrpcConfig property is set
+        internal bool IsSetGrpcConfig()
+        {
+            return this._grpcConfig != null;
         }
 
         /// <summary>

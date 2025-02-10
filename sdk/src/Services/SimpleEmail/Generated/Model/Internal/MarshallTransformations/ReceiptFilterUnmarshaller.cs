@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReceiptFilter Object
     /// </summary>  
-    public class ReceiptFilterUnmarshaller : IUnmarshaller<ReceiptFilter, XmlUnmarshallerContext>, IUnmarshaller<ReceiptFilter, JsonUnmarshallerContext>
+    public class ReceiptFilterUnmarshaller : IXmlUnmarshaller<ReceiptFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReceiptFilter Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReceiptFilterUnmarshaller _instance = new ReceiptFilterUnmarshaller();        
 

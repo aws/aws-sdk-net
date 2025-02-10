@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
-    /// An identifier for the StartBatchJob API to show that it is a restart operation.
+    /// An identifier for the <c>StartBatchJob</c> API to show that it is a restart operation.
     /// </summary>
     public partial class RestartBatchJobIdentifier
     {
@@ -40,7 +40,8 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property ExecutionId. 
         /// <para>
-        /// The executionId from the StartBatchJob response when the job ran for the first time.
+        /// The <c>executionId</c> from the <c>StartBatchJob</c> response when the job ran for
+        /// the first time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property JobStepRestartMarker. 
         /// <para>
-        /// The restart step information for the most recent restart operation.
+        /// The step/procedure step information for a restart batch job operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Block Object
     /// </summary>  
-    public class BlockUnmarshaller : IUnmarshaller<Block, XmlUnmarshallerContext>, IUnmarshaller<Block, JsonUnmarshallerContext>
+    public class BlockUnmarshaller : IJsonUnmarshaller<Block, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Block IUnmarshaller<Block, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Block Unmarshall(JsonUnmarshallerContext context)
+        public Block Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Block unmarshalledObject = new Block();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BlockType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlockType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Geometry", targetDepth))
                 {
                     var unmarshaller = GeometryUnmarshaller.Instance;
-                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Page", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Page = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Page = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Relationships", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RelationshipsListItem, RelationshipsListItemUnmarshaller>(RelationshipsListItemUnmarshaller.Instance);
-                    unmarshalledObject.Relationships = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RelationshipsListItem, RelationshipsListItemUnmarshaller>(RelationshipsListItemUnmarshaller.Instance);
+                    unmarshalledObject.Relationships = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

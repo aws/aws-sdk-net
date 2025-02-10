@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseEjectionDuration())
             {
                 context.Writer.WritePropertyName("baseEjectionDuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BaseEjectionDuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("interval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Interval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxEjectionPercent())
             {
                 context.Writer.WritePropertyName("maxEjectionPercent");
-                context.Writer.Write(requestObject.MaxEjectionPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxEjectionPercent.Value);
             }
 
             if(requestObject.IsSetMaxServerErrors())
             {
                 context.Writer.WritePropertyName("maxServerErrors");
-                context.Writer.Write(requestObject.MaxServerErrors.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxServerErrors.Value);
             }
 
         }

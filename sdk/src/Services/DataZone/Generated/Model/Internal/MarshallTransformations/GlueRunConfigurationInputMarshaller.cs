@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,35 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoImportDataQualityResult())
             {
                 context.Writer.WritePropertyName("autoImportDataQualityResult");
-                context.Writer.Write(requestObject.AutoImportDataQualityResult.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoImportDataQualityResult.Value);
+            }
+
+            if(requestObject.IsSetCatalogName())
+            {
+                context.Writer.WritePropertyName("catalogName");
+                context.Writer.WriteStringValue(requestObject.CatalogName);
             }
 
             if(requestObject.IsSetDataAccessRole())
             {
                 context.Writer.WritePropertyName("dataAccessRole");
-                context.Writer.Write(requestObject.DataAccessRole);
+                context.Writer.WriteStringValue(requestObject.DataAccessRole);
             }
 
             if(requestObject.IsSetRelationalFilterConfigurations())
             {
                 context.Writer.WritePropertyName("relationalFilterConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelationalFilterConfigurationsListValue in requestObject.RelationalFilterConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RelationalFilterConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectRelationalFilterConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

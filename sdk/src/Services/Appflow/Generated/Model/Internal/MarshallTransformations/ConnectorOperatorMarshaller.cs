@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmplitude())
             {
                 context.Writer.WritePropertyName("Amplitude");
-                context.Writer.Write(requestObject.Amplitude);
+                context.Writer.WriteStringValue(requestObject.Amplitude);
             }
 
             if(requestObject.IsSetCustomConnector())
             {
                 context.Writer.WritePropertyName("CustomConnector");
-                context.Writer.Write(requestObject.CustomConnector);
+                context.Writer.WriteStringValue(requestObject.CustomConnector);
             }
 
             if(requestObject.IsSetDatadog())
             {
                 context.Writer.WritePropertyName("Datadog");
-                context.Writer.Write(requestObject.Datadog);
+                context.Writer.WriteStringValue(requestObject.Datadog);
             }
 
             if(requestObject.IsSetDynatrace())
             {
                 context.Writer.WritePropertyName("Dynatrace");
-                context.Writer.Write(requestObject.Dynatrace);
+                context.Writer.WriteStringValue(requestObject.Dynatrace);
             }
 
             if(requestObject.IsSetGoogleAnalytics())
             {
                 context.Writer.WritePropertyName("GoogleAnalytics");
-                context.Writer.Write(requestObject.GoogleAnalytics);
+                context.Writer.WriteStringValue(requestObject.GoogleAnalytics);
             }
 
             if(requestObject.IsSetInforNexus())
             {
                 context.Writer.WritePropertyName("InforNexus");
-                context.Writer.Write(requestObject.InforNexus);
+                context.Writer.WriteStringValue(requestObject.InforNexus);
             }
 
             if(requestObject.IsSetMarketo())
             {
                 context.Writer.WritePropertyName("Marketo");
-                context.Writer.Write(requestObject.Marketo);
+                context.Writer.WriteStringValue(requestObject.Marketo);
             }
 
             if(requestObject.IsSetPardot())
             {
                 context.Writer.WritePropertyName("Pardot");
-                context.Writer.Write(requestObject.Pardot);
+                context.Writer.WriteStringValue(requestObject.Pardot);
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");
-                context.Writer.Write(requestObject.S3);
+                context.Writer.WriteStringValue(requestObject.S3);
             }
 
             if(requestObject.IsSetSalesforce())
             {
                 context.Writer.WritePropertyName("Salesforce");
-                context.Writer.Write(requestObject.Salesforce);
+                context.Writer.WriteStringValue(requestObject.Salesforce);
             }
 
             if(requestObject.IsSetSAPOData())
             {
                 context.Writer.WritePropertyName("SAPOData");
-                context.Writer.Write(requestObject.SAPOData);
+                context.Writer.WriteStringValue(requestObject.SAPOData);
             }
 
             if(requestObject.IsSetServiceNow())
             {
                 context.Writer.WritePropertyName("ServiceNow");
-                context.Writer.Write(requestObject.ServiceNow);
+                context.Writer.WriteStringValue(requestObject.ServiceNow);
             }
 
             if(requestObject.IsSetSingular())
             {
                 context.Writer.WritePropertyName("Singular");
-                context.Writer.Write(requestObject.Singular);
+                context.Writer.WriteStringValue(requestObject.Singular);
             }
 
             if(requestObject.IsSetSlack())
             {
                 context.Writer.WritePropertyName("Slack");
-                context.Writer.Write(requestObject.Slack);
+                context.Writer.WriteStringValue(requestObject.Slack);
             }
 
             if(requestObject.IsSetTrendmicro())
             {
                 context.Writer.WritePropertyName("Trendmicro");
-                context.Writer.Write(requestObject.Trendmicro);
+                context.Writer.WriteStringValue(requestObject.Trendmicro);
             }
 
             if(requestObject.IsSetVeeva())
             {
                 context.Writer.WritePropertyName("Veeva");
-                context.Writer.Write(requestObject.Veeva);
+                context.Writer.WriteStringValue(requestObject.Veeva);
             }
 
             if(requestObject.IsSetZendesk())
             {
                 context.Writer.WritePropertyName("Zendesk");
-                context.Writer.Write(requestObject.Zendesk);
+                context.Writer.WriteStringValue(requestObject.Zendesk);
             }
 
         }

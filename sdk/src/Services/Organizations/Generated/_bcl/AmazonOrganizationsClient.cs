@@ -579,6 +579,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -623,6 +627,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -870,6 +878,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -914,6 +926,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -962,6 +978,16 @@ namespace Amazon.Organizations
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html">RESOURCE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative.html">DECLARATIVE_POLICY_EC2</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -1067,6 +1093,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -1306,6 +1339,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -1350,6 +1387,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1413,6 +1454,16 @@ namespace Amazon.Organizations
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html">RESOURCE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative.html">DECLARATIVE_POLICY_EC2</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -1522,6 +1573,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -1760,6 +1818,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -1804,6 +1866,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1970,6 +2036,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -2014,6 +2084,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2160,6 +2234,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -2204,6 +2282,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2384,6 +2466,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -2619,6 +2708,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -2663,6 +2756,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2845,6 +2942,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -3080,6 +3184,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -3124,6 +3232,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3335,6 +3447,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -3576,6 +3695,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -3620,6 +3743,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3830,6 +3957,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -4071,6 +4205,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -4115,6 +4253,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4386,6 +4528,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -4627,6 +4776,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -4671,6 +4824,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4941,6 +5098,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -5182,6 +5346,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -5226,6 +5394,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5372,6 +5544,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -5607,6 +5786,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -5651,6 +5834,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5793,6 +5980,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -6028,6 +6222,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -6072,6 +6270,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6211,6 +6413,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -6450,6 +6659,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -6494,6 +6707,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6636,6 +6853,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -6874,6 +7098,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -6918,6 +7146,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7058,6 +7290,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -7297,6 +7536,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -7341,6 +7584,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7493,6 +7740,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -7731,6 +7985,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -7775,6 +8033,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7938,6 +8200,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -7982,6 +8248,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8129,6 +8399,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8173,6 +8447,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8300,6 +8578,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8344,6 +8626,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8474,6 +8760,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8518,6 +8808,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8654,6 +8948,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8698,6 +8996,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8836,6 +9138,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8880,6 +9186,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9020,6 +9330,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -9064,6 +9378,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9206,6 +9524,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -9250,6 +9572,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9385,6 +9711,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -9674,6 +10007,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -9990,6 +10330,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -10225,6 +10572,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -10269,6 +10620,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10422,6 +10777,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -10657,6 +11019,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -10701,6 +11067,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10837,6 +11207,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -10881,6 +11255,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11013,6 +11391,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11057,6 +11439,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11189,6 +11575,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11233,6 +11623,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11367,6 +11761,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11411,6 +11809,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11462,8 +11864,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation applies only to policy types <i>other</i> than service control policies
-        /// (SCPs).
+        /// This operation applies only to management policies. It does not apply to authorization
+        /// policies: service control policies (SCPs) and resource control policies (RCPs).
         /// </para>
         ///  
         /// <para>
@@ -11548,6 +11950,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -11790,6 +12199,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11834,6 +12247,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11884,8 +12301,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation applies only to policy types <i>other</i> than service control policies
-        /// (SCPs).
+        /// This operation applies only to management policies. It does not apply to authorization
+        /// policies: service control policies (SCPs) and resource control policies (RCPs).
         /// </para>
         ///  
         /// <para>
@@ -11974,6 +12391,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -12215,6 +12639,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12259,6 +12687,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12403,6 +12835,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12447,6 +12883,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12584,6 +13024,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12628,6 +13072,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12877,6 +13325,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12921,6 +13373,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13051,6 +13507,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13095,6 +13555,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13226,6 +13690,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13270,6 +13738,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13403,6 +13875,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13447,6 +13923,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13575,6 +14055,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -13861,6 +14348,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -14171,6 +14665,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -14406,6 +14907,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14450,6 +14955,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14610,6 +15119,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -14845,6 +15361,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14889,6 +15409,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15098,6 +15622,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -15333,6 +15864,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -15377,6 +15912,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15572,6 +16111,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -15807,6 +16353,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -15851,6 +16401,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15998,6 +16552,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -16233,6 +16794,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -16277,6 +16842,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16436,6 +17005,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -16671,6 +17247,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -16715,6 +17295,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16829,6 +17413,243 @@ namespace Amazon.Organizations
         /// The target of the operation is currently being modified by a different request. Try
         /// again later.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to remove the last service control policy (SCP) from an OU or root, inviting
+        /// or creating too many accounts to the organization, or attaching too many policies
+        /// to an account, OU, or root. This exception includes a reason that contains additional
+        /// information about the violated limit:
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that doesn't yet have enough information to exist as a standalone
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+        /// a member account from your organization</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+        /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
+        /// Web Services Support</a> to request an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or the number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations or contact Amazon Web
+        /// Services Support to request an increase in the number of accounts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleted and closed accounts still count toward your limit.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// If you get this exception when running a command immediately after creating the organization,
+        /// wait one hour and try again. After an hour, if the command continues to fail with
+        /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
+        /// a suspended account as a delegated administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
+        /// account of the organization as a delegated administrator for an Amazon Web Services
+        /// service integrated with Organizations. You can designate only a member account as
+        /// a delegated administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon
+        /// Web Services account as a delegated administrator for an Amazon Web Services service
+        /// that already has a delegated administrator. To complete this operation, you must first
+        /// deregister any existing delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
+        /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services Regions
+        /// in China. To create an organization, the master must have a valid business license.
+        /// For more information, contact customer support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
+        /// must have an associated account in the Amazon Web Services GovCloud (US-West) Region.
+        /// For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
+        /// in the <i>Amazon Web Services GovCloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+        /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register
+        /// more delegated administrators than allowed for the service principal. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+        /// of a certain type that can be attached to an entity at one time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+        /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+        /// entity that would cause the entity to have fewer than the minimum number of policies
+        /// of a certain type required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
+        /// requires the organization to be configured to support all features. An organization
+        /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have
+        /// in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
         /// The requested operation would violate the constraint identified in the reason code.
         /// 
@@ -16961,6 +17782,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -17005,6 +17830,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17102,6 +17931,243 @@ namespace Amazon.Organizations
         /// The target of the operation is currently being modified by a different request. Try
         /// again later.
         /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to remove the last service control policy (SCP) from an OU or root, inviting
+        /// or creating too many accounts to the organization, or attaching too many policies
+        /// to an account, OU, or root. This exception includes a reason that contains additional
+        /// information about the violated limit:
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account
+        /// from the organization. You can't remove the management account. Instead, after you
+        /// remove all member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that doesn't yet have enough information to exist as a standalone
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+        /// a member account from your organization</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
+        /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+        /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
+        /// Web Services Support</a> to request an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or the number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations or contact Amazon Web
+        /// Services Support to request an increase in the number of accounts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleted and closed accounts still count toward your limit.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// If you get this exception when running a command immediately after creating the organization,
+        /// wait one hour and try again. After an hour, if the command continues to fail with
+        /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
+        /// a suspended account as a delegated administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
+        /// account of the organization as a delegated administrator for an Amazon Web Services
+        /// service integrated with Organizations. You can designate only a member account as
+        /// a delegated administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_CLOSE_MANAGEMENT_ACCOUNT: You attempted to close the management account. To
+        /// close the management account for the organization, you must first either remove or
+        /// close all member accounts in the organization. Follow standard account closure process
+        /// using root credentials.​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_QUOTA_EXCEEDED: You have exceeded close account quota for the past 30
+        /// days. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can close at a time. ​ 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an Amazon
+        /// Web Services account as a delegated administrator for an Amazon Web Services service
+        /// that already has a delegated administrator. To complete this operation, you must first
+        /// deregister any existing delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
+        /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_PAYMENT_INSTRUMENT: You cannot remove an account because no supported payment
+        /// method is associated with the account. Amazon Web Services does not support cards
+        /// issued by financial institutions in Russia or Belarus. For more information, see <a
+        /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing
+        /// your Amazon Web Services payments</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. All accounts in an organization must
+        /// be associated with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the Amazon Web Services Regions
+        /// in China. To create an organization, the master must have a valid business license.
+        /// For more information, contact customer support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
+        /// must have an associated account in the Amazon Web Services GovCloud (US-West) Region.
+        /// For more information, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">Organizations</a>
+        /// in the <i>Amazon Web Services GovCloud User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+        /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register
+        /// more delegated administrators than allowed for the service principal. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+        /// of a certain type that can be attached to an entity at one time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_account-before-remove.html">Considerations
+        /// before removing an account from an organization</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+        /// entity that would cause the entity to have fewer than the minimum number of policies
+        /// of a certain type required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
+        /// requires the organization to be configured to support all features. An organization
+        /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have
+        /// in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// WAIT_PERIOD_ACTIVE: After you create an Amazon Web Services account, you must wait
+        /// until at least seven days after the account was created. Invited accounts aren't subject
+        /// to this waiting period.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeConstraintViolationException">
         /// The requested operation would violate the constraint identified in the reason code.
         /// 
@@ -17234,6 +18300,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -17278,6 +18348,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17427,6 +18501,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -17662,6 +18743,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -17706,6 +18791,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17857,6 +18946,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -18092,6 +19188,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -18136,6 +19236,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18280,6 +19384,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -18515,6 +19626,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -18559,6 +19674,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18718,6 +19837,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -18953,6 +20079,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -18997,6 +20127,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19173,6 +20307,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -19487,6 +20628,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -19531,6 +20676,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19687,6 +20836,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -20001,6 +21157,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -20045,6 +21205,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20246,6 +21410,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -20481,6 +21652,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -20525,6 +21700,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20730,6 +21909,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -20965,6 +22151,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -21009,6 +22199,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21150,6 +22344,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -21194,6 +22392,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21329,6 +22531,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -21373,6 +22579,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21512,6 +22722,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -21556,6 +22770,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21697,6 +22915,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -21741,6 +22963,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21876,6 +23102,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -22111,6 +23344,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -22155,6 +23392,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22289,6 +23530,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -22524,6 +23772,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -22568,6 +23820,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22708,6 +23964,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -22752,6 +24012,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22891,6 +24155,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -22935,6 +24203,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23074,6 +24346,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -23118,6 +24394,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23256,6 +24536,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -23300,6 +24584,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23427,6 +24715,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -23662,6 +24957,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -23706,6 +25005,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23832,6 +25135,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -24067,6 +25377,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -24111,6 +25425,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24247,6 +25565,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -24482,6 +25807,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -24526,6 +25855,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24661,6 +25994,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -24896,6 +26236,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -24940,6 +26284,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25084,6 +26432,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -25128,6 +26480,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25268,6 +26624,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -25312,6 +26672,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25459,6 +26823,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -25503,6 +26871,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25649,6 +27021,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -25693,6 +27069,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25828,6 +27208,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -25872,6 +27256,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26009,6 +27397,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -26053,6 +27445,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26202,6 +27598,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -26246,6 +27646,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26391,6 +27795,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -26435,6 +27843,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26570,6 +27982,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -26614,6 +28030,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26751,6 +28171,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -26795,6 +28219,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26935,6 +28363,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -26979,6 +28411,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27121,6 +28557,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -27165,6 +28605,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27315,6 +28759,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -27359,6 +28807,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27502,6 +28954,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -27546,6 +29002,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27694,6 +29154,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -27738,6 +29202,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27888,6 +29356,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -27932,6 +29404,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28071,6 +29547,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -28115,6 +29595,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28256,6 +29740,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -28300,6 +29788,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28450,6 +29942,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -28494,6 +29990,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28640,6 +30140,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -28684,6 +30188,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28813,6 +30321,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -29048,6 +30563,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -29092,6 +30611,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29220,6 +30743,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -29455,6 +30985,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -29499,6 +31033,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29648,6 +31186,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -29883,6 +31428,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -29927,6 +31476,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30075,6 +31628,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -30310,6 +31870,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -30354,6 +31918,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30519,6 +32087,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -30754,6 +32329,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -30798,6 +32377,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30964,6 +32547,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -31199,6 +32789,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -31243,6 +32837,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31395,6 +32993,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -31630,6 +33235,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -31674,6 +33283,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31823,6 +33436,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -32058,6 +33678,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -32102,6 +33726,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32252,6 +33880,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -32487,6 +34122,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -32531,6 +34170,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32680,6 +34323,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -32915,6 +34565,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -32959,6 +34613,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33097,6 +34755,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -33141,6 +34803,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33278,6 +34944,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -33322,6 +34992,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33452,6 +35126,13 @@ namespace Amazon.Organizations
         /// Web Services Support</a>.
         /// </para>
         ///  </important> </li> <li> 
+        /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
@@ -33691,6 +35372,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -33735,6 +35420,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33878,6 +35567,13 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
+        /// ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED: Your organization has more
+        /// than 5000 accounts, and you can only use the standard migration process for organizations
+        /// with less than 5000 accounts. Use the assisted migration process to enable all features
+        /// mode, or create a support case for assistance if you are unable to use assisted migration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CANNOT_REGISTER_SUSPENDED_ACCOUNT_AS_DELEGATED_ADMINISTRATOR: You cannot register
         /// a suspended account as a delegated administrator.
         /// </para>
@@ -34116,6 +35812,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -34160,6 +35860,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>

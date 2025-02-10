@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
@@ -91,6 +94,11 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetGuardrailVersion()) 
             {
                 request.Headers["X-Amzn-Bedrock-GuardrailVersion"] = publicRequest.GuardrailVersion;
+            }
+        
+            if (publicRequest.IsSetPerformanceConfigLatency()) 
+            {
+                request.Headers["X-Amzn-Bedrock-PerformanceConfig-Latency"] = publicRequest.PerformanceConfigLatency;
             }
         
             if (publicRequest.IsSetTrace()) 

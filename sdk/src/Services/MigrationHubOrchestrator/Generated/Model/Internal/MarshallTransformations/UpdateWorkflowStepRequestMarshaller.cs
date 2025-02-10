@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
@@ -64,115 +67,120 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
                 throw new AmazonMigrationHubOrchestratorException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/workflowstep/{id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNext())
-                    {
-                        context.Writer.WritePropertyName("next");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNextListValue in publicRequest.Next)
-                        {
-                                context.Writer.Write(publicRequestNextListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputs())
-                    {
-                        context.Writer.WritePropertyName("outputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = WorkflowStepOutputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPrevious())
-                    {
-                        context.Writer.WritePropertyName("previous");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPreviousListValue in publicRequest.Previous)
-                        {
-                                context.Writer.Write(publicRequestPreviousListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetStepActionType())
-                    {
-                        context.Writer.WritePropertyName("stepActionType");
-                        context.Writer.Write(publicRequest.StepActionType);
-                    }
-
-                    if(publicRequest.IsSetStepGroupId())
-                    {
-                        context.Writer.WritePropertyName("stepGroupId");
-                        context.Writer.Write(publicRequest.StepGroupId);
-                    }
-
-                    if(publicRequest.IsSetStepTarget())
-                    {
-                        context.Writer.WritePropertyName("stepTarget");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStepTargetListValue in publicRequest.StepTarget)
-                        {
-                                context.Writer.Write(publicRequestStepTargetListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkflowId())
-                    {
-                        context.Writer.WritePropertyName("workflowId");
-                        context.Writer.Write(publicRequest.WorkflowId);
-                    }
-
-                    if(publicRequest.IsSetWorkflowStepAutomationConfiguration())
-                    {
-                        context.Writer.WritePropertyName("workflowStepAutomationConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WorkflowStepAutomationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.WorkflowStepAutomationConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNext())
+            {
+                context.Writer.WritePropertyName("next");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNextListValue in publicRequest.Next)
+                {
+                        context.Writer.WriteStringValue(publicRequestNextListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOutputs())
+            {
+                context.Writer.WritePropertyName("outputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WorkflowStepOutputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPrevious())
+            {
+                context.Writer.WritePropertyName("previous");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPreviousListValue in publicRequest.Previous)
+                {
+                        context.Writer.WriteStringValue(publicRequestPreviousListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetStepActionType())
+            {
+                context.Writer.WritePropertyName("stepActionType");
+                context.Writer.WriteStringValue(publicRequest.StepActionType);
+            }
+
+            if(publicRequest.IsSetStepGroupId())
+            {
+                context.Writer.WritePropertyName("stepGroupId");
+                context.Writer.WriteStringValue(publicRequest.StepGroupId);
+            }
+
+            if(publicRequest.IsSetStepTarget())
+            {
+                context.Writer.WritePropertyName("stepTarget");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStepTargetListValue in publicRequest.StepTarget)
+                {
+                        context.Writer.WriteStringValue(publicRequestStepTargetListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWorkflowId())
+            {
+                context.Writer.WritePropertyName("workflowId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowId);
+            }
+
+            if(publicRequest.IsSetWorkflowStepAutomationConfiguration())
+            {
+                context.Writer.WritePropertyName("workflowStepAutomationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowStepAutomationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WorkflowStepAutomationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

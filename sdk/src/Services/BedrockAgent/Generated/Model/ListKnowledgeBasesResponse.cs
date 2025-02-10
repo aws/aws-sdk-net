@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseSummaries. 
         /// <para>
-        /// A list of objects, each of which contains information about a knowledge base.
+        /// A list of knowledge bases with information about each knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

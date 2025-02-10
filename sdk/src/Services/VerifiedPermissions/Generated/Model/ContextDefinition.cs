@@ -43,13 +43,45 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
+    /// If you're passing context as part of the request, exactly one instance of <c>context</c>
+    /// must be passed. If you don't want to pass context, omit the <c>context</c> parameter
+    /// from your request rather than sending <c>context {}</c>.
+    /// </para>
+    ///  
+    /// <para>
     /// Example: <c>"context":{"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}}</c>
     /// 
     /// </para>
     /// </summary>
     public partial class ContextDefinition
     {
+        private string _cedarJson;
         private Dictionary<string, AttributeValue> _contextMap = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CedarJson. 
+        /// <para>
+        /// A Cedar JSON string representation of the context needed to successfully evaluate
+        /// an authorization request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"cedarJson":"{\"&lt;KeyName1&gt;\": true, \"&lt;KeyName2&gt;\": 1234}"
+        /// }</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string CedarJson
+        {
+            get { return this._cedarJson; }
+            set { this._cedarJson = value; }
+        }
+
+        // Check to see if CedarJson property is set
+        internal bool IsSetCedarJson()
+        {
+            return this._cedarJson != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContextMap. 

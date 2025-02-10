@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DisabledOperationException operation
     /// </summary>  
-    public class DisabledOperationExceptionUnmarshaller : IErrorResponseUnmarshaller<DisabledOperationException, XmlUnmarshallerContext>
+    public class DisabledOperationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DisabledOperationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

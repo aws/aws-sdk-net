@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
 {
@@ -63,49 +66,54 @@ namespace Amazon.OpsWorksCM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBackupRetentionCount())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBackupRetentionCount())
-                    {
-                        context.Writer.WritePropertyName("BackupRetentionCount");
-                        context.Writer.Write(publicRequest.BackupRetentionCount.Value);
-                    }
-
-                    if(publicRequest.IsSetDisableAutomatedBackup())
-                    {
-                        context.Writer.WritePropertyName("DisableAutomatedBackup");
-                        context.Writer.Write(publicRequest.DisableAutomatedBackup.Value);
-                    }
-
-                    if(publicRequest.IsSetPreferredBackupWindow())
-                    {
-                        context.Writer.WritePropertyName("PreferredBackupWindow");
-                        context.Writer.Write(publicRequest.PreferredBackupWindow);
-                    }
-
-                    if(publicRequest.IsSetPreferredMaintenanceWindow())
-                    {
-                        context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                        context.Writer.Write(publicRequest.PreferredMaintenanceWindow);
-                    }
-
-                    if(publicRequest.IsSetServerName())
-                    {
-                        context.Writer.WritePropertyName("ServerName");
-                        context.Writer.Write(publicRequest.ServerName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("BackupRetentionCount");
+                context.Writer.WriteNumberValue(publicRequest.BackupRetentionCount.Value);
             }
+
+            if(publicRequest.IsSetDisableAutomatedBackup())
+            {
+                context.Writer.WritePropertyName("DisableAutomatedBackup");
+                context.Writer.WriteBooleanValue(publicRequest.DisableAutomatedBackup.Value);
+            }
+
+            if(publicRequest.IsSetPreferredBackupWindow())
+            {
+                context.Writer.WritePropertyName("PreferredBackupWindow");
+                context.Writer.WriteStringValue(publicRequest.PreferredBackupWindow);
+            }
+
+            if(publicRequest.IsSetPreferredMaintenanceWindow())
+            {
+                context.Writer.WritePropertyName("PreferredMaintenanceWindow");
+                context.Writer.WriteStringValue(publicRequest.PreferredMaintenanceWindow);
+            }
+
+            if(publicRequest.IsSetServerName())
+            {
+                context.Writer.WritePropertyName("ServerName");
+                context.Writer.WriteStringValue(publicRequest.ServerName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

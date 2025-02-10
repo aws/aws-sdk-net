@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPolicyTemplateId())
             {
                 context.Writer.WritePropertyName("policyTemplateId");
-                context.Writer.Write(requestObject.PolicyTemplateId);
+                context.Writer.WriteStringValue(requestObject.PolicyTemplateId);
             }
 
             if(requestObject.IsSetPolicyType())
             {
                 context.Writer.WritePropertyName("policyType");
-                context.Writer.Write(requestObject.PolicyType);
+                context.Writer.WriteStringValue(requestObject.PolicyType);
             }
 
             if(requestObject.IsSetPrincipal())
             {
                 context.Writer.WritePropertyName("principal");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Principal, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResource())
             {
                 context.Writer.WritePropertyName("resource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Resource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

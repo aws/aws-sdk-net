@@ -31,11 +31,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// An action defines the tasks that the extension performs during the AppConfig workflow.
-    /// Each action includes an action point such as <c>ON_CREATE_HOSTED_CONFIGURATION</c>,
-    /// <c>PRE_DEPLOYMENT</c>, or <c>ON_DEPLOYMENT</c>. Each action also includes a name,
-    /// a URI to an Lambda function, and an Amazon Resource Name (ARN) for an Identity and
-    /// Access Management assume role. You specify the name, URI, and ARN for each <i>action
-    /// point</i> defined in the extension. You can specify the following actions for an extension:
+    /// Each action includes an action point, as shown in the following list: 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -44,6 +40,10 @@ namespace Amazon.AppConfig.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>PRE_START_DEPLOYMENT</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AT_DEPLOYMENT_TICK</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,7 +65,12 @@ namespace Amazon.AppConfig.Model
     /// <para>
     ///  <c>ON_DEPLOYMENT_ROLLED_BACK</c> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> 
+    /// <para>
+    /// Each action also includes a name, a URI to an Lambda function, and an Amazon Resource
+    /// Name (ARN) for an Identity and Access Management assume role. You specify the name,
+    /// URI, and ARN for each <i>action point</i> defined in the extension.
+    /// </para>
     /// </summary>
     public partial class Action
     {

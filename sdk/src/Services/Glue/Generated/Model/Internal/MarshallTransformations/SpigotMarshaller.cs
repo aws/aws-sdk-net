@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetProb())
@@ -76,18 +74,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Prob");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Prob.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Prob.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Prob.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Prob.Value);
+                    context.Writer.WriteNumberValue(requestObject.Prob.Value);
                 }
             }
 
             if(requestObject.IsSetTopk())
             {
                 context.Writer.WritePropertyName("Topk");
-                context.Writer.Write(requestObject.Topk.Value);
+                context.Writer.WriteNumberValue(requestObject.Topk.Value);
             }
 
         }

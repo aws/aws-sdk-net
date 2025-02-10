@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCodeConfigurationValues())
             {
                 context.Writer.WritePropertyName("CodeConfigurationValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodeConfigurationValuesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodeConfigurationValues, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfigurationSource())
             {
                 context.Writer.WritePropertyName("ConfigurationSource");
-                context.Writer.Write(requestObject.ConfigurationSource);
+                context.Writer.WriteStringValue(requestObject.ConfigurationSource);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -63,81 +66,92 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBillingViewArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFilter())
-                    {
-                        context.Writer.WritePropertyName("Filter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExpressionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Filter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextPageToken())
-                    {
-                        context.Writer.WritePropertyName("NextPageToken");
-                        context.Writer.Write(publicRequest.NextPageToken);
-                    }
-
-                    if(publicRequest.IsSetSearchString())
-                    {
-                        context.Writer.WritePropertyName("SearchString");
-                        context.Writer.Write(publicRequest.SearchString);
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("SortBy");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSortByListValue in publicRequest.SortBy)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SortDefinitionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSortByListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTagKey())
-                    {
-                        context.Writer.WritePropertyName("TagKey");
-                        context.Writer.Write(publicRequest.TagKey);
-                    }
-
-                    if(publicRequest.IsSetTimePeriod())
-                    {
-                        context.Writer.WritePropertyName("TimePeriod");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DateIntervalMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TimePeriod, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("BillingViewArn");
+                context.Writer.WriteStringValue(publicRequest.BillingViewArn);
             }
+
+            if(publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("Filter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpressionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextPageToken())
+            {
+                context.Writer.WritePropertyName("NextPageToken");
+                context.Writer.WriteStringValue(publicRequest.NextPageToken);
+            }
+
+            if(publicRequest.IsSetSearchString())
+            {
+                context.Writer.WritePropertyName("SearchString");
+                context.Writer.WriteStringValue(publicRequest.SearchString);
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("SortBy");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSortByListValue in publicRequest.SortBy)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SortDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSortByListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTagKey())
+            {
+                context.Writer.WritePropertyName("TagKey");
+                context.Writer.WriteStringValue(publicRequest.TagKey);
+            }
+
+            if(publicRequest.IsSetTimePeriod())
+            {
+                context.Writer.WritePropertyName("TimePeriod");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DateIntervalMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TimePeriod, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -47,93 +47,93 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeAssetModelResponse response = new DescribeAssetModelResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("assetModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelArn = unmarshaller.Unmarshall(context);
+                    response.AssetModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelCompositeModels", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetModelCompositeModel, AssetModelCompositeModelUnmarshaller>(AssetModelCompositeModelUnmarshaller.Instance);
-                    response.AssetModelCompositeModels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModel, AssetModelCompositeModelUnmarshaller>(AssetModelCompositeModelUnmarshaller.Instance);
+                    response.AssetModelCompositeModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
-                    response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
+                    response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelCreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.AssetModelCreationDate = unmarshaller.Unmarshall(context);
+                    response.AssetModelCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelDescription = unmarshaller.Unmarshall(context);
+                    response.AssetModelDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelExternalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelExternalId = unmarshaller.Unmarshall(context);
+                    response.AssetModelExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelHierarchies", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetModelHierarchy, AssetModelHierarchyUnmarshaller>(AssetModelHierarchyUnmarshaller.Instance);
-                    response.AssetModelHierarchies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetModelHierarchy, AssetModelHierarchyUnmarshaller>(AssetModelHierarchyUnmarshaller.Instance);
+                    response.AssetModelHierarchies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelId = unmarshaller.Unmarshall(context);
+                    response.AssetModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelLastUpdateDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.AssetModelLastUpdateDate = unmarshaller.Unmarshall(context);
+                    response.AssetModelLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelName = unmarshaller.Unmarshall(context);
+                    response.AssetModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelProperties", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
-                    response.AssetModelProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
+                    response.AssetModelProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelStatus", targetDepth))
                 {
                     var unmarshaller = AssetModelStatusUnmarshaller.Instance;
-                    response.AssetModelStatus = unmarshaller.Unmarshall(context);
+                    response.AssetModelStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelType = unmarshaller.Unmarshall(context);
+                    response.AssetModelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetModelVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AssetModelVersion = unmarshaller.Unmarshall(context);
+                    response.AssetModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -152,30 +152,32 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
-                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
-                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

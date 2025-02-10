@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioChannels())
             {
                 context.Writer.WritePropertyName("AudioChannels");
-                context.Writer.Write(requestObject.AudioChannels);
+                context.Writer.WriteStringValue(requestObject.AudioChannels);
             }
 
             if(requestObject.IsSetAudioSampleRate())
             {
                 context.Writer.WritePropertyName("AudioSampleRate");
-                context.Writer.Write(requestObject.AudioSampleRate);
+                context.Writer.WriteStringValue(requestObject.AudioSampleRate);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

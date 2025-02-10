@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChangesetId())
             {
                 context.Writer.WritePropertyName("changesetId");
-                context.Writer.Write(requestObject.ChangesetId);
+                context.Writer.WriteStringValue(requestObject.ChangesetId);
             }
 
             if(requestObject.IsSetDataviewName())
             {
                 context.Writer.WritePropertyName("dataviewName");
-                context.Writer.Write(requestObject.DataviewName);
+                context.Writer.WriteStringValue(requestObject.DataviewName);
             }
 
             if(requestObject.IsSetDataviewVersionId())
             {
                 context.Writer.WritePropertyName("dataviewVersionId");
-                context.Writer.Write(requestObject.DataviewVersionId);
+                context.Writer.WriteStringValue(requestObject.DataviewVersionId);
             }
 
             if(requestObject.IsSetSegmentConfigurations())
             {
                 context.Writer.WritePropertyName("segmentConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSegmentConfigurationsListValue in requestObject.SegmentConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KxDataviewSegmentConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectSegmentConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

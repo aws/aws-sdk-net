@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SNSDestination Object
     /// </summary>  
-    public class SNSDestinationUnmarshaller : IUnmarshaller<SNSDestination, XmlUnmarshallerContext>, IUnmarshaller<SNSDestination, JsonUnmarshallerContext>
+    public class SNSDestinationUnmarshaller : IXmlUnmarshaller<SNSDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SNSDestination Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SNSDestinationUnmarshaller _instance = new SNSDestinationUnmarshaller();        
 

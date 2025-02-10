@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogGroupArn())
             {
                 context.Writer.WritePropertyName("cloudWatchLogGroupArn");
-                context.Writer.Write(requestObject.CloudWatchLogGroupArn);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogGroupArn);
             }
 
             if(requestObject.IsSetLogPrefix())
             {
                 context.Writer.WritePropertyName("logPrefix");
-                context.Writer.Write(requestObject.LogPrefix);
+                context.Writer.WriteStringValue(requestObject.LogPrefix);
             }
 
         }

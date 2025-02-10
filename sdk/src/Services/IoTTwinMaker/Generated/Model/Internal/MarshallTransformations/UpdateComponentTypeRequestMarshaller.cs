@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -67,124 +70,129 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/component-types/{componentTypeId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComponentTypeName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComponentTypeName())
-                    {
-                        context.Writer.WritePropertyName("componentTypeName");
-                        context.Writer.Write(publicRequest.ComponentTypeName);
-                    }
-
-                    if(publicRequest.IsSetCompositeComponentTypes())
-                    {
-                        context.Writer.WritePropertyName("compositeComponentTypes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestCompositeComponentTypesKvp in publicRequest.CompositeComponentTypes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestCompositeComponentTypesKvp.Key);
-                            var publicRequestCompositeComponentTypesValue = publicRequestCompositeComponentTypesKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CompositeComponentTypeRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCompositeComponentTypesValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetExtendsFrom())
-                    {
-                        context.Writer.WritePropertyName("extendsFrom");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestExtendsFromListValue in publicRequest.ExtendsFrom)
-                        {
-                                context.Writer.Write(publicRequestExtendsFromListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFunctions())
-                    {
-                        context.Writer.WritePropertyName("functions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFunctionsKvp in publicRequest.Functions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFunctionsKvp.Key);
-                            var publicRequestFunctionsValue = publicRequestFunctionsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FunctionRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFunctionsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIsSingleton())
-                    {
-                        context.Writer.WritePropertyName("isSingleton");
-                        context.Writer.Write(publicRequest.IsSingleton.Value);
-                    }
-
-                    if(publicRequest.IsSetPropertyDefinitions())
-                    {
-                        context.Writer.WritePropertyName("propertyDefinitions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPropertyDefinitionsKvp in publicRequest.PropertyDefinitions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPropertyDefinitionsKvp.Key);
-                            var publicRequestPropertyDefinitionsValue = publicRequestPropertyDefinitionsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PropertyDefinitionRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPropertyDefinitionsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPropertyGroups())
-                    {
-                        context.Writer.WritePropertyName("propertyGroups");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPropertyGroupsKvp in publicRequest.PropertyGroups)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPropertyGroupsKvp.Key);
-                            var publicRequestPropertyGroupsValue = publicRequestPropertyGroupsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PropertyGroupRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPropertyGroupsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("componentTypeName");
+                context.Writer.WriteStringValue(publicRequest.ComponentTypeName);
             }
+
+            if(publicRequest.IsSetCompositeComponentTypes())
+            {
+                context.Writer.WritePropertyName("compositeComponentTypes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCompositeComponentTypesKvp in publicRequest.CompositeComponentTypes)
+                {
+                    context.Writer.WritePropertyName(publicRequestCompositeComponentTypesKvp.Key);
+                    var publicRequestCompositeComponentTypesValue = publicRequestCompositeComponentTypesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CompositeComponentTypeRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCompositeComponentTypesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetExtendsFrom())
+            {
+                context.Writer.WritePropertyName("extendsFrom");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExtendsFromListValue in publicRequest.ExtendsFrom)
+                {
+                        context.Writer.WriteStringValue(publicRequestExtendsFromListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFunctions())
+            {
+                context.Writer.WritePropertyName("functions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFunctionsKvp in publicRequest.Functions)
+                {
+                    context.Writer.WritePropertyName(publicRequestFunctionsKvp.Key);
+                    var publicRequestFunctionsValue = publicRequestFunctionsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FunctionRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFunctionsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIsSingleton())
+            {
+                context.Writer.WritePropertyName("isSingleton");
+                context.Writer.WriteBooleanValue(publicRequest.IsSingleton.Value);
+            }
+
+            if(publicRequest.IsSetPropertyDefinitions())
+            {
+                context.Writer.WritePropertyName("propertyDefinitions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPropertyDefinitionsKvp in publicRequest.PropertyDefinitions)
+                {
+                    context.Writer.WritePropertyName(publicRequestPropertyDefinitionsKvp.Key);
+                    var publicRequestPropertyDefinitionsValue = publicRequestPropertyDefinitionsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PropertyDefinitionRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPropertyDefinitionsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPropertyGroups())
+            {
+                context.Writer.WritePropertyName("propertyGroups");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPropertyGroupsKvp in publicRequest.PropertyGroups)
+                {
+                    context.Writer.WritePropertyName(publicRequestPropertyGroupsKvp.Key);
+                    var publicRequestPropertyGroupsValue = publicRequestPropertyGroupsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PropertyGroupRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPropertyGroupsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"api.";

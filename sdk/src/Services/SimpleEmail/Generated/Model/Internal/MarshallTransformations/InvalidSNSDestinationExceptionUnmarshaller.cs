@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSNSDestinationException operation
     /// </summary>  
-    public class InvalidSNSDestinationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSNSDestinationException, XmlUnmarshallerContext>
+    public class InvalidSNSDestinationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSNSDestinationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

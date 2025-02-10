@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsArchived())
             {
                 context.Writer.WritePropertyName("isArchived");
-                context.Writer.Write(requestObject.IsArchived.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsArchived.Value);
             }
 
             if(requestObject.IsSetWaveIDs())
             {
                 context.Writer.WritePropertyName("waveIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWaveIDsListValue in requestObject.WaveIDs)
                 {
-                        context.Writer.Write(requestObjectWaveIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectWaveIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

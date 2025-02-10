@@ -31,7 +31,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRegistrationAssociations operation.
-    /// Retreive all of the origination identies that are associated with a registration.
+    /// Retrieve all of the origination identities that are associated with a registration.
     /// </summary>
     public partial class ListRegistrationAssociationsRequest : AmazonPinpointSMSVoiceV2Request
     {

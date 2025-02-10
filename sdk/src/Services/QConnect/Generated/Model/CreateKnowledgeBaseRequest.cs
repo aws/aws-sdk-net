@@ -74,13 +74,14 @@ namespace Amazon.QConnect.Model
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private SourceConfiguration _sourceConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private VectorIngestionConfiguration _vectorIngestionConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// the request. If not provided, the Amazon Web Services SDK populates this field. For
-        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// more information about idempotency, see <a href="http://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
         /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
@@ -207,8 +208,8 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        /// The source of the knowledge base content. Only set this argument for EXTERNAL knowledge
-        /// bases.
+        /// The source of the knowledge base content. Only set this argument for EXTERNAL or Managed
+        /// knowledge bases.
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration
@@ -239,6 +240,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIngestionConfiguration. 
+        /// <para>
+        /// Contains details about how to ingest the documents in a data source.
+        /// </para>
+        /// </summary>
+        public VectorIngestionConfiguration VectorIngestionConfiguration
+        {
+            get { return this._vectorIngestionConfiguration; }
+            set { this._vectorIngestionConfiguration = value; }
+        }
+
+        // Check to see if VectorIngestionConfiguration property is set
+        internal bool IsSetVectorIngestionConfiguration()
+        {
+            return this._vectorIngestionConfiguration != null;
         }
 
     }

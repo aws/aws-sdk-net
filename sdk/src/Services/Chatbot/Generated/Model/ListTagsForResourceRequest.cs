@@ -41,7 +41,7 @@ namespace Amazon.Chatbot.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN you specified to list the tags of.
+        /// The ARN of the resource to list tags for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

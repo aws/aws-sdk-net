@@ -2752,6 +2752,62 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  GetRecoveryPointIndexDetails
+
+
+        /// <summary>
+        /// This operation returns the metadata and details specific to the backup index associated
+        /// with the specified recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointIndexDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetRecoveryPointIndexDetails service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        GetRecoveryPointIndexDetailsResponse GetRecoveryPointIndexDetails(GetRecoveryPointIndexDetailsRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns the metadata and details specific to the backup index associated
+        /// with the specified recovery point.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPointIndexDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecoveryPointIndexDetails service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRecoveryPointIndexDetails">REST API Reference for GetRecoveryPointIndexDetails Operation</seealso>
+        Task<GetRecoveryPointIndexDetailsResponse> GetRecoveryPointIndexDetailsAsync(GetRecoveryPointIndexDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRecoveryPointRestoreMetadata
 
 
@@ -3557,6 +3613,68 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListFrameworks">REST API Reference for ListFrameworks Operation</seealso>
         Task<ListFrameworksResponse> ListFrameworksAsync(ListFrameworksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIndexedRecoveryPoints
+
+
+        /// <summary>
+        /// This operation returns a list of recovery points that have an associated index, belonging
+        /// to the specified account.
+        /// 
+        ///  
+        /// <para>
+        /// Optional parameters you can include are: MaxResults; NextToken; SourceResourceArns;
+        /// CreatedBefore; CreatedAfter; and ResourceType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexedRecoveryPoints service method.</param>
+        /// 
+        /// <returns>The response from the ListIndexedRecoveryPoints service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        ListIndexedRecoveryPointsResponse ListIndexedRecoveryPoints(ListIndexedRecoveryPointsRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns a list of recovery points that have an associated index, belonging
+        /// to the specified account.
+        /// 
+        ///  
+        /// <para>
+        /// Optional parameters you can include are: MaxResults; NextToken; SourceResourceArns;
+        /// CreatedBefore; CreatedAfter; and ResourceType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIndexedRecoveryPoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIndexedRecoveryPoints service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListIndexedRecoveryPoints">REST API Reference for ListIndexedRecoveryPoints Operation</seealso>
+        Task<ListIndexedRecoveryPointsResponse> ListIndexedRecoveryPointsAsync(ListIndexedRecoveryPointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5237,6 +5355,78 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
         Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRecoveryPointIndexSettings
+
+
+        /// <summary>
+        /// This operation updates the settings of a recovery point index.
+        /// 
+        ///  
+        /// <para>
+        /// Required: BackupVaultName, RecoveryPointArn, and IAMRoleArn
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointIndexSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPointIndexSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        UpdateRecoveryPointIndexSettingsResponse UpdateRecoveryPointIndexSettings(UpdateRecoveryPointIndexSettingsRequest request);
+
+
+
+        /// <summary>
+        /// This operation updates the settings of a recovery point index.
+        /// 
+        ///  
+        /// <para>
+        /// Required: BackupVaultName, RecoveryPointArn, and IAMRoleArn
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointIndexSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPointIndexSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRecoveryPointIndexSettings">REST API Reference for UpdateRecoveryPointIndexSettings Operation</seealso>
+        Task<UpdateRecoveryPointIndexSettingsResponse> UpdateRecoveryPointIndexSettingsAsync(UpdateRecoveryPointIndexSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

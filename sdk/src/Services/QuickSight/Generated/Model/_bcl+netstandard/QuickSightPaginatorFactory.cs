@@ -77,6 +77,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListBrands operation
+        ///</summary>
+        public IListBrandsPaginator ListBrands(ListBrandsRequest request) 
+        {
+            return new ListBrandsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomPermissions operation
+        ///</summary>
+        public IListCustomPermissionsPaginator ListCustomPermissions(ListCustomPermissionsRequest request) 
+        {
+            return new ListCustomPermissionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
@@ -306,6 +322,14 @@ namespace Amazon.QuickSight.Model
         public ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request) 
         {
             return new SearchGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchTopics operation
+        ///</summary>
+        public ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request) 
+        {
+            return new SearchTopicsPaginator(this.client, request);
         }
     }
 }

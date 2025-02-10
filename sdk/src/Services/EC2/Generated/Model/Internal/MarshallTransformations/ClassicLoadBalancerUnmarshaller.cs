@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClassicLoadBalancer Object
     /// </summary>  
-    public class ClassicLoadBalancerUnmarshaller : IUnmarshaller<ClassicLoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<ClassicLoadBalancer, JsonUnmarshallerContext>
+    public class ClassicLoadBalancerUnmarshaller : IXmlUnmarshaller<ClassicLoadBalancer, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClassicLoadBalancer Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClassicLoadBalancerUnmarshaller _instance = new ClassicLoadBalancerUnmarshaller();        
 

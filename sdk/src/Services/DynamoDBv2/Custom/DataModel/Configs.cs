@@ -48,9 +48,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Configuration object for setting options on the <see cref="DynamoDBContext"/> that
     /// will apply to all operations that use the context object.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class DynamoDBContextConfig
     {
         /// <summary>
@@ -150,9 +147,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// This will override any settings specified by the DynamoDBContext's DynamoDBContextConfig object.
     /// </summary>
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public class DynamoDBOperationConfig
     {
         /// <summary>
@@ -382,9 +376,6 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
     }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class DynamoDBFlatConfig
     {
         public static string DefaultIndexName = string.Empty;
@@ -424,7 +415,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool consistentRead = operationConfig.ConsistentRead ?? contextConfig.ConsistentRead ?? false;
             bool skipVersionCheck = operationConfig.SkipVersionCheck ?? contextConfig.SkipVersionCheck ?? false;
             bool ignoreNullValues = operationConfig.IgnoreNullValues ?? contextConfig.IgnoreNullValues ?? false;
-            bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? false;
+            bool retrieveDateTimeInUtc = operationConfig.RetrieveDateTimeInUtc ?? contextConfig.RetrieveDateTimeInUtc ?? true;
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             string tableNamePrefix = operationConfig.TableNamePrefix ?? contextConfig.TableNamePrefix ?? string.Empty;

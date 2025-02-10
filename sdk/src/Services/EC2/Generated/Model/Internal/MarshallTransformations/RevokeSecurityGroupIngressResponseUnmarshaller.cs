@@ -62,6 +62,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.Return = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("revokedSecurityGroupRuleSet/item", targetDepth))
+                    {
+                        var unmarshaller = RevokedSecurityGroupRuleUnmarshaller.Instance;
+                        if (response.RevokedSecurityGroupRules == null)
+                        {
+                            response.RevokedSecurityGroupRules = new List<RevokedSecurityGroupRule>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.RevokedSecurityGroupRules.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("unknownIpPermissionSet/item", targetDepth))
                     {
                         var unmarshaller = IpPermissionUnmarshaller.Instance;
@@ -88,7 +99,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static RevokeSecurityGroupIngressResponseUnmarshaller _instance = new RevokeSecurityGroupIngressResponseUnmarshaller();        

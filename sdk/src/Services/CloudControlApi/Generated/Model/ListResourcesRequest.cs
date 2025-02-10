@@ -79,7 +79,7 @@ namespace Amazon.CloudControlApi.Model
         /// response object's <c>NextToken</c> parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -98,7 +98,7 @@ namespace Amazon.CloudControlApi.Model
         /// The resource model to use to select the resources to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=262144)]
         public string ResourceModel
         {
             get { return this._resourceModel; }

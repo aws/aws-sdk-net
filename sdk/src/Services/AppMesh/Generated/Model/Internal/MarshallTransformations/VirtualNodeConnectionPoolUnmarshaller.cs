@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VirtualNodeConnectionPool Object
     /// </summary>  
-    public class VirtualNodeConnectionPoolUnmarshaller : IUnmarshaller<VirtualNodeConnectionPool, XmlUnmarshallerContext>, IUnmarshaller<VirtualNodeConnectionPool, JsonUnmarshallerContext>
+    public class VirtualNodeConnectionPoolUnmarshaller : IJsonUnmarshaller<VirtualNodeConnectionPool, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VirtualNodeConnectionPool IUnmarshaller<VirtualNodeConnectionPool, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VirtualNodeConnectionPool Unmarshall(JsonUnmarshallerContext context)
+        public VirtualNodeConnectionPool Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VirtualNodeConnectionPool unmarshalledObject = new VirtualNodeConnectionPool();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("grpc", targetDepth))
                 {
                     var unmarshaller = VirtualNodeGrpcConnectionPoolUnmarshaller.Instance;
-                    unmarshalledObject.Grpc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Grpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("http", targetDepth))
                 {
                     var unmarshaller = VirtualNodeHttpConnectionPoolUnmarshaller.Instance;
-                    unmarshalledObject.Http = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("http2", targetDepth))
                 {
                     var unmarshaller = VirtualNodeHttp2ConnectionPoolUnmarshaller.Instance;
-                    unmarshalledObject.Http2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Http2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tcp", targetDepth))
                 {
                     var unmarshaller = VirtualNodeTcpConnectionPoolUnmarshaller.Instance;
-                    unmarshalledObject.Tcp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tcp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

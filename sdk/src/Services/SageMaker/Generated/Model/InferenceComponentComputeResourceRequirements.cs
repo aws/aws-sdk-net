@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines the compute resources to allocate to run a model that you assign to an inference
-    /// component. These resources include CPU cores, accelerators, and memory.
+    /// Defines the compute resources to allocate to run a model, plus any adapter models,
+    /// that you assign to an inference component. These resources include CPU cores, accelerators,
+    /// and memory.
     /// </summary>
     public partial class InferenceComponentComputeResourceRequirements
     {

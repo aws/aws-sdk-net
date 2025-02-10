@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FileSourceSettings Object
     /// </summary>  
-    public class FileSourceSettingsUnmarshaller : IUnmarshaller<FileSourceSettings, XmlUnmarshallerContext>, IUnmarshaller<FileSourceSettings, JsonUnmarshallerContext>
+    public class FileSourceSettingsUnmarshaller : IJsonUnmarshaller<FileSourceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FileSourceSettings IUnmarshaller<FileSourceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FileSourceSettings Unmarshall(JsonUnmarshallerContext context)
+        public FileSourceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FileSourceSettings unmarshalledObject = new FileSourceSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("byteRateLimit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ByteRateLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ByteRateLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("convert608To708", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("convertPaintToPop", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConvertPaintToPop = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConvertPaintToPop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerate", targetDepth))
                 {
                     var unmarshaller = CaptionSourceFramerateUnmarshaller.Instance;
-                    unmarshalledObject.Framerate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Framerate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceFile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceFile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeDelta", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TimeDelta = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeDelta = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeDeltaUnits", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeDeltaUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeDeltaUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

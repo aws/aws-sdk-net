@@ -15,6 +15,8 @@ using Amazon.Util.Internal;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DataModel;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon
 {
@@ -170,8 +172,9 @@ namespace Amazon.Util
         /// <summary>
         /// If true, all <see cref="DateTime"/> properties are retrieved in UTC timezone while reading data from DynamoDB. Else, the local timezone is used.
         /// </summary>
-        /// <remarks>This setting is only applicable to the high-level library. Service calls made via <see cref="AmazonDynamoDBClient"/> will always return <see cref="DateTime"/> attributes in UTC.</remarks>
-        public bool? RetrieveDateTimeInUtc { get; set; }
+        /// <remarks>This setting is only applicable to data retrieved from the DynamoDBContext object. Service calls made via <see cref="AmazonDynamoDBClient"/> will always 
+        /// return <see cref="DateTime"/> attributes in UTC. The default is true to return datetimes in UTC format.</remarks>
+        public bool? RetrieveDateTimeInUtc { get; set; } = true;
 
         /// <summary>
         /// Adds a TableAlias to the TableAliases property.
@@ -331,6 +334,7 @@ namespace Amazon.Util
         /// <summary>
         /// The type of converter that should be used on this property
         /// </summary>
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.Interfaces)]
         public Type Converter { get; set; }
 
         /// <summary>

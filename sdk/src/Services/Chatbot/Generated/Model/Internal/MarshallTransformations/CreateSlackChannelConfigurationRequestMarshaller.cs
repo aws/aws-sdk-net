@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
@@ -61,99 +64,104 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-slack-channel-configuration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationName())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationName");
-                        context.Writer.Write(publicRequest.ConfigurationName);
-                    }
-
-                    if(publicRequest.IsSetGuardrailPolicyArns())
-                    {
-                        context.Writer.WritePropertyName("GuardrailPolicyArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGuardrailPolicyArnsListValue in publicRequest.GuardrailPolicyArns)
-                        {
-                                context.Writer.Write(publicRequestGuardrailPolicyArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("IamRoleArn");
-                        context.Writer.Write(publicRequest.IamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetLoggingLevel())
-                    {
-                        context.Writer.WritePropertyName("LoggingLevel");
-                        context.Writer.Write(publicRequest.LoggingLevel);
-                    }
-
-                    if(publicRequest.IsSetSlackChannelId())
-                    {
-                        context.Writer.WritePropertyName("SlackChannelId");
-                        context.Writer.Write(publicRequest.SlackChannelId);
-                    }
-
-                    if(publicRequest.IsSetSlackChannelName())
-                    {
-                        context.Writer.WritePropertyName("SlackChannelName");
-                        context.Writer.Write(publicRequest.SlackChannelName);
-                    }
-
-                    if(publicRequest.IsSetSlackTeamId())
-                    {
-                        context.Writer.WritePropertyName("SlackTeamId");
-                        context.Writer.Write(publicRequest.SlackTeamId);
-                    }
-
-                    if(publicRequest.IsSetSnsTopicArns())
-                    {
-                        context.Writer.WritePropertyName("SnsTopicArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
-                        {
-                                context.Writer.Write(publicRequestSnsTopicArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserAuthorizationRequired())
-                    {
-                        context.Writer.WritePropertyName("UserAuthorizationRequired");
-                        context.Writer.Write(publicRequest.UserAuthorizationRequired.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfigurationName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationName);
             }
+
+            if(publicRequest.IsSetGuardrailPolicyArns())
+            {
+                context.Writer.WritePropertyName("GuardrailPolicyArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGuardrailPolicyArnsListValue in publicRequest.GuardrailPolicyArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestGuardrailPolicyArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIamRoleArn())
+            {
+                context.Writer.WritePropertyName("IamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
+            }
+
+            if(publicRequest.IsSetLoggingLevel())
+            {
+                context.Writer.WritePropertyName("LoggingLevel");
+                context.Writer.WriteStringValue(publicRequest.LoggingLevel);
+            }
+
+            if(publicRequest.IsSetSlackChannelId())
+            {
+                context.Writer.WritePropertyName("SlackChannelId");
+                context.Writer.WriteStringValue(publicRequest.SlackChannelId);
+            }
+
+            if(publicRequest.IsSetSlackChannelName())
+            {
+                context.Writer.WritePropertyName("SlackChannelName");
+                context.Writer.WriteStringValue(publicRequest.SlackChannelName);
+            }
+
+            if(publicRequest.IsSetSlackTeamId())
+            {
+                context.Writer.WritePropertyName("SlackTeamId");
+                context.Writer.WriteStringValue(publicRequest.SlackTeamId);
+            }
+
+            if(publicRequest.IsSetSnsTopicArns())
+            {
+                context.Writer.WritePropertyName("SnsTopicArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestSnsTopicArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserAuthorizationRequired())
+            {
+                context.Writer.WritePropertyName("UserAuthorizationRequired");
+                context.Writer.WriteBooleanValue(publicRequest.UserAuthorizationRequired.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

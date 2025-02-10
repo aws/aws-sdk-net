@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private EksEmptyDir _emptyDir;
         private EksHostPath _hostPath;
         private string _name;
+        private EksPersistentVolumeClaim _persistentVolumeClaim;
         private EksSecret _secret;
 
         /// <summary>
@@ -98,6 +99,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PersistentVolumeClaim. 
+        /// <para>
+        /// Specifies the configuration of a Kubernetes <c>persistentVolumeClaim</c> bounded to
+        /// a <c>persistentVolume</c>. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">
+        /// Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.
+        /// </para>
+        /// </summary>
+        public EksPersistentVolumeClaim PersistentVolumeClaim
+        {
+            get { return this._persistentVolumeClaim; }
+            set { this._persistentVolumeClaim = value; }
+        }
+
+        // Check to see if PersistentVolumeClaim property is set
+        internal bool IsSetPersistentVolumeClaim()
+        {
+            return this._persistentVolumeClaim != null;
         }
 
         /// <summary>

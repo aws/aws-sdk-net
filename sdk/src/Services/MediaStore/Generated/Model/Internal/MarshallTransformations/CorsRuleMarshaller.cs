@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedHeaders())
             {
                 context.Writer.WritePropertyName("AllowedHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedHeadersListValue in requestObject.AllowedHeaders)
                 {
-                        context.Writer.Write(requestObjectAllowedHeadersListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedHeadersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowedMethods())
             {
                 context.Writer.WritePropertyName("AllowedMethods");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedMethodsListValue in requestObject.AllowedMethods)
                 {
-                        context.Writer.Write(requestObjectAllowedMethodsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedMethodsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowedOrigins())
             {
                 context.Writer.WritePropertyName("AllowedOrigins");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedOriginsListValue in requestObject.AllowedOrigins)
                 {
-                        context.Writer.Write(requestObjectAllowedOriginsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedOriginsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExposeHeaders())
             {
                 context.Writer.WritePropertyName("ExposeHeaders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExposeHeadersListValue in requestObject.ExposeHeaders)
                 {
-                        context.Writer.Write(requestObjectExposeHeadersListValue);
+                        context.Writer.WriteStringValue(requestObjectExposeHeadersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxAgeSeconds())
             {
                 context.Writer.WritePropertyName("MaxAgeSeconds");
-                context.Writer.Write(requestObject.MaxAgeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAgeSeconds.Value);
             }
 
         }

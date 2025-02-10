@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IKEVersionsListValue Object
     /// </summary>  
-    public class IKEVersionsListValueUnmarshaller : IUnmarshaller<IKEVersionsListValue, XmlUnmarshallerContext>, IUnmarshaller<IKEVersionsListValue, JsonUnmarshallerContext>
+    public class IKEVersionsListValueUnmarshaller : IXmlUnmarshaller<IKEVersionsListValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IKEVersionsListValue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IKEVersionsListValueUnmarshaller _instance = new IKEVersionsListValueUnmarshaller();        
 

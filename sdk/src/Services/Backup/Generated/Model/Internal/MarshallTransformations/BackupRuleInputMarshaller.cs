@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,84 +49,100 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompletionWindowMinutes())
             {
                 context.Writer.WritePropertyName("CompletionWindowMinutes");
-                context.Writer.Write(requestObject.CompletionWindowMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.CompletionWindowMinutes.Value);
             }
 
             if(requestObject.IsSetCopyActions())
             {
                 context.Writer.WritePropertyName("CopyActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCopyActionsListValue in requestObject.CopyActions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CopyActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectCopyActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnableContinuousBackup())
             {
                 context.Writer.WritePropertyName("EnableContinuousBackup");
-                context.Writer.Write(requestObject.EnableContinuousBackup.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableContinuousBackup.Value);
+            }
+
+            if(requestObject.IsSetIndexActions())
+            {
+                context.Writer.WritePropertyName("IndexActions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectIndexActionsListValue in requestObject.IndexActions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = IndexActionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIndexActionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLifecycle())
             {
                 context.Writer.WritePropertyName("Lifecycle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LifecycleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lifecycle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecoveryPointTags())
             {
                 context.Writer.WritePropertyName("RecoveryPointTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRecoveryPointTagsKvp in requestObject.RecoveryPointTags)
                 {
                     context.Writer.WritePropertyName(requestObjectRecoveryPointTagsKvp.Key);
                     var requestObjectRecoveryPointTagsValue = requestObjectRecoveryPointTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectRecoveryPointTagsValue);
+                        context.Writer.WriteStringValue(requestObjectRecoveryPointTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
             if(requestObject.IsSetScheduleExpressionTimezone())
             {
                 context.Writer.WritePropertyName("ScheduleExpressionTimezone");
-                context.Writer.Write(requestObject.ScheduleExpressionTimezone);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpressionTimezone);
             }
 
             if(requestObject.IsSetStartWindowMinutes())
             {
                 context.Writer.WritePropertyName("StartWindowMinutes");
-                context.Writer.Write(requestObject.StartWindowMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.StartWindowMinutes.Value);
             }
 
             if(requestObject.IsSetTargetBackupVaultName())
             {
                 context.Writer.WritePropertyName("TargetBackupVaultName");
-                context.Writer.Write(requestObject.TargetBackupVaultName);
+                context.Writer.WriteStringValue(requestObject.TargetBackupVaultName);
             }
 
         }

@@ -29,13 +29,14 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BucketAlreadyExistsException operation
     /// </summary>  
-    public class BucketAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<BucketAlreadyExistsException, XmlUnmarshallerContext>
+    public class BucketAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BucketAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -55,8 +56,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public BucketAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
+            string id2 = null, amzCfId = null;
+            var s3ErrorResponse = errorResponse as S3ErrorResponse;
+            if (s3ErrorResponse != null)
+            {
+                id2 = s3ErrorResponse.Id2;
+                amzCfId = s3ErrorResponse.AmzCfId;
+            }
+
             BucketAlreadyExistsException response = new BucketAlreadyExistsException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
 
             while (context.Read())
             {

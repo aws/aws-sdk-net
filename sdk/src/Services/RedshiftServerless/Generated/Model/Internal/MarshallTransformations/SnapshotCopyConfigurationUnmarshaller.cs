@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SnapshotCopyConfiguration Object
     /// </summary>  
-    public class SnapshotCopyConfigurationUnmarshaller : IUnmarshaller<SnapshotCopyConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SnapshotCopyConfiguration, JsonUnmarshallerContext>
+    public class SnapshotCopyConfigurationUnmarshaller : IJsonUnmarshaller<SnapshotCopyConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SnapshotCopyConfiguration IUnmarshaller<SnapshotCopyConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SnapshotCopyConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public SnapshotCopyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SnapshotCopyConfiguration unmarshalledObject = new SnapshotCopyConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("destinationKmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationKmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("namespaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("snapshotCopyConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotCopyConfigurationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotCopyConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("snapshotCopyConfigurationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotCopyConfigurationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotCopyConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("snapshotRetentionPeriod", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotRetentionPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotRetentionPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

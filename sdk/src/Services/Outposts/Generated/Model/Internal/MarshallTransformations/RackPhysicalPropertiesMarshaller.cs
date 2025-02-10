@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFiberOpticCableType())
             {
                 context.Writer.WritePropertyName("FiberOpticCableType");
-                context.Writer.Write(requestObject.FiberOpticCableType);
+                context.Writer.WriteStringValue(requestObject.FiberOpticCableType);
             }
 
             if(requestObject.IsSetMaximumSupportedWeightLbs())
             {
                 context.Writer.WritePropertyName("MaximumSupportedWeightLbs");
-                context.Writer.Write(requestObject.MaximumSupportedWeightLbs);
+                context.Writer.WriteStringValue(requestObject.MaximumSupportedWeightLbs);
             }
 
             if(requestObject.IsSetOpticalStandard())
             {
                 context.Writer.WritePropertyName("OpticalStandard");
-                context.Writer.Write(requestObject.OpticalStandard);
+                context.Writer.WriteStringValue(requestObject.OpticalStandard);
             }
 
             if(requestObject.IsSetPowerConnector())
             {
                 context.Writer.WritePropertyName("PowerConnector");
-                context.Writer.Write(requestObject.PowerConnector);
+                context.Writer.WriteStringValue(requestObject.PowerConnector);
             }
 
             if(requestObject.IsSetPowerDrawKva())
             {
                 context.Writer.WritePropertyName("PowerDrawKva");
-                context.Writer.Write(requestObject.PowerDrawKva);
+                context.Writer.WriteStringValue(requestObject.PowerDrawKva);
             }
 
             if(requestObject.IsSetPowerFeedDrop())
             {
                 context.Writer.WritePropertyName("PowerFeedDrop");
-                context.Writer.Write(requestObject.PowerFeedDrop);
+                context.Writer.WriteStringValue(requestObject.PowerFeedDrop);
             }
 
             if(requestObject.IsSetPowerPhase())
             {
                 context.Writer.WritePropertyName("PowerPhase");
-                context.Writer.Write(requestObject.PowerPhase);
+                context.Writer.WriteStringValue(requestObject.PowerPhase);
             }
 
             if(requestObject.IsSetUplinkCount())
             {
                 context.Writer.WritePropertyName("UplinkCount");
-                context.Writer.Write(requestObject.UplinkCount);
+                context.Writer.WriteStringValue(requestObject.UplinkCount);
             }
 
             if(requestObject.IsSetUplinkGbps())
             {
                 context.Writer.WritePropertyName("UplinkGbps");
-                context.Writer.Write(requestObject.UplinkGbps);
+                context.Writer.WriteStringValue(requestObject.UplinkGbps);
             }
 
         }

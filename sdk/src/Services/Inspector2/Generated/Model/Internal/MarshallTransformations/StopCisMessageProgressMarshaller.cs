@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorChecks())
             {
                 context.Writer.WritePropertyName("errorChecks");
-                context.Writer.Write(requestObject.ErrorChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.ErrorChecks.Value);
             }
 
             if(requestObject.IsSetFailedChecks())
             {
                 context.Writer.WritePropertyName("failedChecks");
-                context.Writer.Write(requestObject.FailedChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.FailedChecks.Value);
             }
 
             if(requestObject.IsSetInformationalChecks())
             {
                 context.Writer.WritePropertyName("informationalChecks");
-                context.Writer.Write(requestObject.InformationalChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.InformationalChecks.Value);
             }
 
             if(requestObject.IsSetNotApplicableChecks())
             {
                 context.Writer.WritePropertyName("notApplicableChecks");
-                context.Writer.Write(requestObject.NotApplicableChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.NotApplicableChecks.Value);
             }
 
             if(requestObject.IsSetNotEvaluatedChecks())
             {
                 context.Writer.WritePropertyName("notEvaluatedChecks");
-                context.Writer.Write(requestObject.NotEvaluatedChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.NotEvaluatedChecks.Value);
             }
 
             if(requestObject.IsSetSuccessfulChecks())
             {
                 context.Writer.WritePropertyName("successfulChecks");
-                context.Writer.Write(requestObject.SuccessfulChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.SuccessfulChecks.Value);
             }
 
             if(requestObject.IsSetTotalChecks())
             {
                 context.Writer.WritePropertyName("totalChecks");
-                context.Writer.Write(requestObject.TotalChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.TotalChecks.Value);
             }
 
             if(requestObject.IsSetUnknownChecks())
             {
                 context.Writer.WritePropertyName("unknownChecks");
-                context.Writer.Write(requestObject.UnknownChecks.Value);
+                context.Writer.WriteNumberValue(requestObject.UnknownChecks.Value);
             }
 
         }

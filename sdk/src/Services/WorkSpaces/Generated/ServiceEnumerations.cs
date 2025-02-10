@@ -137,6 +137,214 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type AGAModeForDirectoryEnum.
+    /// </summary>
+    public class AGAModeForDirectoryEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AGAModeForDirectoryEnum
+        /// </summary>
+        public static readonly AGAModeForDirectoryEnum DISABLED = new AGAModeForDirectoryEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED_AUTO for AGAModeForDirectoryEnum
+        /// </summary>
+        public static readonly AGAModeForDirectoryEnum ENABLED_AUTO = new AGAModeForDirectoryEnum("ENABLED_AUTO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAModeForDirectoryEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAModeForDirectoryEnum FindValue(string value)
+        {
+            return FindValue<AGAModeForDirectoryEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAModeForDirectoryEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AGAModeForWorkSpaceEnum.
+    /// </summary>
+    public class AGAModeForWorkSpaceEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AGAModeForWorkSpaceEnum
+        /// </summary>
+        public static readonly AGAModeForWorkSpaceEnum DISABLED = new AGAModeForWorkSpaceEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED_AUTO for AGAModeForWorkSpaceEnum
+        /// </summary>
+        public static readonly AGAModeForWorkSpaceEnum ENABLED_AUTO = new AGAModeForWorkSpaceEnum("ENABLED_AUTO");
+        /// <summary>
+        /// Constant INHERITED for AGAModeForWorkSpaceEnum
+        /// </summary>
+        public static readonly AGAModeForWorkSpaceEnum INHERITED = new AGAModeForWorkSpaceEnum("INHERITED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAModeForWorkSpaceEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAModeForWorkSpaceEnum FindValue(string value)
+        {
+            return FindValue<AGAModeForWorkSpaceEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAModeForWorkSpaceEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AGAPreferredProtocolForDirectory.
+    /// </summary>
+    public class AGAPreferredProtocolForDirectory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for AGAPreferredProtocolForDirectory
+        /// </summary>
+        public static readonly AGAPreferredProtocolForDirectory NONE = new AGAPreferredProtocolForDirectory("NONE");
+        /// <summary>
+        /// Constant TCP for AGAPreferredProtocolForDirectory
+        /// </summary>
+        public static readonly AGAPreferredProtocolForDirectory TCP = new AGAPreferredProtocolForDirectory("TCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAPreferredProtocolForDirectory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAPreferredProtocolForDirectory FindValue(string value)
+        {
+            return FindValue<AGAPreferredProtocolForDirectory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAPreferredProtocolForDirectory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AGAPreferredProtocolForWorkSpace.
+    /// </summary>
+    public class AGAPreferredProtocolForWorkSpace : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INHERITED for AGAPreferredProtocolForWorkSpace
+        /// </summary>
+        public static readonly AGAPreferredProtocolForWorkSpace INHERITED = new AGAPreferredProtocolForWorkSpace("INHERITED");
+        /// <summary>
+        /// Constant NONE for AGAPreferredProtocolForWorkSpace
+        /// </summary>
+        public static readonly AGAPreferredProtocolForWorkSpace NONE = new AGAPreferredProtocolForWorkSpace("NONE");
+        /// <summary>
+        /// Constant TCP for AGAPreferredProtocolForWorkSpace
+        /// </summary>
+        public static readonly AGAPreferredProtocolForWorkSpace TCP = new AGAPreferredProtocolForWorkSpace("TCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AGAPreferredProtocolForWorkSpace(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AGAPreferredProtocolForWorkSpace FindValue(string value)
+        {
+            return FindValue<AGAPreferredProtocolForWorkSpace>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AGAPreferredProtocolForWorkSpace(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Application.
     /// </summary>
     public class Application : ConstantClass
@@ -756,6 +964,14 @@ namespace Amazon.WorkSpaces
     public class Compute : ConstantClass
     {
 
+        /// <summary>
+        /// Constant GENERALPURPOSE_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GENERALPURPOSE_4XLARGE = new Compute("GENERALPURPOSE_4XLARGE");
+        /// <summary>
+        /// Constant GENERALPURPOSE_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GENERALPURPOSE_8XLARGE = new Compute("GENERALPURPOSE_8XLARGE");
         /// <summary>
         /// Constant GRAPHICS for Compute
         /// </summary>
@@ -1700,6 +1916,10 @@ namespace Amazon.WorkSpaces
         /// Constant RHEL_8 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName RHEL_8 = new OperatingSystemName("RHEL_8");
+        /// <summary>
+        /// Constant ROCKY_8 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName ROCKY_8 = new OperatingSystemName("ROCKY_8");
         /// <summary>
         /// Constant UBUNTU_18_04 for OperatingSystemName
         /// </summary>
@@ -2881,6 +3101,14 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode AdditionalDrivesAttached = new WorkspaceImageErrorDetailCode("AdditionalDrivesAttached");
         /// <summary>
+        /// Constant AdditionalDrivesPresent for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AdditionalDrivesPresent = new WorkspaceImageErrorDetailCode("AdditionalDrivesPresent");
+        /// <summary>
+        /// Constant AmazonSsmAgentEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AmazonSsmAgentEnabled = new WorkspaceImageErrorDetailCode("AmazonSsmAgentEnabled");
+        /// <summary>
         /// Constant AntiVirusInstalled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode AntiVirusInstalled = new WorkspaceImageErrorDetailCode("AntiVirusInstalled");
@@ -2913,9 +3141,17 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode DiskSizeExceeded = new WorkspaceImageErrorDetailCode("DiskSizeExceeded");
         /// <summary>
+        /// Constant DomainAccountServicesFound for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DomainAccountServicesFound = new WorkspaceImageErrorDetailCode("DomainAccountServicesFound");
+        /// <summary>
         /// Constant DomainJoined for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode DomainJoined = new WorkspaceImageErrorDetailCode("DomainJoined");
+        /// <summary>
+        /// Constant EnvironmentVariablesPathMissingEntries for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode EnvironmentVariablesPathMissingEntries = new WorkspaceImageErrorDetailCode("EnvironmentVariablesPathMissingEntries");
         /// <summary>
         /// Constant FirewallEnabled for WorkspaceImageErrorDetailCode
         /// </summary>
@@ -2929,9 +3165,25 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode InPlaceUpgrade = new WorkspaceImageErrorDetailCode("InPlaceUpgrade");
         /// <summary>
+        /// Constant InsufficientDiskSpace for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InsufficientDiskSpace = new WorkspaceImageErrorDetailCode("InsufficientDiskSpace");
+        /// <summary>
+        /// Constant InsufficientRearmCount for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InsufficientRearmCount = new WorkspaceImageErrorDetailCode("InsufficientRearmCount");
+        /// <summary>
+        /// Constant InvalidIp for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InvalidIp = new WorkspaceImageErrorDetailCode("InvalidIp");
+        /// <summary>
         /// Constant MultipleBootPartition for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode MultipleBootPartition = new WorkspaceImageErrorDetailCode("MultipleBootPartition");
+        /// <summary>
+        /// Constant MultipleUserProfiles for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode MultipleUserProfiles = new WorkspaceImageErrorDetailCode("MultipleUserProfiles");
         /// <summary>
         /// Constant OfficeInstalled for WorkspaceImageErrorDetailCode
         /// </summary>
@@ -2957,6 +3209,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode RealTimeUniversalDisabled = new WorkspaceImageErrorDetailCode("RealTimeUniversalDisabled");
         /// <summary>
+        /// Constant RemoteDesktopServicesDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode RemoteDesktopServicesDisabled = new WorkspaceImageErrorDetailCode("RemoteDesktopServicesDisabled");
+        /// <summary>
         /// Constant Requires64BitOS for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode Requires64BitOS = new WorkspaceImageErrorDetailCode("Requires64BitOS");
@@ -2964,6 +3220,14 @@ namespace Amazon.WorkSpaces
         /// Constant ReservedStorageInUse for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode ReservedStorageInUse = new WorkspaceImageErrorDetailCode("ReservedStorageInUse");
+        /// <summary>
+        /// Constant StagedAppxPackage for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode StagedAppxPackage = new WorkspaceImageErrorDetailCode("StagedAppxPackage");
+        /// <summary>
+        /// Constant SysPrepFileMissing for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode SysPrepFileMissing = new WorkspaceImageErrorDetailCode("SysPrepFileMissing");
         /// <summary>
         /// Constant UEFINotSupported for WorkspaceImageErrorDetailCode
         /// </summary>
@@ -2973,13 +3237,33 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode UnknownError = new WorkspaceImageErrorDetailCode("UnknownError");
         /// <summary>
+        /// Constant UnsupportedOsUpgrade for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UnsupportedOsUpgrade = new WorkspaceImageErrorDetailCode("UnsupportedOsUpgrade");
+        /// <summary>
+        /// Constant UnsupportedSecurityProtocol for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UnsupportedSecurityProtocol = new WorkspaceImageErrorDetailCode("UnsupportedSecurityProtocol");
+        /// <summary>
+        /// Constant UserProfileMissing for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UserProfileMissing = new WorkspaceImageErrorDetailCode("UserProfileMissing");
+        /// <summary>
         /// Constant VMWareToolsInstalled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode VMWareToolsInstalled = new WorkspaceImageErrorDetailCode("VMWareToolsInstalled");
         /// <summary>
+        /// Constant WindowsModulesInstallerDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WindowsModulesInstallerDisabled = new WorkspaceImageErrorDetailCode("WindowsModulesInstallerDisabled");
+        /// <summary>
         /// Constant WindowsUpdatesEnabled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode WindowsUpdatesEnabled = new WorkspaceImageErrorDetailCode("WindowsUpdatesEnabled");
+        /// <summary>
+        /// Constant WindowsUpdatesRequired for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WindowsUpdatesRequired = new WorkspaceImageErrorDetailCode("WindowsUpdatesRequired");
         /// <summary>
         /// Constant WorkspacesBYOLAccountDisabled for WorkspaceImageErrorDetailCode
         /// </summary>

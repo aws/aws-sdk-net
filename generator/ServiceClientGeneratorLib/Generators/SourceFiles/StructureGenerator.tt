@@ -35,6 +35,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using <#=this.Config.Namespace#>.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 <#
 }
 #>
@@ -238,7 +239,7 @@ namespace <#=this.Config.Namespace#>.Model
         <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
             get { return this.<#=member.VariableName#>; }
-            set { <#=member.IsBackwardsCompatibleDateTimeProperty ? "this." + member.BackwardCompatibilityVariableName + " = " : ""#>this.<#=member.VariableName#> = value; }
+            set { this.<#=member.VariableName#> = value; }
         }
 
 <#
@@ -272,14 +273,6 @@ namespace <#=this.Config.Namespace#>.Model
             set
             {
                 Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this.<#=member.VariableName#>);
-<#
-                        if(member.IsBackwardsCompatibleDateTimeProperty)
-                        {
-#>  
-                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this.<#=member.BackwardCompatibilityVariableName#>);
-<#
-                        }
-#>
             }
         }
 
@@ -387,11 +380,10 @@ namespace <#=this.Config.Namespace#>.Model
                 // Flexible checksum overrides to allow response validation configuration on the request
                 if (this.StructureType == StructureType.Request && !string.IsNullOrEmpty(this.Operation.ChecksumConfiguration?.RequestValidationModeMember))
                 {
-#>  
-#region Flexible checksum properties
-        /// <summary>
-        /// This must be enabled to retrieve the checksum
-        /// </summary>
+#>
+        #region Flexible checksum properties
+        
+        /// <inheritdoc/>
         protected override CoreChecksumResponseBehavior CoreChecksumMode
         {
             get
@@ -403,103 +395,21 @@ namespace <#=this.Config.Namespace#>.Model
 
                 return CoreChecksumResponseBehavior.DISABLED;
             }
+            set { this.<#=this.Operation.ChecksumConfiguration.RequestValidationModeMember#> = value.ToString(); }
         }
 
-        private static List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
+        private static readonly List<CoreChecksumAlgorithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>
         {
             <#= string.Join(", ", Operation.ChecksumConfiguration?.ResponseAlgorithms?.Select(s => $"CoreChecksumAlgorithm.{s}").ToArray()) #>
         };
 
-        /// <summary>
-        /// Checksum algorithms supported by this operation for response validation
-        /// </summary>
+        /// <inheritdoc/>
         protected override System.Collections.ObjectModel.ReadOnlyCollection<CoreChecksumAlgorithm> ChecksumResponseAlgorithms => _supportedChecksumAlgorithms.AsReadOnly();
-#endregion
+
+        #endregion
 <#
                 }
 
-                if (this.Structure.Members.Any(m => !m.IsExcluded && m.IsBackwardsCompatibleDateTimeProperty))
-                {
-#>
-#region Backwards compatible properties
-<#
-                    foreach(var member in this.Structure.Members)
-                    {
-                        if (member.IsExcluded || !member.IsBackwardsCompatibleDateTimeProperty)
-                            continue;
-#>
-        private <#=member.DetermineType()#> <#=member.BackwardCompatibilityVariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
-<#
-                    }
-#>
-
-<#
-                    foreach(var member in this.Structure.Members)
-                    {
-                        if (member.IsExcluded || !member.IsBackwardsCompatibleDateTimeProperty)
-                            continue;
-#>
-<# this.FormatPropertyDocumentation(member, "This property is deprecated. Setting this property results in non-UTC DateTimes " +
-        "not being marshalled correctly. Use " + member.PropertyName + " instead. Setting either " + member.BackwardCompatibilityPropertyName +
-        " or " + member.PropertyName + " results in both " + member.BackwardCompatibilityPropertyName + " and " + 
-        member.PropertyName + " being assigned, the latest assignment to either one of the two property is reflected in " +
-        "the value of both. " + member.BackwardCompatibilityPropertyName + " is provided for backwards compatibility only " +
-        "and assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.");#>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use <#=member.PropertyName#> instead. Setting either <#=member.BackwardCompatibilityPropertyName#> or <#=member.PropertyName#> results in both <#=member.BackwardCompatibilityPropertyName#> and " +
-            "<#=member.PropertyName#> being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. <#=member.BackwardCompatibilityPropertyName#> is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        <#=member.AccessModifier#> <#=member.DetermineType()#><#=member.UseNullable ? "?" : ""#> <#=member.BackwardCompatibilityPropertyName#>
-        {
-            get { return this.<#=member.BackwardCompatibilityVariableName#>.GetValueOrDefault(); }
-            set
-            {
-                this.<#=member.BackwardCompatibilityVariableName#> = value;
-                if (value != null)
-                {
-                    this.<#=member.VariableName#> = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this.<#=member.VariableName#> = null;
-                }
-            }
-        }
-<#
-                        if (member.EmitIsSetProperties)
-                        {
-#>
-        /// <summary>
-        /// This property is set to true if the property <seealso cref="<#=member.BackwardCompatibilityPropertyName#>"/>
-        /// is set; false otherwise.
-        /// This property can be used to determine if the related property
-        /// was returned by a service response or if the related property
-        /// should be sent to the service during a service call.
-        /// </summary>
-        /// <returns>
-        /// True if the related property was set or will be sent to a service; false otherwise.
-        /// </returns>
-        [Obsolete("Setting <#=member.BackwardCompatibilityPropertyName#> results in non-UTC DateTimes not being marshalled correctly. Use <#=member.PropertyName#> instead.", false)]
-        public bool Is<#=member.BackwardCompatibilityPropertyName#>Set
-        {
-            get
-            {
-                return this.Is<#=member.PropertyName#>Set;
-            }
-            set
-            {
-                this.Is<#=member.PropertyName#>Set = value;;
-            }
-        }
-<#
-                        }
-                    }
-
-#>
-#endregion
-<#
-                }
                 if (this.Structure is ExceptionShape)
                 {
                     var exceptionShape = (ExceptionShape)this.Structure;

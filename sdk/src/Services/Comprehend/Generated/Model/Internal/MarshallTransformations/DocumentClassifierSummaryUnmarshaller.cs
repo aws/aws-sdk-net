@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DocumentClassifierSummary Object
     /// </summary>  
-    public class DocumentClassifierSummaryUnmarshaller : IUnmarshaller<DocumentClassifierSummary, XmlUnmarshallerContext>, IUnmarshaller<DocumentClassifierSummary, JsonUnmarshallerContext>
+    public class DocumentClassifierSummaryUnmarshaller : IJsonUnmarshaller<DocumentClassifierSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DocumentClassifierSummary IUnmarshaller<DocumentClassifierSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DocumentClassifierSummary Unmarshall(JsonUnmarshallerContext context)
+        public DocumentClassifierSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DocumentClassifierSummary unmarshalledObject = new DocumentClassifierSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DocumentClassifierName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentClassifierName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentClassifierName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestVersionCreatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LatestVersionCreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestVersionCreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestVersionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestVersionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestVersionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestVersionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestVersionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestVersionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfVersions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfVersions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

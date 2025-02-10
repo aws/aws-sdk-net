@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisconnectTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("DisconnectTimeoutInSeconds");
-                context.Writer.Write(requestObject.DisconnectTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DisconnectTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetIdleDisconnectTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("IdleDisconnectTimeoutInSeconds");
-                context.Writer.Write(requestObject.IdleDisconnectTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.IdleDisconnectTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetMaxUserDurationInSeconds())
             {
                 context.Writer.WritePropertyName("MaxUserDurationInSeconds");
-                context.Writer.Write(requestObject.MaxUserDurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxUserDurationInSeconds.Value);
             }
 
         }

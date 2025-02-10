@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidClusterSnapshotStateException operation
     /// </summary>  
-    public class InvalidClusterSnapshotStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidClusterSnapshotStateException, XmlUnmarshallerContext>
+    public class InvalidClusterSnapshotStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidClusterSnapshotStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

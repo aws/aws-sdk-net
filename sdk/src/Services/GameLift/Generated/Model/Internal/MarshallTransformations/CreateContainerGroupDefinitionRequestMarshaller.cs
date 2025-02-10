@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -63,81 +66,110 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContainerGroupType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContainerDefinitions())
-                    {
-                        context.Writer.WritePropertyName("ContainerDefinitions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContainerDefinitionsListValue in publicRequest.ContainerDefinitions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ContainerDefinitionInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestContainerDefinitionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOperatingSystem())
-                    {
-                        context.Writer.WritePropertyName("OperatingSystem");
-                        context.Writer.Write(publicRequest.OperatingSystem);
-                    }
-
-                    if(publicRequest.IsSetSchedulingStrategy())
-                    {
-                        context.Writer.WritePropertyName("SchedulingStrategy");
-                        context.Writer.Write(publicRequest.SchedulingStrategy);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTotalCpuLimit())
-                    {
-                        context.Writer.WritePropertyName("TotalCpuLimit");
-                        context.Writer.Write(publicRequest.TotalCpuLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetTotalMemoryLimit())
-                    {
-                        context.Writer.WritePropertyName("TotalMemoryLimit");
-                        context.Writer.Write(publicRequest.TotalMemoryLimit.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ContainerGroupType");
+                context.Writer.WriteStringValue(publicRequest.ContainerGroupType);
             }
+
+            if(publicRequest.IsSetGameServerContainerDefinition())
+            {
+                context.Writer.WritePropertyName("GameServerContainerDefinition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GameServerContainerDefinitionInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GameServerContainerDefinition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOperatingSystem())
+            {
+                context.Writer.WritePropertyName("OperatingSystem");
+                context.Writer.WriteStringValue(publicRequest.OperatingSystem);
+            }
+
+            if(publicRequest.IsSetSupportContainerDefinitions())
+            {
+                context.Writer.WritePropertyName("SupportContainerDefinitions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSupportContainerDefinitionsListValue in publicRequest.SupportContainerDefinitions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SupportContainerDefinitionInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSupportContainerDefinitionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTotalMemoryLimitMebibytes())
+            {
+                context.Writer.WritePropertyName("TotalMemoryLimitMebibytes");
+                context.Writer.WriteNumberValue(publicRequest.TotalMemoryLimitMebibytes.Value);
+            }
+
+            if(publicRequest.IsSetTotalVcpuLimit())
+            {
+                context.Writer.WritePropertyName("TotalVcpuLimit");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.TotalVcpuLimit.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.TotalVcpuLimit.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.TotalVcpuLimit.Value);
+                }
+            }
+
+            if(publicRequest.IsSetVersionDescription())
+            {
+                context.Writer.WritePropertyName("VersionDescription");
+                context.Writer.WriteStringValue(publicRequest.VersionDescription);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

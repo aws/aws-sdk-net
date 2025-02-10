@@ -6,6 +6,22 @@
     <max>31</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.AssociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CopySnapshotRequest.CompletionDurationMinutes</property>
+    <min>1</min>
+    <max>2880</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateCapacityReservationRequest.CommitmentDuration</property>
+    <min>1</min>
+    <max>200000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateCapacityReservationRequest.OutpostArn</property>
     <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
@@ -105,7 +121,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityBlockExtensionHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityBlockExtensionOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityBlockOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityReservationBillingRequestsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -157,6 +188,11 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCoipPoolsRequest.MaxResults</property>
     <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeDeclarativePoliciesReportsRequest.MaxResults</property>
+    <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -218,6 +254,11 @@
     <property>Amazon.EC2.Model.DescribeInstanceEventWindowsRequest.MaxResults</property>
     <min>20</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceImageMetadataRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceTopologyRequest.MaxResults</property>
@@ -416,6 +457,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecurityGroupVpcAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSpotFleetInstancesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -546,6 +592,11 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcBlockPublicAccessExclusionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcClassicLinkDnsSupportRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -561,6 +612,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcEndpointAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcPeeringConnectionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -569,6 +625,12 @@
     <property>Amazon.EC2.Model.DescribeVpcsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DisassociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DisassociateNatGatewayAddressRequest.MaxDrainDurationSeconds</property>
@@ -701,6 +763,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetVerifiedAccessEndpointTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetVpnConnectionDeviceTypesRequest.MaxResults</property>
     <min>200</min>
     <max>1000</max>
@@ -806,6 +873,18 @@
     <pattern>^arn:aws([a-z-]+)?:ec2:[a-z\d-]+:\d{12}:placement-group/^.{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CapacityReservation.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CapacityReservationBillingRequest.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CoipPool.PoolArn</property>
     <min>1</min>
     <max>1283</max>
@@ -817,6 +896,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointLoadBalancerOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointPortRange.FromPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointPortRange.ToPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointRdsOptions.Port</property>
     <min>1</min>
     <max>65535</max>
   </property-value-rule>
@@ -1041,6 +1135,21 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointPortRange.FromPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointPortRange.ToPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointRdsOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.NetworkInsightsAccessScope.NetworkInsightsAccessScopeArn</property>
     <min>1</min>
     <max>1283</max>
@@ -1139,5 +1248,25 @@
     <property>Amazon.EC2.Model.VerifiedAccessEndpointLoadBalancerOptions.Port</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointPortRange.FromPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointPortRange.ToPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointRdsOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VpcBlockPublicAccessExclusion.ResourceArn</property>
+    <min>1</min>
+    <max>1283</max>
   </property-value-rule>
 </property-value-rules>

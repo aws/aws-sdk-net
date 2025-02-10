@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("CertificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetEndpointArn())
             {
                 context.Writer.WritePropertyName("EndpointArn");
-                context.Writer.Write(requestObject.EndpointArn);
+                context.Writer.WriteStringValue(requestObject.EndpointArn);
             }
 
             if(requestObject.IsSetEndpointIdentifier())
             {
                 context.Writer.WritePropertyName("EndpointIdentifier");
-                context.Writer.Write(requestObject.EndpointIdentifier);
+                context.Writer.WriteStringValue(requestObject.EndpointIdentifier);
             }
 
             if(requestObject.IsSetEndpointType())
             {
                 context.Writer.WritePropertyName("EndpointType");
-                context.Writer.Write(requestObject.EndpointType);
+                context.Writer.WriteStringValue(requestObject.EndpointType);
             }
 
             if(requestObject.IsSetEngineName())
             {
                 context.Writer.WritePropertyName("EngineName");
-                context.Writer.Write(requestObject.EngineName);
+                context.Writer.WriteStringValue(requestObject.EngineName);
             }
 
             if(requestObject.IsSetExternalId())
             {
                 context.Writer.WritePropertyName("ExternalId");
-                context.Writer.Write(requestObject.ExternalId);
+                context.Writer.WriteStringValue(requestObject.ExternalId);
             }
 
             if(requestObject.IsSetExtraConnectionAttributes())
             {
                 context.Writer.WritePropertyName("ExtraConnectionAttributes");
-                context.Writer.Write(requestObject.ExtraConnectionAttributes);
+                context.Writer.WriteStringValue(requestObject.ExtraConnectionAttributes);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetSslMode())
             {
                 context.Writer.WritePropertyName("SslMode");
-                context.Writer.Write(requestObject.SslMode);
+                context.Writer.WriteStringValue(requestObject.SslMode);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedDBInstance Object
     /// </summary>  
-    public class ReservedDBInstanceUnmarshaller : IUnmarshaller<ReservedDBInstance, XmlUnmarshallerContext>, IUnmarshaller<ReservedDBInstance, JsonUnmarshallerContext>
+    public class ReservedDBInstanceUnmarshaller : IXmlUnmarshaller<ReservedDBInstance, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -165,17 +165,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReservedDBInstance Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReservedDBInstanceUnmarshaller _instance = new ReservedDBInstanceUnmarshaller();        
 

@@ -745,6 +745,28 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListHookResultsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListHookResultsRequest.TargetId</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListHookResultsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListHookResultsResponse.TargetId</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListImportsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
@@ -1417,6 +1439,28 @@
     <min>1</min>
     <max>5120</max>
     <pattern>(s3://|http(s?)://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.HookResultSummary.HookStatusReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.HookResultSummary.TypeConfigurationVersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.HookResultSummary.TypeName</property>
+    <min>10</min>
+    <max>196</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.HookResultSummary.TypeVersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.LoggingConfig.LogGroupName</property>

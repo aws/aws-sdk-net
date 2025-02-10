@@ -34,6 +34,12 @@ namespace Amazon.CloudFormation.Model
     /// Deletes a specified stack. Once the call completes successfully, stack deletion starts.
     /// Deleted stacks don't show up in the <a>DescribeStacks</a> operation if the deletion
     /// has been completed successfully.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about deleting a stack, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html">Delete
+    /// a stack from the CloudFormation console</a> in the <i>CloudFormation User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteStackRequest : AmazonCloudFormationRequest
     {
@@ -137,9 +143,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
-        /// CloudFormation assumes to delete the stack. CloudFormation uses the role's credentials
-        /// to make calls on your behalf.
+        /// The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to delete
+        /// the stack. CloudFormation uses the role's credentials to make calls on your behalf.
         /// </para>
         ///  
         /// <para>

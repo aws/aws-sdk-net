@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomSql Object
     /// </summary>  
-    public class CustomSqlUnmarshaller : IUnmarshaller<CustomSql, XmlUnmarshallerContext>, IUnmarshaller<CustomSql, JsonUnmarshallerContext>
+    public class CustomSqlUnmarshaller : IJsonUnmarshaller<CustomSql, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomSql IUnmarshaller<CustomSql, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomSql Unmarshall(JsonUnmarshallerContext context)
+        public CustomSql Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomSql unmarshalledObject = new CustomSql();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Columns", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InputColumn, InputColumnUnmarshaller>(InputColumnUnmarshaller.Instance);
-                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InputColumn, InputColumnUnmarshaller>(InputColumnUnmarshaller.Instance);
+                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SqlQuery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SqlQuery = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SqlQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

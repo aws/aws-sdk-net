@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarkLatest())
             {
                 context.Writer.WritePropertyName("MarkLatest");
-                context.Writer.Write(requestObject.MarkLatest.Value);
+                context.Writer.WriteBooleanValue(requestObject.MarkLatest.Value);
             }
 
             if(requestObject.IsSetPackageName())
             {
                 context.Writer.WritePropertyName("PackageName");
-                context.Writer.Write(requestObject.PackageName);
+                context.Writer.WriteStringValue(requestObject.PackageName);
             }
 
             if(requestObject.IsSetPackageVersion())
             {
                 context.Writer.WritePropertyName("PackageVersion");
-                context.Writer.Write(requestObject.PackageVersion);
+                context.Writer.WriteStringValue(requestObject.PackageVersion);
             }
 
         }

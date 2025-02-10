@@ -74,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The (ARN) of the last user to update the parameter.
+        /// The Amazon Resource Name (ARN) of the parameter.
         /// </para>
         /// </summary>
         public string ARN

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ForwardActionConfig Object
     /// </summary>  
-    public class ForwardActionConfigUnmarshaller : IUnmarshaller<ForwardActionConfig, XmlUnmarshallerContext>, IUnmarshaller<ForwardActionConfig, JsonUnmarshallerContext>
+    public class ForwardActionConfigUnmarshaller : IXmlUnmarshaller<ForwardActionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ForwardActionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ForwardActionConfigUnmarshaller _instance = new ForwardActionConfigUnmarshaller();        
 

@@ -53,6 +53,12 @@ namespace Amazon.Kendra.Model
     /// identify source. You must create your index in the management account for the organization
     /// in order to use <c>UserGroupResolutionConfiguration</c>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, <c>UserGroupResolutionConfiguration</c>
+    /// isn't supported.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UserGroupResolutionConfiguration
     {

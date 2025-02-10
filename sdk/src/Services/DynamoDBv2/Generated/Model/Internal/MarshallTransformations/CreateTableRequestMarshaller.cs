@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,173 +66,189 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributeDefinitions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AttributeDefinitions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttributeDefinitionsListValue in publicRequest.AttributeDefinitions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributeDefinitions())
-                    {
-                        context.Writer.WritePropertyName("AttributeDefinitions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttributeDefinitionsListValue in publicRequest.AttributeDefinitions)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AttributeDefinitionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAttributeDefinitionsListValue, context);
+                    var marshaller = AttributeDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttributeDefinitionsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetBillingMode())
-                    {
-                        context.Writer.WritePropertyName("BillingMode");
-                        context.Writer.Write(publicRequest.BillingMode);
-                    }
-
-                    if(publicRequest.IsSetDeletionProtectionEnabled())
-                    {
-                        context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                        context.Writer.Write(publicRequest.DeletionProtectionEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetGlobalSecondaryIndexes())
-                    {
-                        context.Writer.WritePropertyName("GlobalSecondaryIndexes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGlobalSecondaryIndexesListValue in publicRequest.GlobalSecondaryIndexes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GlobalSecondaryIndexMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGlobalSecondaryIndexesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKeySchema())
-                    {
-                        context.Writer.WritePropertyName("KeySchema");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestKeySchemaListValue in publicRequest.KeySchema)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = KeySchemaElementMarshaller.Instance;
-                            marshaller.Marshall(publicRequestKeySchemaListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLocalSecondaryIndexes())
-                    {
-                        context.Writer.WritePropertyName("LocalSecondaryIndexes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLocalSecondaryIndexesListValue in publicRequest.LocalSecondaryIndexes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = LocalSecondaryIndexMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLocalSecondaryIndexesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOnDemandThroughput())
-                    {
-                        context.Writer.WritePropertyName("OnDemandThroughput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OnDemandThroughputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OnDemandThroughput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetProvisionedThroughput())
-                    {
-                        context.Writer.WritePropertyName("ProvisionedThroughput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProvisionedThroughputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourcePolicy())
-                    {
-                        context.Writer.WritePropertyName("ResourcePolicy");
-                        context.Writer.Write(publicRequest.ResourcePolicy);
-                    }
-
-                    if(publicRequest.IsSetSSESpecification())
-                    {
-                        context.Writer.WritePropertyName("SSESpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SSESpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SSESpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStreamSpecification())
-                    {
-                        context.Writer.WritePropertyName("StreamSpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StreamSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StreamSpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTableClass())
-                    {
-                        context.Writer.WritePropertyName("TableClass");
-                        context.Writer.Write(publicRequest.TableClass);
-                    }
-
-                    if(publicRequest.IsSetTableName())
-                    {
-                        context.Writer.WritePropertyName("TableName");
-                        context.Writer.Write(publicRequest.TableName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetBillingMode())
+            {
+                context.Writer.WritePropertyName("BillingMode");
+                context.Writer.WriteStringValue(publicRequest.BillingMode);
+            }
+
+            if(publicRequest.IsSetDeletionProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
+            }
+
+            if(publicRequest.IsSetGlobalSecondaryIndexes())
+            {
+                context.Writer.WritePropertyName("GlobalSecondaryIndexes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGlobalSecondaryIndexesListValue in publicRequest.GlobalSecondaryIndexes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GlobalSecondaryIndexMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGlobalSecondaryIndexesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetKeySchema())
+            {
+                context.Writer.WritePropertyName("KeySchema");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestKeySchemaListValue in publicRequest.KeySchema)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = KeySchemaElementMarshaller.Instance;
+                    marshaller.Marshall(publicRequestKeySchemaListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLocalSecondaryIndexes())
+            {
+                context.Writer.WritePropertyName("LocalSecondaryIndexes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLocalSecondaryIndexesListValue in publicRequest.LocalSecondaryIndexes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = LocalSecondaryIndexMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLocalSecondaryIndexesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOnDemandThroughput())
+            {
+                context.Writer.WritePropertyName("OnDemandThroughput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnDemandThroughputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OnDemandThroughput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("ProvisionedThroughput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProvisionedThroughputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourcePolicy())
+            {
+                context.Writer.WritePropertyName("ResourcePolicy");
+                context.Writer.WriteStringValue(publicRequest.ResourcePolicy);
+            }
+
+            if(publicRequest.IsSetSSESpecification())
+            {
+                context.Writer.WritePropertyName("SSESpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SSESpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SSESpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStreamSpecification())
+            {
+                context.Writer.WritePropertyName("StreamSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTableClass())
+            {
+                context.Writer.WritePropertyName("TableClass");
+                context.Writer.WriteStringValue(publicRequest.TableClass);
+            }
+
+            if(publicRequest.IsSetTableName())
+            {
+                context.Writer.WritePropertyName("TableName");
+                context.Writer.WriteStringValue(publicRequest.TableName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWarmThroughput())
+            {
+                context.Writer.WritePropertyName("WarmThroughput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WarmThroughputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WarmThroughput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

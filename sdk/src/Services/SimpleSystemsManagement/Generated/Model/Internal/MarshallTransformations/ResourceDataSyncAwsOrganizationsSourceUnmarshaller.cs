@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceDataSyncAwsOrganizationsSource Object
     /// </summary>  
-    public class ResourceDataSyncAwsOrganizationsSourceUnmarshaller : IUnmarshaller<ResourceDataSyncAwsOrganizationsSource, XmlUnmarshallerContext>, IUnmarshaller<ResourceDataSyncAwsOrganizationsSource, JsonUnmarshallerContext>
+    public class ResourceDataSyncAwsOrganizationsSourceUnmarshaller : IJsonUnmarshaller<ResourceDataSyncAwsOrganizationsSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceDataSyncAwsOrganizationsSource IUnmarshaller<ResourceDataSyncAwsOrganizationsSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceDataSyncAwsOrganizationsSource Unmarshall(JsonUnmarshallerContext context)
+        public ResourceDataSyncAwsOrganizationsSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceDataSyncAwsOrganizationsSource unmarshalledObject = new ResourceDataSyncAwsOrganizationsSource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("OrganizationalUnits", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResourceDataSyncOrganizationalUnit, ResourceDataSyncOrganizationalUnitUnmarshaller>(ResourceDataSyncOrganizationalUnitUnmarshaller.Instance);
-                    unmarshalledObject.OrganizationalUnits = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResourceDataSyncOrganizationalUnit, ResourceDataSyncOrganizationalUnitUnmarshaller>(ResourceDataSyncOrganizationalUnitUnmarshaller.Instance);
+                    unmarshalledObject.OrganizationalUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationSourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationSourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationSourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

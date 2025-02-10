@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppSKey())
             {
                 context.Writer.WritePropertyName("AppSKey");
-                context.Writer.Write(requestObject.AppSKey);
+                context.Writer.WriteStringValue(requestObject.AppSKey);
             }
 
             if(requestObject.IsSetNwkSKey())
             {
                 context.Writer.WritePropertyName("NwkSKey");
-                context.Writer.Write(requestObject.NwkSKey);
+                context.Writer.WriteStringValue(requestObject.NwkSKey);
             }
 
         }

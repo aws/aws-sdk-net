@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,45 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncoderConfigurationArns())
             {
                 context.Writer.WritePropertyName("encoderConfigurationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEncoderConfigurationArnsListValue in requestObject.EncoderConfigurationArns)
                 {
-                        context.Writer.Write(requestObjectEncoderConfigurationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectEncoderConfigurationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecordingConfiguration())
             {
                 context.Writer.WritePropertyName("recordingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageConfigurationArn())
             {
                 context.Writer.WritePropertyName("storageConfigurationArn");
-                context.Writer.Write(requestObject.StorageConfigurationArn);
+                context.Writer.WriteStringValue(requestObject.StorageConfigurationArn);
+            }
+
+            if(requestObject.IsSetThumbnailConfigurations())
+            {
+                context.Writer.WritePropertyName("thumbnailConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectThumbnailConfigurationsListValue in requestObject.ThumbnailConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CompositionThumbnailConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectThumbnailConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }

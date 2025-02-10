@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RdsCustomClusterConfiguration Object
     /// </summary>  
-    public class RdsCustomClusterConfigurationUnmarshaller : IUnmarshaller<RdsCustomClusterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RdsCustomClusterConfiguration, JsonUnmarshallerContext>
+    public class RdsCustomClusterConfigurationUnmarshaller : IXmlUnmarshaller<RdsCustomClusterConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RdsCustomClusterConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RdsCustomClusterConfigurationUnmarshaller _instance = new RdsCustomClusterConfigurationUnmarshaller();        
 

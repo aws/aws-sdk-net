@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientContext())
             {
                 context.Writer.WritePropertyName("ClientContext");
-                context.Writer.Write(requestObject.ClientContext);
+                context.Writer.WriteStringValue(requestObject.ClientContext);
             }
 
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("Payload");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Payload));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Payload));
             }
 
             if(requestObject.IsSetQualifier())
             {
                 context.Writer.WritePropertyName("Qualifier");
-                context.Writer.Write(requestObject.Qualifier);
+                context.Writer.WriteStringValue(requestObject.Qualifier);
             }
 
         }

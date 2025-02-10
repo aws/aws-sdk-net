@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -64,81 +67,86 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 throw new AmazonOmicsException("Request object does not have required field SequenceStoreId set");
             request.AddPathResource("{sequenceStoreId}", StringUtils.FromString(publicRequest.SequenceStoreId));
             request.ResourcePath = "/sequencestore/{sequenceStoreId}/upload";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetGeneratedFrom())
-                    {
-                        context.Writer.WritePropertyName("generatedFrom");
-                        context.Writer.Write(publicRequest.GeneratedFrom);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetReferenceArn())
-                    {
-                        context.Writer.WritePropertyName("referenceArn");
-                        context.Writer.Write(publicRequest.ReferenceArn);
-                    }
-
-                    if(publicRequest.IsSetSampleId())
-                    {
-                        context.Writer.WritePropertyName("sampleId");
-                        context.Writer.Write(publicRequest.SampleId);
-                    }
-
-                    if(publicRequest.IsSetSourceFileType())
-                    {
-                        context.Writer.WritePropertyName("sourceFileType");
-                        context.Writer.Write(publicRequest.SourceFileType);
-                    }
-
-                    if(publicRequest.IsSetSubjectId())
-                    {
-                        context.Writer.WritePropertyName("subjectId");
-                        context.Writer.Write(publicRequest.SubjectId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetGeneratedFrom())
+            {
+                context.Writer.WritePropertyName("generatedFrom");
+                context.Writer.WriteStringValue(publicRequest.GeneratedFrom);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetReferenceArn())
+            {
+                context.Writer.WritePropertyName("referenceArn");
+                context.Writer.WriteStringValue(publicRequest.ReferenceArn);
+            }
+
+            if(publicRequest.IsSetSampleId())
+            {
+                context.Writer.WritePropertyName("sampleId");
+                context.Writer.WriteStringValue(publicRequest.SampleId);
+            }
+
+            if(publicRequest.IsSetSourceFileType())
+            {
+                context.Writer.WritePropertyName("sourceFileType");
+                context.Writer.WriteStringValue(publicRequest.SourceFileType);
+            }
+
+            if(publicRequest.IsSetSubjectId())
+            {
+                context.Writer.WritePropertyName("subjectId");
+                context.Writer.WriteStringValue(publicRequest.SubjectId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"control-storage-";

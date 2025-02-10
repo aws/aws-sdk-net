@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRescoreCapacityUnits())
             {
                 context.Writer.WritePropertyName("RescoreCapacityUnits");
-                context.Writer.Write(requestObject.RescoreCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.RescoreCapacityUnits.Value);
             }
 
         }

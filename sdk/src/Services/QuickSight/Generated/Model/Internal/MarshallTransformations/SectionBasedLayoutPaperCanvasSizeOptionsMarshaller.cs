@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPaperMargin())
             {
                 context.Writer.WritePropertyName("PaperMargin");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpacingMarshaller.Instance;
                 marshaller.Marshall(requestObject.PaperMargin, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPaperOrientation())
             {
                 context.Writer.WritePropertyName("PaperOrientation");
-                context.Writer.Write(requestObject.PaperOrientation);
+                context.Writer.WriteStringValue(requestObject.PaperOrientation);
             }
 
             if(requestObject.IsSetPaperSize())
             {
                 context.Writer.WritePropertyName("PaperSize");
-                context.Writer.Write(requestObject.PaperSize);
+                context.Writer.WriteStringValue(requestObject.PaperSize);
             }
 
         }

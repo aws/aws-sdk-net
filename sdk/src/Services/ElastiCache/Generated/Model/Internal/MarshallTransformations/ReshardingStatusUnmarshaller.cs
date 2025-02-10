@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReshardingStatus Object
     /// </summary>  
-    public class ReshardingStatusUnmarshaller : IUnmarshaller<ReshardingStatus, XmlUnmarshallerContext>, IUnmarshaller<ReshardingStatus, JsonUnmarshallerContext>
+    public class ReshardingStatusUnmarshaller : IXmlUnmarshaller<ReshardingStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReshardingStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReshardingStatusUnmarshaller _instance = new ReshardingStatusUnmarshaller();        
 

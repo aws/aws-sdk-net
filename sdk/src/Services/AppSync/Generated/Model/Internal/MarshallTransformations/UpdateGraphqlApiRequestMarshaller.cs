@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -64,138 +67,143 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v1/apis/{apiId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalAuthenticationProviders())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("additionalAuthenticationProviders");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalAuthenticationProvidersListValue in publicRequest.AdditionalAuthenticationProviders)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdditionalAuthenticationProviders())
-                    {
-                        context.Writer.WritePropertyName("additionalAuthenticationProviders");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalAuthenticationProvidersListValue in publicRequest.AdditionalAuthenticationProviders)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AdditionalAuthenticationProviderMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAdditionalAuthenticationProvidersListValue, context);
+                    var marshaller = AdditionalAuthenticationProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAdditionalAuthenticationProvidersListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthenticationType())
-                    {
-                        context.Writer.WritePropertyName("authenticationType");
-                        context.Writer.Write(publicRequest.AuthenticationType);
-                    }
-
-                    if(publicRequest.IsSetEnhancedMetricsConfig())
-                    {
-                        context.Writer.WritePropertyName("enhancedMetricsConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EnhancedMetricsConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EnhancedMetricsConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIntrospectionConfig())
-                    {
-                        context.Writer.WritePropertyName("introspectionConfig");
-                        context.Writer.Write(publicRequest.IntrospectionConfig);
-                    }
-
-                    if(publicRequest.IsSetLambdaAuthorizerConfig())
-                    {
-                        context.Writer.WritePropertyName("lambdaAuthorizerConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LambdaAuthorizerConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LambdaAuthorizerConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogConfig())
-                    {
-                        context.Writer.WritePropertyName("logConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMergedApiExecutionRoleArn())
-                    {
-                        context.Writer.WritePropertyName("mergedApiExecutionRoleArn");
-                        context.Writer.Write(publicRequest.MergedApiExecutionRoleArn);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOpenIDConnectConfig())
-                    {
-                        context.Writer.WritePropertyName("openIDConnectConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OpenIDConnectConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOwnerContact())
-                    {
-                        context.Writer.WritePropertyName("ownerContact");
-                        context.Writer.Write(publicRequest.OwnerContact);
-                    }
-
-                    if(publicRequest.IsSetQueryDepthLimit())
-                    {
-                        context.Writer.WritePropertyName("queryDepthLimit");
-                        context.Writer.Write(publicRequest.QueryDepthLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetResolverCountLimit())
-                    {
-                        context.Writer.WritePropertyName("resolverCountLimit");
-                        context.Writer.Write(publicRequest.ResolverCountLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetUserPoolConfig())
-                    {
-                        context.Writer.WritePropertyName("userPoolConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserPoolConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.UserPoolConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetXrayEnabled())
-                    {
-                        context.Writer.WritePropertyName("xrayEnabled");
-                        context.Writer.Write(publicRequest.XrayEnabled.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("authenticationType");
+                context.Writer.WriteStringValue(publicRequest.AuthenticationType);
+            }
+
+            if(publicRequest.IsSetEnhancedMetricsConfig())
+            {
+                context.Writer.WritePropertyName("enhancedMetricsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EnhancedMetricsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EnhancedMetricsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIntrospectionConfig())
+            {
+                context.Writer.WritePropertyName("introspectionConfig");
+                context.Writer.WriteStringValue(publicRequest.IntrospectionConfig);
+            }
+
+            if(publicRequest.IsSetLambdaAuthorizerConfig())
+            {
+                context.Writer.WritePropertyName("lambdaAuthorizerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LambdaAuthorizerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LambdaAuthorizerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLogConfig())
+            {
+                context.Writer.WritePropertyName("logConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMergedApiExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("mergedApiExecutionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.MergedApiExecutionRoleArn);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOpenIDConnectConfig())
+            {
+                context.Writer.WritePropertyName("openIDConnectConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpenIDConnectConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOwnerContact())
+            {
+                context.Writer.WritePropertyName("ownerContact");
+                context.Writer.WriteStringValue(publicRequest.OwnerContact);
+            }
+
+            if(publicRequest.IsSetQueryDepthLimit())
+            {
+                context.Writer.WritePropertyName("queryDepthLimit");
+                context.Writer.WriteNumberValue(publicRequest.QueryDepthLimit.Value);
+            }
+
+            if(publicRequest.IsSetResolverCountLimit())
+            {
+                context.Writer.WritePropertyName("resolverCountLimit");
+                context.Writer.WriteNumberValue(publicRequest.ResolverCountLimit.Value);
+            }
+
+            if(publicRequest.IsSetUserPoolConfig())
+            {
+                context.Writer.WritePropertyName("userPoolConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserPoolConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UserPoolConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetXrayEnabled())
+            {
+                context.Writer.WritePropertyName("xrayEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.XrayEnabled.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EndpointAuthorization Object
     /// </summary>  
-    public class EndpointAuthorizationUnmarshaller : IUnmarshaller<EndpointAuthorization, XmlUnmarshallerContext>, IUnmarshaller<EndpointAuthorization, JsonUnmarshallerContext>
+    public class EndpointAuthorizationUnmarshaller : IXmlUnmarshaller<EndpointAuthorization, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -123,17 +123,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EndpointAuthorization Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EndpointAuthorizationUnmarshaller _instance = new EndpointAuthorizationUnmarshaller();        
 

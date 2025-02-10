@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -64,59 +67,64 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/projects/{name}/sendProjectSessionAction";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientSessionId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientSessionId())
-                    {
-                        context.Writer.WritePropertyName("ClientSessionId");
-                        context.Writer.Write(publicRequest.ClientSessionId);
-                    }
-
-                    if(publicRequest.IsSetPreview())
-                    {
-                        context.Writer.WritePropertyName("Preview");
-                        context.Writer.Write(publicRequest.Preview.Value);
-                    }
-
-                    if(publicRequest.IsSetRecipeStep())
-                    {
-                        context.Writer.WritePropertyName("RecipeStep");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecipeStepMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RecipeStep, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStepIndex())
-                    {
-                        context.Writer.WritePropertyName("StepIndex");
-                        context.Writer.Write(publicRequest.StepIndex.Value);
-                    }
-
-                    if(publicRequest.IsSetViewFrame())
-                    {
-                        context.Writer.WritePropertyName("ViewFrame");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ViewFrameMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ViewFrame, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientSessionId");
+                context.Writer.WriteStringValue(publicRequest.ClientSessionId);
             }
+
+            if(publicRequest.IsSetPreview())
+            {
+                context.Writer.WritePropertyName("Preview");
+                context.Writer.WriteBooleanValue(publicRequest.Preview.Value);
+            }
+
+            if(publicRequest.IsSetRecipeStep())
+            {
+                context.Writer.WritePropertyName("RecipeStep");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecipeStepMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecipeStep, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStepIndex())
+            {
+                context.Writer.WritePropertyName("StepIndex");
+                context.Writer.WriteNumberValue(publicRequest.StepIndex.Value);
+            }
+
+            if(publicRequest.IsSetViewFrame())
+            {
+                context.Writer.WritePropertyName("ViewFrame");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ViewFrameMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ViewFrame, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

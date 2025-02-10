@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,111 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityEndDate())
             {
                 context.Writer.WritePropertyName("AvailabilityEndDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferAvailabilityEndDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvailabilityEndDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBuyerAccounts())
             {
                 context.Writer.WritePropertyName("BuyerAccounts");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferBuyerAccountsFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.BuyerAccounts, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferEntityIdFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastModifiedDate())
             {
                 context.Writer.WritePropertyName("LastModifiedDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferLastModifiedDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.LastModifiedDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferNameFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Name, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProductId())
             {
                 context.Writer.WritePropertyName("ProductId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferProductIdFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProductId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReleaseDate())
             {
                 context.Writer.WritePropertyName("ReleaseDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferReleaseDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReleaseDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResaleAuthorizationId())
             {
                 context.Writer.WritePropertyName("ResaleAuthorizationId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferResaleAuthorizationIdFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResaleAuthorizationId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferStateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.State, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargeting())
             {
                 context.Writer.WritePropertyName("Targeting");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferTargetingFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Targeting, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

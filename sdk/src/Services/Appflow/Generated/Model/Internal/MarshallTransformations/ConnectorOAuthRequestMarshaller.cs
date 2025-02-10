@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthCode())
             {
                 context.Writer.WritePropertyName("authCode");
-                context.Writer.Write(requestObject.AuthCode);
+                context.Writer.WriteStringValue(requestObject.AuthCode);
             }
 
             if(requestObject.IsSetRedirectUri())
             {
                 context.Writer.WritePropertyName("redirectUri");
-                context.Writer.Write(requestObject.RedirectUri);
+                context.Writer.WriteStringValue(requestObject.RedirectUri);
             }
 
         }

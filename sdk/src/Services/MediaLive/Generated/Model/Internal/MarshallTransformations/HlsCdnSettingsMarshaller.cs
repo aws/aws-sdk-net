@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHlsAkamaiSettings())
             {
                 context.Writer.WritePropertyName("hlsAkamaiSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsAkamaiSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsAkamaiSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsBasicPutSettings())
             {
                 context.Writer.WritePropertyName("hlsBasicPutSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsBasicPutSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsBasicPutSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsMediaStoreSettings())
             {
                 context.Writer.WritePropertyName("hlsMediaStoreSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsMediaStoreSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsMediaStoreSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsS3Settings())
             {
                 context.Writer.WritePropertyName("hlsS3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsS3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsS3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsWebdavSettings())
             {
                 context.Writer.WritePropertyName("hlsWebdavSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsWebdavSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsWebdavSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

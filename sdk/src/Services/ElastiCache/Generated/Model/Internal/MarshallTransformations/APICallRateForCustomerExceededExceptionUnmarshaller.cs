@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for APICallRateForCustomerExceededException operation
     /// </summary>  
-    public class APICallRateForCustomerExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<APICallRateForCustomerExceededException, XmlUnmarshallerContext>
+    public class APICallRateForCustomerExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<APICallRateForCustomerExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

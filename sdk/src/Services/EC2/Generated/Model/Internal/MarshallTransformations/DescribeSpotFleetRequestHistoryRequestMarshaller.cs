@@ -75,9 +75,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SpotFleetRequestId", StringUtils.FromString(publicRequest.SpotFleetRequestId));
                 }
-                if(publicRequest.IsSetStartTimeUtc())
+                if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc(publicRequest.StartTimeUtc));
+                    request.Parameters.Add("StartTime", Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs(publicRequest.StartTime));
                 }
             }
             return request;

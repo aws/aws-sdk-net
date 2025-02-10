@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackTestWindowOffset())
             {
                 context.Writer.WritePropertyName("BackTestWindowOffset");
-                context.Writer.Write(requestObject.BackTestWindowOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.BackTestWindowOffset.Value);
             }
 
             if(requestObject.IsSetNumberOfBacktestWindows())
             {
                 context.Writer.WritePropertyName("NumberOfBacktestWindows");
-                context.Writer.Write(requestObject.NumberOfBacktestWindows.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfBacktestWindows.Value);
             }
 
         }

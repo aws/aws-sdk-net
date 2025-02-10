@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChildren())
             {
                 context.Writer.WritePropertyName("children");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChildrenListValue in requestObject.Children)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentChildMarshaller.Instance;
                     marshaller.Marshall(requestObjectChildrenListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("componentType");
-                context.Writer.Write(requestObject.ComponentType);
+                context.Writer.WriteStringValue(requestObject.ComponentType);
             }
 
             if(requestObject.IsSetEvents())
             {
                 context.Writer.WritePropertyName("events");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEventsKvp in requestObject.Events)
                 {
                     context.Writer.WritePropertyName(requestObjectEventsKvp.Key);
                     var requestObjectEventsValue = requestObjectEventsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentEventMarshaller.Instance;
                     marshaller.Marshall(requestObjectEventsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPropertiesKvp in requestObject.Properties)
                 {
                     context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
                     var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectPropertiesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceId())
             {
                 context.Writer.WritePropertyName("sourceId");
-                context.Writer.Write(requestObject.SourceId);
+                context.Writer.WriteStringValue(requestObject.SourceId);
             }
 
         }

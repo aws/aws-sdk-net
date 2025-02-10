@@ -19,6 +19,8 @@ using System.Linq;
 
 using Amazon.DynamoDBv2.Model;
 using System.Globalization;
+using Amazon.Runtime.Telemetry.Tracing;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -175,9 +177,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// <summary>
     /// Search response object
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public partial class Search : ISearch
     {
         #region Internal constructors
@@ -191,6 +190,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             SearchMethod = searchMethod;
             Reset();
+            TracerProvider = SourceTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+               ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -269,6 +270,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
 
         #region Private/internal members
+
+        internal TracerProvider TracerProvider { get; private set; }
 
         internal List<Document> GetNextSetHelper()
         {

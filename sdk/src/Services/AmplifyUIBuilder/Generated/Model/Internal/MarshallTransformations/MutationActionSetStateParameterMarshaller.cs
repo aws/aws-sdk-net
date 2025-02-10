@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");
-                context.Writer.Write(requestObject.ComponentName);
+                context.Writer.WriteStringValue(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetProperty())
             {
                 context.Writer.WritePropertyName("property");
-                context.Writer.Write(requestObject.Property);
+                context.Writer.WriteStringValue(requestObject.Property);
             }
 
             if(requestObject.IsSetSet())
             {
                 context.Writer.WritePropertyName("set");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Set, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

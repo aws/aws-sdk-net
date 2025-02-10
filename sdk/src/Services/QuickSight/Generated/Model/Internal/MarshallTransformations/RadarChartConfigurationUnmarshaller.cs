@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RadarChartConfiguration Object
     /// </summary>  
-    public class RadarChartConfigurationUnmarshaller : IUnmarshaller<RadarChartConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RadarChartConfiguration, JsonUnmarshallerContext>
+    public class RadarChartConfigurationUnmarshaller : IJsonUnmarshaller<RadarChartConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RadarChartConfiguration IUnmarshaller<RadarChartConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RadarChartConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public RadarChartConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RadarChartConfiguration unmarshalledObject = new RadarChartConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AlternateBandColorsVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlternateBandColorsVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlternateBandColorsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AlternateBandEvenColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlternateBandEvenColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlternateBandEvenColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AlternateBandOddColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlternateBandOddColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AlternateBandOddColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AxesRangeScale", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AxesRangeScale = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AxesRangeScale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaseSeriesSettings", targetDepth))
                 {
                     var unmarshaller = RadarChartSeriesSettingsUnmarshaller.Instance;
-                    unmarshalledObject.BaseSeriesSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseSeriesSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CategoryAxis", targetDepth))
                 {
                     var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CategoryAxis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CategoryLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.CategoryLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColorAxis", targetDepth))
                 {
                     var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ColorAxis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColorLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ColorLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldWells", targetDepth))
                 {
                     var unmarshaller = RadarChartFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Interactions", targetDepth))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Legend", targetDepth))
                 {
                     var unmarshaller = LegendOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Legend = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Legend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Shape", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Shape = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Shape = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortConfiguration", targetDepth))
                 {
                     var unmarshaller = RadarChartSortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartAngle", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.StartAngle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartAngle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VisualPalette", targetDepth))
                 {
                     var unmarshaller = VisualPaletteUnmarshaller.Instance;
-                    unmarshalledObject.VisualPalette = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VisualPalette = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

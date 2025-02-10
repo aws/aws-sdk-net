@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromProcStep())
             {
                 context.Writer.WritePropertyName("fromProcStep");
-                context.Writer.Write(requestObject.FromProcStep);
+                context.Writer.WriteStringValue(requestObject.FromProcStep);
             }
 
             if(requestObject.IsSetFromStep())
             {
                 context.Writer.WritePropertyName("fromStep");
-                context.Writer.Write(requestObject.FromStep);
+                context.Writer.WriteStringValue(requestObject.FromStep);
             }
 
             if(requestObject.IsSetToProcStep())
             {
                 context.Writer.WritePropertyName("toProcStep");
-                context.Writer.Write(requestObject.ToProcStep);
+                context.Writer.WriteStringValue(requestObject.ToProcStep);
             }
 
             if(requestObject.IsSetToStep())
             {
                 context.Writer.WritePropertyName("toStep");
-                context.Writer.Write(requestObject.ToStep);
+                context.Writer.WriteStringValue(requestObject.ToStep);
             }
 
         }

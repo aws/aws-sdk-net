@@ -31,7 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeResourceServer operation.
-    /// Describes a resource server.
+    /// Describes a resource server. For more information about resource servers, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access
+    /// control with resource servers</a>.
     /// </summary>
     public partial class DescribeResourceServerRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -67,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool that hosts the resource server.
+        /// The ID of the user pool that hosts the resource server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

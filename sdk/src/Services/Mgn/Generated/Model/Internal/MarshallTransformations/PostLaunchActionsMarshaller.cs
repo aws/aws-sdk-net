@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogGroupName())
             {
                 context.Writer.WritePropertyName("cloudWatchLogGroupName");
-                context.Writer.Write(requestObject.CloudWatchLogGroupName);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogGroupName);
             }
 
             if(requestObject.IsSetDeployment())
             {
                 context.Writer.WritePropertyName("deployment");
-                context.Writer.Write(requestObject.Deployment);
+                context.Writer.WriteStringValue(requestObject.Deployment);
             }
 
             if(requestObject.IsSetS3LogBucket())
             {
                 context.Writer.WritePropertyName("s3LogBucket");
-                context.Writer.Write(requestObject.S3LogBucket);
+                context.Writer.WriteStringValue(requestObject.S3LogBucket);
             }
 
             if(requestObject.IsSetS3OutputKeyPrefix())
             {
                 context.Writer.WritePropertyName("s3OutputKeyPrefix");
-                context.Writer.Write(requestObject.S3OutputKeyPrefix);
+                context.Writer.WriteStringValue(requestObject.S3OutputKeyPrefix);
             }
 
             if(requestObject.IsSetSsmDocuments())
             {
                 context.Writer.WritePropertyName("ssmDocuments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSsmDocumentsListValue in requestObject.SsmDocuments)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SsmDocumentMarshaller.Instance;
                     marshaller.Marshall(requestObjectSsmDocumentsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

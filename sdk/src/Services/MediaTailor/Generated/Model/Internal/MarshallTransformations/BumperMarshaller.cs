@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndUrl())
             {
                 context.Writer.WritePropertyName("EndUrl");
-                context.Writer.Write(requestObject.EndUrl);
+                context.Writer.WriteStringValue(requestObject.EndUrl);
             }
 
             if(requestObject.IsSetStartUrl())
             {
                 context.Writer.WritePropertyName("StartUrl");
-                context.Writer.Write(requestObject.StartUrl);
+                context.Writer.WriteStringValue(requestObject.StartUrl);
             }
 
         }

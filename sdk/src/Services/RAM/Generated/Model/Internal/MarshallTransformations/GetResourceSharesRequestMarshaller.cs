@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
@@ -61,88 +64,93 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getresourceshares";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaxResults())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetPermissionArn())
-                    {
-                        context.Writer.WritePropertyName("permissionArn");
-                        context.Writer.Write(publicRequest.PermissionArn);
-                    }
-
-                    if(publicRequest.IsSetPermissionVersion())
-                    {
-                        context.Writer.WritePropertyName("permissionVersion");
-                        context.Writer.Write(publicRequest.PermissionVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetResourceOwner())
-                    {
-                        context.Writer.WritePropertyName("resourceOwner");
-                        context.Writer.Write(publicRequest.ResourceOwner);
-                    }
-
-                    if(publicRequest.IsSetResourceShareArns())
-                    {
-                        context.Writer.WritePropertyName("resourceShareArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
-                        {
-                                context.Writer.Write(publicRequestResourceShareArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceShareStatus())
-                    {
-                        context.Writer.WritePropertyName("resourceShareStatus");
-                        context.Writer.Write(publicRequest.ResourceShareStatus);
-                    }
-
-                    if(publicRequest.IsSetTagFilters())
-                    {
-                        context.Writer.WritePropertyName("tagFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetPermissionArn())
+            {
+                context.Writer.WritePropertyName("permissionArn");
+                context.Writer.WriteStringValue(publicRequest.PermissionArn);
+            }
+
+            if(publicRequest.IsSetPermissionVersion())
+            {
+                context.Writer.WritePropertyName("permissionVersion");
+                context.Writer.WriteNumberValue(publicRequest.PermissionVersion.Value);
+            }
+
+            if(publicRequest.IsSetResourceOwner())
+            {
+                context.Writer.WritePropertyName("resourceOwner");
+                context.Writer.WriteStringValue(publicRequest.ResourceOwner);
+            }
+
+            if(publicRequest.IsSetResourceShareArns())
+            {
+                context.Writer.WritePropertyName("resourceShareArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceShareArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceShareStatus())
+            {
+                context.Writer.WritePropertyName("resourceShareStatus");
+                context.Writer.WriteStringValue(publicRequest.ResourceShareStatus);
+            }
+
+            if(publicRequest.IsSetTagFilters())
+            {
+                context.Writer.WritePropertyName("tagFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagFiltersListValue in publicRequest.TagFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

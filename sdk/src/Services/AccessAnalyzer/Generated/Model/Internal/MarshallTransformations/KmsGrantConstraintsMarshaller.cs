@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionContextEquals())
             {
                 context.Writer.WritePropertyName("encryptionContextEquals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEncryptionContextEqualsKvp in requestObject.EncryptionContextEquals)
                 {
                     context.Writer.WritePropertyName(requestObjectEncryptionContextEqualsKvp.Key);
                     var requestObjectEncryptionContextEqualsValue = requestObjectEncryptionContextEqualsKvp.Value;
 
-                        context.Writer.Write(requestObjectEncryptionContextEqualsValue);
+                        context.Writer.WriteStringValue(requestObjectEncryptionContextEqualsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryptionContextSubset())
             {
                 context.Writer.WritePropertyName("encryptionContextSubset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEncryptionContextSubsetKvp in requestObject.EncryptionContextSubset)
                 {
                     context.Writer.WritePropertyName(requestObjectEncryptionContextSubsetKvp.Key);
                     var requestObjectEncryptionContextSubsetValue = requestObjectEncryptionContextSubsetKvp.Value;
 
-                        context.Writer.Write(requestObjectEncryptionContextSubsetValue);
+                        context.Writer.WriteStringValue(requestObjectEncryptionContextSubsetValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

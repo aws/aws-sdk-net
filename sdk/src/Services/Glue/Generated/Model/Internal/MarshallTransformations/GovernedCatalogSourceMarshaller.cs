@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalOptions())
             {
                 context.Writer.WritePropertyName("AdditionalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3SourceAdditionalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
+                context.Writer.WriteStringValue(requestObject.Database);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPartitionPredicate())
             {
                 context.Writer.WritePropertyName("PartitionPredicate");
-                context.Writer.Write(requestObject.PartitionPredicate);
+                context.Writer.WriteStringValue(requestObject.PartitionPredicate);
             }
 
             if(requestObject.IsSetTable())
             {
                 context.Writer.WritePropertyName("Table");
-                context.Writer.Write(requestObject.Table);
+                context.Writer.WriteStringValue(requestObject.Table);
             }
 
         }

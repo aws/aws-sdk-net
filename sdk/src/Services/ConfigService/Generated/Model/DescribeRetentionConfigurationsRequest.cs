@@ -32,7 +32,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DescribeRetentionConfigurations operation.
     /// Returns the details of one or more retention configurations. If the retention configuration
-    /// name is not specified, this action returns the details for all the retention configurations
+    /// name is not specified, this operation returns the details for all the retention configurations
     /// for that account.
     /// 
     ///  <note> 

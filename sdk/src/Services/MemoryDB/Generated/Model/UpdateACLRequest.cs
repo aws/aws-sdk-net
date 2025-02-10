@@ -42,7 +42,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ACLName. 
         /// <para>
-        /// The name of the Access Control List
+        /// The name of the Access Control List.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property UserNamesToAdd. 
         /// <para>
-        /// The list of users to add to the Access Control List
+        /// The list of users to add to the Access Control List.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -80,7 +80,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property UserNamesToRemove. 
         /// <para>
-        /// The list of users to remove from the Access Control List
+        /// The list of users to remove from the Access Control List.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

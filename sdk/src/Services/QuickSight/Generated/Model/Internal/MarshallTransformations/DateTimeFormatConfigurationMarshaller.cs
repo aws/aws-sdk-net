@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateTimeFormat())
             {
                 context.Writer.WritePropertyName("DateTimeFormat");
-                context.Writer.Write(requestObject.DateTimeFormat);
+                context.Writer.WriteStringValue(requestObject.DateTimeFormat);
             }
 
             if(requestObject.IsSetNullValueFormatConfiguration())
             {
                 context.Writer.WritePropertyName("NullValueFormatConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NullValueFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NullValueFormatConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumericFormatConfiguration())
             {
                 context.Writer.WritePropertyName("NumericFormatConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericFormatConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

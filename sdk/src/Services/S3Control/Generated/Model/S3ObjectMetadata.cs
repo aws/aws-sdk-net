@@ -198,12 +198,19 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SSEAlgorithm.  <note> 
+        /// Gets and sets the property SSEAlgorithm. 
         /// <para>
-        /// For directory buckets, only the server-side encryption with Amazon S3 managed keys
-        /// (SSE-S3) (<c>AES256</c>) is supported.
+        /// The server-side encryption algorithm used when storing objects in Amazon S3.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
+        /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
+        /// (<c>AES256</c>) and server-side encryption with KMS keys (SSE-KMS) (<c>KMS</c>). For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html">Protecting
+        /// data with server-side encryption</a> in the <i>Amazon S3 User Guide</i>. For <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-objects-Batch-Ops">the
+        /// Copy operation in Batch Operations</a>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_S3CopyObjectOperation.html">S3CopyObjectOperation</a>.
+        /// </para>
         /// </summary>
         public S3SSEAlgorithm SSEAlgorithm
         {

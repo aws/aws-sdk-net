@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsWafRegionalRateBasedRuleDetails Object
     /// </summary>  
-    public class AwsWafRegionalRateBasedRuleDetailsUnmarshaller : IUnmarshaller<AwsWafRegionalRateBasedRuleDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsWafRegionalRateBasedRuleDetails, JsonUnmarshallerContext>
+    public class AwsWafRegionalRateBasedRuleDetailsUnmarshaller : IJsonUnmarshaller<AwsWafRegionalRateBasedRuleDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsWafRegionalRateBasedRuleDetails IUnmarshaller<AwsWafRegionalRateBasedRuleDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsWafRegionalRateBasedRuleDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsWafRegionalRateBasedRuleDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsWafRegionalRateBasedRuleDetails unmarshalledObject = new AwsWafRegionalRateBasedRuleDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MatchPredicates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsWafRegionalRateBasedRuleMatchPredicate, AwsWafRegionalRateBasedRuleMatchPredicateUnmarshaller>(AwsWafRegionalRateBasedRuleMatchPredicateUnmarshaller.Instance);
-                    unmarshalledObject.MatchPredicates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsWafRegionalRateBasedRuleMatchPredicate, AwsWafRegionalRateBasedRuleMatchPredicateUnmarshaller>(AwsWafRegionalRateBasedRuleMatchPredicateUnmarshaller.Instance);
+                    unmarshalledObject.MatchPredicates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RateKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RateKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RateKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RateLimit", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RateLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RateLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

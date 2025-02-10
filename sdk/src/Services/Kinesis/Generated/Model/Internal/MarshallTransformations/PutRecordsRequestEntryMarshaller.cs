@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Data));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Data));
             }
 
             if(requestObject.IsSetExplicitHashKey())
             {
                 context.Writer.WritePropertyName("ExplicitHashKey");
-                context.Writer.Write(requestObject.ExplicitHashKey);
+                context.Writer.WriteStringValue(requestObject.ExplicitHashKey);
             }
 
             if(requestObject.IsSetPartitionKey())
             {
                 context.Writer.WritePropertyName("PartitionKey");
-                context.Writer.Write(requestObject.PartitionKey);
+                context.Writer.WriteStringValue(requestObject.PartitionKey);
             }
 
         }

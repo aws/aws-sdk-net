@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
     /// fail to launch. You can see the network border group for the subnet's AZ by viewing
     /// the details of the subnet. Similarly, you can view the network border group of an
     /// EIP by viewing the details of the EIP address. For more information about network
-    /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+    /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
     /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
     /// </para>
     ///  </important>
@@ -163,7 +163,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryAllocationIds. 
         /// <para>
-        /// Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// Secondary EIP allocation IDs. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
         /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
@@ -184,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// [Private NAT gateway only] The number of secondary private IPv4 addresses you want
         /// to assign to the NAT gateway. For more information about secondary addresses, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
         /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
@@ -205,7 +205,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecondaryPrivateIpAddresses. 
         /// <para>
         /// Secondary private IPv4 addresses. For more information about secondary addresses,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-creating">Create
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Create
         /// a NAT gateway</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>

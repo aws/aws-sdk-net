@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttendeeIds())
             {
                 context.Writer.WritePropertyName("AttendeeIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttendeeIdsListValue in requestObject.AttendeeIds)
                 {
-                        context.Writer.Write(requestObjectAttendeeIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAttendeeIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExternalUserIds())
             {
                 context.Writer.WritePropertyName("ExternalUserIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExternalUserIdsListValue in requestObject.ExternalUserIds)
                 {
-                        context.Writer.Write(requestObjectExternalUserIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectExternalUserIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

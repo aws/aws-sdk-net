@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDistributorId())
             {
                 context.Writer.WritePropertyName("distributorId");
-                context.Writer.Write(requestObject.DistributorId);
+                context.Writer.WriteStringValue(requestObject.DistributorId);
             }
 
             if(requestObject.IsSetNielsenPcmToId3Tagging())
             {
                 context.Writer.WritePropertyName("nielsenPcmToId3Tagging");
-                context.Writer.Write(requestObject.NielsenPcmToId3Tagging);
+                context.Writer.WriteStringValue(requestObject.NielsenPcmToId3Tagging);
             }
 
         }

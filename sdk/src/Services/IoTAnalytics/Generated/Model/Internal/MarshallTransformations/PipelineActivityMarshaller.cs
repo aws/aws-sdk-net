@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,111 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddAttributes())
             {
                 context.Writer.WritePropertyName("addAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddAttributesActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("channel");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChannelActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Channel, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatastore())
             {
                 context.Writer.WritePropertyName("datastore");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatastoreActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Datastore, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceRegistryEnrich())
             {
                 context.Writer.WritePropertyName("deviceRegistryEnrich");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeviceRegistryEnrichActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeviceRegistryEnrich, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceShadowEnrich())
             {
                 context.Writer.WritePropertyName("deviceShadowEnrich");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeviceShadowEnrichActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeviceShadowEnrich, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Filter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lambda, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMath())
             {
                 context.Writer.WritePropertyName("math");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MathActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Math, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRemoveAttributes())
             {
                 context.Writer.WritePropertyName("removeAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RemoveAttributesActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemoveAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectAttributes())
             {
                 context.Writer.WritePropertyName("selectAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelectAttributesActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelectAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

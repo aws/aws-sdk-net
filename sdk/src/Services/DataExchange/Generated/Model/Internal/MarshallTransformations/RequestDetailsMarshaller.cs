@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateS3DataAccessFromS3Bucket())
             {
                 context.Writer.WritePropertyName("CreateS3DataAccessFromS3Bucket");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateS3DataAccessFromS3BucketRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateS3DataAccessFromS3Bucket, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportAssetsToS3())
             {
                 context.Writer.WritePropertyName("ExportAssetsToS3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportAssetsToS3RequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportAssetsToS3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportAssetToSignedUrl())
             {
                 context.Writer.WritePropertyName("ExportAssetToSignedUrl");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportAssetToSignedUrlRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportAssetToSignedUrl, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportRevisionsToS3())
             {
                 context.Writer.WritePropertyName("ExportRevisionsToS3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportRevisionsToS3RequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportRevisionsToS3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImportAssetFromApiGatewayApi())
             {
                 context.Writer.WritePropertyName("ImportAssetFromApiGatewayApi");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportAssetFromApiGatewayApiRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetFromApiGatewayApi, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImportAssetFromSignedUrl())
             {
                 context.Writer.WritePropertyName("ImportAssetFromSignedUrl");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportAssetFromSignedUrlRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetFromSignedUrl, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImportAssetsFromLakeFormationTagPolicy())
             {
                 context.Writer.WritePropertyName("ImportAssetsFromLakeFormationTagPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportAssetsFromLakeFormationTagPolicyRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetsFromLakeFormationTagPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImportAssetsFromRedshiftDataShares())
             {
                 context.Writer.WritePropertyName("ImportAssetsFromRedshiftDataShares");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportAssetsFromRedshiftDataSharesRequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetsFromRedshiftDataShares, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImportAssetsFromS3())
             {
                 context.Writer.WritePropertyName("ImportAssetsFromS3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImportAssetsFromS3RequestDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImportAssetsFromS3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

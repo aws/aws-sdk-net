@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Insights Object
     /// </summary>  
-    public class InsightsUnmarshaller : IUnmarshaller<Insights, XmlUnmarshallerContext>, IUnmarshaller<Insights, JsonUnmarshallerContext>
+    public class InsightsUnmarshaller : IJsonUnmarshaller<Insights, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Insights IUnmarshaller<Insights, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Insights Unmarshall(JsonUnmarshallerContext context)
+        public Insights Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Insights unmarshalledObject = new Insights();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeAssessmentsCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveAssessmentsCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveAssessmentsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assessmentControlsCountByNoncompliantEvidence", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AssessmentControlsCountByNoncompliantEvidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssessmentControlsCountByNoncompliantEvidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("compliantEvidenceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantEvidenceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inconclusiveEvidenceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InconclusiveEvidenceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InconclusiveEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdated", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("noncompliantEvidenceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NoncompliantEvidenceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NoncompliantEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalAssessmentControlsCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalAssessmentControlsCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalAssessmentControlsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SpotFleetRequestConfigData Object
     /// </summary>  
-    public class SpotFleetRequestConfigDataUnmarshaller : IUnmarshaller<SpotFleetRequestConfigData, XmlUnmarshallerContext>, IUnmarshaller<SpotFleetRequestConfigData, JsonUnmarshallerContext>
+    public class SpotFleetRequestConfigDataUnmarshaller : IXmlUnmarshaller<SpotFleetRequestConfigData, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -217,13 +217,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("validFrom", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.ValidFromUtc = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ValidFrom = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("validUntil", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.ValidUntilUtc = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -235,17 +235,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SpotFleetRequestConfigData Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SpotFleetRequestConfigDataUnmarshaller _instance = new SpotFleetRequestConfigDataUnmarshaller();        
 

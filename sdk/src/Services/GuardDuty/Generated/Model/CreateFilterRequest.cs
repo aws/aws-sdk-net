@@ -113,6 +113,12 @@ namespace Amazon.GuardDuty.Model
         /// The detector ID associated with the GuardDuty account for which you want to create
         /// a filter.
         /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId
@@ -168,12 +174,16 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>High</b>: <c>["7", "8", "9"]</c> 
+        ///  <b>High</b>: <c>["7", "8"]</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Critical</b>: <c>["9", "10"]</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity">Severity
-        /// levels for GuardDuty findings</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
+        /// severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

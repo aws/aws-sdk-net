@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KeyAttributes Object
     /// </summary>  
-    public class KeyAttributesUnmarshaller : IUnmarshaller<KeyAttributes, XmlUnmarshallerContext>, IUnmarshaller<KeyAttributes, JsonUnmarshallerContext>
+    public class KeyAttributesUnmarshaller : IJsonUnmarshaller<KeyAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KeyAttributes IUnmarshaller<KeyAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KeyAttributes Unmarshall(JsonUnmarshallerContext context)
+        public KeyAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KeyAttributes unmarshalledObject = new KeyAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("KeyAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyModesOfUse", targetDepth))
                 {
                     var unmarshaller = KeyModesOfUseUnmarshaller.Instance;
-                    unmarshalledObject.KeyModesOfUse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyModesOfUse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyUsage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

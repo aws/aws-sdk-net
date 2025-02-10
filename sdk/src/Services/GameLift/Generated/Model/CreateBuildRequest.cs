@@ -101,8 +101,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label associated with a build. Build names don't need to be unique.
-        /// You can change this value later. 
+        /// A descriptive label that is associated with a build. Build names do not need to be
+        /// unique. You can change this value later. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -229,8 +229,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information associated with a build or script. Version strings don't need
-        /// to be unique. You can change this value later. 
+        /// Version information that is associated with a build or script. Version strings do
+        /// not need to be unique. You can change this value later. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

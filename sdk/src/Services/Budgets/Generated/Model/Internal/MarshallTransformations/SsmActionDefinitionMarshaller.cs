@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionSubType())
             {
                 context.Writer.WritePropertyName("ActionSubType");
-                context.Writer.Write(requestObject.ActionSubType);
+                context.Writer.WriteStringValue(requestObject.ActionSubType);
             }
 
             if(requestObject.IsSetInstanceIds())
             {
                 context.Writer.WritePropertyName("InstanceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceIdsListValue in requestObject.InstanceIds)
                 {
-                        context.Writer.Write(requestObjectInstanceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectInstanceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
         }

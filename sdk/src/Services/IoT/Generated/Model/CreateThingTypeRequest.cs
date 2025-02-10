@@ -31,7 +31,10 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateThingType operation.
-    /// Creates a new thing type.
+    /// Creates a new thing type. If this call is made multiple times using the same thing
+    /// type name and configuration, the call will succeed. If this call is made with the
+    /// same thing type name but different configuration a <c>ResourceAlreadyExistsException</c>
+    /// is thrown. 
     /// 
     ///  
     /// <para>

@@ -2995,6 +2995,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type CmafId3Behavior.
+    /// </summary>
+    public class CmafId3Behavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CmafId3Behavior
+        /// </summary>
+        public static readonly CmafId3Behavior DISABLED = new CmafId3Behavior("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CmafId3Behavior
+        /// </summary>
+        public static readonly CmafId3Behavior ENABLED = new CmafId3Behavior("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafId3Behavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafId3Behavior FindValue(string value)
+        {
+            return FindValue<CmafId3Behavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafId3Behavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmafIngestSegmentLengthUnits.
     /// </summary>
     public class CmafIngestSegmentLengthUnits : ConstantClass
@@ -3038,6 +3088,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmafIngestSegmentLengthUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmafKLVBehavior.
+    /// </summary>
+    public class CmafKLVBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PASSTHROUGH for CmafKLVBehavior
+        /// </summary>
+        public static readonly CmafKLVBehavior NO_PASSTHROUGH = new CmafKLVBehavior("NO_PASSTHROUGH");
+        /// <summary>
+        /// Constant PASSTHROUGH for CmafKLVBehavior
+        /// </summary>
+        public static readonly CmafKLVBehavior PASSTHROUGH = new CmafKLVBehavior("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmafKLVBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafKLVBehavior FindValue(string value)
+        {
+            return FindValue<CmafKLVBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafKLVBehavior(string value)
         {
             return FindValue(value);
         }
@@ -7342,6 +7442,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265ColorMetadata(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265Deblocking.
+    /// </summary>
+    public class H265Deblocking : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for H265Deblocking
+        /// </summary>
+        public static readonly H265Deblocking DISABLED = new H265Deblocking("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for H265Deblocking
+        /// </summary>
+        public static readonly H265Deblocking ENABLED = new H265Deblocking("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265Deblocking(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265Deblocking FindValue(string value)
+        {
+            return FindValue<H265Deblocking>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265Deblocking(string value)
         {
             return FindValue(value);
         }

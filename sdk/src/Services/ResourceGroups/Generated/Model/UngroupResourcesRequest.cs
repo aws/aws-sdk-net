@@ -58,7 +58,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name or the ARN of the resource group from which to remove the resources.
+        /// The name or the Amazon resource name (ARN) of the resource group from which to remove
+        /// the resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -77,7 +78,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The ARNs of the resources to be removed from the group.
+        /// The Amazon resource names (ARNs) of the resources to be removed from the group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

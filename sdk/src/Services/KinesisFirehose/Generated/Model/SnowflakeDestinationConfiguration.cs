@@ -112,7 +112,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ContentColumnName. 
         /// <para>
-        /// The name of the record content column
+        /// The name of the record content column.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]
@@ -191,7 +191,28 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property MetaDataColumnName. 
         /// <para>
-        /// The name of the record metadata column
+        /// Specify a column name in the table, where the metadata information has to be loaded.
+        /// When you enable this field, you will see the following column in the snowflake table,
+        /// which differs based on the source type.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Direct PUT as source 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{ "firehoseDeliveryStreamName" : "streamname", "IngestionTime" : "timestamp" }</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For Kinesis Data Stream as source 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> "kinesisStreamName" : "streamname", "kinesisShardId" : "Id", "kinesisPartitionKey"
+        /// : "key", "kinesisSequenceNumber" : "1234", "subsequenceNumber" : "2334", "IngestionTime"
+        /// : "timestamp" }</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]

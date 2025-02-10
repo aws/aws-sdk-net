@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MetricCharacteristics Object
     /// </summary>  
-    public class MetricCharacteristicsUnmarshaller : IUnmarshaller<MetricCharacteristics, XmlUnmarshallerContext>, IUnmarshaller<MetricCharacteristics, JsonUnmarshallerContext>
+    public class MetricCharacteristicsUnmarshaller : IXmlUnmarshaller<MetricCharacteristics, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MetricCharacteristics Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MetricCharacteristicsUnmarshaller _instance = new MetricCharacteristicsUnmarshaller();        
 

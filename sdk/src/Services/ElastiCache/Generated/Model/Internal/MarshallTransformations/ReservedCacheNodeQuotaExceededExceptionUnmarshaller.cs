@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedCacheNodeQuotaExceededException operation
     /// </summary>  
-    public class ReservedCacheNodeQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedCacheNodeQuotaExceededException, XmlUnmarshallerContext>
+    public class ReservedCacheNodeQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedCacheNodeQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

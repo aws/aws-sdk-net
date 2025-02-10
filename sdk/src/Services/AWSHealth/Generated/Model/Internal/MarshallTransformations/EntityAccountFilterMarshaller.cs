@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("awsAccountId");
-                context.Writer.Write(requestObject.AwsAccountId);
+                context.Writer.WriteStringValue(requestObject.AwsAccountId);
             }
 
             if(requestObject.IsSetEventArn())
             {
                 context.Writer.WritePropertyName("eventArn");
-                context.Writer.Write(requestObject.EventArn);
+                context.Writer.WriteStringValue(requestObject.EventArn);
             }
 
             if(requestObject.IsSetStatusCodes())
             {
                 context.Writer.WritePropertyName("statusCodes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusCodesListValue in requestObject.StatusCodes)
                 {
-                        context.Writer.Write(requestObjectStatusCodesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusCodesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

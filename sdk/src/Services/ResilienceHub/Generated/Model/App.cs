@@ -36,6 +36,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private AppAssessmentScheduleType _assessmentSchedule;
+        private string _awsApplicationArn;
         private AppComplianceStatusType _complianceStatus;
         private DateTime? _creationTime;
         private string _description;
@@ -95,6 +96,27 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsApplicationArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry
+        /// application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+        /// Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>
+        /// guide.
+        /// </para>
+        /// </summary>
+        public string AwsApplicationArn
+        {
+            get { return this._awsApplicationArn; }
+            set { this._awsApplicationArn = value; }
+        }
+
+        // Check to see if AwsApplicationArn property is set
+        internal bool IsSetAwsApplicationArn()
+        {
+            return this._awsApplicationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
         /// Current status of compliance for the resiliency policy.
@@ -115,7 +137,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Date and time when the app was created.
+        /// Date and time when the application was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

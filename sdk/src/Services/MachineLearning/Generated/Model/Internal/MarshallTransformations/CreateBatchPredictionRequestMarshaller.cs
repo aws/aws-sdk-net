@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -63,49 +66,54 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBatchPredictionDataSourceId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBatchPredictionDataSourceId())
-                    {
-                        context.Writer.WritePropertyName("BatchPredictionDataSourceId");
-                        context.Writer.Write(publicRequest.BatchPredictionDataSourceId);
-                    }
-
-                    if(publicRequest.IsSetBatchPredictionId())
-                    {
-                        context.Writer.WritePropertyName("BatchPredictionId");
-                        context.Writer.Write(publicRequest.BatchPredictionId);
-                    }
-
-                    if(publicRequest.IsSetBatchPredictionName())
-                    {
-                        context.Writer.WritePropertyName("BatchPredictionName");
-                        context.Writer.Write(publicRequest.BatchPredictionName);
-                    }
-
-                    if(publicRequest.IsSetMLModelId())
-                    {
-                        context.Writer.WritePropertyName("MLModelId");
-                        context.Writer.Write(publicRequest.MLModelId);
-                    }
-
-                    if(publicRequest.IsSetOutputUri())
-                    {
-                        context.Writer.WritePropertyName("OutputUri");
-                        context.Writer.Write(publicRequest.OutputUri);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("BatchPredictionDataSourceId");
+                context.Writer.WriteStringValue(publicRequest.BatchPredictionDataSourceId);
             }
+
+            if(publicRequest.IsSetBatchPredictionId())
+            {
+                context.Writer.WritePropertyName("BatchPredictionId");
+                context.Writer.WriteStringValue(publicRequest.BatchPredictionId);
+            }
+
+            if(publicRequest.IsSetBatchPredictionName())
+            {
+                context.Writer.WritePropertyName("BatchPredictionName");
+                context.Writer.WriteStringValue(publicRequest.BatchPredictionName);
+            }
+
+            if(publicRequest.IsSetMLModelId())
+            {
+                context.Writer.WritePropertyName("MLModelId");
+                context.Writer.WriteStringValue(publicRequest.MLModelId);
+            }
+
+            if(publicRequest.IsSetOutputUri())
+            {
+                context.Writer.WritePropertyName("OutputUri");
+                context.Writer.WriteStringValue(publicRequest.OutputUri);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

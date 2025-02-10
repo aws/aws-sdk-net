@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,59 +66,70 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetLogGroupNames())
-                    {
-                        context.Writer.WritePropertyName("logGroupNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
-                        {
-                                context.Writer.Write(publicRequestLogGroupNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetQueryDefinitionId())
-                    {
-                        context.Writer.WritePropertyName("queryDefinitionId");
-                        context.Writer.Write(publicRequest.QueryDefinitionId);
-                    }
-
-                    if(publicRequest.IsSetQueryString())
-                    {
-                        context.Writer.WritePropertyName("queryString");
-                        context.Writer.Write(publicRequest.QueryString);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetLogGroupNames())
+            {
+                context.Writer.WritePropertyName("logGroupNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestLogGroupNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetQueryDefinitionId())
+            {
+                context.Writer.WritePropertyName("queryDefinitionId");
+                context.Writer.WriteStringValue(publicRequest.QueryDefinitionId);
+            }
+
+            if(publicRequest.IsSetQueryLanguage())
+            {
+                context.Writer.WritePropertyName("queryLanguage");
+                context.Writer.WriteStringValue(publicRequest.QueryLanguage);
+            }
+
+            if(publicRequest.IsSetQueryString())
+            {
+                context.Writer.WritePropertyName("queryString");
+                context.Writer.WriteStringValue(publicRequest.QueryString);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

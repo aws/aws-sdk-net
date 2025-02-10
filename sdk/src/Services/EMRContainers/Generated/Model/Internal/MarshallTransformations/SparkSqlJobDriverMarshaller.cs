@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntryPoint())
             {
                 context.Writer.WritePropertyName("entryPoint");
-                context.Writer.Write(requestObject.EntryPoint);
+                context.Writer.WriteStringValue(requestObject.EntryPoint);
             }
 
             if(requestObject.IsSetSparkSqlParameters())
             {
                 context.Writer.WritePropertyName("sparkSqlParameters");
-                context.Writer.Write(requestObject.SparkSqlParameters);
+                context.Writer.WriteStringValue(requestObject.SparkSqlParameters);
             }
 
         }

@@ -39,6 +39,10 @@ namespace Amazon.CodePipeline
         /// </summary>
         public static readonly ActionCategory Build = new ActionCategory("Build");
         /// <summary>
+        /// Constant Compute for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory Compute = new ActionCategory("Compute");
+        /// <summary>
         /// Constant Deploy for ActionCategory
         /// </summary>
         public static readonly ActionCategory Deploy = new ActionCategory("Deploy");
@@ -1131,9 +1135,17 @@ namespace Amazon.CodePipeline
         /// </summary>
         public static readonly Result FAIL = new Result("FAIL");
         /// <summary>
+        /// Constant RETRY for Result
+        /// </summary>
+        public static readonly Result RETRY = new Result("RETRY");
+        /// <summary>
         /// Constant ROLLBACK for Result
         /// </summary>
         public static readonly Result ROLLBACK = new Result("ROLLBACK");
+        /// <summary>
+        /// Constant SKIP for Result
+        /// </summary>
+        public static readonly Result SKIP = new Result("SKIP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1164,6 +1176,56 @@ namespace Amazon.CodePipeline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Result(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetryTrigger.
+    /// </summary>
+    public class RetryTrigger : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutomatedStageRetry for RetryTrigger
+        /// </summary>
+        public static readonly RetryTrigger AutomatedStageRetry = new RetryTrigger("AutomatedStageRetry");
+        /// <summary>
+        /// Constant ManualStageRetry for RetryTrigger
+        /// </summary>
+        public static readonly RetryTrigger ManualStageRetry = new RetryTrigger("ManualStageRetry");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetryTrigger(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetryTrigger FindValue(string value)
+        {
+            return FindValue<RetryTrigger>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetryTrigger(string value)
         {
             return FindValue(value);
         }
@@ -1450,6 +1512,10 @@ namespace Amazon.CodePipeline
         /// Constant InProgress for StageExecutionStatus
         /// </summary>
         public static readonly StageExecutionStatus InProgress = new StageExecutionStatus("InProgress");
+        /// <summary>
+        /// Constant Skipped for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Skipped = new StageExecutionStatus("Skipped");
         /// <summary>
         /// Constant Stopped for StageExecutionStatus
         /// </summary>

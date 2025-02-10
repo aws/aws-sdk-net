@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputFilter())
             {
                 context.Writer.WritePropertyName("InputFilter");
-                context.Writer.Write(requestObject.InputFilter);
+                context.Writer.WriteStringValue(requestObject.InputFilter);
             }
 
             if(requestObject.IsSetJoinSource())
             {
                 context.Writer.WritePropertyName("JoinSource");
-                context.Writer.Write(requestObject.JoinSource);
+                context.Writer.WriteStringValue(requestObject.JoinSource);
             }
 
             if(requestObject.IsSetOutputFilter())
             {
                 context.Writer.WritePropertyName("OutputFilter");
-                context.Writer.Write(requestObject.OutputFilter);
+                context.Writer.WriteStringValue(requestObject.OutputFilter);
             }
 
         }

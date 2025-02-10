@@ -76,7 +76,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Redshift COPY command examples</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=204800)]
+        [AWSProperty(Min=0, Max=10240)]
         public string CopyOptions
         {
             get { return this._copyOptions; }
@@ -95,7 +95,7 @@ namespace Amazon.KinesisFirehose.Model
         /// A comma-separated list of column names.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=204800)]
+        [AWSProperty(Min=0, Max=10240)]
         public string DataTableColumns
         {
             get { return this._dataTableColumns; }

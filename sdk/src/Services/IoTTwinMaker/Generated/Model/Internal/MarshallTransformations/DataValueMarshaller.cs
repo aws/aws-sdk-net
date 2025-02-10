@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("booleanValue");
-                context.Writer.Write(requestObject.BooleanValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
@@ -59,82 +57,82 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("doubleValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.DoubleValue.Value);
                 }
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetIntegerValue())
             {
                 context.Writer.WritePropertyName("integerValue");
-                context.Writer.Write(requestObject.IntegerValue.Value);
+                context.Writer.WriteNumberValue(requestObject.IntegerValue.Value);
             }
 
             if(requestObject.IsSetListValue())
             {
                 context.Writer.WritePropertyName("listValue");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListValueListValue in requestObject.ListValue)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectListValueListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue.Value);
+                context.Writer.WriteNumberValue(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetMapValue())
             {
                 context.Writer.WritePropertyName("mapValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapValueKvp in requestObject.MapValue)
                 {
                     context.Writer.WritePropertyName(requestObjectMapValueKvp.Key);
                     var requestObjectMapValueValue = requestObjectMapValueKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMapValueValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRelationshipValue())
             {
                 context.Writer.WritePropertyName("relationshipValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RelationshipValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.RelationshipValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

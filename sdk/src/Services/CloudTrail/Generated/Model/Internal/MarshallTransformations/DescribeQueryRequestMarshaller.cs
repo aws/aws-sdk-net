@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -63,37 +66,54 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEventDataStore())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEventDataStore())
-                    {
-                        context.Writer.WritePropertyName("EventDataStore");
-                        context.Writer.Write(publicRequest.EventDataStore);
-                    }
-
-                    if(publicRequest.IsSetQueryAlias())
-                    {
-                        context.Writer.WritePropertyName("QueryAlias");
-                        context.Writer.Write(publicRequest.QueryAlias);
-                    }
-
-                    if(publicRequest.IsSetQueryId())
-                    {
-                        context.Writer.WritePropertyName("QueryId");
-                        context.Writer.Write(publicRequest.QueryId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EventDataStore");
+                context.Writer.WriteStringValue(publicRequest.EventDataStore);
             }
+
+            if(publicRequest.IsSetEventDataStoreOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("EventDataStoreOwnerAccountId");
+                context.Writer.WriteStringValue(publicRequest.EventDataStoreOwnerAccountId);
+            }
+
+            if(publicRequest.IsSetQueryAlias())
+            {
+                context.Writer.WritePropertyName("QueryAlias");
+                context.Writer.WriteStringValue(publicRequest.QueryAlias);
+            }
+
+            if(publicRequest.IsSetQueryId())
+            {
+                context.Writer.WritePropertyName("QueryId");
+                context.Writer.WriteStringValue(publicRequest.QueryId);
+            }
+
+            if(publicRequest.IsSetRefreshId())
+            {
+                context.Writer.WritePropertyName("RefreshId");
+                context.Writer.WriteStringValue(publicRequest.RefreshId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3ReplicateObjectOperation Object
     /// </summary>  
-    public class S3ReplicateObjectOperationUnmarshaller : IUnmarshaller<S3ReplicateObjectOperation, XmlUnmarshallerContext>, IUnmarshaller<S3ReplicateObjectOperation, JsonUnmarshallerContext>
+    public class S3ReplicateObjectOperationUnmarshaller : IXmlUnmarshaller<S3ReplicateObjectOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -64,17 +64,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3ReplicateObjectOperation Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static S3ReplicateObjectOperationUnmarshaller _instance = new S3ReplicateObjectOperationUnmarshaller();        
 
         /// <summary>

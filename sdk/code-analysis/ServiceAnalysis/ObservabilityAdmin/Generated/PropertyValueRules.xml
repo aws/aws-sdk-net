@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourceTelemetryRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourceTelemetryRequest.ResourceIdentifierPrefix</property>
+    <min>3</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourceTelemetryForOrganizationRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.ListResourceTelemetryForOrganizationRequest.ResourceIdentifierPrefix</property>
+    <min>3</min>
+    <max>768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TelemetryConfiguration.AccountIdentifier</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+</property-value-rules>

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProviderComponentSchema Object
     /// </summary>  
-    public class ProviderComponentSchemaUnmarshaller : IUnmarshaller<ProviderComponentSchema, XmlUnmarshallerContext>, IUnmarshaller<ProviderComponentSchema, JsonUnmarshallerContext>
+    public class ProviderComponentSchemaUnmarshaller : IJsonUnmarshaller<ProviderComponentSchema, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProviderComponentSchema IUnmarshaller<ProviderComponentSchema, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProviderComponentSchema Unmarshall(JsonUnmarshallerContext context)
+        public ProviderComponentSchema Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProviderComponentSchema unmarshalledObject = new ProviderComponentSchema();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("providerSchemaAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ProviderSchemaAttribute, ProviderSchemaAttributeUnmarshaller>(ProviderSchemaAttributeUnmarshaller.Instance);
-                    unmarshalledObject.ProviderSchemaAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ProviderSchemaAttribute, ProviderSchemaAttributeUnmarshaller>(ProviderSchemaAttributeUnmarshaller.Instance);
+                    unmarshalledObject.ProviderSchemaAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("schemas", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<string>, ListUnmarshaller<string, StringUnmarshaller>>(new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
-                    unmarshalledObject.Schemas = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.Schemas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

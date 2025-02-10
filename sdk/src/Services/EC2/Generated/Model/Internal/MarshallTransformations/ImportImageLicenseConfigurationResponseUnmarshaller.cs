@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ImportImageLicenseConfigurationResponse Object
     /// </summary>  
-    public class ImportImageLicenseConfigurationResponseUnmarshaller : IUnmarshaller<ImportImageLicenseConfigurationResponse, XmlUnmarshallerContext>, IUnmarshaller<ImportImageLicenseConfigurationResponse, JsonUnmarshallerContext>
+    public class ImportImageLicenseConfigurationResponseUnmarshaller : IXmlUnmarshaller<ImportImageLicenseConfigurationResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ImportImageLicenseConfigurationResponse Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ImportImageLicenseConfigurationResponseUnmarshaller _instance = new ImportImageLicenseConfigurationResponseUnmarshaller();        
 

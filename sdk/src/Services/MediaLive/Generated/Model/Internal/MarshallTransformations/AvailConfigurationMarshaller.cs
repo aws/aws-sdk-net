@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailSettings())
             {
                 context.Writer.WritePropertyName("availSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AvailSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvailSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35SegmentationScope())
             {
                 context.Writer.WritePropertyName("scte35SegmentationScope");
-                context.Writer.Write(requestObject.Scte35SegmentationScope);
+                context.Writer.WriteStringValue(requestObject.Scte35SegmentationScope);
             }
 
         }

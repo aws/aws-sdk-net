@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// The ARN of the model evaluation job.
+        /// The Amazon Resource Name (ARN) of the evaluation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]

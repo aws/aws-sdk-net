@@ -172,11 +172,11 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property RevocationConfiguration. 
         /// <para>
-        /// Contains information to enable Online Certificate Status Protocol (OCSP) support,
-        /// to enable a certificate revocation list (CRL), to enable both, or to enable neither.
-        /// The default is for both certificate validation mechanisms to be disabled. 
+        /// Contains information to enable support for Online Certificate Status Protocol (OCSP),
+        /// certificate revocation list (CRL), both protocols, or neither. By default, both certificate
+        /// validation mechanisms are disabled.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// The following requirements apply to revocation configurations.
         /// </para>
@@ -202,7 +202,7 @@ namespace Amazon.ACMPCA.Model
         /// In a CRL or OCSP configuration, the value of a CNAME parameter must not include a
         /// protocol prefix such as "http://" or "https://".
         /// </para>
-        ///  </li> </ul> </note> 
+        ///  </li> </ul> 
         /// <para>
         ///  For more information, see the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_OcspConfiguration.html">OcspConfiguration</a>
         /// and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>

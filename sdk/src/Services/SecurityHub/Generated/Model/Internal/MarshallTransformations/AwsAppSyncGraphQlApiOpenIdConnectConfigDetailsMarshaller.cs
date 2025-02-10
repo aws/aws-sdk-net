@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthTtL())
             {
                 context.Writer.WritePropertyName("AuthTtL");
-                context.Writer.Write(requestObject.AuthTtL.Value);
+                context.Writer.WriteNumberValue(requestObject.AuthTtL.Value);
             }
 
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("ClientId");
-                context.Writer.Write(requestObject.ClientId);
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
             if(requestObject.IsSetIatTtL())
             {
                 context.Writer.WritePropertyName("IatTtL");
-                context.Writer.Write(requestObject.IatTtL.Value);
+                context.Writer.WriteNumberValue(requestObject.IatTtL.Value);
             }
 
             if(requestObject.IsSetIssuer())
             {
                 context.Writer.WritePropertyName("Issuer");
-                context.Writer.Write(requestObject.Issuer);
+                context.Writer.WriteStringValue(requestObject.Issuer);
             }
 
         }

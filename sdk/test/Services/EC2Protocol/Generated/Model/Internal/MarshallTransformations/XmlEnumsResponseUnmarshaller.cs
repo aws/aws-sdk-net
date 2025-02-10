@@ -87,7 +87,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("fooEnumMap/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (response.FooEnumMap == null)
                         {
                             response.FooEnumMap = new Dictionary<string, string>();
@@ -122,7 +122,7 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2ProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
         private static XmlEnumsResponseUnmarshaller _instance = new XmlEnumsResponseUnmarshaller();        

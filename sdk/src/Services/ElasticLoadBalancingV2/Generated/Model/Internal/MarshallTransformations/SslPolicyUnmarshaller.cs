@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SslPolicy Object
     /// </summary>  
-    public class SslPolicyUnmarshaller : IUnmarshaller<SslPolicy, XmlUnmarshallerContext>, IUnmarshaller<SslPolicy, JsonUnmarshallerContext>
+    public class SslPolicyUnmarshaller : IXmlUnmarshaller<SslPolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -103,17 +103,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SslPolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SslPolicyUnmarshaller _instance = new SslPolicyUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MonitoringSubscription Object
     /// </summary>  
-    public class MonitoringSubscriptionUnmarshaller : IUnmarshaller<MonitoringSubscription, XmlUnmarshallerContext>, IUnmarshaller<MonitoringSubscription, JsonUnmarshallerContext>
+    public class MonitoringSubscriptionUnmarshaller : IXmlUnmarshaller<MonitoringSubscription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MonitoringSubscription Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static MonitoringSubscriptionUnmarshaller _instance = new MonitoringSubscriptionUnmarshaller();        
 
         /// <summary>

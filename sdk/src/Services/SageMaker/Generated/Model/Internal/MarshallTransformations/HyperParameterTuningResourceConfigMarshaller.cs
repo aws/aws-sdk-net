@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocationStrategy())
             {
                 context.Writer.WritePropertyName("AllocationStrategy");
-                context.Writer.Write(requestObject.AllocationStrategy);
+                context.Writer.WriteStringValue(requestObject.AllocationStrategy);
             }
 
             if(requestObject.IsSetInstanceConfigs())
             {
                 context.Writer.WritePropertyName("InstanceConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceConfigsListValue in requestObject.InstanceConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HyperParameterTuningInstanceConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())
             {
                 context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.Write(requestObject.VolumeKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
             }
 
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSizeInGB.Value);
             }
 
         }

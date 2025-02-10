@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionId())
             {
                 context.Writer.WritePropertyName("actionId");
-                context.Writer.Write(requestObject.ActionId);
+                context.Writer.WriteStringValue(requestObject.ActionId);
             }
 
             if(requestObject.IsSetActionType())
             {
                 context.Writer.WritePropertyName("actionType");
-                context.Writer.Write(requestObject.ActionType);
+                context.Writer.WriteStringValue(requestObject.ActionType);
             }
 
         }

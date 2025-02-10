@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GetSolVnfcResourceInfoMetadata Object
     /// </summary>  
-    public class GetSolVnfcResourceInfoMetadataUnmarshaller : IUnmarshaller<GetSolVnfcResourceInfoMetadata, XmlUnmarshallerContext>, IUnmarshaller<GetSolVnfcResourceInfoMetadata, JsonUnmarshallerContext>
+    public class GetSolVnfcResourceInfoMetadataUnmarshaller : IJsonUnmarshaller<GetSolVnfcResourceInfoMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GetSolVnfcResourceInfoMetadata IUnmarshaller<GetSolVnfcResourceInfoMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GetSolVnfcResourceInfoMetadata Unmarshall(JsonUnmarshallerContext context)
+        public GetSolVnfcResourceInfoMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GetSolVnfcResourceInfoMetadata unmarshalledObject = new GetSolVnfcResourceInfoMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cluster", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cluster = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("helmChart", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HelmChart = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HelmChart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nodeGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

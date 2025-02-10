@@ -21,6 +21,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -204,15 +205,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// Class for condition checking, putting, updating and/or deleting
     /// multiple items in a single DynamoDB table in a transaction.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public partial class DocumentTransactWrite : IDocumentTransactWrite
     {
         #region Internal properties
 
         internal Table TargetTable { get; private set; }
         internal List<ITransactWriteRequestItem> Items { get; private set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -232,6 +231,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             TargetTable = targetTable;
             Items = new List<ITransactWriteRequestItem>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -564,6 +565,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Properties
 
+        internal TracerProvider TracerProvider { get; private set; }
+
         /// <inheritdoc/>
         public List<IDocumentTransactWrite> TransactionParts { get; private set; }
 
@@ -583,6 +586,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new ArgumentNullException(nameof(transactionParts));
 
             TransactionParts = new List<IDocumentTransactWrite>(transactionParts);
+            TracerProvider = GetTracerProvider(TransactionParts);
         }
 
         #endregion
@@ -652,6 +656,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return docTransactWrite.Items;
                 }).ToList()
             };
+        }
+
+        private TracerProvider GetTracerProvider(List<IDocumentTransactWrite> batches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (batches.Count > 0)
+            {
+                if (batches[0] is DocumentBatchWrite documentTransactWrite)
+                {
+                    tracerProvider = documentTransactWrite.TracerProvider;
+                }
+            }
+            return tracerProvider;
         }
 
         #endregion
@@ -963,9 +980,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #endregion
     }
 
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal class ToUpdateWithExpressionTransactWriteRequestItem : ToUpdateTransactWriteRequestItemBase
     {
         #region Properties

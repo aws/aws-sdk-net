@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -64,128 +67,133 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 throw new AmazonManagedGrafanaException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountAccessType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountAccessType())
-                    {
-                        context.Writer.WritePropertyName("accountAccessType");
-                        context.Writer.Write(publicRequest.AccountAccessType);
-                    }
-
-                    if(publicRequest.IsSetNetworkAccessControl())
-                    {
-                        context.Writer.WritePropertyName("networkAccessControl");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NetworkAccessConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NetworkAccessControl, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOrganizationRoleName())
-                    {
-                        context.Writer.WritePropertyName("organizationRoleName");
-                        context.Writer.Write(publicRequest.OrganizationRoleName);
-                    }
-
-                    if(publicRequest.IsSetPermissionType())
-                    {
-                        context.Writer.WritePropertyName("permissionType");
-                        context.Writer.Write(publicRequest.PermissionType);
-                    }
-
-                    if(publicRequest.IsSetRemoveNetworkAccessConfiguration())
-                    {
-                        context.Writer.WritePropertyName("removeNetworkAccessConfiguration");
-                        context.Writer.Write(publicRequest.RemoveNetworkAccessConfiguration.Value);
-                    }
-
-                    if(publicRequest.IsSetRemoveVpcConfiguration())
-                    {
-                        context.Writer.WritePropertyName("removeVpcConfiguration");
-                        context.Writer.Write(publicRequest.RemoveVpcConfiguration.Value);
-                    }
-
-                    if(publicRequest.IsSetStackSetName())
-                    {
-                        context.Writer.WritePropertyName("stackSetName");
-                        context.Writer.Write(publicRequest.StackSetName);
-                    }
-
-                    if(publicRequest.IsSetVpcConfiguration())
-                    {
-                        context.Writer.WritePropertyName("vpcConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VpcConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VpcConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkspaceDataSources())
-                    {
-                        context.Writer.WritePropertyName("workspaceDataSources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWorkspaceDataSourcesListValue in publicRequest.WorkspaceDataSources)
-                        {
-                                context.Writer.Write(publicRequestWorkspaceDataSourcesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkspaceDescription())
-                    {
-                        context.Writer.WritePropertyName("workspaceDescription");
-                        context.Writer.Write(publicRequest.WorkspaceDescription);
-                    }
-
-                    if(publicRequest.IsSetWorkspaceName())
-                    {
-                        context.Writer.WritePropertyName("workspaceName");
-                        context.Writer.Write(publicRequest.WorkspaceName);
-                    }
-
-                    if(publicRequest.IsSetWorkspaceNotificationDestinations())
-                    {
-                        context.Writer.WritePropertyName("workspaceNotificationDestinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWorkspaceNotificationDestinationsListValue in publicRequest.WorkspaceNotificationDestinations)
-                        {
-                                context.Writer.Write(publicRequestWorkspaceNotificationDestinationsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkspaceOrganizationalUnits())
-                    {
-                        context.Writer.WritePropertyName("workspaceOrganizationalUnits");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWorkspaceOrganizationalUnitsListValue in publicRequest.WorkspaceOrganizationalUnits)
-                        {
-                                context.Writer.Write(publicRequestWorkspaceOrganizationalUnitsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkspaceRoleArn())
-                    {
-                        context.Writer.WritePropertyName("workspaceRoleArn");
-                        context.Writer.Write(publicRequest.WorkspaceRoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("accountAccessType");
+                context.Writer.WriteStringValue(publicRequest.AccountAccessType);
             }
+
+            if(publicRequest.IsSetNetworkAccessControl())
+            {
+                context.Writer.WritePropertyName("networkAccessControl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkAccessConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkAccessControl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOrganizationRoleName())
+            {
+                context.Writer.WritePropertyName("organizationRoleName");
+                context.Writer.WriteStringValue(publicRequest.OrganizationRoleName);
+            }
+
+            if(publicRequest.IsSetPermissionType())
+            {
+                context.Writer.WritePropertyName("permissionType");
+                context.Writer.WriteStringValue(publicRequest.PermissionType);
+            }
+
+            if(publicRequest.IsSetRemoveNetworkAccessConfiguration())
+            {
+                context.Writer.WritePropertyName("removeNetworkAccessConfiguration");
+                context.Writer.WriteBooleanValue(publicRequest.RemoveNetworkAccessConfiguration.Value);
+            }
+
+            if(publicRequest.IsSetRemoveVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("removeVpcConfiguration");
+                context.Writer.WriteBooleanValue(publicRequest.RemoveVpcConfiguration.Value);
+            }
+
+            if(publicRequest.IsSetStackSetName())
+            {
+                context.Writer.WritePropertyName("stackSetName");
+                context.Writer.WriteStringValue(publicRequest.StackSetName);
+            }
+
+            if(publicRequest.IsSetVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("vpcConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWorkspaceDataSources())
+            {
+                context.Writer.WritePropertyName("workspaceDataSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWorkspaceDataSourcesListValue in publicRequest.WorkspaceDataSources)
+                {
+                        context.Writer.WriteStringValue(publicRequestWorkspaceDataSourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWorkspaceDescription())
+            {
+                context.Writer.WritePropertyName("workspaceDescription");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceDescription);
+            }
+
+            if(publicRequest.IsSetWorkspaceName())
+            {
+                context.Writer.WritePropertyName("workspaceName");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceName);
+            }
+
+            if(publicRequest.IsSetWorkspaceNotificationDestinations())
+            {
+                context.Writer.WritePropertyName("workspaceNotificationDestinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWorkspaceNotificationDestinationsListValue in publicRequest.WorkspaceNotificationDestinations)
+                {
+                        context.Writer.WriteStringValue(publicRequestWorkspaceNotificationDestinationsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWorkspaceOrganizationalUnits())
+            {
+                context.Writer.WritePropertyName("workspaceOrganizationalUnits");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWorkspaceOrganizationalUnitsListValue in publicRequest.WorkspaceOrganizationalUnits)
+                {
+                        context.Writer.WriteStringValue(publicRequestWorkspaceOrganizationalUnitsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWorkspaceRoleArn())
+            {
+                context.Writer.WritePropertyName("workspaceRoleArn");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceRoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

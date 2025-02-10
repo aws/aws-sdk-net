@@ -30,27 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Instructions on when and how to check the health of a container in a container fleet.
-    /// When health check properties are set in a container definition, they override any
-    /// Docker health checks in the container image. For more information on container health
-    /// checks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck
-    /// command</a> in the <i>Amazon Elastic Container Service API</i>.
+    /// Instructions on when and how to check the health of a support container in a container
+    /// fleet. These properties override any Docker health checks that are set in the container
+    /// image. For more information on container health checks, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck
+    /// command</a> in the <i>Amazon Elastic Container Service API</i>. Game server containers
+    /// don't have a health check parameter; Amazon GameLift automatically handles health
+    /// checks for these containers.
     /// 
     ///  
     /// <para>
-    /// The following example instructions tell the container to wait 100 seconds after launch
-    /// before counting failed health checks, then initiate the health check command every
-    /// 60 seconds. After issuing the health check command, wait 10 seconds for it to succeed.
-    /// If it fails, retry the command 3 times before considering the container to be unhealthy.
+    /// The following example instructs the container to initiate a health check command every
+    /// 60 seconds and wait 10 seconds for it to succeed. If it fails, retry the command 3
+    /// times before flagging the container as unhealthy. It also tells the container to wait
+    /// 100 seconds after launch before counting failed health checks.
     /// </para>
     ///  
     /// <para>
     ///  <c>{"Command": [ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ], "Interval":
-    /// 300, "Timeout": 30, "Retries": 5, "StartPeriod": 100 }</c> 
+    /// 60, "Timeout": 10, "Retries": 3, "StartPeriod": 100 }</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Part of:</b> <a>ContainerDefinition$HealthCheck</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerHealthCheck
@@ -103,8 +106,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Retries. 
         /// <para>
-        /// The number of times to retry a failed health check before the container is considered
-        /// unhealthy. The first run of the command does not count as a retry.
+        /// The number of times to retry a failed health check before flagging the container unhealthy.
+        /// The first run of the command does not count as a retry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=10)]
@@ -143,8 +146,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The time period (in seconds) to wait for a health check to succeed before a failed
-        /// health check is counted. 
+        /// The time period (in seconds) to wait for a health check to succeed before counting
+        /// a failed health check. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=60)]

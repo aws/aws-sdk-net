@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HistoryRecordEntry Object
     /// </summary>  
-    public class HistoryRecordEntryUnmarshaller : IUnmarshaller<HistoryRecordEntry, XmlUnmarshallerContext>, IUnmarshaller<HistoryRecordEntry, JsonUnmarshallerContext>
+    public class HistoryRecordEntryUnmarshaller : IXmlUnmarshaller<HistoryRecordEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HistoryRecordEntry Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HistoryRecordEntryUnmarshaller _instance = new HistoryRecordEntryUnmarshaller();        
 

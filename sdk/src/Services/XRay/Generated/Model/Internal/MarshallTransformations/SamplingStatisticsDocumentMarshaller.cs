@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorrowCount())
             {
                 context.Writer.WritePropertyName("BorrowCount");
-                context.Writer.Write(requestObject.BorrowCount.Value);
+                context.Writer.WriteNumberValue(requestObject.BorrowCount.Value);
             }
 
             if(requestObject.IsSetClientID())
             {
                 context.Writer.WritePropertyName("ClientID");
-                context.Writer.Write(requestObject.ClientID);
+                context.Writer.WriteStringValue(requestObject.ClientID);
             }
 
             if(requestObject.IsSetRequestCount())
             {
                 context.Writer.WritePropertyName("RequestCount");
-                context.Writer.Write(requestObject.RequestCount.Value);
+                context.Writer.WriteNumberValue(requestObject.RequestCount.Value);
             }
 
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
             if(requestObject.IsSetSampledCount())
             {
                 context.Writer.WritePropertyName("SampledCount");
-                context.Writer.Write(requestObject.SampledCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SampledCount.Value);
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
         }

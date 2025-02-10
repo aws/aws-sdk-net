@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MssPackage Object
     /// </summary>  
-    public class MssPackageUnmarshaller : IUnmarshaller<MssPackage, XmlUnmarshallerContext>, IUnmarshaller<MssPackage, JsonUnmarshallerContext>
+    public class MssPackageUnmarshaller : IJsonUnmarshaller<MssPackage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MssPackage IUnmarshaller<MssPackage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MssPackage Unmarshall(JsonUnmarshallerContext context)
+        public MssPackage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MssPackage unmarshalledObject = new MssPackage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("encryption", targetDepth))
                 {
                     var unmarshaller = MssEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manifestWindowSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentDurationSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamSelection", targetDepth))
                 {
                     var unmarshaller = StreamSelectionUnmarshaller.Instance;
-                    unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

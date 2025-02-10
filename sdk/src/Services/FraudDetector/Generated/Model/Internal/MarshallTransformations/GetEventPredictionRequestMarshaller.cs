@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -63,98 +66,103 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDetectorId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDetectorId())
-                    {
-                        context.Writer.WritePropertyName("detectorId");
-                        context.Writer.Write(publicRequest.DetectorId);
-                    }
-
-                    if(publicRequest.IsSetDetectorVersionId())
-                    {
-                        context.Writer.WritePropertyName("detectorVersionId");
-                        context.Writer.Write(publicRequest.DetectorVersionId);
-                    }
-
-                    if(publicRequest.IsSetEntities())
-                    {
-                        context.Writer.WritePropertyName("entities");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEntitiesListValue in publicRequest.Entities)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EntityMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEntitiesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEventId())
-                    {
-                        context.Writer.WritePropertyName("eventId");
-                        context.Writer.Write(publicRequest.EventId);
-                    }
-
-                    if(publicRequest.IsSetEventTimestamp())
-                    {
-                        context.Writer.WritePropertyName("eventTimestamp");
-                        context.Writer.Write(publicRequest.EventTimestamp);
-                    }
-
-                    if(publicRequest.IsSetEventTypeName())
-                    {
-                        context.Writer.WritePropertyName("eventTypeName");
-                        context.Writer.Write(publicRequest.EventTypeName);
-                    }
-
-                    if(publicRequest.IsSetEventVariables())
-                    {
-                        context.Writer.WritePropertyName("eventVariables");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestEventVariablesKvp in publicRequest.EventVariables)
-                        {
-                            context.Writer.WritePropertyName(publicRequestEventVariablesKvp.Key);
-                            var publicRequestEventVariablesValue = publicRequestEventVariablesKvp.Value;
-
-                                context.Writer.Write(publicRequestEventVariablesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExternalModelEndpointDataBlobs())
-                    {
-                        context.Writer.WritePropertyName("externalModelEndpointDataBlobs");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestExternalModelEndpointDataBlobsKvp in publicRequest.ExternalModelEndpointDataBlobs)
-                        {
-                            context.Writer.WritePropertyName(publicRequestExternalModelEndpointDataBlobsKvp.Key);
-                            var publicRequestExternalModelEndpointDataBlobsValue = publicRequestExternalModelEndpointDataBlobsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ModelEndpointDataBlobMarshaller.Instance;
-                            marshaller.Marshall(publicRequestExternalModelEndpointDataBlobsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("detectorId");
+                context.Writer.WriteStringValue(publicRequest.DetectorId);
             }
+
+            if(publicRequest.IsSetDetectorVersionId())
+            {
+                context.Writer.WritePropertyName("detectorVersionId");
+                context.Writer.WriteStringValue(publicRequest.DetectorVersionId);
+            }
+
+            if(publicRequest.IsSetEntities())
+            {
+                context.Writer.WritePropertyName("entities");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEntitiesListValue in publicRequest.Entities)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EntityMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEntitiesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEventId())
+            {
+                context.Writer.WritePropertyName("eventId");
+                context.Writer.WriteStringValue(publicRequest.EventId);
+            }
+
+            if(publicRequest.IsSetEventTimestamp())
+            {
+                context.Writer.WritePropertyName("eventTimestamp");
+                context.Writer.WriteStringValue(publicRequest.EventTimestamp);
+            }
+
+            if(publicRequest.IsSetEventTypeName())
+            {
+                context.Writer.WritePropertyName("eventTypeName");
+                context.Writer.WriteStringValue(publicRequest.EventTypeName);
+            }
+
+            if(publicRequest.IsSetEventVariables())
+            {
+                context.Writer.WritePropertyName("eventVariables");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestEventVariablesKvp in publicRequest.EventVariables)
+                {
+                    context.Writer.WritePropertyName(publicRequestEventVariablesKvp.Key);
+                    var publicRequestEventVariablesValue = publicRequestEventVariablesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestEventVariablesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExternalModelEndpointDataBlobs())
+            {
+                context.Writer.WritePropertyName("externalModelEndpointDataBlobs");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestExternalModelEndpointDataBlobsKvp in publicRequest.ExternalModelEndpointDataBlobs)
+                {
+                    context.Writer.WritePropertyName(publicRequestExternalModelEndpointDataBlobsKvp.Key);
+                    var publicRequestExternalModelEndpointDataBlobsValue = publicRequestExternalModelEndpointDataBlobsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ModelEndpointDataBlobMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExternalModelEndpointDataBlobsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

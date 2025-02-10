@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSecurityGroupIdList())
             {
                 context.Writer.WritePropertyName("SecurityGroupIdList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdListListValue in requestObject.SecurityGroupIdList)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdListListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIdList())
             {
                 context.Writer.WritePropertyName("SubnetIdList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdListListValue in requestObject.SubnetIdList)
                 {
-                        context.Writer.Write(requestObjectSubnetIdListListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

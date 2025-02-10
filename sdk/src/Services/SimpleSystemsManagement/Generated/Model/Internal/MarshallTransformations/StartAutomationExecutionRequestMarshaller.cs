@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -63,169 +66,174 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlarmConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlarmConfiguration())
-                    {
-                        context.Writer.WritePropertyName("AlarmConfiguration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AlarmConfiguration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AlarmConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmConfiguration, context);
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmConfiguration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetDocumentName())
-                    {
-                        context.Writer.WritePropertyName("DocumentName");
-                        context.Writer.Write(publicRequest.DocumentName);
-                    }
-
-                    if(publicRequest.IsSetDocumentVersion())
-                    {
-                        context.Writer.WritePropertyName("DocumentVersion");
-                        context.Writer.Write(publicRequest.DocumentVersion);
-                    }
-
-                    if(publicRequest.IsSetMaxConcurrency())
-                    {
-                        context.Writer.WritePropertyName("MaxConcurrency");
-                        context.Writer.Write(publicRequest.MaxConcurrency);
-                    }
-
-                    if(publicRequest.IsSetMaxErrors())
-                    {
-                        context.Writer.WritePropertyName("MaxErrors");
-                        context.Writer.Write(publicRequest.MaxErrors);
-                    }
-
-                    if(publicRequest.IsSetMode())
-                    {
-                        context.Writer.WritePropertyName("Mode");
-                        context.Writer.Write(publicRequest.Mode);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("Parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
-                            {
-                                    context.Writer.Write(publicRequestParametersValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetLocations())
-                    {
-                        context.Writer.WritePropertyName("TargetLocations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetLocationsListValue in publicRequest.TargetLocations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TargetLocationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTargetLocationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetLocationsURL())
-                    {
-                        context.Writer.WritePropertyName("TargetLocationsURL");
-                        context.Writer.Write(publicRequest.TargetLocationsURL);
-                    }
-
-                    if(publicRequest.IsSetTargetMaps())
-                    {
-                        context.Writer.WritePropertyName("TargetMaps");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
-                        {
-                            context.Writer.WriteObjectStart();
-                            foreach (var publicRequestTargetMapsListValueKvp in publicRequestTargetMapsListValue)
-                            {
-                                context.Writer.WritePropertyName(publicRequestTargetMapsListValueKvp.Key);
-                                var publicRequestTargetMapsListValueValue = publicRequestTargetMapsListValueKvp.Value;
-
-                                context.Writer.WriteArrayStart();
-                                foreach(var publicRequestTargetMapsListValueValueListValue in publicRequestTargetMapsListValueValue)
-                                {
-                                        context.Writer.Write(publicRequestTargetMapsListValueValueListValue);
-                                }
-                                context.Writer.WriteArrayEnd();
-                            }
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetParameterName())
-                    {
-                        context.Writer.WritePropertyName("TargetParameterName");
-                        context.Writer.Write(publicRequest.TargetParameterName);
-                    }
-
-                    if(publicRequest.IsSetTargets())
-                    {
-                        context.Writer.WritePropertyName("Targets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TargetMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTargetsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetDocumentName())
+            {
+                context.Writer.WritePropertyName("DocumentName");
+                context.Writer.WriteStringValue(publicRequest.DocumentName);
+            }
+
+            if(publicRequest.IsSetDocumentVersion())
+            {
+                context.Writer.WritePropertyName("DocumentVersion");
+                context.Writer.WriteStringValue(publicRequest.DocumentVersion);
+            }
+
+            if(publicRequest.IsSetMaxConcurrency())
+            {
+                context.Writer.WritePropertyName("MaxConcurrency");
+                context.Writer.WriteStringValue(publicRequest.MaxConcurrency);
+            }
+
+            if(publicRequest.IsSetMaxErrors())
+            {
+                context.Writer.WritePropertyName("MaxErrors");
+                context.Writer.WriteStringValue(publicRequest.MaxErrors);
+            }
+
+            if(publicRequest.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.WriteStringValue(publicRequest.Mode);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestParametersValueListValue in publicRequestParametersValue)
+                    {
+                            context.Writer.WriteStringValue(publicRequestParametersValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetLocations())
+            {
+                context.Writer.WritePropertyName("TargetLocations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetLocationsListValue in publicRequest.TargetLocations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TargetLocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetLocationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetLocationsURL())
+            {
+                context.Writer.WritePropertyName("TargetLocationsURL");
+                context.Writer.WriteStringValue(publicRequest.TargetLocationsURL);
+            }
+
+            if(publicRequest.IsSetTargetMaps())
+            {
+                context.Writer.WritePropertyName("TargetMaps");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
+                {
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestTargetMapsListValueKvp in publicRequestTargetMapsListValue)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTargetMapsListValueKvp.Key);
+                        var publicRequestTargetMapsListValueValue = publicRequestTargetMapsListValueKvp.Value;
+
+                        context.Writer.WriteStartArray();
+                        foreach(var publicRequestTargetMapsListValueValueListValue in publicRequestTargetMapsListValueValue)
+                        {
+                                context.Writer.WriteStringValue(publicRequestTargetMapsListValueValueListValue);
+                        }
+                        context.Writer.WriteEndArray();
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetParameterName())
+            {
+                context.Writer.WritePropertyName("TargetParameterName");
+                context.Writer.WriteStringValue(publicRequest.TargetParameterName);
+            }
+
+            if(publicRequest.IsSetTargets())
+            {
+                context.Writer.WritePropertyName("Targets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

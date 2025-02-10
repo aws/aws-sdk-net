@@ -224,13 +224,13 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestDateTimeDeserializationWithDdbContext()
-        {
+        {   
             //Arrange
             var dateWithNoDecimals = "2022-05-05T11:56:11Z";
-            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals);
+            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             var dateWithDecimals = "2022-05-05T11:56:11.000Z";
-            var expectedDateDecimal = DateTime.Parse(dateWithDecimals);
+            var expectedDateDecimal = DateTime.Parse(dateWithDecimals, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             var jsonDateWithNoDecimals = JsonMapper.ToJson(new
             {
@@ -489,6 +489,9 @@ namespace AWSSDK_DotNet.UnitTests
                     request.Key.ContainsKey("CreationDate") && 
                     request.Key["CreationDate"].S == "0001-01-01T00:00:00.000Z")));
 
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
             mock.VerifyNoOtherCalls();
         }
 
@@ -513,6 +516,9 @@ namespace AWSSDK_DotNet.UnitTests
                 x.GetItem(It.Is<GetItemRequest>(request =>
                     request.Key.ContainsKey("CreationDate") &&
                     request.Key["CreationDate"].N == "1024")));
+
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
 
             mock.VerifyNoOtherCalls();
         }
@@ -539,6 +545,10 @@ namespace AWSSDK_DotNet.UnitTests
                     request.Key.ContainsKey("CreationDate") &&
                     BitConverter.ToString(request.Key["CreationDate"].B.ToArray()) == "00-04-00-00-00-00-00-40")));
 
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
             mock.VerifyNoOtherCalls();
         }
 
@@ -555,6 +565,10 @@ namespace AWSSDK_DotNet.UnitTests
             // A boolean isn't valid as a primary key, so we expect an exception 
             Assert.ThrowsException<InvalidOperationException>(() => 
                 context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
 
             mock.VerifyNoOtherCalls();
         }

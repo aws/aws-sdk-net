@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEarliestScanStartTime())
             {
                 context.Writer.WritePropertyName("earliestScanStartTime");
-                context.Writer.Write(requestObject.EarliestScanStartTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EarliestScanStartTime.Value)));
             }
 
             if(requestObject.IsSetLatestScanStartTime())
             {
                 context.Writer.WritePropertyName("latestScanStartTime");
-                context.Writer.Write(requestObject.LatestScanStartTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LatestScanStartTime.Value)));
             }
 
         }

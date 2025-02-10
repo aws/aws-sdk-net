@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCredentialsSecretArn())
             {
                 context.Writer.WritePropertyName("credentialsSecretArn");
-                context.Writer.Write(requestObject.CredentialsSecretArn);
+                context.Writer.WriteStringValue(requestObject.CredentialsSecretArn);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetFieldMapping())
             {
                 context.Writer.WritePropertyName("fieldMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RdsFieldMappingMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldMapping, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("resourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WriteStringValue(requestObject.ResourceArn);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
         }

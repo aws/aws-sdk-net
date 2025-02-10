@@ -37,6 +37,11 @@ namespace Amazon.BedrockAgent.Model
         IListAgentAliasesPaginator ListAgentAliases(ListAgentAliasesRequest request);
 
         /// <summary>
+        /// Paginator for ListAgentCollaborators operation
+        ///</summary>
+        IListAgentCollaboratorsPaginator ListAgentCollaborators(ListAgentCollaboratorsRequest request);
+
+        /// <summary>
         /// Paginator for ListAgentKnowledgeBases operation
         ///</summary>
         IListAgentKnowledgeBasesPaginator ListAgentKnowledgeBases(ListAgentKnowledgeBasesRequest request);
@@ -75,6 +80,11 @@ namespace Amazon.BedrockAgent.Model
         /// Paginator for ListIngestionJobs operation
         ///</summary>
         IListIngestionJobsPaginator ListIngestionJobs(ListIngestionJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListKnowledgeBaseDocuments operation
+        ///</summary>
+        IListKnowledgeBaseDocumentsPaginator ListKnowledgeBaseDocuments(ListKnowledgeBaseDocumentsRequest request);
 
         /// <summary>
         /// Paginator for ListKnowledgeBases operation

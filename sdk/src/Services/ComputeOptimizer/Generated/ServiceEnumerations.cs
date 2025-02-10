@@ -25,6 +25,106 @@ namespace Amazon.ComputeOptimizer
 {
 
     /// <summary>
+    /// Constants used for properties of type AllocationStrategy.
+    /// </summary>
+    public class AllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LowestPrice for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy LowestPrice = new AllocationStrategy("LowestPrice");
+        /// <summary>
+        /// Constant Prioritized for AllocationStrategy
+        /// </summary>
+        public static readonly AllocationStrategy Prioritized = new AllocationStrategy("Prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllocationStrategy FindValue(string value)
+        {
+            return FindValue<AllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AsgType.
+    /// </summary>
+    public class AsgType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MixedInstanceTypes for AsgType
+        /// </summary>
+        public static readonly AsgType MixedInstanceTypes = new AsgType("MixedInstanceTypes");
+        /// <summary>
+        /// Constant SingleInstanceType for AsgType
+        /// </summary>
+        public static readonly AsgType SingleInstanceType = new AsgType("SingleInstanceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AsgType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AsgType FindValue(string value)
+        {
+            return FindValue<AsgType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AsgType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoScalingConfiguration.
     /// </summary>
     public class AutoScalingConfiguration : ConstantClass
@@ -388,6 +488,56 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomizableMetricThreshold(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Dimension.
+    /// </summary>
+    public class Dimension : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SavingsValue for Dimension
+        /// </summary>
+        public static readonly Dimension SavingsValue = new Dimension("SavingsValue");
+        /// <summary>
+        /// Constant SavingsValueAfterDiscount for Dimension
+        /// </summary>
+        public static readonly Dimension SavingsValueAfterDiscount = new Dimension("SavingsValueAfterDiscount");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Dimension(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Dimension FindValue(string value)
+        {
+            return FindValue<Dimension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Dimension(string value)
         {
             return FindValue(value);
         }
@@ -1083,6 +1233,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField AutoScalingGroupName = new ExportableAutoScalingGroupField("AutoScalingGroupName");
         /// <summary>
+        /// Constant CurrentConfigurationAllocationStrategy for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentConfigurationAllocationStrategy = new ExportableAutoScalingGroupField("CurrentConfigurationAllocationStrategy");
+        /// <summary>
         /// Constant CurrentConfigurationDesiredCapacity for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentConfigurationDesiredCapacity = new ExportableAutoScalingGroupField("CurrentConfigurationDesiredCapacity");
@@ -1098,6 +1252,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant CurrentConfigurationMinSize for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField CurrentConfigurationMinSize = new ExportableAutoScalingGroupField("CurrentConfigurationMinSize");
+        /// <summary>
+        /// Constant CurrentConfigurationMixedInstanceTypes for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentConfigurationMixedInstanceTypes = new ExportableAutoScalingGroupField("CurrentConfigurationMixedInstanceTypes");
+        /// <summary>
+        /// Constant CurrentConfigurationType for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField CurrentConfigurationType = new ExportableAutoScalingGroupField("CurrentConfigurationType");
         /// <summary>
         /// Constant CurrentInstanceGpuInfo for ExportableAutoScalingGroupField
         /// </summary>
@@ -1175,9 +1337,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableAutoScalingGroupField LookbackPeriodInDays = new ExportableAutoScalingGroupField("LookbackPeriodInDays");
         /// <summary>
+        /// Constant RecommendationOptionsConfigurationAllocationStrategy for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationAllocationStrategy = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationAllocationStrategy");
+        /// <summary>
         /// Constant RecommendationOptionsConfigurationDesiredCapacity for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationDesiredCapacity = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationDesiredCapacity");
+        /// <summary>
+        /// Constant RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationEstimatedInstanceHourReductionPercentage");
         /// <summary>
         /// Constant RecommendationOptionsConfigurationInstanceType for ExportableAutoScalingGroupField
         /// </summary>
@@ -1190,6 +1360,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationOptionsConfigurationMinSize for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationMinSize = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationMinSize");
+        /// <summary>
+        /// Constant RecommendationOptionsConfigurationMixedInstanceTypes for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationMixedInstanceTypes = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationMixedInstanceTypes");
+        /// <summary>
+        /// Constant RecommendationOptionsConfigurationType for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField RecommendationOptionsConfigurationType = new ExportableAutoScalingGroupField("RecommendationOptionsConfigurationType");
         /// <summary>
         /// Constant RecommendationOptionsEstimatedMonthlySavingsCurrency for ExportableAutoScalingGroupField
         /// </summary>
@@ -1518,6 +1696,128 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportableECSServiceField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportableIdleField.
+    /// </summary>
+    public class ExportableIdleField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField AccountId = new ExportableIdleField("AccountId");
+        /// <summary>
+        /// Constant Finding for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField Finding = new ExportableIdleField("Finding");
+        /// <summary>
+        /// Constant FindingDescription for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField FindingDescription = new ExportableIdleField("FindingDescription");
+        /// <summary>
+        /// Constant LastRefreshTimestamp for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField LastRefreshTimestamp = new ExportableIdleField("LastRefreshTimestamp");
+        /// <summary>
+        /// Constant LookbackPeriodInDays for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField LookbackPeriodInDays = new ExportableIdleField("LookbackPeriodInDays");
+        /// <summary>
+        /// Constant ResourceArn for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField ResourceArn = new ExportableIdleField("ResourceArn");
+        /// <summary>
+        /// Constant ResourceId for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField ResourceId = new ExportableIdleField("ResourceId");
+        /// <summary>
+        /// Constant ResourceType for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField ResourceType = new ExportableIdleField("ResourceType");
+        /// <summary>
+        /// Constant SavingsOpportunity for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField SavingsOpportunity = new ExportableIdleField("SavingsOpportunity");
+        /// <summary>
+        /// Constant SavingsOpportunityAfterDiscount for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField SavingsOpportunityAfterDiscount = new ExportableIdleField("SavingsOpportunityAfterDiscount");
+        /// <summary>
+        /// Constant Tags for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField Tags = new ExportableIdleField("Tags");
+        /// <summary>
+        /// Constant UtilizationMetricsCpuMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsCpuMaximum = new ExportableIdleField("UtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDatabaseConnectionsMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsDatabaseConnectionsMaximum = new ExportableIdleField("UtilizationMetricsDatabaseConnectionsMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeReadIOPSMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsEBSVolumeReadIOPSMaximum = new ExportableIdleField("UtilizationMetricsEBSVolumeReadIOPSMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEBSVolumeWriteIOPSMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsEBSVolumeWriteIOPSMaximum = new ExportableIdleField("UtilizationMetricsEBSVolumeWriteIOPSMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsMemoryMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsMemoryMaximum = new ExportableIdleField("UtilizationMetricsMemoryMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkInBytesPerSecondMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsNetworkInBytesPerSecondMaximum = new ExportableIdleField("UtilizationMetricsNetworkInBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsNetworkOutBytesPerSecondMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsNetworkOutBytesPerSecondMaximum = new ExportableIdleField("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsVolumeReadOpsPerSecondMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsVolumeReadOpsPerSecondMaximum = new ExportableIdleField("UtilizationMetricsVolumeReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsVolumeWriteOpsPerSecondMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsVolumeWriteOpsPerSecondMaximum = new ExportableIdleField("UtilizationMetricsVolumeWriteOpsPerSecondMaximum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportableIdleField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportableIdleField FindValue(string value)
+        {
+            return FindValue<ExportableIdleField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportableIdleField(string value)
         {
             return FindValue(value);
         }
@@ -2161,6 +2461,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableRDSDBField CurrentInstanceOnDemandHourlyPrice = new ExportableRDSDBField("CurrentInstanceOnDemandHourlyPrice");
         /// <summary>
+        /// Constant CurrentInstancePerformanceRisk for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField CurrentInstancePerformanceRisk = new ExportableRDSDBField("CurrentInstancePerformanceRisk");
+        /// <summary>
         /// Constant CurrentStorageConfigurationAllocatedStorage for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField CurrentStorageConfigurationAllocatedStorage = new ExportableRDSDBField("CurrentStorageConfigurationAllocatedStorage");
@@ -2184,6 +2488,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant CurrentStorageOnDemandMonthlyPrice for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField CurrentStorageOnDemandMonthlyPrice = new ExportableRDSDBField("CurrentStorageOnDemandMonthlyPrice");
+        /// <summary>
+        /// Constant DBClusterIdentifier for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField DBClusterIdentifier = new ExportableRDSDBField("DBClusterIdentifier");
         /// <summary>
         /// Constant EffectiveRecommendationPreferencesCpuVendorArchitectures for ExportableRDSDBField
         /// </summary>
@@ -2277,6 +2585,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableRDSDBField MultiAZDBInstance = new ExportableRDSDBField("MultiAZDBInstance");
         /// <summary>
+        /// Constant PromotionTier for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField PromotionTier = new ExportableRDSDBField("PromotionTier");
+        /// <summary>
         /// Constant ResourceArn for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField ResourceArn = new ExportableRDSDBField("ResourceArn");
@@ -2345,6 +2657,22 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableRDSDBField Tags = new ExportableRDSDBField("Tags");
         /// <summary>
+        /// Constant UtilizationMetricsAuroraMemoryHealthStateMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsAuroraMemoryHealthStateMaximum = new ExportableRDSDBField("UtilizationMetricsAuroraMemoryHealthStateMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum = new ExportableRDSDBField("UtilizationMetricsAuroraMemoryNumDeclinedSqlTotalMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum = new ExportableRDSDBField("UtilizationMetricsAuroraMemoryNumKillConnTotalMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum = new ExportableRDSDBField("UtilizationMetricsAuroraMemoryNumKillQueryTotalMaximum");
+        /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField UtilizationMetricsCpuMaximum = new ExportableRDSDBField("UtilizationMetricsCpuMaximum");
@@ -2384,6 +2712,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsNetworkTransmitThroughputMaximum for ExportableRDSDBField
         /// </summary>
         public static readonly ExportableRDSDBField UtilizationMetricsNetworkTransmitThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsNetworkTransmitThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsReadIOPSEphemeralStorageMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsReadIOPSEphemeralStorageMaximum = new ExportableRDSDBField("UtilizationMetricsReadIOPSEphemeralStorageMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsStorageNetworkReceiveThroughputMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsStorageNetworkReceiveThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsStorageNetworkReceiveThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsStorageNetworkTransmitThroughputMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsStorageNetworkTransmitThroughputMaximum = new ExportableRDSDBField("UtilizationMetricsStorageNetworkTransmitThroughputMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsWriteIOPSEphemeralStorageMaximum for ExportableRDSDBField
+        /// </summary>
+        public static readonly ExportableRDSDBField UtilizationMetricsWriteIOPSEphemeralStorageMaximum = new ExportableRDSDBField("UtilizationMetricsWriteIOPSEphemeralStorageMaximum");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2998,6 +3342,246 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Idle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdleFinding.
+    /// </summary>
+    public class IdleFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Idle for IdleFinding
+        /// </summary>
+        public static readonly IdleFinding Idle = new IdleFinding("Idle");
+        /// <summary>
+        /// Constant Unattached for IdleFinding
+        /// </summary>
+        public static readonly IdleFinding Unattached = new IdleFinding("Unattached");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdleFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdleFinding FindValue(string value)
+        {
+            return FindValue<IdleFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdleFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdleMetricName.
+    /// </summary>
+    public class IdleMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPU for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName CPU = new IdleMetricName("CPU");
+        /// <summary>
+        /// Constant DatabaseConnections for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName DatabaseConnections = new IdleMetricName("DatabaseConnections");
+        /// <summary>
+        /// Constant EBSVolumeReadIOPS for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName EBSVolumeReadIOPS = new IdleMetricName("EBSVolumeReadIOPS");
+        /// <summary>
+        /// Constant EBSVolumeWriteIOPS for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName EBSVolumeWriteIOPS = new IdleMetricName("EBSVolumeWriteIOPS");
+        /// <summary>
+        /// Constant Memory for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName Memory = new IdleMetricName("Memory");
+        /// <summary>
+        /// Constant NetworkInBytesPerSecond for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName NetworkInBytesPerSecond = new IdleMetricName("NetworkInBytesPerSecond");
+        /// <summary>
+        /// Constant NetworkOutBytesPerSecond for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName NetworkOutBytesPerSecond = new IdleMetricName("NetworkOutBytesPerSecond");
+        /// <summary>
+        /// Constant VolumeReadOpsPerSecond for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName VolumeReadOpsPerSecond = new IdleMetricName("VolumeReadOpsPerSecond");
+        /// <summary>
+        /// Constant VolumeWriteOpsPerSecond for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName VolumeWriteOpsPerSecond = new IdleMetricName("VolumeWriteOpsPerSecond");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdleMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdleMetricName FindValue(string value)
+        {
+            return FindValue<IdleMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdleMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdleRecommendationFilterName.
+    /// </summary>
+    public class IdleRecommendationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding for IdleRecommendationFilterName
+        /// </summary>
+        public static readonly IdleRecommendationFilterName Finding = new IdleRecommendationFilterName("Finding");
+        /// <summary>
+        /// Constant ResourceType for IdleRecommendationFilterName
+        /// </summary>
+        public static readonly IdleRecommendationFilterName ResourceType = new IdleRecommendationFilterName("ResourceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdleRecommendationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdleRecommendationFilterName FindValue(string value)
+        {
+            return FindValue<IdleRecommendationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdleRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IdleRecommendationResourceType.
+    /// </summary>
+    public class IdleRecommendationResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutoScalingGroup for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType AutoScalingGroup = new IdleRecommendationResourceType("AutoScalingGroup");
+        /// <summary>
+        /// Constant EBSVolume for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType EBSVolume = new IdleRecommendationResourceType("EBSVolume");
+        /// <summary>
+        /// Constant EC2Instance for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType EC2Instance = new IdleRecommendationResourceType("EC2Instance");
+        /// <summary>
+        /// Constant ECSService for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType ECSService = new IdleRecommendationResourceType("ECSService");
+        /// <summary>
+        /// Constant RDSDBInstance for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType RDSDBInstance = new IdleRecommendationResourceType("RDSDBInstance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdleRecommendationResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdleRecommendationResourceType FindValue(string value)
+        {
+            return FindValue<IdleRecommendationResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdleRecommendationResourceType(string value)
         {
             return FindValue(value);
         }
@@ -4583,6 +5167,56 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type Order.
+    /// </summary>
+    public class Order : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Asc for Order
+        /// </summary>
+        public static readonly Order Asc = new Order("Asc");
+        /// <summary>
+        /// Constant Desc for Order
+        /// </summary>
+        public static readonly Order Desc = new Order("Desc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Order(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Order FindValue(string value)
+        {
+            return FindValue<Order>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Order(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PlatformDifference.
     /// </summary>
     public class PlatformDifference : ConstantClass
@@ -4695,11 +5329,85 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type RDSCurrentInstancePerformanceRisk.
+    /// </summary>
+    public class RDSCurrentInstancePerformanceRisk : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for RDSCurrentInstancePerformanceRisk
+        /// </summary>
+        public static readonly RDSCurrentInstancePerformanceRisk High = new RDSCurrentInstancePerformanceRisk("High");
+        /// <summary>
+        /// Constant Low for RDSCurrentInstancePerformanceRisk
+        /// </summary>
+        public static readonly RDSCurrentInstancePerformanceRisk Low = new RDSCurrentInstancePerformanceRisk("Low");
+        /// <summary>
+        /// Constant Medium for RDSCurrentInstancePerformanceRisk
+        /// </summary>
+        public static readonly RDSCurrentInstancePerformanceRisk Medium = new RDSCurrentInstancePerformanceRisk("Medium");
+        /// <summary>
+        /// Constant VeryLow for RDSCurrentInstancePerformanceRisk
+        /// </summary>
+        public static readonly RDSCurrentInstancePerformanceRisk VeryLow = new RDSCurrentInstancePerformanceRisk("VeryLow");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RDSCurrentInstancePerformanceRisk(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RDSCurrentInstancePerformanceRisk FindValue(string value)
+        {
+            return FindValue<RDSCurrentInstancePerformanceRisk>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RDSCurrentInstancePerformanceRisk(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RDSDBMetricName.
     /// </summary>
     public class RDSDBMetricName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AuroraMemoryHealthState for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName AuroraMemoryHealthState = new RDSDBMetricName("AuroraMemoryHealthState");
+        /// <summary>
+        /// Constant AuroraMemoryNumDeclinedSql for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName AuroraMemoryNumDeclinedSql = new RDSDBMetricName("AuroraMemoryNumDeclinedSql");
+        /// <summary>
+        /// Constant AuroraMemoryNumKillConnTotal for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName AuroraMemoryNumKillConnTotal = new RDSDBMetricName("AuroraMemoryNumKillConnTotal");
+        /// <summary>
+        /// Constant AuroraMemoryNumKillQueryTotal for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName AuroraMemoryNumKillQueryTotal = new RDSDBMetricName("AuroraMemoryNumKillQueryTotal");
         /// <summary>
         /// Constant CPU for RDSDBMetricName
         /// </summary>
@@ -4740,6 +5448,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant NetworkTransmitThroughput for RDSDBMetricName
         /// </summary>
         public static readonly RDSDBMetricName NetworkTransmitThroughput = new RDSDBMetricName("NetworkTransmitThroughput");
+        /// <summary>
+        /// Constant ReadIOPSEphemeralStorage for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName ReadIOPSEphemeralStorage = new RDSDBMetricName("ReadIOPSEphemeralStorage");
+        /// <summary>
+        /// Constant StorageNetworkReceiveThroughput for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName StorageNetworkReceiveThroughput = new RDSDBMetricName("StorageNetworkReceiveThroughput");
+        /// <summary>
+        /// Constant StorageNetworkTransmitThroughput for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName StorageNetworkTransmitThroughput = new RDSDBMetricName("StorageNetworkTransmitThroughput");
+        /// <summary>
+        /// Constant WriteIOPSEphemeralStorage for RDSDBMetricName
+        /// </summary>
+        public static readonly RDSDBMetricName WriteIOPSEphemeralStorage = new RDSDBMetricName("WriteIOPSEphemeralStorage");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4961,9 +5685,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly RDSInstanceFindingReasonCode CPUUnderprovisioned = new RDSInstanceFindingReasonCode("CPUUnderprovisioned");
         /// <summary>
+        /// Constant DBClusterWriterUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode DBClusterWriterUnderprovisioned = new RDSInstanceFindingReasonCode("DBClusterWriterUnderprovisioned");
+        /// <summary>
         /// Constant EBSIOPSOverprovisioned for RDSInstanceFindingReasonCode
         /// </summary>
         public static readonly RDSInstanceFindingReasonCode EBSIOPSOverprovisioned = new RDSInstanceFindingReasonCode("EBSIOPSOverprovisioned");
+        /// <summary>
+        /// Constant EBSIOPSUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode EBSIOPSUnderprovisioned = new RDSInstanceFindingReasonCode("EBSIOPSUnderprovisioned");
         /// <summary>
         /// Constant EBSThroughputOverprovisioned for RDSInstanceFindingReasonCode
         /// </summary>
@@ -4972,6 +5704,18 @@ namespace Amazon.ComputeOptimizer
         /// Constant EBSThroughputUnderprovisioned for RDSInstanceFindingReasonCode
         /// </summary>
         public static readonly RDSInstanceFindingReasonCode EBSThroughputUnderprovisioned = new RDSInstanceFindingReasonCode("EBSThroughputUnderprovisioned");
+        /// <summary>
+        /// Constant InstanceStorageReadIOPSUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode InstanceStorageReadIOPSUnderprovisioned = new RDSInstanceFindingReasonCode("InstanceStorageReadIOPSUnderprovisioned");
+        /// <summary>
+        /// Constant InstanceStorageWriteIOPSUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode InstanceStorageWriteIOPSUnderprovisioned = new RDSInstanceFindingReasonCode("InstanceStorageWriteIOPSUnderprovisioned");
+        /// <summary>
+        /// Constant MemoryUnderprovisioned for RDSInstanceFindingReasonCode
+        /// </summary>
+        public static readonly RDSInstanceFindingReasonCode MemoryUnderprovisioned = new RDSInstanceFindingReasonCode("MemoryUnderprovisioned");
         /// <summary>
         /// Constant NetworkBandwidthOverprovisioned for RDSInstanceFindingReasonCode
         /// </summary>
@@ -5356,6 +6100,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant EcsService for ResourceType
         /// </summary>
         public static readonly ResourceType EcsService = new ResourceType("EcsService");
+        /// <summary>
+        /// Constant Idle for ResourceType
+        /// </summary>
+        public static readonly ResourceType Idle = new ResourceType("Idle");
         /// <summary>
         /// Constant LambdaFunction for ResourceType
         /// </summary>

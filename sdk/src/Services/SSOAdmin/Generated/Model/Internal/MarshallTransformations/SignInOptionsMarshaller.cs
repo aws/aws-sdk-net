@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationUrl())
             {
                 context.Writer.WritePropertyName("ApplicationUrl");
-                context.Writer.Write(requestObject.ApplicationUrl);
+                context.Writer.WriteStringValue(requestObject.ApplicationUrl);
             }
 
             if(requestObject.IsSetOrigin())
             {
                 context.Writer.WritePropertyName("Origin");
-                context.Writer.Write(requestObject.Origin);
+                context.Writer.WriteStringValue(requestObject.Origin);
             }
 
         }

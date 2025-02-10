@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlexaForBusinessMetadata())
             {
                 context.Writer.WritePropertyName("AlexaForBusinessMetadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AlexaForBusinessMetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.AlexaForBusinessMetadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLicenseType())
             {
                 context.Writer.WritePropertyName("LicenseType");
-                context.Writer.Write(requestObject.LicenseType);
+                context.Writer.WriteStringValue(requestObject.LicenseType);
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
             if(requestObject.IsSetUserType())
             {
                 context.Writer.WritePropertyName("UserType");
-                context.Writer.Write(requestObject.UserType);
+                context.Writer.WriteStringValue(requestObject.UserType);
             }
 
         }

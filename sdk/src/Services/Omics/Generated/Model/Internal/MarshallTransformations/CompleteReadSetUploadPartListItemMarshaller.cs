@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChecksum())
             {
                 context.Writer.WritePropertyName("checksum");
-                context.Writer.Write(requestObject.Checksum);
+                context.Writer.WriteStringValue(requestObject.Checksum);
             }
 
             if(requestObject.IsSetPartNumber())
             {
                 context.Writer.WritePropertyName("partNumber");
-                context.Writer.Write(requestObject.PartNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.PartNumber.Value);
             }
 
             if(requestObject.IsSetPartSource())
             {
                 context.Writer.WritePropertyName("partSource");
-                context.Writer.Write(requestObject.PartSource);
+                context.Writer.WriteStringValue(requestObject.PartSource);
             }
 
         }

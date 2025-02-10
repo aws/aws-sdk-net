@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputId())
             {
                 context.Writer.WritePropertyName("InputId");
-                context.Writer.Write(requestObject.InputId);
+                context.Writer.WriteStringValue(requestObject.InputId);
             }
 
             if(requestObject.IsSetInputParallelismUpdate())
             {
                 context.Writer.WritePropertyName("InputParallelismUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputParallelismUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputParallelismUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputProcessingConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("InputProcessingConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputProcessingConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputProcessingConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputSchemaUpdate())
             {
                 context.Writer.WritePropertyName("InputSchemaUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputSchemaUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputSchemaUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisFirehoseInputUpdate())
             {
                 context.Writer.WritePropertyName("KinesisFirehoseInputUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisFirehoseInputUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisFirehoseInputUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKinesisStreamsInputUpdate())
             {
                 context.Writer.WritePropertyName("KinesisStreamsInputUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KinesisStreamsInputUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisStreamsInputUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamePrefixUpdate())
             {
                 context.Writer.WritePropertyName("NamePrefixUpdate");
-                context.Writer.Write(requestObject.NamePrefixUpdate);
+                context.Writer.WriteStringValue(requestObject.NamePrefixUpdate);
             }
 
         }

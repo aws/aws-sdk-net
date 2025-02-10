@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   Transition Unmarshaller
      /// </summary>
-    public class TransitionUnmarshaller : IUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>, IUnmarshaller<LifecycleTransition, JsonUnmarshallerContext> 
+    public class TransitionUnmarshaller : IXmlUnmarshaller<LifecycleTransition, XmlUnmarshallerContext>, IXmlUnmarshaller<LifecycleTransition, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Date", targetDepth))
                     {
-                        transition.DateUtc = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
+                        transition.Date = DateTimeUnmarshaller.GetInstance().Unmarshall(context);
                             
                         continue;
                     }

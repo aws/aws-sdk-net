@@ -303,7 +303,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.GetSchemaResponse.Schema</property>
     <min>1</min>
-    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.IsAuthorizedRequest.PolicyStoreId</property>
@@ -545,6 +544,42 @@
     <min>1</min>
     <max>200</max>
     <pattern>Action$|^.+::Action</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.AttributeValue.Decimal</property>
+    <min>3</min>
+    <max>23</max>
+    <pattern>-?\d{1,15}\.\d{1,4}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.AttributeValue.Ipaddr</property>
+    <min>1</min>
+    <max>44</max>
+    <pattern>[0-9a-fA-F\.:\/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.BatchGetPolicyInputItem.PolicyId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.BatchGetPolicyInputItem.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.BatchGetPolicyOutputItem.PolicyId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VerifiedPermissions.Model.BatchGetPolicyOutputItem.PolicyStoreId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.CognitoGroupConfiguration.GroupEntityType</property>
@@ -802,7 +837,6 @@
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.SchemaDefinition.CedarJson</property>
     <min>1</min>
-    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VerifiedPermissions.Model.StaticPolicyDefinition.Description</property>

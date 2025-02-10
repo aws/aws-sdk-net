@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PutSolNetworkPackageContentMetadata Object
     /// </summary>  
-    public class PutSolNetworkPackageContentMetadataUnmarshaller : IUnmarshaller<PutSolNetworkPackageContentMetadata, XmlUnmarshallerContext>, IUnmarshaller<PutSolNetworkPackageContentMetadata, JsonUnmarshallerContext>
+    public class PutSolNetworkPackageContentMetadataUnmarshaller : IJsonUnmarshaller<PutSolNetworkPackageContentMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PutSolNetworkPackageContentMetadata IUnmarshaller<PutSolNetworkPackageContentMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PutSolNetworkPackageContentMetadata Unmarshall(JsonUnmarshallerContext context)
+        public PutSolNetworkPackageContentMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PutSolNetworkPackageContentMetadata unmarshalledObject = new PutSolNetworkPackageContentMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("nsd", targetDepth))
                 {
                     var unmarshaller = NetworkArtifactMetaUnmarshaller.Instance;
-                    unmarshalledObject.Nsd = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Nsd = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

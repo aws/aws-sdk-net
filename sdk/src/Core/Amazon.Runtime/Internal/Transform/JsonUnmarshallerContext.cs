@@ -19,6 +19,7 @@ using System.IO;
 using System.Text;
 using ThirdParty.Json.LitJson;
 using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -49,9 +50,8 @@ namespace Amazon.Runtime.Internal.Transform
         #region Private members
 
         private StreamReader streamReader = null;
-        private JsonReader jsonReader = null;
         private JsonPathStack stack = new JsonPathStack();
-        private JsonToken? currentToken = null;
+        private JsonTokenType? currentToken = null;
         private bool disposed = false;
         private bool wasPeeked = false;
         #endregion
@@ -129,17 +129,28 @@ namespace Amazon.Runtime.Internal.Transform
                     base.SetupFlexibleChecksumStream(responseData, CrcStream ?? responseStream, contentLength, requestContext);
                 }
             }
-
+            
             if (this.FlexibleChecksumStream != null) // either just flexible checksum, or flexible checksum wrapping the older CRC stream
                 streamReader = new StreamReader(this.FlexibleChecksumStream);
             else if (this.CrcStream != null)
                 streamReader = new StreamReader(this.CrcStream);
             else
                 streamReader = new StreamReader(responseStream);
-
-            jsonReader = new JsonReader(streamReader);
         }
 
+        #endregion
+        #region Public Methods
+
+        /// <summary>
+        /// Reads the next token at depth greater than or equal to target depth.
+        /// </summary>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to target depth.</param>
+        /// <param name="reader">The Utf8JsonReader used to read the document</param>
+        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
+        public bool ReadAtDepth(int targetDepth, ref StreamingUtf8JsonReader reader)
+        {
+            return Read(ref reader) && this.CurrentDepth >= targetDepth;
+        }
         #endregion
 
         #region Overrides
@@ -151,7 +162,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             get
             {
-                return (CurrentTokenType == JsonToken.None) && (!streamReader.EndOfStream);
+                return (CurrentTokenType == JsonTokenType.None) && (!streamReader.EndOfStream);
             }
         }
 
@@ -160,7 +171,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>    
         public override bool IsEndElement
         {
-            get { return CurrentTokenType == JsonToken.ObjectEnd; }
+            get { return CurrentTokenType == JsonTokenType.EndObject; }
         }
 
         /// <summary>
@@ -168,7 +179,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override bool IsStartElement
         {
-            get { return CurrentTokenType == JsonToken.ObjectStart; }
+            get { return CurrentTokenType == JsonTokenType.StartObject; }
         }
 
         /// <summary>
@@ -201,7 +212,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>
         ///     True if a token was read, false if there are no more tokens to read.
         /// </returns>
-        public override bool Read()
+        public bool Read(ref StreamingUtf8JsonReader reader)
         {
             if (wasPeeked)
             {
@@ -209,11 +220,11 @@ namespace Amazon.Runtime.Internal.Transform
                 return currentToken == null;
             }
             
-            bool result = jsonReader.Read();
+            bool result = reader.Read();
             if (result)
             {
-                currentToken = jsonReader.Token;
-                UpdateContext();
+                currentToken = reader.Reader.TokenType;
+                UpdateContext(ref reader);
             }
             else
             {
@@ -231,13 +242,14 @@ namespace Amazon.Runtime.Internal.Transform
         /// will return the same data until a Read() call is made.
         /// </summary>
         /// <param name="token">Token to peek.</param>
+        /// <param name="reader">The Utf8JsonReader</param>
         /// <returns>Returns true if the peeked token matches given token.</returns>
-        public bool Peek(JsonToken token)
+        public bool Peek(JsonTokenType token, ref StreamingUtf8JsonReader reader)
         {
             if (wasPeeked)
                 return currentToken != null && currentToken == token;
 
-            if (Read())
+            if (Read(ref reader))
             {
                 wasPeeked = true;
                 return currentToken == token;
@@ -245,60 +257,47 @@ namespace Amazon.Runtime.Internal.Transform
             return false;
         }
 
-        /// <summary>
-        ///     Returns the text contents of the current token being parsed.
-        /// </summary>
-        /// <returns>
-        ///     The text contents of the current token being parsed.
-        /// </returns>
-        public override string ReadText()
+        public string ReadText(ref StreamingUtf8JsonReader reader)
         {
-            object data = jsonReader.Value;
-            string text;
+            string text = string.Empty;
             switch (currentToken)
             {
-                case JsonToken.Null:
+                case JsonTokenType.Null:
                     text = null;
                     break;
-                case JsonToken.String:
-                case JsonToken.PropertyName:
-                    text = data as string;
+                case JsonTokenType.True:
+                case JsonTokenType.False:
+                    text = reader.Reader.GetBoolean().ToString();
                     break;
-                case JsonToken.Boolean:
-                case JsonToken.Int:
-                case JsonToken.UInt:
-                case JsonToken.Long:
-                case JsonToken.ULong:
-                    IFormattable iformattable = data as IFormattable;
-                    if (iformattable != null)
-                        text = iformattable.ToString(null, CultureInfo.InvariantCulture);
-                    else
-                        text = data.ToString();
+                case JsonTokenType.PropertyName:
+                case JsonTokenType.String:
+                    text = reader.Reader.GetString();
                     break;
-                case JsonToken.Double:
-                    var formattable = data as IFormattable;
-                    if (formattable != null)
-                        text = formattable.ToString("R", CultureInfo.InvariantCulture);
-                    else
-                        text = data.ToString();
+                 // For numbers we grab the raw value b/ c we don't want to lose precision.
+                case JsonTokenType.Number:
+#if NETSTANDARD2_0 || NETFRAMEWORK
+                    // overload which accepts a ReadOnlySpan<byte> is only available in netstandard2.1 and netcore2.1+
+                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan.ToArray());
+#else
+                    text = Encoding.UTF8.GetString(reader.Reader.ValueSpan);
+#endif
                     break;
                 default:
-                    throw new AmazonClientException(
-                            "We expected a VALUE token but got: " + currentToken);
+                    throw new AmazonClientException($"Unexpected token: {currentToken}");
             }
             return text;
         }
 
-        #endregion
+#endregion
 
         #region Public properties
 
         /// <summary>
         /// The type of the current token
         /// </summary>
-        public JsonToken CurrentTokenType
+        public JsonTokenType? CurrentTokenType
         {
-            get { return currentToken.Value; }
+            get { return currentToken; }
         }
 
         #endregion
@@ -353,11 +352,11 @@ namespace Amazon.Runtime.Internal.Transform
             return peek;
         }
 
-        private void UpdateContext()
+        private void UpdateContext(ref StreamingUtf8JsonReader reader)
         {
             if (!currentToken.HasValue) return;
 
-            if (currentToken.Value == JsonToken.ObjectStart || currentToken.Value == JsonToken.ArrayStart)
+            if (currentToken.Value == JsonTokenType.StartObject || currentToken.Value == JsonTokenType.StartArray)
             {
                 // Push '/' for object start and array start.
                 stack.Push(new PathSegment
@@ -366,7 +365,7 @@ namespace Amazon.Runtime.Internal.Transform
                     Value = DELIMITER
                 });
             }
-            else if (currentToken.Value == JsonToken.ObjectEnd || currentToken.Value == JsonToken.ArrayEnd)
+            else if (currentToken.Value == JsonTokenType.EndObject || currentToken.Value == JsonTokenType.EndArray)
             {
                 if (stack.Peek().SegmentType == PathSegmentType.Delimiter)
                 {
@@ -384,9 +383,9 @@ namespace Amazon.Runtime.Internal.Transform
             // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
             // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
             // so we should just push the value so that it can be retrieved later.
-            else if (currentToken.Value == JsonToken.PropertyName || (stack.Count == 0 && currentToken == JsonToken.String))
+            else if (currentToken.Value == JsonTokenType.PropertyName || (stack.Count == 0 && currentToken == JsonTokenType.String))
             {
-                string t = ReadText();
+                string t = ReadText(ref reader);
 
                 // Push property name, it's appended to the stack's CurrentPath,
                 // it this does not affect the depth.
@@ -396,7 +395,7 @@ namespace Amazon.Runtime.Internal.Transform
                     Value = t
                 });
             }
-            else if (currentToken.Value != JsonToken.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
+            else if (currentToken.Value != JsonTokenType.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
                 // Pop if you encounter a simple data type or null
                 // This will pop the property name associated with it in cases like  {"a":"b"}.
@@ -408,17 +407,6 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         #endregion
-
-        public JsonData ToJsonData()
-        {
-            var data = JsonMapper.ToObject(jsonReader);
-
-            if (stack.Count > 0)
-                stack.Pop();
-            
-            return data;
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (!disposed)

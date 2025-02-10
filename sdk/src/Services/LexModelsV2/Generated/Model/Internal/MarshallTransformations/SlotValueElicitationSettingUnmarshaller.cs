@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SlotValueElicitationSetting Object
     /// </summary>  
-    public class SlotValueElicitationSettingUnmarshaller : IUnmarshaller<SlotValueElicitationSetting, XmlUnmarshallerContext>, IUnmarshaller<SlotValueElicitationSetting, JsonUnmarshallerContext>
+    public class SlotValueElicitationSettingUnmarshaller : IJsonUnmarshaller<SlotValueElicitationSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SlotValueElicitationSetting IUnmarshaller<SlotValueElicitationSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SlotValueElicitationSetting Unmarshall(JsonUnmarshallerContext context)
+        public SlotValueElicitationSetting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SlotValueElicitationSetting unmarshalledObject = new SlotValueElicitationSetting();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("defaultValueSpecification", targetDepth))
                 {
                     var unmarshaller = SlotDefaultValueSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValueSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultValueSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("promptSpecification", targetDepth))
                 {
                     var unmarshaller = PromptSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PromptSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PromptSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sampleUtterances", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SampleUtterance, SampleUtteranceUnmarshaller>(SampleUtteranceUnmarshaller.Instance);
-                    unmarshalledObject.SampleUtterances = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SampleUtterance, SampleUtteranceUnmarshaller>(SampleUtteranceUnmarshaller.Instance);
+                    unmarshalledObject.SampleUtterances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slotCaptureSetting", targetDepth))
                 {
                     var unmarshaller = SlotCaptureSettingUnmarshaller.Instance;
-                    unmarshalledObject.SlotCaptureSetting = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlotCaptureSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slotConstraint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlotConstraint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlotConstraint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slotResolutionSetting", targetDepth))
                 {
                     var unmarshaller = SlotResolutionSettingUnmarshaller.Instance;
-                    unmarshalledObject.SlotResolutionSetting = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlotResolutionSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("waitAndContinueSpecification", targetDepth))
                 {
                     var unmarshaller = WaitAndContinueSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.WaitAndContinueSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WaitAndContinueSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

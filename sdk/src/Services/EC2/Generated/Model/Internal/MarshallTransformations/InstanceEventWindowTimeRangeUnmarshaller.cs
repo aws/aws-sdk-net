@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceEventWindowTimeRange Object
     /// </summary>  
-    public class InstanceEventWindowTimeRangeUnmarshaller : IUnmarshaller<InstanceEventWindowTimeRange, XmlUnmarshallerContext>, IUnmarshaller<InstanceEventWindowTimeRange, JsonUnmarshallerContext>
+    public class InstanceEventWindowTimeRangeUnmarshaller : IXmlUnmarshaller<InstanceEventWindowTimeRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceEventWindowTimeRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceEventWindowTimeRangeUnmarshaller _instance = new InstanceEventWindowTimeRangeUnmarshaller();        
 

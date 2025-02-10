@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,46 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("accountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("displayName");
-                context.Writer.Write(requestObject.DisplayName);
+                context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
             if(requestObject.IsSetMemberAbilities())
             {
                 context.Writer.WritePropertyName("memberAbilities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMemberAbilitiesListValue in requestObject.MemberAbilities)
                 {
-                        context.Writer.Write(requestObjectMemberAbilitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectMemberAbilitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetMlMemberAbilities())
+            {
+                context.Writer.WritePropertyName("mlMemberAbilities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MLMemberAbilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlMemberAbilities, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPaymentConfiguration())
             {
                 context.Writer.WritePropertyName("paymentConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaymentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PaymentConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

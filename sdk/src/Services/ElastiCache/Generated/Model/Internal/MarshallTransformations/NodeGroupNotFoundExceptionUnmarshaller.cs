@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NodeGroupNotFoundException operation
     /// </summary>  
-    public class NodeGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<NodeGroupNotFoundException, XmlUnmarshallerContext>
+    public class NodeGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NodeGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

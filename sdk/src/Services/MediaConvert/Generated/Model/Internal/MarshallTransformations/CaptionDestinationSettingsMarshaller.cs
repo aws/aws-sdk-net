@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,106 +49,106 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBurninDestinationSettings())
             {
                 context.Writer.WritePropertyName("burninDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BurninDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BurninDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDestinationType())
             {
                 context.Writer.WritePropertyName("destinationType");
-                context.Writer.Write(requestObject.DestinationType);
+                context.Writer.WriteStringValue(requestObject.DestinationType);
             }
 
             if(requestObject.IsSetDvbSubDestinationSettings())
             {
                 context.Writer.WritePropertyName("dvbSubDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DvbSubDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DvbSubDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmbeddedDestinationSettings())
             {
                 context.Writer.WritePropertyName("embeddedDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmbeddedDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmbeddedDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImscDestinationSettings())
             {
                 context.Writer.WritePropertyName("imscDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImscDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImscDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSccDestinationSettings())
             {
                 context.Writer.WritePropertyName("sccDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SccDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SccDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSrtDestinationSettings())
             {
                 context.Writer.WritePropertyName("srtDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SrtDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SrtDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTeletextDestinationSettings())
             {
                 context.Writer.WritePropertyName("teletextDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TeletextDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TeletextDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTtmlDestinationSettings())
             {
                 context.Writer.WritePropertyName("ttmlDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TtmlDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TtmlDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWebvttDestinationSettings())
             {
                 context.Writer.WritePropertyName("webvttDestinationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WebvttDestinationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.WebvttDestinationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

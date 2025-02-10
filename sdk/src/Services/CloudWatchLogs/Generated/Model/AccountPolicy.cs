@@ -159,7 +159,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SelectionCriteria. 
         /// <para>
-        /// The log group selection criteria for this subscription filter policy.
+        /// The log group selection criteria that is used for this policy.
         /// </para>
         /// </summary>
         public string SelectionCriteria

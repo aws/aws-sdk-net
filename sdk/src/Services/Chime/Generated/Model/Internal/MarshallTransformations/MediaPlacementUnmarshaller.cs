@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaPlacement Object
     /// </summary>  
-    public class MediaPlacementUnmarshaller : IUnmarshaller<MediaPlacement, XmlUnmarshallerContext>, IUnmarshaller<MediaPlacement, JsonUnmarshallerContext>
+    public class MediaPlacementUnmarshaller : IJsonUnmarshaller<MediaPlacement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaPlacement IUnmarshaller<MediaPlacement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPlacement Unmarshall(JsonUnmarshallerContext context)
+        public MediaPlacement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaPlacement unmarshalledObject = new MediaPlacement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AudioFallbackUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioFallbackUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioFallbackUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AudioHostUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioHostUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioHostUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventIngestionUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventIngestionUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventIngestionUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScreenDataUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScreenDataUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScreenDataUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScreenSharingUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScreenSharingUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScreenSharingUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScreenViewingUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScreenViewingUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScreenViewingUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SignalingUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignalingUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignalingUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TurnControlUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TurnControlUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurnControlUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

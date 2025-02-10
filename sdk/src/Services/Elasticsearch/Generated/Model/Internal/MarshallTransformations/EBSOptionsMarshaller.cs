@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEBSEnabled())
             {
                 context.Writer.WritePropertyName("EBSEnabled");
-                context.Writer.Write(requestObject.EBSEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EBSEnabled.Value);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("Throughput");
-                context.Writer.Write(requestObject.Throughput.Value);
+                context.Writer.WriteNumberValue(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeSize())
             {
                 context.Writer.WritePropertyName("VolumeSize");
-                context.Writer.Write(requestObject.VolumeSize.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSize.Value);
             }
 
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("VolumeType");
-                context.Writer.Write(requestObject.VolumeType);
+                context.Writer.WriteStringValue(requestObject.VolumeType);
             }
 
         }

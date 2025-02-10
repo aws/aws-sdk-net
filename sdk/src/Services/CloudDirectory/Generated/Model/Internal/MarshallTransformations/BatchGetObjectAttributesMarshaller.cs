@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeNames())
             {
                 context.Writer.WritePropertyName("AttributeNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
                 {
-                        context.Writer.Write(requestObjectAttributeNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectAttributeNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetObjectReference())
             {
                 context.Writer.WritePropertyName("ObjectReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ObjectReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.ObjectReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaFacet())
             {
                 context.Writer.WritePropertyName("SchemaFacet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SchemaFacetMarshaller.Instance;
                 marshaller.Marshall(requestObject.SchemaFacet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

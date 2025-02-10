@@ -35,6 +35,7 @@ namespace Amazon.QApps.Model
     public partial class CardValue
     {
         private string _cardId;
+        private SubmissionMutation _submissionMutation;
         private string _value;
 
         /// <summary>
@@ -57,12 +58,31 @@ namespace Amazon.QApps.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubmissionMutation. 
+        /// <para>
+        /// The structure that describes how the current form card value is mutated. Only applies
+        /// for form cards when multiple responses are allowed.
+        /// </para>
+        /// </summary>
+        public SubmissionMutation SubmissionMutation
+        {
+            get { return this._submissionMutation; }
+            set { this._submissionMutation = value; }
+        }
+
+        // Check to see if SubmissionMutation property is set
+        internal bool IsSetSubmissionMutation()
+        {
+            return this._submissionMutation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
         /// The value or result associated with the card.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=5000)]
+        [AWSProperty(Required=true, Min=0, Max=40000)]
         public string Value
         {
             get { return this._value; }

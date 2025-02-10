@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model.Internal.MarshallTransformations
 {
@@ -57,7 +55,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVnfInstanceId())
             {
                 context.Writer.WritePropertyName("vnfInstanceId");
-                context.Writer.Write(requestObject.VnfInstanceId);
+                context.Writer.WriteStringValue(requestObject.VnfInstanceId);
             }
 
         }

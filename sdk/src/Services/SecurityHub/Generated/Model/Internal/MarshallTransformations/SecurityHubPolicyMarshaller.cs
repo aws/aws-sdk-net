@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabledStandardIdentifiers())
             {
                 context.Writer.WritePropertyName("EnabledStandardIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnabledStandardIdentifiersListValue in requestObject.EnabledStandardIdentifiers)
                 {
-                        context.Writer.Write(requestObjectEnabledStandardIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectEnabledStandardIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityControlsConfiguration())
             {
                 context.Writer.WritePropertyName("SecurityControlsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SecurityControlsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecurityControlsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceEnabled())
             {
                 context.Writer.WritePropertyName("ServiceEnabled");
-                context.Writer.Write(requestObject.ServiceEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ServiceEnabled.Value);
             }
 
         }

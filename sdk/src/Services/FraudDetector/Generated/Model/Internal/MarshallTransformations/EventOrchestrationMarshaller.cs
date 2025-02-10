@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventBridgeEnabled())
             {
                 context.Writer.WritePropertyName("eventBridgeEnabled");
-                context.Writer.Write(requestObject.EventBridgeEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EventBridgeEnabled.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefiner())
             {
                 context.Writer.WritePropertyName("Definer");
-                context.Writer.Write(requestObject.Definer);
+                context.Writer.WriteStringValue(requestObject.Definer);
             }
 
             if(requestObject.IsSetIsProtected())
             {
                 context.Writer.WritePropertyName("IsProtected");
-                context.Writer.Write(requestObject.IsProtected.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsProtected.Value);
             }
 
             if(requestObject.IsSetRepresentations())
             {
                 context.Writer.WritePropertyName("Representations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRepresentationsListValue in requestObject.Representations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ViewRepresentationInputMarshaller.Instance;
                     marshaller.Marshall(requestObjectRepresentationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubObjects())
             {
                 context.Writer.WritePropertyName("SubObjects");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubObjectsListValue in requestObject.SubObjects)
                 {
-                        context.Writer.Write(requestObjectSubObjectsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubObjectsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -32,7 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Allows a user to delete their own user profile.
+    /// Self-deletes a user profile. A deleted user profile can no longer be used to sign
+    /// in and can't be restored.
     /// 
     ///  
     /// <para>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -51,82 +49,82 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseCredentials())
             {
                 context.Writer.WritePropertyName("DatabaseCredentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RDSDatabaseCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseCredentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseInformation())
             {
                 context.Writer.WritePropertyName("DatabaseInformation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RDSDatabaseMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseInformation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataRearrangement())
             {
                 context.Writer.WritePropertyName("DataRearrangement");
-                context.Writer.Write(requestObject.DataRearrangement);
+                context.Writer.WriteStringValue(requestObject.DataRearrangement);
             }
 
             if(requestObject.IsSetDataSchema())
             {
                 context.Writer.WritePropertyName("DataSchema");
-                context.Writer.Write(requestObject.DataSchema);
+                context.Writer.WriteStringValue(requestObject.DataSchema);
             }
 
             if(requestObject.IsSetDataSchemaUri())
             {
                 context.Writer.WritePropertyName("DataSchemaUri");
-                context.Writer.Write(requestObject.DataSchemaUri);
+                context.Writer.WriteStringValue(requestObject.DataSchemaUri);
             }
 
             if(requestObject.IsSetResourceRole())
             {
                 context.Writer.WritePropertyName("ResourceRole");
-                context.Writer.Write(requestObject.ResourceRole);
+                context.Writer.WriteStringValue(requestObject.ResourceRole);
             }
 
             if(requestObject.IsSetS3StagingLocation())
             {
                 context.Writer.WritePropertyName("S3StagingLocation");
-                context.Writer.Write(requestObject.S3StagingLocation);
+                context.Writer.WriteStringValue(requestObject.S3StagingLocation);
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelectSqlQuery())
             {
                 context.Writer.WritePropertyName("SelectSqlQuery");
-                context.Writer.Write(requestObject.SelectSqlQuery);
+                context.Writer.WriteStringValue(requestObject.SelectSqlQuery);
             }
 
             if(requestObject.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("ServiceRole");
-                context.Writer.Write(requestObject.ServiceRole);
+                context.Writer.WriteStringValue(requestObject.ServiceRole);
             }
 
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");
-                context.Writer.Write(requestObject.SubnetId);
+                context.Writer.WriteStringValue(requestObject.SubnetId);
             }
 
         }

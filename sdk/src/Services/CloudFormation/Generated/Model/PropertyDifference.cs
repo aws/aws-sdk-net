@@ -33,8 +33,8 @@ namespace Amazon.CloudFormation.Model
     /// Information about a resource property whose actual value differs from its expected
     /// value, as defined in the stack template and any values specified as template parameters.
     /// These will be present only for resources whose <c>StackResourceDriftStatus</c> is
-    /// <c>MODIFIED</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-    /// Unregulated Configuration Changes to Stacks and Resources</a>.
+    /// <c>MODIFIED</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+    /// unmanaged configuration changes to stacks and resources with drift detection</a>.
     /// </summary>
     public partial class PropertyDifference
     {

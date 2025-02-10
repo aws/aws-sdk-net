@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSetId())
             {
                 context.Writer.WritePropertyName("DataSetId");
-                context.Writer.Write(requestObject.DataSetId);
+                context.Writer.WriteStringValue(requestObject.DataSetId);
             }
 
             if(requestObject.IsSetScheduleId())
             {
                 context.Writer.WritePropertyName("ScheduleId");
-                context.Writer.Write(requestObject.ScheduleId);
+                context.Writer.WriteStringValue(requestObject.ScheduleId);
             }
 
             if(requestObject.IsSetStartAfterDateTime())
             {
                 context.Writer.WritePropertyName("StartAfterDateTime");
-                context.Writer.Write(requestObject.StartAfterDateTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartAfterDateTime.Value)));
             }
 
         }

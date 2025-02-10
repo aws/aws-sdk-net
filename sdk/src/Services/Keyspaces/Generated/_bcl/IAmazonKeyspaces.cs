@@ -88,8 +88,8 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-keyspaces.html#keyspaces-create">Creating
-        /// keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.keyspaces.html">Create
+        /// a keyspace</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyspace service method.</param>
@@ -131,8 +131,8 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-keyspaces.html#keyspaces-create">Creating
-        /// keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.keyspaces.html">Create
+        /// a keyspace</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyspace service method.</param>
@@ -182,8 +182,8 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html#tables-create">Creating
-        /// tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.tables.html">Create
+        /// a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTable service method.</param>
@@ -202,7 +202,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -231,8 +231,8 @@ namespace Amazon.Keyspaces
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/working-with-tables.html#tables-create">Creating
-        /// tables</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.tables.html">Create
+        /// a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTable service method.</param>
@@ -254,7 +254,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -267,6 +267,106 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
         Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateType
+
+
+        /// <summary>
+        /// The <c>CreateType</c> operation creates a new user-defined type in the specified
+        /// keyspace. 
+        /// 
+        ///  
+        /// <para>
+        /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-create">Permissions
+        /// to create a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/udts.html">User-defined
+        /// types (UDTs)</a> in the <i>Amazon Keyspaces Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateType service method.</param>
+        /// 
+        /// <returns>The response from the CreateType service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateType">REST API Reference for CreateType Operation</seealso>
+        CreateTypeResponse CreateType(CreateTypeRequest request);
+
+
+
+        /// <summary>
+        /// The <c>CreateType</c> operation creates a new user-defined type in the specified
+        /// keyspace. 
+        /// 
+        ///  
+        /// <para>
+        /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-create">Permissions
+        /// to create a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/udts.html">User-defined
+        /// types (UDTs)</a> in the <i>Amazon Keyspaces Developer Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateType service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/CreateType">REST API Reference for CreateType Operation</seealso>
+        Task<CreateTypeResponse> CreateTypeAsync(CreateTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -292,7 +392,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -330,7 +430,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -374,7 +474,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -418,7 +518,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -434,11 +534,103 @@ namespace Amazon.Keyspaces
 
         #endregion
         
+        #region  DeleteType
+
+
+        /// <summary>
+        /// The <c>DeleteType</c> operation deletes a user-defined type (UDT). You can only delete
+        /// a type that is not used in a table or another UDT. 
+        /// 
+        ///  
+        /// <para>
+        /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-drop">Permissions
+        /// to delete a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteType service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/DeleteType">REST API Reference for DeleteType Operation</seealso>
+        DeleteTypeResponse DeleteType(DeleteTypeRequest request);
+
+
+
+        /// <summary>
+        /// The <c>DeleteType</c> operation deletes a user-defined type (UDT). You can only delete
+        /// a type that is not used in a table or another UDT. 
+        /// 
+        ///  
+        /// <para>
+        /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-drop">Permissions
+        /// to delete a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteType service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/DeleteType">REST API Reference for DeleteType Operation</seealso>
+        Task<DeleteTypeResponse> DeleteTypeAsync(DeleteTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetKeyspace
 
 
         /// <summary>
-        /// Returns the name and the Amazon Resource Name (ARN) of the specified table.
+        /// Returns the name of the specified keyspace, the Amazon Resource Name (ARN), the replication
+        /// strategy, the Amazon Web Services Regions of a multi-Region keyspace, and the status
+        /// of newly added Regions after an <c>UpdateKeyspace</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyspace service method.</param>
         /// 
@@ -451,7 +643,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -468,7 +660,9 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Returns the name and the Amazon Resource Name (ARN) of the specified table.
+        /// Returns the name of the specified keyspace, the Amazon Resource Name (ARN), the replication
+        /// strategy, the Amazon Web Services Regions of a multi-Region keyspace, and the status
+        /// of newly added Regions after an <c>UpdateKeyspace</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyspace service method.</param>
         /// <param name="cancellationToken">
@@ -484,7 +678,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -509,8 +703,8 @@ namespace Amazon.Keyspaces
         /// 
         ///  
         /// <para>
-        /// To read table metadata using <c>GetTable</c>, <c>Select</c> action permissions for
-        /// the table and system tables are required to complete the operation.
+        /// To read table metadata using <c>GetTable</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the table and the system keyspace.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTable service method.</param>
@@ -524,7 +718,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -546,8 +740,8 @@ namespace Amazon.Keyspaces
         /// 
         ///  
         /// <para>
-        /// To read table metadata using <c>GetTable</c>, <c>Select</c> action permissions for
-        /// the table and system tables are required to complete the operation.
+        /// To read table metadata using <c>GetTable</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the table and the system keyspace.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTable service method.</param>
@@ -564,7 +758,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -626,7 +820,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -688,7 +882,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -704,11 +898,97 @@ namespace Amazon.Keyspaces
 
         #endregion
         
+        #region  GetType
+
+
+        /// <summary>
+        /// The <c>GetType</c> operation returns information about the type, for example the
+        /// field definitions, the timestamp when the type was last modified, the level of nesting,
+        /// the status, and details about if the type is used in other types and tables. 
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>GetType</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the system keyspace. To configure the required permissions,
+        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+        /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetType service method.</param>
+        /// 
+        /// <returns>The response from the GetType service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetType">REST API Reference for GetType Operation</seealso>
+        GetTypeResponse GetType(GetTypeRequest request);
+
+
+
+        /// <summary>
+        /// The <c>GetType</c> operation returns information about the type, for example the
+        /// field definitions, the timestamp when the type was last modified, the level of nesting,
+        /// the status, and details about if the type is used in other types and tables. 
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>GetType</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the system keyspace. To configure the required permissions,
+        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+        /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetType service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/GetType">REST API Reference for GetType Operation</seealso>
+        Task<GetTypeResponse> GetTypeAsync(GetTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListKeyspaces
 
 
         /// <summary>
-        /// Returns a list of keyspaces.
+        /// The <c>ListKeyspaces</c> operation returns a list of keyspaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyspaces service method.</param>
         /// 
@@ -721,7 +1001,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -738,7 +1018,7 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Returns a list of keyspaces.
+        /// The <c>ListKeyspaces</c> operation returns a list of keyspaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyspaces service method.</param>
         /// <param name="cancellationToken">
@@ -754,7 +1034,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -774,7 +1054,13 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Returns a list of tables for a specified keyspace.
+        /// The <c>ListTables</c> operation returns a list of tables for a specified keyspace.
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>ListTables</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the system keyspace.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
         /// 
@@ -787,7 +1073,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -804,7 +1090,13 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Returns a list of tables for a specified keyspace.
+        /// The <c>ListTables</c> operation returns a list of tables for a specified keyspace.
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>ListTables</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the system keyspace.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
         /// <param name="cancellationToken">
@@ -820,7 +1112,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -841,6 +1133,12 @@ namespace Amazon.Keyspaces
 
         /// <summary>
         /// Returns a list of all tags associated with the specified Amazon Keyspaces resource.
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>ListTagsForResource</c>, the IAM principal needs
+        /// <c>Select</c> action permissions for the specified resource and the system keyspace.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -853,7 +1151,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -871,6 +1169,12 @@ namespace Amazon.Keyspaces
 
         /// <summary>
         /// Returns a list of all tags associated with the specified Amazon Keyspaces resource.
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>ListTagsForResource</c>, the IAM principal needs
+        /// <c>Select</c> action permissions for the specified resource and the system keyspace.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -886,7 +1190,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -899,6 +1203,90 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTypes
+
+
+        /// <summary>
+        /// The <c>ListTypes</c> operation returns a list of types for a specified keyspace.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>ListTypes</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the system keyspace. To configure the required permissions,
+        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+        /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListTypes service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListTypes">REST API Reference for ListTypes Operation</seealso>
+        ListTypesResponse ListTypes(ListTypesRequest request);
+
+
+
+        /// <summary>
+        /// The <c>ListTypes</c> operation returns a list of types for a specified keyspace.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// To read keyspace metadata using <c>ListTypes</c>, the IAM principal needs <c>Select</c>
+        /// action permissions for the system keyspace. To configure the required permissions,
+        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+        /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypes service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/ListTypes">REST API Reference for ListTypes Operation</seealso>
+        Task<ListTypesResponse> ListTypesAsync(ListTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -990,7 +1378,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1094,7 +1482,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1133,12 +1521,17 @@ namespace Amazon.Keyspaces
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
         /// You don't have sufficient access permissions to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1177,12 +1570,17 @@ namespace Amazon.Keyspaces
         /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
         /// You don't have sufficient access permissions to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
         /// Amazon Keyspaces was unable to fully process this request because of an internal server
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1220,7 +1618,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1258,7 +1656,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1271,6 +1669,270 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateKeyspace
+
+
+        /// <summary>
+        /// Adds a new Amazon Web Services Region to the keyspace. You can add a new Region to
+        /// a keyspace that is either a single or a multi-Region keyspace. Amazon Keyspaces is
+        /// going to replicate all tables in the keyspace to the new Region. To successfully replicate
+        /// all tables to the new Region, they must use client-side timestamps for conflict resolution.
+        /// To enable client-side timestamps, specify <c>clientSideTimestamps.status = enabled</c>
+        /// when invoking the API. For more information about client-side timestamps, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps.html">Client-side
+        /// timestamps in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// To add a Region to a keyspace using the <c>UpdateKeyspace</c> API, the IAM principal
+        /// needs permissions for the following IAM actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>cassandra:Alter</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:AlterMultiRegionResource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:Create</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:CreateMultiRegionResource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:Select</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:SelectMultiRegionResource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:Modify</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:ModifyMultiRegionResource</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the keyspace contains a table that is configured in provisioned mode with auto
+        /// scaling enabled, the following additional IAM actions need to be allowed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:RegisterScalableTarget</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DeregisterScalableTarget</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DescribeScalableTargets</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:PutScalingPolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DescribeScalingPolicies</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To use the <c>UpdateKeyspace</c> API, the IAM principal also needs permissions to
+        /// create a service-linked role with the following elements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>iam:CreateServiceLinkedRole</c> - The <b>action</b> the principal can perform.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:iam::*:role/aws-service-role/replication.cassandra.amazonaws.com/AWSServiceRoleForKeyspacesReplication</c>
+        /// - The <b>resource</b> that the action can be performed on. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam:AWSServiceName: replication.cassandra.amazonaws.com</c> - The only Amazon
+        /// Web Services service that this role can be attached to is Amazon Keyspaces.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/howitworks_replication_permissions_addReplica.html">Configure
+        /// the IAM permissions required to add an Amazon Web Services Region to a keyspace</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyspace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKeyspace service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateKeyspace">REST API Reference for UpdateKeyspace Operation</seealso>
+        UpdateKeyspaceResponse UpdateKeyspace(UpdateKeyspaceRequest request);
+
+
+
+        /// <summary>
+        /// Adds a new Amazon Web Services Region to the keyspace. You can add a new Region to
+        /// a keyspace that is either a single or a multi-Region keyspace. Amazon Keyspaces is
+        /// going to replicate all tables in the keyspace to the new Region. To successfully replicate
+        /// all tables to the new Region, they must use client-side timestamps for conflict resolution.
+        /// To enable client-side timestamps, specify <c>clientSideTimestamps.status = enabled</c>
+        /// when invoking the API. For more information about client-side timestamps, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps.html">Client-side
+        /// timestamps in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// To add a Region to a keyspace using the <c>UpdateKeyspace</c> API, the IAM principal
+        /// needs permissions for the following IAM actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>cassandra:Alter</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:AlterMultiRegionResource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:Create</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:CreateMultiRegionResource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:Select</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:SelectMultiRegionResource</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:Modify</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cassandra:ModifyMultiRegionResource</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the keyspace contains a table that is configured in provisioned mode with auto
+        /// scaling enabled, the following additional IAM actions need to be allowed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:RegisterScalableTarget</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DeregisterScalableTarget</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DescribeScalableTargets</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:PutScalingPolicy</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>application-autoscaling:DescribeScalingPolicies</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To use the <c>UpdateKeyspace</c> API, the IAM principal also needs permissions to
+        /// create a service-linked role with the following elements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>iam:CreateServiceLinkedRole</c> - The <b>action</b> the principal can perform.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:iam::*:role/aws-service-role/replication.cassandra.amazonaws.com/AWSServiceRoleForKeyspacesReplication</c>
+        /// - The <b>resource</b> that the action can be performed on. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam:AWSServiceName: replication.cassandra.amazonaws.com</c> - The only Amazon
+        /// Web Services service that this role can be attached to is Amazon Keyspaces.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/howitworks_replication_permissions_addReplica.html">Configure
+        /// the IAM permissions required to add an Amazon Web Services Region to a keyspace</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateKeyspace service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateKeyspace">REST API Reference for UpdateKeyspace Operation</seealso>
+        Task<UpdateKeyspaceResponse> UpdateKeyspaceAsync(UpdateKeyspaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1298,7 +1960,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
@@ -1338,7 +2000,7 @@ namespace Amazon.Keyspaces
         /// error.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
-        /// The operation tried to access a keyspace or table that doesn't exist. The resource
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
         /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">

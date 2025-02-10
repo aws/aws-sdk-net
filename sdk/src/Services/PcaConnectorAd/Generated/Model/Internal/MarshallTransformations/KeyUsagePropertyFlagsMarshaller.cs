@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecrypt())
             {
                 context.Writer.WritePropertyName("Decrypt");
-                context.Writer.Write(requestObject.Decrypt.Value);
+                context.Writer.WriteBooleanValue(requestObject.Decrypt.Value);
             }
 
             if(requestObject.IsSetKeyAgreement())
             {
                 context.Writer.WritePropertyName("KeyAgreement");
-                context.Writer.Write(requestObject.KeyAgreement.Value);
+                context.Writer.WriteBooleanValue(requestObject.KeyAgreement.Value);
             }
 
             if(requestObject.IsSetSign())
             {
                 context.Writer.WritePropertyName("Sign");
-                context.Writer.Write(requestObject.Sign.Value);
+                context.Writer.WriteBooleanValue(requestObject.Sign.Value);
             }
 
         }

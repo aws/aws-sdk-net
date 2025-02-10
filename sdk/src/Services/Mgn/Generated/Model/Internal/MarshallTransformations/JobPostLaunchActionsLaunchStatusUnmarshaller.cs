@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobPostLaunchActionsLaunchStatus Object
     /// </summary>  
-    public class JobPostLaunchActionsLaunchStatusUnmarshaller : IUnmarshaller<JobPostLaunchActionsLaunchStatus, XmlUnmarshallerContext>, IUnmarshaller<JobPostLaunchActionsLaunchStatus, JsonUnmarshallerContext>
+    public class JobPostLaunchActionsLaunchStatusUnmarshaller : IJsonUnmarshaller<JobPostLaunchActionsLaunchStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JobPostLaunchActionsLaunchStatus IUnmarshaller<JobPostLaunchActionsLaunchStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobPostLaunchActionsLaunchStatus Unmarshall(JsonUnmarshallerContext context)
+        public JobPostLaunchActionsLaunchStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JobPostLaunchActionsLaunchStatus unmarshalledObject = new JobPostLaunchActionsLaunchStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("executionID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ssmDocument", targetDepth))
                 {
                     var unmarshaller = SsmDocumentUnmarshaller.Instance;
-                    unmarshalledObject.SsmDocument = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SsmDocument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ssmDocumentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SsmDocumentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SsmDocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ValidationException operation
     /// </summary>  
-    public class ValidationExceptionUnmarshaller : IErrorResponseUnmarshaller<ValidationException, XmlUnmarshallerContext>
+    public class ValidationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ValidationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
@@ -64,101 +67,150 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockRuntimeException("Request object does not have required field ModelId set");
             request.AddPathResource("{modelId}", StringUtils.FromString(publicRequest.ModelId));
             request.ResourcePath = "/model/{modelId}/converse-stream";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalModelRequestFields())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdditionalModelRequestFields())
-                    {
-                        context.Writer.WritePropertyName("additionalModelRequestFields");
-                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.AdditionalModelRequestFields);
-                    }
-
-                    if(publicRequest.IsSetAdditionalModelResponseFieldPaths())
-                    {
-                        context.Writer.WritePropertyName("additionalModelResponseFieldPaths");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalModelResponseFieldPathsListValue in publicRequest.AdditionalModelResponseFieldPaths)
-                        {
-                                context.Writer.Write(publicRequestAdditionalModelResponseFieldPathsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetGuardrailConfig())
-                    {
-                        context.Writer.WritePropertyName("guardrailConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GuardrailStreamConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GuardrailConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInferenceConfig())
-                    {
-                        context.Writer.WritePropertyName("inferenceConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InferenceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InferenceConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMessages())
-                    {
-                        context.Writer.WritePropertyName("messages");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMessagesListValue in publicRequest.Messages)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MessageMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMessagesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSystem())
-                    {
-                        context.Writer.WritePropertyName("system");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSystemListValue in publicRequest.System)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SystemContentBlockMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSystemListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetToolConfig())
-                    {
-                        context.Writer.WritePropertyName("toolConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ToolConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ToolConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("additionalModelRequestFields");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.AdditionalModelRequestFields);
             }
+
+            if(publicRequest.IsSetAdditionalModelResponseFieldPaths())
+            {
+                context.Writer.WritePropertyName("additionalModelResponseFieldPaths");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalModelResponseFieldPathsListValue in publicRequest.AdditionalModelResponseFieldPaths)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdditionalModelResponseFieldPathsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetGuardrailConfig())
+            {
+                context.Writer.WritePropertyName("guardrailConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GuardrailStreamConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GuardrailConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInferenceConfig())
+            {
+                context.Writer.WritePropertyName("inferenceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InferenceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InferenceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMessages())
+            {
+                context.Writer.WritePropertyName("messages");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMessagesListValue in publicRequest.Messages)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MessageMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMessagesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPerformanceConfig())
+            {
+                context.Writer.WritePropertyName("performanceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PerformanceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PerformanceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPromptVariables())
+            {
+                context.Writer.WritePropertyName("promptVariables");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPromptVariablesKvp in publicRequest.PromptVariables)
+                {
+                    context.Writer.WritePropertyName(publicRequestPromptVariablesKvp.Key);
+                    var publicRequestPromptVariablesValue = publicRequestPromptVariablesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PromptVariableValuesMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPromptVariablesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRequestMetadata())
+            {
+                context.Writer.WritePropertyName("requestMetadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRequestMetadataKvp in publicRequest.RequestMetadata)
+                {
+                    context.Writer.WritePropertyName(publicRequestRequestMetadataKvp.Key);
+                    var publicRequestRequestMetadataValue = publicRequestRequestMetadataKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRequestMetadataValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSystem())
+            {
+                context.Writer.WritePropertyName("system");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSystemListValue in publicRequest.System)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SystemContentBlockMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSystemListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetToolConfig())
+            {
+                context.Writer.WritePropertyName("toolConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ToolConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ToolConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

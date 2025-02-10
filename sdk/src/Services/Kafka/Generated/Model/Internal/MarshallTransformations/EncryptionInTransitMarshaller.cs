@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientBroker())
             {
                 context.Writer.WritePropertyName("clientBroker");
-                context.Writer.Write(requestObject.ClientBroker);
+                context.Writer.WriteStringValue(requestObject.ClientBroker);
             }
 
             if(requestObject.IsSetInCluster())
             {
                 context.Writer.WritePropertyName("inCluster");
-                context.Writer.Write(requestObject.InCluster.Value);
+                context.Writer.WriteBooleanValue(requestObject.InCluster.Value);
             }
 
         }

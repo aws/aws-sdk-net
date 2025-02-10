@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointErrorConditions())
             {
                 context.Writer.WritePropertyName("EndpointErrorConditions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEndpointErrorConditionsListValue in requestObject.EndpointErrorConditions)
                 {
-                        context.Writer.Write(requestObjectEndpointErrorConditionsListValue);
+                        context.Writer.WriteStringValue(requestObjectEndpointErrorConditionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

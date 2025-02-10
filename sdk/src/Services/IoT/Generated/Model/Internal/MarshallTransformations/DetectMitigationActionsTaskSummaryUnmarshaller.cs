@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DetectMitigationActionsTaskSummary Object
     /// </summary>  
-    public class DetectMitigationActionsTaskSummaryUnmarshaller : IUnmarshaller<DetectMitigationActionsTaskSummary, XmlUnmarshallerContext>, IUnmarshaller<DetectMitigationActionsTaskSummary, JsonUnmarshallerContext>
+    public class DetectMitigationActionsTaskSummaryUnmarshaller : IJsonUnmarshaller<DetectMitigationActionsTaskSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DetectMitigationActionsTaskSummary IUnmarshaller<DetectMitigationActionsTaskSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DetectMitigationActionsTaskSummary Unmarshall(JsonUnmarshallerContext context)
+        public DetectMitigationActionsTaskSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DetectMitigationActionsTaskSummary unmarshalledObject = new DetectMitigationActionsTaskSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actionsDefinition", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MitigationAction, MitigationActionUnmarshaller>(MitigationActionUnmarshaller.Instance);
-                    unmarshalledObject.ActionsDefinition = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MitigationAction, MitigationActionUnmarshaller>(MitigationActionUnmarshaller.Instance);
+                    unmarshalledObject.ActionsDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("onlyActiveViolationsIncluded", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.OnlyActiveViolationsIncluded = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnlyActiveViolationsIncluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("suppressedAlertsIncluded", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SuppressedAlertsIncluded = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuppressedAlertsIncluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("target", targetDepth))
                 {
                     var unmarshaller = DetectMitigationActionsTaskTargetUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TaskEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TaskStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskStatistics", targetDepth))
                 {
                     var unmarshaller = DetectMitigationActionsTaskStatisticsUnmarshaller.Instance;
-                    unmarshalledObject.TaskStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("violationEventOccurrenceRange", targetDepth))
                 {
                     var unmarshaller = ViolationEventOccurrenceRangeUnmarshaller.Instance;
-                    unmarshalledObject.ViolationEventOccurrenceRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ViolationEventOccurrenceRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

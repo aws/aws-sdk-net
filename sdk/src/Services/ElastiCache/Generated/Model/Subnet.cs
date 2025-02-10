@@ -98,8 +98,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SupportedNetworkTypes. 
         /// <para>
         /// Either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for workloads
-        /// using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6 on all
-        /// instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+        /// using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine
+        /// version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
         /// </para>
         /// </summary>
         public List<string> SupportedNetworkTypes

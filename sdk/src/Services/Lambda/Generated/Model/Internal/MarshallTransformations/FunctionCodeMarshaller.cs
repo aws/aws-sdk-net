@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,37 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("ImageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WriteStringValue(requestObject.ImageUri);
             }
 
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3Key())
             {
                 context.Writer.WritePropertyName("S3Key");
-                context.Writer.Write(requestObject.S3Key);
+                context.Writer.WriteStringValue(requestObject.S3Key);
             }
 
             if(requestObject.IsSetS3ObjectVersion())
             {
                 context.Writer.WritePropertyName("S3ObjectVersion");
-                context.Writer.Write(requestObject.S3ObjectVersion);
+                context.Writer.WriteStringValue(requestObject.S3ObjectVersion);
+            }
+
+            if(requestObject.IsSetSourceKMSKeyArn())
+            {
+                context.Writer.WritePropertyName("SourceKMSKeyArn");
+                context.Writer.WriteStringValue(requestObject.SourceKMSKeyArn);
             }
 
             if(requestObject.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.ZipFile));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ZipFile));
             }
 
         }

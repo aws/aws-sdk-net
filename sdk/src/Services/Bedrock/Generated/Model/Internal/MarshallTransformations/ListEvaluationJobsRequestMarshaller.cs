@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -59,6 +62,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetApplicationTypeEquals())
+                request.Parameters.Add("applicationTypeEquals", StringUtils.FromString(publicRequest.ApplicationTypeEquals));
             
             if (publicRequest.IsSetCreationTimeAfter())
                 request.Parameters.Add("creationTimeAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeAfter));

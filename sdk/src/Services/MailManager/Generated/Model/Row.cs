@@ -37,12 +37,16 @@ namespace Amazon.MailManager.Model
         private string _archivedMessageId;
         private string _cc;
         private string _date;
+        private Envelope _envelope;
         private string _from;
         private bool? _hasAttachments;
+        private string _ingressPointId;
         private string _inReplyTo;
         private string _messageId;
         private List<string> _receivedHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _receivedTimestamp;
+        private string _senderHostname;
+        private string _senderIpAddress;
         private string _subject;
         private string _to;
         private string _xMailer;
@@ -104,6 +108,24 @@ namespace Amazon.MailManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Envelope. 
+        /// <para>
+        /// The SMTP envelope information of the email.
+        /// </para>
+        /// </summary>
+        public Envelope Envelope
+        {
+            get { return this._envelope; }
+            set { this._envelope = value; }
+        }
+
+        // Check to see if Envelope property is set
+        internal bool IsSetEnvelope()
+        {
+            return this._envelope != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property From. 
         /// <para>
         /// The email address of the sender.
@@ -137,6 +159,25 @@ namespace Amazon.MailManager.Model
         internal bool IsSetHasAttachments()
         {
             return this._hasAttachments.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IngressPointId. 
+        /// <para>
+        /// The ID of the ingress endpoint through which the email was received.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string IngressPointId
+        {
+            get { return this._ingressPointId; }
+            set { this._ingressPointId = value; }
+        }
+
+        // Check to see if IngressPointId property is set
+        internal bool IsSetIngressPointId()
+        {
+            return this._ingressPointId != null;
         }
 
         /// <summary>
@@ -209,6 +250,43 @@ namespace Amazon.MailManager.Model
         internal bool IsSetReceivedTimestamp()
         {
             return this._receivedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderHostname. 
+        /// <para>
+        /// The name of the host from which the email was received.
+        /// </para>
+        /// </summary>
+        public string SenderHostname
+        {
+            get { return this._senderHostname; }
+            set { this._senderHostname = value; }
+        }
+
+        // Check to see if SenderHostname property is set
+        internal bool IsSetSenderHostname()
+        {
+            return this._senderHostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SenderIpAddress. 
+        /// <para>
+        /// The IP address of the host from which the email was received.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string SenderIpAddress
+        {
+            get { return this._senderIpAddress; }
+            set { this._senderIpAddress = value; }
+        }
+
+        // Check to see if SenderIpAddress property is set
+        internal bool IsSetSenderIpAddress()
+        {
+            return this._senderIpAddress != null;
         }
 
         /// <summary>

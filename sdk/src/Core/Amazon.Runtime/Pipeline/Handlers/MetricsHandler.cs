@@ -42,16 +42,18 @@ namespace Amazon.Runtime.Internal
             var spanName = $"{executionContext.RequestContext.ServiceMetaData.ServiceId}.{operationName}";
             var span = TracingUtilities.CreateSpan(executionContext.RequestContext, spanName, null, SpanKind.CLIENT);
             IDisposable callDurationMetricsMeasurer = null;
-            
+
             try
             {
                 callDurationMetricsMeasurer = MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.CallDurationMetricName);
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
                 base.InvokeSync(executionContext);
 
-                span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, executionContext.ResponseContext.Response.ResponseMetadata.RequestId);
+                var requestId = executionContext.ResponseContext.Response.ResponseMetadata?.RequestId;
+                if (requestId != null)
+                    span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, requestId);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 span.CaptureException(ex);
                 MetricsUtilities.RecordError(executionContext.RequestContext, ex);
@@ -90,7 +92,10 @@ namespace Amazon.Runtime.Internal
                 executionContext.RequestContext.Metrics.StartEvent(Metric.ClientExecuteTime);
                 var response = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
 
-                span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, executionContext.ResponseContext.Response.ResponseMetadata.RequestId);
+                var requestId = executionContext.ResponseContext.Response.ResponseMetadata?.RequestId;
+                if (requestId != null)
+                    span.SetAttribute(TelemetryConstants.RequestIdAttributeKey, requestId);
+
                 return response;
             }
             catch (Exception ex)

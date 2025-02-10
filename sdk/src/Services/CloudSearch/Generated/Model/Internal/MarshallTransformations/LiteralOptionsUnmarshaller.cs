@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LiteralOptions Object
     /// </summary>  
-    public class LiteralOptionsUnmarshaller : IUnmarshaller<LiteralOptions, XmlUnmarshallerContext>, IUnmarshaller<LiteralOptions, JsonUnmarshallerContext>
+    public class LiteralOptionsUnmarshaller : IXmlUnmarshaller<LiteralOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LiteralOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LiteralOptionsUnmarshaller _instance = new LiteralOptionsUnmarshaller();        
 

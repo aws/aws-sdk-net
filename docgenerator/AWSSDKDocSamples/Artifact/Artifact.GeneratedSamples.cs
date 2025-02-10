@@ -32,8 +32,8 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
             var client = new AmazonArtifactClient();
             var response = client.GetReport(new GetReportRequest 
             {
-                ReportId = "report-1hVFddebtfDNJAUf",
-                TermToken = "term-token-gPFEGk7CF4wS901w7ppYclt7"
+                ReportId = "report-abcdef0123456789",
+                TermToken = "term-token-abcdefghijklm01234567890"
             });
 
             string documentPresignedUrl = response.DocumentPresignedUrl;
@@ -63,11 +63,26 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
             var client = new AmazonArtifactClient();
             var response = client.GetTermForReport(new GetTermForReportRequest 
             {
-                ReportId = "report-bqhUJF3FrQZsMJpb"
+                ReportId = "report-abcdef0123456789"
             });
 
             string documentPresignedUrl = response.DocumentPresignedUrl;
             string termToken = response.TermToken;
+
+            #endregion
+        }
+
+        public void ArtifactListCustomerAgreements()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.ListCustomerAgreements(new ListCustomerAgreementsRequest 
+            {
+            });
+
+            List<CustomerAgreementSummary> customerAgreements = response.CustomerAgreements;
+            string nextToken = response.NextToken;
 
             #endregion
         }

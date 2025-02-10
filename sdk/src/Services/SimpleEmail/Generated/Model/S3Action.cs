@@ -128,31 +128,31 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
         /// The customer managed key that Amazon SES should use to encrypt your emails before
-        /// saving them to the Amazon S3 bucket. You can use the default managed key or a custom
-        /// managed key that you created in Amazon Web Services KMS as follows:
+        /// saving them to the Amazon S3 bucket. You can use the Amazon Web Services managed key
+        /// or a customer managed key that you created in Amazon Web Services KMS as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To use the default managed key, provide an ARN in the form of <c>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</c>.
+        /// To use the Amazon Web Services managed key, provide an ARN in the form of <c>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</c>.
         /// For example, if your Amazon Web Services account ID is 123456789012 and you want to
-        /// use the default managed key in the US West (Oregon) Region, the ARN of the default
-        /// master key would be <c>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</c>. If you
-        /// use the default managed key, you don't need to perform any extra steps to give Amazon
-        /// SES permission to use the key.
+        /// use the Amazon Web Services managed key in the US West (Oregon) Region, the ARN of
+        /// the Amazon Web Services managed key would be <c>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</c>.
+        /// If you use the Amazon Web Services managed key, you don't need to perform any extra
+        /// steps to give Amazon SES permission to use the key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To use a custom managed key that you created in Amazon Web Services KMS, provide the
-        /// ARN of the managed key and ensure that you add a statement to your key's policy to
-        /// give Amazon SES permission to use it. For more information about giving permissions,
-        /// see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon
+        /// To use a customer managed key that you created in Amazon Web Services KMS, provide
+        /// the ARN of the customer managed key and ensure that you add a statement to your key's
+        /// policy to give Amazon SES permission to use it. For more information about giving
+        /// permissions, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-permissions.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information about key policies, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Amazon
-        /// Web Services KMS Developer Guide</a>. If you do not specify a managed key, Amazon
-        /// SES does not encrypt your emails.
+        /// Web Services KMS Developer Guide</a>. If you do not specify an Amazon Web Services
+        /// KMS key, Amazon SES does not encrypt your emails.
         /// </para>
         ///  <important> 
         /// <para>

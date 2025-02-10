@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateIamInstanceProfileSpecification Object
     /// </summary>  
-    public class LaunchTemplateIamInstanceProfileSpecificationUnmarshaller : IUnmarshaller<LaunchTemplateIamInstanceProfileSpecification, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateIamInstanceProfileSpecification, JsonUnmarshallerContext>
+    public class LaunchTemplateIamInstanceProfileSpecificationUnmarshaller : IXmlUnmarshaller<LaunchTemplateIamInstanceProfileSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchTemplateIamInstanceProfileSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchTemplateIamInstanceProfileSpecificationUnmarshaller _instance = new LaunchTemplateIamInstanceProfileSpecificationUnmarshaller();        
 

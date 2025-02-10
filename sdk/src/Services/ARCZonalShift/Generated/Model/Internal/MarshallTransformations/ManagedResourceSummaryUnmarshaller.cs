@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ManagedResourceSummary Object
     /// </summary>  
-    public class ManagedResourceSummaryUnmarshaller : IUnmarshaller<ManagedResourceSummary, XmlUnmarshallerContext>, IUnmarshaller<ManagedResourceSummary, JsonUnmarshallerContext>
+    public class ManagedResourceSummaryUnmarshaller : IJsonUnmarshaller<ManagedResourceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ManagedResourceSummary IUnmarshaller<ManagedResourceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedResourceSummary Unmarshall(JsonUnmarshallerContext context)
+        public ManagedResourceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ManagedResourceSummary unmarshalledObject = new ManagedResourceSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("appliedWeights", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, float, StringUnmarshaller, FloatUnmarshaller>(StringUnmarshaller.Instance, FloatUnmarshaller.Instance);
-                    unmarshalledObject.AppliedWeights = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, float, StringUnmarshaller, FloatUnmarshaller>(StringUnmarshaller.Instance, FloatUnmarshaller.Instance);
+                    unmarshalledObject.AppliedWeights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("autoshifts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutoshiftInResource, AutoshiftInResourceUnmarshaller>(AutoshiftInResourceUnmarshaller.Instance);
-                    unmarshalledObject.Autoshifts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AutoshiftInResource, AutoshiftInResourceUnmarshaller>(AutoshiftInResourceUnmarshaller.Instance);
+                    unmarshalledObject.Autoshifts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("availabilityZones", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("practiceRunStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PracticeRunStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PracticeRunStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("zonalAutoshiftStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ZonalAutoshiftStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZonalAutoshiftStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("zonalShifts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ZonalShiftInResource, ZonalShiftInResourceUnmarshaller>(ZonalShiftInResourceUnmarshaller.Instance);
-                    unmarshalledObject.ZonalShifts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ZonalShiftInResource, ZonalShiftInResourceUnmarshaller>(ZonalShiftInResourceUnmarshaller.Instance);
+                    unmarshalledObject.ZonalShifts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

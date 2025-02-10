@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttenuationControl())
             {
                 context.Writer.WritePropertyName("attenuationControl");
-                context.Writer.Write(requestObject.AttenuationControl);
+                context.Writer.WriteStringValue(requestObject.AttenuationControl);
             }
 
             if(requestObject.IsSetBitrate())
@@ -59,60 +57,60 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("bitrate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Bitrate.Value);
+                    context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
                 }
             }
 
             if(requestObject.IsSetBitstreamMode())
             {
                 context.Writer.WritePropertyName("bitstreamMode");
-                context.Writer.Write(requestObject.BitstreamMode);
+                context.Writer.WriteStringValue(requestObject.BitstreamMode);
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetDcFilter())
             {
                 context.Writer.WritePropertyName("dcFilter");
-                context.Writer.Write(requestObject.DcFilter);
+                context.Writer.WriteStringValue(requestObject.DcFilter);
             }
 
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm.Value);
+                context.Writer.WriteNumberValue(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDrcLine())
             {
                 context.Writer.WritePropertyName("drcLine");
-                context.Writer.Write(requestObject.DrcLine);
+                context.Writer.WriteStringValue(requestObject.DrcLine);
             }
 
             if(requestObject.IsSetDrcRf())
             {
                 context.Writer.WritePropertyName("drcRf");
-                context.Writer.Write(requestObject.DrcRf);
+                context.Writer.WriteStringValue(requestObject.DrcRf);
             }
 
             if(requestObject.IsSetLfeControl())
             {
                 context.Writer.WritePropertyName("lfeControl");
-                context.Writer.Write(requestObject.LfeControl);
+                context.Writer.WriteStringValue(requestObject.LfeControl);
             }
 
             if(requestObject.IsSetLfeFilter())
             {
                 context.Writer.WritePropertyName("lfeFilter");
-                context.Writer.Write(requestObject.LfeFilter);
+                context.Writer.WriteStringValue(requestObject.LfeFilter);
             }
 
             if(requestObject.IsSetLoRoCenterMixLevel())
@@ -120,11 +118,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("loRoCenterMixLevel");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
+                    context.Writer.WriteNumberValue(requestObject.LoRoCenterMixLevel.Value);
                 }
             }
 
@@ -133,11 +131,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("loRoSurroundMixLevel");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
+                    context.Writer.WriteNumberValue(requestObject.LoRoSurroundMixLevel.Value);
                 }
             }
 
@@ -146,11 +144,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ltRtCenterMixLevel");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
+                    context.Writer.WriteNumberValue(requestObject.LtRtCenterMixLevel.Value);
                 }
             }
 
@@ -159,48 +157,48 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ltRtSurroundMixLevel");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
+                    context.Writer.WriteNumberValue(requestObject.LtRtSurroundMixLevel.Value);
                 }
             }
 
             if(requestObject.IsSetMetadataControl())
             {
                 context.Writer.WritePropertyName("metadataControl");
-                context.Writer.Write(requestObject.MetadataControl);
+                context.Writer.WriteStringValue(requestObject.MetadataControl);
             }
 
             if(requestObject.IsSetPassthroughControl())
             {
                 context.Writer.WritePropertyName("passthroughControl");
-                context.Writer.Write(requestObject.PassthroughControl);
+                context.Writer.WriteStringValue(requestObject.PassthroughControl);
             }
 
             if(requestObject.IsSetPhaseControl())
             {
                 context.Writer.WritePropertyName("phaseControl");
-                context.Writer.Write(requestObject.PhaseControl);
+                context.Writer.WriteStringValue(requestObject.PhaseControl);
             }
 
             if(requestObject.IsSetStereoDownmix())
             {
                 context.Writer.WritePropertyName("stereoDownmix");
-                context.Writer.Write(requestObject.StereoDownmix);
+                context.Writer.WriteStringValue(requestObject.StereoDownmix);
             }
 
             if(requestObject.IsSetSurroundExMode())
             {
                 context.Writer.WritePropertyName("surroundExMode");
-                context.Writer.Write(requestObject.SurroundExMode);
+                context.Writer.WriteStringValue(requestObject.SurroundExMode);
             }
 
             if(requestObject.IsSetSurroundMode())
             {
                 context.Writer.WritePropertyName("surroundMode");
-                context.Writer.Write(requestObject.SurroundMode);
+                context.Writer.WriteStringValue(requestObject.SurroundMode);
             }
 
         }

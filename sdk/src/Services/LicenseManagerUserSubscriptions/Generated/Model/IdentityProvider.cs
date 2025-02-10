@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
-    /// Details about an identity provider.
+    /// Refers to an identity provider.
     /// </summary>
     public partial class IdentityProvider
     {
@@ -39,7 +39,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryIdentityProvider. 
         /// <para>
-        /// An object that details an Active Directory identity provider.
+        /// The <c>ActiveDirectoryIdentityProvider</c> resource contains settings and other details
+        /// about a specific Active Directory identity provider.
         /// </para>
         /// </summary>
         public ActiveDirectoryIdentityProvider ActiveDirectoryIdentityProvider

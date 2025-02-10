@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBParameterGroupStateException operation
     /// </summary>  
-    public class InvalidDBParameterGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBParameterGroupStateException, XmlUnmarshallerContext>
+    public class InvalidDBParameterGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBParameterGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

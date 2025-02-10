@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultGateway())
             {
                 context.Writer.WritePropertyName("DefaultGateway");
-                context.Writer.Write(requestObject.DefaultGateway);
+                context.Writer.WriteStringValue(requestObject.DefaultGateway);
             }
 
             if(requestObject.IsSetDns())
             {
                 context.Writer.WritePropertyName("Dns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsListValue in requestObject.Dns)
                 {
-                        context.Writer.Write(requestObjectDnsListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("IpAddress");
-                context.Writer.Write(requestObject.IpAddress);
+                context.Writer.WriteStringValue(requestObject.IpAddress);
             }
 
             if(requestObject.IsSetMask())
             {
                 context.Writer.WritePropertyName("Mask");
-                context.Writer.Write(requestObject.Mask);
+                context.Writer.WriteStringValue(requestObject.Mask);
             }
 
         }

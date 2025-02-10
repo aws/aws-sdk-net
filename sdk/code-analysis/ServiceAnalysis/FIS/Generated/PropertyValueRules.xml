@@ -377,6 +377,16 @@
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.CreateExperimentTemplateReportConfigurationInput.PostExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.CreateExperimentTemplateReportConfigurationInput.PreExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateStopConditionInput.Source</property>
     <max>64</max>
     <pattern>[\S]+</pattern>
@@ -448,6 +458,51 @@
     <property>Amazon.FIS.Model.ExperimentError.Code</property>
     <max>128</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportConfiguration.PostExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportConfiguration.PreExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportConfigurationCloudWatchDashboard.DashboardIdentifier</property>
+    <max>512</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportConfigurationOutputsS3Configuration.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportConfigurationOutputsS3Configuration.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportError.Code</property>
+    <max>128</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportS3Report.Arn</property>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportS3Report.ReportType</property>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentReportState.Reason</property>
+    <max>512</max>
+    <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentS3LogConfiguration.BucketName</property>
@@ -591,6 +646,21 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateReportConfiguration.PostExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateReportConfiguration.PreExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ExperimentTemplateReportConfigurationCloudWatchDashboard.DashboardIdentifier</property>
+    <max>512</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfiguration.BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -660,6 +730,35 @@
     <property>Amazon.FIS.Model.ExperimentTemplateTargetInputFilter.Path</property>
     <max>256</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ReportConfigurationCloudWatchDashboardInput.DashboardIdentifier</property>
+    <max>512</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ReportConfigurationS3Output.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ReportConfigurationS3Output.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ReportConfigurationS3OutputInput.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ReportConfigurationS3OutputInput.Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ResolvedTarget.ResourceType</property>
@@ -750,6 +849,16 @@
     <property>Amazon.FIS.Model.UpdateExperimentTemplateActionInputItem.Description</property>
     <max>512</max>
     <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.UpdateExperimentTemplateReportConfigurationInput.PostExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.UpdateExperimentTemplateReportConfigurationInput.PreExperimentDuration</property>
+    <max>32</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateStopConditionInput.Source</property>

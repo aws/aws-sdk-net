@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetEncryptionOption())
             {
                 context.Writer.WritePropertyName("EncryptionOption");
-                context.Writer.Write(requestObject.EncryptionOption);
+                context.Writer.WriteStringValue(requestObject.EncryptionOption);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetObjectKeyPrefix())
             {
                 context.Writer.WritePropertyName("ObjectKeyPrefix");
-                context.Writer.Write(requestObject.ObjectKeyPrefix);
+                context.Writer.WriteStringValue(requestObject.ObjectKeyPrefix);
             }
 
         }

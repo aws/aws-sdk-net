@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyOriginGroupsPerDistributionException operation
     /// </summary>  
-    public class TooManyOriginGroupsPerDistributionExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyOriginGroupsPerDistributionException, XmlUnmarshallerContext>
+    public class TooManyOriginGroupsPerDistributionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyOriginGroupsPerDistributionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

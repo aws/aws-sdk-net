@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogGroupName())
             {
                 context.Writer.WritePropertyName("logGroupName");
-                context.Writer.Write(requestObject.LogGroupName);
+                context.Writer.WriteStringValue(requestObject.LogGroupName);
             }
 
             if(requestObject.IsSetLogType())
             {
                 context.Writer.WritePropertyName("logType");
-                context.Writer.Write(requestObject.LogType);
+                context.Writer.WriteStringValue(requestObject.LogType);
             }
 
         }

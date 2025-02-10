@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.CreateBillingView(Amazon.Billing.Model.CreateBillingViewRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.CreateBillingView(Amazon.Billing.Model.CreateBillingViewRequest)" />
+            <member name="T:Amazon.Billing.Model.CreateBillingViewRequest" />
+            <member name="T:Amazon.Billing.Model.CreateBillingViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke CreateBillingView"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.DeleteBillingView(Amazon.Billing.Model.DeleteBillingViewRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.DeleteBillingView(Amazon.Billing.Model.DeleteBillingViewRequest)" />
+            <member name="T:Amazon.Billing.Model.DeleteBillingViewRequest" />
+            <member name="T:Amazon.Billing.Model.DeleteBillingViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke DeleteBillingView"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.GetBillingView(Amazon.Billing.Model.GetBillingViewRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.GetBillingView(Amazon.Billing.Model.GetBillingViewRequest)" />
+            <member name="T:Amazon.Billing.Model.GetBillingViewRequest" />
+            <member name="T:Amazon.Billing.Model.GetBillingViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetBillingView"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.GetResourcePolicy(Amazon.Billing.Model.GetResourcePolicyRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.GetResourcePolicy(Amazon.Billing.Model.GetResourcePolicyRequest)" />
+            <member name="T:Amazon.Billing.Model.GetResourcePolicyRequest" />
+            <member name="T:Amazon.Billing.Model.GetResourcePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke GetResourcePolicy"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsRequest" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListBillingViews"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsRequest" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Error example for ListBillingViews"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListSourceViewsForBillingView(Amazon.Billing.Model.ListSourceViewsForBillingViewRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListSourceViewsForBillingView(Amazon.Billing.Model.ListSourceViewsForBillingViewRequest)" />
+            <member name="T:Amazon.Billing.Model.ListSourceViewsForBillingViewRequest" />
+            <member name="T:Amazon.Billing.Model.ListSourceViewsForBillingViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListSourceViewsForBillingView"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListTagsForResource(Amazon.Billing.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListTagsForResource(Amazon.Billing.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.Billing.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.Billing.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListTagsForResource"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.TagResource(Amazon.Billing.Model.TagResourceRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.TagResource(Amazon.Billing.Model.TagResourceRequest)" />
+            <member name="T:Amazon.Billing.Model.TagResourceRequest" />
+            <member name="T:Amazon.Billing.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke TagResource"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.UntagResource(Amazon.Billing.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.UntagResource(Amazon.Billing.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.Billing.Model.UntagResourceRequest" />
+            <member name="T:Amazon.Billing.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UntagResource"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.UpdateBillingView(Amazon.Billing.Model.UpdateBillingViewRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.UpdateBillingView(Amazon.Billing.Model.UpdateBillingViewRequest)" />
+            <member name="T:Amazon.Billing.Model.UpdateBillingViewRequest" />
+            <member name="T:Amazon.Billing.Model.UpdateBillingViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke UpdateBillingView"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

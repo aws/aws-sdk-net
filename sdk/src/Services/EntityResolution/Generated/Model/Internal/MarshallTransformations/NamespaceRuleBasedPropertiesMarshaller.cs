@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeMatchingModel())
             {
                 context.Writer.WritePropertyName("attributeMatchingModel");
-                context.Writer.Write(requestObject.AttributeMatchingModel);
+                context.Writer.WriteStringValue(requestObject.AttributeMatchingModel);
             }
 
             if(requestObject.IsSetRecordMatchingModels())
             {
                 context.Writer.WritePropertyName("recordMatchingModels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecordMatchingModelsListValue in requestObject.RecordMatchingModels)
                 {
-                        context.Writer.Write(requestObjectRecordMatchingModelsListValue);
+                        context.Writer.WriteStringValue(requestObjectRecordMatchingModelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRuleDefinitionTypes())
             {
                 context.Writer.WritePropertyName("ruleDefinitionTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRuleDefinitionTypesListValue in requestObject.RuleDefinitionTypes)
                 {
-                        context.Writer.Write(requestObjectRuleDefinitionTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectRuleDefinitionTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("rules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

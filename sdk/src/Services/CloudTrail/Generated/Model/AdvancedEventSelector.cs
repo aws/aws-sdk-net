@@ -44,79 +44,9 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Supported CloudTrail event record fields for management events</b> 
+    /// For information about configurable advanced event selector fields, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>
+    /// in the <i>CloudTrail API Reference</i>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>eventCategory</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>eventSource</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>readOnly</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Supported CloudTrail event record fields for data events</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>eventCategory</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>resources.type</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>readOnly</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>eventName</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>resources.ARN</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Supported CloudTrail event record fields for network activity events</b> 
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// Network activity events is in preview release for CloudTrail and is subject to change.
-    /// </para>
-    ///  </note> <ul> <li> 
-    /// <para>
-    ///  <c>eventCategory</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>eventSource</c> (required)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>eventName</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>errorCode</c> - The only valid value for <c>errorCode</c> is <c>VpceAccessDenied</c>.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>vpcEndpointId</c> 
-    /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// For event data stores for CloudTrail Insights events, Config configuration items,
-    /// Audit Manager evidence, or events outside of Amazon Web Services, the only supported
-    /// field is <c>eventCategory</c>. 
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class AdvancedEventSelector
     {

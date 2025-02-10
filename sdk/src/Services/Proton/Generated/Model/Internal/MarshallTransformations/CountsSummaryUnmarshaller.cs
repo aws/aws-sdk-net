@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CountsSummary Object
     /// </summary>  
-    public class CountsSummaryUnmarshaller : IUnmarshaller<CountsSummary, XmlUnmarshallerContext>, IUnmarshaller<CountsSummary, JsonUnmarshallerContext>
+    public class CountsSummaryUnmarshaller : IJsonUnmarshaller<CountsSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CountsSummary IUnmarshaller<CountsSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CountsSummary Unmarshall(JsonUnmarshallerContext context)
+        public CountsSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CountsSummary unmarshalledObject = new CountsSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("components", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Components = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Components = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("environments", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Environments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Environments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("environmentTemplates", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.EnvironmentTemplates = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnvironmentTemplates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelines", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Pipelines = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pipelines = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceInstances", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ServiceInstances = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("services", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Services = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Services = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceTemplates", targetDepth))
                 {
                     var unmarshaller = ResourceCountsSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ServiceTemplates = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceTemplates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

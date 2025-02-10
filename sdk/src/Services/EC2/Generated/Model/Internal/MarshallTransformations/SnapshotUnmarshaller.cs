@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Snapshot Object
     /// </summary>  
-    public class SnapshotUnmarshaller : IUnmarshaller<Snapshot, XmlUnmarshallerContext>, IUnmarshaller<Snapshot, JsonUnmarshallerContext>
+    public class SnapshotUnmarshaller : IXmlUnmarshaller<Snapshot, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -55,6 +55,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("availabilityZone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("completionDurationMinutes", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.CompletionDurationMinutes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("completionTime", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("dataEncryptionKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -156,6 +174,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("transferType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransferType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("volumeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -177,17 +201,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Snapshot Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SnapshotUnmarshaller _instance = new SnapshotUnmarshaller();        
 

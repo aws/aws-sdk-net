@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateTimeParameterDeclaration())
             {
                 context.Writer.WritePropertyName("DateTimeParameterDeclaration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateTimeParameterDeclarationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateTimeParameterDeclaration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDecimalParameterDeclaration())
             {
                 context.Writer.WritePropertyName("DecimalParameterDeclaration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DecimalParameterDeclarationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DecimalParameterDeclaration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIntegerParameterDeclaration())
             {
                 context.Writer.WritePropertyName("IntegerParameterDeclaration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntegerParameterDeclarationMarshaller.Instance;
                 marshaller.Marshall(requestObject.IntegerParameterDeclaration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringParameterDeclaration())
             {
                 context.Writer.WritePropertyName("StringParameterDeclaration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringParameterDeclarationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringParameterDeclaration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

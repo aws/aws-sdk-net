@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
@@ -61,66 +64,71 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/getresourceshareassociations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssociationStatus())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssociationStatus())
-                    {
-                        context.Writer.WritePropertyName("associationStatus");
-                        context.Writer.Write(publicRequest.AssociationStatus);
-                    }
-
-                    if(publicRequest.IsSetAssociationType())
-                    {
-                        context.Writer.WritePropertyName("associationType");
-                        context.Writer.Write(publicRequest.AssociationType);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetPrincipal())
-                    {
-                        context.Writer.WritePropertyName("principal");
-                        context.Writer.Write(publicRequest.Principal);
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("resourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetResourceShareArns())
-                    {
-                        context.Writer.WritePropertyName("resourceShareArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
-                        {
-                                context.Writer.Write(publicRequestResourceShareArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("associationStatus");
+                context.Writer.WriteStringValue(publicRequest.AssociationStatus);
             }
+
+            if(publicRequest.IsSetAssociationType())
+            {
+                context.Writer.WritePropertyName("associationType");
+                context.Writer.WriteStringValue(publicRequest.AssociationType);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetPrincipal())
+            {
+                context.Writer.WritePropertyName("principal");
+                context.Writer.WriteStringValue(publicRequest.Principal);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetResourceShareArns())
+            {
+                context.Writer.WritePropertyName("resourceShareArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceShareArnsListValue in publicRequest.ResourceShareArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceShareArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

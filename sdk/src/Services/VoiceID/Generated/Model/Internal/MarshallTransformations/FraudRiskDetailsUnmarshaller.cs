@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FraudRiskDetails Object
     /// </summary>  
-    public class FraudRiskDetailsUnmarshaller : IUnmarshaller<FraudRiskDetails, XmlUnmarshallerContext>, IUnmarshaller<FraudRiskDetails, JsonUnmarshallerContext>
+    public class FraudRiskDetailsUnmarshaller : IJsonUnmarshaller<FraudRiskDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FraudRiskDetails IUnmarshaller<FraudRiskDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FraudRiskDetails Unmarshall(JsonUnmarshallerContext context)
+        public FraudRiskDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FraudRiskDetails unmarshalledObject = new FraudRiskDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("KnownFraudsterRisk", targetDepth))
                 {
                     var unmarshaller = KnownFraudsterRiskUnmarshaller.Instance;
-                    unmarshalledObject.KnownFraudsterRisk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KnownFraudsterRisk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VoiceSpoofingRisk", targetDepth))
                 {
                     var unmarshaller = VoiceSpoofingRiskUnmarshaller.Instance;
-                    unmarshalledObject.VoiceSpoofingRisk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VoiceSpoofingRisk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

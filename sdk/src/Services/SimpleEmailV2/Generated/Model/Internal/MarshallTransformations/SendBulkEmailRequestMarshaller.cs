@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -61,103 +64,114 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/outbound-bulk-emails";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBulkEmailEntries())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("BulkEmailEntries");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBulkEmailEntriesListValue in publicRequest.BulkEmailEntries)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBulkEmailEntries())
-                    {
-                        context.Writer.WritePropertyName("BulkEmailEntries");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBulkEmailEntriesListValue in publicRequest.BulkEmailEntries)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = BulkEmailEntryMarshaller.Instance;
-                            marshaller.Marshall(publicRequestBulkEmailEntriesListValue, context);
+                    var marshaller = BulkEmailEntryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBulkEmailEntriesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetConfigurationSetName())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationSetName");
-                        context.Writer.Write(publicRequest.ConfigurationSetName);
-                    }
-
-                    if(publicRequest.IsSetDefaultContent())
-                    {
-                        context.Writer.WritePropertyName("DefaultContent");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BulkEmailContentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultContent, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultEmailTags())
-                    {
-                        context.Writer.WritePropertyName("DefaultEmailTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDefaultEmailTagsListValue in publicRequest.DefaultEmailTags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MessageTagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDefaultEmailTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFeedbackForwardingEmailAddress())
-                    {
-                        context.Writer.WritePropertyName("FeedbackForwardingEmailAddress");
-                        context.Writer.Write(publicRequest.FeedbackForwardingEmailAddress);
-                    }
-
-                    if(publicRequest.IsSetFeedbackForwardingEmailAddressIdentityArn())
-                    {
-                        context.Writer.WritePropertyName("FeedbackForwardingEmailAddressIdentityArn");
-                        context.Writer.Write(publicRequest.FeedbackForwardingEmailAddressIdentityArn);
-                    }
-
-                    if(publicRequest.IsSetFromEmailAddress())
-                    {
-                        context.Writer.WritePropertyName("FromEmailAddress");
-                        context.Writer.Write(publicRequest.FromEmailAddress);
-                    }
-
-                    if(publicRequest.IsSetFromEmailAddressIdentityArn())
-                    {
-                        context.Writer.WritePropertyName("FromEmailAddressIdentityArn");
-                        context.Writer.Write(publicRequest.FromEmailAddressIdentityArn);
-                    }
-
-                    if(publicRequest.IsSetReplyToAddresses())
-                    {
-                        context.Writer.WritePropertyName("ReplyToAddresses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReplyToAddressesListValue in publicRequest.ReplyToAddresses)
-                        {
-                                context.Writer.Write(publicRequestReplyToAddressesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetConfigurationSetName())
+            {
+                context.Writer.WritePropertyName("ConfigurationSetName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationSetName);
+            }
+
+            if(publicRequest.IsSetDefaultContent())
+            {
+                context.Writer.WritePropertyName("DefaultContent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BulkEmailContentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultContent, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDefaultEmailTags())
+            {
+                context.Writer.WritePropertyName("DefaultEmailTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDefaultEmailTagsListValue in publicRequest.DefaultEmailTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MessageTagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDefaultEmailTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEndpointId())
+            {
+                context.Writer.WritePropertyName("EndpointId");
+                context.Writer.WriteStringValue(publicRequest.EndpointId);
+            }
+
+            if(publicRequest.IsSetFeedbackForwardingEmailAddress())
+            {
+                context.Writer.WritePropertyName("FeedbackForwardingEmailAddress");
+                context.Writer.WriteStringValue(publicRequest.FeedbackForwardingEmailAddress);
+            }
+
+            if(publicRequest.IsSetFeedbackForwardingEmailAddressIdentityArn())
+            {
+                context.Writer.WritePropertyName("FeedbackForwardingEmailAddressIdentityArn");
+                context.Writer.WriteStringValue(publicRequest.FeedbackForwardingEmailAddressIdentityArn);
+            }
+
+            if(publicRequest.IsSetFromEmailAddress())
+            {
+                context.Writer.WritePropertyName("FromEmailAddress");
+                context.Writer.WriteStringValue(publicRequest.FromEmailAddress);
+            }
+
+            if(publicRequest.IsSetFromEmailAddressIdentityArn())
+            {
+                context.Writer.WritePropertyName("FromEmailAddressIdentityArn");
+                context.Writer.WriteStringValue(publicRequest.FromEmailAddressIdentityArn);
+            }
+
+            if(publicRequest.IsSetReplyToAddresses())
+            {
+                context.Writer.WritePropertyName("ReplyToAddresses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReplyToAddressesListValue in publicRequest.ReplyToAddresses)
+                {
+                        context.Writer.WriteStringValue(publicRequestReplyToAddressesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

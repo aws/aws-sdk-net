@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAclConfiguration())
             {
                 context.Writer.WritePropertyName("AclConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AclConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AclConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumnConfiguration())
             {
                 context.Writer.WritePropertyName("ColumnConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColumnConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionConfiguration())
             {
                 context.Writer.WritePropertyName("ConnectionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabaseEngineType())
             {
                 context.Writer.WritePropertyName("DatabaseEngineType");
-                context.Writer.Write(requestObject.DatabaseEngineType);
+                context.Writer.WriteStringValue(requestObject.DatabaseEngineType);
             }
 
             if(requestObject.IsSetSqlConfiguration())
             {
                 context.Writer.WritePropertyName("SqlConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqlConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqlConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

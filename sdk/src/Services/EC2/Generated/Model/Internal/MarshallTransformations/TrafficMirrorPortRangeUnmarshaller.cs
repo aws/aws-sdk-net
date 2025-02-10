@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficMirrorPortRange Object
     /// </summary>  
-    public class TrafficMirrorPortRangeUnmarshaller : IUnmarshaller<TrafficMirrorPortRange, XmlUnmarshallerContext>, IUnmarshaller<TrafficMirrorPortRange, JsonUnmarshallerContext>
+    public class TrafficMirrorPortRangeUnmarshaller : IXmlUnmarshaller<TrafficMirrorPortRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrafficMirrorPortRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TrafficMirrorPortRangeUnmarshaller _instance = new TrafficMirrorPortRangeUnmarshaller();        
 

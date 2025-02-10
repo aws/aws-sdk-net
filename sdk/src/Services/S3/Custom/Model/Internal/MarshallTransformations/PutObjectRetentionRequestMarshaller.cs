@@ -90,7 +90,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));
     
                     if(publicRequest.Retention.IsSetRetainUntilDate())
-                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate.Value));
+                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Retention.RetainUntilDate.Value));
     
     
                     xmlWriter.WriteEndElement();
@@ -102,7 +102,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                ChecksumUtils.SetChecksumData(request, publicRequest.ChecksumAlgorithm);
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    publicRequest.ChecksumAlgorithm, 
+                    fallbackToMD5: false, 
+                    isRequestChecksumRequired: true,
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
             }
             catch (EncoderFallbackException e) 
             {

@@ -76,7 +76,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the game session to add a player to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }

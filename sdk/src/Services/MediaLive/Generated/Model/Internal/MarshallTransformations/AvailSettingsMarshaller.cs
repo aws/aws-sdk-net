@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEsam())
             {
                 context.Writer.WritePropertyName("esam");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EsamMarshaller.Instance;
                 marshaller.Marshall(requestObject.Esam, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35SpliceInsert())
             {
                 context.Writer.WritePropertyName("scte35SpliceInsert");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35SpliceInsertMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte35SpliceInsert, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35TimeSignalApos())
             {
                 context.Writer.WritePropertyName("scte35TimeSignalApos");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Scte35TimeSignalAposMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte35TimeSignalApos, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

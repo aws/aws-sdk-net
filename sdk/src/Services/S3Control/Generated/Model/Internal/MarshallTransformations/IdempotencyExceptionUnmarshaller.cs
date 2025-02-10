@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IdempotencyException operation
     /// </summary>  
-    public class IdempotencyExceptionUnmarshaller : IErrorResponseUnmarshaller<IdempotencyException, XmlUnmarshallerContext>
+    public class IdempotencyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IdempotencyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

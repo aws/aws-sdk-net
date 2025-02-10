@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComponentResponse Object
     /// </summary>  
-    public class ComponentResponseUnmarshaller : IUnmarshaller<ComponentResponse, XmlUnmarshallerContext>, IUnmarshaller<ComponentResponse, JsonUnmarshallerContext>
+    public class ComponentResponseUnmarshaller : IJsonUnmarshaller<ComponentResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComponentResponse IUnmarshaller<ComponentResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComponentResponse Unmarshall(JsonUnmarshallerContext context)
+        public ComponentResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComponentResponse unmarshalledObject = new ComponentResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("areAllCompositeComponentsReturned", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AreAllCompositeComponentsReturned = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AreAllCompositeComponentsReturned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("areAllPropertiesReturned", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AreAllPropertiesReturned = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AreAllPropertiesReturned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("componentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("componentTypeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentTypeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComponentTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("compositeComponents", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentSummary, StringUnmarshaller, ComponentSummaryUnmarshaller>(StringUnmarshaller.Instance, ComponentSummaryUnmarshaller.Instance);
-                    unmarshalledObject.CompositeComponents = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ComponentSummary, StringUnmarshaller, ComponentSummaryUnmarshaller>(StringUnmarshaller.Instance, ComponentSummaryUnmarshaller.Instance);
+                    unmarshalledObject.CompositeComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("definedIn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefinedIn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefinedIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("properties", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, PropertyResponse, StringUnmarshaller, PropertyResponseUnmarshaller>(StringUnmarshaller.Instance, PropertyResponseUnmarshaller.Instance);
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, PropertyResponse, StringUnmarshaller, PropertyResponseUnmarshaller>(StringUnmarshaller.Instance, PropertyResponseUnmarshaller.Instance);
+                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("propertyGroups", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ComponentPropertyGroupResponse, StringUnmarshaller, ComponentPropertyGroupResponseUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyGroupResponseUnmarshaller.Instance);
-                    unmarshalledObject.PropertyGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ComponentPropertyGroupResponse, StringUnmarshaller, ComponentPropertyGroupResponseUnmarshaller>(StringUnmarshaller.Instance, ComponentPropertyGroupResponseUnmarshaller.Instance);
+                    unmarshalledObject.PropertyGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StatusUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("syncSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SyncSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

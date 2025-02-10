@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CloudWatchDestination Object
     /// </summary>  
-    public class CloudWatchDestinationUnmarshaller : IUnmarshaller<CloudWatchDestination, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchDestination, JsonUnmarshallerContext>
+    public class CloudWatchDestinationUnmarshaller : IXmlUnmarshaller<CloudWatchDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CloudWatchDestination Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CloudWatchDestinationUnmarshaller _instance = new CloudWatchDestinationUnmarshaller();        
 

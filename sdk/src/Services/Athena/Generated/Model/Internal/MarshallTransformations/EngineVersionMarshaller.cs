@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEffectiveEngineVersion())
             {
                 context.Writer.WritePropertyName("EffectiveEngineVersion");
-                context.Writer.Write(requestObject.EffectiveEngineVersion);
+                context.Writer.WriteStringValue(requestObject.EffectiveEngineVersion);
             }
 
             if(requestObject.IsSetSelectedEngineVersion())
             {
                 context.Writer.WritePropertyName("SelectedEngineVersion");
-                context.Writer.Write(requestObject.SelectedEngineVersion);
+                context.Writer.WriteStringValue(requestObject.SelectedEngineVersion);
             }
 
         }

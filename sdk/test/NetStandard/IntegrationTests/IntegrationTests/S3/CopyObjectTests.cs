@@ -42,11 +42,11 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         }
 
         [Theory]
-        [InlineData(false, testKey, "/destinationTestKey1.txt", "destinationTestKey1.txt")]
-        [InlineData(true, testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
-        [InlineData(true, testKeyWithSlash, "/", "/")]
+        [InlineData(testKey, "/destinationTestKey1.txt", "/destinationTestKey1.txt")]
+        [InlineData(testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
+        [InlineData(testKeyWithSlash, "/", "/")]
         [Trait(CategoryAttribute, "S3")]
-        public async Task CopyObjectTestWithLeadingSlash(bool disableTrimmingLeadingSlash, string sourceKey, string destinationKey, string expectedKey)
+        public async Task CopyObjectTestWithLeadingSlash(string sourceKey, string destinationKey, string expectedKey)
         {
             var copyResponse = await Client.CopyObjectAsync(new CopyObjectRequest
             {
@@ -55,8 +55,6 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
                 DestinationBucket = bucketName,
                 DestinationKey = destinationKey,
-
-                DisableTrimmingLeadingSlash = disableTrimmingLeadingSlash
             });
             Assert.Equal(HttpStatusCode.OK, copyResponse.HttpStatusCode);
 

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -61,131 +64,142 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/contact/chat";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Attributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributes())
-                    {
-                        context.Writer.WritePropertyName("Attributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                    var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
 
-                                context.Writer.Write(publicRequestAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetChatDurationInMinutes())
-                    {
-                        context.Writer.WritePropertyName("ChatDurationInMinutes");
-                        context.Writer.Write(publicRequest.ChatDurationInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetContactFlowId())
-                    {
-                        context.Writer.WritePropertyName("ContactFlowId");
-                        context.Writer.Write(publicRequest.ContactFlowId);
-                    }
-
-                    if(publicRequest.IsSetInitialMessage())
-                    {
-                        context.Writer.WritePropertyName("InitialMessage");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChatMessageMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InitialMessage, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInstanceId())
-                    {
-                        context.Writer.WritePropertyName("InstanceId");
-                        context.Writer.Write(publicRequest.InstanceId);
-                    }
-
-                    if(publicRequest.IsSetParticipantDetails())
-                    {
-                        context.Writer.WritePropertyName("ParticipantDetails");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ParticipantDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ParticipantDetails, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPersistentChat())
-                    {
-                        context.Writer.WritePropertyName("PersistentChat");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PersistentChatMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PersistentChat, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRelatedContactId())
-                    {
-                        context.Writer.WritePropertyName("RelatedContactId");
-                        context.Writer.Write(publicRequest.RelatedContactId);
-                    }
-
-                    if(publicRequest.IsSetSegmentAttributes())
-                    {
-                        context.Writer.WritePropertyName("SegmentAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
-                            var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SegmentAttributeValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSegmentAttributesValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSupportedMessagingContentTypes())
-                    {
-                        context.Writer.WritePropertyName("SupportedMessagingContentTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSupportedMessagingContentTypesListValue in publicRequest.SupportedMessagingContentTypes)
-                        {
-                                context.Writer.Write(publicRequestSupportedMessagingContentTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAttributesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetChatDurationInMinutes())
+            {
+                context.Writer.WritePropertyName("ChatDurationInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.ChatDurationInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetContactFlowId())
+            {
+                context.Writer.WritePropertyName("ContactFlowId");
+                context.Writer.WriteStringValue(publicRequest.ContactFlowId);
+            }
+
+            if(publicRequest.IsSetCustomerId())
+            {
+                context.Writer.WritePropertyName("CustomerId");
+                context.Writer.WriteStringValue(publicRequest.CustomerId);
+            }
+
+            if(publicRequest.IsSetInitialMessage())
+            {
+                context.Writer.WritePropertyName("InitialMessage");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChatMessageMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InitialMessage, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInstanceId())
+            {
+                context.Writer.WritePropertyName("InstanceId");
+                context.Writer.WriteStringValue(publicRequest.InstanceId);
+            }
+
+            if(publicRequest.IsSetParticipantDetails())
+            {
+                context.Writer.WritePropertyName("ParticipantDetails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParticipantDetailsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ParticipantDetails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPersistentChat())
+            {
+                context.Writer.WritePropertyName("PersistentChat");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PersistentChatMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PersistentChat, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRelatedContactId())
+            {
+                context.Writer.WritePropertyName("RelatedContactId");
+                context.Writer.WriteStringValue(publicRequest.RelatedContactId);
+            }
+
+            if(publicRequest.IsSetSegmentAttributes())
+            {
+                context.Writer.WritePropertyName("SegmentAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                    var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SegmentAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSupportedMessagingContentTypes())
+            {
+                context.Writer.WritePropertyName("SupportedMessagingContentTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSupportedMessagingContentTypesListValue in publicRequest.SupportedMessagingContentTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestSupportedMessagingContentTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDate.Value)));
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartDate.Value)));
             }
 
             if(requestObject.IsSetValue())
@@ -65,11 +63,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Value");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value.Value);
+                    context.Writer.WriteNumberValue(requestObject.Value.Value);
                 }
             }
 

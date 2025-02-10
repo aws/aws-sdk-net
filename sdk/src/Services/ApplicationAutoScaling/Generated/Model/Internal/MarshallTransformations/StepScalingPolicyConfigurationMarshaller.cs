@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdjustmentType())
             {
                 context.Writer.WritePropertyName("AdjustmentType");
-                context.Writer.Write(requestObject.AdjustmentType);
+                context.Writer.WriteStringValue(requestObject.AdjustmentType);
             }
 
             if(requestObject.IsSetCooldown())
             {
                 context.Writer.WritePropertyName("Cooldown");
-                context.Writer.Write(requestObject.Cooldown.Value);
+                context.Writer.WriteNumberValue(requestObject.Cooldown.Value);
             }
 
             if(requestObject.IsSetMetricAggregationType())
             {
                 context.Writer.WritePropertyName("MetricAggregationType");
-                context.Writer.Write(requestObject.MetricAggregationType);
+                context.Writer.WriteStringValue(requestObject.MetricAggregationType);
             }
 
             if(requestObject.IsSetMinAdjustmentMagnitude())
             {
                 context.Writer.WritePropertyName("MinAdjustmentMagnitude");
-                context.Writer.Write(requestObject.MinAdjustmentMagnitude.Value);
+                context.Writer.WriteNumberValue(requestObject.MinAdjustmentMagnitude.Value);
             }
 
             if(requestObject.IsSetStepAdjustments())
             {
                 context.Writer.WritePropertyName("StepAdjustments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStepAdjustmentsListValue in requestObject.StepAdjustments)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StepAdjustmentMarshaller.Instance;
                     marshaller.Marshall(requestObjectStepAdjustmentsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

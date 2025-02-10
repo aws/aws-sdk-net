@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetAwsManagedResources())
             {
                 context.Writer.WritePropertyName("awsManagedResources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsManagedResourcesMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsManagedResources, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoPreference())
             {
                 context.Writer.WritePropertyName("noPreference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoManagementPreferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.NoPreference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelfManageResources())
             {
                 context.Writer.WritePropertyName("selfManageResources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelfManageResourcesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelfManageResources, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -48,42 +46,53 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGlobalAccelerator())
+            {
+                context.Writer.WritePropertyName("GlobalAccelerator");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GlobalAcceleratorForDirectoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.GlobalAccelerator, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStorageConnectors())
             {
                 context.Writer.WritePropertyName("StorageConnectors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStorageConnectorsListValue in requestObject.StorageConnectors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StorageConnectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectStorageConnectorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStreamingExperiencePreferredProtocol())
             {
                 context.Writer.WritePropertyName("StreamingExperiencePreferredProtocol");
-                context.Writer.Write(requestObject.StreamingExperiencePreferredProtocol);
+                context.Writer.WriteStringValue(requestObject.StreamingExperiencePreferredProtocol);
             }
 
             if(requestObject.IsSetUserSettings())
             {
                 context.Writer.WritePropertyName("UserSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserSettingsListValue in requestObject.UserSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = UserSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

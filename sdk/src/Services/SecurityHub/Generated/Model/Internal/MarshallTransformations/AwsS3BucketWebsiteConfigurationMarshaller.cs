@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorDocument())
             {
                 context.Writer.WritePropertyName("ErrorDocument");
-                context.Writer.Write(requestObject.ErrorDocument);
+                context.Writer.WriteStringValue(requestObject.ErrorDocument);
             }
 
             if(requestObject.IsSetIndexDocumentSuffix())
             {
                 context.Writer.WritePropertyName("IndexDocumentSuffix");
-                context.Writer.Write(requestObject.IndexDocumentSuffix);
+                context.Writer.WriteStringValue(requestObject.IndexDocumentSuffix);
             }
 
             if(requestObject.IsSetRedirectAllRequestsTo())
             {
                 context.Writer.WritePropertyName("RedirectAllRequestsTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketWebsiteConfigurationRedirectToMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedirectAllRequestsTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoutingRules())
             {
                 context.Writer.WritePropertyName("RoutingRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRoutingRulesListValue in requestObject.RoutingRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsS3BucketWebsiteConfigurationRoutingRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRoutingRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

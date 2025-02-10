@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipeTargetBatchJobParameters Object
     /// </summary>  
-    public class PipeTargetBatchJobParametersUnmarshaller : IUnmarshaller<PipeTargetBatchJobParameters, XmlUnmarshallerContext>, IUnmarshaller<PipeTargetBatchJobParameters, JsonUnmarshallerContext>
+    public class PipeTargetBatchJobParametersUnmarshaller : IJsonUnmarshaller<PipeTargetBatchJobParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipeTargetBatchJobParameters IUnmarshaller<PipeTargetBatchJobParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipeTargetBatchJobParameters Unmarshall(JsonUnmarshallerContext context)
+        public PipeTargetBatchJobParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipeTargetBatchJobParameters unmarshalledObject = new PipeTargetBatchJobParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ArrayProperties", targetDepth))
                 {
                     var unmarshaller = BatchArrayPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ArrayProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArrayProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContainerOverrides", targetDepth))
                 {
                     var unmarshaller = BatchContainerOverridesUnmarshaller.Instance;
-                    unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DependsOn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchJobDependency, BatchJobDependencyUnmarshaller>(BatchJobDependencyUnmarshaller.Instance);
-                    unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchJobDependency, BatchJobDependencyUnmarshaller>(BatchJobDependencyUnmarshaller.Instance);
+                    unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobDefinition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobDefinition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetryStrategy", targetDepth))
                 {
                     var unmarshaller = BatchRetryStrategyUnmarshaller.Instance;
-                    unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -67,95 +70,100 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
             request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/users";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomFederationProviderUrl())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomFederationProviderUrl())
-                    {
-                        context.Writer.WritePropertyName("CustomFederationProviderUrl");
-                        context.Writer.Write(publicRequest.CustomFederationProviderUrl);
-                    }
-
-                    if(publicRequest.IsSetCustomPermissionsName())
-                    {
-                        context.Writer.WritePropertyName("CustomPermissionsName");
-                        context.Writer.Write(publicRequest.CustomPermissionsName);
-                    }
-
-                    if(publicRequest.IsSetEmail())
-                    {
-                        context.Writer.WritePropertyName("Email");
-                        context.Writer.Write(publicRequest.Email);
-                    }
-
-                    if(publicRequest.IsSetExternalLoginFederationProviderType())
-                    {
-                        context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
-                        context.Writer.Write(publicRequest.ExternalLoginFederationProviderType);
-                    }
-
-                    if(publicRequest.IsSetExternalLoginId())
-                    {
-                        context.Writer.WritePropertyName("ExternalLoginId");
-                        context.Writer.Write(publicRequest.ExternalLoginId);
-                    }
-
-                    if(publicRequest.IsSetIamArn())
-                    {
-                        context.Writer.WritePropertyName("IamArn");
-                        context.Writer.Write(publicRequest.IamArn);
-                    }
-
-                    if(publicRequest.IsSetIdentityType())
-                    {
-                        context.Writer.WritePropertyName("IdentityType");
-                        context.Writer.Write(publicRequest.IdentityType);
-                    }
-
-                    if(publicRequest.IsSetSessionName())
-                    {
-                        context.Writer.WritePropertyName("SessionName");
-                        context.Writer.Write(publicRequest.SessionName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUserName())
-                    {
-                        context.Writer.WritePropertyName("UserName");
-                        context.Writer.Write(publicRequest.UserName);
-                    }
-
-                    if(publicRequest.IsSetUserRole())
-                    {
-                        context.Writer.WritePropertyName("UserRole");
-                        context.Writer.Write(publicRequest.UserRole);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CustomFederationProviderUrl");
+                context.Writer.WriteStringValue(publicRequest.CustomFederationProviderUrl);
             }
+
+            if(publicRequest.IsSetCustomPermissionsName())
+            {
+                context.Writer.WritePropertyName("CustomPermissionsName");
+                context.Writer.WriteStringValue(publicRequest.CustomPermissionsName);
+            }
+
+            if(publicRequest.IsSetEmail())
+            {
+                context.Writer.WritePropertyName("Email");
+                context.Writer.WriteStringValue(publicRequest.Email);
+            }
+
+            if(publicRequest.IsSetExternalLoginFederationProviderType())
+            {
+                context.Writer.WritePropertyName("ExternalLoginFederationProviderType");
+                context.Writer.WriteStringValue(publicRequest.ExternalLoginFederationProviderType);
+            }
+
+            if(publicRequest.IsSetExternalLoginId())
+            {
+                context.Writer.WritePropertyName("ExternalLoginId");
+                context.Writer.WriteStringValue(publicRequest.ExternalLoginId);
+            }
+
+            if(publicRequest.IsSetIamArn())
+            {
+                context.Writer.WritePropertyName("IamArn");
+                context.Writer.WriteStringValue(publicRequest.IamArn);
+            }
+
+            if(publicRequest.IsSetIdentityType())
+            {
+                context.Writer.WritePropertyName("IdentityType");
+                context.Writer.WriteStringValue(publicRequest.IdentityType);
+            }
+
+            if(publicRequest.IsSetSessionName())
+            {
+                context.Writer.WritePropertyName("SessionName");
+                context.Writer.WriteStringValue(publicRequest.SessionName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUserName())
+            {
+                context.Writer.WritePropertyName("UserName");
+                context.Writer.WriteStringValue(publicRequest.UserName);
+            }
+
+            if(publicRequest.IsSetUserRole())
+            {
+                context.Writer.WritePropertyName("UserRole");
+                context.Writer.WriteStringValue(publicRequest.UserRole);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

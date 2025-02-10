@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedOrganizations())
             {
                 context.Writer.WritePropertyName("allowedOrganizations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedOrganizationsListValue in requestObject.AllowedOrganizations)
                 {
-                        context.Writer.Write(requestObjectAllowedOrganizationsListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedOrganizationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAssertionAttributes())
             {
                 context.Writer.WritePropertyName("assertionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssertionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.AssertionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIdpMetadata())
             {
                 context.Writer.WritePropertyName("idpMetadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IdpMetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.IdpMetadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLoginValidityDuration())
             {
                 context.Writer.WritePropertyName("loginValidityDuration");
-                context.Writer.Write(requestObject.LoginValidityDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.LoginValidityDuration.Value);
             }
 
             if(requestObject.IsSetRoleValues())
             {
                 context.Writer.WritePropertyName("roleValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RoleValuesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RoleValues, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

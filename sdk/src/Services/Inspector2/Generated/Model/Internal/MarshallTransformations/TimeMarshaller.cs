@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeOfDay())
             {
                 context.Writer.WritePropertyName("timeOfDay");
-                context.Writer.Write(requestObject.TimeOfDay);
+                context.Writer.WriteStringValue(requestObject.TimeOfDay);
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
         }

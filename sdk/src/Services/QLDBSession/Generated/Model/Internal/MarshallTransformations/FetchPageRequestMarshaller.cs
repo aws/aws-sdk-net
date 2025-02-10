@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNextPageToken())
             {
                 context.Writer.WritePropertyName("NextPageToken");
-                context.Writer.Write(requestObject.NextPageToken);
+                context.Writer.WriteStringValue(requestObject.NextPageToken);
             }
 
             if(requestObject.IsSetTransactionId())
             {
                 context.Writer.WritePropertyName("TransactionId");
-                context.Writer.Write(requestObject.TransactionId);
+                context.Writer.WriteStringValue(requestObject.TransactionId);
             }
 
         }

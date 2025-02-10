@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HTTPRequest Object
     /// </summary>  
-    public class HTTPRequestUnmarshaller : IUnmarshaller<HTTPRequest, XmlUnmarshallerContext>, IUnmarshaller<HTTPRequest, JsonUnmarshallerContext>
+    public class HTTPRequestUnmarshaller : IJsonUnmarshaller<HTTPRequest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HTTPRequest IUnmarshaller<HTTPRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HTTPRequest Unmarshall(JsonUnmarshallerContext context)
+        public HTTPRequest Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HTTPRequest unmarshalledObject = new HTTPRequest();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClientIP", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientIP = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientIP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Country", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Country = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Headers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HTTPHeader, HTTPHeaderUnmarshaller>(HTTPHeaderUnmarshaller.Instance);
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HTTPHeader, HTTPHeaderUnmarshaller>(HTTPHeaderUnmarshaller.Instance);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HTTPVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HTTPVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HTTPVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Method", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("URI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.URI = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.URI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCll())
             {
                 context.Writer.WritePropertyName("maxCll");
-                context.Writer.Write(requestObject.MaxCll.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCll.Value);
             }
 
             if(requestObject.IsSetMaxFall())
             {
                 context.Writer.WritePropertyName("maxFall");
-                context.Writer.Write(requestObject.MaxFall.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFall.Value);
             }
 
         }

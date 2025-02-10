@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -63,15 +66,15 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetFoo()) 
             {
-                request.Headers["X-Foo"] = publicRequest.Foo;
+                request.Headers["x-foo"] = publicRequest.Foo;
             }
         
             if (publicRequest.IsSetFooMap()) 
             {
-                //Map of headers with prefix "X-Foo-".
+                //Map of headers with prefix "x-foo-".
                 foreach (var kvpFooMap in publicRequest.FooMap)
                 {
-                     request.Headers[$"X-Foo-{kvpFooMap.Key}"] = kvpFooMap.Value;
+                     request.Headers[$"x-foo-{kvpFooMap.Key}"] = kvpFooMap.Value;
                 }
             }
 

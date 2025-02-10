@@ -122,7 +122,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 (   () =>
                     Client.GenerateDataSet(new GenerateDataSetRequest
                     {
-                        DataSetPublicationDate = DateTime.Now,
+                        DataSetPublicationDate = DateTime.UtcNow,
                         DataSetType = DataSetType.DailyBusinessFees,
                         DestinationS3BucketName = bucketName,
                         SnsTopicArn = topicArn,
@@ -164,7 +164,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             (() =>
                 Client.GenerateDataSet(new GenerateDataSetRequest
                 {
-                    DataSetPublicationDate = DateTime.Now,
+                    DataSetPublicationDate = DateTime.UtcNow,
                     DataSetType = DataSetType.DailyBusinessFees
                 })
             );
@@ -174,7 +174,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             (   ()=>
                 Client.GenerateDataSet(new GenerateDataSetRequest
                 {
-                    DataSetPublicationDate = DateTime.Now,
+                    DataSetPublicationDate = DateTime.UtcNow,
                     DataSetType = DataSetType.DailyBusinessFees,
                     DestinationS3BucketName = "randomBucket",
                     RoleNameArn = "invalidArn",

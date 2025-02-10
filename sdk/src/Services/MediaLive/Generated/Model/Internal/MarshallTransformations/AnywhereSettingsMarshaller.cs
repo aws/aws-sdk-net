@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelPlacementGroupId())
             {
                 context.Writer.WritePropertyName("channelPlacementGroupId");
-                context.Writer.Write(requestObject.ChannelPlacementGroupId);
+                context.Writer.WriteStringValue(requestObject.ChannelPlacementGroupId);
             }
 
             if(requestObject.IsSetClusterId())
             {
                 context.Writer.WritePropertyName("clusterId");
-                context.Writer.Write(requestObject.ClusterId);
+                context.Writer.WriteStringValue(requestObject.ClusterId);
             }
 
         }

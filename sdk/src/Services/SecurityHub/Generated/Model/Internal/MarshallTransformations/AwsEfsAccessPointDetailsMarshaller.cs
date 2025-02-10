@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessPointId())
             {
                 context.Writer.WritePropertyName("AccessPointId");
-                context.Writer.Write(requestObject.AccessPointId);
+                context.Writer.WriteStringValue(requestObject.AccessPointId);
             }
 
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
-                context.Writer.Write(requestObject.ClientToken);
+                context.Writer.WriteStringValue(requestObject.ClientToken);
             }
 
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("FileSystemId");
-                context.Writer.Write(requestObject.FileSystemId);
+                context.Writer.WriteStringValue(requestObject.FileSystemId);
             }
 
             if(requestObject.IsSetPosixUser())
             {
                 context.Writer.WritePropertyName("PosixUser");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEfsAccessPointPosixUserDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PosixUser, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRootDirectory())
             {
                 context.Writer.WritePropertyName("RootDirectory");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEfsAccessPointRootDirectoryDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RootDirectory, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

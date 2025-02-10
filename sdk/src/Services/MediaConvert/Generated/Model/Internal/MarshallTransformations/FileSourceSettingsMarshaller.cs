@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetByteRateLimit())
             {
                 context.Writer.WritePropertyName("byteRateLimit");
-                context.Writer.Write(requestObject.ByteRateLimit);
+                context.Writer.WriteStringValue(requestObject.ByteRateLimit);
             }
 
             if(requestObject.IsSetConvert608To708())
             {
                 context.Writer.WritePropertyName("convert608To708");
-                context.Writer.Write(requestObject.Convert608To708);
+                context.Writer.WriteStringValue(requestObject.Convert608To708);
             }
 
             if(requestObject.IsSetConvertPaintToPop())
             {
                 context.Writer.WritePropertyName("convertPaintToPop");
-                context.Writer.Write(requestObject.ConvertPaintToPop);
+                context.Writer.WriteStringValue(requestObject.ConvertPaintToPop);
             }
 
             if(requestObject.IsSetFramerate())
             {
                 context.Writer.WritePropertyName("framerate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaptionSourceFramerateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Framerate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceFile())
             {
                 context.Writer.WritePropertyName("sourceFile");
-                context.Writer.Write(requestObject.SourceFile);
+                context.Writer.WriteStringValue(requestObject.SourceFile);
             }
 
             if(requestObject.IsSetTimeDelta())
             {
                 context.Writer.WritePropertyName("timeDelta");
-                context.Writer.Write(requestObject.TimeDelta.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeDelta.Value);
             }
 
             if(requestObject.IsSetTimeDeltaUnits())
             {
                 context.Writer.WritePropertyName("timeDeltaUnits");
-                context.Writer.Write(requestObject.TimeDeltaUnits);
+                context.Writer.WriteStringValue(requestObject.TimeDeltaUnits);
             }
 
         }

@@ -79,7 +79,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ParsingConfiguration. 
         /// <para>
-        /// A custom parser for data source documents.
+        /// Configurations for a parser to use for parsing documents in your data source. If you
+        /// exclude this field, the default parser will be used.
         /// </para>
         /// </summary>
         public ParsingConfiguration ParsingConfiguration

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachedManagedPolicies())
             {
                 context.Writer.WritePropertyName("AttachedManagedPolicies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttachedManagedPoliciesListValue in requestObject.AttachedManagedPolicies)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamAttachedManagedPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttachedManagedPoliciesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreateDate())
             {
                 context.Writer.WritePropertyName("CreateDate");
-                context.Writer.Write(requestObject.CreateDate);
+                context.Writer.WriteStringValue(requestObject.CreateDate);
             }
 
             if(requestObject.IsSetGroupList())
             {
                 context.Writer.WritePropertyName("GroupList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGroupListListValue in requestObject.GroupList)
                 {
-                        context.Writer.Write(requestObjectGroupListListValue);
+                        context.Writer.WriteStringValue(requestObjectGroupListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetPermissionsBoundary())
             {
                 context.Writer.WritePropertyName("PermissionsBoundary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsIamPermissionsBoundaryMarshaller.Instance;
                 marshaller.Marshall(requestObject.PermissionsBoundary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
             if(requestObject.IsSetUserName())
             {
                 context.Writer.WritePropertyName("UserName");
-                context.Writer.Write(requestObject.UserName);
+                context.Writer.WriteStringValue(requestObject.UserName);
             }
 
             if(requestObject.IsSetUserPolicyList())
             {
                 context.Writer.WritePropertyName("UserPolicyList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserPolicyListListValue in requestObject.UserPolicyList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamUserPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserPolicyListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

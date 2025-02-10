@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Signer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SigningConfigurationOverrides Object
     /// </summary>  
-    public class SigningConfigurationOverridesUnmarshaller : IUnmarshaller<SigningConfigurationOverrides, XmlUnmarshallerContext>, IUnmarshaller<SigningConfigurationOverrides, JsonUnmarshallerContext>
+    public class SigningConfigurationOverridesUnmarshaller : IJsonUnmarshaller<SigningConfigurationOverrides, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SigningConfigurationOverrides IUnmarshaller<SigningConfigurationOverrides, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SigningConfigurationOverrides Unmarshall(JsonUnmarshallerContext context)
+        public SigningConfigurationOverrides Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SigningConfigurationOverrides unmarshalledObject = new SigningConfigurationOverrides();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("encryptionAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hashAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

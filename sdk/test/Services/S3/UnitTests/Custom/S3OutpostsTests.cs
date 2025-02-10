@@ -335,7 +335,7 @@ namespace AWSSDK.UnitTests
             {
                 BucketName = outpostsArn,
                 Key = "foo.txt",
-                Expires = DateTime.Now.AddDays(1),
+                Expires = DateTime.UtcNow.AddDays(1),
                 Verb = HttpVerb.GET
             };
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryFilter())
             {
                 context.Writer.WritePropertyName("CategoryFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CategoryFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.CategoryFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNestedFilter())
             {
                 context.Writer.WritePropertyName("NestedFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NestedFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NestedFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumericEqualityFilter())
             {
                 context.Writer.WritePropertyName("NumericEqualityFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericEqualityFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericEqualityFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumericRangeFilter())
             {
                 context.Writer.WritePropertyName("NumericRangeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericRangeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericRangeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRelativeDatesFilter())
             {
                 context.Writer.WritePropertyName("RelativeDatesFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RelativeDatesFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.RelativeDatesFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeEqualityFilter())
             {
                 context.Writer.WritePropertyName("TimeEqualityFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeEqualityFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeEqualityFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeRangeFilter())
             {
                 context.Writer.WritePropertyName("TimeRangeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeRangeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeRangeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTopBottomFilter())
             {
                 context.Writer.WritePropertyName("TopBottomFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopBottomFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TopBottomFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

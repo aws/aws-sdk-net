@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("Email");
-                context.Writer.Write(requestObject.Email);
+                context.Writer.WriteStringValue(requestObject.Email);
             }
 
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("FirstName");
-                context.Writer.Write(requestObject.FirstName);
+                context.Writer.WriteStringValue(requestObject.FirstName);
             }
 
             if(requestObject.IsSetLastName())
             {
                 context.Writer.WritePropertyName("LastName");
-                context.Writer.Write(requestObject.LastName);
+                context.Writer.WriteStringValue(requestObject.LastName);
             }
 
             if(requestObject.IsSetMobile())
             {
                 context.Writer.WritePropertyName("Mobile");
-                context.Writer.Write(requestObject.Mobile);
+                context.Writer.WriteStringValue(requestObject.Mobile);
             }
 
             if(requestObject.IsSetSecondaryEmail())
             {
                 context.Writer.WritePropertyName("SecondaryEmail");
-                context.Writer.Write(requestObject.SecondaryEmail);
+                context.Writer.WriteStringValue(requestObject.SecondaryEmail);
             }
 
         }

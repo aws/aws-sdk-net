@@ -33,6 +33,27 @@ namespace Amazon.Athena.Model
     /// Container for the parameters to the CreateDataCatalog operation.
     /// Creates (registers) a data catalog with the specified name and properties. Catalogs
     /// created are visible to all users of the same Amazon Web Services account.
+    /// 
+    ///  
+    /// <para>
+    /// This API operation creates the following resources.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// CFN Stack Name with a maximum length of 128 characters and prefix <c>athenafederatedcatalog-CATALOG_NAME_SANITIZED</c>
+    /// with length 23 characters.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Lambda Function Name with a maximum length of 64 characters and prefix <c>athenafederatedcatalog_CATALOG_NAME_SANITIZED</c>
+    /// with length 23 characters.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Glue Connection Name with a maximum length of 255 characters and a prefix <c>athenafederatedcatalog_CATALOG_NAME_SANITIZED</c>
+    /// with length 23 characters. 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateDataCatalogRequest : AmazonAthenaRequest
     {
@@ -69,6 +90,23 @@ namespace Amazon.Athena.Model
         /// or hyphen characters. The remainder of the length constraint of 256 is reserved for
         /// use by Athena.
         /// </para>
+        ///  
+        /// <para>
+        /// For <c>FEDERATED</c> type the catalog name has following considerations and limits:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The catalog name allows special characters such as <c>_ , @ , \ , - </c>. These characters
+        /// are replaced with a hyphen (-) when creating the CFN Stack Name and with an underscore
+        /// (_) when creating the Lambda Function and Glue Connection Name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The catalog name has a theoretical limit of 128 characters. However, since we use
+        /// it to create other resources that allow less characters and we prepend a prefix to
+        /// it, the actual catalog name limit for <c>FEDERATED</c> catalog is 64 - 23 = 41 characters.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -184,7 +222,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of comma separated tags to add to the data catalog that is created.
+        /// A list of comma separated tags to add to the data catalog that is created. All the
+        /// resources that are created by the <c>CreateDataCatalog</c> API operation with <c>FEDERATED</c>
+        /// type will have the tag <c>federated_athena_datacatalog="true"</c>. This includes the
+        /// CFN Stack, Glue Connection, Athena DataCatalog, and all the resources created as part
+        /// of the CFN Stack (Lambda Function, IAM policies/roles).
         /// </para>
         /// </summary>
         public List<Tag> Tags

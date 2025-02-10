@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromInclusive())
             {
                 context.Writer.WritePropertyName("FromInclusive");
-                context.Writer.Write(requestObject.FromInclusive.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FromInclusive.Value)));
             }
 
             if(requestObject.IsSetToExclusive())
             {
                 context.Writer.WritePropertyName("ToExclusive");
-                context.Writer.Write(requestObject.ToExclusive.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ToExclusive.Value)));
             }
 
         }

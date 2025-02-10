@@ -237,7 +237,10 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The language code value for the language in which the quick response is written.
+        /// The language code value for the language in which the quick response is written. The
+        /// supported language codes include <c>de_DE</c>, <c>en_US</c>, <c>es_ES</c>, <c>fr_FR</c>,
+        /// <c>id_ID</c>, <c>it_IT</c>, <c>ja_JP</c>, <c>ko_KR</c>, <c>pt_BR</c>, <c>zh_CN</c>,
+        /// <c>zh_TW</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=5)]

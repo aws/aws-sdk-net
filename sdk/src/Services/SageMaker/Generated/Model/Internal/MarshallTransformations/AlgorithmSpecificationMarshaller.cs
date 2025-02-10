@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,74 +49,74 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithmName())
             {
                 context.Writer.WritePropertyName("AlgorithmName");
-                context.Writer.Write(requestObject.AlgorithmName);
+                context.Writer.WriteStringValue(requestObject.AlgorithmName);
             }
 
             if(requestObject.IsSetContainerArguments())
             {
                 context.Writer.WritePropertyName("ContainerArguments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerArgumentsListValue in requestObject.ContainerArguments)
                 {
-                        context.Writer.Write(requestObjectContainerArgumentsListValue);
+                        context.Writer.WriteStringValue(requestObjectContainerArgumentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainerEntrypoint())
             {
                 context.Writer.WritePropertyName("ContainerEntrypoint");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerEntrypointListValue in requestObject.ContainerEntrypoint)
                 {
-                        context.Writer.Write(requestObjectContainerEntrypointListValue);
+                        context.Writer.WriteStringValue(requestObjectContainerEntrypointListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnableSageMakerMetricsTimeSeries())
             {
                 context.Writer.WritePropertyName("EnableSageMakerMetricsTimeSeries");
-                context.Writer.Write(requestObject.EnableSageMakerMetricsTimeSeries.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableSageMakerMetricsTimeSeries.Value);
             }
 
             if(requestObject.IsSetMetricDefinitions())
             {
                 context.Writer.WritePropertyName("MetricDefinitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricDefinitionsListValue in requestObject.MetricDefinitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricDefinitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTrainingImage())
             {
                 context.Writer.WritePropertyName("TrainingImage");
-                context.Writer.Write(requestObject.TrainingImage);
+                context.Writer.WriteStringValue(requestObject.TrainingImage);
             }
 
             if(requestObject.IsSetTrainingImageConfig())
             {
                 context.Writer.WritePropertyName("TrainingImageConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainingImageConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainingImageConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrainingInputMode())
             {
                 context.Writer.WritePropertyName("TrainingInputMode");
-                context.Writer.Write(requestObject.TrainingInputMode);
+                context.Writer.WriteStringValue(requestObject.TrainingInputMode);
             }
 
         }

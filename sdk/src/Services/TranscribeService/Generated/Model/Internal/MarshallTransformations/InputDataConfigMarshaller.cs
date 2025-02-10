@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataAccessRoleArn())
             {
                 context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.Write(requestObject.DataAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.DataAccessRoleArn);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
             if(requestObject.IsSetTuningDataS3Uri())
             {
                 context.Writer.WritePropertyName("TuningDataS3Uri");
-                context.Writer.Write(requestObject.TuningDataS3Uri);
+                context.Writer.WriteStringValue(requestObject.TuningDataS3Uri);
             }
 
         }

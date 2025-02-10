@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHierarchyId())
             {
                 context.Writer.WritePropertyName("hierarchyId");
-                context.Writer.Write(requestObject.HierarchyId);
+                context.Writer.WriteStringValue(requestObject.HierarchyId);
             }
 
             if(requestObject.IsSetPropertyId())
             {
                 context.Writer.WritePropertyName("propertyId");
-                context.Writer.Write(requestObject.PropertyId);
+                context.Writer.WriteStringValue(requestObject.PropertyId);
             }
 
             if(requestObject.IsSetPropertyPath())
             {
                 context.Writer.WritePropertyName("propertyPath");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPropertyPathListValue in requestObject.PropertyPath)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetModelPropertyPathSegmentMarshaller.Instance;
                     marshaller.Marshall(requestObjectPropertyPathListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

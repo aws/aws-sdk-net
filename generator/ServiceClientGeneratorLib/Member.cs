@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 using ServiceClientGenerator.Endpoints;
+using System.Data.SqlTypes;
 
 namespace ServiceClientGenerator
 {
@@ -27,8 +28,6 @@ namespace ServiceClientGenerator
         public const string EventHeaderKey = "eventheader";
         public const string XmlAttributeKey = "xmlAttribute";
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
-
-        private const string BackwardsCompatibleDateTimePropertySuffix = "Utc";
 
         private readonly string _name;
         private string _newType;
@@ -109,22 +108,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BaseVariableName + BackwardsCompatibleDateTimePropertySuffix;
                 return BaseVariableName;
-            }
-        }
-
-        /// <summary>
-        /// The name of the property's backing to be used in backwards compatibility property names
-        /// </summary>
-        public string BackwardCompatibilityVariableName
-        {
-            get
-            {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BaseVariableName;
-                throw new Exception("Property " + BasePropertyName + " is not marked as requiring backward compatibility");
             }
         }
 
@@ -207,28 +191,12 @@ namespace ServiceClientGenerator
         /// <summary>
         /// The name of the member as the first character upper: NameHere
         /// Uses the custom name instead if it exists.
-        /// It includes the backward compatibility suffix if required.
         /// </summary>
         public string PropertyName
         {
             get
             {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BasePropertyName + BackwardsCompatibleDateTimePropertySuffix;
                 return BasePropertyName;
-            }
-        }
-
-        /// <summary>
-        /// The name of the member to be used in backwards compatibility property names
-        /// </summary>
-        public string BackwardCompatibilityPropertyName
-        {
-            get
-            {
-                if (IsBackwardsCompatibleDateTimeProperty)
-                    return BasePropertyName;
-                throw new Exception("Property " + BasePropertyName + " is not marked as requiring backward compatibility");
             }
         }
 
@@ -541,7 +509,7 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
 
-            var nullable = UseNullable ? "?" : "";
+            var nullable = useNullable || UseNullable ? "?" : "";
 
             switch (typeNode.ToString())
             {
@@ -556,17 +524,17 @@ namespace ServiceClientGenerator
                         return "Stream";
                     return "MemoryStream";
                 case "boolean":
-                    return "bool" + (useNullable ? "?" : "");
+                    return $"bool{nullable}";
                 case "double":
-                    return "double" + (useNullable ? "?" : "");
+                    return $"double{nullable}";
                 case "float":
-                    return "float" + (useNullable ? "?" : "");
+                    return $"float{nullable}";
                 case "integer":
-                    return "int" + (useNullable ? "?" : "");
+                    return $"int{nullable}";
                 case "long":
-                    return "long" + (useNullable ? "?" : "");
+                    return $"long{nullable}";
                 case "timestamp":
-                    return "DateTime" + (useNullable ? "?" : "");
+                    return $"DateTime{nullable}";
                 case "structure":
                     return emitAsShapeName ?? renameShape ?? extendsNode.ToString();
                 case "map":
@@ -628,6 +596,8 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode.ToString());
 
+            var nullable = useNullable || UseNullable ? "Nullable" : "";
+
             switch (typeNode.ToString())
             {
                 case "string":
@@ -635,17 +605,17 @@ namespace ServiceClientGenerator
                 case "blob":
                     return "MemoryStreamUnmarshaller";
                 case "boolean":
-                    return (useNullable ? "Nullable" : "") + "BoolUnmarshaller";
+                    return $"{nullable}BoolUnmarshaller";
                 case "double":
-                    return (useNullable ? "Nullable" : "") + "DoubleUnmarshaller";
+                    return $"{nullable}DoubleUnmarshaller";
                 case "float":
-                    return (useNullable ? "Nullable" : "") + "FloatUnmarshaller";
+                    return $"{nullable}FloatUnmarshaller";
                 case "integer":
-                    return (useNullable ? "Nullable" : "") + "IntUnmarshaller";
+                    return $"{nullable}IntUnmarshaller";
                 case "long":
-                    return (useNullable ? "Nullable" : "") + "LongUnmarshaller";
+                    return $"{nullable}LongUnmarshaller";
                 case "timestamp":
-                    return (useNullable ? "Nullable" : "") + "DateTimeUnmarshaller";
+                    return $"{nullable}DateTimeUnmarshaller";
                 case "structure":
                     var shapeName = extendsNode.ToString();
                     var renamedShape = this.model.Customizations.GetOverrideShapeName(shapeName);
@@ -664,16 +634,26 @@ namespace ServiceClientGenerator
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey], useNullable);
                     var valueType = DetermineType(memberShape[Shape.ValueKey], true, useNullable);
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], useNullable);
-
-                    return string.Format("DictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
-                        keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    else if (this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml)
+                        return string.Format("XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    else
+                        throw new Exception("Unknown protocol type");
                 case "list":
                     var listType = DetermineType(memberShape[Member.MemberKey], true, useNullable);
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], useNullable);
-
-                    return string.Format("ListUnmarshaller<{0}, {1}>",
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("JsonListUnmarshaller<{0},{1}>",listType, listTypeUnmarshaller);
+                    if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
+                        return string.Format("XmlListUnmarshaller<{0}, {1}>",
                         listType, listTypeUnmarshaller);
-
+                    else
+                    {
+                        throw new Exception("Unknown protocol type");
+                    }
                 case "decimal":
                     throw new Exception(UnhandledTypeDecimalErrorMessage);
 
@@ -723,6 +703,8 @@ namespace ServiceClientGenerator
             if (typeNode == null)
                 throw new Exception("Type is missing for shape " + extendsNode);
 
+            var nullable = useNullable || UseNullable ? "Nullable" : "";
+
             switch (typeNode.ToString())
             {
                 case "string":
@@ -730,17 +712,17 @@ namespace ServiceClientGenerator
                 case "blob":
                     return "MemoryStreamUnmarshaller.Instance";
                 case "boolean":
-                    return (useNullable ? "Nullable" : "") + "BoolUnmarshaller.Instance";
+                    return $"{nullable}BoolUnmarshaller.Instance";
                 case "double":
-                    return (useNullable ? "Nullable" : "") + "DoubleUnmarshaller.Instance";
+                    return $"{nullable}DoubleUnmarshaller.Instance";
                 case "float":
-                    return (useNullable ? "Nullable" : "") + "FloatUnmarshaller.Instance";
+                    return $"{nullable}FloatUnmarshaller.Instance";
                 case "integer":
-                    return (useNullable ? "Nullable" : "") + "IntUnmarshaller.Instance";
+                    return $"{nullable}IntUnmarshaller.Instance";
                 case "long":
-                    return (useNullable ? "Nullable" : "") + "LongUnmarshaller.Instance";
+                    return $"{nullable}LongUnmarshaller.Instance";
                 case "timestamp":
-                    return (useNullable ? "Nullable" : "") + "DateTimeUnmarshaller.Instance";
+                    return $"{nullable}DateTimeUnmarshaller.Instance";
                 case "structure":
                     return (renameShape ?? extendsNode) + "Unmarshaller.Instance";
                 case "map":
@@ -759,13 +741,14 @@ namespace ServiceClientGenerator
                         isFlat = false;
                     }
 
-                    if (this.model.Type == ServiceType.Json 
-                        || this.model.Type == ServiceType.Rest_Json 
-                        || (this.model.Type == ServiceType.Rest_Xml && !isFlat))
-                        return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("new JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                    else if (this.model.Type == ServiceType.Rest_Xml && !isFlat)
+                        return string.Format("new XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else
-                        return string.Format("new KeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                        return string.Format("new XmlKeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                 case "list":
                     var listType = DetermineType(memberShape[Shape.MemberKey], true, false);
@@ -773,7 +756,7 @@ namespace ServiceClientGenerator
                     var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString(), false);
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
-                        return string.Format("new ListUnmarshaller<{0}, {1}>({2})",
+                        return string.Format("new JsonListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
                     else if ((this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml) && $"{listTypeUnmarshaller}.Instance" != listTypeUnmarshallerInstantiate)
                         return $"new {listTypeUnmarshaller}({listTypeUnmarshallerInstantiate})";
@@ -985,10 +968,6 @@ namespace ServiceClientGenerator
                 return false;
             }
         }
-        public bool IsBackwardsCompatibleDateTimeProperty
-        {
-            get { return this.model.Customizations.IsBackwardsCompatibleDateTimeProperty(this.BasePropertyName, this.OwningShape.Name); }
-        }
 
         /// <summary>
         /// Determines if the member is a type that needs to be instantiated, such as a list or map
@@ -1059,7 +1038,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (!this.IsDateTime)
+                if (!this.IsTimeStamp)
                 {
                     throw new InvalidOperationException(string.Format(
                         CultureInfo.InvariantCulture,
@@ -1081,7 +1060,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Returns if the member's type is timestamp.
         /// </summary>
-        public bool IsDateTime
+        public bool IsTimeStamp
         {
             get
             {
@@ -1097,7 +1076,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                if (this.IsDateTime)
+                if (this.IsTimeStamp)
                 {
                     string formatAppend = string.Empty;
                     if (this.TimestampFormat == TimestampFormat.ISO8601)

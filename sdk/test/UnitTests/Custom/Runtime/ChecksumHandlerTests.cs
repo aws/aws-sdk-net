@@ -30,44 +30,55 @@ namespace AWSSDK.UnitTests
     public class ChecksumHandlerTests
     {
         private const string JunkChecksumHeaderValue = "JunkHeaderValue";
+        private const string SdkAlgorithmHeaderName = "x-amz-sdk-checksum-algorithm";
 
 #if BCL
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is true
-        [DataRow(true, false, null, true, true, HeaderKeys.ContentMD5Header)]
-        // Set CRC32Header when <see cref="ChecksumData.MD5Checksum"/> is false and we have a valid
-        // CRC32 <see cref="ChecksumData.SelectedChecksum"/>
-        [DataRow(true, false, "CRC32", false, true, "x-amz-checksum-crc32")]
-        // Don't set CRC32Header twice when the header is already set
-        [DataRow(true, true, "CRC32", false, true, "x-amz-checksum-crc32")]
-        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless whether
-        // selectedChecksum is set or not
-        [DataRow(true, false, "CRC32", true, true, HeaderKeys.ContentMD5Header)]
-        // Don't set <see cref="HeaderKeys.ContentMD5Header"/> twice when the header is already set
-        [DataRow(true, true, "CRC32", true, true, HeaderKeys.ContentMD5Header)]
-        // Set <see cref="HeaderKeys.ContentMD5Header"/> when <see cref="ChecksumData.MD5Checksum"/> is set to true regardless
-        // whether <see cref="ChecksumData.SelectedChecksum"/> is valid or not
-        [DataRow(true, false, "NONE", false, true, HeaderKeys.ContentMD5Header)]
-        // Don't set any checksum header when <see cref="ChecksumData.SelectedChecksum"/> doesn't exist and we don't want to fallback to MD5
-        [DataRow(true, false, "NONE", false, false, null)]
-        // Don't set any checksum header when <see cref="IRequest.ChecksumData"/> equals null
-        [DataRow(false, false, "CRC32", true, true, null)]
+
+        // Set "Content-MD5" header when checksum data is MD5 (regardless if selected checksum is valid or not)
+        [DataRow(true, false, "NonExistent", true, false, HeaderKeys.ContentMD5Header, true, RequestChecksumCalculation.WHEN_REQUIRED)]
+        [DataRow(true, false, "CRC32", true, false, HeaderKeys.ContentMD5Header, true, RequestChecksumCalculation.WHEN_SUPPORTED)]
+
+        // Set default checksum when checksum wasn't specified and we don't want to fallback to MD5
+        [DataRow(true, false, "NONE", false, false, "x-amz-checksum-crc32", true, RequestChecksumCalculation.WHEN_REQUIRED)]
+
+        // Set checksum header when a valid algorithm (different than the default) is specified
+        [DataRow(true, false, "CRC32C", false, false, "x-amz-checksum-crc32c", false, RequestChecksumCalculation.WHEN_SUPPORTED)]
+
+        // Don't set header twice when value is already set
+        [DataRow(true, true, "SHA256", false, false, "x-amz-checksum-sha256", false, RequestChecksumCalculation.WHEN_SUPPORTED)]
+
+        // Don't set any checksum headers when checksum data equals null
+        [DataRow(false, false, "NONE", true, true, null, true, null)]
+
+        // Don't set any checksum headers when not required and config set to when required only
+        [DataRow(true, false, "SHA1", false, false, null, false, RequestChecksumCalculation.WHEN_REQUIRED)]
+        [DataRow(true, false, "NONE", false, false, null, false, RequestChecksumCalculation.WHEN_REQUIRED)]
+
         [DataTestMethod]
-        public async Task TestChecksumInvokeAsync(bool checksumDataExists, bool checksumHeaderAlreadyExists, string selectedChecksum,
-            bool MD5Checksum, bool fallBackToMD5, string headerKey)
+        public async Task TestChecksumInvokeAsync(
+            bool checksumDataExists, 
+            bool checksumHeaderAlreadyExists, 
+            string selectedChecksum,
+            bool MD5Checksum, 
+            bool fallBackToMD5,
+            string headerKey,
+            bool isRequestChecksumRequired,
+            RequestChecksumCalculation requestChecksumCalculation
+        )
         {
             ChecksumData checksumData = null;
             if (checksumDataExists)
             {
-                checksumData = new ChecksumData(selectedChecksum, MD5Checksum, fallBackToMD5);
+                checksumData = new ChecksumData(selectedChecksum, MD5Checksum, fallBackToMD5, isRequestChecksumRequired, SdkAlgorithmHeaderName);
             }
 
             var handler = new ChecksumHandler();
             var mockHandler = new MockActionHandler();
             handler.InnerHandler = mockHandler;
 
-            var executionContext = CreateTestContext();
+            var executionContext = CreateTestContext(requestChecksumCalculation);
             var request = executionContext.RequestContext.Request;
             request.ChecksumData = checksumData;
 
@@ -86,9 +97,15 @@ namespace AWSSDK.UnitTests
             }
             else if (headerKey != null)
             {
-                Assert.IsTrue(request.Headers.Count == 1);
                 Assert.IsTrue(request.Headers.ContainsKey(headerKey));
                 Assert.IsTrue(request.Headers[headerKey] != null);
+
+                if (!MD5Checksum)
+                {
+                    var expectedValue = selectedChecksum == "NONE" ? ChecksumUtils.DefaultAlgorithm.ToString() : selectedChecksum;
+                    Assert.IsTrue(request.Headers.ContainsKey(SdkAlgorithmHeaderName));
+                    Assert.AreEqual(expectedValue, request.Headers[SdkAlgorithmHeaderName]);
+                }
             }
             else
             {
@@ -97,9 +114,9 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
-        private ExecutionContext CreateTestContext()
+        private ExecutionContext CreateTestContext(RequestChecksumCalculation requestChecksumCalculation)
         {
-            var putMetricDataRequest = new PutMetricDataRequest()
+            var putMetricDataRequest = new PutMetricDataRequest
             {
                 Namespace = "compression-test",
             };
@@ -108,11 +125,13 @@ namespace AWSSDK.UnitTests
             {
                 OriginalRequest = putMetricDataRequest,
                 Request = new PutMetricDataRequestMarshaller().Marshall(putMetricDataRequest),
-                ClientConfig = new AmazonCloudWatchConfig()
+                ClientConfig = new AmazonCloudWatchConfig
+                {
+                    RequestChecksumCalculation = requestChecksumCalculation,
+                }
             };
 
             return new ExecutionContext(requestContext, null);
         }
     }
-
 }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupBy())
             {
                 context.Writer.WritePropertyName("GroupBy");
-                context.Writer.Write(requestObject.GroupBy);
+                context.Writer.WriteStringValue(requestObject.GroupBy);
             }
 
             if(requestObject.IsSetStatistics())
             {
                 context.Writer.WritePropertyName("Statistics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatisticsListValue in requestObject.Statistics)
                 {
-                        context.Writer.Write(requestObjectStatisticsListValue);
+                        context.Writer.WriteStringValue(requestObjectStatisticsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetBands())
             {
                 context.Writer.WritePropertyName("TargetBands");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetBandsListValue in requestObject.TargetBands)
                 {
-                        context.Writer.Write(requestObjectTargetBandsListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetBandsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

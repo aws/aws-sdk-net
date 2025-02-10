@@ -141,6 +141,22 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListCommandExecutions operation
+        ///</summary>
+        public IListCommandExecutionsPaginator ListCommandExecutions(ListCommandExecutionsRequest request) 
+        {
+            return new ListCommandExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCommands operation
+        ///</summary>
+        public IListCommandsPaginator ListCommands(ListCommandsRequest request) 
+        {
+            return new ListCommandsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomMetrics operation
         ///</summary>
         public IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request) 
@@ -309,6 +325,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListPrincipalThingsV2 operation
+        ///</summary>
+        public IListPrincipalThingsV2Paginator ListPrincipalThingsV2(ListPrincipalThingsV2Request request) 
+        {
+            return new ListPrincipalThingsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProvisioningTemplates operation
         ///</summary>
         public IListProvisioningTemplatesPaginator ListProvisioningTemplates(ListProvisioningTemplatesRequest request) 
@@ -426,6 +450,14 @@ namespace Amazon.IoT.Model
         public IListThingPrincipalsPaginator ListThingPrincipals(ListThingPrincipalsRequest request) 
         {
             return new ListThingPrincipalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThingPrincipalsV2 operation
+        ///</summary>
+        public IListThingPrincipalsV2Paginator ListThingPrincipalsV2(ListThingPrincipalsV2Request request) 
+        {
+            return new ListThingPrincipalsV2Paginator(this.client, request);
         }
 
         /// <summary>

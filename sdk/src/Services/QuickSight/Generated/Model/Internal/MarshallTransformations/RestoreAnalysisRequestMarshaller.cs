@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -65,7 +68,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
+            
+            if (publicRequest.IsSetRestoreToFolders())
+                request.Parameters.Add("restore-to-folders", StringUtils.FromBool(publicRequest.RestoreToFolders));
             request.ResourcePath = "/accounts/{AwsAccountId}/restore/analyses/{AnalysisId}";
+            request.UseQueryString = true;
 
             return request;
         }

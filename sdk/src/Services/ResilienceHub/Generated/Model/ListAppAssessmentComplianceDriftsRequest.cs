@@ -64,7 +64,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of compliance drifts requested.
+        /// Maximum number of compliance drifts requested.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceAction Object
     /// </summary>  
-    public class ResourceActionUnmarshaller : IUnmarshaller<ResourceAction, XmlUnmarshallerContext>, IUnmarshaller<ResourceAction, JsonUnmarshallerContext>
+    public class ResourceActionUnmarshaller : IJsonUnmarshaller<ResourceAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceAction IUnmarshaller<ResourceAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceAction Unmarshall(JsonUnmarshallerContext context)
+        public ResourceAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceAction unmarshalledObject = new ResourceAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cloudFormationAction", targetDepth))
                 {
                     var unmarshaller = CloudFormationActionUnmarshaller.Instance;
-                    unmarshalledObject.CloudFormationAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudFormationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("m2ManagedApplicationAction", targetDepth))
                 {
                     var unmarshaller = M2ManagedApplicationActionUnmarshaller.Instance;
-                    unmarshalledObject.M2ManagedApplicationAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.M2ManagedApplicationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("m2NonManagedApplicationAction", targetDepth))
                 {
                     var unmarshaller = M2NonManagedApplicationActionUnmarshaller.Instance;
-                    unmarshalledObject.M2NonManagedApplicationAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.M2NonManagedApplicationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Authentication Object
     /// </summary>  
-    public class AuthenticationUnmarshaller : IUnmarshaller<Authentication, XmlUnmarshallerContext>, IUnmarshaller<Authentication, JsonUnmarshallerContext>
+    public class AuthenticationUnmarshaller : IXmlUnmarshaller<Authentication, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Authentication Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AuthenticationUnmarshaller _instance = new AuthenticationUnmarshaller();        
 

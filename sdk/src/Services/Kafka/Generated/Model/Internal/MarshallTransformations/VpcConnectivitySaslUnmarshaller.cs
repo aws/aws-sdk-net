@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VpcConnectivitySasl Object
     /// </summary>  
-    public class VpcConnectivitySaslUnmarshaller : IUnmarshaller<VpcConnectivitySasl, XmlUnmarshallerContext>, IUnmarshaller<VpcConnectivitySasl, JsonUnmarshallerContext>
+    public class VpcConnectivitySaslUnmarshaller : IJsonUnmarshaller<VpcConnectivitySasl, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VpcConnectivitySasl IUnmarshaller<VpcConnectivitySasl, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VpcConnectivitySasl Unmarshall(JsonUnmarshallerContext context)
+        public VpcConnectivitySasl Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VpcConnectivitySasl unmarshalledObject = new VpcConnectivitySasl();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("iam", targetDepth))
                 {
                     var unmarshaller = VpcConnectivityIamUnmarshaller.Instance;
-                    unmarshalledObject.Iam = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Iam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scram", targetDepth))
                 {
                     var unmarshaller = VpcConnectivityScramUnmarshaller.Instance;
-                    unmarshalledObject.Scram = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

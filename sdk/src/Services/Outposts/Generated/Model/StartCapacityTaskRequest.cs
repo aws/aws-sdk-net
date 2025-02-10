@@ -31,14 +31,17 @@ namespace Amazon.Outposts.Model
 {
     /// <summary>
     /// Container for the parameters to the StartCapacityTask operation.
-    /// Starts the specified capacity task. You can have one active capacity task for an order.
+    /// Starts the specified capacity task. You can have one active capacity task for each
+    /// order and each Outpost.
     /// </summary>
     public partial class StartCapacityTaskRequest : AmazonOutpostsRequest
     {
         private bool? _dryRun;
         private List<InstanceTypeCapacity> _instancePools = AWSConfigs.InitializeCollections ? new List<InstanceTypeCapacity>() : null;
+        private InstancesToExclude _instancesToExclude;
         private string _orderId;
         private string _outpostIdentifier;
+        private TaskActionOnBlockingInstances _taskActionOnBlockingInstances;
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -80,13 +83,32 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstancesToExclude. 
+        /// <para>
+        /// List of user-specified running instances that must not be stopped in order to free
+        /// up the capacity needed to run the capacity task.
+        /// </para>
+        /// </summary>
+        public InstancesToExclude InstancesToExclude
+        {
+            get { return this._instancesToExclude; }
+            set { this._instancesToExclude = value; }
+        }
+
+        // Check to see if InstancesToExclude property is set
+        internal bool IsSetInstancesToExclude()
+        {
+            return this._instancesToExclude != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OrderId. 
         /// <para>
         /// The ID of the Amazon Web Services Outposts order associated with the specified capacity
         /// task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Min=1, Max=20)]
         public string OrderId
         {
             get { return this._orderId; }
@@ -116,6 +138,35 @@ namespace Amazon.Outposts.Model
         internal bool IsSetOutpostIdentifier()
         {
             return this._outpostIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskActionOnBlockingInstances. 
+        /// <para>
+        /// Specify one of the following options in case an instance is blocking the capacity
+        /// task from running.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>WAIT_FOR_EVACUATION</c> - Checks every 10 minutes over 48 hours to determine if
+        /// instances have stopped and capacity is available to complete the task.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAIL_TASK</c> - The capacity task fails.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TaskActionOnBlockingInstances TaskActionOnBlockingInstances
+        {
+            get { return this._taskActionOnBlockingInstances; }
+            set { this._taskActionOnBlockingInstances = value; }
+        }
+
+        // Check to see if TaskActionOnBlockingInstances property is set
+        internal bool IsSetTaskActionOnBlockingInstances()
+        {
+            return this._taskActionOnBlockingInstances != null;
         }
 
     }

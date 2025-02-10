@@ -29,155 +29,145 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LoRaWANDeviceProfile Object
     /// </summary>  
-    public class LoRaWANDeviceProfileUnmarshaller : IUnmarshaller<LoRaWANDeviceProfile, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANDeviceProfile, JsonUnmarshallerContext>
+    public class LoRaWANDeviceProfileUnmarshaller : IJsonUnmarshaller<LoRaWANDeviceProfile, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LoRaWANDeviceProfile IUnmarshaller<LoRaWANDeviceProfile, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANDeviceProfile Unmarshall(JsonUnmarshallerContext context)
+        public LoRaWANDeviceProfile Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LoRaWANDeviceProfile unmarshalledObject = new LoRaWANDeviceProfile();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClassBTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ClassBTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClassBTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClassCTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ClassCTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClassCTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FactoryPresetFreqsList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.FactoryPresetFreqsList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.FactoryPresetFreqsList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MacVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MacVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MacVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxDutyCycle", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxDutyCycle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxDutyCycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxEirp", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PingSlotDr", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PingSlotDr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PingSlotDr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PingSlotFreq", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PingSlotFreq = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PingSlotFreq = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PingSlotPeriod", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PingSlotPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PingSlotPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegParamsRevision", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegParamsRevision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegParamsRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RfRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RxDataRate2", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RxDataRate2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RxDataRate2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RxDelay1", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RxDelay1 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RxDelay1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RxDrOffset1", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RxDrOffset1 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RxDrOffset1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RxFreq2", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RxFreq2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RxFreq2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Supports32BitFCnt", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Supports32BitFCnt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Supports32BitFCnt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupportsClassB", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SupportsClassB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupportsClassB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupportsClassC", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SupportsClassC = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupportsClassC = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupportsJoin", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SupportsJoin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupportsJoin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

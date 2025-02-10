@@ -15,6 +15,7 @@
 
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using System;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -22,6 +23,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// AWS4/AWS4a protocol signer for service calls that transmit authorization in the header field "Authorization".
     /// Specific for EventBridge
     /// </summary>
+    [Obsolete("Use AWSEndpointAuthSchemeSigner instead.")]
     public class EventBridgeSigner : AbstractAWSSigner
     {
         public override ClientProtocol Protocol

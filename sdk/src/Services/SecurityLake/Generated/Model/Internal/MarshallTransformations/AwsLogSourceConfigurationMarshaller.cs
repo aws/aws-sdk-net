@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("accounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountsListValue in requestObject.Accounts)
                 {
-                        context.Writer.Write(requestObjectAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");
-                context.Writer.Write(requestObject.SourceName);
+                context.Writer.WriteStringValue(requestObject.SourceName);
             }
 
             if(requestObject.IsSetSourceVersion())
             {
                 context.Writer.WritePropertyName("sourceVersion");
-                context.Writer.Write(requestObject.SourceVersion);
+                context.Writer.WriteStringValue(requestObject.SourceVersion);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidS3KeyPrefixException operation
     /// </summary>  
-    public class InvalidS3KeyPrefixExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidS3KeyPrefixException, XmlUnmarshallerContext>
+    public class InvalidS3KeyPrefixExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidS3KeyPrefixException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

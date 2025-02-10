@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the ExportServerlessCacheSnapshot operation.
     /// Provides the functionality to export the serverless cache snapshot data to Amazon
-    /// S3. Available for Redis OSS only.
+    /// S3. Available for Valkey and Redis OSS only.
     /// </summary>
     public partial class ExportServerlessCacheSnapshotRequest : AmazonElastiCacheRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property S3BucketName. 
         /// <para>
         /// Name of the Amazon S3 bucket to export the snapshot to. The Amazon S3 bucket must
-        /// also be in same region as the snapshot. Available for Redis OSS only.
+        /// also be in same region as the snapshot. Available for Valkey and Redis OSS only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheSnapshotName. 
         /// <para>
         /// The identifier of the serverless cache snapshot to be exported to S3. Available for
-        /// Redis OSS only.
+        /// Valkey and Redis OSS only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

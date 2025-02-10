@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails Object
     /// </summary>  
-    public class AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsUnmarshaller : IUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails, JsonUnmarshallerContext>
+    public class AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetailsUnmarshaller : IJsonUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails IUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails unmarshalledObject = new AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LogDriver", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogDriver = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogDriver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Options", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecretOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails, AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsUnmarshaller.Instance);
-                    unmarshalledObject.SecretOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails, AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsUnmarshaller.Instance);
+                    unmarshalledObject.SecretOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

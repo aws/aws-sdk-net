@@ -63,26 +63,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UploadId = uploadId,
                     PartNumber = 1,
 
-                    DisableTrimmingLeadingSlash = true
                 });
                 Assert.IsNotNull(copyPartResponse.ETag);
                 Assert.IsTrue(copyPartResponse.ETag != null && copyPartResponse.ETag.Length > 0);
                 Assert.IsTrue(copyPartResponse.PartNumber == 1);
 
-                var completeUploadResponse = Client.CompleteMultipartUpload(new CompleteMultipartUploadRequest
+                var completeUploadRequest = new CompleteMultipartUploadRequest
                 {
                     BucketName = bucketName,
                     Key = destinationKeyWithSlash,
                     UploadId = uploadId,
-                    PartETags = new List<PartETag>
-                    {
-                        new PartETag
-                        {
-                            ETag = copyPartResponse.ETag,
-                            PartNumber = copyPartResponse.PartNumber
-                        }
-                    }
-                });
+                };
+                completeUploadRequest.AddPartETags(copyPartResponse);
+
+                var completeUploadResponse = Client.CompleteMultipartUpload(completeUploadRequest);
                 Assert.AreEqual(HttpStatusCode.OK, completeUploadResponse.HttpStatusCode);
 
                 var getObjectResponse = Client.GetObject(new GetObjectRequest

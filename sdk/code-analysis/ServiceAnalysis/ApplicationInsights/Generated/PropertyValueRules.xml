@@ -31,6 +31,12 @@
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.CreateApplicationRequest.SNSNotificationArn</property>
+    <min>20</min>
+    <max>300</max>
+    <pattern>^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.CreateComponentRequest.ComponentName</property>
     <min>1</min>
     <max>128</max>
@@ -187,7 +193,7 @@
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationRequest.WorkloadName</property>
     <min>1</min>
-    <max>8</max>
+    <max>12</max>
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -255,6 +261,12 @@
     <min>38</min>
     <max>38</max>
     <pattern>p-[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.DescribeProblemResponse.SNSNotificationArn</property>
+    <min>20</min>
+    <max>300</max>
+    <pattern>^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.DescribeProblemObservationsRequest.AccountId</property>
@@ -598,6 +610,12 @@
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.UpdateApplicationRequest.SNSNotificationArn</property>
+    <min>20</min>
+    <max>300</max>
+    <pattern>^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.UpdateComponentRequest.ComponentName</property>
     <min>1</min>
     <max>128</max>
@@ -734,6 +752,12 @@
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationInsights.Model.ApplicationInfo.SNSNotificationArn</property>
+    <min>20</min>
+    <max>300</max>
+    <pattern>^arn:aws(-\w+)*:[\w\d-]+:([\w\d-]*)?:[\w\d_-]*([:/].+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.ConfigurationEvent.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -825,7 +849,7 @@
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.Workload.WorkloadName</property>
     <min>1</min>
-    <max>8</max>
+    <max>12</max>
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -842,7 +866,7 @@
   <property-value-rule>
     <property>Amazon.ApplicationInsights.Model.WorkloadConfiguration.WorkloadName</property>
     <min>1</min>
-    <max>8</max>
+    <max>12</max>
     <pattern>[a-zA-Z0-9\.\-_]*</pattern>
   </property-value-rule>
 </property-value-rules>

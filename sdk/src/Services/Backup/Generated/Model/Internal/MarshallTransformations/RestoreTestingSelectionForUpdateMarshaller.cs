@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("IamRoleArn");
-                context.Writer.Write(requestObject.IamRoleArn);
+                context.Writer.WriteStringValue(requestObject.IamRoleArn);
             }
 
             if(requestObject.IsSetProtectedResourceArns())
             {
                 context.Writer.WritePropertyName("ProtectedResourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtectedResourceArnsListValue in requestObject.ProtectedResourceArns)
                 {
-                        context.Writer.Write(requestObjectProtectedResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectProtectedResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProtectedResourceConditions())
             {
                 context.Writer.WritePropertyName("ProtectedResourceConditions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProtectedResourceConditionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProtectedResourceConditions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRestoreMetadataOverrides())
             {
                 context.Writer.WritePropertyName("RestoreMetadataOverrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRestoreMetadataOverridesKvp in requestObject.RestoreMetadataOverrides)
                 {
                     context.Writer.WritePropertyName(requestObjectRestoreMetadataOverridesKvp.Key);
                     var requestObjectRestoreMetadataOverridesValue = requestObjectRestoreMetadataOverridesKvp.Value;
 
-                        context.Writer.Write(requestObjectRestoreMetadataOverridesValue);
+                        context.Writer.WriteStringValue(requestObjectRestoreMetadataOverridesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidationWindowHours())
             {
                 context.Writer.WritePropertyName("ValidationWindowHours");
-                context.Writer.Write(requestObject.ValidationWindowHours.Value);
+                context.Writer.WriteNumberValue(requestObject.ValidationWindowHours.Value);
             }
 
         }

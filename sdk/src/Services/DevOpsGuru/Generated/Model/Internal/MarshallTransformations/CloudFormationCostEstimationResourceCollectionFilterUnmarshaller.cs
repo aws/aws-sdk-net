@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CloudFormationCostEstimationResourceCollectionFilter Object
     /// </summary>  
-    public class CloudFormationCostEstimationResourceCollectionFilterUnmarshaller : IUnmarshaller<CloudFormationCostEstimationResourceCollectionFilter, XmlUnmarshallerContext>, IUnmarshaller<CloudFormationCostEstimationResourceCollectionFilter, JsonUnmarshallerContext>
+    public class CloudFormationCostEstimationResourceCollectionFilterUnmarshaller : IJsonUnmarshaller<CloudFormationCostEstimationResourceCollectionFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CloudFormationCostEstimationResourceCollectionFilter IUnmarshaller<CloudFormationCostEstimationResourceCollectionFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CloudFormationCostEstimationResourceCollectionFilter Unmarshall(JsonUnmarshallerContext context)
+        public CloudFormationCostEstimationResourceCollectionFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CloudFormationCostEstimationResourceCollectionFilter unmarshalledObject = new CloudFormationCostEstimationResourceCollectionFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("StackNames", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.StackNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StackNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

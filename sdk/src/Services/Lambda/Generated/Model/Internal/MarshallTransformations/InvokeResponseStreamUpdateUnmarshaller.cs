@@ -29,32 +29,22 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InvokeResponseStreamUpdate Object
     /// </summary>  
-    public class InvokeResponseStreamUpdateUnmarshaller : IUnmarshaller<InvokeResponseStreamUpdate, XmlUnmarshallerContext>, IUnmarshaller<InvokeResponseStreamUpdate, JsonUnmarshallerContext>
+    public class InvokeResponseStreamUpdateUnmarshaller : IJsonUnmarshaller<InvokeResponseStreamUpdate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InvokeResponseStreamUpdate IUnmarshaller<InvokeResponseStreamUpdate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InvokeResponseStreamUpdate Unmarshall(JsonUnmarshallerContext context)
+        public InvokeResponseStreamUpdate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InvokeResponseStreamUpdate unmarshalledObject = new InvokeResponseStreamUpdate();
             if (context.IsEmptyResponse)

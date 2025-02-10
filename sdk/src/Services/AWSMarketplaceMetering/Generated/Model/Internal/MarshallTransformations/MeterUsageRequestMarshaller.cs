@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,70 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDryRun())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDryRun())
-                    {
-                        context.Writer.WritePropertyName("DryRun");
-                        context.Writer.Write(publicRequest.DryRun.Value);
-                    }
-
-                    if(publicRequest.IsSetProductCode())
-                    {
-                        context.Writer.WritePropertyName("ProductCode");
-                        context.Writer.Write(publicRequest.ProductCode);
-                    }
-
-                    if(publicRequest.IsSetTimestamp())
-                    {
-                        context.Writer.WritePropertyName("Timestamp");
-                        context.Writer.Write(publicRequest.Timestamp.Value);
-                    }
-
-                    if(publicRequest.IsSetUsageAllocations())
-                    {
-                        context.Writer.WritePropertyName("UsageAllocations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUsageAllocationsListValue in publicRequest.UsageAllocations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = UsageAllocationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestUsageAllocationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUsageDimension())
-                    {
-                        context.Writer.WritePropertyName("UsageDimension");
-                        context.Writer.Write(publicRequest.UsageDimension);
-                    }
-
-                    if(publicRequest.IsSetUsageQuantity())
-                    {
-                        context.Writer.WritePropertyName("UsageQuantity");
-                        context.Writer.Write(publicRequest.UsageQuantity.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
             }
+
+            if(publicRequest.IsSetProductCode())
+            {
+                context.Writer.WritePropertyName("ProductCode");
+                context.Writer.WriteStringValue(publicRequest.ProductCode);
+            }
+
+            if(publicRequest.IsSetTimestamp())
+            {
+                context.Writer.WritePropertyName("Timestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Timestamp.Value)));
+            }
+
+            if(publicRequest.IsSetUsageAllocations())
+            {
+                context.Writer.WritePropertyName("UsageAllocations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUsageAllocationsListValue in publicRequest.UsageAllocations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UsageAllocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestUsageAllocationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUsageDimension())
+            {
+                context.Writer.WritePropertyName("UsageDimension");
+                context.Writer.WriteStringValue(publicRequest.UsageDimension);
+            }
+
+            if(publicRequest.IsSetUsageQuantity())
+            {
+                context.Writer.WritePropertyName("UsageQuantity");
+                context.Writer.WriteNumberValue(publicRequest.UsageQuantity.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

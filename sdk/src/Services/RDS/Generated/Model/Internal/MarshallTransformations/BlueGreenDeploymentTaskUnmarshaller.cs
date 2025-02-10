@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BlueGreenDeploymentTask Object
     /// </summary>  
-    public class BlueGreenDeploymentTaskUnmarshaller : IUnmarshaller<BlueGreenDeploymentTask, XmlUnmarshallerContext>, IUnmarshaller<BlueGreenDeploymentTask, JsonUnmarshallerContext>
+    public class BlueGreenDeploymentTaskUnmarshaller : IXmlUnmarshaller<BlueGreenDeploymentTask, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public BlueGreenDeploymentTask Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static BlueGreenDeploymentTaskUnmarshaller _instance = new BlueGreenDeploymentTaskUnmarshaller();        
 

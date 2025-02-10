@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevelFive())
             {
                 context.Writer.WritePropertyName("LevelFive");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchyLevelUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.LevelFive, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLevelFour())
             {
                 context.Writer.WritePropertyName("LevelFour");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchyLevelUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.LevelFour, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLevelOne())
             {
                 context.Writer.WritePropertyName("LevelOne");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchyLevelUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.LevelOne, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLevelThree())
             {
                 context.Writer.WritePropertyName("LevelThree");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchyLevelUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.LevelThree, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLevelTwo())
             {
                 context.Writer.WritePropertyName("LevelTwo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchyLevelUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.LevelTwo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

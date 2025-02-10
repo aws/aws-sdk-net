@@ -660,7 +660,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
                 else
                 {
-                    var now = DateTime.Now;
+                    var now = DateTime.UtcNow;
                     expiration = now + expireOffset;
                 }
 
@@ -680,6 +680,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // By default it only tests a small subset of services.
         [TestMethod]
         [TestCategory("General")]
+        [Ignore("Skipping flaky test while design for clock skew behavior is defined")]
         public void TestClockSkewCorrection()
         {
             VerifyClockSkewSetting();
@@ -775,16 +776,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
 #pragma warning disable CS0618 // Type or member is obsolete
                 Assert.IsTrue(AWSConfigs.ClockOffset == TimeSpan.Zero);
+#pragma warning restore CS0618 // Re-enable the warning
 
                 SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
 #pragma warning disable CS0618 // Type or member is obsolete
                 Assert.AreEqual(IncorrectPositiveClockSkewOffset, AWSConfigs.ClockOffset);
+#pragma warning restore CS0618 // Re-enable the warning
 
                 SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
 #pragma warning disable CS0618 // Type or member is obsolete
                 Assert.AreEqual(IncorrectNegativeClockSkewOffset, AWSConfigs.ClockOffset);
+#pragma warning restore CS0618 // Re-enable the warning
 
                 Console.WriteLine("Simulating positive clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);

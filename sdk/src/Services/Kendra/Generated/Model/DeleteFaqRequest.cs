@@ -31,7 +31,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFaq operation.
-    /// Removes an FAQ from an index.
+    /// Removes a FAQ from an index.
     /// </summary>
     public partial class DeleteFaqRequest : AmazonKendraRequest
     {

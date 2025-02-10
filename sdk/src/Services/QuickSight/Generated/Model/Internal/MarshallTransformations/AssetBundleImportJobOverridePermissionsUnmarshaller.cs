@@ -29,71 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AssetBundleImportJobOverridePermissions Object
     /// </summary>  
-    public class AssetBundleImportJobOverridePermissionsUnmarshaller : IUnmarshaller<AssetBundleImportJobOverridePermissions, XmlUnmarshallerContext>, IUnmarshaller<AssetBundleImportJobOverridePermissions, JsonUnmarshallerContext>
+    public class AssetBundleImportJobOverridePermissionsUnmarshaller : IJsonUnmarshaller<AssetBundleImportJobOverridePermissions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AssetBundleImportJobOverridePermissions IUnmarshaller<AssetBundleImportJobOverridePermissions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AssetBundleImportJobOverridePermissions Unmarshall(JsonUnmarshallerContext context)
+        public AssetBundleImportJobOverridePermissions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AssetBundleImportJobOverridePermissions unmarshalledObject = new AssetBundleImportJobOverridePermissions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Analyses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobAnalysisOverridePermissions, AssetBundleImportJobAnalysisOverridePermissionsUnmarshaller>(AssetBundleImportJobAnalysisOverridePermissionsUnmarshaller.Instance);
-                    unmarshalledObject.Analyses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobAnalysisOverridePermissions, AssetBundleImportJobAnalysisOverridePermissionsUnmarshaller>(AssetBundleImportJobAnalysisOverridePermissionsUnmarshaller.Instance);
+                    unmarshalledObject.Analyses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Dashboards", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobDashboardOverridePermissions, AssetBundleImportJobDashboardOverridePermissionsUnmarshaller>(AssetBundleImportJobDashboardOverridePermissionsUnmarshaller.Instance);
-                    unmarshalledObject.Dashboards = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobDashboardOverridePermissions, AssetBundleImportJobDashboardOverridePermissionsUnmarshaller>(AssetBundleImportJobDashboardOverridePermissionsUnmarshaller.Instance);
+                    unmarshalledObject.Dashboards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobDataSetOverridePermissions, AssetBundleImportJobDataSetOverridePermissionsUnmarshaller>(AssetBundleImportJobDataSetOverridePermissionsUnmarshaller.Instance);
-                    unmarshalledObject.DataSets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobDataSetOverridePermissions, AssetBundleImportJobDataSetOverridePermissionsUnmarshaller>(AssetBundleImportJobDataSetOverridePermissionsUnmarshaller.Instance);
+                    unmarshalledObject.DataSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobDataSourceOverridePermissions, AssetBundleImportJobDataSourceOverridePermissionsUnmarshaller>(AssetBundleImportJobDataSourceOverridePermissionsUnmarshaller.Instance);
-                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobDataSourceOverridePermissions, AssetBundleImportJobDataSourceOverridePermissionsUnmarshaller>(AssetBundleImportJobDataSourceOverridePermissionsUnmarshaller.Instance);
+                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Folders", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobFolderOverridePermissions, AssetBundleImportJobFolderOverridePermissionsUnmarshaller>(AssetBundleImportJobFolderOverridePermissionsUnmarshaller.Instance);
+                    unmarshalledObject.Folders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Themes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobThemeOverridePermissions, AssetBundleImportJobThemeOverridePermissionsUnmarshaller>(AssetBundleImportJobThemeOverridePermissionsUnmarshaller.Instance);
-                    unmarshalledObject.Themes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobThemeOverridePermissions, AssetBundleImportJobThemeOverridePermissionsUnmarshaller>(AssetBundleImportJobThemeOverridePermissionsUnmarshaller.Instance);
+                    unmarshalledObject.Themes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Scan Object
     /// </summary>  
-    public class ScanUnmarshaller : IUnmarshaller<Scan, XmlUnmarshallerContext>, IUnmarshaller<Scan, JsonUnmarshallerContext>
+    public class ScanUnmarshaller : IJsonUnmarshaller<Scan, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Scan IUnmarshaller<Scan, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Scan Unmarshall(JsonUnmarshallerContext context)
+        public Scan Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Scan unmarshalledObject = new Scan();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("adminDetectorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdminDetectorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdminDetectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("attachedVolumes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VolumeDetail, VolumeDetailUnmarshaller>(VolumeDetailUnmarshaller.Instance);
-                    unmarshalledObject.AttachedVolumes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VolumeDetail, VolumeDetailUnmarshaller>(VolumeDetailUnmarshaller.Instance);
+                    unmarshalledObject.AttachedVolumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("detectorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FileCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceDetails", targetDepth))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ScanEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanResultDetails", targetDepth))
                 {
                     var unmarshaller = ScanResultDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ScanResultDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanResultDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ScanStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("triggerDetails", targetDepth))
                 {
                     var unmarshaller = TriggerDetailsUnmarshaller.Instance;
-                    unmarshalledObject.TriggerDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TriggerDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

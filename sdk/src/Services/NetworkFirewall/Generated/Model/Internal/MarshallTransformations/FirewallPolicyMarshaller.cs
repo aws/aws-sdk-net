@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,110 +49,110 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPolicyVariables())
             {
                 context.Writer.WritePropertyName("PolicyVariables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PolicyVariablesMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolicyVariables, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatefulDefaultActions())
             {
                 context.Writer.WritePropertyName("StatefulDefaultActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatefulDefaultActionsListValue in requestObject.StatefulDefaultActions)
                 {
-                        context.Writer.Write(requestObjectStatefulDefaultActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectStatefulDefaultActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatefulEngineOptions())
             {
                 context.Writer.WritePropertyName("StatefulEngineOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StatefulEngineOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatefulEngineOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatefulRuleGroupReferences())
             {
                 context.Writer.WritePropertyName("StatefulRuleGroupReferences");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatefulRuleGroupReferencesListValue in requestObject.StatefulRuleGroupReferences)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StatefulRuleGroupReferenceMarshaller.Instance;
                     marshaller.Marshall(requestObjectStatefulRuleGroupReferencesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatelessCustomActions())
             {
                 context.Writer.WritePropertyName("StatelessCustomActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatelessCustomActionsListValue in requestObject.StatelessCustomActions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CustomActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectStatelessCustomActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatelessDefaultActions())
             {
                 context.Writer.WritePropertyName("StatelessDefaultActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatelessDefaultActionsListValue in requestObject.StatelessDefaultActions)
                 {
-                        context.Writer.Write(requestObjectStatelessDefaultActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectStatelessDefaultActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatelessFragmentDefaultActions())
             {
                 context.Writer.WritePropertyName("StatelessFragmentDefaultActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatelessFragmentDefaultActionsListValue in requestObject.StatelessFragmentDefaultActions)
                 {
-                        context.Writer.Write(requestObjectStatelessFragmentDefaultActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectStatelessFragmentDefaultActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatelessRuleGroupReferences())
             {
                 context.Writer.WritePropertyName("StatelessRuleGroupReferences");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatelessRuleGroupReferencesListValue in requestObject.StatelessRuleGroupReferences)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StatelessRuleGroupReferenceMarshaller.Instance;
                     marshaller.Marshall(requestObjectStatelessRuleGroupReferencesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTLSInspectionConfigurationArn())
             {
                 context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
-                context.Writer.Write(requestObject.TLSInspectionConfigurationArn);
+                context.Writer.WriteStringValue(requestObject.TLSInspectionConfigurationArn);
             }
 
         }

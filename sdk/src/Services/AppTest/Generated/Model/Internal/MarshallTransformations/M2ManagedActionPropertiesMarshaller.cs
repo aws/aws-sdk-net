@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
             if(requestObject.IsSetForceStop())
             {
                 context.Writer.WritePropertyName("forceStop");
-                context.Writer.Write(requestObject.ForceStop.Value);
+                context.Writer.WriteBooleanValue(requestObject.ForceStop.Value);
             }
 
             if(requestObject.IsSetImportDataSetLocation())
             {
                 context.Writer.WritePropertyName("importDataSetLocation");
-                context.Writer.Write(requestObject.ImportDataSetLocation);
+                context.Writer.WriteStringValue(requestObject.ImportDataSetLocation);
             }
 
         }

@@ -70,6 +70,10 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Approval
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Compute
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

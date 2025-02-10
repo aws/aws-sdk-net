@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidAuthorizationStateException operation
     /// </summary>  
-    public class InvalidAuthorizationStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidAuthorizationStateException, XmlUnmarshallerContext>
+    public class InvalidAuthorizationStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidAuthorizationStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

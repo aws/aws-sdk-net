@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidUserTypeException operation
     /// </summary>  
-    public class InvalidUserTypeExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidUserTypeException, XmlUnmarshallerContext>
+    public class InvalidUserTypeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidUserTypeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

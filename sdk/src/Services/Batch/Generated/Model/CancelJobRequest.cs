@@ -79,8 +79,12 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Reason. 
         /// <para>
         /// A message to attach to the job that explains the reason for canceling it. This message
-        /// is returned by future <a>DescribeJobs</a> operations on the job. This message is also
-        /// recorded in the Batch activity logs.
+        /// is returned by future <a>DescribeJobs</a> operations on the job. It is also recorded
+        /// in the Batch activity logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter has as limit of 1024 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

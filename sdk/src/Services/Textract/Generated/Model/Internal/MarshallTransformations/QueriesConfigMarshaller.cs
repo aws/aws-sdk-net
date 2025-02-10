@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueries())
             {
                 context.Writer.WritePropertyName("Queries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueriesListValue in requestObject.Queries)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = QueryMarshaller.Instance;
                     marshaller.Marshall(requestObjectQueriesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

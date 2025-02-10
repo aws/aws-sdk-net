@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -64,90 +67,95 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/kx/environments/{environmentId}/kxvolumes";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAvailabilityZoneIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("availabilityZoneIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAvailabilityZoneIdsListValue in publicRequest.AvailabilityZoneIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAvailabilityZoneIds())
-                    {
-                        context.Writer.WritePropertyName("availabilityZoneIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAvailabilityZoneIdsListValue in publicRequest.AvailabilityZoneIds)
-                        {
-                                context.Writer.Write(publicRequestAvailabilityZoneIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAzMode())
-                    {
-                        context.Writer.WritePropertyName("azMode");
-                        context.Writer.Write(publicRequest.AzMode);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetNas1Configuration())
-                    {
-                        context.Writer.WritePropertyName("nas1Configuration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = KxNAS1ConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Nas1Configuration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVolumeName())
-                    {
-                        context.Writer.WritePropertyName("volumeName");
-                        context.Writer.Write(publicRequest.VolumeName);
-                    }
-
-                    if(publicRequest.IsSetVolumeType())
-                    {
-                        context.Writer.WritePropertyName("volumeType");
-                        context.Writer.Write(publicRequest.VolumeType);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAvailabilityZoneIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAzMode())
+            {
+                context.Writer.WritePropertyName("azMode");
+                context.Writer.WriteStringValue(publicRequest.AzMode);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetNas1Configuration())
+            {
+                context.Writer.WritePropertyName("nas1Configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KxNAS1ConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Nas1Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVolumeName())
+            {
+                context.Writer.WritePropertyName("volumeName");
+                context.Writer.WriteStringValue(publicRequest.VolumeName);
+            }
+
+            if(publicRequest.IsSetVolumeType())
+            {
+                context.Writer.WritePropertyName("volumeType");
+                context.Writer.WriteStringValue(publicRequest.VolumeType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

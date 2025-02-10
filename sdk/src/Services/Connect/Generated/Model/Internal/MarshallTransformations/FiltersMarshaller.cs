@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelsListValue in requestObject.Channels)
                 {
-                        context.Writer.Write(requestObjectChannelsListValue);
+                        context.Writer.WriteStringValue(requestObjectChannelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueues())
             {
                 context.Writer.WritePropertyName("Queues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueuesListValue in requestObject.Queues)
                 {
-                        context.Writer.Write(requestObjectQueuesListValue);
+                        context.Writer.WriteStringValue(requestObjectQueuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoutingProfiles())
             {
                 context.Writer.WritePropertyName("RoutingProfiles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRoutingProfilesListValue in requestObject.RoutingProfiles)
                 {
-                        context.Writer.Write(requestObjectRoutingProfilesListValue);
+                        context.Writer.WriteStringValue(requestObjectRoutingProfilesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoutingStepExpressions())
             {
                 context.Writer.WritePropertyName("RoutingStepExpressions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRoutingStepExpressionsListValue in requestObject.RoutingStepExpressions)
                 {
-                        context.Writer.Write(requestObjectRoutingStepExpressionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRoutingStepExpressionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

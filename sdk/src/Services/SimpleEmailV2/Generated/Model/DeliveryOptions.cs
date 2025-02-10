@@ -34,8 +34,30 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class DeliveryOptions
     {
+        private long? _maxDeliverySeconds;
         private string _sendingPoolName;
         private TlsPolicy _tlsPolicy;
+
+        /// <summary>
+        /// Gets and sets the property MaxDeliverySeconds. 
+        /// <para>
+        /// The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery
+        /// of email. If specified, the value must greater than or equal to 300 seconds (5 minutes)
+        /// and less than or equal to 50400 seconds (840 minutes). 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=300, Max=50400)]
+        public long? MaxDeliverySeconds
+        {
+            get { return this._maxDeliverySeconds; }
+            set { this._maxDeliverySeconds = value; }
+        }
+
+        // Check to see if MaxDeliverySeconds property is set
+        internal bool IsSetMaxDeliverySeconds()
+        {
+            return this._maxDeliverySeconds.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SendingPoolName. 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizedAudiences())
             {
                 context.Writer.WritePropertyName("AuthorizedAudiences");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAuthorizedAudiencesListValue in requestObject.AuthorizedAudiences)
                 {
-                        context.Writer.Write(requestObjectAuthorizedAudiencesListValue);
+                        context.Writer.WriteStringValue(requestObjectAuthorizedAudiencesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTrustedTokenIssuerArn())
             {
                 context.Writer.WritePropertyName("TrustedTokenIssuerArn");
-                context.Writer.Write(requestObject.TrustedTokenIssuerArn);
+                context.Writer.WriteStringValue(requestObject.TrustedTokenIssuerArn);
             }
 
         }

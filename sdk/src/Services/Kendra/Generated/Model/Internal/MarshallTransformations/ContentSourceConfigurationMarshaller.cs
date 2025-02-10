@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceIds())
             {
                 context.Writer.WritePropertyName("DataSourceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSourceIdsListValue in requestObject.DataSourceIds)
                 {
-                        context.Writer.Write(requestObjectDataSourceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectDataSourceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDirectPutContent())
             {
                 context.Writer.WritePropertyName("DirectPutContent");
-                context.Writer.Write(requestObject.DirectPutContent.Value);
+                context.Writer.WriteBooleanValue(requestObject.DirectPutContent.Value);
             }
 
             if(requestObject.IsSetFaqIds())
             {
                 context.Writer.WritePropertyName("FaqIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFaqIdsListValue in requestObject.FaqIds)
                 {
-                        context.Writer.Write(requestObjectFaqIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectFaqIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

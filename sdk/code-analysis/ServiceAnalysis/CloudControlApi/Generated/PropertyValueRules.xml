@@ -15,7 +15,7 @@
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.CreateResourceRequest.DesiredState</property>
     <min>1</min>
-    <max>65536</max>
+    <max>262144</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -127,13 +127,13 @@
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesRequest.ResourceModel</property>
     <min>1</min>
-    <max>65536</max>
+    <max>262144</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -157,7 +157,7 @@
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ListResourcesResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
+    <max>4096</max>
     <pattern>.+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -181,7 +181,7 @@
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.UpdateResourceRequest.PatchDocument</property>
     <min>1</min>
-    <max>65536</max>
+    <max>262144</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -203,6 +203,54 @@
     <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.FailureMode</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[-A-Za-z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookStatus</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[-A-Za-z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookStatusMessage</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookTypeArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws.*:.+:.*:.*:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookTypeName</property>
+    <min>10</min>
+    <max>196</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.HookTypeVersionId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.HookProgressEvent.InvocationPoint</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[-A-Za-z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudControlApi.Model.ProgressEvent.HooksRequestToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[-A-Za-z0-9+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.Identifier</property>
     <min>1</min>
     <max>1024</max>
@@ -217,13 +265,13 @@
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.ResourceModel</property>
     <min>1</min>
-    <max>65536</max>
+    <max>262144</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ProgressEvent.StatusMessage</property>
     <min>0</min>
-    <max>1024</max>
+    <max>2048</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -241,7 +289,7 @@
   <property-value-rule>
     <property>Amazon.CloudControlApi.Model.ResourceDescription.Properties</property>
     <min>1</min>
-    <max>65536</max>
+    <max>262144</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
 </property-value-rules>

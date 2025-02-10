@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,51 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmptyDir())
             {
                 context.Writer.WritePropertyName("emptyDir");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EksEmptyDirMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmptyDir, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHostPath())
             {
                 context.Writer.WritePropertyName("hostPath");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EksHostPathMarshaller.Instance;
                 marshaller.Marshall(requestObject.HostPath, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetPersistentVolumeClaim())
+            {
+                context.Writer.WritePropertyName("persistentVolumeClaim");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksPersistentVolumeClaimMarshaller.Instance;
+                marshaller.Marshall(requestObject.PersistentVolumeClaim, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecret())
             {
                 context.Writer.WritePropertyName("secret");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EksSecretMarshaller.Instance;
                 marshaller.Marshall(requestObject.Secret, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

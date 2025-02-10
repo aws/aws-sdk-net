@@ -1233,6 +1233,35 @@ namespace Amazon.Redshift
         /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -1344,6 +1373,35 @@ namespace Amazon.Redshift
         /// Redshift uses when creating the cluster. For more information about managing clusters,
         /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -2369,6 +2427,107 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = CreateHsmConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateHsmConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIntegration
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
+        /// You can't create any more zero-ETL or S3 event integrations because the quota has
+        /// been reached.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
+        /// The specified integration source can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationTargetNotFoundException">
+        /// The specified integration target can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        public virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
+        /// You can't create any more zero-ETL or S3 event integrations because the quota has
+        /// been reached.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
+        /// The specified integration source can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationTargetNotFoundException">
+        /// The specified integration target can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3699,6 +3858,75 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  DeleteIntegration
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePartner
 
 
@@ -4151,6 +4379,67 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeleteUsageLimitResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUsageLimitResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterNamespace
+
+
+        /// <summary>
+        /// Deregisters a cluster or serverless namespace from the Amazon Web Services Glue Data
+        /// Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeregisterNamespace">REST API Reference for DeregisterNamespace Operation</seealso>
+        public virtual DeregisterNamespaceResponse DeregisterNamespace(DeregisterNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deregisters a cluster or serverless namespace from the Amazon Web Services Glue Data
+        /// Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeregisterNamespace">REST API Reference for DeregisterNamespace Operation</seealso>
+        public virtual Task<DeregisterNamespaceResponse> DeregisterNamespaceAsync(DeregisterNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6421,6 +6710,59 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribeInboundIntegrationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeInboundIntegrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIntegrations
+
+
+        /// <summary>
+        /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        public virtual DescribeIntegrationsResponse DescribeIntegrations(DescribeIntegrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIntegrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        public virtual Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeIntegrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8767,6 +9109,35 @@ namespace Amazon.Redshift
         /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
         /// 
@@ -8874,6 +9245,35 @@ namespace Amazon.Redshift
         /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
         /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
@@ -9376,6 +9776,36 @@ namespace Amazon.Redshift
         /// <summary>
         /// Modifies a cluster subnet group to include the specified list of VPC subnets. The
         /// operation replaces the existing list of subnets with the new list of subnets.
+        /// 
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSubnetGroup service method.</param>
         /// 
@@ -9415,6 +9845,36 @@ namespace Amazon.Redshift
         /// <summary>
         /// Modifies a cluster subnet group to include the specified list of VPC subnets. The
         /// operation replaces the existing list of subnets with the new list of subnets.
+        /// 
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -9700,6 +10160,81 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyEventSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyIntegration
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        public virtual ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        public virtual Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10343,6 +10878,65 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  RegisterNamespace
+
+
+        /// <summary>
+        /// Registers a cluster or serverless namespace to the Amazon Web Services Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterNamespace service method.</param>
+        /// 
+        /// <returns>The response from the RegisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RegisterNamespace">REST API Reference for RegisterNamespace Operation</seealso>
+        public virtual RegisterNamespaceResponse RegisterNamespace(RegisterNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a cluster or serverless namespace to the Amazon Web Services Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RegisterNamespace">REST API Reference for RegisterNamespace Operation</seealso>
+        public virtual Task<RegisterNamespaceResponse> RegisterNamespaceAsync(RegisterNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectDataShare
 
 
@@ -10480,6 +11074,10 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ra3.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ra3.xlplus
         /// </para>
         ///  </li> <li> 
@@ -10582,6 +11180,10 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ra3.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ra3.xlplus
         /// </para>
         ///  </li> <li> 
@@ -10680,6 +11282,35 @@ namespace Amazon.Redshift
         /// <para>
         /// If you restore a cluster into a VPC, you must provide a cluster subnet group where
         /// you want the cluster restored.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -10822,6 +11453,35 @@ namespace Amazon.Redshift
         /// <para>
         /// If you restore a cluster into a VPC, you must provide a cluster subnet group where
         /// you want the cluster restored.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>

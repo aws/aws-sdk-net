@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultFieldValues())
             {
                 context.Writer.WritePropertyName("DefaultFieldValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDefaultFieldValuesListValue in requestObject.DefaultFieldValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TaskTemplateDefaultFieldValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectDefaultFieldValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

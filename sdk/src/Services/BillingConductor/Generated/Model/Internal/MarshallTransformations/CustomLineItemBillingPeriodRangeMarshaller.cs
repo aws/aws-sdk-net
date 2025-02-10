@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExclusiveEndBillingPeriod())
             {
                 context.Writer.WritePropertyName("ExclusiveEndBillingPeriod");
-                context.Writer.Write(requestObject.ExclusiveEndBillingPeriod);
+                context.Writer.WriteStringValue(requestObject.ExclusiveEndBillingPeriod);
             }
 
             if(requestObject.IsSetInclusiveStartBillingPeriod())
             {
                 context.Writer.WritePropertyName("InclusiveStartBillingPeriod");
-                context.Writer.Write(requestObject.InclusiveStartBillingPeriod);
+                context.Writer.WriteStringValue(requestObject.InclusiveStartBillingPeriod);
             }
 
         }

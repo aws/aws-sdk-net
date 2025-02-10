@@ -32,6 +32,13 @@ namespace Amazon.BedrockRuntime.Model
     /// <summary>
     /// Container for the parameters to the ApplyGuardrail operation.
     /// The action to apply a guardrail.
+    /// 
+    ///  
+    /// <para>
+    /// For troubleshooting some of the common errors you might encounter when using the <c>ApplyGuardrail</c>
+    /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+    /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+    /// </para>
     /// </summary>
     public partial class ApplyGuardrailRequest : AmazonBedrockRuntimeRequest
     {

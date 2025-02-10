@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkTypeNotSupportedException operation
     /// </summary>  
-    public class NetworkTypeNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<NetworkTypeNotSupportedException, XmlUnmarshallerContext>
+    public class NetworkTypeNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NetworkTypeNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -30,16 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift containers feature, which is currently
-    /// in public preview.</b> 
+    /// A set of one or more port numbers that can be opened on the container. 
     /// 
     ///  
     /// <para>
-    /// A set of one or more port numbers that can be opened on the container. 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Part of:</b> <a>ContainerPortConfiguration</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerPortConfiguration.html">ContainerPortConfiguration</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerPortRange

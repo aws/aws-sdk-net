@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,70 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIdentityId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIdentityId())
-                    {
-                        context.Writer.WritePropertyName("IdentityId");
-                        context.Writer.Write(publicRequest.IdentityId);
-                    }
-
-                    if(publicRequest.IsSetIdentityPoolId())
-                    {
-                        context.Writer.WritePropertyName("IdentityPoolId");
-                        context.Writer.Write(publicRequest.IdentityPoolId);
-                    }
-
-                    if(publicRequest.IsSetLogins())
-                    {
-                        context.Writer.WritePropertyName("Logins");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestLoginsKvp in publicRequest.Logins)
-                        {
-                            context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
-                            var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
-
-                                context.Writer.Write(publicRequestLoginsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPrincipalTags())
-                    {
-                        context.Writer.WritePropertyName("PrincipalTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPrincipalTagsKvp in publicRequest.PrincipalTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPrincipalTagsKvp.Key);
-                            var publicRequestPrincipalTagsValue = publicRequestPrincipalTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestPrincipalTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTokenDuration())
-                    {
-                        context.Writer.WritePropertyName("TokenDuration");
-                        context.Writer.Write(publicRequest.TokenDuration.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("IdentityId");
+                context.Writer.WriteStringValue(publicRequest.IdentityId);
             }
+
+            if(publicRequest.IsSetIdentityPoolId())
+            {
+                context.Writer.WritePropertyName("IdentityPoolId");
+                context.Writer.WriteStringValue(publicRequest.IdentityPoolId);
+            }
+
+            if(publicRequest.IsSetLogins())
+            {
+                context.Writer.WritePropertyName("Logins");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestLoginsKvp in publicRequest.Logins)
+                {
+                    context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
+                    var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestLoginsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPrincipalTags())
+            {
+                context.Writer.WritePropertyName("PrincipalTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPrincipalTagsKvp in publicRequest.PrincipalTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestPrincipalTagsKvp.Key);
+                    var publicRequestPrincipalTagsValue = publicRequestPrincipalTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestPrincipalTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTokenDuration())
+            {
+                context.Writer.WritePropertyName("TokenDuration");
+                context.Writer.WriteNumberValue(publicRequest.TokenDuration.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

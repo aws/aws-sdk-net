@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
@@ -64,80 +67,85 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 throw new AmazonConnectCasesException("Request object does not have required field DomainId set");
             request.AddPathResource("{domainId}", StringUtils.FromString(publicRequest.DomainId));
             request.ResourcePath = "/domains/{domainId}/cases-search";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFields())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("fields");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFieldsListValue in publicRequest.Fields)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFields())
-                    {
-                        context.Writer.WritePropertyName("fields");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFieldsListValue in publicRequest.Fields)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = FieldIdentifierMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFieldsListValue, context);
+                    var marshaller = FieldIdentifierMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFieldsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilter())
-                    {
-                        context.Writer.WritePropertyName("filter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CaseFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Filter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetSearchTerm())
-                    {
-                        context.Writer.WritePropertyName("searchTerm");
-                        context.Writer.Write(publicRequest.SearchTerm);
-                    }
-
-                    if(publicRequest.IsSetSorts())
-                    {
-                        context.Writer.WritePropertyName("sorts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSortsListValue in publicRequest.Sorts)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SortMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSortsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("filter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CaseFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetSearchTerm())
+            {
+                context.Writer.WritePropertyName("searchTerm");
+                context.Writer.WriteStringValue(publicRequest.SearchTerm);
+            }
+
+            if(publicRequest.IsSetSorts())
+            {
+                context.Writer.WritePropertyName("sorts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSortsListValue in publicRequest.Sorts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SortMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSortsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

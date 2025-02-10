@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLabelCategoryExclusionFilters())
             {
                 context.Writer.WritePropertyName("LabelCategoryExclusionFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLabelCategoryExclusionFiltersListValue in requestObject.LabelCategoryExclusionFilters)
                 {
-                        context.Writer.Write(requestObjectLabelCategoryExclusionFiltersListValue);
+                        context.Writer.WriteStringValue(requestObjectLabelCategoryExclusionFiltersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLabelCategoryInclusionFilters())
             {
                 context.Writer.WritePropertyName("LabelCategoryInclusionFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLabelCategoryInclusionFiltersListValue in requestObject.LabelCategoryInclusionFilters)
                 {
-                        context.Writer.Write(requestObjectLabelCategoryInclusionFiltersListValue);
+                        context.Writer.WriteStringValue(requestObjectLabelCategoryInclusionFiltersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLabelExclusionFilters())
             {
                 context.Writer.WritePropertyName("LabelExclusionFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLabelExclusionFiltersListValue in requestObject.LabelExclusionFilters)
                 {
-                        context.Writer.Write(requestObjectLabelExclusionFiltersListValue);
+                        context.Writer.WriteStringValue(requestObjectLabelExclusionFiltersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLabelInclusionFilters())
             {
                 context.Writer.WritePropertyName("LabelInclusionFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLabelInclusionFiltersListValue in requestObject.LabelInclusionFilters)
                 {
-                        context.Writer.Write(requestObjectLabelInclusionFiltersListValue);
+                        context.Writer.WriteStringValue(requestObjectLabelInclusionFiltersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

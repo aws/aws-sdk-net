@@ -11,67 +11,67 @@
     "InputLogEvent" : {
 	  "timestamp" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }
 	},
     "OutputLogEvent" : {
 	  "timestamp" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "ingestionTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }	
 	},
     "GetLogEventsRequest" : {
 	  "startTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "endTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }
 	},
     "LogGroup" : {
 	  "creationTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }
 	},
     "LogStream" : {
 	  "creationTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "firstEventTimestamp" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "lastEventTimestamp" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
 	  "lastIngestionTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  }	  
 	},
     "MetricFilter" : {
 	  "creationTime" : {
 	    "Type" : "DateTime?",
-		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
+		"Marshaller" : "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds",
 		"Unmarshaller" : "NullableDateTimeEpochLongMillisecondsUnmarshaller"
 	  },
     }

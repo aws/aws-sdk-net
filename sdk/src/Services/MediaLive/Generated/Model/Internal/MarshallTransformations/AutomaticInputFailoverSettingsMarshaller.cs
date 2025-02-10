@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorClearTimeMsec())
             {
                 context.Writer.WritePropertyName("errorClearTimeMsec");
-                context.Writer.Write(requestObject.ErrorClearTimeMsec.Value);
+                context.Writer.WriteNumberValue(requestObject.ErrorClearTimeMsec.Value);
             }
 
             if(requestObject.IsSetFailoverConditions())
             {
                 context.Writer.WritePropertyName("failoverConditions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFailoverConditionsListValue in requestObject.FailoverConditions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FailoverConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectFailoverConditionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputPreference())
             {
                 context.Writer.WritePropertyName("inputPreference");
-                context.Writer.Write(requestObject.InputPreference);
+                context.Writer.WriteStringValue(requestObject.InputPreference);
             }
 
             if(requestObject.IsSetSecondaryInputId())
             {
                 context.Writer.WritePropertyName("secondaryInputId");
-                context.Writer.Write(requestObject.SecondaryInputId);
+                context.Writer.WriteStringValue(requestObject.SecondaryInputId);
             }
 
         }

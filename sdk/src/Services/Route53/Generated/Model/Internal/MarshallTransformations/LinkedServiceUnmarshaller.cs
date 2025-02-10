@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LinkedService Object
     /// </summary>  
-    public class LinkedServiceUnmarshaller : IUnmarshaller<LinkedService, XmlUnmarshallerContext>, IUnmarshaller<LinkedService, JsonUnmarshallerContext>
+    public class LinkedServiceUnmarshaller : IXmlUnmarshaller<LinkedService, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LinkedService Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static LinkedServiceUnmarshaller _instance = new LinkedServiceUnmarshaller();        
 
         /// <summary>

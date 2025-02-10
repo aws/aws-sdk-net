@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MonitoringInput Object
     /// </summary>  
-    public class MonitoringInputUnmarshaller : IUnmarshaller<MonitoringInput, XmlUnmarshallerContext>, IUnmarshaller<MonitoringInput, JsonUnmarshallerContext>
+    public class MonitoringInputUnmarshaller : IJsonUnmarshaller<MonitoringInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MonitoringInput IUnmarshaller<MonitoringInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MonitoringInput Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MonitoringInput unmarshalledObject = new MonitoringInput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BatchTransformInput", targetDepth))
                 {
                     var unmarshaller = BatchTransformInputUnmarshaller.Instance;
-                    unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointInput", targetDepth))
                 {
                     var unmarshaller = EndpointInputUnmarshaller.Instance;
-                    unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

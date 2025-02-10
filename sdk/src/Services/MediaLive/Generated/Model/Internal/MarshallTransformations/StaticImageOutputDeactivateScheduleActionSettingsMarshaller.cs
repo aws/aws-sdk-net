@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFadeOut())
             {
                 context.Writer.WritePropertyName("fadeOut");
-                context.Writer.Write(requestObject.FadeOut.Value);
+                context.Writer.WriteNumberValue(requestObject.FadeOut.Value);
             }
 
             if(requestObject.IsSetLayer())
             {
                 context.Writer.WritePropertyName("layer");
-                context.Writer.Write(requestObject.Layer.Value);
+                context.Writer.WriteNumberValue(requestObject.Layer.Value);
             }
 
             if(requestObject.IsSetOutputNames())
             {
                 context.Writer.WritePropertyName("outputNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputNamesListValue in requestObject.OutputNames)
                 {
-                        context.Writer.Write(requestObjectOutputNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectOutputNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

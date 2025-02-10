@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about a malware scan.
+    /// Contains information about malware scans associated with GuardDuty Malware Protection
+    /// for EC2.
     /// </summary>
     public partial class Scan
     {
@@ -76,6 +77,12 @@ namespace Amazon.GuardDuty.Model
         /// with. If the account is an administrator, the <c>AdminDetectorId</c> will be the same
         /// as the one used for <c>DetectorId</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
         public string AdminDetectorId
@@ -111,7 +118,13 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector that the request is associated with.
+        /// The unique ID of the detector that is associated with the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
@@ -130,7 +143,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// Represents the reason for FAILED scan status.
+        /// Represents the reason for <c>FAILED</c> scan status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

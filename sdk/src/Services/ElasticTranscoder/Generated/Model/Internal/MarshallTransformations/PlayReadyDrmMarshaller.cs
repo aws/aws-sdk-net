@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetInitializationVector())
             {
                 context.Writer.WritePropertyName("InitializationVector");
-                context.Writer.Write(requestObject.InitializationVector);
+                context.Writer.WriteStringValue(requestObject.InitializationVector);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetKeyId())
             {
                 context.Writer.WritePropertyName("KeyId");
-                context.Writer.Write(requestObject.KeyId);
+                context.Writer.WriteStringValue(requestObject.KeyId);
             }
 
             if(requestObject.IsSetKeyMd5())
             {
                 context.Writer.WritePropertyName("KeyMd5");
-                context.Writer.Write(requestObject.KeyMd5);
+                context.Writer.WriteStringValue(requestObject.KeyMd5);
             }
 
             if(requestObject.IsSetLicenseAcquisitionUrl())
             {
                 context.Writer.WritePropertyName("LicenseAcquisitionUrl");
-                context.Writer.Write(requestObject.LicenseAcquisitionUrl);
+                context.Writer.WriteStringValue(requestObject.LicenseAcquisitionUrl);
             }
 
         }

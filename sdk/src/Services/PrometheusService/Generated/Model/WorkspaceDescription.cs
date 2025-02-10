@@ -47,7 +47,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// The alias that is assigned to this workspace to help identify it. It may not be unique.
+        /// The alias that is assigned to this workspace to help identify it. It does not need
+        /// to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -66,7 +67,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the workspace.
+        /// The ARN of the workspace. For example, <c>arn:aws:aps:&lt;region&gt;:123456789012:workspace/ws-example1-1234-abcd-5678-ef90abcd1234</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,7 +125,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property PrometheusEndpoint. 
         /// <para>
-        /// The Prometheus endpoint available for this workspace. 
+        /// The Prometheus endpoint available for this workspace. For example, <c>https://aps-workspaces.&lt;region&gt;.amazonaws.com/workspaces/ws-example1-1234-abcd-5678-ef90abcd1234/api/v1/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -181,7 +182,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The unique ID for the workspace.
+        /// The unique ID for the workspace. For example, <c>ws-example1-1234-abcd-5678-ef90abcd1234</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

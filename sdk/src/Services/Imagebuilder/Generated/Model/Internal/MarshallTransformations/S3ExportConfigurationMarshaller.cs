@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDiskImageFormat())
             {
                 context.Writer.WritePropertyName("diskImageFormat");
-                context.Writer.Write(requestObject.DiskImageFormat);
+                context.Writer.WriteStringValue(requestObject.DiskImageFormat);
             }
 
             if(requestObject.IsSetRoleName())
             {
                 context.Writer.WritePropertyName("roleName");
-                context.Writer.Write(requestObject.RoleName);
+                context.Writer.WriteStringValue(requestObject.RoleName);
             }
 
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("s3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3Prefix())
             {
                 context.Writer.WritePropertyName("s3Prefix");
-                context.Writer.Write(requestObject.S3Prefix);
+                context.Writer.WriteStringValue(requestObject.S3Prefix);
             }
 
         }

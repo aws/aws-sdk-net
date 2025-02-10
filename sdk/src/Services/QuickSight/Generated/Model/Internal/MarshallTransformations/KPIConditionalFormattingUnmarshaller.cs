@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KPIConditionalFormatting Object
     /// </summary>  
-    public class KPIConditionalFormattingUnmarshaller : IUnmarshaller<KPIConditionalFormatting, XmlUnmarshallerContext>, IUnmarshaller<KPIConditionalFormatting, JsonUnmarshallerContext>
+    public class KPIConditionalFormattingUnmarshaller : IJsonUnmarshaller<KPIConditionalFormatting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KPIConditionalFormatting IUnmarshaller<KPIConditionalFormatting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KPIConditionalFormatting Unmarshall(JsonUnmarshallerContext context)
+        public KPIConditionalFormatting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KPIConditionalFormatting unmarshalledObject = new KPIConditionalFormatting();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConditionalFormattingOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KPIConditionalFormattingOption, KPIConditionalFormattingOptionUnmarshaller>(KPIConditionalFormattingOptionUnmarshaller.Instance);
-                    unmarshalledObject.ConditionalFormattingOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KPIConditionalFormattingOption, KPIConditionalFormattingOptionUnmarshaller>(KPIConditionalFormattingOptionUnmarshaller.Instance);
+                    unmarshalledObject.ConditionalFormattingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

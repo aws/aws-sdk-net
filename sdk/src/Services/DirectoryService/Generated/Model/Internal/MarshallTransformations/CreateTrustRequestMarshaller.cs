@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
@@ -63,66 +66,71 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConditionalForwarderIpAddrs())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ConditionalForwarderIpAddrs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConditionalForwarderIpAddrsListValue in publicRequest.ConditionalForwarderIpAddrs)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConditionalForwarderIpAddrs())
-                    {
-                        context.Writer.WritePropertyName("ConditionalForwarderIpAddrs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestConditionalForwarderIpAddrsListValue in publicRequest.ConditionalForwarderIpAddrs)
-                        {
-                                context.Writer.Write(publicRequestConditionalForwarderIpAddrsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDirectoryId())
-                    {
-                        context.Writer.WritePropertyName("DirectoryId");
-                        context.Writer.Write(publicRequest.DirectoryId);
-                    }
-
-                    if(publicRequest.IsSetRemoteDomainName())
-                    {
-                        context.Writer.WritePropertyName("RemoteDomainName");
-                        context.Writer.Write(publicRequest.RemoteDomainName);
-                    }
-
-                    if(publicRequest.IsSetSelectiveAuth())
-                    {
-                        context.Writer.WritePropertyName("SelectiveAuth");
-                        context.Writer.Write(publicRequest.SelectiveAuth);
-                    }
-
-                    if(publicRequest.IsSetTrustDirection())
-                    {
-                        context.Writer.WritePropertyName("TrustDirection");
-                        context.Writer.Write(publicRequest.TrustDirection);
-                    }
-
-                    if(publicRequest.IsSetTrustPassword())
-                    {
-                        context.Writer.WritePropertyName("TrustPassword");
-                        context.Writer.Write(publicRequest.TrustPassword);
-                    }
-
-                    if(publicRequest.IsSetTrustType())
-                    {
-                        context.Writer.WritePropertyName("TrustType");
-                        context.Writer.Write(publicRequest.TrustType);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestConditionalForwarderIpAddrsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDirectoryId())
+            {
+                context.Writer.WritePropertyName("DirectoryId");
+                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+            }
+
+            if(publicRequest.IsSetRemoteDomainName())
+            {
+                context.Writer.WritePropertyName("RemoteDomainName");
+                context.Writer.WriteStringValue(publicRequest.RemoteDomainName);
+            }
+
+            if(publicRequest.IsSetSelectiveAuth())
+            {
+                context.Writer.WritePropertyName("SelectiveAuth");
+                context.Writer.WriteStringValue(publicRequest.SelectiveAuth);
+            }
+
+            if(publicRequest.IsSetTrustDirection())
+            {
+                context.Writer.WritePropertyName("TrustDirection");
+                context.Writer.WriteStringValue(publicRequest.TrustDirection);
+            }
+
+            if(publicRequest.IsSetTrustPassword())
+            {
+                context.Writer.WritePropertyName("TrustPassword");
+                context.Writer.WriteStringValue(publicRequest.TrustPassword);
+            }
+
+            if(publicRequest.IsSetTrustType())
+            {
+                context.Writer.WritePropertyName("TrustType");
+                context.Writer.WriteStringValue(publicRequest.TrustType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

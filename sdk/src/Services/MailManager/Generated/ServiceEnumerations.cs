@@ -281,6 +281,14 @@ namespace Amazon.MailManager
         /// </summary>
         public static readonly ArchiveStringEmailAttribute CC = new ArchiveStringEmailAttribute("CC");
         /// <summary>
+        /// Constant ENVELOPE_FROM for ArchiveStringEmailAttribute
+        /// </summary>
+        public static readonly ArchiveStringEmailAttribute ENVELOPE_FROM = new ArchiveStringEmailAttribute("ENVELOPE_FROM");
+        /// <summary>
+        /// Constant ENVELOPE_TO for ArchiveStringEmailAttribute
+        /// </summary>
+        public static readonly ArchiveStringEmailAttribute ENVELOPE_TO = new ArchiveStringEmailAttribute("ENVELOPE_TO");
+        /// <summary>
         /// Constant FROM for ArchiveStringEmailAttribute
         /// </summary>
         public static readonly ArchiveStringEmailAttribute FROM = new ArchiveStringEmailAttribute("FROM");
@@ -434,6 +442,164 @@ namespace Amazon.MailManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportDataType.
+    /// </summary>
+    public class ImportDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for ImportDataType
+        /// </summary>
+        public static readonly ImportDataType CSV = new ImportDataType("CSV");
+        /// <summary>
+        /// Constant JSON for ImportDataType
+        /// </summary>
+        public static readonly ImportDataType JSON = new ImportDataType("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportDataType FindValue(string value)
+        {
+            return FindValue<ImportDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportJobStatus.
+    /// </summary>
+    public class ImportJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus COMPLETED = new ImportJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant CREATED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus CREATED = new ImportJobStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus FAILED = new ImportJobStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus PROCESSING = new ImportJobStatus("PROCESSING");
+        /// <summary>
+        /// Constant STOPPED for ImportJobStatus
+        /// </summary>
+        public static readonly ImportJobStatus STOPPED = new ImportJobStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportJobStatus FindValue(string value)
+        {
+            return FindValue<ImportJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IngressAddressListEmailAttribute.
+    /// </summary>
+    public class IngressAddressListEmailAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RECIPIENT for IngressAddressListEmailAttribute
+        /// </summary>
+        public static readonly IngressAddressListEmailAttribute RECIPIENT = new IngressAddressListEmailAttribute("RECIPIENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IngressAddressListEmailAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngressAddressListEmailAttribute FindValue(string value)
+        {
+            return FindValue<IngressAddressListEmailAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngressAddressListEmailAttribute(string value)
         {
             return FindValue(value);
         }
@@ -1156,6 +1322,72 @@ namespace Amazon.MailManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RetentionPeriod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleAddressListEmailAttribute.
+    /// </summary>
+    public class RuleAddressListEmailAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CC for RuleAddressListEmailAttribute
+        /// </summary>
+        public static readonly RuleAddressListEmailAttribute CC = new RuleAddressListEmailAttribute("CC");
+        /// <summary>
+        /// Constant FROM for RuleAddressListEmailAttribute
+        /// </summary>
+        public static readonly RuleAddressListEmailAttribute FROM = new RuleAddressListEmailAttribute("FROM");
+        /// <summary>
+        /// Constant MAIL_FROM for RuleAddressListEmailAttribute
+        /// </summary>
+        public static readonly RuleAddressListEmailAttribute MAIL_FROM = new RuleAddressListEmailAttribute("MAIL_FROM");
+        /// <summary>
+        /// Constant RECIPIENT for RuleAddressListEmailAttribute
+        /// </summary>
+        public static readonly RuleAddressListEmailAttribute RECIPIENT = new RuleAddressListEmailAttribute("RECIPIENT");
+        /// <summary>
+        /// Constant SENDER for RuleAddressListEmailAttribute
+        /// </summary>
+        public static readonly RuleAddressListEmailAttribute SENDER = new RuleAddressListEmailAttribute("SENDER");
+        /// <summary>
+        /// Constant TO for RuleAddressListEmailAttribute
+        /// </summary>
+        public static readonly RuleAddressListEmailAttribute TO = new RuleAddressListEmailAttribute("TO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleAddressListEmailAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleAddressListEmailAttribute FindValue(string value)
+        {
+            return FindValue<RuleAddressListEmailAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleAddressListEmailAttribute(string value)
         {
             return FindValue(value);
         }

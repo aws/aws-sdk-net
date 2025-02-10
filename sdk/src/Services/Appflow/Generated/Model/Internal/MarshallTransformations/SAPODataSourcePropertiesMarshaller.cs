@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObjectPath())
             {
                 context.Writer.WritePropertyName("objectPath");
-                context.Writer.Write(requestObject.ObjectPath);
+                context.Writer.WriteStringValue(requestObject.ObjectPath);
             }
 
             if(requestObject.IsSetPaginationConfig())
             {
                 context.Writer.WritePropertyName("paginationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SAPODataPaginationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PaginationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParallelismConfig())
             {
                 context.Writer.WritePropertyName("parallelismConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SAPODataParallelismConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParallelismConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

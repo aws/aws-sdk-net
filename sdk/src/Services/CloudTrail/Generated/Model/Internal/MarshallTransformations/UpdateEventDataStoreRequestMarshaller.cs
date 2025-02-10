@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -63,83 +66,88 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdvancedEventSelectors())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AdvancedEventSelectors");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdvancedEventSelectors())
-                    {
-                        context.Writer.WritePropertyName("AdvancedEventSelectors");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AdvancedEventSelectorMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
+                    var marshaller = AdvancedEventSelectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetBillingMode())
-                    {
-                        context.Writer.WritePropertyName("BillingMode");
-                        context.Writer.Write(publicRequest.BillingMode);
-                    }
-
-                    if(publicRequest.IsSetEventDataStore())
-                    {
-                        context.Writer.WritePropertyName("EventDataStore");
-                        context.Writer.Write(publicRequest.EventDataStore);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyId");
-                        context.Writer.Write(publicRequest.KmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetMultiRegionEnabled())
-                    {
-                        context.Writer.WritePropertyName("MultiRegionEnabled");
-                        context.Writer.Write(publicRequest.MultiRegionEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOrganizationEnabled())
-                    {
-                        context.Writer.WritePropertyName("OrganizationEnabled");
-                        context.Writer.Write(publicRequest.OrganizationEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetRetentionPeriod())
-                    {
-                        context.Writer.WritePropertyName("RetentionPeriod");
-                        context.Writer.Write(publicRequest.RetentionPeriod.Value);
-                    }
-
-                    if(publicRequest.IsSetTerminationProtectionEnabled())
-                    {
-                        context.Writer.WritePropertyName("TerminationProtectionEnabled");
-                        context.Writer.Write(publicRequest.TerminationProtectionEnabled.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetBillingMode())
+            {
+                context.Writer.WritePropertyName("BillingMode");
+                context.Writer.WriteStringValue(publicRequest.BillingMode);
+            }
+
+            if(publicRequest.IsSetEventDataStore())
+            {
+                context.Writer.WritePropertyName("EventDataStore");
+                context.Writer.WriteStringValue(publicRequest.EventDataStore);
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
+            if(publicRequest.IsSetMultiRegionEnabled())
+            {
+                context.Writer.WritePropertyName("MultiRegionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.MultiRegionEnabled.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOrganizationEnabled())
+            {
+                context.Writer.WritePropertyName("OrganizationEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.OrganizationEnabled.Value);
+            }
+
+            if(publicRequest.IsSetRetentionPeriod())
+            {
+                context.Writer.WritePropertyName("RetentionPeriod");
+                context.Writer.WriteNumberValue(publicRequest.RetentionPeriod.Value);
+            }
+
+            if(publicRequest.IsSetTerminationProtectionEnabled())
+            {
+                context.Writer.WritePropertyName("TerminationProtectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.TerminationProtectionEnabled.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

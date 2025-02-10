@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocument())
             {
                 context.Writer.WritePropertyName("document");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Document, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Image, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJson())
@@ -79,7 +77,18 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WriteStringValue(requestObject.Text);
+            }
+
+            if(requestObject.IsSetVideo())
+            {
+                context.Writer.WritePropertyName("video");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VideoBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Video, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

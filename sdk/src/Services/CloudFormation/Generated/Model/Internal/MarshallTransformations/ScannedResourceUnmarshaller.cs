@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScannedResource Object
     /// </summary>  
-    public class ScannedResourceUnmarshaller : IUnmarshaller<ScannedResource, XmlUnmarshallerContext>, IUnmarshaller<ScannedResource, JsonUnmarshallerContext>
+    public class ScannedResourceUnmarshaller : IXmlUnmarshaller<ScannedResource, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,7 +63,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ResourceIdentifier/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (unmarshalledObject.ResourceIdentifier == null)
                         {
                             unmarshalledObject.ResourceIdentifier = new Dictionary<string, string>();
@@ -87,17 +87,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScannedResource Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScannedResourceUnmarshaller _instance = new ScannedResourceUnmarshaller();        
 

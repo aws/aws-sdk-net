@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachTime())
             {
                 context.Writer.WritePropertyName("AttachTime");
-                context.Writer.Write(requestObject.AttachTime);
+                context.Writer.WriteStringValue(requestObject.AttachTime);
             }
 
             if(requestObject.IsSetDeleteOnTermination())
             {
                 context.Writer.WritePropertyName("DeleteOnTermination");
-                context.Writer.Write(requestObject.DeleteOnTermination.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeleteOnTermination.Value);
             }
 
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("InstanceId");
-                context.Writer.Write(requestObject.InstanceId);
+                context.Writer.WriteStringValue(requestObject.InstanceId);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

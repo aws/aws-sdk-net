@@ -369,7 +369,7 @@ namespace AWSSDK.UnitTests
             {
                 BucketName = accessPointArn,
                 Key = "foo.txt",
-                Expires = DateTime.Now.AddDays(1),
+                Expires = DateTime.UtcNow.AddDays(1),
                 Verb = HttpVerb.GET
             };
 

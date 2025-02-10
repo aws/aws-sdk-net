@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GeospatialPointStyleOptions Object
     /// </summary>  
-    public class GeospatialPointStyleOptionsUnmarshaller : IUnmarshaller<GeospatialPointStyleOptions, XmlUnmarshallerContext>, IUnmarshaller<GeospatialPointStyleOptions, JsonUnmarshallerContext>
+    public class GeospatialPointStyleOptionsUnmarshaller : IJsonUnmarshaller<GeospatialPointStyleOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GeospatialPointStyleOptions IUnmarshaller<GeospatialPointStyleOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GeospatialPointStyleOptions Unmarshall(JsonUnmarshallerContext context)
+        public GeospatialPointStyleOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GeospatialPointStyleOptions unmarshalledObject = new GeospatialPointStyleOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClusterMarkerConfiguration", targetDepth))
                 {
                     var unmarshaller = ClusterMarkerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ClusterMarkerConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterMarkerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HeatmapConfiguration", targetDepth))
                 {
                     var unmarshaller = GeospatialHeatmapConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.HeatmapConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeatmapConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectedPointStyle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectedPointStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectedPointStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

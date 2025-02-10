@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContent())
             {
                 context.Writer.WritePropertyName("Content");
-                context.Writer.Write(requestObject.Content);
+                context.Writer.WriteStringValue(requestObject.Content);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetMessageAttributes())
             {
                 context.Writer.WritePropertyName("MessageAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMessageAttributesKvp in requestObject.MessageAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectMessageAttributesKvp.Key);
                     var requestObjectMessageAttributesValue = requestObjectMessageAttributesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MessageAttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMessageAttributesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMessageId())
             {
                 context.Writer.WritePropertyName("MessageId");
-                context.Writer.Write(requestObject.MessageId);
+                context.Writer.WriteStringValue(requestObject.MessageId);
             }
 
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("Metadata");
-                context.Writer.Write(requestObject.Metadata);
+                context.Writer.WriteStringValue(requestObject.Metadata);
             }
 
             if(requestObject.IsSetPushNotification())
             {
                 context.Writer.WritePropertyName("PushNotification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PushNotificationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PushNotification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubChannelId())
             {
                 context.Writer.WritePropertyName("SubChannelId");
-                context.Writer.Write(requestObject.SubChannelId);
+                context.Writer.WriteStringValue(requestObject.SubChannelId);
             }
 
         }

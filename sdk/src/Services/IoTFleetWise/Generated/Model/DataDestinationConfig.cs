@@ -30,13 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
-    /// The destination where the Amazon Web Services IoT FleetWise campaign sends data. You
-    /// can send data to be stored in Amazon S3 or Amazon Timestream.
+    /// The destination where the campaign sends data. You can send data to an MQTT topic,
+    /// or store it in Amazon S3 or Amazon Timestream.
     /// </summary>
     public partial class DataDestinationConfig
     {
+        private MqttTopicConfig _mqttTopicConfig;
         private S3Config _s3Config;
         private TimestreamConfig _timestreamConfig;
+
+        /// <summary>
+        /// Gets and sets the property MqttTopicConfig. 
+        /// <para>
+        /// The MQTT topic to which the Amazon Web Services IoT FleetWise campaign routes data.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Access to certain Amazon Web Services IoT FleetWise features is currently gated. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+        /// Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT
+        /// FleetWise Developer Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public MqttTopicConfig MqttTopicConfig
+        {
+            get { return this._mqttTopicConfig; }
+            set { this._mqttTopicConfig = value; }
+        }
+
+        // Check to see if MqttTopicConfig property is set
+        internal bool IsSetMqttTopicConfig()
+        {
+            return this._mqttTopicConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Config. 

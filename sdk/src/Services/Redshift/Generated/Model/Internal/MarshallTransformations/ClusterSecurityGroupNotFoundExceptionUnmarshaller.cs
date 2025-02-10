@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSecurityGroupNotFoundException operation
     /// </summary>  
-    public class ClusterSecurityGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterSecurityGroupNotFoundException, XmlUnmarshallerContext>
+    public class ClusterSecurityGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterSecurityGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

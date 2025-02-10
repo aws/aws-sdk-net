@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomRedirectDomain())
             {
                 context.Writer.WritePropertyName("CustomRedirectDomain");
-                context.Writer.Write(requestObject.CustomRedirectDomain);
+                context.Writer.WriteStringValue(requestObject.CustomRedirectDomain);
             }
 
             if(requestObject.IsSetHttpsPolicy())
             {
                 context.Writer.WritePropertyName("HttpsPolicy");
-                context.Writer.Write(requestObject.HttpsPolicy);
+                context.Writer.WriteStringValue(requestObject.HttpsPolicy);
             }
 
         }

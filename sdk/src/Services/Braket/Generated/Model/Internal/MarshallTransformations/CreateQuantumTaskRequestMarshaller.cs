@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
@@ -61,102 +64,107 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/quantum-task";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAction())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAction())
-                    {
-                        context.Writer.WritePropertyName("action");
-                        context.Writer.Write(publicRequest.Action);
-                    }
-
-                    if(publicRequest.IsSetAssociations())
-                    {
-                        context.Writer.WritePropertyName("associations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAssociationsListValue in publicRequest.Associations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AssociationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAssociationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDeviceArn())
-                    {
-                        context.Writer.WritePropertyName("deviceArn");
-                        context.Writer.Write(publicRequest.DeviceArn);
-                    }
-
-                    if(publicRequest.IsSetDeviceParameters())
-                    {
-                        context.Writer.WritePropertyName("deviceParameters");
-                        context.Writer.Write(publicRequest.DeviceParameters);
-                    }
-
-                    if(publicRequest.IsSetJobToken())
-                    {
-                        context.Writer.WritePropertyName("jobToken");
-                        context.Writer.Write(publicRequest.JobToken);
-                    }
-
-                    if(publicRequest.IsSetOutputS3Bucket())
-                    {
-                        context.Writer.WritePropertyName("outputS3Bucket");
-                        context.Writer.Write(publicRequest.OutputS3Bucket);
-                    }
-
-                    if(publicRequest.IsSetOutputS3KeyPrefix())
-                    {
-                        context.Writer.WritePropertyName("outputS3KeyPrefix");
-                        context.Writer.Write(publicRequest.OutputS3KeyPrefix);
-                    }
-
-                    if(publicRequest.IsSetShots())
-                    {
-                        context.Writer.WritePropertyName("shots");
-                        context.Writer.Write(publicRequest.Shots.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("action");
+                context.Writer.WriteStringValue(publicRequest.Action);
             }
+
+            if(publicRequest.IsSetAssociations())
+            {
+                context.Writer.WritePropertyName("associations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAssociationsListValue in publicRequest.Associations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AssociationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAssociationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDeviceArn())
+            {
+                context.Writer.WritePropertyName("deviceArn");
+                context.Writer.WriteStringValue(publicRequest.DeviceArn);
+            }
+
+            if(publicRequest.IsSetDeviceParameters())
+            {
+                context.Writer.WritePropertyName("deviceParameters");
+                context.Writer.WriteStringValue(publicRequest.DeviceParameters);
+            }
+
+            if(publicRequest.IsSetJobToken())
+            {
+                context.Writer.WritePropertyName("jobToken");
+                context.Writer.WriteStringValue(publicRequest.JobToken);
+            }
+
+            if(publicRequest.IsSetOutputS3Bucket())
+            {
+                context.Writer.WritePropertyName("outputS3Bucket");
+                context.Writer.WriteStringValue(publicRequest.OutputS3Bucket);
+            }
+
+            if(publicRequest.IsSetOutputS3KeyPrefix())
+            {
+                context.Writer.WritePropertyName("outputS3KeyPrefix");
+                context.Writer.WriteStringValue(publicRequest.OutputS3KeyPrefix);
+            }
+
+            if(publicRequest.IsSetShots())
+            {
+                context.Writer.WritePropertyName("shots");
+                context.Writer.WriteNumberValue(publicRequest.Shots.Value);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BatchDeleteRequestSizeExceededException operation
     /// </summary>  
-    public class BatchDeleteRequestSizeExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<BatchDeleteRequestSizeExceededException, XmlUnmarshallerContext>
+    public class BatchDeleteRequestSizeExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BatchDeleteRequestSizeExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetMetricDefinition())
             {
                 context.Writer.WritePropertyName("metricDefinition");
-                context.Writer.Write(requestObject.MetricDefinition);
+                context.Writer.WriteStringValue(requestObject.MetricDefinition);
             }
 
             if(requestObject.IsSetPagerDutyIncidentDetail())
             {
                 context.Writer.WritePropertyName("pagerDutyIncidentDetail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PagerDutyIncidentDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.PagerDutyIncidentDetail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

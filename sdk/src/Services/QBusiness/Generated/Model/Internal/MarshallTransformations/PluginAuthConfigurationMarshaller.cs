@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,45 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasicAuthConfiguration())
             {
                 context.Writer.WritePropertyName("basicAuthConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BasicAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BasicAuthConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetIdcAuthConfiguration())
+            {
+                context.Writer.WritePropertyName("idcAuthConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdcAuthConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdcAuthConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoAuthConfiguration())
             {
                 context.Writer.WritePropertyName("noAuthConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NoAuthConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOAuth2ClientCredentialConfiguration())
             {
                 context.Writer.WritePropertyName("oAuth2ClientCredentialConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuth2ClientCredentialConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth2ClientCredentialConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttenuationControl())
             {
                 context.Writer.WritePropertyName("attenuationControl");
-                context.Writer.Write(requestObject.AttenuationControl);
+                context.Writer.WriteStringValue(requestObject.AttenuationControl);
             }
 
             if(requestObject.IsSetBitrate())
@@ -59,48 +57,48 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("bitrate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Bitrate.Value);
+                    context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
                 }
             }
 
             if(requestObject.IsSetBitstreamMode())
             {
                 context.Writer.WritePropertyName("bitstreamMode");
-                context.Writer.Write(requestObject.BitstreamMode);
+                context.Writer.WriteStringValue(requestObject.BitstreamMode);
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm.Value);
+                context.Writer.WriteNumberValue(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDrcProfile())
             {
                 context.Writer.WritePropertyName("drcProfile");
-                context.Writer.Write(requestObject.DrcProfile);
+                context.Writer.WriteStringValue(requestObject.DrcProfile);
             }
 
             if(requestObject.IsSetLfeFilter())
             {
                 context.Writer.WritePropertyName("lfeFilter");
-                context.Writer.Write(requestObject.LfeFilter);
+                context.Writer.WriteStringValue(requestObject.LfeFilter);
             }
 
             if(requestObject.IsSetMetadataControl())
             {
                 context.Writer.WritePropertyName("metadataControl");
-                context.Writer.Write(requestObject.MetadataControl);
+                context.Writer.WriteStringValue(requestObject.MetadataControl);
             }
 
         }

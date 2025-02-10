@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,119 +49,135 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalysisDefaults())
             {
                 context.Writer.WritePropertyName("AnalysisDefaults");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AnalysisDefaultsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AnalysisDefaults, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCalculatedFields())
             {
                 context.Writer.WritePropertyName("CalculatedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCalculatedFieldsListValue in requestObject.CalculatedFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CalculatedFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectCalculatedFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetColumnConfigurations())
             {
                 context.Writer.WritePropertyName("ColumnConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnConfigurationsListValue in requestObject.ColumnConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSetIdentifierDeclarations())
             {
                 context.Writer.WritePropertyName("DataSetIdentifierDeclarations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSetIdentifierDeclarationsListValue in requestObject.DataSetIdentifierDeclarations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSetIdentifierDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataSetIdentifierDeclarationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFilterGroups())
             {
                 context.Writer.WritePropertyName("FilterGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilterGroupsListValue in requestObject.FilterGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FilterGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectFilterGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOptions())
             {
                 context.Writer.WritePropertyName("Options");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssetOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Options, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameterDeclarations())
             {
                 context.Writer.WritePropertyName("ParameterDeclarations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectParameterDeclarationsListValue in requestObject.ParameterDeclarations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ParameterDeclarationMarshaller.Instance;
                     marshaller.Marshall(requestObjectParameterDeclarationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSheets())
             {
                 context.Writer.WritePropertyName("Sheets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSheetsListValue in requestObject.Sheets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SheetDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectSheetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetStaticFiles())
+            {
+                context.Writer.WritePropertyName("StaticFiles");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectStaticFilesListValue in requestObject.StaticFiles)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StaticFileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStaticFilesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }

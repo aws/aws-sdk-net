@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   PartsItem Unmarshaller
      /// </summary>
-    public class PartDetailUnmarshaller : IUnmarshaller<PartDetail, XmlUnmarshallerContext>, IUnmarshaller<PartDetail, JsonUnmarshallerContext> 
+    public class PartDetailUnmarshaller : IXmlUnmarshaller<PartDetail, XmlUnmarshallerContext>, IXmlUnmarshaller<PartDetail, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ChecksumCRC32C", targetDepth))
                     {
                         partsItem.ChecksumCRC32C = StringUnmarshaller.GetInstance().Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumCRC64NVME", targetDepth))
+                    {
+                        partsItem.ChecksumCRC64NVME = StringUnmarshaller.GetInstance().Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ChecksumSHA1", targetDepth))

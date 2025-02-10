@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CharacterSet Object
     /// </summary>  
-    public class CharacterSetUnmarshaller : IUnmarshaller<CharacterSet, XmlUnmarshallerContext>, IUnmarshaller<CharacterSet, JsonUnmarshallerContext>
+    public class CharacterSetUnmarshaller : IXmlUnmarshaller<CharacterSet, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CharacterSet Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CharacterSetUnmarshaller _instance = new CharacterSetUnmarshaller();        
 

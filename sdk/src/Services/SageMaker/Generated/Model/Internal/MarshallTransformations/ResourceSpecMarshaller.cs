@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetLifecycleConfigArn())
             {
                 context.Writer.WritePropertyName("LifecycleConfigArn");
-                context.Writer.Write(requestObject.LifecycleConfigArn);
+                context.Writer.WriteStringValue(requestObject.LifecycleConfigArn);
             }
 
             if(requestObject.IsSetSageMakerImageArn())
             {
                 context.Writer.WritePropertyName("SageMakerImageArn");
-                context.Writer.Write(requestObject.SageMakerImageArn);
+                context.Writer.WriteStringValue(requestObject.SageMakerImageArn);
             }
 
             if(requestObject.IsSetSageMakerImageVersionAlias())
             {
                 context.Writer.WritePropertyName("SageMakerImageVersionAlias");
-                context.Writer.Write(requestObject.SageMakerImageVersionAlias);
+                context.Writer.WriteStringValue(requestObject.SageMakerImageVersionAlias);
             }
 
             if(requestObject.IsSetSageMakerImageVersionArn())
             {
                 context.Writer.WritePropertyName("SageMakerImageVersionArn");
-                context.Writer.Write(requestObject.SageMakerImageVersionArn);
+                context.Writer.WriteStringValue(requestObject.SageMakerImageVersionArn);
             }
 
         }

@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
     {
         private HlsId3SegmentTaggingScheduleActionSettings _hlsId3SegmentTaggingSettings;
         private HlsTimedMetadataScheduleActionSettings _hlsTimedMetadataSettings;
+        private Id3SegmentTaggingScheduleActionSettings _id3SegmentTaggingSettings;
         private InputPrepareScheduleActionSettings _inputPrepareSettings;
         private InputSwitchScheduleActionSettings _inputSwitchSettings;
         private MotionGraphicsActivateScheduleActionSettings _motionGraphicsImageActivateSettings;
@@ -49,10 +50,11 @@ namespace Amazon.MediaLive.Model
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
         private StaticImageOutputActivateScheduleActionSettings _staticImageOutputActivateSettings;
         private StaticImageOutputDeactivateScheduleActionSettings _staticImageOutputDeactivateSettings;
+        private TimedMetadataScheduleActionSettings _timedMetadataSettings;
 
         /// <summary>
-        /// Gets and sets the property HlsId3SegmentTaggingSettings. Action to insert HLS ID3
-        /// segment tagging
+        /// Gets and sets the property HlsId3SegmentTaggingSettings. Action to insert ID3 metadata
+        /// in every segment, in HLS output groups
         /// </summary>
         public HlsId3SegmentTaggingScheduleActionSettings HlsId3SegmentTaggingSettings
         {
@@ -67,7 +69,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HlsTimedMetadataSettings. Action to insert HLS metadata
+        /// Gets and sets the property HlsTimedMetadataSettings. Action to insert ID3 metadata
+        /// once, in HLS output groups
         /// </summary>
         public HlsTimedMetadataScheduleActionSettings HlsTimedMetadataSettings
         {
@@ -79,6 +82,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsTimedMetadataSettings()
         {
             return this._hlsTimedMetadataSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id3SegmentTaggingSettings. Action to insert ID3 metadata
+        /// in every segment, in applicable output groups
+        /// </summary>
+        public Id3SegmentTaggingScheduleActionSettings Id3SegmentTaggingSettings
+        {
+            get { return this._id3SegmentTaggingSettings; }
+            set { this._id3SegmentTaggingSettings = value; }
+        }
+
+        // Check to see if Id3SegmentTaggingSettings property is set
+        internal bool IsSetId3SegmentTaggingSettings()
+        {
+            return this._id3SegmentTaggingSettings != null;
         }
 
         /// <summary>
@@ -285,6 +304,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetStaticImageOutputDeactivateSettings()
         {
             return this._staticImageOutputDeactivateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimedMetadataSettings. Action to insert ID3 metadata once,
+        /// in applicable output groups
+        /// </summary>
+        public TimedMetadataScheduleActionSettings TimedMetadataSettings
+        {
+            get { return this._timedMetadataSettings; }
+            set { this._timedMetadataSettings = value; }
+        }
+
+        // Check to see if TimedMetadataSettings property is set
+        internal bool IsSetTimedMetadataSettings()
+        {
+            return this._timedMetadataSettings != null;
         }
 
     }

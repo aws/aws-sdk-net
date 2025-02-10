@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientCloudWatchLogsResourcePolicyException operation
     /// </summary>  
-    public class InsufficientCloudWatchLogsResourcePolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientCloudWatchLogsResourcePolicyException, XmlUnmarshallerContext>
+    public class InsufficientCloudWatchLogsResourcePolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientCloudWatchLogsResourcePolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

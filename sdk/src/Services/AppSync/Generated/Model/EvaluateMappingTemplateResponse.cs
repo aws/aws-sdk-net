@@ -37,6 +37,8 @@ namespace Amazon.AppSync.Model
         private ErrorDetail _error;
         private string _evaluationResult;
         private List<string> _logs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _outErrors;
+        private string _stash;
 
         /// <summary>
         /// Gets and sets the property Error. 
@@ -92,6 +94,45 @@ namespace Amazon.AppSync.Model
         internal bool IsSetLogs()
         {
             return this._logs != null && (this._logs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutErrors. 
+        /// <para>
+        /// The list of runtime errors that are added to the GraphQL operation response.
+        /// </para>
+        /// </summary>
+        public string OutErrors
+        {
+            get { return this._outErrors; }
+            set { this._outErrors = value; }
+        }
+
+        // Check to see if OutErrors property is set
+        internal bool IsSetOutErrors()
+        {
+            return this._outErrors != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Stash. 
+        /// <para>
+        /// An object available inside each resolver and function handler. A single <c>stash</c>
+        /// object lives through a single resolver run. Therefore, you can use the stash to pass
+        /// arbitrary data across request and response handlers and across functions in a pipeline
+        /// resolver.
+        /// </para>
+        /// </summary>
+        public string Stash
+        {
+            get { return this._stash; }
+            set { this._stash = value; }
+        }
+
+        // Check to see if Stash property is set
+        internal bool IsSetStash()
+        {
+            return this._stash != null;
         }
 
     }

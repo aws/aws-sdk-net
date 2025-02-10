@@ -15,11 +15,16 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
+
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -42,7 +47,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
-    public interface ITransactGet<T> : ITransactGet
+    public interface ITransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : ITransactGet
     {
         /// <summary>
         /// List of generic results retrieved from DynamoDB.
@@ -97,6 +102,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         internal DocumentTransactGet DocumentTransaction { get; set; }
 
+        internal TracerProvider TracerProvider { get; set; }
+
         internal abstract void PopulateResults();
 
         /// <inheritdoc/>
@@ -107,7 +114,8 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for retrieving multiple items
     /// from a single DynamoDB table in a transaction.
     /// </summary>
-    public partial class TransactGet<T> : TransactGet, ITransactGet<T>
+    public partial class TransactGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : TransactGet, ITransactGet<T>
+
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
@@ -161,6 +169,9 @@ namespace Amazon.DynamoDBv2.DataModel
             // Table.CreateTransactGet() returns the IDocumentTransactGet interface.
             // But since we rely on the internal behavior of DocumentTransactGet, we instantiate it via the constructor.
             DocumentTransaction = new DocumentTransactGet(table);
+
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         private void ExecuteHelper()
@@ -211,6 +222,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         private readonly List<ITransactGet> allTransactionParts;
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// Constructs a MultiTableTransactGet object from a number of
         /// TransactGet objects.
@@ -219,6 +232,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactGet(params ITransactGet[] transactionParts)
         {
             allTransactionParts = new List<ITransactGet>(transactionParts);
+            TracerProvider = GetTracerProvider(allTransactionParts);
         }
 
         internal MultiTableTransactGet(ITransactGet first, params ITransactGet[] rest)
@@ -226,6 +240,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts = new List<ITransactGet>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
+            TracerProvider = GetTracerProvider(allTransactionParts);
         }
 
         /// <inheritdoc/>
@@ -269,5 +284,18 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 #endif
+        private TracerProvider GetTracerProvider(List<ITransactGet> allTransactionParts)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (allTransactionParts.Count > 0)
+            {
+                var firstTransactionPart = allTransactionParts[0];
+                if (firstTransactionPart is TransactGet transactGet)
+                {
+                    tracerProvider = transactGet.TracerProvider;
+                }
+            }
+            return tracerProvider;
+        }
     }
 }

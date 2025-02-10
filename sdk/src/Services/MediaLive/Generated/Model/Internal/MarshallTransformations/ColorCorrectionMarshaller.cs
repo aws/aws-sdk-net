@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputColorSpace())
             {
                 context.Writer.WritePropertyName("inputColorSpace");
-                context.Writer.Write(requestObject.InputColorSpace);
+                context.Writer.WriteStringValue(requestObject.InputColorSpace);
             }
 
             if(requestObject.IsSetOutputColorSpace())
             {
                 context.Writer.WritePropertyName("outputColorSpace");
-                context.Writer.Write(requestObject.OutputColorSpace);
+                context.Writer.WriteStringValue(requestObject.OutputColorSpace);
             }
 
             if(requestObject.IsSetUri())
             {
                 context.Writer.WritePropertyName("uri");
-                context.Writer.Write(requestObject.Uri);
+                context.Writer.WriteStringValue(requestObject.Uri);
             }
 
         }

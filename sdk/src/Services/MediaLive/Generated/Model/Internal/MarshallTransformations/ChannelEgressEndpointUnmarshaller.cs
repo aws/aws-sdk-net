@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ChannelEgressEndpoint Object
     /// </summary>  
-    public class ChannelEgressEndpointUnmarshaller : IUnmarshaller<ChannelEgressEndpoint, XmlUnmarshallerContext>, IUnmarshaller<ChannelEgressEndpoint, JsonUnmarshallerContext>
+    public class ChannelEgressEndpointUnmarshaller : IJsonUnmarshaller<ChannelEgressEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ChannelEgressEndpoint IUnmarshaller<ChannelEgressEndpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelEgressEndpoint Unmarshall(JsonUnmarshallerContext context)
+        public ChannelEgressEndpoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ChannelEgressEndpoint unmarshalledObject = new ChannelEgressEndpoint();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("sourceIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceIp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

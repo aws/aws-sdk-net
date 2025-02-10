@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDashboard())
             {
                 context.Writer.WritePropertyName("Dashboard");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegisteredUserDashboardEmbeddingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dashboard, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDashboardVisual())
             {
                 context.Writer.WritePropertyName("DashboardVisual");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegisteredUserDashboardVisualEmbeddingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DashboardVisual, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGenerativeQnA())
             {
                 context.Writer.WritePropertyName("GenerativeQnA");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegisteredUserGenerativeQnAEmbeddingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenerativeQnA, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQSearchBar())
             {
                 context.Writer.WritePropertyName("QSearchBar");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegisteredUserQSearchBarEmbeddingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.QSearchBar, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQuickSightConsole())
             {
                 context.Writer.WritePropertyName("QuickSightConsole");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegisteredUserQuickSightConsoleEmbeddingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.QuickSightConsole, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

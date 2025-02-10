@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private AuthorizationCodeProperties _authorizationCodeProperties;
         private OAuth2ClientApplication _oAuth2ClientApplication;
+        private OAuth2Credentials _oAuth2Credentials;
         private OAuth2GrantType _oAuth2GrantType;
         private string _tokenUrl;
         private Dictionary<string, string> _tokenUrlParametersMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -76,6 +77,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetOAuth2ClientApplication()
         {
             return this._oAuth2ClientApplication != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OAuth2Credentials. 
+        /// <para>
+        /// The credentials used when the authentication type is OAuth2 authentication.
+        /// </para>
+        /// </summary>
+        public OAuth2Credentials OAuth2Credentials
+        {
+            get { return this._oAuth2Credentials; }
+            set { this._oAuth2Credentials = value; }
+        }
+
+        // Check to see if OAuth2Credentials property is set
+        internal bool IsSetOAuth2Credentials()
+        {
+            return this._oAuth2Credentials != null;
         }
 
         /// <summary>

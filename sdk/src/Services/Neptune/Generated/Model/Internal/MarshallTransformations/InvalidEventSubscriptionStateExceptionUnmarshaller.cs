@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidEventSubscriptionStateException operation
     /// </summary>  
-    public class InvalidEventSubscriptionStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidEventSubscriptionStateException, XmlUnmarshallerContext>
+    public class InvalidEventSubscriptionStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidEventSubscriptionStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

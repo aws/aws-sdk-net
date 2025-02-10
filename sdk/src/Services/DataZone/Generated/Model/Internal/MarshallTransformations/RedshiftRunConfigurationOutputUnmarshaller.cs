@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RedshiftRunConfigurationOutput Object
     /// </summary>  
-    public class RedshiftRunConfigurationOutputUnmarshaller : IUnmarshaller<RedshiftRunConfigurationOutput, XmlUnmarshallerContext>, IUnmarshaller<RedshiftRunConfigurationOutput, JsonUnmarshallerContext>
+    public class RedshiftRunConfigurationOutputUnmarshaller : IJsonUnmarshaller<RedshiftRunConfigurationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RedshiftRunConfigurationOutput IUnmarshaller<RedshiftRunConfigurationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RedshiftRunConfigurationOutput Unmarshall(JsonUnmarshallerContext context)
+        public RedshiftRunConfigurationOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RedshiftRunConfigurationOutput unmarshalledObject = new RedshiftRunConfigurationOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataAccessRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataAccessRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataAccessRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("redshiftCredentialConfiguration", targetDepth))
                 {
                     var unmarshaller = RedshiftCredentialConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftCredentialConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftCredentialConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("redshiftStorage", targetDepth))
                 {
                     var unmarshaller = RedshiftStorageUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftStorage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("relationalFilterConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RelationalFilterConfiguration, RelationalFilterConfigurationUnmarshaller>(RelationalFilterConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.RelationalFilterConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RelationalFilterConfiguration, RelationalFilterConfigurationUnmarshaller>(RelationalFilterConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.RelationalFilterConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

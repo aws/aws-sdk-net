@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceTagNotificationAttribute Object
     /// </summary>  
-    public class InstanceTagNotificationAttributeUnmarshaller : IUnmarshaller<InstanceTagNotificationAttribute, XmlUnmarshallerContext>, IUnmarshaller<InstanceTagNotificationAttribute, JsonUnmarshallerContext>
+    public class InstanceTagNotificationAttributeUnmarshaller : IXmlUnmarshaller<InstanceTagNotificationAttribute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceTagNotificationAttribute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceTagNotificationAttributeUnmarshaller _instance = new InstanceTagNotificationAttributeUnmarshaller();        
 

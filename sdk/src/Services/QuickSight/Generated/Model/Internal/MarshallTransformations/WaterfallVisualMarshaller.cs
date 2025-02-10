@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,72 +49,78 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VisualCustomActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetChartConfiguration())
             {
                 context.Writer.WritePropertyName("ChartConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaterfallChartConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ChartConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColumnHierarchies())
             {
                 context.Writer.WritePropertyName("ColumnHierarchies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnHierarchiesListValue in requestObject.ColumnHierarchies)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnHierarchyMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnHierarchiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubtitle())
             {
                 context.Writer.WritePropertyName("Subtitle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualSubtitleLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Subtitle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualTitleLabelOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Title, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetVisualContentAltText())
+            {
+                context.Writer.WritePropertyName("VisualContentAltText");
+                context.Writer.WriteStringValue(requestObject.VisualContentAltText);
             }
 
             if(requestObject.IsSetVisualId())
             {
                 context.Writer.WritePropertyName("VisualId");
-                context.Writer.Write(requestObject.VisualId);
+                context.Writer.WriteStringValue(requestObject.VisualId);
             }
 
         }

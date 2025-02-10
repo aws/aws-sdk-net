@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
@@ -61,95 +64,100 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v20210603/Monitors";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetHealthEventsConfig())
-                    {
-                        context.Writer.WritePropertyName("HealthEventsConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HealthEventsConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HealthEventsConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInternetMeasurementsLogDelivery())
-                    {
-                        context.Writer.WritePropertyName("InternetMeasurementsLogDelivery");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InternetMeasurementsLogDeliveryMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InternetMeasurementsLogDelivery, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxCityNetworksToMonitor())
-                    {
-                        context.Writer.WritePropertyName("MaxCityNetworksToMonitor");
-                        context.Writer.Write(publicRequest.MaxCityNetworksToMonitor.Value);
-                    }
-
-                    if(publicRequest.IsSetMonitorName())
-                    {
-                        context.Writer.WritePropertyName("MonitorName");
-                        context.Writer.Write(publicRequest.MonitorName);
-                    }
-
-                    if(publicRequest.IsSetResources())
-                    {
-                        context.Writer.WritePropertyName("Resources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourcesListValue in publicRequest.Resources)
-                        {
-                                context.Writer.Write(publicRequestResourcesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTrafficPercentageToMonitor())
-                    {
-                        context.Writer.WritePropertyName("TrafficPercentageToMonitor");
-                        context.Writer.Write(publicRequest.TrafficPercentageToMonitor.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetHealthEventsConfig())
+            {
+                context.Writer.WritePropertyName("HealthEventsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HealthEventsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HealthEventsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInternetMeasurementsLogDelivery())
+            {
+                context.Writer.WritePropertyName("InternetMeasurementsLogDelivery");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InternetMeasurementsLogDeliveryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InternetMeasurementsLogDelivery, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxCityNetworksToMonitor())
+            {
+                context.Writer.WritePropertyName("MaxCityNetworksToMonitor");
+                context.Writer.WriteNumberValue(publicRequest.MaxCityNetworksToMonitor.Value);
+            }
+
+            if(publicRequest.IsSetMonitorName())
+            {
+                context.Writer.WritePropertyName("MonitorName");
+                context.Writer.WriteStringValue(publicRequest.MonitorName);
+            }
+
+            if(publicRequest.IsSetResources())
+            {
+                context.Writer.WritePropertyName("Resources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTrafficPercentageToMonitor())
+            {
+                context.Writer.WritePropertyName("TrafficPercentageToMonitor");
+                context.Writer.WriteNumberValue(publicRequest.TrafficPercentageToMonitor.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

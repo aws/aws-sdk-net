@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,24 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCardId())
             {
                 context.Writer.WritePropertyName("cardId");
-                context.Writer.Write(requestObject.CardId);
+                context.Writer.WriteStringValue(requestObject.CardId);
+            }
+
+            if(requestObject.IsSetSubmissionMutation())
+            {
+                context.Writer.WritePropertyName("submissionMutation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubmissionMutationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubmissionMutation, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

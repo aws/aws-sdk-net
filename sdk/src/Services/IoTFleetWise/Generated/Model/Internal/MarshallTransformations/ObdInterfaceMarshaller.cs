@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDtcRequestIntervalSeconds())
             {
                 context.Writer.WritePropertyName("dtcRequestIntervalSeconds");
-                context.Writer.Write(requestObject.DtcRequestIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DtcRequestIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetHasTransmissionEcu())
             {
                 context.Writer.WritePropertyName("hasTransmissionEcu");
-                context.Writer.Write(requestObject.HasTransmissionEcu.Value);
+                context.Writer.WriteBooleanValue(requestObject.HasTransmissionEcu.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetObdStandard())
             {
                 context.Writer.WritePropertyName("obdStandard");
-                context.Writer.Write(requestObject.ObdStandard);
+                context.Writer.WriteStringValue(requestObject.ObdStandard);
             }
 
             if(requestObject.IsSetPidRequestIntervalSeconds())
             {
                 context.Writer.WritePropertyName("pidRequestIntervalSeconds");
-                context.Writer.Write(requestObject.PidRequestIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.PidRequestIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetRequestMessageId())
             {
                 context.Writer.WritePropertyName("requestMessageId");
-                context.Writer.Write(requestObject.RequestMessageId.Value);
+                context.Writer.WriteNumberValue(requestObject.RequestMessageId.Value);
             }
 
             if(requestObject.IsSetUseExtendedIds())
             {
                 context.Writer.WritePropertyName("useExtendedIds");
-                context.Writer.Write(requestObject.UseExtendedIds.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseExtendedIds.Value);
             }
 
         }

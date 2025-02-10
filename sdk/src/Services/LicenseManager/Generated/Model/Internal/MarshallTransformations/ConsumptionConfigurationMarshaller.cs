@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBorrowConfiguration())
             {
                 context.Writer.WritePropertyName("BorrowConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BorrowConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BorrowConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProvisionalConfiguration())
             {
                 context.Writer.WritePropertyName("ProvisionalConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProvisionalConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionalConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRenewType())
             {
                 context.Writer.WritePropertyName("RenewType");
-                context.Writer.Write(requestObject.RenewType);
+                context.Writer.WriteStringValue(requestObject.RenewType);
             }
 
         }

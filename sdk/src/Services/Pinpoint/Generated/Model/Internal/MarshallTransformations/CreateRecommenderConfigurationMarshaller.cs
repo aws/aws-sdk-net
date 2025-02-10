@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRecommendationProviderIdType())
             {
                 context.Writer.WritePropertyName("RecommendationProviderIdType");
-                context.Writer.Write(requestObject.RecommendationProviderIdType);
+                context.Writer.WriteStringValue(requestObject.RecommendationProviderIdType);
             }
 
             if(requestObject.IsSetRecommendationProviderRoleArn())
             {
                 context.Writer.WritePropertyName("RecommendationProviderRoleArn");
-                context.Writer.Write(requestObject.RecommendationProviderRoleArn);
+                context.Writer.WriteStringValue(requestObject.RecommendationProviderRoleArn);
             }
 
             if(requestObject.IsSetRecommendationProviderUri())
             {
                 context.Writer.WritePropertyName("RecommendationProviderUri");
-                context.Writer.Write(requestObject.RecommendationProviderUri);
+                context.Writer.WriteStringValue(requestObject.RecommendationProviderUri);
             }
 
             if(requestObject.IsSetRecommendationsDisplayName())
             {
                 context.Writer.WritePropertyName("RecommendationsDisplayName");
-                context.Writer.Write(requestObject.RecommendationsDisplayName);
+                context.Writer.WriteStringValue(requestObject.RecommendationsDisplayName);
             }
 
             if(requestObject.IsSetRecommendationsPerMessage())
             {
                 context.Writer.WritePropertyName("RecommendationsPerMessage");
-                context.Writer.Write(requestObject.RecommendationsPerMessage.Value);
+                context.Writer.WriteNumberValue(requestObject.RecommendationsPerMessage.Value);
             }
 
             if(requestObject.IsSetRecommendationTransformerUri())
             {
                 context.Writer.WritePropertyName("RecommendationTransformerUri");
-                context.Writer.Write(requestObject.RecommendationTransformerUri);
+                context.Writer.WriteStringValue(requestObject.RecommendationTransformerUri);
             }
 
         }

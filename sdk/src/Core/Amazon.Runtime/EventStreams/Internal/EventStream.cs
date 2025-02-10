@@ -17,6 +17,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Threading;
+using ThirdParty.RuntimeBackports;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #else
@@ -65,11 +68,7 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// </summary>
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
-#if NET8_0_OR_GREATER
     public abstract class EventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : IEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
-#else
-    public abstract class EventStream<T, TE> : IEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
-#endif
     {
         /// <summary>
         /// "Unique" key for unknown event lookup.
@@ -351,9 +350,21 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// each message it decodes.
         /// </summary>
         /// <param name="buffer">The buffer to store the read bytes from the stream.</param>
-        protected async Task ReadFromStreamAsync(byte[] buffer)
+        protected Task ReadFromStreamAsync(byte[] buffer) => ReadFromStreamAsync(buffer, CancellationToken.None);
+
+        /// <summary>
+        /// Reads from the stream into the buffer. It then passes the buffer to the decoder, which raises an event for
+        /// each message it decodes.
+        /// </summary>
+        /// <param name="buffer">The buffer to store the read bytes from the stream.</param>
+        /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
+        protected async Task ReadFromStreamAsync(byte[] buffer, CancellationToken cancellationToken)
         {
-            var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+#if NETCOREAPP
+            var bytesRead = await NetworkStream.ReadAsync(buffer, cancellationToken).ConfigureAwait(false);
+#else
+            var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken).ConfigureAwait(false);
+#endif
             if (bytesRead > 0)
             {
                 // Decoder raises MessageReceived for every message it encounters.

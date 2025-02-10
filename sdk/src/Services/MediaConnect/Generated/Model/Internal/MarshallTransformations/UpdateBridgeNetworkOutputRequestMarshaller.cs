@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpAddress())
             {
                 context.Writer.WritePropertyName("ipAddress");
-                context.Writer.Write(requestObject.IpAddress);
+                context.Writer.WriteStringValue(requestObject.IpAddress);
             }
 
             if(requestObject.IsSetNetworkName())
             {
                 context.Writer.WritePropertyName("networkName");
-                context.Writer.Write(requestObject.NetworkName);
+                context.Writer.WriteStringValue(requestObject.NetworkName);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetTtl())
             {
                 context.Writer.WritePropertyName("ttl");
-                context.Writer.Write(requestObject.Ttl.Value);
+                context.Writer.WriteNumberValue(requestObject.Ttl.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBeginMarker())
             {
                 context.Writer.WritePropertyName("BeginMarker");
-                context.Writer.Write(requestObject.BeginMarker);
+                context.Writer.WriteStringValue(requestObject.BeginMarker);
             }
 
             if(requestObject.IsSetEndMarker())
             {
                 context.Writer.WritePropertyName("EndMarker");
-                context.Writer.Write(requestObject.EndMarker);
+                context.Writer.WriteStringValue(requestObject.EndMarker);
             }
 
         }

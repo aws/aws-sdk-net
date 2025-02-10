@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditions())
             {
                 context.Writer.WritePropertyName("Conditions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Conditions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("IamRoleArn");
-                context.Writer.Write(requestObject.IamRoleArn);
+                context.Writer.WriteStringValue(requestObject.IamRoleArn);
             }
 
             if(requestObject.IsSetListOfTags())
             {
                 context.Writer.WritePropertyName("ListOfTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListOfTagsListValue in requestObject.ListOfTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectListOfTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotResources())
             {
                 context.Writer.WritePropertyName("NotResources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotResourcesListValue in requestObject.NotResources)
                 {
-                        context.Writer.Write(requestObjectNotResourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectNotResourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("Resources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourcesListValue in requestObject.Resources)
                 {
-                        context.Writer.Write(requestObjectResourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelectionName())
             {
                 context.Writer.WritePropertyName("SelectionName");
-                context.Writer.Write(requestObject.SelectionName);
+                context.Writer.WriteStringValue(requestObject.SelectionName);
             }
 
         }

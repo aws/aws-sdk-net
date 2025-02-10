@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,60 +49,60 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetDnsNameServers())
             {
                 context.Writer.WritePropertyName("DnsNameServers");
-                context.Writer.Write(requestObject.DnsNameServers);
+                context.Writer.WriteStringValue(requestObject.DnsNameServers);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetMaxCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaxCapacityUnits");
-                context.Writer.Write(requestObject.MaxCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMinCapacityUnits())
             {
                 context.Writer.WritePropertyName("MinCapacityUnits");
-                context.Writer.Write(requestObject.MinCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MinCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMultiAZ())
             {
                 context.Writer.WritePropertyName("MultiAZ");
-                context.Writer.Write(requestObject.MultiAZ.Value);
+                context.Writer.WriteBooleanValue(requestObject.MultiAZ.Value);
             }
 
             if(requestObject.IsSetPreferredMaintenanceWindow())
             {
                 context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                context.Writer.Write(requestObject.PreferredMaintenanceWindow);
+                context.Writer.WriteStringValue(requestObject.PreferredMaintenanceWindow);
             }
 
             if(requestObject.IsSetReplicationSubnetGroupId())
             {
                 context.Writer.WritePropertyName("ReplicationSubnetGroupId");
-                context.Writer.Write(requestObject.ReplicationSubnetGroupId);
+                context.Writer.WriteStringValue(requestObject.ReplicationSubnetGroupId);
             }
 
             if(requestObject.IsSetVpcSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("VpcSecurityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpcSecurityGroupIdsListValue in requestObject.VpcSecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectVpcSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectVpcSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

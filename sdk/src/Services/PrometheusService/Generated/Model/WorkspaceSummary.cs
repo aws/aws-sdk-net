@@ -46,7 +46,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Alias. 
         /// <para>
-        /// The alias that is assigned to this workspace to help identify it. It may not be unique.
+        /// The alias that is assigned to this workspace to help identify it. It does not need
+        /// to be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

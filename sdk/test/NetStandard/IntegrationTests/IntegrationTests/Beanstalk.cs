@@ -32,7 +32,7 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             CheckDNSAvailabilityRequest request = new CheckDNSAvailabilityRequest()
             {
-                CNAMEPrefix = "mycnamecheck" + DateTime.Now.Ticks
+                CNAMEPrefix = "mycnamecheck" + DateTime.UtcNow.Ticks
             };
 
             CheckDNSAvailabilityResponse response = await Client.CheckDNSAvailabilityAsync(request);

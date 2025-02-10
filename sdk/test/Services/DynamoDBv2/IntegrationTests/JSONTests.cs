@@ -6,26 +6,24 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
-using ThirdParty.Json.LitJson;
 using System.IO;
-
+using System.Text.Json;
+using System.Globalization;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
     {
-        const string sampleJson = @"{
+        const string _sampleJson = @"{
 ""Name"" : ""Alan"" ,
 ""Age"" : 31,
 ""CompanyName"" : ""Big River"" ,
-""CurrentStatus"" : ""Active""
+""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
     ""Name"" : ""Big River"" ,
-    ""Year Founded"" : 1998,
+    ""Year Founded"" : 1998
 } ,
 ""Aliases"" :
     [ ""Al"" , ""Steve"" , ""Alan-san"" ],
@@ -33,14 +31,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 ""RetirementInfo"" : null
 }";
 
-        const string sampleJsonArray = @"[{
+        const string _sampleJsonArray = @"[{
 ""Name"" : ""Alan"" ,
 ""Age"" : 31,
 ""CompanyName"" : ""Big River"" ,
-""CurrentStatus"" : ""Active""
+""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
     ""Name"" : ""Big River"" ,
-    ""Year Founded"" : 1998,
+    ""Year Founded"" : 1998
 } ,
 ""Aliases"" :
     [ ""Al"" , ""Steve"" , ""Alan-san"" ],
@@ -51,10 +49,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 ""Name"" : ""George P. Burdell"" ,
 ""Age"" : 87,
 ""CompanyName"" : ""Georgia Tech"" ,
-""CurrentStatus"" : ""Active""
+""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
     ""Name"" : ""Georgia Tech"" ,
-    ""Year Founded"" : 1885,
+    ""Year Founded"" : 1885
 } ,
 ""Aliases"" :
     [ ""Buzz"" , ""Ed"" , ""Rat"" ],
@@ -65,23 +63,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     }
 }]";
 
-        
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void TestJSON()
-        {
-            TestJsonConversions();
-
-            TestBinaryDecoding();
-
-            TestPutGet();
-
-            TestArrayMethods();
-
-            TestFromJsonCanHandleAllDataTypes();
-        }
-
-        private void TestPutGet()
+        public void TestDocumentPutGet()
         {
             // Clear tables
             CleanupTables();
@@ -94,13 +78,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable, out numericHashRangeTable);
 
             // JSON as top-level data
-            var doc = Document.FromJson(sampleJson);
+            var doc = Document.FromJson(_sampleJson);
             hashRangeTable.PutItem(doc);
             var retrievedDoc = hashRangeTable.GetItem("Alan", 31);
             Assert.IsTrue(doc.Equals(retrievedDoc));
 
             // JSON as nested data
-            var nestedDoc = Document.FromJson(sampleJson);
+            var nestedDoc = Document.FromJson(_sampleJson);
             doc = new Document();
             doc["Name"] = "Jim";
             doc["Age"] = 29;
@@ -110,13 +94,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue(doc.ForceConversion(DynamoDBEntryConversion.V2).Equals(retrievedDoc));
         }
 
-        private static void TestJsonConversions()
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestDocumentJsonConversions()
         {
             // Create Document from JSON
-            var doc = Document.FromJson(sampleJson);
+            var doc = Document.FromJson(_sampleJson);
 
             // Verify types
-            Assert.IsTrue(doc["Name"] is Primitive);            
+            Assert.IsTrue(doc["Name"] is Primitive);
             Assert.IsTrue(doc["CompanyInfo"] is Document);
             Assert.IsTrue(doc["Aliases"] is DynamoDBList);
             Assert.IsTrue(doc["IsActive"] is DynamoDBBool);
@@ -124,13 +110,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Verify conversions produce identical JSON
             var json = doc.ToJson();
-            CompareJson(sampleJson, json);
+            CompareJson(_sampleJson, json);
             var prettyJson = doc.ToJsonPretty();
-            CompareJson(sampleJson, prettyJson);
+            CompareJson(_sampleJson, prettyJson);
             CompareJson(json, prettyJson);
         }
 
-        private static void TestBinaryDecoding()
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestDocumentBinaryDecoding()
         {
             // Test data
             var data = "Hello world!";
@@ -261,36 +249,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             AssertExtensions.ExpectException(() => rt.DecodeBase64Attributes("FakeBinaryData"));
         }
 
-        private static void TestArrayMethods()
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestJsonArrayMethods()
         {
-            var docs = TestArrayRoundTrip(sampleJsonArray);
+            var docs = TestArrayRoundTrip(_sampleJsonArray);
             TestArrayRoundTrip(docs.ToJsonPretty());
         }
 
         private static IEnumerable<Document> TestArrayRoundTrip(string jsonArray) {
-            var docs = Document.FromJsonArray(jsonArray) as IEnumerable<Document>;
+            var docs = Document.FromJsonArray(jsonArray);
             
             Assert.IsNotNull(docs);
             Assert.AreEqual(2, docs.Count());
             var first = docs.First();
             // Verify types
-            Assert.IsTrue(first["Name"] is Primitive);            
-            Assert.IsTrue(first["Age"] is Primitive);            
+            Assert.IsTrue(first["Name"] is Primitive);
+            Assert.IsTrue(first["Age"] is Primitive);
             Assert.IsTrue(first["CompanyInfo"] is Document);
             Assert.IsTrue(first["Aliases"] is DynamoDBList);
             Assert.IsTrue(first["IsActive"] is DynamoDBBool);
             Assert.IsTrue(first["RetirementInfo"] is DynamoDBNull);
             // Value tests
             Assert.AreEqual("Alan", (string)first["Name"]);
-            Assert.AreEqual(31, (int)first["Age"]);       
+            Assert.AreEqual(31, (int)first["Age"]);
             Assert.IsNotNull(first["CompanyInfo"] as Document);
             Assert.AreEqual("Big River", (string)first["CompanyInfo"].AsDocument()["Name"]);
             Assert.IsTrue((bool)first["IsActive"]);
             Assert.IsNull(first["RetirementInfo"].AsDocument());
 
             var second = docs.Skip(1).First();
-            Assert.IsTrue(second["Name"] is Primitive);     
-            Assert.IsTrue(second["Age"] is Primitive);            
+            Assert.IsTrue(second["Name"] is Primitive);
+            Assert.IsTrue(second["Age"] is Primitive);
             Assert.IsTrue(second["CompanyInfo"] is Document);
             Assert.IsTrue(second["Aliases"] is DynamoDBList);
             Assert.IsTrue(second["IsActive"] is DynamoDBBool);
@@ -299,36 +289,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue(second["RetirementInfo"].AsDocument()["Status"] is Primitive);
             // Value tests
             Assert.AreEqual("George P. Burdell", (string)second["Name"]);
-            Assert.AreEqual(87, (int)second["Age"]);       
+            Assert.AreEqual(87, (int)second["Age"]);
             Assert.IsNotNull(second["CompanyInfo"].AsDocument());
             Assert.AreEqual("Georgia Tech", (string)(second["CompanyInfo"] as Document)["Name"]);
             Assert.IsTrue((bool)second["IsActive"]);
             Assert.IsNotNull(second["RetirementInfo"].AsDocument());
-            Assert.AreEqual(1987, (int)second["RetirementInfo"].AsDocument()["Year"]);       
-            Assert.AreEqual("Graduated", (string)second["RetirementInfo"].AsDocument()["Status"]);     
+            Assert.AreEqual(1987, (int)second["RetirementInfo"].AsDocument()["Year"]);
+            Assert.AreEqual("Graduated", (string)second["RetirementInfo"].AsDocument()["Status"]);
 
             // Test round-tripping
             string json = docs.ToJson();
-            CompareJson(jsonArray, json);  
+            CompareJson(jsonArray, json);
             string prettyJson = docs.ToJsonPretty();
             CompareJson(jsonArray, prettyJson);
 
             return docs;
         }
 
-        // Compares two JSON strings by converting text->JSON->text and comparing the final forms
+        /// <summary>
+        /// Compares two JSON strings by converting text->JSON->text and comparing the final forms
+        /// </summary>
         private static void CompareJson(string jsonA, string jsonB)
         {
-            var a = JsonMapper.ToObject(jsonA);
-            var b = JsonMapper.ToObject(jsonB);
+            var a = JsonDocument.Parse(jsonA);
+            var b = JsonDocument.Parse(jsonB);
 
-            var aRt = a.ToJson();
-            var bRt = b.ToJson();
+            var streamA = new MemoryStream();
+            var writerA = new Utf8JsonWriter(streamA);
+            a.WriteTo(writerA);
+
+            var streamB = new MemoryStream();
+            var writerB = new Utf8JsonWriter(streamA);
+            b.WriteTo(writerB);
+
+            var aRt = Encoding.UTF8.GetString(streamA.ToArray());
+            var bRt = Encoding.UTF8.GetString(streamB.ToArray());
 
             Assert.AreEqual(aRt, bRt);
         }
 
-        private static void TestFromJsonCanHandleAllDataTypes()
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestFromJsonCanHandleAllDataTypes()
         {
             var json = @"
                 {
@@ -357,7 +359,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(container.StringValue, "test string");
                 Assert.AreEqual(container.BoolValue, true);
                 Assert.AreEqual(container.IntValue, 200);
-                Assert.AreEqual(container.DateValue, DateTime.Parse("2022-12-29T12:46:14.097Z"));
+                Assert.AreEqual(container.DateValue, DateTime.Parse("2022-12-29T12:46:14.097Z", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal));
+                Assert.AreEqual(container.DateValue.Kind, DateTimeKind.Utc);
+
                 Assert.IsNull(container.NullableBoolValue);
                 Assert.IsNull(container.NullableIntValue);
                 Assert.IsNull(container.NullableDateValue);

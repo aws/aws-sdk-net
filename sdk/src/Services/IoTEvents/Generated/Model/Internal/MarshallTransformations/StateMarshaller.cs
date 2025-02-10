@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnEnter())
             {
                 context.Writer.WritePropertyName("onEnter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnEnterLifecycleMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnEnter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOnExit())
             {
                 context.Writer.WritePropertyName("onExit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnExitLifecycleMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnExit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOnInput())
             {
                 context.Writer.WritePropertyName("onInput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnInputLifecycleMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnInput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStateName())
             {
                 context.Writer.WritePropertyName("stateName");
-                context.Writer.Write(requestObject.StateName);
+                context.Writer.WriteStringValue(requestObject.StateName);
             }
 
         }

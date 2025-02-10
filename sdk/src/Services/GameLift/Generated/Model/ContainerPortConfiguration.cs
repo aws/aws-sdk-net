@@ -30,11 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Defines ranges of ports that server processes can connect to. 
+    /// A set of port ranges that can be opened on the container. A process that's running
+    /// in the container can bind to a port number, making it accessible to inbound traffic.
+    /// Container ports map to a container fleet's connection ports. 
     /// 
     ///  
     /// <para>
-    ///  <b>Part of:</b> <a>ContainerDefinition$PortConfiguration</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerPortConfiguration
@@ -44,8 +50,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ContainerPortRanges. 
         /// <para>
-        /// Specifies one or more ranges of ports on a container. These ranges must not overlap.
-        /// 
+        /// A set of one or more container port number ranges. The ranges can't overlap. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

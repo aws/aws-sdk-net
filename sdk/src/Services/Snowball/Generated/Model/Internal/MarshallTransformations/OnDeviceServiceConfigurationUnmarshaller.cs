@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OnDeviceServiceConfiguration Object
     /// </summary>  
-    public class OnDeviceServiceConfigurationUnmarshaller : IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OnDeviceServiceConfiguration, JsonUnmarshallerContext>
+    public class OnDeviceServiceConfigurationUnmarshaller : IJsonUnmarshaller<OnDeviceServiceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OnDeviceServiceConfiguration IUnmarshaller<OnDeviceServiceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OnDeviceServiceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OnDeviceServiceConfiguration unmarshalledObject = new OnDeviceServiceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EKSOnDeviceService", targetDepth))
                 {
                     var unmarshaller = EKSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EKSOnDeviceService = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EKSOnDeviceService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NFSOnDeviceService", targetDepth))
                 {
                     var unmarshaller = NFSOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NFSOnDeviceService = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NFSOnDeviceService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3OnDeviceService", targetDepth))
                 {
                     var unmarshaller = S3OnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3OnDeviceService = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3OnDeviceService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TGWOnDeviceService", targetDepth))
                 {
                     var unmarshaller = TGWOnDeviceServiceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.TGWOnDeviceService = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TGWOnDeviceService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

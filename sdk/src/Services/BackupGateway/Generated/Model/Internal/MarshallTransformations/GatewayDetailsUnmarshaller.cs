@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GatewayDetails Object
     /// </summary>  
-    public class GatewayDetailsUnmarshaller : IUnmarshaller<GatewayDetails, XmlUnmarshallerContext>, IUnmarshaller<GatewayDetails, JsonUnmarshallerContext>
+    public class GatewayDetailsUnmarshaller : IJsonUnmarshaller<GatewayDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GatewayDetails IUnmarshaller<GatewayDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GatewayDetails Unmarshall(JsonUnmarshallerContext context)
+        public GatewayDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GatewayDetails unmarshalledObject = new GatewayDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("GatewayArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GatewayArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayDisplayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayDisplayName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GatewayDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HypervisorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSeenTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSeenTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSeenTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaintenanceStartTime", targetDepth))
                 {
                     var unmarshaller = MaintenanceStartTimeUnmarshaller.Instance;
-                    unmarshalledObject.MaintenanceStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NextUpdateAvailabilityTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.NextUpdateAvailabilityTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextUpdateAvailabilityTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

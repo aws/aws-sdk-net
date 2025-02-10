@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCmafEncryptionMethod())
             {
                 context.Writer.WritePropertyName("CmafEncryptionMethod");
-                context.Writer.Write(requestObject.CmafEncryptionMethod);
+                context.Writer.WriteStringValue(requestObject.CmafEncryptionMethod);
             }
 
             if(requestObject.IsSetTsEncryptionMethod())
             {
                 context.Writer.WritePropertyName("TsEncryptionMethod");
-                context.Writer.Write(requestObject.TsEncryptionMethod);
+                context.Writer.WriteStringValue(requestObject.TsEncryptionMethod);
             }
 
         }

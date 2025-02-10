@@ -310,6 +310,14 @@
     <pattern>[0-9]{2}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SsmSap.Model.ComponentInfo.Ec2InstanceId</property>
+    <pattern>i-[\w\d]{8}$|^i-[\w\d]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SsmSap.Model.ComponentInfo.Sid</property>
+    <pattern>[A-Z][A-Z0-9]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SsmSap.Model.ComponentSummary.ApplicationId</property>
     <min>1</min>
     <max>60</max>

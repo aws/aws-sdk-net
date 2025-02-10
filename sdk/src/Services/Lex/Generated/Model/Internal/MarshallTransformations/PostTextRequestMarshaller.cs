@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lex.Model.Internal.MarshallTransformations
 {
@@ -70,69 +73,74 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 throw new AmazonLexException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/bot/{botName}/alias/{botAlias}/user/{userId}/text";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActiveContexts())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("activeContexts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActiveContextsListValue in publicRequest.ActiveContexts)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActiveContexts())
-                    {
-                        context.Writer.WritePropertyName("activeContexts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActiveContextsListValue in publicRequest.ActiveContexts)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ActiveContextMarshaller.Instance;
-                            marshaller.Marshall(publicRequestActiveContextsListValue, context);
+                    var marshaller = ActiveContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActiveContextsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInputText())
-                    {
-                        context.Writer.WritePropertyName("inputText");
-                        context.Writer.Write(publicRequest.InputText);
-                    }
-
-                    if(publicRequest.IsSetRequestAttributes())
-                    {
-                        context.Writer.WritePropertyName("requestAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
-                            var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
-
-                                context.Writer.Write(publicRequestRequestAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSessionAttributes())
-                    {
-                        context.Writer.WritePropertyName("sessionAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestSessionAttributesKvp in publicRequest.SessionAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestSessionAttributesKvp.Key);
-                            var publicRequestSessionAttributesValue = publicRequestSessionAttributesKvp.Value;
-
-                                context.Writer.Write(publicRequestSessionAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetInputText())
+            {
+                context.Writer.WritePropertyName("inputText");
+                context.Writer.WriteStringValue(publicRequest.InputText);
+            }
+
+            if(publicRequest.IsSetRequestAttributes())
+            {
+                context.Writer.WritePropertyName("requestAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
+                    var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRequestAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSessionAttributes())
+            {
+                context.Writer.WritePropertyName("sessionAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestSessionAttributesKvp in publicRequest.SessionAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestSessionAttributesKvp.Key);
+                    var publicRequestSessionAttributesValue = publicRequestSessionAttributesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestSessionAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

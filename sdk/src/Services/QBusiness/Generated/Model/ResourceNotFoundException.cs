@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-    /// resource and try again.
+    /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+    /// provided the correct resource and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

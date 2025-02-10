@@ -79,6 +79,114 @@ namespace Amazon.TaxSettings
 
 
     /// <summary>
+    /// Constants used for properties of type EntityExemptionAccountStatus.
+    /// </summary>
+    public class EntityExemptionAccountStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Expired for EntityExemptionAccountStatus
+        /// </summary>
+        public static readonly EntityExemptionAccountStatus Expired = new EntityExemptionAccountStatus("Expired");
+        /// <summary>
+        /// Constant None for EntityExemptionAccountStatus
+        /// </summary>
+        public static readonly EntityExemptionAccountStatus None = new EntityExemptionAccountStatus("None");
+        /// <summary>
+        /// Constant Pending for EntityExemptionAccountStatus
+        /// </summary>
+        public static readonly EntityExemptionAccountStatus Pending = new EntityExemptionAccountStatus("Pending");
+        /// <summary>
+        /// Constant Valid for EntityExemptionAccountStatus
+        /// </summary>
+        public static readonly EntityExemptionAccountStatus Valid = new EntityExemptionAccountStatus("Valid");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityExemptionAccountStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityExemptionAccountStatus FindValue(string value)
+        {
+            return FindValue<EntityExemptionAccountStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityExemptionAccountStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HeritageStatus.
+    /// </summary>
+    public class HeritageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OptIn for HeritageStatus
+        /// </summary>
+        public static readonly HeritageStatus OptIn = new HeritageStatus("OptIn");
+        /// <summary>
+        /// Constant OptOut for HeritageStatus
+        /// </summary>
+        public static readonly HeritageStatus OptOut = new HeritageStatus("OptOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HeritageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HeritageStatus FindValue(string value)
+        {
+            return FindValue<HeritageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HeritageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Industries.
     /// </summary>
     public class Industries : ConstantClass
@@ -515,6 +623,52 @@ namespace Amazon.TaxSettings
 
 
     /// <summary>
+    /// Constants used for properties of type SupplementalTaxRegistrationType.
+    /// </summary>
+    public class SupplementalTaxRegistrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VAT for SupplementalTaxRegistrationType
+        /// </summary>
+        public static readonly SupplementalTaxRegistrationType VAT = new SupplementalTaxRegistrationType("VAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupplementalTaxRegistrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupplementalTaxRegistrationType FindValue(string value)
+        {
+            return FindValue<SupplementalTaxRegistrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupplementalTaxRegistrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TaxRegistrationNumberType.
     /// </summary>
     public class TaxRegistrationNumberType : ConstantClass
@@ -641,9 +795,17 @@ namespace Amazon.TaxSettings
         /// </summary>
         public static readonly TaxRegistrationType GST = new TaxRegistrationType("GST");
         /// <summary>
+        /// Constant NRIC for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType NRIC = new TaxRegistrationType("NRIC");
+        /// <summary>
         /// Constant SST for TaxRegistrationType
         /// </summary>
         public static readonly TaxRegistrationType SST = new TaxRegistrationType("SST");
+        /// <summary>
+        /// Constant TIN for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType TIN = new TaxRegistrationType("TIN");
         /// <summary>
         /// Constant VAT for TaxRegistrationType
         /// </summary>

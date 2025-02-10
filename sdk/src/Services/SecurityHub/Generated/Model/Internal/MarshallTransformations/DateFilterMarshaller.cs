@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateRange())
             {
                 context.Writer.WritePropertyName("DateRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End);
+                context.Writer.WriteStringValue(requestObject.End);
             }
 
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.Write(requestObject.Start);
+                context.Writer.WriteStringValue(requestObject.Start);
             }
 
         }

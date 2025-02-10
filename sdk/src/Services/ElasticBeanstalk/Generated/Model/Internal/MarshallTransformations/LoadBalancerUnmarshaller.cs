@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoadBalancer Object
     /// </summary>  
-    public class LoadBalancerUnmarshaller : IUnmarshaller<LoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancer, JsonUnmarshallerContext>
+    public class LoadBalancerUnmarshaller : IXmlUnmarshaller<LoadBalancer, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LoadBalancer Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LoadBalancerUnmarshaller _instance = new LoadBalancerUnmarshaller();        
 

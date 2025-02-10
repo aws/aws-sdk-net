@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PostProcessingTrace Object
     /// </summary>  
-    public class PostProcessingTraceUnmarshaller : IUnmarshaller<PostProcessingTrace, XmlUnmarshallerContext>, IUnmarshaller<PostProcessingTrace, JsonUnmarshallerContext>
+    public class PostProcessingTraceUnmarshaller : IJsonUnmarshaller<PostProcessingTrace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PostProcessingTrace IUnmarshaller<PostProcessingTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PostProcessingTrace Unmarshall(JsonUnmarshallerContext context)
+        public PostProcessingTrace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PostProcessingTrace unmarshalledObject = new PostProcessingTrace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("modelInvocationInput", targetDepth))
                 {
                     var unmarshaller = ModelInvocationInputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelInvocationOutput", targetDepth))
                 {
                     var unmarshaller = PostProcessingModelInvocationOutputUnmarshaller.Instance;
-                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

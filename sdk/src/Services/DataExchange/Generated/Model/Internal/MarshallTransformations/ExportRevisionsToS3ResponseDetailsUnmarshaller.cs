@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExportRevisionsToS3ResponseDetails Object
     /// </summary>  
-    public class ExportRevisionsToS3ResponseDetailsUnmarshaller : IUnmarshaller<ExportRevisionsToS3ResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ExportRevisionsToS3ResponseDetails, JsonUnmarshallerContext>
+    public class ExportRevisionsToS3ResponseDetailsUnmarshaller : IJsonUnmarshaller<ExportRevisionsToS3ResponseDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExportRevisionsToS3ResponseDetails IUnmarshaller<ExportRevisionsToS3ResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExportRevisionsToS3ResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public ExportRevisionsToS3ResponseDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExportRevisionsToS3ResponseDetails unmarshalledObject = new ExportRevisionsToS3ResponseDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Encryption", targetDepth))
                 {
                     var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventActionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventActionArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventActionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RevisionDestinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RevisionDestinationEntry, RevisionDestinationEntryUnmarshaller>(RevisionDestinationEntryUnmarshaller.Instance);
-                    unmarshalledObject.RevisionDestinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RevisionDestinationEntry, RevisionDestinationEntryUnmarshaller>(RevisionDestinationEntryUnmarshaller.Instance);
+                    unmarshalledObject.RevisionDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

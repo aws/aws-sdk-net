@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInterruptionFilter())
             {
                 context.Writer.WritePropertyName("InterruptionFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InterruptionFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.InterruptionFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNonTalkTimeFilter())
             {
                 context.Writer.WritePropertyName("NonTalkTimeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NonTalkTimeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.NonTalkTimeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSentimentFilter())
             {
                 context.Writer.WritePropertyName("SentimentFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SentimentFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.SentimentFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTranscriptFilter())
             {
                 context.Writer.WritePropertyName("TranscriptFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranscriptFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TranscriptFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

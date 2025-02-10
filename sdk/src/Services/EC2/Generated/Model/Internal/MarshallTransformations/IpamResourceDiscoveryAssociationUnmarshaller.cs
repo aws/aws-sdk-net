@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamResourceDiscoveryAssociation Object
     /// </summary>  
-    public class IpamResourceDiscoveryAssociationUnmarshaller : IUnmarshaller<IpamResourceDiscoveryAssociation, XmlUnmarshallerContext>, IUnmarshaller<IpamResourceDiscoveryAssociation, JsonUnmarshallerContext>
+    public class IpamResourceDiscoveryAssociationUnmarshaller : IXmlUnmarshaller<IpamResourceDiscoveryAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -135,17 +135,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamResourceDiscoveryAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamResourceDiscoveryAssociationUnmarshaller _instance = new IpamResourceDiscoveryAssociationUnmarshaller();        
 

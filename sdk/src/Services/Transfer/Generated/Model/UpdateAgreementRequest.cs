@@ -34,15 +34,31 @@ namespace Amazon.Transfer.Model
     /// Updates some of the parameters for an existing agreement. Provide the <c>AgreementId</c>
     /// and the <c>ServerId</c> for the agreement that you want to update, along with the
     /// new values for the parameters to update.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Specify <i>either</i> <c>BaseDirectory</c> or <c>CustomDirectories</c>, but not both.
+    /// Specifying both causes the command to fail.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you update an agreement from using base directory to custom directories, the base
+    /// directory is no longer used. Similarly, if you change from custom directories to a
+    /// base directory, the custom directories are no longer used.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateAgreementRequest : AmazonTransferRequest
     {
         private string _accessRole;
         private string _agreementId;
         private string _baseDirectory;
+        private CustomDirectoriesType _customDirectories;
         private string _description;
+        private EnforceMessageSigningType _enforceMessageSigning;
         private string _localProfileId;
         private string _partnerProfileId;
+        private PreserveFilenameType _preserveFilename;
         private string _serverId;
         private AgreementStatusType _status;
 
@@ -126,7 +142,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property BaseDirectory. 
         /// <para>
         /// To change the landing directory (folder) for files that are transferred, provide the
-        /// bucket folder that you want to use; for example, <c>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>
+        /// bucket folder that you want to use; for example, <c>/<i>amzn-s3-demo-bucket</i>/<i>home</i>/<i>mydirectory</i>
         /// </c>.
         /// </para>
         /// </summary>
@@ -141,6 +157,47 @@ namespace Amazon.Transfer.Model
         internal bool IsSetBaseDirectory()
         {
             return this._baseDirectory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDirectories. 
+        /// <para>
+        /// A <c>CustomDirectoriesType</c> structure. This structure specifies custom directories
+        /// for storing various AS2 message files. You can specify directories for the following
+        /// types of files.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Failed files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MDN files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Payload files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Status files
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Temporary files
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CustomDirectoriesType CustomDirectories
+        {
+            get { return this._customDirectories; }
+            set { this._customDirectories = value; }
+        }
+
+        // Check to see if CustomDirectories property is set
+        internal bool IsSetCustomDirectories()
+        {
+            return this._customDirectories != null;
         }
 
         /// <summary>
@@ -161,6 +218,35 @@ namespace Amazon.Transfer.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnforceMessageSigning. 
+        /// <para>
+        ///  Determines whether or not unsigned messages from your trading partners will be accepted.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Transfer Family rejects unsigned messages from your trading partner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default value): Transfer Family accepts unsigned messages from your
+        /// trading partner.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EnforceMessageSigningType EnforceMessageSigning
+        {
+            get { return this._enforceMessageSigning; }
+            set { this._enforceMessageSigning = value; }
+        }
+
+        // Check to see if EnforceMessageSigning property is set
+        internal bool IsSetEnforceMessageSigning()
+        {
+            return this._enforceMessageSigning != null;
         }
 
         /// <summary>
@@ -204,6 +290,37 @@ namespace Amazon.Transfer.Model
         internal bool IsSetPartnerProfileId()
         {
             return this._partnerProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreserveFilename. 
+        /// <para>
+        ///  Determines whether or not Transfer Family appends a unique string of characters to
+        /// the end of the AS2 message payload filename when saving it. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: the filename provided by your trading parter is preserved when the
+        /// file is saved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default value): when Transfer Family saves the file, the filename
+        /// is adjusted, as described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/send-as2-messages.html#file-names-as2">File
+        /// names and locations</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PreserveFilenameType PreserveFilename
+        {
+            get { return this._preserveFilename; }
+            set { this._preserveFilename = value; }
+        }
+
+        // Check to see if PreserveFilename property is set
+        internal bool IsSetPreserveFilename()
+        {
+            return this._preserveFilename != null;
         }
 
         /// <summary>

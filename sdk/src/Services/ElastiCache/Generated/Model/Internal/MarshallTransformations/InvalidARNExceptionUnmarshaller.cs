@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidARNException operation
     /// </summary>  
-    public class InvalidARNExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidARNException, XmlUnmarshallerContext>
+    public class InvalidARNExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidARNException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

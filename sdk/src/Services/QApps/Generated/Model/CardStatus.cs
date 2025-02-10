@@ -36,6 +36,7 @@ namespace Amazon.QApps.Model
     {
         private ExecutionStatus _currentState;
         private string _currentValue;
+        private List<Submission> _submissions = AWSConfigs.InitializeCollections ? new List<Submission>() : null;
 
         /// <summary>
         /// Gets and sets the property CurrentState. 
@@ -73,6 +74,24 @@ namespace Amazon.QApps.Model
         internal bool IsSetCurrentValue()
         {
             return this._currentValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Submissions. 
+        /// <para>
+        /// A list of previous submissions, if the card is a form card.
+        /// </para>
+        /// </summary>
+        public List<Submission> Submissions
+        {
+            get { return this._submissions; }
+            set { this._submissions = value; }
+        }
+
+        // Check to see if Submissions property is set
+        internal bool IsSetSubmissions()
+        {
+            return this._submissions != null && (this._submissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

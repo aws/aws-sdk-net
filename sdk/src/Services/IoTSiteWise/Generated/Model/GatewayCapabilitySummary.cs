@@ -71,11 +71,22 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>NOT_APPLICABLE</c> – Synchronization is not required for this capability configuration.
+        /// This is most common when integrating partner data sources, because the data integration
+        /// is handled externally by the partner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>OUT_OF_SYNC</c> – The gateway hasn't received the capability configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>SYNC_FAILED</c> – The gateway rejected the capability configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN</c> – The synchronization status is currently unknown due to an undetermined
+        /// or temporary error.
         /// </para>
         ///  </li> </ul>
         /// </summary>

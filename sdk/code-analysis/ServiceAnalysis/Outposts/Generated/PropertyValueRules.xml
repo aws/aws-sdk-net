@@ -227,6 +227,29 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetInstancesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetInstancesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetInstancesRequest.OutpostIdentifier</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListAssetInstancesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.ListAssetsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -245,6 +268,35 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListAssetsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListBlockingInstancesForCapacityTaskRequest.CapacityTaskId</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>^cap-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListBlockingInstancesForCapacityTaskRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListBlockingInstancesForCapacityTaskRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListBlockingInstancesForCapacityTaskRequest.OutpostIdentifier</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.ListBlockingInstancesForCapacityTaskResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
@@ -559,9 +611,56 @@
     <pattern>^[\S \n]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInstance.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInstance.AssetId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^(\w+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInstance.InstanceId</property>
+    <min>11</min>
+    <max>32</max>
+    <pattern>^i-[0-9a-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInstance.InstanceType</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z0-9\-\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInstanceTypeCapacity.Count</property>
+    <min>0</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.AssetInstanceTypeCapacity.InstanceType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9\-]+\.[a-z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.AssetLocation.RackElevation</property>
     <min>0</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.BlockingInstance.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.BlockingInstance.InstanceId</property>
+    <min>11</min>
+    <max>32</max>
+    <pattern>^i-[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CapacityTaskFailure.Reason</property>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChangeComputeType())
             {
                 context.Writer.WritePropertyName("ChangeComputeType");
-                context.Writer.Write(requestObject.ChangeComputeType);
+                context.Writer.WriteStringValue(requestObject.ChangeComputeType);
             }
 
             if(requestObject.IsSetIncreaseVolumeSize())
             {
                 context.Writer.WritePropertyName("IncreaseVolumeSize");
-                context.Writer.Write(requestObject.IncreaseVolumeSize);
+                context.Writer.WriteStringValue(requestObject.IncreaseVolumeSize);
             }
 
             if(requestObject.IsSetRebuildWorkspace())
             {
                 context.Writer.WritePropertyName("RebuildWorkspace");
-                context.Writer.Write(requestObject.RebuildWorkspace);
+                context.Writer.WriteStringValue(requestObject.RebuildWorkspace);
             }
 
             if(requestObject.IsSetRestartWorkspace())
             {
                 context.Writer.WritePropertyName("RestartWorkspace");
-                context.Writer.Write(requestObject.RestartWorkspace);
+                context.Writer.WriteStringValue(requestObject.RestartWorkspace);
             }
 
             if(requestObject.IsSetSwitchRunningMode())
             {
                 context.Writer.WritePropertyName("SwitchRunningMode");
-                context.Writer.Write(requestObject.SwitchRunningMode);
+                context.Writer.WriteStringValue(requestObject.SwitchRunningMode);
             }
 
         }

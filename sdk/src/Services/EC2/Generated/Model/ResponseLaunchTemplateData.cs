@@ -58,6 +58,8 @@ namespace Amazon.EC2.Model
         private LaunchTemplateInstanceMetadataOptions _metadataOptions;
         private LaunchTemplatesMonitoring _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecification> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<LaunchTemplateInstanceNetworkInterfaceSpecification>() : null;
+        private LaunchTemplateNetworkPerformanceOptions _networkPerformanceOptions;
+        private OperatorResponse _operator;
         private LaunchTemplatePlacement _placement;
         private LaunchTemplatePrivateDnsNameOptions _privateDnsNameOptions;
         private string _ramDiskId;
@@ -222,7 +224,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ElasticInferenceAccelerators. 
+        /// Gets and sets the property ElasticInferenceAccelerators. <note> 
+        /// <para>
+        /// Amazon Elastic Inference is no longer available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An elastic inference accelerator to associate with the instance. Elastic inference
         /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate
@@ -558,6 +564,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPerformanceOptions. 
+        /// <para>
+        /// Contains the launch template settings for network performance options for your instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateNetworkPerformanceOptions NetworkPerformanceOptions
+        {
+            get { return this._networkPerformanceOptions; }
+            set { this._networkPerformanceOptions = value; }
+        }
+
+        // Check to see if NetworkPerformanceOptions property is set
+        internal bool IsSetNetworkPerformanceOptions()
+        {
+            return this._networkPerformanceOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the launch template.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

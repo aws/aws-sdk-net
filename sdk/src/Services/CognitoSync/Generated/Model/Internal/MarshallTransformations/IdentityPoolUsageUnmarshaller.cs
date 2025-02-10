@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IdentityPoolUsage Object
     /// </summary>  
-    public class IdentityPoolUsageUnmarshaller : IUnmarshaller<IdentityPoolUsage, XmlUnmarshallerContext>, IUnmarshaller<IdentityPoolUsage, JsonUnmarshallerContext>
+    public class IdentityPoolUsageUnmarshaller : IJsonUnmarshaller<IdentityPoolUsage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IdentityPoolUsage IUnmarshaller<IdentityPoolUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdentityPoolUsage Unmarshall(JsonUnmarshallerContext context)
+        public IdentityPoolUsage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IdentityPoolUsage unmarshalledObject = new IdentityPoolUsage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataStorage", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DataStorage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdentityPoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IdentityPoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SyncSessionsCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.SyncSessionsCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncSessionsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

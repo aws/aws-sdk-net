@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The configuration for running a SageMaker image as a KernelGateway app.
+    /// The configuration for running a SageMaker AI image as a KernelGateway app.
     /// </summary>
     public partial class AppImageConfigDetails
     {
@@ -139,7 +139,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KernelGatewayImageConfig. 
         /// <para>
-        /// The configuration for the file system and kernels in the SageMaker image.
+        /// The configuration for the file system and kernels in the SageMaker AI image.
         /// </para>
         /// </summary>
         public KernelGatewayImageConfig KernelGatewayImageConfig

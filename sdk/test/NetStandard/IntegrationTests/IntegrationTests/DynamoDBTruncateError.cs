@@ -340,7 +340,7 @@ THtAmDAtOhds6TGBpAWw";
 
         private async Task<string> SetupTable(IAmazonDynamoDB dynamoDBClient)
         {
-            string tableName = "aws-sdk-dotnet-truncate-test-" + DateTime.Now.Ticks;
+            string tableName = "aws-sdk-dotnet-truncate-test-" + DateTime.UtcNow.Ticks;
 
             await dynamoDBClient.CreateTableAsync(
                 tableName,

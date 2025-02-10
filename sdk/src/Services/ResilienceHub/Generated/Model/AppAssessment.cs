@@ -358,8 +358,14 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Indicates a concise summary that provides an overview of the Resilience Hub assessment.
+        /// Indicates the AI-generated summary for the Resilience Hub assessment, providing a
+        /// concise overview that highlights the top risks and recommendations.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This property is available only in the US East (N. Virginia) Region.
+        /// </para>
+        ///  </note>
         /// </summary>
         public AssessmentSummary Summary
         {

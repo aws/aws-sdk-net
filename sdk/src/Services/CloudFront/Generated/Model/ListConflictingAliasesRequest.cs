@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
         /// The alias (also called a CNAME) to search for conflicting aliases.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=253)]
+        [AWSProperty(Required=true, Min=0, Max=253)]
         public string Alias
         {
             get { return this._alias; }
@@ -99,7 +99,7 @@ namespace Amazon.CloudFront.Model
         /// that includes the provided alias.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=25)]
+        [AWSProperty(Required=true, Min=0, Max=25)]
         public string DistributionId
         {
             get { return this._distributionId; }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthenticationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMSKClusterARN())
             {
                 context.Writer.WritePropertyName("MSKClusterARN");
-                context.Writer.Write(requestObject.MSKClusterARN);
+                context.Writer.WriteStringValue(requestObject.MSKClusterARN);
             }
 
             if(requestObject.IsSetReadFromTimestamp())
             {
                 context.Writer.WritePropertyName("ReadFromTimestamp");
-                context.Writer.Write(requestObject.ReadFromTimestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ReadFromTimestamp.Value)));
             }
 
             if(requestObject.IsSetTopicName())
             {
                 context.Writer.WritePropertyName("TopicName");
-                context.Writer.Write(requestObject.TopicName);
+                context.Writer.WriteStringValue(requestObject.TopicName);
             }
 
         }

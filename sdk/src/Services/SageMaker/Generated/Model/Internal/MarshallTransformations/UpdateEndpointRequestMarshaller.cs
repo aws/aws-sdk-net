@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,70 +66,75 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeploymentConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeploymentConfig())
-                    {
-                        context.Writer.WritePropertyName("DeploymentConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("DeploymentConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = DeploymentConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeploymentConfig, context);
+                var marshaller = DeploymentConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEndpointConfigName())
-                    {
-                        context.Writer.WritePropertyName("EndpointConfigName");
-                        context.Writer.Write(publicRequest.EndpointConfigName);
-                    }
-
-                    if(publicRequest.IsSetEndpointName())
-                    {
-                        context.Writer.WritePropertyName("EndpointName");
-                        context.Writer.Write(publicRequest.EndpointName);
-                    }
-
-                    if(publicRequest.IsSetExcludeRetainedVariantProperties())
-                    {
-                        context.Writer.WritePropertyName("ExcludeRetainedVariantProperties");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestExcludeRetainedVariantPropertiesListValue in publicRequest.ExcludeRetainedVariantProperties)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = VariantPropertyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestExcludeRetainedVariantPropertiesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRetainAllVariantProperties())
-                    {
-                        context.Writer.WritePropertyName("RetainAllVariantProperties");
-                        context.Writer.Write(publicRequest.RetainAllVariantProperties.Value);
-                    }
-
-                    if(publicRequest.IsSetRetainDeploymentConfig())
-                    {
-                        context.Writer.WritePropertyName("RetainDeploymentConfig");
-                        context.Writer.Write(publicRequest.RetainDeploymentConfig.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEndpointConfigName())
+            {
+                context.Writer.WritePropertyName("EndpointConfigName");
+                context.Writer.WriteStringValue(publicRequest.EndpointConfigName);
+            }
+
+            if(publicRequest.IsSetEndpointName())
+            {
+                context.Writer.WritePropertyName("EndpointName");
+                context.Writer.WriteStringValue(publicRequest.EndpointName);
+            }
+
+            if(publicRequest.IsSetExcludeRetainedVariantProperties())
+            {
+                context.Writer.WritePropertyName("ExcludeRetainedVariantProperties");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExcludeRetainedVariantPropertiesListValue in publicRequest.ExcludeRetainedVariantProperties)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VariantPropertyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExcludeRetainedVariantPropertiesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRetainAllVariantProperties())
+            {
+                context.Writer.WritePropertyName("RetainAllVariantProperties");
+                context.Writer.WriteBooleanValue(publicRequest.RetainAllVariantProperties.Value);
+            }
+
+            if(publicRequest.IsSetRetainDeploymentConfig())
+            {
+                context.Writer.WritePropertyName("RetainDeploymentConfig");
+                context.Writer.WriteBooleanValue(publicRequest.RetainDeploymentConfig.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

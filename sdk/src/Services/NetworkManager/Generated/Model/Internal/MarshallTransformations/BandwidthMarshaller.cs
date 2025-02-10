@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDownloadSpeed())
             {
                 context.Writer.WritePropertyName("DownloadSpeed");
-                context.Writer.Write(requestObject.DownloadSpeed.Value);
+                context.Writer.WriteNumberValue(requestObject.DownloadSpeed.Value);
             }
 
             if(requestObject.IsSetUploadSpeed())
             {
                 context.Writer.WritePropertyName("UploadSpeed");
-                context.Writer.Write(requestObject.UploadSpeed.Value);
+                context.Writer.WriteNumberValue(requestObject.UploadSpeed.Value);
             }
 
         }

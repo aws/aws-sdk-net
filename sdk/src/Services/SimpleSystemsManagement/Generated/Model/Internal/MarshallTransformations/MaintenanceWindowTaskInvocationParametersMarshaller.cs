@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomation())
             {
                 context.Writer.WritePropertyName("Automation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MaintenanceWindowAutomationParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Automation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("Lambda");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MaintenanceWindowLambdaParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lambda, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRunCommand())
             {
                 context.Writer.WritePropertyName("RunCommand");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MaintenanceWindowRunCommandParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RunCommand, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStepFunctions())
             {
                 context.Writer.WritePropertyName("StepFunctions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MaintenanceWindowStepFunctionsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.StepFunctions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

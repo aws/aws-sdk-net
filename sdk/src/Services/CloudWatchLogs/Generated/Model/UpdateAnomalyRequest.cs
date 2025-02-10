@@ -32,9 +32,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the UpdateAnomaly operation.
     /// Use this operation to <i>suppress</i> anomaly detection for a specified anomaly or
-    /// pattern. If you suppress an anomaly, CloudWatch Logs won’t report new occurrences
+    /// pattern. If you suppress an anomaly, CloudWatch Logs won't report new occurrences
     /// of that anomaly and won't update that anomaly with new data. If you suppress a pattern,
-    /// CloudWatch Logs won’t report any anomalies related to that pattern.
+    /// CloudWatch Logs won't report any anomalies related to that pattern.
     /// 
     ///  
     /// <para>
@@ -53,6 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _anomalyDetectorArn;
         private string _anomalyId;
+        private bool? _baseline;
         private string _patternId;
         private SuppressionPeriod _suppressionPeriod;
         private SuppressionType _suppressionType;
@@ -95,6 +96,31 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetAnomalyId()
         {
             return this._anomalyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Baseline. 
+        /// <para>
+        /// Set this to <c>true</c> to prevent CloudWatch Logs from displaying this behavior as
+        /// an anomaly in the future. The behavior is then treated as baseline behavior. However,
+        /// if similar but more severe occurrences of this behavior occur in the future, those
+        /// will still be reported as anomalies. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? Baseline
+        {
+            get { return this._baseline; }
+            set { this._baseline = value; }
+        }
+
+        // Check to see if Baseline property is set
+        internal bool IsSetBaseline()
+        {
+            return this._baseline.HasValue; 
         }
 
         /// <summary>

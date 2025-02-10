@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelayUntilElbConnectionsDrained())
             {
                 context.Writer.WritePropertyName("DelayUntilElbConnectionsDrained");
-                context.Writer.Write(requestObject.DelayUntilElbConnectionsDrained.Value);
+                context.Writer.WriteBooleanValue(requestObject.DelayUntilElbConnectionsDrained.Value);
             }
 
             if(requestObject.IsSetExecutionTimeout())
             {
                 context.Writer.WritePropertyName("ExecutionTimeout");
-                context.Writer.Write(requestObject.ExecutionTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.ExecutionTimeout.Value);
             }
 
         }

@@ -58,6 +58,7 @@ namespace Amazon.ECS.Model
     {
         private List<ContainerDefinition> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private string _cpu;
+        private bool? _enableFaultInjection;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private string _family;
@@ -176,6 +177,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableFaultInjection. 
+        /// <para>
+        /// Enables fault injection when you register your task definition and allows for fault
+        /// injection requests to be accepted from the task's containers. The default value is
+        /// <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? EnableFaultInjection
+        {
+            get { return this._enableFaultInjection; }
+            set { this._enableFaultInjection = value; }
+        }
+
+        // Check to see if EnableFaultInjection property is set
+        internal bool IsSetEnableFaultInjection()
+        {
+            return this._enableFaultInjection.HasValue; 
         }
 
         /// <summary>

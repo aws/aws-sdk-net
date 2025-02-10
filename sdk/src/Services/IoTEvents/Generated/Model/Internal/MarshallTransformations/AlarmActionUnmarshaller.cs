@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AlarmAction Object
     /// </summary>  
-    public class AlarmActionUnmarshaller : IUnmarshaller<AlarmAction, XmlUnmarshallerContext>, IUnmarshaller<AlarmAction, JsonUnmarshallerContext>
+    public class AlarmActionUnmarshaller : IJsonUnmarshaller<AlarmAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AlarmAction IUnmarshaller<AlarmAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AlarmAction Unmarshall(JsonUnmarshallerContext context)
+        public AlarmAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AlarmAction unmarshalledObject = new AlarmAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("dynamoDB", targetDepth))
                 {
                     var unmarshaller = DynamoDBActionUnmarshaller.Instance;
-                    unmarshalledObject.DynamoDB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamoDB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dynamoDBv2", targetDepth))
                 {
                     var unmarshaller = DynamoDBv2ActionUnmarshaller.Instance;
-                    unmarshalledObject.DynamoDBv2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamoDBv2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("firehose", targetDepth))
                 {
                     var unmarshaller = FirehoseActionUnmarshaller.Instance;
-                    unmarshalledObject.Firehose = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Firehose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("iotEvents", targetDepth))
                 {
                     var unmarshaller = IotEventsActionUnmarshaller.Instance;
-                    unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("iotSiteWise", targetDepth))
                 {
                     var unmarshaller = IotSiteWiseActionUnmarshaller.Instance;
-                    unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("iotTopicPublish", targetDepth))
                 {
                     var unmarshaller = IotTopicPublishActionUnmarshaller.Instance;
-                    unmarshalledObject.IotTopicPublish = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IotTopicPublish = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lambda", targetDepth))
                 {
                     var unmarshaller = LambdaActionUnmarshaller.Instance;
-                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sns", targetDepth))
                 {
                     var unmarshaller = SNSTopicPublishActionUnmarshaller.Instance;
-                    unmarshalledObject.Sns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sqs", targetDepth))
                 {
                     var unmarshaller = SqsActionUnmarshaller.Instance;
-                    unmarshalledObject.Sqs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sqs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

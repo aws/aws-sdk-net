@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The updated cluster
+        /// The updated cluster.
         /// </para>
         /// </summary>
         public Cluster Cluster

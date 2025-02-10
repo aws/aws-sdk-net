@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeEnvironment())
             {
                 context.Writer.WritePropertyName("computeEnvironment");
-                context.Writer.Write(requestObject.ComputeEnvironment);
+                context.Writer.WriteStringValue(requestObject.ComputeEnvironment);
             }
 
             if(requestObject.IsSetOrder())
             {
                 context.Writer.WritePropertyName("order");
-                context.Writer.Write(requestObject.Order.Value);
+                context.Writer.WriteNumberValue(requestObject.Order.Value);
             }
 
         }

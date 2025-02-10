@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDisableTemplateValidation())
             {
                 context.Writer.WritePropertyName("DisableTemplateValidation");
-                context.Writer.Write(requestObject.DisableTemplateValidation.Value);
+                context.Writer.WriteBooleanValue(requestObject.DisableTemplateValidation.Value);
             }
 
             if(requestObject.IsSetInfo())
             {
                 context.Writer.WritePropertyName("Info");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectInfoKvp in requestObject.Info)
                 {
                     context.Writer.WritePropertyName(requestObjectInfoKvp.Key);
                     var requestObjectInfoValue = requestObjectInfoKvp.Value;
 
-                        context.Writer.Write(requestObjectInfoValue);
+                        context.Writer.WriteStringValue(requestObjectInfoValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

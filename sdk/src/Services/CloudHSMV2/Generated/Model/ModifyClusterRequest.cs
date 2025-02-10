@@ -43,6 +43,7 @@ namespace Amazon.CloudHSMV2.Model
     {
         private BackupRetentionPolicy _backupRetentionPolicy;
         private string _clusterId;
+        private string _hsmType;
 
         /// <summary>
         /// Gets and sets the property BackupRetentionPolicy. 
@@ -50,7 +51,6 @@ namespace Amazon.CloudHSMV2.Model
         /// A policy that defines how the service retains backups.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public BackupRetentionPolicy BackupRetentionPolicy
         {
             get { return this._backupRetentionPolicy; }
@@ -81,6 +81,25 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetClusterId()
         {
             return this._clusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HsmType. 
+        /// <para>
+        /// The desired HSM type of the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string HsmType
+        {
+            get { return this._hsmType; }
+            set { this._hsmType = value; }
+        }
+
+        // Check to see if HsmType property is set
+        internal bool IsSetHsmType()
+        {
+            return this._hsmType != null;
         }
 
     }

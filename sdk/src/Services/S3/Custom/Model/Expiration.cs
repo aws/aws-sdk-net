@@ -31,28 +31,16 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class Expiration
     {
-        private DateTime expiryDate;
-        private DateTime expiryDateUtc;
+        private DateTime expiryDate;        
         private string ruleId;
 
         /// <summary>
-        /// This property is deprecated. This property exposes a DateTime of kind Unspecified. Use ExpiryDateUtc instead.
         /// The date and time for expiry.
         /// </summary>
-        [Obsolete("This property returns a DateTime of kind Unspecified. Use ExpiryDateUtc instead.", false)]
         public DateTime ExpiryDate
         {
             get { return this.expiryDate; }
             set { this.expiryDate = value; }
-        }
-
-        /// <summary>
-        /// The date and time for expiry.
-        /// </summary>
-        public DateTime ExpiryDateUtc
-        {
-            get { return this.expiryDateUtc; }
-            set { this.expiryDateUtc = value; }
         }
 
         /// <summary>
@@ -94,13 +82,19 @@ namespace Amazon.S3.Model
             if (string.IsNullOrEmpty(headerValue))
                 throw new ArgumentNullException("headerValue");
 
+            // S3 Express may return a not implemented value instead of the format we're expecting.
+            // We'll return without populating the rule ID and expiry date instead of trying to parse the header.
+            if (headerValue.Equals("NotImplemented", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
             var expiryMatches = ExpiryRegex().Match(headerValue);
             if (!expiryMatches.Success || !expiryMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Expiry Date match");
             string expiryDateValue = expiryMatches.Groups[1].Value;
-            this.expiryDateUtc = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
-            this.expiryDate = new DateTime(this.expiryDateUtc.Ticks, DateTimeKind.Unspecified);
-
+            this.expiryDate = DateTime.ParseExact(expiryDateValue, Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
+            
             var ruleMatches = RuleRegex().Match(headerValue);
             if (!ruleMatches.Success || !ruleMatches.Groups[1].Success)
                 throw new InvalidOperationException("No Rule Id match");

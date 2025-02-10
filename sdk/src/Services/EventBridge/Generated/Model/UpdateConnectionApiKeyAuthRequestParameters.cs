@@ -59,7 +59,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ApiKeyValue. 
         /// <para>
-        /// The value associated with teh API key to use for authorization.
+        /// The value associated with the API key to use for authorization.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=512)]

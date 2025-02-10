@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IdentityDkimAttributes Object
     /// </summary>  
-    public class IdentityDkimAttributesUnmarshaller : IUnmarshaller<IdentityDkimAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityDkimAttributes, JsonUnmarshallerContext>
+    public class IdentityDkimAttributesUnmarshaller : IXmlUnmarshaller<IdentityDkimAttributes, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IdentityDkimAttributes Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IdentityDkimAttributesUnmarshaller _instance = new IdentityDkimAttributesUnmarshaller();        
 

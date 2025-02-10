@@ -33,6 +33,14 @@ namespace Amazon.Cloud9.Model
     /// Container for the parameters to the CreateEnvironmentEC2 operation.
     /// Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud
     /// (Amazon EC2) instance, and then connects from the instance to the environment.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue
+    /// to use the service as normal. <a href="http://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/">Learn
+    /// more"</a> 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateEnvironmentEC2Request : AmazonCloud9Request
     {
@@ -164,18 +172,17 @@ namespace Amazon.Cloud9.Model
         /// To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon
         /// EC2 Systems Manager (SSM) path.
         /// </para>
-        ///  
+        ///   
         /// <para>
-        /// From December 04, 2023, you will be required to include the <c>imageId</c> parameter
-        /// for the <c>CreateEnvironmentEC2</c> action. This change will be reflected across all
-        /// direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon
-        /// Web Services CLI and Amazon Web Services CloudFormation. This change will only affect
-        /// direct API consumers, and not Cloud9 console users.
+        /// We recommend using Amazon Linux 2023 as the AMI to create your environment as it is
+        /// fully supported.
         /// </para>
         ///  
         /// <para>
-        /// We recommend using Amazon Linux 2023 as the AMI to create your environment as it is
-        /// fully supported. 
+        /// From December 16, 2024, Ubuntu 18.04 will be removed from the list of available <c>imageIds</c>
+        /// for Cloud9. This change is necessary as Ubuntu 18.04 has ended standard support on
+        /// May 31, 2023. This change will only affect direct API consumers, and not Cloud9 console
+        /// users.
         /// </para>
         ///  
         /// <para>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmis())
             {
                 context.Writer.WritePropertyName("amis");
-                context.Writer.Write(requestObject.Amis.Value);
+                context.Writer.WriteBooleanValue(requestObject.Amis.Value);
             }
 
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("containers");
-                context.Writer.Write(requestObject.Containers.Value);
+                context.Writer.WriteBooleanValue(requestObject.Containers.Value);
             }
 
             if(requestObject.IsSetSnapshots())
             {
                 context.Writer.WritePropertyName("snapshots");
-                context.Writer.Write(requestObject.Snapshots.Value);
+                context.Writer.WriteBooleanValue(requestObject.Snapshots.Value);
             }
 
         }

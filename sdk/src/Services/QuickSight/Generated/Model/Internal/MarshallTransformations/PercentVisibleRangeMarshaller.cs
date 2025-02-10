@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("From");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.From.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.From.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.From.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.From.Value);
+                    context.Writer.WriteNumberValue(requestObject.From.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("To");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.To.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.To.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.To.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.To.Value);
+                    context.Writer.WriteNumberValue(requestObject.To.Value);
                 }
             }
 

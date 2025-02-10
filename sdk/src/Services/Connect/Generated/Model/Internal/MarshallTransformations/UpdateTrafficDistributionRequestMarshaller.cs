@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -64,52 +67,57 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/traffic-distribution/{Id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAgentConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAgentConfig())
-                    {
-                        context.Writer.WritePropertyName("AgentConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AgentConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AgentConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AgentConfig, context);
+                var marshaller = AgentConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AgentConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSignInConfig())
-                    {
-                        context.Writer.WritePropertyName("SignInConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SignInConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SignInConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTelephonyConfig())
-                    {
-                        context.Writer.WritePropertyName("TelephonyConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TelephonyConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TelephonyConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetSignInConfig())
+            {
+                context.Writer.WritePropertyName("SignInConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SignInConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SignInConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTelephonyConfig())
+            {
+                context.Writer.WritePropertyName("TelephonyConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TelephonyConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TelephonyConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

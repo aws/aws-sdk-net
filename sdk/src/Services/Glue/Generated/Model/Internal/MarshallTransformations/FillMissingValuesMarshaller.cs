@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilledPath())
             {
                 context.Writer.WritePropertyName("FilledPath");
-                context.Writer.Write(requestObject.FilledPath);
+                context.Writer.WriteStringValue(requestObject.FilledPath);
             }
 
             if(requestObject.IsSetImputedPath())
             {
                 context.Writer.WritePropertyName("ImputedPath");
-                context.Writer.Write(requestObject.ImputedPath);
+                context.Writer.WriteStringValue(requestObject.ImputedPath);
             }
 
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                        context.Writer.Write(requestObjectInputsListValue);
+                        context.Writer.WriteStringValue(requestObjectInputsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

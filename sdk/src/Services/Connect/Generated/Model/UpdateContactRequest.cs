@@ -48,10 +48,15 @@ namespace Amazon.Connect.Model
     public partial class UpdateContactRequest : AmazonConnectRequest
     {
         private string _contactId;
+        private Endpoint _customerEndpoint;
         private string _description;
         private string _instanceId;
         private string _name;
+        private QueueInfoInput _queueInfo;
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
+        private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
+        private Endpoint _systemEndpoint;
+        private UserInfo _userInfo;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -71,6 +76,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetContactId()
         {
             return this._contactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerEndpoint. 
+        /// <para>
+        /// The endpoint of the customer for which the contact was initiated. For external audio
+        /// contacts, this is usually the end customer's phone number. This value can only be
+        /// updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+        /// Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public Endpoint CustomerEndpoint
+        {
+            get { return this._customerEndpoint; }
+            set { this._customerEndpoint = value; }
+        }
+
+        // Check to see if CustomerEndpoint property is set
+        internal bool IsSetCustomerEndpoint()
+        {
+            return this._customerEndpoint != null;
         }
 
         /// <summary>
@@ -118,7 +144,7 @@ namespace Amazon.Connect.Model
         /// The name of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -129,6 +155,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueueInfo. 
+        /// <para>
+        ///  Information about the queue associated with a contact. This parameter can only be
+        /// updated for external audio contacts. It is used when you integrate third-party systems
+        /// with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+        /// Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public QueueInfoInput QueueInfo
+        {
+            get { return this._queueInfo; }
+            set { this._queueInfo = value; }
+        }
+
+        // Check to see if QueueInfo property is set
+        internal bool IsSetQueueInfo()
+        {
+            return this._queueInfo != null;
         }
 
         /// <summary>
@@ -147,6 +194,81 @@ namespace Amazon.Connect.Model
         internal bool IsSetReferences()
         {
             return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// A set of system defined key-value pairs stored on individual contact segments (unique
+        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// They can be accessed in flows.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute keys can include only alphanumeric, -, and _.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field can be used to show channel subtype, such as <c>connect:Guide</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently Contact Expiry is the only segment attribute which can be updated by using
+        /// the UpdateContact API.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SystemEndpoint. 
+        /// <para>
+        /// External system endpoint for the contact was initiated. For external audio contacts,
+        /// this is the phone number of the external system such as the contact center. This value
+        /// can only be updated for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+        /// Connect Contact Lens integration</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public Endpoint SystemEndpoint
+        {
+            get { return this._systemEndpoint; }
+            set { this._systemEndpoint = value; }
+        }
+
+        // Check to see if SystemEndpoint property is set
+        internal bool IsSetSystemEndpoint()
+        {
+            return this._systemEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserInfo. 
+        /// <para>
+        /// Information about the agent associated with a contact. This parameter can only be
+        /// updated for external audio contacts. It is used when you integrate third-party systems
+        /// with Contact Lens for analytics. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Amazon
+        /// Connect Contact Lens integration</a> in the <i> Amazon Connect Administrator Guide</i>.
+        /// </para>
+        /// </summary>
+        public UserInfo UserInfo
+        {
+            get { return this._userInfo; }
+            set { this._userInfo = value; }
+        }
+
+        // Check to see if UserInfo property is set
+        internal bool IsSetUserInfo()
+        {
+            return this._userInfo != null;
         }
 
     }

@@ -180,9 +180,9 @@ namespace Amazon.DNXCore.IntegrationTests
             Assert.NotNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
 
             GetHealthCheckStatusResponse status = null;
-            var stopTime = DateTime.Now + maxWaitTime;
+            var stopTime = DateTime.UtcNow + maxWaitTime;
 
-            while (DateTime.Now < stopTime)
+            while (DateTime.UtcNow < stopTime)
             {
                 try
                 {
@@ -269,7 +269,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 var sets = await Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest());
                 var setCount = sets.DelegationSets.Count;
 
-                var callerReference = "DNSMigration" + DateTime.Now.ToFileTime();
+                var callerReference = "DNSMigration" + DateTime.UtcNow.ToFileTime();
                 var createResponse = await Client.CreateReusableDelegationSetAsync(new CreateReusableDelegationSetRequest
                 {
                     CallerReference = callerReference
@@ -312,7 +312,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 Assert.Single(hostedZones);
 
                 // add a second set
-                callerReference = "DNSMigration" + DateTime.Now.ToFileTime();
+                callerReference = "DNSMigration" + DateTime.UtcNow.ToFileTime();
                 createResponse = await Client.CreateReusableDelegationSetAsync(new CreateReusableDelegationSetRequest
                 {
                     CallerReference = callerReference

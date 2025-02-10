@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoricalDimensionField())
             {
                 context.Writer.WritePropertyName("CategoricalDimensionField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CategoricalDimensionFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.CategoricalDimensionField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDateDimensionField())
             {
                 context.Writer.WritePropertyName("DateDimensionField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateDimensionFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateDimensionField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumericalDimensionField())
             {
                 context.Writer.WritePropertyName("NumericalDimensionField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericalDimensionFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericalDimensionField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

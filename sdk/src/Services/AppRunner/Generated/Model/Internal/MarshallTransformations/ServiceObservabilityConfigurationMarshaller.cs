@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObservabilityConfigurationArn())
             {
                 context.Writer.WritePropertyName("ObservabilityConfigurationArn");
-                context.Writer.Write(requestObject.ObservabilityConfigurationArn);
+                context.Writer.WriteStringValue(requestObject.ObservabilityConfigurationArn);
             }
 
             if(requestObject.IsSetObservabilityEnabled())
             {
                 context.Writer.WritePropertyName("ObservabilityEnabled");
-                context.Writer.Write(requestObject.ObservabilityEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ObservabilityEnabled.Value);
             }
 
         }

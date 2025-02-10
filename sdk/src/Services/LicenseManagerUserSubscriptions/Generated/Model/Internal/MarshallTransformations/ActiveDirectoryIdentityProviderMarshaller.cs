@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
@@ -48,10 +46,27 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActiveDirectorySettings())
+            {
+                context.Writer.WritePropertyName("ActiveDirectorySettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ActiveDirectorySettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ActiveDirectorySettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetActiveDirectoryType())
+            {
+                context.Writer.WritePropertyName("ActiveDirectoryType");
+                context.Writer.WriteStringValue(requestObject.ActiveDirectoryType);
+            }
+
             if(requestObject.IsSetDirectoryId())
             {
                 context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.Write(requestObject.DirectoryId);
+                context.Writer.WriteStringValue(requestObject.DirectoryId);
             }
 
         }

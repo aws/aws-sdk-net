@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntermediateS3Path())
             {
                 context.Writer.WritePropertyName("intermediateS3Path");
-                context.Writer.Write(requestObject.IntermediateS3Path);
+                context.Writer.WriteStringValue(requestObject.IntermediateS3Path);
             }
 
         }

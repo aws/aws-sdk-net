@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetObjectives())
             {
                 context.Writer.WritePropertyName("Objectives");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectObjectivesListValue in requestObject.Objectives)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ObjectiveResourceFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectObjectivesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

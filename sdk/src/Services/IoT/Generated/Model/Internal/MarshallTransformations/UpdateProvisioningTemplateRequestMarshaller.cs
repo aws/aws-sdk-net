@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -64,60 +67,65 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field TemplateName set");
             request.AddPathResource("{templateName}", StringUtils.FromString(publicRequest.TemplateName));
             request.ResourcePath = "/provisioning-templates/{templateName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultVersionId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultVersionId())
-                    {
-                        context.Writer.WritePropertyName("defaultVersionId");
-                        context.Writer.Write(publicRequest.DefaultVersionId.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetPreProvisioningHook())
-                    {
-                        context.Writer.WritePropertyName("preProvisioningHook");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ProvisioningHookMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PreProvisioningHook, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetProvisioningRoleArn())
-                    {
-                        context.Writer.WritePropertyName("provisioningRoleArn");
-                        context.Writer.Write(publicRequest.ProvisioningRoleArn);
-                    }
-
-                    if(publicRequest.IsSetRemovePreProvisioningHook())
-                    {
-                        context.Writer.WritePropertyName("removePreProvisioningHook");
-                        context.Writer.Write(publicRequest.RemovePreProvisioningHook.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("defaultVersionId");
+                context.Writer.WriteNumberValue(publicRequest.DefaultVersionId.Value);
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
+            }
+
+            if(publicRequest.IsSetPreProvisioningHook())
+            {
+                context.Writer.WritePropertyName("preProvisioningHook");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProvisioningHookMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PreProvisioningHook, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProvisioningRoleArn())
+            {
+                context.Writer.WritePropertyName("provisioningRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ProvisioningRoleArn);
+            }
+
+            if(publicRequest.IsSetRemovePreProvisioningHook())
+            {
+                context.Writer.WritePropertyName("removePreProvisioningHook");
+                context.Writer.WriteBooleanValue(publicRequest.RemovePreProvisioningHook.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

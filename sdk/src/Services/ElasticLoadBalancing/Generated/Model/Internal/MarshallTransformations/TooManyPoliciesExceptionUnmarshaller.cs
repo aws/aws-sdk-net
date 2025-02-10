@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyPoliciesException operation
     /// </summary>  
-    public class TooManyPoliciesExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyPoliciesException, XmlUnmarshallerContext>
+    public class TooManyPoliciesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyPoliciesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

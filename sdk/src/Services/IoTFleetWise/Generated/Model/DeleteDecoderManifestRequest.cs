@@ -32,14 +32,7 @@ namespace Amazon.IoTFleetWise.Model
     /// <summary>
     /// Container for the parameters to the DeleteDecoderManifest operation.
     /// Deletes a decoder manifest. You can't delete a decoder manifest if it has vehicles
-    /// associated with it. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If the decoder manifest is successfully deleted, Amazon Web Services IoT FleetWise
-    /// sends back an HTTP 200 response with an empty body.
-    /// </para>
-    ///  </note>
+    /// associated with it.
     /// </summary>
     public partial class DeleteDecoderManifestRequest : AmazonIoTFleetWiseRequest
     {

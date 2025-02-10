@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("knowledgeBaseId");
-                context.Writer.Write(requestObject.KnowledgeBaseId);
+                context.Writer.WriteStringValue(requestObject.KnowledgeBaseId);
             }
 
             if(requestObject.IsSetRetrievalConfiguration())
             {
                 context.Writer.WritePropertyName("retrievalConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KnowledgeBaseRetrievalConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetrievalConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

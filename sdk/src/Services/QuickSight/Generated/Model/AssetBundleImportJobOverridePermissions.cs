@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private List<AssetBundleImportJobDashboardOverridePermissions> _dashboards = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDashboardOverridePermissions>() : null;
         private List<AssetBundleImportJobDataSetOverridePermissions> _dataSets = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSetOverridePermissions>() : null;
         private List<AssetBundleImportJobDataSourceOverridePermissions> _dataSources = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSourceOverridePermissions>() : null;
+        private List<AssetBundleImportJobFolderOverridePermissions> _folders = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobFolderOverridePermissions>() : null;
         private List<AssetBundleImportJobThemeOverridePermissions> _themes = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobThemeOverridePermissions>() : null;
 
         /// <summary>
@@ -119,6 +120,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Folders. 
+        /// <para>
+        /// A list of permissions for the folders that you want to apply overrides to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<AssetBundleImportJobFolderOverridePermissions> Folders
+        {
+            get { return this._folders; }
+            set { this._folders = value; }
+        }
+
+        // Check to see if Folders property is set
+        internal bool IsSetFolders()
+        {
+            return this._folders != null && (this._folders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

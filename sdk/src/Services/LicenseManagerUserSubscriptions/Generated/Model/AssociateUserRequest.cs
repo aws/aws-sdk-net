@@ -47,12 +47,14 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _domain;
         private IdentityProvider _identityProvider;
         private string _instanceId;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _username;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the user.
+        /// The domain name of the Active Directory that contains information for the user to
+        /// associate.
         /// </para>
         /// </summary>
         public string Domain
@@ -70,7 +72,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// The identity provider of the user.
+        /// The identity provider for the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +91,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the EC2 instance, which provides user-based subscriptions.
+        /// The ID of the EC2 instance that provides the user-based subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -106,9 +108,28 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that apply for the user association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name from the identity provider for the user.
+        /// The user name from the identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

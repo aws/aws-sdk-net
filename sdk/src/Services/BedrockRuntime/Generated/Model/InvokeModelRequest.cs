@@ -44,6 +44,22 @@ namespace Amazon.BedrockRuntime.Model
     /// <para>
     /// This operation requires permission for the <c>bedrock:InvokeModel</c> action.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// To deny all inference access to resources that you specify in the modelId field, you
+    /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+    /// actions. Doing this also denies access to the resource through the Converse API actions
+    /// (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a>
+    /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>).
+    /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+    /// access for inference on specific models</a>. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For troubleshooting some of the common errors you might encounter when using the <c>InvokeModel</c>
+    /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+    /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+    /// </para>
     /// </summary>
     public partial class InvokeModelRequest : AmazonBedrockRuntimeRequest
     {
@@ -53,6 +69,7 @@ namespace Amazon.BedrockRuntime.Model
         private string _guardrailIdentifier;
         private string _guardrailVersion;
         private string _modelId;
+        private PerformanceConfigLatency _performanceConfigLatency;
         private Trace _trace;
 
         /// <summary>
@@ -84,7 +101,7 @@ namespace Amazon.BedrockRuntime.Model
         /// inference</a> in the Bedrock User Guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=25000000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=25000000)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -178,13 +195,20 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// The <c>modelId</c> to provide depends on the type of model that you use:
+        /// The <c>modelId</c> to provide depends on the type of model or throughput that you
+        /// use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If you use a base model, specify the model ID or its ARN. For a list of model IDs
         /// for base models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">Amazon
         /// Bedrock base model IDs (on-demand throughput)</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use an inference profile, specify the inference profile ID or its ARN. For
+        /// a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported
+        /// Regions and models for cross-region inference</a> in the Amazon Bedrock User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -218,6 +242,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetModelId()
         {
             return this._modelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfigLatency. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public PerformanceConfigLatency PerformanceConfigLatency
+        {
+            get { return this._performanceConfigLatency; }
+            set { this._performanceConfigLatency = value; }
+        }
+
+        // Check to see if PerformanceConfigLatency property is set
+        internal bool IsSetPerformanceConfigLatency()
+        {
+            return !string.IsNullOrEmpty(this._performanceConfigLatency);
         }
 
         /// <summary>

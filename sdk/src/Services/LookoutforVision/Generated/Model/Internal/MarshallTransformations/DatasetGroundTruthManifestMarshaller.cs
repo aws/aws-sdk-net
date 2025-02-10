@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3Object())
             {
                 context.Writer.WritePropertyName("S3Object");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputS3ObjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Object, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

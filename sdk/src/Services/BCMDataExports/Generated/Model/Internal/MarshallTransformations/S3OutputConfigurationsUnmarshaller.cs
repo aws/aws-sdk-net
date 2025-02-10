@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for S3OutputConfigurations Object
     /// </summary>  
-    public class S3OutputConfigurationsUnmarshaller : IUnmarshaller<S3OutputConfigurations, XmlUnmarshallerContext>, IUnmarshaller<S3OutputConfigurations, JsonUnmarshallerContext>
+    public class S3OutputConfigurationsUnmarshaller : IJsonUnmarshaller<S3OutputConfigurations, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        S3OutputConfigurations IUnmarshaller<S3OutputConfigurations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3OutputConfigurations Unmarshall(JsonUnmarshallerContext context)
+        public S3OutputConfigurations Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             S3OutputConfigurations unmarshalledObject = new S3OutputConfigurations();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Compression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Compression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Compression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Overwrite", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Overwrite = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Overwrite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

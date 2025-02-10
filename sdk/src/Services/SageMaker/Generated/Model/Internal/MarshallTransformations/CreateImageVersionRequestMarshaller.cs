@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,95 +66,100 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAliases())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Aliases");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAliasesListValue in publicRequest.Aliases)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAliases())
-                    {
-                        context.Writer.WritePropertyName("Aliases");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAliasesListValue in publicRequest.Aliases)
-                        {
-                                context.Writer.Write(publicRequestAliasesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetBaseImage())
-                    {
-                        context.Writer.WritePropertyName("BaseImage");
-                        context.Writer.Write(publicRequest.BaseImage);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetHorovod())
-                    {
-                        context.Writer.WritePropertyName("Horovod");
-                        context.Writer.Write(publicRequest.Horovod.Value);
-                    }
-
-                    if(publicRequest.IsSetImageName())
-                    {
-                        context.Writer.WritePropertyName("ImageName");
-                        context.Writer.Write(publicRequest.ImageName);
-                    }
-
-                    if(publicRequest.IsSetJobType())
-                    {
-                        context.Writer.WritePropertyName("JobType");
-                        context.Writer.Write(publicRequest.JobType);
-                    }
-
-                    if(publicRequest.IsSetMLFramework())
-                    {
-                        context.Writer.WritePropertyName("MLFramework");
-                        context.Writer.Write(publicRequest.MLFramework);
-                    }
-
-                    if(publicRequest.IsSetProcessor())
-                    {
-                        context.Writer.WritePropertyName("Processor");
-                        context.Writer.Write(publicRequest.Processor);
-                    }
-
-                    if(publicRequest.IsSetProgrammingLang())
-                    {
-                        context.Writer.WritePropertyName("ProgrammingLang");
-                        context.Writer.Write(publicRequest.ProgrammingLang);
-                    }
-
-                    if(publicRequest.IsSetReleaseNotes())
-                    {
-                        context.Writer.WritePropertyName("ReleaseNotes");
-                        context.Writer.Write(publicRequest.ReleaseNotes);
-                    }
-
-                    if(publicRequest.IsSetVendorGuidance())
-                    {
-                        context.Writer.WritePropertyName("VendorGuidance");
-                        context.Writer.Write(publicRequest.VendorGuidance);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAliasesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetBaseImage())
+            {
+                context.Writer.WritePropertyName("BaseImage");
+                context.Writer.WriteStringValue(publicRequest.BaseImage);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetHorovod())
+            {
+                context.Writer.WritePropertyName("Horovod");
+                context.Writer.WriteBooleanValue(publicRequest.Horovod.Value);
+            }
+
+            if(publicRequest.IsSetImageName())
+            {
+                context.Writer.WritePropertyName("ImageName");
+                context.Writer.WriteStringValue(publicRequest.ImageName);
+            }
+
+            if(publicRequest.IsSetJobType())
+            {
+                context.Writer.WritePropertyName("JobType");
+                context.Writer.WriteStringValue(publicRequest.JobType);
+            }
+
+            if(publicRequest.IsSetMLFramework())
+            {
+                context.Writer.WritePropertyName("MLFramework");
+                context.Writer.WriteStringValue(publicRequest.MLFramework);
+            }
+
+            if(publicRequest.IsSetProcessor())
+            {
+                context.Writer.WritePropertyName("Processor");
+                context.Writer.WriteStringValue(publicRequest.Processor);
+            }
+
+            if(publicRequest.IsSetProgrammingLang())
+            {
+                context.Writer.WritePropertyName("ProgrammingLang");
+                context.Writer.WriteStringValue(publicRequest.ProgrammingLang);
+            }
+
+            if(publicRequest.IsSetReleaseNotes())
+            {
+                context.Writer.WritePropertyName("ReleaseNotes");
+                context.Writer.WriteStringValue(publicRequest.ReleaseNotes);
+            }
+
+            if(publicRequest.IsSetVendorGuidance())
+            {
+                context.Writer.WritePropertyName("VendorGuidance");
+                context.Writer.WriteStringValue(publicRequest.VendorGuidance);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

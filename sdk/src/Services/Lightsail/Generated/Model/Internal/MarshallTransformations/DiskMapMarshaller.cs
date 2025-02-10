@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNewDiskName())
             {
                 context.Writer.WritePropertyName("newDiskName");
-                context.Writer.Write(requestObject.NewDiskName);
+                context.Writer.WriteStringValue(requestObject.NewDiskName);
             }
 
             if(requestObject.IsSetOriginalDiskPath())
             {
                 context.Writer.WritePropertyName("originalDiskPath");
-                context.Writer.Write(requestObject.OriginalDiskPath);
+                context.Writer.WriteStringValue(requestObject.OriginalDiskPath);
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DimensionField Object
     /// </summary>  
-    public class DimensionFieldUnmarshaller : IUnmarshaller<DimensionField, XmlUnmarshallerContext>, IUnmarshaller<DimensionField, JsonUnmarshallerContext>
+    public class DimensionFieldUnmarshaller : IJsonUnmarshaller<DimensionField, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DimensionField IUnmarshaller<DimensionField, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DimensionField Unmarshall(JsonUnmarshallerContext context)
+        public DimensionField Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DimensionField unmarshalledObject = new DimensionField();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoricalDimensionField", targetDepth))
                 {
                     var unmarshaller = CategoricalDimensionFieldUnmarshaller.Instance;
-                    unmarshalledObject.CategoricalDimensionField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoricalDimensionField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DateDimensionField", targetDepth))
                 {
                     var unmarshaller = DateDimensionFieldUnmarshaller.Instance;
-                    unmarshalledObject.DateDimensionField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateDimensionField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumericalDimensionField", targetDepth))
                 {
                     var unmarshaller = NumericalDimensionFieldUnmarshaller.Instance;
-                    unmarshalledObject.NumericalDimensionField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumericalDimensionField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

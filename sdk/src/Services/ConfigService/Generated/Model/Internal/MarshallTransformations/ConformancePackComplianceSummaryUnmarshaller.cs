@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConformancePackComplianceSummary Object
     /// </summary>  
-    public class ConformancePackComplianceSummaryUnmarshaller : IUnmarshaller<ConformancePackComplianceSummary, XmlUnmarshallerContext>, IUnmarshaller<ConformancePackComplianceSummary, JsonUnmarshallerContext>
+    public class ConformancePackComplianceSummaryUnmarshaller : IJsonUnmarshaller<ConformancePackComplianceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConformancePackComplianceSummary IUnmarshaller<ConformancePackComplianceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConformancePackComplianceSummary Unmarshall(JsonUnmarshallerContext context)
+        public ConformancePackComplianceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConformancePackComplianceSummary unmarshalledObject = new ConformancePackComplianceSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConformancePackComplianceStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConformancePackComplianceStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConformancePackComplianceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConformancePackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConformancePackName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConformancePackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerOverrides())
             {
                 context.Writer.WritePropertyName("ContainerOverrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerOverridesListValue in requestObject.ContainerOverrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EcsContainerOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainerOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("Cpu");
-                context.Writer.Write(requestObject.Cpu);
+                context.Writer.WriteStringValue(requestObject.Cpu);
             }
 
             if(requestObject.IsSetEphemeralStorage())
             {
                 context.Writer.WritePropertyName("EphemeralStorage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EcsEphemeralStorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.EphemeralStorage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("ExecutionRoleArn");
-                context.Writer.Write(requestObject.ExecutionRoleArn);
+                context.Writer.WriteStringValue(requestObject.ExecutionRoleArn);
             }
 
             if(requestObject.IsSetInferenceAcceleratorOverrides())
             {
                 context.Writer.WritePropertyName("InferenceAcceleratorOverrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInferenceAcceleratorOverridesListValue in requestObject.InferenceAcceleratorOverrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EcsInferenceAcceleratorOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectInferenceAcceleratorOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("Memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.WriteStringValue(requestObject.Memory);
             }
 
             if(requestObject.IsSetTaskRoleArn())
             {
                 context.Writer.WritePropertyName("TaskRoleArn");
-                context.Writer.Write(requestObject.TaskRoleArn);
+                context.Writer.WriteStringValue(requestObject.TaskRoleArn);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSelectors())
             {
                 context.Writer.WritePropertyName("selectors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectorsListValue in requestObject.Selectors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectSelectorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

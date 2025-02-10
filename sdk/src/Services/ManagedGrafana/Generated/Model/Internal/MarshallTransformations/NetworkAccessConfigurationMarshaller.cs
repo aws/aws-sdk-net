@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrefixListIds())
             {
                 context.Writer.WritePropertyName("prefixListIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrefixListIdsListValue in requestObject.PrefixListIds)
                 {
-                        context.Writer.Write(requestObjectPrefixListIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectPrefixListIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpceIds())
             {
                 context.Writer.WritePropertyName("vpceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpceIdsListValue in requestObject.VpceIds)
                 {
-                        context.Writer.Write(requestObjectVpceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectVpceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

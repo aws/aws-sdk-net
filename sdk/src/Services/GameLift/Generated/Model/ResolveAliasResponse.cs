@@ -44,6 +44,7 @@ namespace Amazon.GameLift.Model
         /// associated with the GameLift fleet resource that this alias points to. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -62,6 +63,7 @@ namespace Amazon.GameLift.Model
         /// The fleet identifier that the alias is pointing to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }

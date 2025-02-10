@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
@@ -61,60 +64,65 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-chime-webhook-configuration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChatConfigurationArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChatConfigurationArn())
-                    {
-                        context.Writer.WritePropertyName("ChatConfigurationArn");
-                        context.Writer.Write(publicRequest.ChatConfigurationArn);
-                    }
-
-                    if(publicRequest.IsSetIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("IamRoleArn");
-                        context.Writer.Write(publicRequest.IamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetLoggingLevel())
-                    {
-                        context.Writer.WritePropertyName("LoggingLevel");
-                        context.Writer.Write(publicRequest.LoggingLevel);
-                    }
-
-                    if(publicRequest.IsSetSnsTopicArns())
-                    {
-                        context.Writer.WritePropertyName("SnsTopicArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
-                        {
-                                context.Writer.Write(publicRequestSnsTopicArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWebhookDescription())
-                    {
-                        context.Writer.WritePropertyName("WebhookDescription");
-                        context.Writer.Write(publicRequest.WebhookDescription);
-                    }
-
-                    if(publicRequest.IsSetWebhookUrl())
-                    {
-                        context.Writer.WritePropertyName("WebhookUrl");
-                        context.Writer.Write(publicRequest.WebhookUrl);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ChatConfigurationArn");
+                context.Writer.WriteStringValue(publicRequest.ChatConfigurationArn);
             }
+
+            if(publicRequest.IsSetIamRoleArn())
+            {
+                context.Writer.WritePropertyName("IamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
+            }
+
+            if(publicRequest.IsSetLoggingLevel())
+            {
+                context.Writer.WritePropertyName("LoggingLevel");
+                context.Writer.WriteStringValue(publicRequest.LoggingLevel);
+            }
+
+            if(publicRequest.IsSetSnsTopicArns())
+            {
+                context.Writer.WritePropertyName("SnsTopicArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSnsTopicArnsListValue in publicRequest.SnsTopicArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestSnsTopicArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWebhookDescription())
+            {
+                context.Writer.WritePropertyName("WebhookDescription");
+                context.Writer.WriteStringValue(publicRequest.WebhookDescription);
+            }
+
+            if(publicRequest.IsSetWebhookUrl())
+            {
+                context.Writer.WritePropertyName("WebhookUrl");
+                context.Writer.WriteStringValue(publicRequest.WebhookUrl);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

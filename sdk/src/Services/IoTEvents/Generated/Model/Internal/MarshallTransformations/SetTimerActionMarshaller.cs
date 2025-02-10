@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationExpression())
             {
                 context.Writer.WritePropertyName("durationExpression");
-                context.Writer.Write(requestObject.DurationExpression);
+                context.Writer.WriteStringValue(requestObject.DurationExpression);
             }
 
             if(requestObject.IsSetSeconds())
             {
                 context.Writer.WritePropertyName("seconds");
-                context.Writer.Write(requestObject.Seconds.Value);
+                context.Writer.WriteNumberValue(requestObject.Seconds.Value);
             }
 
             if(requestObject.IsSetTimerName())
             {
                 context.Writer.WritePropertyName("timerName");
-                context.Writer.Write(requestObject.TimerName);
+                context.Writer.WriteStringValue(requestObject.TimerName);
             }
 
         }

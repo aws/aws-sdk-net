@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileContent())
             {
                 context.Writer.WritePropertyName("fileContent");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.FileContent));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.FileContent));
             }
 
             if(requestObject.IsSetFileMode())
             {
                 context.Writer.WritePropertyName("fileMode");
-                context.Writer.Write(requestObject.FileMode);
+                context.Writer.WriteStringValue(requestObject.FileMode);
             }
 
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("filePath");
-                context.Writer.Write(requestObject.FilePath);
+                context.Writer.WriteStringValue(requestObject.FilePath);
             }
 
             if(requestObject.IsSetSourceFile())
             {
                 context.Writer.WritePropertyName("sourceFile");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceFileSpecifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceFile, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

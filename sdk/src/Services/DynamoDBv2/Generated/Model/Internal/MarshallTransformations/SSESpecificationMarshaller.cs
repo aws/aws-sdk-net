@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetKMSMasterKeyId())
             {
                 context.Writer.WritePropertyName("KMSMasterKeyId");
-                context.Writer.Write(requestObject.KMSMasterKeyId);
+                context.Writer.WriteStringValue(requestObject.KMSMasterKeyId);
             }
 
             if(requestObject.IsSetSSEType())
             {
                 context.Writer.WritePropertyName("SSEType");
-                context.Writer.Write(requestObject.SSEType);
+                context.Writer.WriteStringValue(requestObject.SSEType);
             }
 
         }

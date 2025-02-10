@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregateKeyType())
             {
                 context.Writer.WritePropertyName("AggregateKeyType");
-                context.Writer.Write(requestObject.AggregateKeyType);
+                context.Writer.WriteStringValue(requestObject.AggregateKeyType);
             }
 
             if(requestObject.IsSetCustomKeys())
             {
                 context.Writer.WritePropertyName("CustomKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomKeysListValue in requestObject.CustomKeys)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RateBasedStatementCustomKeyMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomKeysListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEvaluationWindowSec())
             {
                 context.Writer.WritePropertyName("EvaluationWindowSec");
-                context.Writer.Write(requestObject.EvaluationWindowSec.Value);
+                context.Writer.WriteNumberValue(requestObject.EvaluationWindowSec.Value);
             }
 
             if(requestObject.IsSetForwardedIPConfig())
             {
                 context.Writer.WritePropertyName("ForwardedIPConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ForwardedIPConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ForwardedIPConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");
-                context.Writer.Write(requestObject.Limit.Value);
+                context.Writer.WriteNumberValue(requestObject.Limit.Value);
             }
 
             if(requestObject.IsSetScopeDownStatement())
             {
                 context.Writer.WritePropertyName("ScopeDownStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScopeDownStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

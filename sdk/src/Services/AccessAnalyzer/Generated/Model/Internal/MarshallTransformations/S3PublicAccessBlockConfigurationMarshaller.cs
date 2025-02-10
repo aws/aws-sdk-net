@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIgnorePublicAcls())
             {
                 context.Writer.WritePropertyName("ignorePublicAcls");
-                context.Writer.Write(requestObject.IgnorePublicAcls.Value);
+                context.Writer.WriteBooleanValue(requestObject.IgnorePublicAcls.Value);
             }
 
             if(requestObject.IsSetRestrictPublicBuckets())
             {
                 context.Writer.WritePropertyName("restrictPublicBuckets");
-                context.Writer.Write(requestObject.RestrictPublicBuckets.Value);
+                context.Writer.WriteBooleanValue(requestObject.RestrictPublicBuckets.Value);
             }
 
         }

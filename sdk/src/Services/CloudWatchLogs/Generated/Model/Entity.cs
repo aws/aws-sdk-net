@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Reserved for internal use.
+    /// The entity associated with the log events in a <c>PutLogEvents</c> call.
     /// </summary>
     public partial class Entity
     {
@@ -40,7 +40,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Reserved for internal use.
+        /// Additional attributes of the entity that are not used to specify the identity of the
+        /// entity. A list of key-value pairs.
+        /// </para>
+        ///  
+        /// <para>
+        /// For details about how to use the attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
+        /// to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -59,10 +65,21 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property KeyAttributes. 
         /// <para>
-        /// Reserved for internal use.
+        /// The attributes of the entity which identify the specific entity, as a list of key-value
+        /// pairs. Entities with the same <c>keyAttributes</c> are considered to be the same entity.
+        /// </para>
+        ///  
+        /// <para>
+        /// There are five allowed attributes (key names): <c>Type</c>, <c>ResourceType</c>, <c>Identifier</c>
+        /// <c>Name</c>, and <c>Environment</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For details about how to use the key attributes, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/adding-your-own-related-telemetry.html">How
+        /// to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Min=2, Max=4)]
         public Dictionary<string, string> KeyAttributes
         {
             get { return this._keyAttributes; }

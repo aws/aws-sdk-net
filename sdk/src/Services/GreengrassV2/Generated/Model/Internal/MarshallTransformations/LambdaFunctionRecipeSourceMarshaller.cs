@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentDependencies())
             {
                 context.Writer.WritePropertyName("componentDependencies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectComponentDependenciesKvp in requestObject.ComponentDependencies)
                 {
                     context.Writer.WritePropertyName(requestObjectComponentDependenciesKvp.Key);
                     var requestObjectComponentDependenciesValue = requestObjectComponentDependenciesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentDependencyRequirementMarshaller.Instance;
                     marshaller.Marshall(requestObjectComponentDependenciesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComponentLambdaParameters())
             {
                 context.Writer.WritePropertyName("componentLambdaParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaExecutionParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComponentLambdaParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");
-                context.Writer.Write(requestObject.ComponentName);
+                context.Writer.WriteStringValue(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetComponentPlatforms())
             {
                 context.Writer.WritePropertyName("componentPlatforms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComponentPlatformsListValue in requestObject.ComponentPlatforms)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentPlatformMarshaller.Instance;
                     marshaller.Marshall(requestObjectComponentPlatformsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComponentVersion())
             {
                 context.Writer.WritePropertyName("componentVersion");
-                context.Writer.Write(requestObject.ComponentVersion);
+                context.Writer.WriteStringValue(requestObject.ComponentVersion);
             }
 
             if(requestObject.IsSetLambdaArn())
             {
                 context.Writer.WritePropertyName("lambdaArn");
-                context.Writer.Write(requestObject.LambdaArn);
+                context.Writer.WriteStringValue(requestObject.LambdaArn);
             }
 
         }

@@ -107,8 +107,8 @@ namespace Amazon.CloudFormation.Model
         /// The capabilities that are allowed in the stack set. Some stack set templates might
         /// include resources that can affect permissions in your Amazon Web Services account—for
         /// example, by creating new Identity and Access Management (IAM) users. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
-        /// IAM Resources in CloudFormation Templates.</a> 
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities">Acknowledging
+        /// IAM resources in CloudFormation templates</a>.
         /// </para>
         /// </summary>
         public List<string> Capabilities

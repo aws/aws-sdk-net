@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectorProfileName())
             {
                 context.Writer.WritePropertyName("ConnectorProfileName");
-                context.Writer.Write(requestObject.ConnectorProfileName);
+                context.Writer.WriteStringValue(requestObject.ConnectorProfileName);
             }
 
             if(requestObject.IsSetConnectorType())
             {
                 context.Writer.WritePropertyName("ConnectorType");
-                context.Writer.Write(requestObject.ConnectorType);
+                context.Writer.WriteStringValue(requestObject.ConnectorType);
             }
 
             if(requestObject.IsSetIncrementalPullConfig())
             {
                 context.Writer.WritePropertyName("IncrementalPullConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IncrementalPullConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.IncrementalPullConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceConnectorProperties())
             {
                 context.Writer.WritePropertyName("SourceConnectorProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceConnectorPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceConnectorProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

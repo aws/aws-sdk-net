@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoadBalancer Object
     /// </summary>  
-    public class LoadBalancerUnmarshaller : IUnmarshaller<LoadBalancer, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancer, JsonUnmarshallerContext>
+    public class LoadBalancerUnmarshaller : IXmlUnmarshaller<LoadBalancer, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,6 +88,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DNSName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EnablePrefixForIpv6SourceNat", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EnablePrefixForIpv6SourceNat = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic", targetDepth))
@@ -158,17 +164,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LoadBalancer Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LoadBalancerUnmarshaller _instance = new LoadBalancerUnmarshaller();        
 

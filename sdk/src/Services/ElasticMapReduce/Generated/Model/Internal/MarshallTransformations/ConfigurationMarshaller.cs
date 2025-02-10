@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClassification())
             {
                 context.Writer.WritePropertyName("Classification");
-                context.Writer.Write(requestObject.Classification);
+                context.Writer.WriteStringValue(requestObject.Classification);
             }
 
             if(requestObject.IsSetConfigurations())
             {
                 context.Writer.WritePropertyName("Configurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("Properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPropertiesKvp in requestObject.Properties)
                 {
                     context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
                     var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

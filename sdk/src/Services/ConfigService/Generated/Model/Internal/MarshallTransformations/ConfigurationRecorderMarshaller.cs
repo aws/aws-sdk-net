@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -48,38 +46,56 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetArn())
+            {
+                context.Writer.WritePropertyName("arn");
+                context.Writer.WriteStringValue(requestObject.Arn);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRecordingGroup())
             {
                 context.Writer.WritePropertyName("recordingGroup");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordingGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordingGroup, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecordingMode())
             {
                 context.Writer.WritePropertyName("recordingMode");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordingModeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordingMode, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRecordingScope())
+            {
+                context.Writer.WritePropertyName("recordingScope");
+                context.Writer.WriteStringValue(requestObject.RecordingScope);
             }
 
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("roleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WriteStringValue(requestObject.RoleARN);
+            }
+
+            if(requestObject.IsSetServicePrincipal())
+            {
+                context.Writer.WritePropertyName("servicePrincipal");
+                context.Writer.WriteStringValue(requestObject.ServicePrincipal);
             }
 
         }

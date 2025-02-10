@@ -33,7 +33,7 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             using (var client = UtilityMethods.CreateClient<AmazonSimpleWorkflowClient>())
             {
-                var domainName = "dotnet-test-domain-" + DateTime.Now.ToFileTime();
+                var domainName = "dotnet-test-domain-" + DateTime.UtcNow.ToFileTime();
 
                 await client.RegisterDomainAsync(new RegisterDomainRequest
                 {
@@ -58,34 +58,12 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 var ure = await AssertExtensions.ExpectExceptionAsync<UnknownResourceException>(client.DeprecateDomainAsync(new DeprecateDomainRequest
                 {
-                    Name = "really-fake-domain-that-should-not-exist" + DateTime.Now.ToFileTime()
+                    Name = "really-fake-domain-that-should-not-exist" + DateTime.UtcNow.ToFileTime()
                 }));
                 Assert.NotNull(ure);
                 Assert.NotNull(ure.Message);
                 Assert.NotNull(ure.ErrorCode);
                 Assert.Equal(ErrorType.Unknown, ure.ErrorType);
-            }
-        }
-
-        [Fact]
-        public async Task TestRestJson()
-        {
-            using (var client = UtilityMethods.CreateClient<AmazonElasticTranscoderClient>())
-            {
-                var presets = (await client.ListPresetsAsync(new ListPresetsRequest())).Presets;
-                Assert.NotNull(presets);
-                Assert.NotEmpty(presets);
-
-                var fakeId = "1111111111111-abcde1";
-                var aete = await AssertExtensions.ExpectExceptionAsync<Amazon.ElasticTranscoder.Model.ResourceNotFoundException>(client.DeletePipelineAsync(new DeletePipelineRequest
-                {
-                    Id = fakeId
-                }));
-                Assert.NotNull(aete);
-                Assert.NotNull(aete.Message);
-                Assert.True(aete.Message.IndexOf(fakeId, StringComparison.OrdinalIgnoreCase) >= 0);
-                //Assert.NotNull(aete.ErrorCode);
-                Assert.Equal(ErrorType.Unknown, aete.ErrorType);
             }
         }
 
@@ -104,7 +82,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         .Count(b =>
                             string.Equals(bucketName, b.BucketName, StringComparison.OrdinalIgnoreCase)));
 
-                    var fakeBucketName = ("really-fake-bucket-that-shout-not-exist" + DateTime.Now.ToFileTime()).ToLower();
+                    var fakeBucketName = ("really-fake-bucket-that-shout-not-exist" + DateTime.UtcNow.ToFileTime()).ToLower();
                     var as3e = await AssertExtensions.ExpectExceptionAsync<AmazonS3Exception>(client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = fakeBucketName

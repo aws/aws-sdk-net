@@ -152,6 +152,10 @@ namespace Amazon.S3.Model
         private MfaCodes mfaCodes;
         private RequestPayer requestPayer;
         private string versionId;
+        private string ifMatch;
+        private DateTime? ifMatchLastModifiedTime;
+        private long? ifMatchSize;
+
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -342,6 +346,73 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !System.String.IsNullOrEmpty(this.versionId);
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfMatch. 
+        /// <para>The <c>If-Match</c> header field makes the request method conditional on ETags. If the ETag value does not match, the operation returns
+        /// a <c>412 Precondition Failed</c> error. If the ETag matches or if the object doesn't exist, the operation will return a <c>204 Success (No Content) response</c>.</para>
+        /// <para>For more information about conditional requests, see <a href="https://docs.aws.amazon.com/https:/tools.ietf.org/html/rfc7232">RFC 7232</a>.</para>
+        /// <note>
+        /// <para>This functionality is only supported for directory buckets.</para>
+        /// </note>
+        /// </summary>
+        public string IfMatch
+        {
+            get { return this.ifMatch; }
+            set { this.ifMatch = value; }
+        }
+
+        // Check to see if IfMatch property is set
+        internal bool IsSetIfMatch()
+        {
+            return !String.IsNullOrEmpty(this.ifMatch);
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfMatchLastModifiedTime.
+        /// <para>If present, the object is deleted only if its modification times matches the provided
+        /// <c>Timestamp</c>. If the <c>Timestamp</c> values do not match, the operation
+        /// returns a <c>412 Precondition Failed</c> error. If the <c>Timestamp</c> matches
+        /// or if the object doesn’t exist, the operation returns a <c>204 Success (No Content)</c> response.</para>
+        /// <note>
+        /// <para>This functionality is only supported for directory buckets.</para>
+        /// </note>
+        /// </summary>
+        public DateTime IfMatchLastModifiedTime
+        {
+            get { return this.ifMatchLastModifiedTime.GetValueOrDefault(); }
+            set { this.ifMatchLastModifiedTime = value; }
+        }
+
+        // Check to see if IfMatchLastModifiedTime property is set
+        internal bool IsSetIfMatchLastModifiedTime()
+        {
+            return this.ifMatchLastModifiedTime.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IfMatchSize.
+        /// <para>If present, the object is deleted only if its size matches the provided size in bytes. If the <c>Size</c> value does not match, the operation returns a <c>412 Precondition Failed</c> error. If the <c>Size</c> matches or if the object doesn’t exist,
+        /// the operation returns a <c>204 Success (No Content)</c> response.</para>
+        /// <note>
+        /// <para>This functionality is only supported for directory buckets.</para>
+        /// </note>
+        /// <important>
+        /// <para>You can use the <c>If-Match</c>, <c>x-amz-if-match-last-modified-time</c> and <c>x-amz-if-match-size</c>
+        /// conditional headers in conjunction with each-other or individually.</para>
+        /// </important>
+        /// </summary>
+        public long IfMatchSize
+        {
+            get { return this.ifMatchSize.GetValueOrDefault(); }
+            set { this.ifMatchSize = value; }
+        }
+
+        // Check to see if MatchSize property is set
+        internal bool IsSetIfMatchSize()
+        {
+            return this.ifMatchSize.HasValue;
         }
     }
 }

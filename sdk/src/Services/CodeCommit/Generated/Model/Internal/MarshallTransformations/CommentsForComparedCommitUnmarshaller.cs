@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CommentsForComparedCommit Object
     /// </summary>  
-    public class CommentsForComparedCommitUnmarshaller : IUnmarshaller<CommentsForComparedCommit, XmlUnmarshallerContext>, IUnmarshaller<CommentsForComparedCommit, JsonUnmarshallerContext>
+    public class CommentsForComparedCommitUnmarshaller : IJsonUnmarshaller<CommentsForComparedCommit, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CommentsForComparedCommit IUnmarshaller<CommentsForComparedCommit, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CommentsForComparedCommit Unmarshall(JsonUnmarshallerContext context)
+        public CommentsForComparedCommit Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CommentsForComparedCommit unmarshalledObject = new CommentsForComparedCommit();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("afterBlobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AfterBlobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AfterBlobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("afterCommitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AfterCommitId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AfterCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("beforeBlobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BeforeBlobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BeforeBlobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("beforeCommitId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BeforeCommitId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BeforeCommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("comments", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Comment, CommentUnmarshaller>(CommentUnmarshaller.Instance);
-                    unmarshalledObject.Comments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Comment, CommentUnmarshaller>(CommentUnmarshaller.Instance);
+                    unmarshalledObject.Comments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = LocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repositoryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

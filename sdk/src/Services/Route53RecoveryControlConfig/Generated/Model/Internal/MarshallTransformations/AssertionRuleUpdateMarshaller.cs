@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSafetyRuleArn())
             {
                 context.Writer.WritePropertyName("SafetyRuleArn");
-                context.Writer.Write(requestObject.SafetyRuleArn);
+                context.Writer.WriteStringValue(requestObject.SafetyRuleArn);
             }
 
             if(requestObject.IsSetWaitPeriodMs())
             {
                 context.Writer.WritePropertyName("WaitPeriodMs");
-                context.Writer.Write(requestObject.WaitPeriodMs.Value);
+                context.Writer.WriteNumberValue(requestObject.WaitPeriodMs.Value);
             }
 
         }

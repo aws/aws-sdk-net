@@ -40,6 +40,7 @@ namespace Amazon.TranscribeService.Model
         private InputType _inputType;
         private DateTime? _lastUpdateTime;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoryName. 
@@ -145,6 +146,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetRules()
         {
             return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags, each in the form of a key:value pair, assigned to the specified call analytics
+        /// category.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

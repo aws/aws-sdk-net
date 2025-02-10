@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -48,21 +46,32 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMqtt5Configuration())
+            {
+                context.Writer.WritePropertyName("mqtt5Configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Mqtt5ConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mqtt5Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSearchableAttributes())
             {
                 context.Writer.WritePropertyName("searchableAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSearchableAttributesListValue in requestObject.SearchableAttributes)
                 {
-                        context.Writer.Write(requestObjectSearchableAttributesListValue);
+                        context.Writer.WriteStringValue(requestObjectSearchableAttributesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThingTypeDescription())
             {
                 context.Writer.WritePropertyName("thingTypeDescription");
-                context.Writer.Write(requestObject.ThingTypeDescription);
+                context.Writer.WriteStringValue(requestObject.ThingTypeDescription);
             }
 
         }

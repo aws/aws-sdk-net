@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VerifiedAccessEndpoint Object
     /// </summary>  
-    public class VerifiedAccessEndpointUnmarshaller : IUnmarshaller<VerifiedAccessEndpoint, XmlUnmarshallerContext>, IUnmarshaller<VerifiedAccessEndpoint, JsonUnmarshallerContext>
+    public class VerifiedAccessEndpointUnmarshaller : IXmlUnmarshaller<VerifiedAccessEndpoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -65,6 +65,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("cidrOptions", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessEndpointCidrOptionsUnmarshaller.Instance;
+                        unmarshalledObject.CidrOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("creationTime", targetDepth))
@@ -125,6 +131,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = VerifiedAccessEndpointEniOptionsUnmarshaller.Instance;
                         unmarshalledObject.NetworkInterfaceOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("rdsOptions", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessEndpointRdsOptionsUnmarshaller.Instance;
+                        unmarshalledObject.RdsOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))
@@ -188,17 +200,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VerifiedAccessEndpoint Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VerifiedAccessEndpointUnmarshaller _instance = new VerifiedAccessEndpointUnmarshaller();        
 

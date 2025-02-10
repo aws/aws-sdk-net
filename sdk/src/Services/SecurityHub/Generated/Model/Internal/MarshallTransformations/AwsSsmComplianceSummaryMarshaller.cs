@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,109 +49,109 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComplianceType())
             {
                 context.Writer.WritePropertyName("ComplianceType");
-                context.Writer.Write(requestObject.ComplianceType);
+                context.Writer.WriteStringValue(requestObject.ComplianceType);
             }
 
             if(requestObject.IsSetCompliantCriticalCount())
             {
                 context.Writer.WritePropertyName("CompliantCriticalCount");
-                context.Writer.Write(requestObject.CompliantCriticalCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CompliantCriticalCount.Value);
             }
 
             if(requestObject.IsSetCompliantHighCount())
             {
                 context.Writer.WritePropertyName("CompliantHighCount");
-                context.Writer.Write(requestObject.CompliantHighCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CompliantHighCount.Value);
             }
 
             if(requestObject.IsSetCompliantInformationalCount())
             {
                 context.Writer.WritePropertyName("CompliantInformationalCount");
-                context.Writer.Write(requestObject.CompliantInformationalCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CompliantInformationalCount.Value);
             }
 
             if(requestObject.IsSetCompliantLowCount())
             {
                 context.Writer.WritePropertyName("CompliantLowCount");
-                context.Writer.Write(requestObject.CompliantLowCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CompliantLowCount.Value);
             }
 
             if(requestObject.IsSetCompliantMediumCount())
             {
                 context.Writer.WritePropertyName("CompliantMediumCount");
-                context.Writer.Write(requestObject.CompliantMediumCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CompliantMediumCount.Value);
             }
 
             if(requestObject.IsSetCompliantUnspecifiedCount())
             {
                 context.Writer.WritePropertyName("CompliantUnspecifiedCount");
-                context.Writer.Write(requestObject.CompliantUnspecifiedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CompliantUnspecifiedCount.Value);
             }
 
             if(requestObject.IsSetExecutionType())
             {
                 context.Writer.WritePropertyName("ExecutionType");
-                context.Writer.Write(requestObject.ExecutionType);
+                context.Writer.WriteStringValue(requestObject.ExecutionType);
             }
 
             if(requestObject.IsSetNonCompliantCriticalCount())
             {
                 context.Writer.WritePropertyName("NonCompliantCriticalCount");
-                context.Writer.Write(requestObject.NonCompliantCriticalCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCompliantCriticalCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantHighCount())
             {
                 context.Writer.WritePropertyName("NonCompliantHighCount");
-                context.Writer.Write(requestObject.NonCompliantHighCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCompliantHighCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantInformationalCount())
             {
                 context.Writer.WritePropertyName("NonCompliantInformationalCount");
-                context.Writer.Write(requestObject.NonCompliantInformationalCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCompliantInformationalCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantLowCount())
             {
                 context.Writer.WritePropertyName("NonCompliantLowCount");
-                context.Writer.Write(requestObject.NonCompliantLowCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCompliantLowCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantMediumCount())
             {
                 context.Writer.WritePropertyName("NonCompliantMediumCount");
-                context.Writer.Write(requestObject.NonCompliantMediumCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCompliantMediumCount.Value);
             }
 
             if(requestObject.IsSetNonCompliantUnspecifiedCount())
             {
                 context.Writer.WritePropertyName("NonCompliantUnspecifiedCount");
-                context.Writer.Write(requestObject.NonCompliantUnspecifiedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCompliantUnspecifiedCount.Value);
             }
 
             if(requestObject.IsSetOverallSeverity())
             {
                 context.Writer.WritePropertyName("OverallSeverity");
-                context.Writer.Write(requestObject.OverallSeverity);
+                context.Writer.WriteStringValue(requestObject.OverallSeverity);
             }
 
             if(requestObject.IsSetPatchBaselineId())
             {
                 context.Writer.WritePropertyName("PatchBaselineId");
-                context.Writer.Write(requestObject.PatchBaselineId);
+                context.Writer.WriteStringValue(requestObject.PatchBaselineId);
             }
 
             if(requestObject.IsSetPatchGroup())
             {
                 context.Writer.WritePropertyName("PatchGroup");
-                context.Writer.Write(requestObject.PatchGroup);
+                context.Writer.WriteStringValue(requestObject.PatchGroup);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

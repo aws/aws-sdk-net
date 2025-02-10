@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKMSServerSideEncryption())
             {
                 context.Writer.WritePropertyName("KMSServerSideEncryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KMSServerSideEncryptionIntegrationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.KMSServerSideEncryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogsAnomalyDetection())
             {
                 context.Writer.WritePropertyName("LogsAnomalyDetection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LogsAnomalyDetectionIntegrationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogsAnomalyDetection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpsCenter())
             {
                 context.Writer.WritePropertyName("OpsCenter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpsCenterIntegrationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpsCenter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

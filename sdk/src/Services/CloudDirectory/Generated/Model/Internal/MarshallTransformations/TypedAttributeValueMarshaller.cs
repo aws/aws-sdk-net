@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBinaryValue())
             {
                 context.Writer.WritePropertyName("BinaryValue");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.BinaryValue));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BinaryValue));
             }
 
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("BooleanValue");
-                context.Writer.Write(requestObject.BooleanValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDatetimeValue())
             {
                 context.Writer.WritePropertyName("DatetimeValue");
-                context.Writer.Write(requestObject.DatetimeValue.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DatetimeValue.Value)));
             }
 
             if(requestObject.IsSetNumberValue())
             {
                 context.Writer.WritePropertyName("NumberValue");
-                context.Writer.Write(requestObject.NumberValue);
+                context.Writer.WriteStringValue(requestObject.NumberValue);
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("StringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

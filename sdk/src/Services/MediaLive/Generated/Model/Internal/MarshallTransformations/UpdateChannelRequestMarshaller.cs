@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -64,113 +67,135 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
             request.AddPathResource("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
             request.ResourcePath = "/prod/channels/{channelId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCdiInputSpecification())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCdiInputSpecification())
-                    {
-                        context.Writer.WritePropertyName("cdiInputSpecification");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("cdiInputSpecification");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CdiInputSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CdiInputSpecification, context);
+                var marshaller = CdiInputSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CdiInputSpecification, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinations())
-                    {
-                        context.Writer.WritePropertyName("destinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = OutputDestinationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDestinationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEncoderSettings())
-                    {
-                        context.Writer.WritePropertyName("encoderSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncoderSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncoderSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInputAttachments())
-                    {
-                        context.Writer.WritePropertyName("inputAttachments");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputAttachmentsListValue in publicRequest.InputAttachments)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InputAttachmentMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputAttachmentsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInputSpecification())
-                    {
-                        context.Writer.WritePropertyName("inputSpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InputSpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogLevel())
-                    {
-                        context.Writer.WritePropertyName("logLevel");
-                        context.Writer.Write(publicRequest.LogLevel);
-                    }
-
-                    if(publicRequest.IsSetMaintenance())
-                    {
-                        context.Writer.WritePropertyName("maintenance");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MaintenanceUpdateSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Maintenance, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetChannelEngineVersion())
+            {
+                context.Writer.WritePropertyName("channelEngineVersion");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChannelEngineVersionRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ChannelEngineVersion, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDestinations())
+            {
+                context.Writer.WritePropertyName("destinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OutputDestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDestinationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
+            if(publicRequest.IsSetEncoderSettings())
+            {
+                context.Writer.WritePropertyName("encoderSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncoderSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncoderSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInputAttachments())
+            {
+                context.Writer.WritePropertyName("inputAttachments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputAttachmentsListValue in publicRequest.InputAttachments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputAttachmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputAttachmentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetInputSpecification())
+            {
+                context.Writer.WritePropertyName("inputSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InputSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InputSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLogLevel())
+            {
+                context.Writer.WritePropertyName("logLevel");
+                context.Writer.WriteStringValue(publicRequest.LogLevel);
+            }
+
+            if(publicRequest.IsSetMaintenance())
+            {
+                context.Writer.WritePropertyName("maintenance");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MaintenanceUpdateSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Maintenance, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

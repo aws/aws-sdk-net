@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StackInstanceComprehensiveStatus Object
     /// </summary>  
-    public class StackInstanceComprehensiveStatusUnmarshaller : IUnmarshaller<StackInstanceComprehensiveStatus, XmlUnmarshallerContext>, IUnmarshaller<StackInstanceComprehensiveStatus, JsonUnmarshallerContext>
+    public class StackInstanceComprehensiveStatusUnmarshaller : IXmlUnmarshaller<StackInstanceComprehensiveStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StackInstanceComprehensiveStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StackInstanceComprehensiveStatusUnmarshaller _instance = new StackInstanceComprehensiveStatusUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Dimension Object
     /// </summary>  
-    public class DimensionUnmarshaller : IUnmarshaller<Dimension, XmlUnmarshallerContext>, IUnmarshaller<Dimension, JsonUnmarshallerContext>
+    public class DimensionUnmarshaller : IXmlUnmarshaller<Dimension, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Dimension Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static DimensionUnmarshaller _instance = new DimensionUnmarshaller();        
 
         /// <summary>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointName())
             {
                 context.Writer.WritePropertyName("EndpointName");
-                context.Writer.Write(requestObject.EndpointName);
+                context.Writer.WriteStringValue(requestObject.EndpointName);
             }
 
             if(requestObject.IsSetEndTimeOffset())
             {
                 context.Writer.WritePropertyName("EndTimeOffset");
-                context.Writer.Write(requestObject.EndTimeOffset);
+                context.Writer.WriteStringValue(requestObject.EndTimeOffset);
             }
 
             if(requestObject.IsSetExcludeFeaturesAttribute())
             {
                 context.Writer.WritePropertyName("ExcludeFeaturesAttribute");
-                context.Writer.Write(requestObject.ExcludeFeaturesAttribute);
+                context.Writer.WriteStringValue(requestObject.ExcludeFeaturesAttribute);
             }
 
             if(requestObject.IsSetFeaturesAttribute())
             {
                 context.Writer.WritePropertyName("FeaturesAttribute");
-                context.Writer.Write(requestObject.FeaturesAttribute);
+                context.Writer.WriteStringValue(requestObject.FeaturesAttribute);
             }
 
             if(requestObject.IsSetInferenceAttribute())
             {
                 context.Writer.WritePropertyName("InferenceAttribute");
-                context.Writer.Write(requestObject.InferenceAttribute);
+                context.Writer.WriteStringValue(requestObject.InferenceAttribute);
             }
 
             if(requestObject.IsSetLocalPath())
             {
                 context.Writer.WritePropertyName("LocalPath");
-                context.Writer.Write(requestObject.LocalPath);
+                context.Writer.WriteStringValue(requestObject.LocalPath);
             }
 
             if(requestObject.IsSetProbabilityAttribute())
             {
                 context.Writer.WritePropertyName("ProbabilityAttribute");
-                context.Writer.Write(requestObject.ProbabilityAttribute);
+                context.Writer.WriteStringValue(requestObject.ProbabilityAttribute);
             }
 
             if(requestObject.IsSetProbabilityThresholdAttribute())
@@ -95,30 +93,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ProbabilityThresholdAttribute");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ProbabilityThresholdAttribute.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ProbabilityThresholdAttribute.Value);
+                    context.Writer.WriteNumberValue(requestObject.ProbabilityThresholdAttribute.Value);
                 }
             }
 
             if(requestObject.IsSetS3DataDistributionType())
             {
                 context.Writer.WritePropertyName("S3DataDistributionType");
-                context.Writer.Write(requestObject.S3DataDistributionType);
+                context.Writer.WriteStringValue(requestObject.S3DataDistributionType);
             }
 
             if(requestObject.IsSetS3InputMode())
             {
                 context.Writer.WritePropertyName("S3InputMode");
-                context.Writer.Write(requestObject.S3InputMode);
+                context.Writer.WriteStringValue(requestObject.S3InputMode);
             }
 
             if(requestObject.IsSetStartTimeOffset())
             {
                 context.Writer.WritePropertyName("StartTimeOffset");
-                context.Writer.Write(requestObject.StartTimeOffset);
+                context.Writer.WriteStringValue(requestObject.StartTimeOffset);
             }
 
         }

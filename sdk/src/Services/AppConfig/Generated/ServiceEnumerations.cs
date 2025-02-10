@@ -31,6 +31,10 @@ namespace Amazon.AppConfig
     {
 
         /// <summary>
+        /// Constant AT_DEPLOYMENT_TICK for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint AT_DEPLOYMENT_TICK = new ActionPoint("AT_DEPLOYMENT_TICK");
+        /// <summary>
         /// Constant ON_DEPLOYMENT_BAKING for ActionPoint
         /// </summary>
         public static readonly ActionPoint ON_DEPLOYMENT_BAKING = new ActionPoint("ON_DEPLOYMENT_BAKING");
@@ -263,6 +267,10 @@ namespace Amazon.AppConfig
         /// </summary>
         public static readonly DeploymentEventType PERCENTAGE_UPDATED = new DeploymentEventType("PERCENTAGE_UPDATED");
         /// <summary>
+        /// Constant REVERT_COMPLETED for DeploymentEventType
+        /// </summary>
+        public static readonly DeploymentEventType REVERT_COMPLETED = new DeploymentEventType("REVERT_COMPLETED");
+        /// <summary>
         /// Constant ROLLBACK_COMPLETED for DeploymentEventType
         /// </summary>
         public static readonly DeploymentEventType ROLLBACK_COMPLETED = new DeploymentEventType("ROLLBACK_COMPLETED");
@@ -325,6 +333,10 @@ namespace Amazon.AppConfig
         /// </summary>
         public static readonly DeploymentState DEPLOYING = new DeploymentState("DEPLOYING");
         /// <summary>
+        /// Constant REVERTED for DeploymentState
+        /// </summary>
+        public static readonly DeploymentState REVERTED = new DeploymentState("REVERTED");
+        /// <summary>
         /// Constant ROLLED_BACK for DeploymentState
         /// </summary>
         public static readonly DeploymentState ROLLED_BACK = new DeploymentState("ROLLED_BACK");
@@ -386,6 +398,10 @@ namespace Amazon.AppConfig
         /// Constant READY_FOR_DEPLOYMENT for EnvironmentState
         /// </summary>
         public static readonly EnvironmentState READY_FOR_DEPLOYMENT = new EnvironmentState("READY_FOR_DEPLOYMENT");
+        /// <summary>
+        /// Constant REVERTED for EnvironmentState
+        /// </summary>
+        public static readonly EnvironmentState REVERTED = new EnvironmentState("REVERTED");
         /// <summary>
         /// Constant ROLLED_BACK for EnvironmentState
         /// </summary>

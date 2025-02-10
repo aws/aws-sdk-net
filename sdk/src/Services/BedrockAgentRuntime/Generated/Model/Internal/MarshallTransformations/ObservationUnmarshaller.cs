@@ -29,83 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Observation Object
     /// </summary>  
-    public class ObservationUnmarshaller : IUnmarshaller<Observation, XmlUnmarshallerContext>, IUnmarshaller<Observation, JsonUnmarshallerContext>
+    public class ObservationUnmarshaller : IJsonUnmarshaller<Observation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Observation IUnmarshaller<Observation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Observation Unmarshall(JsonUnmarshallerContext context)
+        public Observation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Observation unmarshalledObject = new Observation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actionGroupInvocationOutput", targetDepth))
                 {
                     var unmarshaller = ActionGroupInvocationOutputUnmarshaller.Instance;
-                    unmarshalledObject.ActionGroupInvocationOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionGroupInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("agentCollaboratorInvocationOutput", targetDepth))
+                {
+                    var unmarshaller = AgentCollaboratorInvocationOutputUnmarshaller.Instance;
+                    unmarshalledObject.AgentCollaboratorInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codeInterpreterInvocationOutput", targetDepth))
                 {
                     var unmarshaller = CodeInterpreterInvocationOutputUnmarshaller.Instance;
-                    unmarshalledObject.CodeInterpreterInvocationOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeInterpreterInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("finalResponse", targetDepth))
                 {
                     var unmarshaller = FinalResponseUnmarshaller.Instance;
-                    unmarshalledObject.FinalResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FinalResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("knowledgeBaseLookupOutput", targetDepth))
                 {
                     var unmarshaller = KnowledgeBaseLookupOutputUnmarshaller.Instance;
-                    unmarshalledObject.KnowledgeBaseLookupOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KnowledgeBaseLookupOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repromptResponse", targetDepth))
                 {
                     var unmarshaller = RepromptResponseUnmarshaller.Instance;
-                    unmarshalledObject.RepromptResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RepromptResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("traceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TraceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TraceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsRedshiftClusterClusterParameterStatus Object
     /// </summary>  
-    public class AwsRedshiftClusterClusterParameterStatusUnmarshaller : IUnmarshaller<AwsRedshiftClusterClusterParameterStatus, XmlUnmarshallerContext>, IUnmarshaller<AwsRedshiftClusterClusterParameterStatus, JsonUnmarshallerContext>
+    public class AwsRedshiftClusterClusterParameterStatusUnmarshaller : IJsonUnmarshaller<AwsRedshiftClusterClusterParameterStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsRedshiftClusterClusterParameterStatus IUnmarshaller<AwsRedshiftClusterClusterParameterStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsRedshiftClusterClusterParameterStatus Unmarshall(JsonUnmarshallerContext context)
+        public AwsRedshiftClusterClusterParameterStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsRedshiftClusterClusterParameterStatus unmarshalledObject = new AwsRedshiftClusterClusterParameterStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ParameterApplyErrorDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParameterApplyErrorDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParameterApplyErrorDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParameterApplyStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParameterApplyStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParameterApplyStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParameterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

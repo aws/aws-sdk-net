@@ -42,7 +42,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ACLName. 
         /// <para>
-        /// The name of the Access Control List to delete
+        /// The name of the Access Control List to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
@@ -61,60 +64,65 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/network-resources/configure";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessPointArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessPointArn())
-                    {
-                        context.Writer.WritePropertyName("accessPointArn");
-                        context.Writer.Write(publicRequest.AccessPointArn);
-                    }
-
-                    if(publicRequest.IsSetCpiSecretKey())
-                    {
-                        context.Writer.WritePropertyName("cpiSecretKey");
-                        context.Writer.Write(publicRequest.CpiSecretKey);
-                    }
-
-                    if(publicRequest.IsSetCpiUserId())
-                    {
-                        context.Writer.WritePropertyName("cpiUserId");
-                        context.Writer.Write(publicRequest.CpiUserId);
-                    }
-
-                    if(publicRequest.IsSetCpiUsername())
-                    {
-                        context.Writer.WritePropertyName("cpiUsername");
-                        context.Writer.Write(publicRequest.CpiUsername);
-                    }
-
-                    if(publicRequest.IsSetCpiUserPassword())
-                    {
-                        context.Writer.WritePropertyName("cpiUserPassword");
-                        context.Writer.Write(publicRequest.CpiUserPassword);
-                    }
-
-                    if(publicRequest.IsSetPosition())
-                    {
-                        context.Writer.WritePropertyName("position");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PositionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Position, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("accessPointArn");
+                context.Writer.WriteStringValue(publicRequest.AccessPointArn);
             }
+
+            if(publicRequest.IsSetCpiSecretKey())
+            {
+                context.Writer.WritePropertyName("cpiSecretKey");
+                context.Writer.WriteStringValue(publicRequest.CpiSecretKey);
+            }
+
+            if(publicRequest.IsSetCpiUserId())
+            {
+                context.Writer.WritePropertyName("cpiUserId");
+                context.Writer.WriteStringValue(publicRequest.CpiUserId);
+            }
+
+            if(publicRequest.IsSetCpiUsername())
+            {
+                context.Writer.WritePropertyName("cpiUsername");
+                context.Writer.WriteStringValue(publicRequest.CpiUsername);
+            }
+
+            if(publicRequest.IsSetCpiUserPassword())
+            {
+                context.Writer.WritePropertyName("cpiUserPassword");
+                context.Writer.WriteStringValue(publicRequest.CpiUserPassword);
+            }
+
+            if(publicRequest.IsSetPosition())
+            {
+                context.Writer.WritePropertyName("position");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PositionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Position, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

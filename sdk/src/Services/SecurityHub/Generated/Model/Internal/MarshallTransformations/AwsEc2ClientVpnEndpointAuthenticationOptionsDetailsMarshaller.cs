@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveDirectory())
             {
                 context.Writer.WritePropertyName("ActiveDirectory");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActiveDirectory, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFederatedAuthentication())
             {
                 context.Writer.WritePropertyName("FederatedAuthentication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FederatedAuthentication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMutualAuthentication())
             {
                 context.Writer.WritePropertyName("MutualAuthentication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MutualAuthentication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

@@ -138,7 +138,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCaches. 
         /// <para>
         /// Indicates which serverless caches the specified user group is associated with. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public List<string> ServerlessCaches

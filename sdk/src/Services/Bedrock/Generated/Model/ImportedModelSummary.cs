@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Information about tne imported model.
+    /// Information about the imported model.
     /// </summary>
     public partial class ImportedModelSummary
     {
         private DateTime? _creationTime;
+        private bool? _instructSupported;
+        private string _modelArchitecture;
         private string _modelArn;
         private string _modelName;
 
@@ -55,6 +57,42 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstructSupported. 
+        /// <para>
+        /// Specifies if the imported model supports converse.
+        /// </para>
+        /// </summary>
+        public bool? InstructSupported
+        {
+            get { return this._instructSupported; }
+            set { this._instructSupported = value; }
+        }
+
+        // Check to see if InstructSupported property is set
+        internal bool IsSetInstructSupported()
+        {
+            return this._instructSupported.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelArchitecture. 
+        /// <para>
+        /// The architecture of the imported model.
+        /// </para>
+        /// </summary>
+        public string ModelArchitecture
+        {
+            get { return this._modelArchitecture; }
+            set { this._modelArchitecture = value; }
+        }
+
+        // Check to see if ModelArchitecture property is set
+        internal bool IsSetModelArchitecture()
+        {
+            return this._modelArchitecture != null;
         }
 
         /// <summary>

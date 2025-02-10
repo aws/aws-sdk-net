@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,75 +49,75 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackfilling())
             {
                 context.Writer.WritePropertyName("Backfilling");
-                context.Writer.Write(requestObject.Backfilling.Value);
+                context.Writer.WriteBooleanValue(requestObject.Backfilling.Value);
             }
 
             if(requestObject.IsSetIndexArn())
             {
                 context.Writer.WritePropertyName("IndexArn");
-                context.Writer.Write(requestObject.IndexArn);
+                context.Writer.WriteStringValue(requestObject.IndexArn);
             }
 
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WriteStringValue(requestObject.IndexName);
             }
 
             if(requestObject.IsSetIndexSizeBytes())
             {
                 context.Writer.WritePropertyName("IndexSizeBytes");
-                context.Writer.Write(requestObject.IndexSizeBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.IndexSizeBytes.Value);
             }
 
             if(requestObject.IsSetIndexStatus())
             {
                 context.Writer.WritePropertyName("IndexStatus");
-                context.Writer.Write(requestObject.IndexStatus);
+                context.Writer.WriteStringValue(requestObject.IndexStatus);
             }
 
             if(requestObject.IsSetItemCount())
             {
                 context.Writer.WritePropertyName("ItemCount");
-                context.Writer.Write(requestObject.ItemCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ItemCount.Value);
             }
 
             if(requestObject.IsSetKeySchema())
             {
                 context.Writer.WritePropertyName("KeySchema");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeySchemaListValue in requestObject.KeySchema)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsDynamoDbTableKeySchemaMarshaller.Instance;
                     marshaller.Marshall(requestObjectKeySchemaListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProjection())
             {
                 context.Writer.WritePropertyName("Projection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsDynamoDbTableProjectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Projection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProvisionedThroughput())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsDynamoDbTableProvisionedThroughputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedThroughput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImageRepository Object
     /// </summary>  
-    public class ImageRepositoryUnmarshaller : IUnmarshaller<ImageRepository, XmlUnmarshallerContext>, IUnmarshaller<ImageRepository, JsonUnmarshallerContext>
+    public class ImageRepositoryUnmarshaller : IJsonUnmarshaller<ImageRepository, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImageRepository IUnmarshaller<ImageRepository, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImageRepository Unmarshall(JsonUnmarshallerContext context)
+        public ImageRepository Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImageRepository unmarshalledObject = new ImageRepository();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ImageConfiguration", targetDepth))
                 {
                     var unmarshaller = ImageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ImageConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImageIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImageRepositoryType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageRepositoryType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageRepositoryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

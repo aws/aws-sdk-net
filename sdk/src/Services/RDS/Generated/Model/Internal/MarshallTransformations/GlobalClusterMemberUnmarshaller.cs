@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GlobalClusterMember Object
     /// </summary>  
-    public class GlobalClusterMemberUnmarshaller : IUnmarshaller<GlobalClusterMember, XmlUnmarshallerContext>, IUnmarshaller<GlobalClusterMember, JsonUnmarshallerContext>
+    public class GlobalClusterMemberUnmarshaller : IXmlUnmarshaller<GlobalClusterMember, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -99,17 +99,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public GlobalClusterMember Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static GlobalClusterMemberUnmarshaller _instance = new GlobalClusterMemberUnmarshaller();        
 

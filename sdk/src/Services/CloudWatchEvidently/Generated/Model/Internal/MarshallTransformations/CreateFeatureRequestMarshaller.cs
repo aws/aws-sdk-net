@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -64,87 +67,92 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Project set");
             request.AddPathResource("{project}", StringUtils.FromString(publicRequest.Project));
             request.ResourcePath = "/projects/{project}/features";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultVariation())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultVariation())
-                    {
-                        context.Writer.WritePropertyName("defaultVariation");
-                        context.Writer.Write(publicRequest.DefaultVariation);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEntityOverrides())
-                    {
-                        context.Writer.WritePropertyName("entityOverrides");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestEntityOverridesKvp in publicRequest.EntityOverrides)
-                        {
-                            context.Writer.WritePropertyName(publicRequestEntityOverridesKvp.Key);
-                            var publicRequestEntityOverridesValue = publicRequestEntityOverridesKvp.Value;
-
-                                context.Writer.Write(publicRequestEntityOverridesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEvaluationStrategy())
-                    {
-                        context.Writer.WritePropertyName("evaluationStrategy");
-                        context.Writer.Write(publicRequest.EvaluationStrategy);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVariations())
-                    {
-                        context.Writer.WritePropertyName("variations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestVariationsListValue in publicRequest.Variations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = VariationConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestVariationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("defaultVariation");
+                context.Writer.WriteStringValue(publicRequest.DefaultVariation);
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEntityOverrides())
+            {
+                context.Writer.WritePropertyName("entityOverrides");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestEntityOverridesKvp in publicRequest.EntityOverrides)
+                {
+                    context.Writer.WritePropertyName(publicRequestEntityOverridesKvp.Key);
+                    var publicRequestEntityOverridesValue = publicRequestEntityOverridesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestEntityOverridesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEvaluationStrategy())
+            {
+                context.Writer.WritePropertyName("evaluationStrategy");
+                context.Writer.WriteStringValue(publicRequest.EvaluationStrategy);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVariations())
+            {
+                context.Writer.WritePropertyName("variations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVariationsListValue in publicRequest.Variations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VariationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVariationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

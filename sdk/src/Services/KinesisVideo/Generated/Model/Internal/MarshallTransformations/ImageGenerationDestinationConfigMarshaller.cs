@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationRegion())
             {
                 context.Writer.WritePropertyName("DestinationRegion");
-                context.Writer.Write(requestObject.DestinationRegion);
+                context.Writer.WriteStringValue(requestObject.DestinationRegion);
             }
 
             if(requestObject.IsSetUri())
             {
                 context.Writer.WritePropertyName("Uri");
-                context.Writer.Write(requestObject.Uri);
+                context.Writer.WriteStringValue(requestObject.Uri);
             }
 
         }

@@ -29,77 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomContentVisual Object
     /// </summary>  
-    public class CustomContentVisualUnmarshaller : IUnmarshaller<CustomContentVisual, XmlUnmarshallerContext>, IUnmarshaller<CustomContentVisual, JsonUnmarshallerContext>
+    public class CustomContentVisualUnmarshaller : IJsonUnmarshaller<CustomContentVisual, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomContentVisual IUnmarshaller<CustomContentVisual, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomContentVisual Unmarshall(JsonUnmarshallerContext context)
+        public CustomContentVisual Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomContentVisual unmarshalledObject = new CustomContentVisual();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Actions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VisualCustomAction, VisualCustomActionUnmarshaller>(VisualCustomActionUnmarshaller.Instance);
-                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VisualCustomAction, VisualCustomActionUnmarshaller>(VisualCustomActionUnmarshaller.Instance);
+                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChartConfiguration", targetDepth))
                 {
                     var unmarshaller = CustomContentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ChartConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChartConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSetIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Subtitle", targetDepth))
                 {
                     var unmarshaller = VisualSubtitleLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Subtitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Subtitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = VisualTitleLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VisualContentAltText", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VisualContentAltText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VisualId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VisualId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VisualId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

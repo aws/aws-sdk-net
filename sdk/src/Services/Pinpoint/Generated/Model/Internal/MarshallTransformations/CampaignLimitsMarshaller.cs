@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDaily())
             {
                 context.Writer.WritePropertyName("Daily");
-                context.Writer.Write(requestObject.Daily.Value);
+                context.Writer.WriteNumberValue(requestObject.Daily.Value);
             }
 
             if(requestObject.IsSetMaximumDuration())
             {
                 context.Writer.WritePropertyName("MaximumDuration");
-                context.Writer.Write(requestObject.MaximumDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumDuration.Value);
             }
 
             if(requestObject.IsSetMessagesPerSecond())
             {
                 context.Writer.WritePropertyName("MessagesPerSecond");
-                context.Writer.Write(requestObject.MessagesPerSecond.Value);
+                context.Writer.WriteNumberValue(requestObject.MessagesPerSecond.Value);
             }
 
             if(requestObject.IsSetSession())
             {
                 context.Writer.WritePropertyName("Session");
-                context.Writer.Write(requestObject.Session.Value);
+                context.Writer.WriteNumberValue(requestObject.Session.Value);
             }
 
             if(requestObject.IsSetTotal())
             {
                 context.Writer.WritePropertyName("Total");
-                context.Writer.Write(requestObject.Total.Value);
+                context.Writer.WriteNumberValue(requestObject.Total.Value);
             }
 
         }

@@ -7,10 +7,22 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CancelQueryRequest.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.CancelQueryRequest.QueryId</property>
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CancelQueryResponse.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.CancelQueryResponse.QueryId</property>
@@ -47,6 +59,22 @@
     <min>1</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateDashboardRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateDashboardResponse.DashboardArn</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.CreateDashboardResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.CreateEventDataStoreRequest.KmsKeyId</property>
@@ -95,6 +123,10 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DeleteDashboardRequest.DashboardId</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DeleteEventDataStoreRequest.EventDataStore</property>
     <min>3</min>
     <max>256</max>
@@ -119,6 +151,12 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryRequest.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryRequest.QueryAlias</property>
     <min>1</min>
     <max>256</max>
@@ -131,6 +169,12 @@
     <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryRequest.RefreshId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryResponse.DeliveryS3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
@@ -140,6 +184,18 @@
     <min>4</min>
     <max>1000</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryResponse.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryResponse.Prompt</property>
+    <min>3</min>
+    <max>500</max>
+    <pattern>^[ -~\n]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryResponse.QueryId</property>
@@ -190,6 +246,30 @@
     <pattern>^[a-zA-Z0-9._/\-:@=\+,\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryRequest.Prompt</property>
+    <min>3</min>
+    <max>500</max>
+    <pattern>^[ -~\n]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryResponse.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryResponse.QueryAlias</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9._\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryResponse.QueryStatement</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetChannelRequest.Channel</property>
     <min>3</min>
     <max>256</max>
@@ -212,6 +292,26 @@
     <min>1</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetDashboardRequest.DashboardId</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetDashboardResponse.DashboardArn</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetDashboardResponse.LastRefreshFailureReason</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetDashboardResponse.LastRefreshId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetEventDataStoreRequest.EventDataStore</property>
@@ -285,6 +385,12 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetQueryResultsRequest.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetQueryResultsRequest.MaxQueryResults</property>
     <min>1</min>
     <max>1000</max>
@@ -320,6 +426,11 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GetResourcePolicyResponse.DelegatedAdminResourcePolicy</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetResourcePolicyResponse.ResourceArn</property>
     <min>3</min>
     <max>256</max>
@@ -343,6 +454,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.ListChannelsResponse.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListDashboardsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListDashboardsRequest.NamePrefix</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListDashboardsRequest.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.ListDashboardsResponse.NextToken</property>
     <min>4</min>
     <max>1000</max>
     <pattern>.*</pattern>
@@ -524,6 +658,11 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.PutResourcePolicyResponse.DelegatedAdminResourcePolicy</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.PutResourcePolicyResponse.ResourceArn</property>
     <min>3</min>
     <max>256</max>
@@ -570,6 +709,39 @@
     <max>3653</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesRequest.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesRequest.SearchPhrase</property>
+    <min>2</min>
+    <max>1000</max>
+    <pattern>^[ -~\n]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.SearchSampleQueriesResponse.NextToken</property>
+    <min>4</min>
+    <max>1000</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartDashboardRefreshRequest.DashboardId</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartDashboardRefreshResponse.RefreshId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartEventDataStoreIngestionRequest.EventDataStore</property>
     <min>3</min>
     <max>256</max>
@@ -593,6 +765,12 @@
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartQueryRequest.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryRequest.QueryAlias</property>
     <min>1</min>
     <max>256</max>
@@ -603,6 +781,12 @@
     <min>1</min>
     <max>10000</max>
     <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartQueryResponse.EventDataStoreOwnerAccountId</property>
+    <min>12</min>
+    <max>16</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryResponse.QueryId</property>
@@ -657,6 +841,20 @@
     <min>1</min>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateDashboardRequest.DashboardId</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateDashboardResponse.DashboardArn</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.UpdateDashboardResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.UpdateEventDataStoreRequest.EventDataStore</property>
@@ -735,6 +933,10 @@
     <pattern>^[a-zA-Z0-9._\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DashboardDetail.DashboardArn</property>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.Destination.Location</property>
     <min>3</min>
     <max>1024</max>
@@ -803,6 +1005,16 @@
     <pattern>^[a-f0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.RefreshSchedule.TimeOfDay</property>
+    <pattern>^[0-9]{2}:[0-9]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.RequestWidget.QueryStatement</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
@@ -811,5 +1023,17 @@
     <property>Amazon.CloudTrail.Model.Tag.Value</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.Widget.QueryAlias</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9._\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.Widget.QueryStatement</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
 </property-value-rules>

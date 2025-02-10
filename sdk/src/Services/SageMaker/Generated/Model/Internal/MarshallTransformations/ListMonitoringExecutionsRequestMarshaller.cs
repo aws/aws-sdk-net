@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,109 +66,114 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCreationTimeAfter())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCreationTimeAfter())
-                    {
-                        context.Writer.WritePropertyName("CreationTimeAfter");
-                        context.Writer.Write(publicRequest.CreationTimeAfter.Value);
-                    }
-
-                    if(publicRequest.IsSetCreationTimeBefore())
-                    {
-                        context.Writer.WritePropertyName("CreationTimeBefore");
-                        context.Writer.Write(publicRequest.CreationTimeBefore.Value);
-                    }
-
-                    if(publicRequest.IsSetEndpointName())
-                    {
-                        context.Writer.WritePropertyName("EndpointName");
-                        context.Writer.Write(publicRequest.EndpointName);
-                    }
-
-                    if(publicRequest.IsSetLastModifiedTimeAfter())
-                    {
-                        context.Writer.WritePropertyName("LastModifiedTimeAfter");
-                        context.Writer.Write(publicRequest.LastModifiedTimeAfter.Value);
-                    }
-
-                    if(publicRequest.IsSetLastModifiedTimeBefore())
-                    {
-                        context.Writer.WritePropertyName("LastModifiedTimeBefore");
-                        context.Writer.Write(publicRequest.LastModifiedTimeBefore.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetMonitoringJobDefinitionName())
-                    {
-                        context.Writer.WritePropertyName("MonitoringJobDefinitionName");
-                        context.Writer.Write(publicRequest.MonitoringJobDefinitionName);
-                    }
-
-                    if(publicRequest.IsSetMonitoringScheduleName())
-                    {
-                        context.Writer.WritePropertyName("MonitoringScheduleName");
-                        context.Writer.Write(publicRequest.MonitoringScheduleName);
-                    }
-
-                    if(publicRequest.IsSetMonitoringTypeEquals())
-                    {
-                        context.Writer.WritePropertyName("MonitoringTypeEquals");
-                        context.Writer.Write(publicRequest.MonitoringTypeEquals);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetScheduledTimeAfter())
-                    {
-                        context.Writer.WritePropertyName("ScheduledTimeAfter");
-                        context.Writer.Write(publicRequest.ScheduledTimeAfter.Value);
-                    }
-
-                    if(publicRequest.IsSetScheduledTimeBefore())
-                    {
-                        context.Writer.WritePropertyName("ScheduledTimeBefore");
-                        context.Writer.Write(publicRequest.ScheduledTimeBefore.Value);
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("SortBy");
-                        context.Writer.Write(publicRequest.SortBy);
-                    }
-
-                    if(publicRequest.IsSetSortOrder())
-                    {
-                        context.Writer.WritePropertyName("SortOrder");
-                        context.Writer.Write(publicRequest.SortOrder);
-                    }
-
-                    if(publicRequest.IsSetStatusEquals())
-                    {
-                        context.Writer.WritePropertyName("StatusEquals");
-                        context.Writer.Write(publicRequest.StatusEquals);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CreationTimeAfter");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeAfter.Value)));
             }
+
+            if(publicRequest.IsSetCreationTimeBefore())
+            {
+                context.Writer.WritePropertyName("CreationTimeBefore");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeBefore.Value)));
+            }
+
+            if(publicRequest.IsSetEndpointName())
+            {
+                context.Writer.WritePropertyName("EndpointName");
+                context.Writer.WriteStringValue(publicRequest.EndpointName);
+            }
+
+            if(publicRequest.IsSetLastModifiedTimeAfter())
+            {
+                context.Writer.WritePropertyName("LastModifiedTimeAfter");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LastModifiedTimeAfter.Value)));
+            }
+
+            if(publicRequest.IsSetLastModifiedTimeBefore())
+            {
+                context.Writer.WritePropertyName("LastModifiedTimeBefore");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LastModifiedTimeBefore.Value)));
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetMonitoringJobDefinitionName())
+            {
+                context.Writer.WritePropertyName("MonitoringJobDefinitionName");
+                context.Writer.WriteStringValue(publicRequest.MonitoringJobDefinitionName);
+            }
+
+            if(publicRequest.IsSetMonitoringScheduleName())
+            {
+                context.Writer.WritePropertyName("MonitoringScheduleName");
+                context.Writer.WriteStringValue(publicRequest.MonitoringScheduleName);
+            }
+
+            if(publicRequest.IsSetMonitoringTypeEquals())
+            {
+                context.Writer.WritePropertyName("MonitoringTypeEquals");
+                context.Writer.WriteStringValue(publicRequest.MonitoringTypeEquals);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetScheduledTimeAfter())
+            {
+                context.Writer.WritePropertyName("ScheduledTimeAfter");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ScheduledTimeAfter.Value)));
+            }
+
+            if(publicRequest.IsSetScheduledTimeBefore())
+            {
+                context.Writer.WritePropertyName("ScheduledTimeBefore");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ScheduledTimeBefore.Value)));
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("SortBy");
+                context.Writer.WriteStringValue(publicRequest.SortBy);
+            }
+
+            if(publicRequest.IsSetSortOrder())
+            {
+                context.Writer.WritePropertyName("SortOrder");
+                context.Writer.WriteStringValue(publicRequest.SortOrder);
+            }
+
+            if(publicRequest.IsSetStatusEquals())
+            {
+                context.Writer.WritePropertyName("StatusEquals");
+                context.Writer.WriteStringValue(publicRequest.StatusEquals);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

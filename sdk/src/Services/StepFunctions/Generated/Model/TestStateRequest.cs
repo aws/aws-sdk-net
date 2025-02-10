@@ -114,6 +114,7 @@ namespace Amazon.StepFunctions.Model
         private InspectionLevel _inspectionLevel;
         private bool? _revealSecrets;
         private string _roleArn;
+        private string _variables;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -234,7 +235,7 @@ namespace Amazon.StepFunctions.Model
         /// for the state.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -245,6 +246,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// JSON object literal that sets variables used in the state under test. Object keys
+        /// are the variable names and values are the variable values.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=262144)]
+        public string Variables
+        {
+            get { return this._variables; }
+            set { this._variables = value; }
+        }
+
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
+        {
+            return this._variables != null;
         }
 
     }

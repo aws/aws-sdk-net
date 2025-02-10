@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeNames())
             {
                 context.Writer.WritePropertyName("AttributeNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
                 {
-                        context.Writer.Write(requestObjectAttributeNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectAttributeNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceGroupNames())
             {
                 context.Writer.WritePropertyName("InstanceGroupNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceGroupNamesListValue in requestObject.InstanceGroupNames)
                 {
-                        context.Writer.Write(requestObjectInstanceGroupNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectInstanceGroupNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetS3DataDistributionType())
             {
                 context.Writer.WritePropertyName("S3DataDistributionType");
-                context.Writer.Write(requestObject.S3DataDistributionType);
+                context.Writer.WriteStringValue(requestObject.S3DataDistributionType);
             }
 
             if(requestObject.IsSetS3DataType())
             {
                 context.Writer.WritePropertyName("S3DataType");
-                context.Writer.Write(requestObject.S3DataType);
+                context.Writer.WriteStringValue(requestObject.S3DataType);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }

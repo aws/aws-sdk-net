@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPhoneConfig())
             {
                 context.Writer.WritePropertyName("PhoneConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PhoneNumberQuickConnectConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PhoneConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueueConfig())
             {
                 context.Writer.WritePropertyName("QueueConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QueueQuickConnectConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueueConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQuickConnectType())
             {
                 context.Writer.WritePropertyName("QuickConnectType");
-                context.Writer.Write(requestObject.QuickConnectType);
+                context.Writer.WriteStringValue(requestObject.QuickConnectType);
             }
 
             if(requestObject.IsSetUserConfig())
             {
                 context.Writer.WritePropertyName("UserConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UserQuickConnectConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

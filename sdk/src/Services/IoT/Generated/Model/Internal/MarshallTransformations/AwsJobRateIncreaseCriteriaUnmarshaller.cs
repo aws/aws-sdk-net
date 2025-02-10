@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsJobRateIncreaseCriteria Object
     /// </summary>  
-    public class AwsJobRateIncreaseCriteriaUnmarshaller : IUnmarshaller<AwsJobRateIncreaseCriteria, XmlUnmarshallerContext>, IUnmarshaller<AwsJobRateIncreaseCriteria, JsonUnmarshallerContext>
+    public class AwsJobRateIncreaseCriteriaUnmarshaller : IJsonUnmarshaller<AwsJobRateIncreaseCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsJobRateIncreaseCriteria IUnmarshaller<AwsJobRateIncreaseCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsJobRateIncreaseCriteria Unmarshall(JsonUnmarshallerContext context)
+        public AwsJobRateIncreaseCriteria Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsJobRateIncreaseCriteria unmarshalledObject = new AwsJobRateIncreaseCriteria();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("numberOfNotifiedThings", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfNotifiedThings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfNotifiedThings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfSucceededThings", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfSucceededThings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfSucceededThings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubnetAlreadyInUseException operation
     /// </summary>  
-    public class SubnetAlreadyInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<SubnetAlreadyInUseException, XmlUnmarshallerContext>
+    public class SubnetAlreadyInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubnetAlreadyInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

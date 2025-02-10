@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -67,97 +70,102 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/routes/v0/calculators/{CalculatorName}/calculate/route-matrix";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCarModeOptions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCarModeOptions())
-                    {
-                        context.Writer.WritePropertyName("CarModeOptions");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("CarModeOptions");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CalculateRouteCarModeOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CarModeOptions, context);
+                var marshaller = CalculateRouteCarModeOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CarModeOptions, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDepartNow())
-                    {
-                        context.Writer.WritePropertyName("DepartNow");
-                        context.Writer.Write(publicRequest.DepartNow.Value);
-                    }
-
-                    if(publicRequest.IsSetDeparturePositions())
-                    {
-                        context.Writer.WritePropertyName("DeparturePositions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDeparturePositionsListValue in publicRequest.DeparturePositions)
-                        {
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestDeparturePositionsListValueListValue in publicRequestDeparturePositionsListValue)
-                            {
-                                    context.Writer.Write(publicRequestDeparturePositionsListValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDepartureTime())
-                    {
-                        context.Writer.WritePropertyName("DepartureTime");
-                        context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
-                    }
-
-                    if(publicRequest.IsSetDestinationPositions())
-                    {
-                        context.Writer.WritePropertyName("DestinationPositions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationPositionsListValue in publicRequest.DestinationPositions)
-                        {
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestDestinationPositionsListValueListValue in publicRequestDestinationPositionsListValue)
-                            {
-                                    context.Writer.Write(publicRequestDestinationPositionsListValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDistanceUnit())
-                    {
-                        context.Writer.WritePropertyName("DistanceUnit");
-                        context.Writer.Write(publicRequest.DistanceUnit);
-                    }
-
-                    if(publicRequest.IsSetTravelMode())
-                    {
-                        context.Writer.WritePropertyName("TravelMode");
-                        context.Writer.Write(publicRequest.TravelMode);
-                    }
-
-                    if(publicRequest.IsSetTruckModeOptions())
-                    {
-                        context.Writer.WritePropertyName("TruckModeOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CalculateRouteTruckModeOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TruckModeOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDepartNow())
+            {
+                context.Writer.WritePropertyName("DepartNow");
+                context.Writer.WriteBooleanValue(publicRequest.DepartNow.Value);
+            }
+
+            if(publicRequest.IsSetDeparturePositions())
+            {
+                context.Writer.WritePropertyName("DeparturePositions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDeparturePositionsListValue in publicRequest.DeparturePositions)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestDeparturePositionsListValueListValue in publicRequestDeparturePositionsListValue)
+                    {
+                            context.Writer.WriteNumberValue(publicRequestDeparturePositionsListValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDepartureTime())
+            {
+                context.Writer.WritePropertyName("DepartureTime");
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DepartureTime));
+            }
+
+            if(publicRequest.IsSetDestinationPositions())
+            {
+                context.Writer.WritePropertyName("DestinationPositions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationPositionsListValue in publicRequest.DestinationPositions)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestDestinationPositionsListValueListValue in publicRequestDestinationPositionsListValue)
+                    {
+                            context.Writer.WriteNumberValue(publicRequestDestinationPositionsListValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDistanceUnit())
+            {
+                context.Writer.WritePropertyName("DistanceUnit");
+                context.Writer.WriteStringValue(publicRequest.DistanceUnit);
+            }
+
+            if(publicRequest.IsSetTravelMode())
+            {
+                context.Writer.WritePropertyName("TravelMode");
+                context.Writer.WriteStringValue(publicRequest.TravelMode);
+            }
+
+            if(publicRequest.IsSetTruckModeOptions())
+            {
+                context.Writer.WritePropertyName("TruckModeOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CalculateRouteTruckModeOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TruckModeOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
             

@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Activity Object
     /// </summary>  
-    public class ActivityUnmarshaller : IUnmarshaller<Activity, XmlUnmarshallerContext>, IUnmarshaller<Activity, JsonUnmarshallerContext>
+    public class ActivityUnmarshaller : IJsonUnmarshaller<Activity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Activity IUnmarshaller<Activity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Activity Unmarshall(JsonUnmarshallerContext context)
+        public Activity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Activity unmarshalledObject = new Activity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CommentMetadata", targetDepth))
                 {
                     var unmarshaller = CommentMetadataUnmarshaller.Instance;
-                    unmarshalledObject.CommentMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CommentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Initiator", targetDepth))
                 {
                     var unmarshaller = UserMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Initiator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Initiator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsIndirectActivity", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsIndirectActivity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsIndirectActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OriginalParent", targetDepth))
                 {
                     var unmarshaller = ResourceMetadataUnmarshaller.Instance;
-                    unmarshalledObject.OriginalParent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginalParent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Participants", targetDepth))
                 {
                     var unmarshaller = ParticipantsUnmarshaller.Instance;
-                    unmarshalledObject.Participants = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Participants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceMetadata", targetDepth))
                 {
                     var unmarshaller = ResourceMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ResourceMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeStamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TimeStamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

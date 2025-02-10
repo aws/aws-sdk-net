@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfWeek())
             {
                 context.Writer.WritePropertyName("dayOfWeek");
-                context.Writer.Write(requestObject.DayOfWeek);
+                context.Writer.WriteStringValue(requestObject.DayOfWeek);
             }
 
             if(requestObject.IsSetTimeOfDay())
             {
                 context.Writer.WritePropertyName("timeOfDay");
-                context.Writer.Write(requestObject.TimeOfDay);
+                context.Writer.WriteStringValue(requestObject.TimeOfDay);
             }
 
             if(requestObject.IsSetTimeZone())
             {
                 context.Writer.WritePropertyName("timeZone");
-                context.Writer.Write(requestObject.TimeZone);
+                context.Writer.WriteStringValue(requestObject.TimeZone);
             }
 
         }

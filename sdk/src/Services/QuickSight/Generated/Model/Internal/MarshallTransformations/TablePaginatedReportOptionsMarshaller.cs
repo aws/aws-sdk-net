@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverflowColumnHeaderVisibility())
             {
                 context.Writer.WritePropertyName("OverflowColumnHeaderVisibility");
-                context.Writer.Write(requestObject.OverflowColumnHeaderVisibility);
+                context.Writer.WriteStringValue(requestObject.OverflowColumnHeaderVisibility);
             }
 
             if(requestObject.IsSetVerticalOverflowVisibility())
             {
                 context.Writer.WritePropertyName("VerticalOverflowVisibility");
-                context.Writer.Write(requestObject.VerticalOverflowVisibility);
+                context.Writer.WriteStringValue(requestObject.VerticalOverflowVisibility);
             }
 
         }

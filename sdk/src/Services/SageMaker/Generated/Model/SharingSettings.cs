@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies options for sharing Amazon SageMaker Studio notebooks. These settings are
-    /// specified as part of <c>DefaultUserSettings</c> when the <c>CreateDomain</c> API is
-    /// called, and as part of <c>UserSettings</c> when the <c>CreateUserProfile</c> API is
-    /// called. When <c>SharingSettings</c> is not specified, notebook sharing isn't allowed.
+    /// Specifies options for sharing Amazon SageMaker AI Studio notebooks. These settings
+    /// are specified as part of <c>DefaultUserSettings</c> when the <c>CreateDomain</c> API
+    /// is called, and as part of <c>UserSettings</c> when the <c>CreateUserProfile</c> API
+    /// is called. When <c>SharingSettings</c> is not specified, notebook sharing isn't allowed.
     /// </summary>
     public partial class SharingSettings
     {

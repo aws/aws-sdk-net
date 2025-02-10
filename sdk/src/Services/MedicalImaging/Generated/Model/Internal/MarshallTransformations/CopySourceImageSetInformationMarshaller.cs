@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDICOMCopies())
             {
                 context.Writer.WritePropertyName("DICOMCopies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetadataCopiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DICOMCopies, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLatestVersionId())
             {
                 context.Writer.WritePropertyName("latestVersionId");
-                context.Writer.Write(requestObject.LatestVersionId);
+                context.Writer.WriteStringValue(requestObject.LatestVersionId);
             }
 
         }

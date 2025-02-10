@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,67 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeControlDetails())
             {
                 context.Writer.WritePropertyName("IncludeControlDetails");
-                context.Writer.Write(requestObject.IncludeControlDetails.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeControlDetails.Value);
             }
 
             if(requestObject.IsSetIncludeNullAndEmpty())
             {
                 context.Writer.WritePropertyName("IncludeNullAndEmpty");
-                context.Writer.Write(requestObject.IncludeNullAndEmpty.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeNullAndEmpty.Value);
             }
 
             if(requestObject.IsSetIncludePartitionValue())
             {
                 context.Writer.WritePropertyName("IncludePartitionValue");
-                context.Writer.Write(requestObject.IncludePartitionValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludePartitionValue.Value);
             }
 
             if(requestObject.IsSetIncludeTableAlterOperations())
             {
                 context.Writer.WritePropertyName("IncludeTableAlterOperations");
-                context.Writer.Write(requestObject.IncludeTableAlterOperations.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeTableAlterOperations.Value);
             }
 
             if(requestObject.IsSetIncludeTransactionDetails())
             {
                 context.Writer.WritePropertyName("IncludeTransactionDetails");
-                context.Writer.Write(requestObject.IncludeTransactionDetails.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeTransactionDetails.Value);
             }
 
             if(requestObject.IsSetMessageFormat())
             {
                 context.Writer.WritePropertyName("MessageFormat");
-                context.Writer.Write(requestObject.MessageFormat);
+                context.Writer.WriteStringValue(requestObject.MessageFormat);
             }
 
             if(requestObject.IsSetNoHexPrefix())
             {
                 context.Writer.WritePropertyName("NoHexPrefix");
-                context.Writer.Write(requestObject.NoHexPrefix.Value);
+                context.Writer.WriteBooleanValue(requestObject.NoHexPrefix.Value);
             }
 
             if(requestObject.IsSetPartitionIncludeSchemaTable())
             {
                 context.Writer.WritePropertyName("PartitionIncludeSchemaTable");
-                context.Writer.Write(requestObject.PartitionIncludeSchemaTable.Value);
+                context.Writer.WriteBooleanValue(requestObject.PartitionIncludeSchemaTable.Value);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())
             {
                 context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                context.Writer.Write(requestObject.ServiceAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.ServiceAccessRoleArn);
             }
 
             if(requestObject.IsSetStreamArn())
             {
                 context.Writer.WritePropertyName("StreamArn");
-                context.Writer.Write(requestObject.StreamArn);
+                context.Writer.WriteStringValue(requestObject.StreamArn);
+            }
+
+            if(requestObject.IsSetUseLargeIntegerValue())
+            {
+                context.Writer.WritePropertyName("UseLargeIntegerValue");
+                context.Writer.WriteBooleanValue(requestObject.UseLargeIntegerValue.Value);
             }
 
         }

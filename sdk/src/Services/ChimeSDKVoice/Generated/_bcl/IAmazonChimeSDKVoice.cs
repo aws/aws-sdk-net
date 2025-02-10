@@ -1632,6 +1632,76 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  DeleteVoiceConnectorExternalSystemsConfiguration
+
+
+        /// <summary>
+        /// Deletes the external systems configuration for a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        DeleteVoiceConnectorExternalSystemsConfigurationResponse DeleteVoiceConnectorExternalSystemsConfiguration(DeleteVoiceConnectorExternalSystemsConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the external systems configuration for a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        Task<DeleteVoiceConnectorExternalSystemsConfigurationResponse> DeleteVoiceConnectorExternalSystemsConfigurationAsync(DeleteVoiceConnectorExternalSystemsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteVoiceConnectorGroup
 
 
@@ -3273,6 +3343,76 @@ namespace Amazon.ChimeSDKVoice
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorEmergencyCallingConfiguration">REST API Reference for GetVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         Task<GetVoiceConnectorEmergencyCallingConfigurationResponse> GetVoiceConnectorEmergencyCallingConfigurationAsync(GetVoiceConnectorEmergencyCallingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetVoiceConnectorExternalSystemsConfiguration
+
+
+        /// <summary>
+        /// Gets information about an external systems configuration for a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        GetVoiceConnectorExternalSystemsConfigurationResponse GetVoiceConnectorExternalSystemsConfiguration(GetVoiceConnectorExternalSystemsConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about an external systems configuration for a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        Task<GetVoiceConnectorExternalSystemsConfigurationResponse> GetVoiceConnectorExternalSystemsConfigurationAsync(GetVoiceConnectorExternalSystemsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5109,6 +5249,82 @@ namespace Amazon.ChimeSDKVoice
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorEmergencyCallingConfiguration">REST API Reference for PutVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         Task<PutVoiceConnectorEmergencyCallingConfigurationResponse> PutVoiceConnectorEmergencyCallingConfigurationAsync(PutVoiceConnectorEmergencyCallingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutVoiceConnectorExternalSystemsConfiguration
+
+
+        /// <summary>
+        /// Adds an external systems configuration to a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// Multiple instances of the same request were made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        PutVoiceConnectorExternalSystemsConfigurationResponse PutVoiceConnectorExternalSystemsConfiguration(PutVoiceConnectorExternalSystemsConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Adds an external systems configuration to a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// Multiple instances of the same request were made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        Task<PutVoiceConnectorExternalSystemsConfigurationResponse> PutVoiceConnectorExternalSystemsConfigurationAsync(PutVoiceConnectorExternalSystemsConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

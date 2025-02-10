@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DocumentClassifierInputDataConfig Object
     /// </summary>  
-    public class DocumentClassifierInputDataConfigUnmarshaller : IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>, IUnmarshaller<DocumentClassifierInputDataConfig, JsonUnmarshallerContext>
+    public class DocumentClassifierInputDataConfigUnmarshaller : IJsonUnmarshaller<DocumentClassifierInputDataConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DocumentClassifierInputDataConfig IUnmarshaller<DocumentClassifierInputDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DocumentClassifierInputDataConfig Unmarshall(JsonUnmarshallerContext context)
+        public DocumentClassifierInputDataConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DocumentClassifierInputDataConfig unmarshalledObject = new DocumentClassifierInputDataConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AugmentedManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
-                    unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
+                    unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentReaderConfig", targetDepth))
                 {
                     var unmarshaller = DocumentReaderConfigUnmarshaller.Instance;
-                    unmarshalledObject.DocumentReaderConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentReaderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Documents", targetDepth))
                 {
                     var unmarshaller = DocumentClassifierDocumentsUnmarshaller.Instance;
-                    unmarshalledObject.Documents = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Documents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelDelimiter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LabelDelimiter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LabelDelimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TestS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TestS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TestS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

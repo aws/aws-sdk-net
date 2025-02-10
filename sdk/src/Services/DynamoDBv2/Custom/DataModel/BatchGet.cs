@@ -16,6 +16,10 @@
 using System;
 using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
+using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
+
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -57,7 +61,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
-    public interface IBatchGet<T> : IBatchGet
+    public interface IBatchGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : IBatchGet
     {
         /// <summary>
         /// List of generic results retrieved from DynamoDB.
@@ -105,6 +109,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         internal DocumentBatchGet DocumentBatch { get; set; }
 
+        internal TracerProvider TracerProvider { get; set; }
+
         internal abstract void CreateDocumentBatch();
 
         internal abstract void PopulateResults(List<Document> items);
@@ -123,7 +129,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for retrieving a batch of items
     /// from a single DynamoDB table
     /// </summary>
-    public partial class BatchGet<T> : BatchGet, IBatchGet<T>
+    public partial class BatchGet<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : BatchGet, IBatchGet<T>
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
@@ -167,6 +173,8 @@ namespace Amazon.DynamoDBv2.DataModel
             _context = context;
             _config = config;
             _itemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         private void ExecuteHelper()
@@ -239,6 +247,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         private List<IBatchGet> allBatches = new List<IBatchGet>();
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// Constructs a MultiTableBatchGet object from a number of
         /// BatchGet objects
@@ -247,6 +257,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableBatchGet(params IBatchGet[] batches)
         {
             allBatches = new List<IBatchGet>(batches);
+            TracerProvider = GetTracerProvider(allBatches);
         }
 
         internal MultiTableBatchGet(IBatchGet first, params IBatchGet[] rest)
@@ -254,6 +265,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches = new List<IBatchGet>();
             allBatches.Add(first);
             allBatches.AddRange(rest);
+            TracerProvider = GetTracerProvider(allBatches);
         }
 
         /// <inheritdoc/>
@@ -317,5 +329,19 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 #endif
+
+        private TracerProvider GetTracerProvider(List<IBatchGet> allBatches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (allBatches.Count > 0)
+            {
+                var firstBatch = allBatches[0];
+                if (firstBatch is BatchGet batchGet)
+                {
+                    tracerProvider = batchGet.TracerProvider;
+                }
+            }
+            return tracerProvider;
+        }
     }
 }

@@ -29,161 +29,157 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KafkaSettings Object
     /// </summary>  
-    public class KafkaSettingsUnmarshaller : IUnmarshaller<KafkaSettings, XmlUnmarshallerContext>, IUnmarshaller<KafkaSettings, JsonUnmarshallerContext>
+    public class KafkaSettingsUnmarshaller : IJsonUnmarshaller<KafkaSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KafkaSettings IUnmarshaller<KafkaSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KafkaSettings Unmarshall(JsonUnmarshallerContext context)
+        public KafkaSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KafkaSettings unmarshalledObject = new KafkaSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Broker", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Broker = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Broker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeControlDetails", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeControlDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeControlDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeNullAndEmpty", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeNullAndEmpty = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeNullAndEmpty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludePartitionValue", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludePartitionValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludePartitionValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeTableAlterOperations", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeTableAlterOperations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeTableAlterOperations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeTransactionDetails", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeTransactionDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeTransactionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MessageFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MessageMaxBytes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MessageMaxBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MessageMaxBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NoHexPrefix", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NoHexPrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NoHexPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PartitionIncludeSchemaTable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.PartitionIncludeSchemaTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PartitionIncludeSchemaTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SaslMechanism", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SaslMechanism = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SaslMechanism = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SaslPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SaslPassword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SaslPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SaslUsername", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SaslUsername = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SaslUsername = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecurityProtocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityProtocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecurityProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SslCaCertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslCaCertificateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SslCaCertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SslClientCertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslClientCertificateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SslClientCertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SslClientKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslClientKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SslClientKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SslClientKeyPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslClientKeyPassword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SslClientKeyPassword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SslEndpointIdentificationAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslEndpointIdentificationAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SslEndpointIdentificationAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Topic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Topic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Topic = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UseLargeIntegerValue", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.UseLargeIntegerValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

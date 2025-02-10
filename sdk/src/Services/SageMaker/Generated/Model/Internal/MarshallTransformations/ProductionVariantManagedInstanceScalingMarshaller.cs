@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInstanceCount())
             {
                 context.Writer.WritePropertyName("MaxInstanceCount");
-                context.Writer.Write(requestObject.MaxInstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxInstanceCount.Value);
             }
 
             if(requestObject.IsSetMinInstanceCount())
             {
                 context.Writer.WritePropertyName("MinInstanceCount");
-                context.Writer.Write(requestObject.MinInstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MinInstanceCount.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

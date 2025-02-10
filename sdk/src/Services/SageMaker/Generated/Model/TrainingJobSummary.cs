@@ -36,10 +36,12 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _creationTime;
         private DateTime? _lastModifiedTime;
+        private SecondaryStatus _secondaryStatus;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
         private string _trainingJobName;
         private TrainingJobStatus _trainingJobStatus;
+        private string _trainingPlanArn;
         private WarmPoolStatus _warmPoolStatus;
 
         /// <summary>
@@ -77,6 +79,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryStatus. 
+        /// <para>
+        /// The secondary status of the training job.
+        /// </para>
+        /// </summary>
+        public SecondaryStatus SecondaryStatus
+        {
+            get { return this._secondaryStatus; }
+            set { this._secondaryStatus = value; }
+        }
+
+        // Check to see if SecondaryStatus property is set
+        internal bool IsSetSecondaryStatus()
+        {
+            return this._secondaryStatus != null;
         }
 
         /// <summary>
@@ -154,6 +174,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTrainingJobStatus()
         {
             return this._trainingJobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan associated with this training
+        /// job.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
+        /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
         /// <summary>

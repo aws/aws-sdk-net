@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    request.Parameters.Add("ClientToken", StringUtils.FromString(Guid.NewGuid().ToString()));
+                }
                 if(publicRequest.IsSetContext())
                 {
                     request.Parameters.Add("Context", StringUtils.FromString(publicRequest.Context));
@@ -205,6 +209,29 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                 if(publicRequestlistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
                                                 {
                                                     request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestlistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
+                                                }
+                                            }
+                                            if(publicRequestlistValuelistValue.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                                            {
+                                                if(publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                                                {
+                                                    if(publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                                    {
+                                                        if (publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References.Count == 0)
+                                                            request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference", "");
+                                                        else
+                                                        {
+                                                             int publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                                             foreach(var publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequestlistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                                             {
+                                                                if(publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                                                {
+                                                                    request.Parameters.Add("LaunchTemplateConfigs" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                                                }
+                                                                 publicRequestlistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                                             }
+                                                        }
+                                                    }
                                                 }
                                             }
                                             if(publicRequestlistValuelistValue.InstanceRequirements.IsSetBurstablePerformance())
@@ -569,13 +596,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
-                if(publicRequest.IsSetValidFromUtc())
+                if(publicRequest.IsSetValidFrom())
                 {
-                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidFromUtc));
+                    request.Parameters.Add("ValidFrom", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidFrom));
                 }
-                if(publicRequest.IsSetValidUntilUtc())
+                if(publicRequest.IsSetValidUntil())
                 {
-                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidUntilUtc));
+                    request.Parameters.Add("ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ValidUntil));
                 }
             }
             return request;

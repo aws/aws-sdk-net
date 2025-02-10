@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -64,41 +67,46 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
                 throw new AmazonManagedGrafanaException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/authentication";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuthenticationProviders())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("authenticationProviders");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAuthenticationProvidersListValue in publicRequest.AuthenticationProviders)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuthenticationProviders())
-                    {
-                        context.Writer.WritePropertyName("authenticationProviders");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuthenticationProvidersListValue in publicRequest.AuthenticationProviders)
-                        {
-                                context.Writer.Write(publicRequestAuthenticationProvidersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSamlConfiguration())
-                    {
-                        context.Writer.WritePropertyName("samlConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SamlConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SamlConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAuthenticationProvidersListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetSamlConfiguration())
+            {
+                context.Writer.WritePropertyName("samlConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SamlConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SamlConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

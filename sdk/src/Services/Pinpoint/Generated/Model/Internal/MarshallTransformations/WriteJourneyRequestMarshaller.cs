@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,168 +49,168 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActivities())
             {
                 context.Writer.WritePropertyName("Activities");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectActivitiesKvp in requestObject.Activities)
                 {
                     context.Writer.WritePropertyName(requestObjectActivitiesKvp.Key);
                     var requestObjectActivitiesValue = requestObjectActivitiesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ActivityMarshaller.Instance;
                     marshaller.Marshall(requestObjectActivitiesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClosedDays())
             {
                 context.Writer.WritePropertyName("ClosedDays");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClosedDaysMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClosedDays, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreationDate())
             {
                 context.Writer.WritePropertyName("CreationDate");
-                context.Writer.Write(requestObject.CreationDate);
+                context.Writer.WriteStringValue(requestObject.CreationDate);
             }
 
             if(requestObject.IsSetJourneyChannelSettings())
             {
                 context.Writer.WritePropertyName("JourneyChannelSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JourneyChannelSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.JourneyChannelSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastModifiedDate())
             {
                 context.Writer.WritePropertyName("LastModifiedDate");
-                context.Writer.Write(requestObject.LastModifiedDate);
+                context.Writer.WriteStringValue(requestObject.LastModifiedDate);
             }
 
             if(requestObject.IsSetLimits())
             {
                 context.Writer.WritePropertyName("Limits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JourneyLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Limits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLocalTime())
             {
                 context.Writer.WritePropertyName("LocalTime");
-                context.Writer.Write(requestObject.LocalTime.Value);
+                context.Writer.WriteBooleanValue(requestObject.LocalTime.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOpenHours())
             {
                 context.Writer.WritePropertyName("OpenHours");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenHoursMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenHours, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQuietTime())
             {
                 context.Writer.WritePropertyName("QuietTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QuietTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.QuietTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRefreshFrequency())
             {
                 context.Writer.WritePropertyName("RefreshFrequency");
-                context.Writer.Write(requestObject.RefreshFrequency);
+                context.Writer.WriteStringValue(requestObject.RefreshFrequency);
             }
 
             if(requestObject.IsSetRefreshOnSegmentUpdate())
             {
                 context.Writer.WritePropertyName("RefreshOnSegmentUpdate");
-                context.Writer.Write(requestObject.RefreshOnSegmentUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.RefreshOnSegmentUpdate.Value);
             }
 
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("Schedule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JourneyScheduleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Schedule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSendingSchedule())
             {
                 context.Writer.WritePropertyName("SendingSchedule");
-                context.Writer.Write(requestObject.SendingSchedule.Value);
+                context.Writer.WriteBooleanValue(requestObject.SendingSchedule.Value);
             }
 
             if(requestObject.IsSetStartActivity())
             {
                 context.Writer.WritePropertyName("StartActivity");
-                context.Writer.Write(requestObject.StartActivity);
+                context.Writer.WriteStringValue(requestObject.StartActivity);
             }
 
             if(requestObject.IsSetStartCondition())
             {
                 context.Writer.WritePropertyName("StartCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StartConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetTimezoneEstimationMethods())
             {
                 context.Writer.WritePropertyName("TimezoneEstimationMethods");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTimezoneEstimationMethodsListValue in requestObject.TimezoneEstimationMethods)
                 {
-                        context.Writer.Write(requestObjectTimezoneEstimationMethodsListValue);
+                        context.Writer.WriteStringValue(requestObjectTimezoneEstimationMethodsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWaitForQuietTime())
             {
                 context.Writer.WritePropertyName("WaitForQuietTime");
-                context.Writer.Write(requestObject.WaitForQuietTime.Value);
+                context.Writer.WriteBooleanValue(requestObject.WaitForQuietTime.Value);
             }
 
         }

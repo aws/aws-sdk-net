@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellId())
             {
                 context.Writer.WritePropertyName("CellId");
-                context.Writer.Write(requestObject.CellId.Value);
+                context.Writer.WriteNumberValue(requestObject.CellId.Value);
             }
 
             if(requestObject.IsSetLocalId())
             {
                 context.Writer.WritePropertyName("LocalId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LteLocalIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.LocalId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMcc())
             {
                 context.Writer.WritePropertyName("Mcc");
-                context.Writer.Write(requestObject.Mcc.Value);
+                context.Writer.WriteNumberValue(requestObject.Mcc.Value);
             }
 
             if(requestObject.IsSetMnc())
             {
                 context.Writer.WritePropertyName("Mnc");
-                context.Writer.Write(requestObject.Mnc.Value);
+                context.Writer.WriteNumberValue(requestObject.Mnc.Value);
             }
 
             if(requestObject.IsSetNetworkMeasurements())
             {
                 context.Writer.WritePropertyName("NetworkMeasurements");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNetworkMeasurementsListValue in requestObject.NetworkMeasurements)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LteNetworkMeasurementsMarshaller.Instance;
                     marshaller.Marshall(requestObjectNetworkMeasurementsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNrCapable())
             {
                 context.Writer.WritePropertyName("NrCapable");
-                context.Writer.Write(requestObject.NrCapable.Value);
+                context.Writer.WriteBooleanValue(requestObject.NrCapable.Value);
             }
 
             if(requestObject.IsSetRsrp())
             {
                 context.Writer.WritePropertyName("Rsrp");
-                context.Writer.Write(requestObject.Rsrp.Value);
+                context.Writer.WriteNumberValue(requestObject.Rsrp.Value);
             }
 
             if(requestObject.IsSetRsrq())
@@ -110,24 +108,24 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Rsrq");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Rsrq.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Rsrq.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Rsrq.Value);
+                    context.Writer.WriteNumberValue(requestObject.Rsrq.Value);
                 }
             }
 
             if(requestObject.IsSetTac())
             {
                 context.Writer.WritePropertyName("Tac");
-                context.Writer.Write(requestObject.Tac.Value);
+                context.Writer.WriteNumberValue(requestObject.Tac.Value);
             }
 
             if(requestObject.IsSetTimingAdvance())
             {
                 context.Writer.WritePropertyName("TimingAdvance");
-                context.Writer.Write(requestObject.TimingAdvance.Value);
+                context.Writer.WriteNumberValue(requestObject.TimingAdvance.Value);
             }
 
         }

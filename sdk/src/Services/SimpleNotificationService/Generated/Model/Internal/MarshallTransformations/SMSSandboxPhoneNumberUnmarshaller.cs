@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for SMSSandboxPhoneNumber Object
     /// </summary>  
-    public class SMSSandboxPhoneNumberUnmarshaller : IUnmarshaller<SMSSandboxPhoneNumber, XmlUnmarshallerContext>, IUnmarshaller<SMSSandboxPhoneNumber, JsonUnmarshallerContext>
+    public class SMSSandboxPhoneNumberUnmarshaller : IXmlUnmarshaller<SMSSandboxPhoneNumber, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SMSSandboxPhoneNumber Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SMSSandboxPhoneNumberUnmarshaller _instance = new SMSSandboxPhoneNumberUnmarshaller();        
 

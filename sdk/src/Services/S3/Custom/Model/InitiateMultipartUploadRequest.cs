@@ -268,6 +268,7 @@ namespace Amazon.S3.Model
         private List<Tag> tagset = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string websiteRedirectLocation;
         private ChecksumAlgorithm _checksumAlgorithm;
+        private ChecksumType _checksumType;
 
         /// <summary>
         /// A canned access control list (ACL) to apply to the object.
@@ -737,7 +738,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>
         /// Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.
-        /// The value of this header is a Base64-encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs.
+        /// The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs.
         /// </para>
         /// 
         /// <para>
@@ -874,6 +875,26 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumAlgorithm()
         {
             return this._checksumAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumType. 
+        /// <para>
+        /// Indicates the checksum type that you want Amazon S3 to use to calculate the object's checksum value.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public ChecksumType ChecksumType
+        {
+            get { return this._checksumType; }
+            set { this._checksumType = value; }
+        }
+
+        // Check to see if ChecksumType property is set
+        internal bool IsSetChecksumType()
+        {
+            return this._checksumType != null;
         }
     }
 }

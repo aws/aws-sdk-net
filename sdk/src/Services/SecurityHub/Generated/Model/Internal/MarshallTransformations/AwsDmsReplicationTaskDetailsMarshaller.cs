@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdcStartPosition())
             {
                 context.Writer.WritePropertyName("CdcStartPosition");
-                context.Writer.Write(requestObject.CdcStartPosition);
+                context.Writer.WriteStringValue(requestObject.CdcStartPosition);
             }
 
             if(requestObject.IsSetCdcStartTime())
             {
                 context.Writer.WritePropertyName("CdcStartTime");
-                context.Writer.Write(requestObject.CdcStartTime);
+                context.Writer.WriteStringValue(requestObject.CdcStartTime);
             }
 
             if(requestObject.IsSetCdcStopPosition())
             {
                 context.Writer.WritePropertyName("CdcStopPosition");
-                context.Writer.Write(requestObject.CdcStopPosition);
+                context.Writer.WriteStringValue(requestObject.CdcStopPosition);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMigrationType())
             {
                 context.Writer.WritePropertyName("MigrationType");
-                context.Writer.Write(requestObject.MigrationType);
+                context.Writer.WriteStringValue(requestObject.MigrationType);
             }
 
             if(requestObject.IsSetReplicationInstanceArn())
             {
                 context.Writer.WritePropertyName("ReplicationInstanceArn");
-                context.Writer.Write(requestObject.ReplicationInstanceArn);
+                context.Writer.WriteStringValue(requestObject.ReplicationInstanceArn);
             }
 
             if(requestObject.IsSetReplicationTaskIdentifier())
             {
                 context.Writer.WritePropertyName("ReplicationTaskIdentifier");
-                context.Writer.Write(requestObject.ReplicationTaskIdentifier);
+                context.Writer.WriteStringValue(requestObject.ReplicationTaskIdentifier);
             }
 
             if(requestObject.IsSetReplicationTaskSettings())
             {
                 context.Writer.WritePropertyName("ReplicationTaskSettings");
-                context.Writer.Write(requestObject.ReplicationTaskSettings);
+                context.Writer.WriteStringValue(requestObject.ReplicationTaskSettings);
             }
 
             if(requestObject.IsSetResourceIdentifier())
             {
                 context.Writer.WritePropertyName("ResourceIdentifier");
-                context.Writer.Write(requestObject.ResourceIdentifier);
+                context.Writer.WriteStringValue(requestObject.ResourceIdentifier);
             }
 
             if(requestObject.IsSetSourceEndpointArn())
             {
                 context.Writer.WritePropertyName("SourceEndpointArn");
-                context.Writer.Write(requestObject.SourceEndpointArn);
+                context.Writer.WriteStringValue(requestObject.SourceEndpointArn);
             }
 
             if(requestObject.IsSetTableMappings())
             {
                 context.Writer.WritePropertyName("TableMappings");
-                context.Writer.Write(requestObject.TableMappings);
+                context.Writer.WriteStringValue(requestObject.TableMappings);
             }
 
             if(requestObject.IsSetTargetEndpointArn())
             {
                 context.Writer.WritePropertyName("TargetEndpointArn");
-                context.Writer.Write(requestObject.TargetEndpointArn);
+                context.Writer.WriteStringValue(requestObject.TargetEndpointArn);
             }
 
             if(requestObject.IsSetTaskData())
             {
                 context.Writer.WritePropertyName("TaskData");
-                context.Writer.Write(requestObject.TaskData);
+                context.Writer.WriteStringValue(requestObject.TaskData);
             }
 
         }

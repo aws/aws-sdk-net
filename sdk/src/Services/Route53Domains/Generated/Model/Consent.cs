@@ -62,7 +62,7 @@ namespace Amazon.Route53Domains.Model
         ///  Maximum amount the customer agreed to accept. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0)]
         public double? MaxPrice
         {
             get { return this._maxPrice; }

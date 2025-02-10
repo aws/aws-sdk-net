@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsElasticsearchDomainElasticsearchClusterConfigDetails Object
     /// </summary>  
-    public class AwsElasticsearchDomainElasticsearchClusterConfigDetailsUnmarshaller : IUnmarshaller<AwsElasticsearchDomainElasticsearchClusterConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsElasticsearchDomainElasticsearchClusterConfigDetails, JsonUnmarshallerContext>
+    public class AwsElasticsearchDomainElasticsearchClusterConfigDetailsUnmarshaller : IJsonUnmarshaller<AwsElasticsearchDomainElasticsearchClusterConfigDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsElasticsearchDomainElasticsearchClusterConfigDetails IUnmarshaller<AwsElasticsearchDomainElasticsearchClusterConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsElasticsearchDomainElasticsearchClusterConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsElasticsearchDomainElasticsearchClusterConfigDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsElasticsearchDomainElasticsearchClusterConfigDetails unmarshalledObject = new AwsElasticsearchDomainElasticsearchClusterConfigDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DedicatedMasterCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DedicatedMasterCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DedicatedMasterCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DedicatedMasterEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DedicatedMasterEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DedicatedMasterEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DedicatedMasterType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DedicatedMasterType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DedicatedMasterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ZoneAwarenessConfig", targetDepth))
                 {
                     var unmarshaller = AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ZoneAwarenessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZoneAwarenessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ZoneAwarenessEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ZoneAwarenessEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ZoneAwarenessEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

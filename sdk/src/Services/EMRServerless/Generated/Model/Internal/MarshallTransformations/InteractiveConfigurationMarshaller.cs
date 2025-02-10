@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLivyEndpointEnabled())
             {
                 context.Writer.WritePropertyName("livyEndpointEnabled");
-                context.Writer.Write(requestObject.LivyEndpointEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.LivyEndpointEnabled.Value);
             }
 
             if(requestObject.IsSetStudioEnabled())
             {
                 context.Writer.WritePropertyName("studioEnabled");
-                context.Writer.Write(requestObject.StudioEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.StudioEnabled.Value);
             }
 
         }

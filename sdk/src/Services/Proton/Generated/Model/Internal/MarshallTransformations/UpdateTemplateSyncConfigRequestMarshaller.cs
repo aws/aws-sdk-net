@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Proton.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBranch())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBranch())
-                    {
-                        context.Writer.WritePropertyName("branch");
-                        context.Writer.Write(publicRequest.Branch);
-                    }
-
-                    if(publicRequest.IsSetRepositoryName())
-                    {
-                        context.Writer.WritePropertyName("repositoryName");
-                        context.Writer.Write(publicRequest.RepositoryName);
-                    }
-
-                    if(publicRequest.IsSetRepositoryProvider())
-                    {
-                        context.Writer.WritePropertyName("repositoryProvider");
-                        context.Writer.Write(publicRequest.RepositoryProvider);
-                    }
-
-                    if(publicRequest.IsSetSubdirectory())
-                    {
-                        context.Writer.WritePropertyName("subdirectory");
-                        context.Writer.Write(publicRequest.Subdirectory);
-                    }
-
-                    if(publicRequest.IsSetTemplateName())
-                    {
-                        context.Writer.WritePropertyName("templateName");
-                        context.Writer.Write(publicRequest.TemplateName);
-                    }
-
-                    if(publicRequest.IsSetTemplateType())
-                    {
-                        context.Writer.WritePropertyName("templateType");
-                        context.Writer.Write(publicRequest.TemplateType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("branch");
+                context.Writer.WriteStringValue(publicRequest.Branch);
             }
+
+            if(publicRequest.IsSetRepositoryName())
+            {
+                context.Writer.WritePropertyName("repositoryName");
+                context.Writer.WriteStringValue(publicRequest.RepositoryName);
+            }
+
+            if(publicRequest.IsSetRepositoryProvider())
+            {
+                context.Writer.WritePropertyName("repositoryProvider");
+                context.Writer.WriteStringValue(publicRequest.RepositoryProvider);
+            }
+
+            if(publicRequest.IsSetSubdirectory())
+            {
+                context.Writer.WritePropertyName("subdirectory");
+                context.Writer.WriteStringValue(publicRequest.Subdirectory);
+            }
+
+            if(publicRequest.IsSetTemplateName())
+            {
+                context.Writer.WritePropertyName("templateName");
+                context.Writer.WriteStringValue(publicRequest.TemplateName);
+            }
+
+            if(publicRequest.IsSetTemplateType())
+            {
+                context.Writer.WritePropertyName("templateType");
+                context.Writer.WriteStringValue(publicRequest.TemplateType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

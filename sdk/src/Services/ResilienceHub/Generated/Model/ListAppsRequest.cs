@@ -49,6 +49,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListAppsRequest : AmazonResilienceHubRequest
     {
         private string _appArn;
+        private string _awsApplicationArn;
         private DateTime? _fromLastAssessmentTime;
         private int? _maxResults;
         private string _name;
@@ -79,10 +80,31 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AwsApplicationArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of Resource Groups group that is integrated with an AppRegistry
+        /// application. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+        /// Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>
+        /// guide.
+        /// </para>
+        /// </summary>
+        public string AwsApplicationArn
+        {
+            get { return this._awsApplicationArn; }
+            set { this._awsApplicationArn = value; }
+        }
+
+        // Check to see if AwsApplicationArn property is set
+        internal bool IsSetAwsApplicationArn()
+        {
+            return this._awsApplicationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FromLastAssessmentTime. 
         /// <para>
-        /// Indicates the lower limit of the range that is used to filter applications based on
-        /// their last assessment times.
+        /// Lower limit of the range that is used to filter applications based on their last assessment
+        /// times.
         /// </para>
         /// </summary>
         public DateTime? FromLastAssessmentTime
@@ -177,8 +199,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property ToLastAssessmentTime. 
         /// <para>
-        /// Indicates the upper limit of the range that is used to filter the applications based
-        /// on their last assessment times.
+        /// Upper limit of the range that is used to filter the applications based on their last
+        /// assessment times.
         /// </para>
         /// </summary>
         public DateTime? ToLastAssessmentTime

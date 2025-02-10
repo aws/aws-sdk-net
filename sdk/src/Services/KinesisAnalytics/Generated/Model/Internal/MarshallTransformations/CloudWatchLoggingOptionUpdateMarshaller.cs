@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLoggingOptionId())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptionId");
-                context.Writer.Write(requestObject.CloudWatchLoggingOptionId);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLoggingOptionId);
             }
 
             if(requestObject.IsSetLogStreamARNUpdate())
             {
                 context.Writer.WritePropertyName("LogStreamARNUpdate");
-                context.Writer.Write(requestObject.LogStreamARNUpdate);
+                context.Writer.WriteStringValue(requestObject.LogStreamARNUpdate);
             }
 
             if(requestObject.IsSetRoleARNUpdate())
             {
                 context.Writer.WritePropertyName("RoleARNUpdate");
-                context.Writer.Write(requestObject.RoleARNUpdate);
+                context.Writer.WriteStringValue(requestObject.RoleARNUpdate);
             }
 
         }

@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DashboardPublishOptions Object
     /// </summary>  
-    public class DashboardPublishOptionsUnmarshaller : IUnmarshaller<DashboardPublishOptions, XmlUnmarshallerContext>, IUnmarshaller<DashboardPublishOptions, JsonUnmarshallerContext>
+    public class DashboardPublishOptionsUnmarshaller : IJsonUnmarshaller<DashboardPublishOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DashboardPublishOptions IUnmarshaller<DashboardPublishOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DashboardPublishOptions Unmarshall(JsonUnmarshallerContext context)
+        public DashboardPublishOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DashboardPublishOptions unmarshalledObject = new DashboardPublishOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdHocFilteringOption", targetDepth))
                 {
                     var unmarshaller = AdHocFilteringOptionUnmarshaller.Instance;
-                    unmarshalledObject.AdHocFilteringOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdHocFilteringOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataPointDrillUpDownOption", targetDepth))
                 {
                     var unmarshaller = DataPointDrillUpDownOptionUnmarshaller.Instance;
-                    unmarshalledObject.DataPointDrillUpDownOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataPointDrillUpDownOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataPointMenuLabelOption", targetDepth))
                 {
                     var unmarshaller = DataPointMenuLabelOptionUnmarshaller.Instance;
-                    unmarshalledObject.DataPointMenuLabelOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataPointMenuLabelOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataPointTooltipOption", targetDepth))
                 {
                     var unmarshaller = DataPointTooltipOptionUnmarshaller.Instance;
-                    unmarshalledObject.DataPointTooltipOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataPointTooltipOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportToCSVOption", targetDepth))
                 {
                     var unmarshaller = ExportToCSVOptionUnmarshaller.Instance;
-                    unmarshalledObject.ExportToCSVOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportToCSVOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportWithHiddenFieldsOption", targetDepth))
                 {
                     var unmarshaller = ExportWithHiddenFieldsOptionUnmarshaller.Instance;
-                    unmarshalledObject.ExportWithHiddenFieldsOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportWithHiddenFieldsOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SheetControlsOption", targetDepth))
                 {
                     var unmarshaller = SheetControlsOptionUnmarshaller.Instance;
-                    unmarshalledObject.SheetControlsOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SheetControlsOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SheetLayoutElementMaximizationOption", targetDepth))
                 {
                     var unmarshaller = SheetLayoutElementMaximizationOptionUnmarshaller.Instance;
-                    unmarshalledObject.SheetLayoutElementMaximizationOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SheetLayoutElementMaximizationOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VisualAxisSortOption", targetDepth))
                 {
                     var unmarshaller = VisualAxisSortOptionUnmarshaller.Instance;
-                    unmarshalledObject.VisualAxisSortOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VisualAxisSortOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VisualMenuOption", targetDepth))
                 {
                     var unmarshaller = VisualMenuOptionUnmarshaller.Instance;
-                    unmarshalledObject.VisualMenuOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VisualMenuOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VisualPublishOptions", targetDepth))
                 {
                     var unmarshaller = DashboardVisualPublishOptionsUnmarshaller.Instance;
-                    unmarshalledObject.VisualPublishOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VisualPublishOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

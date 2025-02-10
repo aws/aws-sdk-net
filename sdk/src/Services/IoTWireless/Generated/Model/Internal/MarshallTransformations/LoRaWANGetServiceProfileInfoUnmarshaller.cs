@@ -29,155 +29,145 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LoRaWANGetServiceProfileInfo Object
     /// </summary>  
-    public class LoRaWANGetServiceProfileInfoUnmarshaller : IUnmarshaller<LoRaWANGetServiceProfileInfo, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANGetServiceProfileInfo, JsonUnmarshallerContext>
+    public class LoRaWANGetServiceProfileInfoUnmarshaller : IJsonUnmarshaller<LoRaWANGetServiceProfileInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LoRaWANGetServiceProfileInfo IUnmarshaller<LoRaWANGetServiceProfileInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANGetServiceProfileInfo Unmarshall(JsonUnmarshallerContext context)
+        public LoRaWANGetServiceProfileInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LoRaWANGetServiceProfileInfo unmarshalledObject = new LoRaWANGetServiceProfileInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AddGwMetadata", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AddGwMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddGwMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChannelMask", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelMask = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelMask = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DevStatusReqFreq", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DevStatusReqFreq = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DevStatusReqFreq = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DlBucketSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DlBucketSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DlBucketSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DlRate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DlRate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DlRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DlRatePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DlRatePolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DlRatePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DrMax", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DrMax = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DrMax = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DrMin", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DrMin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DrMin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HrAllowed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HrAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HrAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MinGwDiversity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinGwDiversity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinGwDiversity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NwkGeoLoc", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NwkGeoLoc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NwkGeoLoc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrAllowed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.PrAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RaAllowed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RaAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RaAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReportDevStatusBattery", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ReportDevStatusBattery = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReportDevStatusBattery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReportDevStatusMargin", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ReportDevStatusMargin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReportDevStatusMargin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetPer", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TargetPer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetPer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UlBucketSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UlBucketSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UlBucketSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UlRate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UlRate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UlRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UlRatePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UlRatePolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UlRatePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

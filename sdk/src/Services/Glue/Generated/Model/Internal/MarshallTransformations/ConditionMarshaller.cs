@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlerName())
             {
                 context.Writer.WritePropertyName("CrawlerName");
-                context.Writer.Write(requestObject.CrawlerName);
+                context.Writer.WriteStringValue(requestObject.CrawlerName);
             }
 
             if(requestObject.IsSetCrawlState())
             {
                 context.Writer.WritePropertyName("CrawlState");
-                context.Writer.Write(requestObject.CrawlState);
+                context.Writer.WriteStringValue(requestObject.CrawlState);
             }
 
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");
-                context.Writer.Write(requestObject.JobName);
+                context.Writer.WriteStringValue(requestObject.JobName);
             }
 
             if(requestObject.IsSetLogicalOperator())
             {
                 context.Writer.WritePropertyName("LogicalOperator");
-                context.Writer.Write(requestObject.LogicalOperator);
+                context.Writer.WriteStringValue(requestObject.LogicalOperator);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
         }

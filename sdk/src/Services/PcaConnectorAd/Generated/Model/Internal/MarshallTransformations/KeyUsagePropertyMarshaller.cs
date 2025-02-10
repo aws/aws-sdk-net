@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPropertyFlags())
             {
                 context.Writer.WritePropertyName("PropertyFlags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyUsagePropertyFlagsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PropertyFlags, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPropertyType())
             {
                 context.Writer.WritePropertyName("PropertyType");
-                context.Writer.Write(requestObject.PropertyType);
+                context.Writer.WriteStringValue(requestObject.PropertyType);
             }
 
         }

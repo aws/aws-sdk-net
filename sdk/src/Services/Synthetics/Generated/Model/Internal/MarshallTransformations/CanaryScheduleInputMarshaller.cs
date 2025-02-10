@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInSeconds())
             {
                 context.Writer.WritePropertyName("DurationInSeconds");
-                context.Writer.Write(requestObject.DurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationInSeconds.Value);
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
         }

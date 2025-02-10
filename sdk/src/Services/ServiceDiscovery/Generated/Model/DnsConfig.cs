@@ -32,13 +32,6 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// A complex type that contains information about the Amazon Route 53 DNS records that
     /// you want Cloud Map to create when you register an instance.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// The record types of a service can only be changed by deleting the service and recreating
-    /// it with a new <c>Dnsconfig</c>.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class DnsConfig
     {
@@ -52,6 +45,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// An array that contains one <c>DnsRecord</c> object for each Route 53 DNS record that
         /// you want Cloud Map to create when you register an instance.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The record type of a service specified in a <c>DnsRecord</c> object can't be updated.
+        /// To change a record type, you need to delete the service and recreate it with a new
+        /// <c>DnsConfig</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<DnsRecord> DnsRecords

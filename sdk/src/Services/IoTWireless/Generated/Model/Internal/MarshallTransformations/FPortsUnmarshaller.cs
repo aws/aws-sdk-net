@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FPorts Object
     /// </summary>  
-    public class FPortsUnmarshaller : IUnmarshaller<FPorts, XmlUnmarshallerContext>, IUnmarshaller<FPorts, JsonUnmarshallerContext>
+    public class FPortsUnmarshaller : IJsonUnmarshaller<FPorts, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FPorts IUnmarshaller<FPorts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FPorts Unmarshall(JsonUnmarshallerContext context)
+        public FPorts Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FPorts unmarshalledObject = new FPorts();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Applications", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ApplicationConfig, ApplicationConfigUnmarshaller>(ApplicationConfigUnmarshaller.Instance);
-                    unmarshalledObject.Applications = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ApplicationConfig, ApplicationConfigUnmarshaller>(ApplicationConfigUnmarshaller.Instance);
+                    unmarshalledObject.Applications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClockSync", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ClockSync = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClockSync = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Fuota", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Fuota = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Fuota = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Multicast", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Multicast = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Multicast = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Positioning", targetDepth))
                 {
                     var unmarshaller = PositioningUnmarshaller.Instance;
-                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

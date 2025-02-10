@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterIdentifier())
             {
                 context.Writer.WritePropertyName("ClusterIdentifier");
-                context.Writer.Write(requestObject.ClusterIdentifier);
+                context.Writer.WriteStringValue(requestObject.ClusterIdentifier);
             }
 
             if(requestObject.IsSetDatabaseHost())
             {
                 context.Writer.WritePropertyName("DatabaseHost");
-                context.Writer.Write(requestObject.DatabaseHost);
+                context.Writer.WriteStringValue(requestObject.DatabaseHost);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDatabasePort())
             {
                 context.Writer.WritePropertyName("DatabasePort");
-                context.Writer.Write(requestObject.DatabasePort.Value);
+                context.Writer.WriteNumberValue(requestObject.DatabasePort.Value);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSecretManagerArn())
             {
                 context.Writer.WritePropertyName("SecretManagerArn");
-                context.Writer.Write(requestObject.SecretManagerArn);
+                context.Writer.WriteStringValue(requestObject.SecretManagerArn);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

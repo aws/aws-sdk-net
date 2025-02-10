@@ -41,6 +41,7 @@ namespace Amazon.VPCLattice.Model
         private DateTime? _lastUpdatedAt;
         private string _resourceArn;
         private string _resourceId;
+        private ServiceNetworkLogType _serviceNetworkLogType;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -64,8 +65,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that the access log subscription was created, specified in ISO-8601
-        /// format.
+        /// The date and time that the access log subscription was created, in ISO-8601 format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,8 +122,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The date and time that the access log subscription was last updated, specified in
-        /// ISO-8601 format.
+        /// The date and time that the access log subscription was last updated, in ISO-8601 format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -175,6 +174,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNetworkLogType. 
+        /// <para>
+        /// Log type of the service network.
+        /// </para>
+        /// </summary>
+        public ServiceNetworkLogType ServiceNetworkLogType
+        {
+            get { return this._serviceNetworkLogType; }
+            set { this._serviceNetworkLogType = value; }
+        }
+
+        // Check to see if ServiceNetworkLogType property is set
+        internal bool IsSetServiceNetworkLogType()
+        {
+            return this._serviceNetworkLogType != null;
         }
 
     }

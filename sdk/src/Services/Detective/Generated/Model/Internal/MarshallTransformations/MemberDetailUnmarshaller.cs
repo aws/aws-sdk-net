@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MemberDetail Object
     /// </summary>  
-    public class MemberDetailUnmarshaller : IUnmarshaller<MemberDetail, XmlUnmarshallerContext>, IUnmarshaller<MemberDetail, JsonUnmarshallerContext>
+    public class MemberDetailUnmarshaller : IJsonUnmarshaller<MemberDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MemberDetail IUnmarshaller<MemberDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MemberDetail Unmarshall(JsonUnmarshallerContext context)
+        public MemberDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MemberDetail unmarshalledObject = new MemberDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AdministratorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdministratorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdministratorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasourcePackageIngestStates", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.DatasourcePackageIngestStates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DatasourcePackageIngestStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisabledReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisabledReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisabledReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EmailAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GraphArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvitationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InvitationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvitationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvitedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InvitedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvitedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MasterId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MasterId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MasterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PercentOfGraphUtilization", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PercentOfGraphUtilization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PercentOfGraphUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PercentOfGraphUtilizationUpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.PercentOfGraphUtilizationUpdatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PercentOfGraphUtilizationUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeUsageByDatasourcePackage", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, DatasourcePackageUsageInfo, StringUnmarshaller, DatasourcePackageUsageInfoUnmarshaller>(StringUnmarshaller.Instance, DatasourcePackageUsageInfoUnmarshaller.Instance);
-                    unmarshalledObject.VolumeUsageByDatasourcePackage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, DatasourcePackageUsageInfo, StringUnmarshaller, DatasourcePackageUsageInfoUnmarshaller>(StringUnmarshaller.Instance, DatasourcePackageUsageInfoUnmarshaller.Instance);
+                    unmarshalledObject.VolumeUsageByDatasourcePackage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeUsageInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeUsageUpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.VolumeUsageUpdatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeUsageUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetJobRun operation.
-    /// Retrieves the metadata for a given job run. Job run history is accessible for 90 days
-    /// for your workflow and job run.
+    /// Retrieves the metadata for a given job run. Job run history is accessible for 365
+    /// days for your workflow and job run.
     /// </summary>
     public partial class GetJobRunRequest : AmazonGlueRequest
     {

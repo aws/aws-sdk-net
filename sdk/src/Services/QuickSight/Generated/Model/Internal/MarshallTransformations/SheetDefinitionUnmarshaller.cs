@@ -29,107 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SheetDefinition Object
     /// </summary>  
-    public class SheetDefinitionUnmarshaller : IUnmarshaller<SheetDefinition, XmlUnmarshallerContext>, IUnmarshaller<SheetDefinition, JsonUnmarshallerContext>
+    public class SheetDefinitionUnmarshaller : IJsonUnmarshaller<SheetDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SheetDefinition IUnmarshaller<SheetDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SheetDefinition Unmarshall(JsonUnmarshallerContext context)
+        public SheetDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SheetDefinition unmarshalledObject = new SheetDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterControls", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FilterControl, FilterControlUnmarshaller>(FilterControlUnmarshaller.Instance);
-                    unmarshalledObject.FilterControls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FilterControl, FilterControlUnmarshaller>(FilterControlUnmarshaller.Instance);
+                    unmarshalledObject.FilterControls = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Images", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SheetImage, SheetImageUnmarshaller>(SheetImageUnmarshaller.Instance);
+                    unmarshalledObject.Images = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Layouts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Layout, LayoutUnmarshaller>(LayoutUnmarshaller.Instance);
-                    unmarshalledObject.Layouts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Layout, LayoutUnmarshaller>(LayoutUnmarshaller.Instance);
+                    unmarshalledObject.Layouts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParameterControls", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ParameterControl, ParameterControlUnmarshaller>(ParameterControlUnmarshaller.Instance);
-                    unmarshalledObject.ParameterControls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ParameterControl, ParameterControlUnmarshaller>(ParameterControlUnmarshaller.Instance);
+                    unmarshalledObject.ParameterControls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SheetControlLayouts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SheetControlLayout, SheetControlLayoutUnmarshaller>(SheetControlLayoutUnmarshaller.Instance);
-                    unmarshalledObject.SheetControlLayouts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SheetControlLayout, SheetControlLayoutUnmarshaller>(SheetControlLayoutUnmarshaller.Instance);
+                    unmarshalledObject.SheetControlLayouts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SheetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SheetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SheetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextBoxes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SheetTextBox, SheetTextBoxUnmarshaller>(SheetTextBoxUnmarshaller.Instance);
-                    unmarshalledObject.TextBoxes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SheetTextBox, SheetTextBoxUnmarshaller>(SheetTextBoxUnmarshaller.Instance);
+                    unmarshalledObject.TextBoxes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Visuals", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Visual, VisualUnmarshaller>(VisualUnmarshaller.Instance);
-                    unmarshalledObject.Visuals = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Visual, VisualUnmarshaller>(VisualUnmarshaller.Instance);
+                    unmarshalledObject.Visuals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

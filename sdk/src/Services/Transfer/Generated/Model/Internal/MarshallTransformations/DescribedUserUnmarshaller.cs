@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DescribedUser Object
     /// </summary>  
-    public class DescribedUserUnmarshaller : IUnmarshaller<DescribedUser, XmlUnmarshallerContext>, IUnmarshaller<DescribedUser, JsonUnmarshallerContext>
+    public class DescribedUserUnmarshaller : IJsonUnmarshaller<DescribedUser, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DescribedUser IUnmarshaller<DescribedUser, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DescribedUser Unmarshall(JsonUnmarshallerContext context)
+        public DescribedUser Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DescribedUser unmarshalledObject = new DescribedUser();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HomeDirectory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HomeDirectoryMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HomeDirectoryMapEntry, HomeDirectoryMapEntryUnmarshaller>(HomeDirectoryMapEntryUnmarshaller.Instance);
-                    unmarshalledObject.HomeDirectoryMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HomeDirectoryMapEntry, HomeDirectoryMapEntryUnmarshaller>(HomeDirectoryMapEntryUnmarshaller.Instance);
+                    unmarshalledObject.HomeDirectoryMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HomeDirectoryType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Policy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Policy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PosixProfile", targetDepth))
                 {
                     var unmarshaller = PosixProfileUnmarshaller.Instance;
-                    unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Role = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SshPublicKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SshPublicKey, SshPublicKeyUnmarshaller>(SshPublicKeyUnmarshaller.Instance);
-                    unmarshalledObject.SshPublicKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SshPublicKey, SshPublicKeyUnmarshaller>(SshPublicKeyUnmarshaller.Instance);
+                    unmarshalledObject.SshPublicKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

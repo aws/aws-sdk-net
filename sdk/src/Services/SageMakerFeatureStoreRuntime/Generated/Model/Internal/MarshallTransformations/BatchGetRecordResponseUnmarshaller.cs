@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformations
 {
@@ -47,27 +47,27 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             BatchGetRecordResponse response = new BatchGetRecordResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Errors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchGetRecordError, BatchGetRecordErrorUnmarshaller>(BatchGetRecordErrorUnmarshaller.Instance);
-                    response.Errors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchGetRecordError, BatchGetRecordErrorUnmarshaller>(BatchGetRecordErrorUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Records", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchGetRecordResultDetail, BatchGetRecordResultDetailUnmarshaller>(BatchGetRecordResultDetailUnmarshaller.Instance);
-                    response.Records = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchGetRecordResultDetail, BatchGetRecordResultDetailUnmarshaller>(BatchGetRecordResultDetailUnmarshaller.Instance);
+                    response.Records = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UnprocessedIdentifiers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchGetRecordIdentifier, BatchGetRecordIdentifierUnmarshaller>(BatchGetRecordIdentifierUnmarshaller.Instance);
-                    response.UnprocessedIdentifiers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchGetRecordIdentifier, BatchGetRecordIdentifierUnmarshaller>(BatchGetRecordIdentifierUnmarshaller.Instance);
+                    response.UnprocessedIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -84,30 +84,32 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessForbidden"))
                 {
-                    return AccessForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailure"))
                 {
-                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailable"))
                 {
-                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationError"))
                 {
-                    return ValidationErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonSageMakerFeatureStoreRuntimeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Interpretation Object
     /// </summary>  
-    public class InterpretationUnmarshaller : IUnmarshaller<Interpretation, XmlUnmarshallerContext>, IUnmarshaller<Interpretation, JsonUnmarshallerContext>
+    public class InterpretationUnmarshaller : IJsonUnmarshaller<Interpretation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Interpretation IUnmarshaller<Interpretation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Interpretation Unmarshall(JsonUnmarshallerContext context)
+        public Interpretation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Interpretation unmarshalledObject = new Interpretation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("intent", targetDepth))
                 {
                     var unmarshaller = IntentUnmarshaller.Instance;
-                    unmarshalledObject.Intent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Intent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("interpretationSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InterpretationSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InterpretationSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nluConfidence", targetDepth))
                 {
                     var unmarshaller = ConfidenceScoreUnmarshaller.Instance;
-                    unmarshalledObject.NluConfidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NluConfidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sentimentResponse", targetDepth))
                 {
                     var unmarshaller = SentimentResponseUnmarshaller.Instance;
-                    unmarshalledObject.SentimentResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SentimentResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

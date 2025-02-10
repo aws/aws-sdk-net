@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -63,37 +66,42 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFinalSnapshotName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFinalSnapshotName())
-                    {
-                        context.Writer.WritePropertyName("finalSnapshotName");
-                        context.Writer.Write(publicRequest.FinalSnapshotName);
-                    }
-
-                    if(publicRequest.IsSetFinalSnapshotRetentionPeriod())
-                    {
-                        context.Writer.WritePropertyName("finalSnapshotRetentionPeriod");
-                        context.Writer.Write(publicRequest.FinalSnapshotRetentionPeriod.Value);
-                    }
-
-                    if(publicRequest.IsSetNamespaceName())
-                    {
-                        context.Writer.WritePropertyName("namespaceName");
-                        context.Writer.Write(publicRequest.NamespaceName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("finalSnapshotName");
+                context.Writer.WriteStringValue(publicRequest.FinalSnapshotName);
             }
+
+            if(publicRequest.IsSetFinalSnapshotRetentionPeriod())
+            {
+                context.Writer.WritePropertyName("finalSnapshotRetentionPeriod");
+                context.Writer.WriteNumberValue(publicRequest.FinalSnapshotRetentionPeriod.Value);
+            }
+
+            if(publicRequest.IsSetNamespaceName())
+            {
+                context.Writer.WritePropertyName("namespaceName");
+                context.Writer.WriteStringValue(publicRequest.NamespaceName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

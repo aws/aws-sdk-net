@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RollbackTrigger Object
     /// </summary>  
-    public class RollbackTriggerUnmarshaller : IUnmarshaller<RollbackTrigger, XmlUnmarshallerContext>, IUnmarshaller<RollbackTrigger, JsonUnmarshallerContext>
+    public class RollbackTriggerUnmarshaller : IXmlUnmarshaller<RollbackTrigger, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RollbackTrigger Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RollbackTriggerUnmarshaller _instance = new RollbackTriggerUnmarshaller();        
 

@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// table.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Max=201)]
         public List<UnaggregatedField> Values
         {
             get { return this._values; }

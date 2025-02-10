@@ -40,6 +40,8 @@ namespace Amazon.Imagebuilder.Model
         private string _name;
         private string _owner;
         private Platform _platform;
+        private List<ProductCodeListItem> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCodeListItem>() : null;
+        private ComponentStatus _status;
         private List<string> _supportedOsVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ComponentType _type;
         private string _version;
@@ -173,6 +175,43 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductCodes. 
+        /// <para>
+        /// Contains product codes that are used for billing purposes for Amazon Web Services
+        /// Marketplace components.
+        /// </para>
+        /// </summary>
+        public List<ProductCodeListItem> ProductCodes
+        {
+            get { return this._productCodes; }
+            set { this._productCodes = value; }
+        }
+
+        // Check to see if ProductCodes property is set
+        internal bool IsSetProductCodes()
+        {
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Describes the current status of the component version.
+        /// </para>
+        /// </summary>
+        public ComponentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

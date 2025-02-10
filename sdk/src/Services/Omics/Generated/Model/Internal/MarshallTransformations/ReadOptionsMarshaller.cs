@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetEncoding())
             {
                 context.Writer.WritePropertyName("encoding");
-                context.Writer.Write(requestObject.Encoding);
+                context.Writer.WriteStringValue(requestObject.Encoding);
             }
 
             if(requestObject.IsSetEscape())
             {
                 context.Writer.WritePropertyName("escape");
-                context.Writer.Write(requestObject.Escape);
+                context.Writer.WriteStringValue(requestObject.Escape);
             }
 
             if(requestObject.IsSetEscapeQuotes())
             {
                 context.Writer.WritePropertyName("escapeQuotes");
-                context.Writer.Write(requestObject.EscapeQuotes.Value);
+                context.Writer.WriteBooleanValue(requestObject.EscapeQuotes.Value);
             }
 
             if(requestObject.IsSetHeader())
             {
                 context.Writer.WritePropertyName("header");
-                context.Writer.Write(requestObject.Header.Value);
+                context.Writer.WriteBooleanValue(requestObject.Header.Value);
             }
 
             if(requestObject.IsSetLineSep())
             {
                 context.Writer.WritePropertyName("lineSep");
-                context.Writer.Write(requestObject.LineSep);
+                context.Writer.WriteStringValue(requestObject.LineSep);
             }
 
             if(requestObject.IsSetQuote())
             {
                 context.Writer.WritePropertyName("quote");
-                context.Writer.Write(requestObject.Quote);
+                context.Writer.WriteStringValue(requestObject.Quote);
             }
 
             if(requestObject.IsSetQuoteAll())
             {
                 context.Writer.WritePropertyName("quoteAll");
-                context.Writer.Write(requestObject.QuoteAll.Value);
+                context.Writer.WriteBooleanValue(requestObject.QuoteAll.Value);
             }
 
             if(requestObject.IsSetSep())
             {
                 context.Writer.WritePropertyName("sep");
-                context.Writer.Write(requestObject.Sep);
+                context.Writer.WriteStringValue(requestObject.Sep);
             }
 
         }

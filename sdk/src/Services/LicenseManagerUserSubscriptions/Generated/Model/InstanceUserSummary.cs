@@ -39,6 +39,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _domain;
         private IdentityProvider _identityProvider;
         private string _instanceId;
+        private string _instanceUserArn;
         private string _status;
         private string _statusMessage;
         private string _username;
@@ -82,7 +83,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the user.
+        /// The domain name of the Active Directory that contains the user information for the
+        /// product subscription.
         /// </para>
         /// </summary>
         public string Domain
@@ -100,7 +102,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// An object that specifies details for the identity provider.
+        /// The <c>IdentityProvider</c> resource specifies details about the identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +121,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the EC2 instance, which provides user-based subscriptions.
+        /// The ID of the EC2 instance that provides user-based subscriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -133,6 +135,24 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceUserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies the instance user.
+        /// </para>
+        /// </summary>
+        public string InstanceUserArn
+        {
+            get { return this._instanceUserArn; }
+            set { this._instanceUserArn = value; }
+        }
+
+        // Check to see if InstanceUserArn property is set
+        internal bool IsSetInstanceUserArn()
+        {
+            return this._instanceUserArn != null;
         }
 
         /// <summary>

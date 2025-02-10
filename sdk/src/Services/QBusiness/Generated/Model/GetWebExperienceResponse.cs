@@ -36,10 +36,13 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
+        private BrowserExtensionConfiguration _browserExtensionConfiguration;
         private DateTime? _createdAt;
+        private CustomizationConfiguration _customizationConfiguration;
         private string _defaultEndpoint;
         private ErrorDetail _error;
         private IdentityProviderConfiguration _identityProviderConfiguration;
+        private List<string> _origins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private WebExperienceStatus _status;
@@ -89,6 +92,24 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BrowserExtensionConfiguration. 
+        /// <para>
+        /// The browser extension configuration for an Amazon Q Business web experience.
+        /// </para>
+        /// </summary>
+        public BrowserExtensionConfiguration BrowserExtensionConfiguration
+        {
+            get { return this._browserExtensionConfiguration; }
+            set { this._browserExtensionConfiguration = value; }
+        }
+
+        // Check to see if BrowserExtensionConfiguration property is set
+        internal bool IsSetBrowserExtensionConfiguration()
+        {
+            return this._browserExtensionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix timestamp when the Amazon Q Business web experience was last created.
@@ -104,6 +125,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationConfiguration. 
+        /// <para>
+        /// Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.
+        /// 
+        /// </para>
+        /// </summary>
+        public CustomizationConfiguration CustomizationConfiguration
+        {
+            get { return this._customizationConfiguration; }
+            set { this._customizationConfiguration = value; }
+        }
+
+        // Check to see if CustomizationConfiguration property is set
+        internal bool IsSetCustomizationConfiguration()
+        {
+            return this._customizationConfiguration != null;
         }
 
         /// <summary>
@@ -161,6 +201,27 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityProviderConfiguration()
         {
             return this._identityProviderConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Origins. 
+        /// <para>
+        /// Gets the website domain origins that are allowed to embed the Amazon Q Business web
+        /// experience. <pre><c> The &lt;i&gt;domain origin&lt;/i&gt; refers to the base URL for
+        /// accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;),
+        /// the domain name, and the port number (if specified). &lt;/p&gt; </c></pre>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> Origins
+        {
+            get { return this._origins; }
+            set { this._origins = value; }
+        }
+
+        // Check to see if Origins property is set
+        internal bool IsSetOrigins()
+        {
+            return this._origins != null && (this._origins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

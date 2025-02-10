@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientVersion())
             {
                 context.Writer.WritePropertyName("ClientVersion");
-                context.Writer.Write(requestObject.ClientVersion);
+                context.Writer.WriteStringValue(requestObject.ClientVersion);
             }
 
             if(requestObject.IsSetExportableKey())
             {
                 context.Writer.WritePropertyName("ExportableKey");
-                context.Writer.Write(requestObject.ExportableKey.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExportableKey.Value);
             }
 
             if(requestObject.IsSetRequireAlternateSignatureAlgorithm())
             {
                 context.Writer.WritePropertyName("RequireAlternateSignatureAlgorithm");
-                context.Writer.Write(requestObject.RequireAlternateSignatureAlgorithm.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireAlternateSignatureAlgorithm.Value);
             }
 
             if(requestObject.IsSetRequireSameKeyRenewal())
             {
                 context.Writer.WritePropertyName("RequireSameKeyRenewal");
-                context.Writer.Write(requestObject.RequireSameKeyRenewal.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequireSameKeyRenewal.Value);
             }
 
             if(requestObject.IsSetStrongKeyProtectionRequired())
             {
                 context.Writer.WritePropertyName("StrongKeyProtectionRequired");
-                context.Writer.Write(requestObject.StrongKeyProtectionRequired.Value);
+                context.Writer.WriteBooleanValue(requestObject.StrongKeyProtectionRequired.Value);
             }
 
             if(requestObject.IsSetUseLegacyProvider())
             {
                 context.Writer.WritePropertyName("UseLegacyProvider");
-                context.Writer.Write(requestObject.UseLegacyProvider.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseLegacyProvider.Value);
             }
 
         }

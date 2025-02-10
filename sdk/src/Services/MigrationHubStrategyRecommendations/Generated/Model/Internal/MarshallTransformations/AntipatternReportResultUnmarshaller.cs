@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AntipatternReportResult Object
     /// </summary>  
-    public class AntipatternReportResultUnmarshaller : IUnmarshaller<AntipatternReportResult, XmlUnmarshallerContext>, IUnmarshaller<AntipatternReportResult, JsonUnmarshallerContext>
+    public class AntipatternReportResultUnmarshaller : IJsonUnmarshaller<AntipatternReportResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AntipatternReportResult IUnmarshaller<AntipatternReportResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AntipatternReportResult Unmarshall(JsonUnmarshallerContext context)
+        public AntipatternReportResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AntipatternReportResult unmarshalledObject = new AntipatternReportResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("analyzerName", targetDepth))
                 {
                     var unmarshaller = AnalyzerNameUnionUnmarshaller.Instance;
-                    unmarshalledObject.AnalyzerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalyzerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("antiPatternReportS3Object", targetDepth))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
-                    unmarshalledObject.AntiPatternReportS3Object = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AntiPatternReportS3Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("antipatternReportStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AntipatternReportStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AntipatternReportStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("antipatternReportStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AntipatternReportStatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AntipatternReportStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

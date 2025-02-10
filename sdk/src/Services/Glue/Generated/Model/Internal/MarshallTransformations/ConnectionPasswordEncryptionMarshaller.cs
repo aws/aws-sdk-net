@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsKmsKeyId())
             {
                 context.Writer.WritePropertyName("AwsKmsKeyId");
-                context.Writer.Write(requestObject.AwsKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.AwsKmsKeyId);
             }
 
             if(requestObject.IsSetReturnConnectionPasswordEncrypted())
             {
                 context.Writer.WritePropertyName("ReturnConnectionPasswordEncrypted");
-                context.Writer.Write(requestObject.ReturnConnectionPasswordEncrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReturnConnectionPasswordEncrypted.Value);
             }
 
         }

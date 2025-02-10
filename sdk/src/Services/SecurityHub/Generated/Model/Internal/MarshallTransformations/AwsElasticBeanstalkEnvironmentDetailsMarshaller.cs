@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationName())
             {
                 context.Writer.WritePropertyName("ApplicationName");
-                context.Writer.Write(requestObject.ApplicationName);
+                context.Writer.WriteStringValue(requestObject.ApplicationName);
             }
 
             if(requestObject.IsSetCname())
             {
                 context.Writer.WritePropertyName("Cname");
-                context.Writer.Write(requestObject.Cname);
+                context.Writer.WriteStringValue(requestObject.Cname);
             }
 
             if(requestObject.IsSetDateCreated())
             {
                 context.Writer.WritePropertyName("DateCreated");
-                context.Writer.Write(requestObject.DateCreated);
+                context.Writer.WriteStringValue(requestObject.DateCreated);
             }
 
             if(requestObject.IsSetDateUpdated())
             {
                 context.Writer.WritePropertyName("DateUpdated");
-                context.Writer.Write(requestObject.DateUpdated);
+                context.Writer.WriteStringValue(requestObject.DateUpdated);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEndpointUrl())
             {
                 context.Writer.WritePropertyName("EndpointUrl");
-                context.Writer.Write(requestObject.EndpointUrl);
+                context.Writer.WriteStringValue(requestObject.EndpointUrl);
             }
 
             if(requestObject.IsSetEnvironmentArn())
             {
                 context.Writer.WritePropertyName("EnvironmentArn");
-                context.Writer.Write(requestObject.EnvironmentArn);
+                context.Writer.WriteStringValue(requestObject.EnvironmentArn);
             }
 
             if(requestObject.IsSetEnvironmentId())
             {
                 context.Writer.WritePropertyName("EnvironmentId");
-                context.Writer.Write(requestObject.EnvironmentId);
+                context.Writer.WriteStringValue(requestObject.EnvironmentId);
             }
 
             if(requestObject.IsSetEnvironmentLinks())
             {
                 context.Writer.WritePropertyName("EnvironmentLinks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentLinksListValue in requestObject.EnvironmentLinks)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElasticBeanstalkEnvironmentEnvironmentLinkMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentLinksListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironmentName())
             {
                 context.Writer.WritePropertyName("EnvironmentName");
-                context.Writer.Write(requestObject.EnvironmentName);
+                context.Writer.WriteStringValue(requestObject.EnvironmentName);
             }
 
             if(requestObject.IsSetOptionSettings())
             {
                 context.Writer.WritePropertyName("OptionSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOptionSettingsListValue in requestObject.OptionSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElasticBeanstalkEnvironmentOptionSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectOptionSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPlatformArn())
             {
                 context.Writer.WritePropertyName("PlatformArn");
-                context.Writer.Write(requestObject.PlatformArn);
+                context.Writer.WriteStringValue(requestObject.PlatformArn);
             }
 
             if(requestObject.IsSetSolutionStackName())
             {
                 context.Writer.WritePropertyName("SolutionStackName");
-                context.Writer.Write(requestObject.SolutionStackName);
+                context.Writer.WriteStringValue(requestObject.SolutionStackName);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetTier())
             {
                 context.Writer.WritePropertyName("Tier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticBeanstalkEnvironmentTierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVersionLabel())
             {
                 context.Writer.WritePropertyName("VersionLabel");
-                context.Writer.Write(requestObject.VersionLabel);
+                context.Writer.WriteStringValue(requestObject.VersionLabel);
             }
 
         }

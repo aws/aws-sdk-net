@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostedZone())
             {
                 context.Writer.WritePropertyName("HostedZone");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsRoute53HostedZoneObjectDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HostedZone, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNameServers())
             {
                 context.Writer.WritePropertyName("NameServers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNameServersListValue in requestObject.NameServers)
                 {
-                        context.Writer.Write(requestObjectNameServersListValue);
+                        context.Writer.WriteStringValue(requestObjectNameServersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueryLoggingConfig())
             {
                 context.Writer.WritePropertyName("QueryLoggingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsRoute53QueryLoggingConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryLoggingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcs())
             {
                 context.Writer.WritePropertyName("Vpcs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpcsListValue in requestObject.Vpcs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRoute53HostedZoneVpcDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectVpcsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

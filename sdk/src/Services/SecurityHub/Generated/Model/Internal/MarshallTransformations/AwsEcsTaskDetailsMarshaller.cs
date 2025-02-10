@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,75 +49,75 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterArn())
             {
                 context.Writer.WritePropertyName("ClusterArn");
-                context.Writer.Write(requestObject.ClusterArn);
+                context.Writer.WriteStringValue(requestObject.ClusterArn);
             }
 
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("Containers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainersListValue in requestObject.Containers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsContainerDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.WriteStringValue(requestObject.CreatedAt);
             }
 
             if(requestObject.IsSetGroup())
             {
                 context.Writer.WritePropertyName("Group");
-                context.Writer.Write(requestObject.Group);
+                context.Writer.WriteStringValue(requestObject.Group);
             }
 
             if(requestObject.IsSetStartedAt())
             {
                 context.Writer.WritePropertyName("StartedAt");
-                context.Writer.Write(requestObject.StartedAt);
+                context.Writer.WriteStringValue(requestObject.StartedAt);
             }
 
             if(requestObject.IsSetStartedBy())
             {
                 context.Writer.WritePropertyName("StartedBy");
-                context.Writer.Write(requestObject.StartedBy);
+                context.Writer.WriteStringValue(requestObject.StartedBy);
             }
 
             if(requestObject.IsSetTaskDefinitionArn())
             {
                 context.Writer.WritePropertyName("TaskDefinitionArn");
-                context.Writer.Write(requestObject.TaskDefinitionArn);
+                context.Writer.WriteStringValue(requestObject.TaskDefinitionArn);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
             if(requestObject.IsSetVolumes())
             {
                 context.Writer.WritePropertyName("Volumes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVolumesListValue in requestObject.Volumes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskVolumeDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectVolumesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

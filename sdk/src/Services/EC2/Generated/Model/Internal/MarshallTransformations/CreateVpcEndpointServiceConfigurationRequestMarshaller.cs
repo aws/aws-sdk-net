@@ -113,6 +113,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetSupportedRegions())
+                {
+                    if (publicRequest.SupportedRegions.Count == 0)
+                        request.Parameters.Add("SupportedRegion", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SupportedRegions)
+                         {
+                             request.Parameters.Add("SupportedRegion" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     if (publicRequest.TagSpecifications.Count == 0)

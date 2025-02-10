@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcmCertificateArn())
             {
                 context.Writer.WritePropertyName("AcmCertificateArn");
-                context.Writer.Write(requestObject.AcmCertificateArn);
+                context.Writer.WriteStringValue(requestObject.AcmCertificateArn);
             }
 
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
-                context.Writer.Write(requestObject.Certificate);
+                context.Writer.WriteStringValue(requestObject.Certificate);
             }
 
             if(requestObject.IsSetCertificateSource())
             {
                 context.Writer.WritePropertyName("CertificateSource");
-                context.Writer.Write(requestObject.CertificateSource);
+                context.Writer.WriteStringValue(requestObject.CertificateSource);
             }
 
             if(requestObject.IsSetCloudFrontDefaultCertificate())
             {
                 context.Writer.WritePropertyName("CloudFrontDefaultCertificate");
-                context.Writer.Write(requestObject.CloudFrontDefaultCertificate.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudFrontDefaultCertificate.Value);
             }
 
             if(requestObject.IsSetIamCertificateId())
             {
                 context.Writer.WritePropertyName("IamCertificateId");
-                context.Writer.Write(requestObject.IamCertificateId);
+                context.Writer.WriteStringValue(requestObject.IamCertificateId);
             }
 
             if(requestObject.IsSetMinimumProtocolVersion())
             {
                 context.Writer.WritePropertyName("MinimumProtocolVersion");
-                context.Writer.Write(requestObject.MinimumProtocolVersion);
+                context.Writer.WriteStringValue(requestObject.MinimumProtocolVersion);
             }
 
             if(requestObject.IsSetSslSupportMethod())
             {
                 context.Writer.WritePropertyName("SslSupportMethod");
-                context.Writer.Write(requestObject.SslSupportMethod);
+                context.Writer.WriteStringValue(requestObject.SslSupportMethod);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterId())
             {
                 context.Writer.WritePropertyName("FilterId");
-                context.Writer.Write(requestObject.FilterId);
+                context.Writer.WriteStringValue(requestObject.FilterId);
             }
 
             if(requestObject.IsSetIncludeInnerSet())
             {
                 context.Writer.WritePropertyName("IncludeInnerSet");
-                context.Writer.Write(requestObject.IncludeInnerSet.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeInnerSet.Value);
             }
 
             if(requestObject.IsSetInnerFilter())
             {
                 context.Writer.WritePropertyName("InnerFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InnerFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.InnerFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

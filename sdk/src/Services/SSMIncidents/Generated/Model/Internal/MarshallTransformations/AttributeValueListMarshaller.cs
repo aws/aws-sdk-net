@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntegerValues())
             {
                 context.Writer.WritePropertyName("integerValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIntegerValuesListValue in requestObject.IntegerValues)
                 {
-                        context.Writer.Write(requestObjectIntegerValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectIntegerValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStringValues())
             {
                 context.Writer.WritePropertyName("stringValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringValuesListValue in requestObject.StringValues)
                 {
-                        context.Writer.Write(requestObjectStringValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectStringValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

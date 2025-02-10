@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize.Value);
+                context.Writer.WriteNumberValue(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetCredentials())
             {
                 context.Writer.WritePropertyName("Credentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelfManagedKafkaAccessConfigurationCredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Credentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumBatchingWindowInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                context.Writer.Write(requestObject.MaximumBatchingWindowInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumBatchingWindowInSeconds.Value);
             }
 
             if(requestObject.IsSetServerRootCaCertificate())
             {
                 context.Writer.WritePropertyName("ServerRootCaCertificate");
-                context.Writer.Write(requestObject.ServerRootCaCertificate);
+                context.Writer.WriteStringValue(requestObject.ServerRootCaCertificate);
             }
 
             if(requestObject.IsSetVpc())
             {
                 context.Writer.WritePropertyName("Vpc");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelfManagedKafkaAccessConfigurationVpcMarshaller.Instance;
                 marshaller.Marshall(requestObject.Vpc, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

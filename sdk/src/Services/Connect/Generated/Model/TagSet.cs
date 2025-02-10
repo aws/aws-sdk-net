@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The tag key in the tagSet.
+        /// The tag key in the TagSet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

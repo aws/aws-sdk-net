@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
@@ -61,100 +64,105 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/Execute";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContinueAfterTimeout())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContinueAfterTimeout())
-                    {
-                        context.Writer.WritePropertyName("continueAfterTimeout");
-                        context.Writer.Write(publicRequest.ContinueAfterTimeout.Value);
-                    }
-
-                    if(publicRequest.IsSetDatabase())
-                    {
-                        context.Writer.WritePropertyName("database");
-                        context.Writer.Write(publicRequest.Database);
-                    }
-
-                    if(publicRequest.IsSetFormatRecordsAs())
-                    {
-                        context.Writer.WritePropertyName("formatRecordsAs");
-                        context.Writer.Write(publicRequest.FormatRecordsAs);
-                    }
-
-                    if(publicRequest.IsSetIncludeResultMetadata())
-                    {
-                        context.Writer.WritePropertyName("includeResultMetadata");
-                        context.Writer.Write(publicRequest.IncludeResultMetadata.Value);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("parameters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParametersListValue in publicRequest.Parameters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SqlParameterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestParametersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("resourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetResultSetOptions())
-                    {
-                        context.Writer.WritePropertyName("resultSetOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResultSetOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResultSetOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchema())
-                    {
-                        context.Writer.WritePropertyName("schema");
-                        context.Writer.Write(publicRequest.Schema);
-                    }
-
-                    if(publicRequest.IsSetSecretArn())
-                    {
-                        context.Writer.WritePropertyName("secretArn");
-                        context.Writer.Write(publicRequest.SecretArn);
-                    }
-
-                    if(publicRequest.IsSetSql())
-                    {
-                        context.Writer.WritePropertyName("sql");
-                        context.Writer.Write(publicRequest.Sql);
-                    }
-
-                    if(publicRequest.IsSetTransactionId())
-                    {
-                        context.Writer.WritePropertyName("transactionId");
-                        context.Writer.Write(publicRequest.TransactionId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("continueAfterTimeout");
+                context.Writer.WriteBooleanValue(publicRequest.ContinueAfterTimeout.Value);
             }
+
+            if(publicRequest.IsSetDatabase())
+            {
+                context.Writer.WritePropertyName("database");
+                context.Writer.WriteStringValue(publicRequest.Database);
+            }
+
+            if(publicRequest.IsSetFormatRecordsAs())
+            {
+                context.Writer.WritePropertyName("formatRecordsAs");
+                context.Writer.WriteStringValue(publicRequest.FormatRecordsAs);
+            }
+
+            if(publicRequest.IsSetIncludeResultMetadata())
+            {
+                context.Writer.WritePropertyName("includeResultMetadata");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeResultMetadata.Value);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParametersListValue in publicRequest.Parameters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SqlParameterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestParametersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetResultSetOptions())
+            {
+                context.Writer.WritePropertyName("resultSetOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResultSetOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResultSetOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("schema");
+                context.Writer.WriteStringValue(publicRequest.Schema);
+            }
+
+            if(publicRequest.IsSetSecretArn())
+            {
+                context.Writer.WritePropertyName("secretArn");
+                context.Writer.WriteStringValue(publicRequest.SecretArn);
+            }
+
+            if(publicRequest.IsSetSql())
+            {
+                context.Writer.WritePropertyName("sql");
+                context.Writer.WriteStringValue(publicRequest.Sql);
+            }
+
+            if(publicRequest.IsSetTransactionId())
+            {
+                context.Writer.WritePropertyName("transactionId");
+                context.Writer.WriteStringValue(publicRequest.TransactionId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

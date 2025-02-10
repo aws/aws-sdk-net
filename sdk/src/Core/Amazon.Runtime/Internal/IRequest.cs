@@ -265,8 +265,7 @@ namespace Amazon.Runtime.Internal
         /// Setting DisablePayloadSigning to true requires that the request is sent over a HTTPS 
         /// connection.</para>        
         /// <para>Under certain circumstances, such as uploading to S3 while using MD5 hashing, it may 
-        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage. This flag only applies 
-        /// to Amazon S3 PutObject and UploadPart requests.</para>
+        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage.</para>
         /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
         /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
         /// possibility of data corruption is completely dependant on HTTPS being the only remaining 

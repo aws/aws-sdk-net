@@ -61,6 +61,7 @@ namespace Amazon.GameLift.Model
         /// associated with the GameLift fleet resource for this connection. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -80,6 +81,7 @@ namespace Amazon.GameLift.Model
         /// VPC for your fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }

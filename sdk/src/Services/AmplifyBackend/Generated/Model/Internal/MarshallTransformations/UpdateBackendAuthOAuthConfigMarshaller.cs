@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainPrefix())
             {
                 context.Writer.WritePropertyName("domainPrefix");
-                context.Writer.Write(requestObject.DomainPrefix);
+                context.Writer.WriteStringValue(requestObject.DomainPrefix);
             }
 
             if(requestObject.IsSetOAuthGrantType())
             {
                 context.Writer.WritePropertyName("oAuthGrantType");
-                context.Writer.Write(requestObject.OAuthGrantType);
+                context.Writer.WriteStringValue(requestObject.OAuthGrantType);
             }
 
             if(requestObject.IsSetOAuthScopes())
             {
                 context.Writer.WritePropertyName("oAuthScopes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOAuthScopesListValue in requestObject.OAuthScopes)
                 {
-                        context.Writer.Write(requestObjectOAuthScopesListValue);
+                        context.Writer.WriteStringValue(requestObjectOAuthScopesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRedirectSignInURIs())
             {
                 context.Writer.WritePropertyName("redirectSignInURIs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRedirectSignInURIsListValue in requestObject.RedirectSignInURIs)
                 {
-                        context.Writer.Write(requestObjectRedirectSignInURIsListValue);
+                        context.Writer.WriteStringValue(requestObjectRedirectSignInURIsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRedirectSignOutURIs())
             {
                 context.Writer.WritePropertyName("redirectSignOutURIs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRedirectSignOutURIsListValue in requestObject.RedirectSignOutURIs)
                 {
-                        context.Writer.Write(requestObjectRedirectSignOutURIsListValue);
+                        context.Writer.WriteStringValue(requestObjectRedirectSignOutURIsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSocialProviderSettings())
             {
                 context.Writer.WritePropertyName("socialProviderSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SocialProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SocialProviderSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

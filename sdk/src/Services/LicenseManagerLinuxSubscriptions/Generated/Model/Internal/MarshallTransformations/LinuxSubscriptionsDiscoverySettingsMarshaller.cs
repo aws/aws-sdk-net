@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model.Internal.MarshallTransfo
             if(requestObject.IsSetOrganizationIntegration())
             {
                 context.Writer.WritePropertyName("OrganizationIntegration");
-                context.Writer.Write(requestObject.OrganizationIntegration);
+                context.Writer.WriteStringValue(requestObject.OrganizationIntegration);
             }
 
             if(requestObject.IsSetSourceRegions())
             {
                 context.Writer.WritePropertyName("SourceRegions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceRegionsListValue in requestObject.SourceRegions)
                 {
-                        context.Writer.Write(requestObjectSourceRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

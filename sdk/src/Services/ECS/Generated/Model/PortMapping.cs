@@ -310,16 +310,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that's used for the port mapping. This parameter only applies to Service
-        /// Connect. This parameter is the name that you use in the <c>serviceConnectConfiguration</c>
+        /// The name that's used for the port mapping. This parameter is the name that you use
+        /// in the <c>serviceConnectConfiguration</c> and the <c>vpcLatticeConfigurations</c>
         /// of a service. The name can include up to 64 characters. The characters can include
         /// lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start
         /// with a hyphen.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
-        /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Name

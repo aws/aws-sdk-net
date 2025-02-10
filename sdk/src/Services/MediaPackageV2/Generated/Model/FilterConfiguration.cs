@@ -35,10 +35,31 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class FilterConfiguration
     {
+        private DateTime? _clipStartTime;
         private DateTime? _end;
         private string _manifestFilter;
         private DateTime? _start;
         private int? _timeDelaySeconds;
+
+        /// <summary>
+        /// Gets and sets the property ClipStartTime. 
+        /// <para>
+        /// Optionally specify the clip start time for all of your manifest egress requests. When
+        /// you include clip start time, note that you cannot use clip start time query parameters
+        /// for this manifest's endpoint URL.
+        /// </para>
+        /// </summary>
+        public DateTime? ClipStartTime
+        {
+            get { return this._clipStartTime; }
+            set { this._clipStartTime = value; }
+        }
+
+        // Check to see if ClipStartTime property is set
+        internal bool IsSetClipStartTime()
+        {
+            return this._clipStartTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property End. 

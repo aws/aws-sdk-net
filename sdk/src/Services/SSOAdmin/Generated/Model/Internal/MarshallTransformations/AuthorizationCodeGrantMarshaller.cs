@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRedirectUris())
             {
                 context.Writer.WritePropertyName("RedirectUris");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRedirectUrisListValue in requestObject.RedirectUris)
                 {
-                        context.Writer.Write(requestObjectRedirectUrisListValue);
+                        context.Writer.WriteStringValue(requestObjectRedirectUrisListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

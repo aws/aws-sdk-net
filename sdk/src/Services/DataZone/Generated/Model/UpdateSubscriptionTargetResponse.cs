@@ -193,7 +193,6 @@ namespace Amazon.DataZone.Model
         /// action.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ManageAccessRole
         {
             get { return this._manageAccessRole; }

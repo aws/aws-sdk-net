@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -61,237 +64,264 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2015-03-31/event-source-mappings/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAmazonManagedKafkaEventSourceConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAmazonManagedKafkaEventSourceConfig())
-                    {
-                        context.Writer.WritePropertyName("AmazonManagedKafkaEventSourceConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AmazonManagedKafkaEventSourceConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AmazonManagedKafkaEventSourceConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AmazonManagedKafkaEventSourceConfig, context);
+                var marshaller = AmazonManagedKafkaEventSourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AmazonManagedKafkaEventSourceConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBatchSize())
-                    {
-                        context.Writer.WritePropertyName("BatchSize");
-                        context.Writer.Write(publicRequest.BatchSize.Value);
-                    }
-
-                    if(publicRequest.IsSetBisectBatchOnFunctionError())
-                    {
-                        context.Writer.WritePropertyName("BisectBatchOnFunctionError");
-                        context.Writer.Write(publicRequest.BisectBatchOnFunctionError.Value);
-                    }
-
-                    if(publicRequest.IsSetDestinationConfig())
-                    {
-                        context.Writer.WritePropertyName("DestinationConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DestinationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DestinationConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDocumentDBEventSourceConfig())
-                    {
-                        context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("Enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetEventSourceArn())
-                    {
-                        context.Writer.WritePropertyName("EventSourceArn");
-                        context.Writer.Write(publicRequest.EventSourceArn);
-                    }
-
-                    if(publicRequest.IsSetFilterCriteria())
-                    {
-                        context.Writer.WritePropertyName("FilterCriteria");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterCriteriaMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FilterCriteria, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFunctionName())
-                    {
-                        context.Writer.WritePropertyName("FunctionName");
-                        context.Writer.Write(publicRequest.FunctionName);
-                    }
-
-                    if(publicRequest.IsSetFunctionResponseTypes())
-                    {
-                        context.Writer.WritePropertyName("FunctionResponseTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFunctionResponseTypesListValue in publicRequest.FunctionResponseTypes)
-                        {
-                                context.Writer.Write(publicRequestFunctionResponseTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKMSKeyArn())
-                    {
-                        context.Writer.WritePropertyName("KMSKeyArn");
-                        context.Writer.Write(publicRequest.KMSKeyArn);
-                    }
-
-                    if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
-                    {
-                        context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                        context.Writer.Write(publicRequest.MaximumBatchingWindowInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetMaximumRecordAgeInSeconds())
-                    {
-                        context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
-                        context.Writer.Write(publicRequest.MaximumRecordAgeInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetMaximumRetryAttempts())
-                    {
-                        context.Writer.WritePropertyName("MaximumRetryAttempts");
-                        context.Writer.Write(publicRequest.MaximumRetryAttempts.Value);
-                    }
-
-                    if(publicRequest.IsSetParallelizationFactor())
-                    {
-                        context.Writer.WritePropertyName("ParallelizationFactor");
-                        context.Writer.Write(publicRequest.ParallelizationFactor.Value);
-                    }
-
-                    if(publicRequest.IsSetQueues())
-                    {
-                        context.Writer.WritePropertyName("Queues");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestQueuesListValue in publicRequest.Queues)
-                        {
-                                context.Writer.Write(publicRequestQueuesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetScalingConfig())
-                    {
-                        context.Writer.WritePropertyName("ScalingConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScalingConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScalingConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSelfManagedEventSource())
-                    {
-                        context.Writer.WritePropertyName("SelfManagedEventSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SelfManagedEventSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SelfManagedEventSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSelfManagedKafkaEventSourceConfig())
-                    {
-                        context.Writer.WritePropertyName("SelfManagedKafkaEventSourceConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SelfManagedKafkaEventSourceConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SelfManagedKafkaEventSourceConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceAccessConfigurations())
-                    {
-                        context.Writer.WritePropertyName("SourceAccessConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SourceAccessConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStartingPosition())
-                    {
-                        context.Writer.WritePropertyName("StartingPosition");
-                        context.Writer.Write(publicRequest.StartingPosition);
-                    }
-
-                    if(publicRequest.IsSetStartingPositionTimestamp())
-                    {
-                        context.Writer.WritePropertyName("StartingPositionTimestamp");
-                        context.Writer.Write(publicRequest.StartingPositionTimestamp.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTopics())
-                    {
-                        context.Writer.WritePropertyName("Topics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTopicsListValue in publicRequest.Topics)
-                        {
-                                context.Writer.Write(publicRequestTopicsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTumblingWindowInSeconds())
-                    {
-                        context.Writer.WritePropertyName("TumblingWindowInSeconds");
-                        context.Writer.Write(publicRequest.TumblingWindowInSeconds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetBatchSize())
+            {
+                context.Writer.WritePropertyName("BatchSize");
+                context.Writer.WriteNumberValue(publicRequest.BatchSize.Value);
+            }
+
+            if(publicRequest.IsSetBisectBatchOnFunctionError())
+            {
+                context.Writer.WritePropertyName("BisectBatchOnFunctionError");
+                context.Writer.WriteBooleanValue(publicRequest.BisectBatchOnFunctionError.Value);
+            }
+
+            if(publicRequest.IsSetDestinationConfig())
+            {
+                context.Writer.WritePropertyName("DestinationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DestinationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DestinationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDocumentDBEventSourceConfig())
+            {
+                context.Writer.WritePropertyName("DocumentDBEventSourceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentDBEventSourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DocumentDBEventSourceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
+            }
+
+            if(publicRequest.IsSetEventSourceArn())
+            {
+                context.Writer.WritePropertyName("EventSourceArn");
+                context.Writer.WriteStringValue(publicRequest.EventSourceArn);
+            }
+
+            if(publicRequest.IsSetFilterCriteria())
+            {
+                context.Writer.WritePropertyName("FilterCriteria");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterCriteriaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterCriteria, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFunctionName())
+            {
+                context.Writer.WritePropertyName("FunctionName");
+                context.Writer.WriteStringValue(publicRequest.FunctionName);
+            }
+
+            if(publicRequest.IsSetFunctionResponseTypes())
+            {
+                context.Writer.WritePropertyName("FunctionResponseTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFunctionResponseTypesListValue in publicRequest.FunctionResponseTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestFunctionResponseTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetKMSKeyArn())
+            {
+                context.Writer.WritePropertyName("KMSKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KMSKeyArn);
+            }
+
+            if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
+            {
+                context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.MaximumBatchingWindowInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetMaximumRecordAgeInSeconds())
+            {
+                context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.MaximumRecordAgeInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetMaximumRetryAttempts())
+            {
+                context.Writer.WritePropertyName("MaximumRetryAttempts");
+                context.Writer.WriteNumberValue(publicRequest.MaximumRetryAttempts.Value);
+            }
+
+            if(publicRequest.IsSetMetricsConfig())
+            {
+                context.Writer.WritePropertyName("MetricsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventSourceMappingMetricsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetricsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetParallelizationFactor())
+            {
+                context.Writer.WritePropertyName("ParallelizationFactor");
+                context.Writer.WriteNumberValue(publicRequest.ParallelizationFactor.Value);
+            }
+
+            if(publicRequest.IsSetProvisionedPollerConfig())
+            {
+                context.Writer.WritePropertyName("ProvisionedPollerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProvisionedPollerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProvisionedPollerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueues())
+            {
+                context.Writer.WritePropertyName("Queues");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestQueuesListValue in publicRequest.Queues)
+                {
+                        context.Writer.WriteStringValue(publicRequestQueuesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetScalingConfig())
+            {
+                context.Writer.WritePropertyName("ScalingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScalingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSelfManagedEventSource())
+            {
+                context.Writer.WritePropertyName("SelfManagedEventSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SelfManagedEventSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SelfManagedEventSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSelfManagedKafkaEventSourceConfig())
+            {
+                context.Writer.WritePropertyName("SelfManagedKafkaEventSourceConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SelfManagedKafkaEventSourceConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SelfManagedKafkaEventSourceConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceAccessConfigurations())
+            {
+                context.Writer.WritePropertyName("SourceAccessConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SourceAccessConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStartingPosition())
+            {
+                context.Writer.WritePropertyName("StartingPosition");
+                context.Writer.WriteStringValue(publicRequest.StartingPosition);
+            }
+
+            if(publicRequest.IsSetStartingPositionTimestamp())
+            {
+                context.Writer.WritePropertyName("StartingPositionTimestamp");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartingPositionTimestamp.Value)));
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTopics())
+            {
+                context.Writer.WritePropertyName("Topics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTopicsListValue in publicRequest.Topics)
+                {
+                        context.Writer.WriteStringValue(publicRequestTopicsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTumblingWindowInSeconds())
+            {
+                context.Writer.WritePropertyName("TumblingWindowInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.TumblingWindowInSeconds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

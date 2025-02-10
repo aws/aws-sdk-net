@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidScheduledActionException operation
     /// </summary>  
-    public class InvalidScheduledActionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidScheduledActionException, XmlUnmarshallerContext>
+    public class InvalidScheduledActionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidScheduledActionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

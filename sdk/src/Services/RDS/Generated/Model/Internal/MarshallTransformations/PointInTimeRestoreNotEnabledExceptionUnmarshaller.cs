@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PointInTimeRestoreNotEnabledException operation
     /// </summary>  
-    public class PointInTimeRestoreNotEnabledExceptionUnmarshaller : IErrorResponseUnmarshaller<PointInTimeRestoreNotEnabledException, XmlUnmarshallerContext>
+    public class PointInTimeRestoreNotEnabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PointInTimeRestoreNotEnabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

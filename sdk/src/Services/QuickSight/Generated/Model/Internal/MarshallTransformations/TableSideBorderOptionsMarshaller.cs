@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBottom())
             {
                 context.Writer.WritePropertyName("Bottom");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Bottom, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInnerHorizontal())
             {
                 context.Writer.WritePropertyName("InnerHorizontal");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InnerHorizontal, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInnerVertical())
             {
                 context.Writer.WritePropertyName("InnerVertical");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InnerVertical, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLeft())
             {
                 context.Writer.WritePropertyName("Left");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Left, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRight())
             {
                 context.Writer.WritePropertyName("Right");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Right, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTop())
             {
                 context.Writer.WritePropertyName("Top");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableBorderOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Top, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

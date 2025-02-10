@@ -9,7 +9,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RestoreStatus Object
     /// </summary>  
-    public class RestoreStatusUnmarshaller : IUnmarshaller<RestoreStatus, XmlUnmarshallerContext>
+    public class RestoreStatusUnmarshaller : IXmlUnmarshaller<RestoreStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.

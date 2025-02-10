@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -51,150 +49,150 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCancelTimerDecisionAttributes())
             {
                 context.Writer.WritePropertyName("cancelTimerDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CancelTimerDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CancelTimerDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCancelWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("cancelWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CancelWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CancelWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompleteWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("completeWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CompleteWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompleteWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContinueAsNewWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("continueAsNewWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContinueAsNewWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContinueAsNewWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDecisionType())
             {
                 context.Writer.WritePropertyName("decisionType");
-                context.Writer.Write(requestObject.DecisionType);
+                context.Writer.WriteStringValue(requestObject.DecisionType);
             }
 
             if(requestObject.IsSetFailWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("failWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FailWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.FailWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecordMarkerDecisionAttributes())
             {
                 context.Writer.WritePropertyName("recordMarkerDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordMarkerDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordMarkerDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequestCancelActivityTaskDecisionAttributes())
             {
                 context.Writer.WritePropertyName("requestCancelActivityTaskDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RequestCancelActivityTaskDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequestCancelActivityTaskDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequestCancelExternalWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("requestCancelExternalWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RequestCancelExternalWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequestCancelExternalWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheduleActivityTaskDecisionAttributes())
             {
                 context.Writer.WritePropertyName("scheduleActivityTaskDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleActivityTaskDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduleActivityTaskDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheduleLambdaFunctionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("scheduleLambdaFunctionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleLambdaFunctionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScheduleLambdaFunctionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSignalExternalWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("signalExternalWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SignalExternalWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SignalExternalWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartChildWorkflowExecutionDecisionAttributes())
             {
                 context.Writer.WritePropertyName("startChildWorkflowExecutionDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StartChildWorkflowExecutionDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartChildWorkflowExecutionDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStartTimerDecisionAttributes())
             {
                 context.Writer.WritePropertyName("startTimerDecisionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StartTimerDecisionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartTimerDecisionAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

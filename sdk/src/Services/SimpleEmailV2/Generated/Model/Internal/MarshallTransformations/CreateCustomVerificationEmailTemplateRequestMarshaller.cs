@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -61,55 +64,60 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v2/email/custom-verification-email-templates";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFailureRedirectionURL())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFailureRedirectionURL())
-                    {
-                        context.Writer.WritePropertyName("FailureRedirectionURL");
-                        context.Writer.Write(publicRequest.FailureRedirectionURL);
-                    }
-
-                    if(publicRequest.IsSetFromEmailAddress())
-                    {
-                        context.Writer.WritePropertyName("FromEmailAddress");
-                        context.Writer.Write(publicRequest.FromEmailAddress);
-                    }
-
-                    if(publicRequest.IsSetSuccessRedirectionURL())
-                    {
-                        context.Writer.WritePropertyName("SuccessRedirectionURL");
-                        context.Writer.Write(publicRequest.SuccessRedirectionURL);
-                    }
-
-                    if(publicRequest.IsSetTemplateContent())
-                    {
-                        context.Writer.WritePropertyName("TemplateContent");
-                        context.Writer.Write(publicRequest.TemplateContent);
-                    }
-
-                    if(publicRequest.IsSetTemplateName())
-                    {
-                        context.Writer.WritePropertyName("TemplateName");
-                        context.Writer.Write(publicRequest.TemplateName);
-                    }
-
-                    if(publicRequest.IsSetTemplateSubject())
-                    {
-                        context.Writer.WritePropertyName("TemplateSubject");
-                        context.Writer.Write(publicRequest.TemplateSubject);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("FailureRedirectionURL");
+                context.Writer.WriteStringValue(publicRequest.FailureRedirectionURL);
             }
+
+            if(publicRequest.IsSetFromEmailAddress())
+            {
+                context.Writer.WritePropertyName("FromEmailAddress");
+                context.Writer.WriteStringValue(publicRequest.FromEmailAddress);
+            }
+
+            if(publicRequest.IsSetSuccessRedirectionURL())
+            {
+                context.Writer.WritePropertyName("SuccessRedirectionURL");
+                context.Writer.WriteStringValue(publicRequest.SuccessRedirectionURL);
+            }
+
+            if(publicRequest.IsSetTemplateContent())
+            {
+                context.Writer.WritePropertyName("TemplateContent");
+                context.Writer.WriteStringValue(publicRequest.TemplateContent);
+            }
+
+            if(publicRequest.IsSetTemplateName())
+            {
+                context.Writer.WritePropertyName("TemplateName");
+                context.Writer.WriteStringValue(publicRequest.TemplateName);
+            }
+
+            if(publicRequest.IsSetTemplateSubject())
+            {
+                context.Writer.WritePropertyName("TemplateSubject");
+                context.Writer.WriteStringValue(publicRequest.TemplateSubject);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

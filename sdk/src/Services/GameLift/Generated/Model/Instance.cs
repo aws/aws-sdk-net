@@ -79,7 +79,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Non-TLS-enabled fleets: <c>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</c>.
         /// (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
-        /// Elastic Compute Cloud Instance IP Addressing</a>.)
+        /// EC2 Instance IP Addressing</a>.)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -107,6 +107,7 @@ namespace Amazon.GameLift.Model
         /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -125,6 +126,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the fleet that the instance belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }

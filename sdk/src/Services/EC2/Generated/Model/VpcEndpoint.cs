@@ -37,16 +37,22 @@ namespace Amazon.EC2.Model
         private DateTime? _creationTimestamp;
         private List<DnsEntry> _dnsEntries = AWSConfigs.InitializeCollections ? new List<DnsEntry>() : null;
         private DnsOptions _dnsOptions;
+        private string _failureReason;
         private List<SecurityGroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<SecurityGroupIdentifier>() : null;
         private IpAddressType _ipAddressType;
+        private List<SubnetIpPrefixes> _ipv4Prefixes = AWSConfigs.InitializeCollections ? new List<SubnetIpPrefixes>() : null;
+        private List<SubnetIpPrefixes> _ipv6Prefixes = AWSConfigs.InitializeCollections ? new List<SubnetIpPrefixes>() : null;
         private LastError _lastError;
         private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private bool? _requesterManaged;
+        private string _resourceConfigurationArn;
         private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceName;
+        private string _serviceNetworkArn;
+        private string _serviceRegion;
         private State _state;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -109,6 +115,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// Reason for the failure.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
         /// (Interface endpoint) Information about the security groups that are associated with
@@ -143,6 +167,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv4Prefixes. 
+        /// <para>
+        /// Array of IPv4 prefixes.
+        /// </para>
+        /// </summary>
+        public List<SubnetIpPrefixes> Ipv4Prefixes
+        {
+            get { return this._ipv4Prefixes; }
+            set { this._ipv4Prefixes = value; }
+        }
+
+        // Check to see if Ipv4Prefixes property is set
+        internal bool IsSetIpv4Prefixes()
+        {
+            return this._ipv4Prefixes != null && (this._ipv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Prefixes. 
+        /// <para>
+        /// Array of IPv6 prefixes.
+        /// </para>
+        /// </summary>
+        public List<SubnetIpPrefixes> Ipv6Prefixes
+        {
+            get { return this._ipv6Prefixes; }
+            set { this._ipv6Prefixes = value; }
+        }
+
+        // Check to see if Ipv6Prefixes property is set
+        internal bool IsSetIpv6Prefixes()
+        {
+            return this._ipv6Prefixes != null && (this._ipv6Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,6 +315,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource configuration.
+        /// </para>
+        /// </summary>
+        public string ResourceConfigurationArn
+        {
+            get { return this._resourceConfigurationArn; }
+            set { this._resourceConfigurationArn = value; }
+        }
+
+        // Check to see if ResourceConfigurationArn property is set
+        internal bool IsSetResourceConfigurationArn()
+        {
+            return this._resourceConfigurationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
         /// (Gateway endpoint) The IDs of the route tables associated with the endpoint.
@@ -288,6 +366,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service network.
+        /// </para>
+        /// </summary>
+        public string ServiceNetworkArn
+        {
+            get { return this._serviceNetworkArn; }
+            set { this._serviceNetworkArn = value; }
+        }
+
+        // Check to see if ServiceNetworkArn property is set
+        internal bool IsSetServiceNetworkArn()
+        {
+            return this._serviceNetworkArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegion. 
+        /// <para>
+        /// The Region where the service is hosted.
+        /// </para>
+        /// </summary>
+        public string ServiceRegion
+        {
+            get { return this._serviceRegion; }
+            set { this._serviceRegion = value; }
+        }
+
+        // Check to see if ServiceRegion property is set
+        internal bool IsSetServiceRegion()
+        {
+            return this._serviceRegion != null;
         }
 
         /// <summary>

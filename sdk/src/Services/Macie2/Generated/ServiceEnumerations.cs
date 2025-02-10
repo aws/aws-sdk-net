@@ -516,6 +516,10 @@ namespace Amazon.Macie2
         /// Constant ACCESS_DENIED for BucketMetadataErrorCode
         /// </summary>
         public static readonly BucketMetadataErrorCode ACCESS_DENIED = new BucketMetadataErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant BUCKET_COUNT_EXCEEDS_QUOTA for BucketMetadataErrorCode
+        /// </summary>
+        public static readonly BucketMetadataErrorCode BUCKET_COUNT_EXCEEDS_QUOTA = new BucketMetadataErrorCode("BUCKET_COUNT_EXCEEDS_QUOTA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

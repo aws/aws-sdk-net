@@ -98,7 +98,7 @@
         {"shape":"InternalServerException"},
         {"shape":"InvalidRequestException"}
       ],
-      "documentation":"<p>Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.</p>"
+      "documentation":"<p>Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.</p> <p>This API operation creates the following resources.</p> <ul> <li> <p>CFN Stack Name with a maximum length of 128 characters and prefix <code>athenafederatedcatalog-CATALOG_NAME_SANITIZED</code> with length 23 characters.</p> </li> <li> <p>Lambda Function Name with a maximum length of 64 characters and prefix <code>athenafederatedcatalog_CATALOG_NAME_SANITIZED</code> with length 23 characters.</p> </li> <li> <p>Glue Connection Name with a maximum length of 255 characters and a prefix <code>athenafederatedcatalog_CATALOG_NAME_SANITIZED</code> with length 23 characters. </p> </li> </ul>"
     },
     "CreateNamedQuery":{
       "name":"CreateNamedQuery",
@@ -1021,10 +1021,10 @@
       "members":{
         "S3AclOption":{
           "shape":"S3AclOption",
-          "documentation":"<p>The Amazon S3 canned ACL that Athena should specify when storing query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl\">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>"
+          "documentation":"<p>The Amazon S3 canned ACL that Athena should specify when storing query results, including data files inserted by Athena as the result of statements like CTAS or INSERT INTO. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>. If a query runs in a workgroup and the workgroup overrides client-side settings, then the Amazon S3 canned ACL specified in the workgroup's settings is used for all queries that run in the workgroup. For more information about Amazon S3 canned ACLs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#canned-acl\">Canned ACL</a> in the <i>Amazon S3 User Guide</i>.</p>"
         }
       },
-      "documentation":"<p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview\">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>.</p>"
+      "documentation":"<p>Indicates that an Amazon S3 canned ACL should be set to control ownership of stored query results, including data files inserted by Athena as the result of statements like CTAS or INSERT INTO. When Athena stores query results in Amazon S3, the canned ACL is set with the <code>x-amz-acl</code> request header. For more information about S3 Object Ownership, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html#object-ownership-overview\">Object Ownership settings</a> in the <i>Amazon S3 User Guide</i>.</p>"
     },
     "Age":{
       "type":"integer",
@@ -1554,23 +1554,13 @@
         "GOOGLECLOUDSTORAGE",
         "HBASE",
         "DOCUMENTDB",
-        "MSK",
-        "NEPTUNE",
         "CMDB",
         "TPCDS",
-        "REDIS",
-        "CLOUDWATCH",
         "TIMESTREAM",
         "SAPHANA",
         "SNOWFLAKE",
-        "TERADATA",
-        "VERTICA",
-        "CLOUDERAIMPALA",
-        "CLOUDERAHIVE",
-        "HORTONWORKSHIVE",
         "DATALAKEGEN2",
-        "DB2AS400",
-        "CLOUDWATCHMETRICS"
+        "DB2AS400"
       ]
     },
     "CoordinatorDpuSize":{
@@ -1614,7 +1604,7 @@
       "members":{
         "Name":{
           "shape":"CatalogNameString",
-          "documentation":"<p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p>"
+          "documentation":"<p>The name of the data catalog to create. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 127 alphanumeric, underscore, at sign, or hyphen characters. The remainder of the length constraint of 256 is reserved for use by Athena.</p> <p>For <code>FEDERATED</code> type the catalog name has following considerations and limits:</p> <ul> <li> <p>The catalog name allows special characters such as <code>_ , @ , \\ , - </code>. These characters are replaced with a hyphen (-) when creating the CFN Stack Name and with an underscore (_) when creating the Lambda Function and Glue Connection Name.</p> </li> <li> <p>The catalog name has a theoretical limit of 128 characters. However, since we use it to create other resources that allow less characters and we prepend a prefix to it, the actual catalog name limit for <code>FEDERATED</code> catalog is 64 - 23 = 41 characters.</p> </li> </ul>"
         },
         "Type":{
           "shape":"DataCatalogType",
@@ -1630,7 +1620,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>A list of comma separated tags to add to the data catalog that is created.</p>"
+          "documentation":"<p>A list of comma separated tags to add to the data catalog that is created. All the resources that are created by the <code>CreateDataCatalog</code> API operation with <code>FEDERATED</code> type will have the tag <code>federated_athena_datacatalog=\"true\"</code>. This includes the CFN Stack, Glue Connection, Athena DataCatalog, and all the resources created as part of the CFN Stack (Lambda Function, IAM policies/roles).</p>"
         }
       }
     },
@@ -1973,6 +1963,10 @@
         "Name":{
           "shape":"CatalogNameString",
           "documentation":"<p>The name of the data catalog to delete.</p>"
+        },
+        "DeleteCatalogOnly":{
+          "shape":"Boolean",
+          "documentation":"<p>Deletes the Athena Data Catalog. You can only use this with the <code>FEDERATED</code> catalogs. You usually perform this before registering the connector with Glue Data Catalog. After deletion, you will have to manage the Glue Connection and Lambda function. </p>"
         }
       }
     },
@@ -2539,7 +2533,7 @@
       "members":{
         "UpdateCount":{
           "shape":"Long",
-          "documentation":"<p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code> statement. </p>"
+          "documentation":"<p>The number of rows inserted with a <code>CREATE TABLE AS SELECT</code>, <code>INSERT INTO</code>, or <code>UPDATE</code> statement. </p>"
         },
         "ResultSet":{
           "shape":"ResultSet",

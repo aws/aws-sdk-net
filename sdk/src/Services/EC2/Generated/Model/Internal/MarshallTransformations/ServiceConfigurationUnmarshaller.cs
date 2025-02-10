@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceConfiguration Object
     /// </summary>  
-    public class ServiceConfigurationUnmarshaller : IUnmarshaller<ServiceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ServiceConfiguration, JsonUnmarshallerContext>
+    public class ServiceConfigurationUnmarshaller : IXmlUnmarshaller<ServiceConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,6 +129,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PrivateDnsNameConfiguration = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("remoteAccessEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.RemoteAccessEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("serviceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -169,6 +175,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedIpAddressTypes.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("supportedRegionSet/item", targetDepth))
+                    {
+                        var unmarshaller = SupportedRegionDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedRegions == null)
+                        {
+                            unmarshalledObject.SupportedRegions = new List<SupportedRegionDetail>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedRegions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
@@ -189,17 +206,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServiceConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServiceConfigurationUnmarshaller _instance = new ServiceConfigurationUnmarshaller();        
 

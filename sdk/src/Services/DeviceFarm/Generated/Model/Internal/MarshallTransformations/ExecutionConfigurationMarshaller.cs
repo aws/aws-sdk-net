@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountsCleanup())
             {
                 context.Writer.WritePropertyName("accountsCleanup");
-                context.Writer.Write(requestObject.AccountsCleanup.Value);
+                context.Writer.WriteBooleanValue(requestObject.AccountsCleanup.Value);
             }
 
             if(requestObject.IsSetAppPackagesCleanup())
             {
                 context.Writer.WritePropertyName("appPackagesCleanup");
-                context.Writer.Write(requestObject.AppPackagesCleanup.Value);
+                context.Writer.WriteBooleanValue(requestObject.AppPackagesCleanup.Value);
             }
 
             if(requestObject.IsSetJobTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("jobTimeoutMinutes");
-                context.Writer.Write(requestObject.JobTimeoutMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.JobTimeoutMinutes.Value);
             }
 
             if(requestObject.IsSetSkipAppResign())
             {
                 context.Writer.WritePropertyName("skipAppResign");
-                context.Writer.Write(requestObject.SkipAppResign.Value);
+                context.Writer.WriteBooleanValue(requestObject.SkipAppResign.Value);
             }
 
             if(requestObject.IsSetVideoCapture())
             {
                 context.Writer.WritePropertyName("videoCapture");
-                context.Writer.Write(requestObject.VideoCapture.Value);
+                context.Writer.WriteBooleanValue(requestObject.VideoCapture.Value);
             }
 
         }

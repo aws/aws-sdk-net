@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOccurrencesThreshold())
             {
                 context.Writer.WritePropertyName("occurrencesThreshold");
-                context.Writer.Write(requestObject.OccurrencesThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.OccurrencesThreshold.Value);
             }
 
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("severity");
-                context.Writer.Write(requestObject.Severity);
+                context.Writer.WriteStringValue(requestObject.Severity);
             }
 
         }

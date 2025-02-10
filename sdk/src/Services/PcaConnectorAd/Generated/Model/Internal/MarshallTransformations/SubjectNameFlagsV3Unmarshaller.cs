@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SubjectNameFlagsV3 Object
     /// </summary>  
-    public class SubjectNameFlagsV3Unmarshaller : IUnmarshaller<SubjectNameFlagsV3, XmlUnmarshallerContext>, IUnmarshaller<SubjectNameFlagsV3, JsonUnmarshallerContext>
+    public class SubjectNameFlagsV3Unmarshaller : IJsonUnmarshaller<SubjectNameFlagsV3, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SubjectNameFlagsV3 IUnmarshaller<SubjectNameFlagsV3, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SubjectNameFlagsV3 Unmarshall(JsonUnmarshallerContext context)
+        public SubjectNameFlagsV3 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SubjectNameFlagsV3 unmarshalledObject = new SubjectNameFlagsV3();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RequireCommonName", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireCommonName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireCommonName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireDirectoryPath", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireDirectoryPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireDirectoryPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireDnsAsCn", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireDnsAsCn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireDnsAsCn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireEmail", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireEmail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SanRequireDirectoryGuid", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SanRequireDirectoryGuid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SanRequireDirectoryGuid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SanRequireDns", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SanRequireDns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SanRequireDns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SanRequireDomainDns", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SanRequireDomainDns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SanRequireDomainDns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SanRequireEmail", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SanRequireEmail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SanRequireEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SanRequireSpn", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SanRequireSpn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SanRequireSpn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SanRequireUpn", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SanRequireUpn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SanRequireUpn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

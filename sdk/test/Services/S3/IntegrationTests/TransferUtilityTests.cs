@@ -10,6 +10,7 @@ using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using Amazon.Util;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -133,6 +134,57 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.IsTrue(File.Exists(downloadPath));
                 tu.Download(downloadRequest);
                 TestDownloadedFile(downloadPath);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void SimpleUploadWithPrecalculatedChecksum()
+        {
+            using (var tu = new TransferUtility(Client))
+            {
+                // If a pre-calculated checksum is provided for a file uploaded in a single PutObject call,
+                // the TransferUtility will set the appropriate header (i.e. x-amz-checksum-<algorithm_name>).
+                // An invalid header exception would be thrown if the value does not match the checksum calculated by S3.
+                var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32Hash(File.ReadAllBytes(fullPath));
+                
+                tu.Upload(new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = testFile,
+                    FilePath = fullPath,
+                    ChecksumCRC32 = precalculatedChecksum,
+                });
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void LargeUploadWithPrecalculatedValues()
+        {
+            var fileName = UtilityMethods.GenerateName();
+            var fullFilePath = Path.Combine(BasePath, fileName);
+            UtilityMethods.GenerateFile(fullFilePath, 20 * MEG_SIZE);
+
+            using (var tu = new TransferUtility(Client))
+            {
+                // If a pre-calculated checksum is provided for a file uploaded via multi-part uploads, the TransferUtility
+                // will set both the appropriate header (i.e. x-amz-checksum-<algorithm_name>) and the checksum type to full object.
+                // An invalid header exception would be thrown if the value does not match the checksum calculated by S3.
+                var precalculatedChecksum = CryptoUtilFactory.CryptoInstance.ComputeCRC32CHash(File.ReadAllBytes(fullFilePath));
+
+                // For multi-part uploads only, the size of the object can also be specified.
+                // Another invalid header exception would be thrown if the value does not match the size calculated by S3.
+                var precalculatedObjectSize = new FileInfo(fullFilePath).Length;
+
+                tu.Upload(new TransferUtilityUploadRequest
+                {
+                    BucketName = bucketName,
+                    Key = fileName,
+                    FilePath = fullFilePath,
+                    ChecksumCRC32C = precalculatedChecksum,
+                    MpuObjectSize = precalculatedObjectSize,
+                });
             }
         }
 
@@ -790,7 +842,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         DirectoryInfo DownloadDirectoryWithDisableSlashCorrectionForS3Directory(int numberOfTestFiles, DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
         {
-            var keyPrefix = DateTime.Now.ToString("yyyy-MM-dd");
+            var keyPrefix = DateTime.UtcNow.ToString("yyyy-MM-dd");
             var directory = UploadDirectoryWithKeyPrefix(1 * KILO_SIZE, null, keyPrefix, numberOfTestFiles, false);
             var directoryPath = directory.FullName;
             Directory.Delete(directoryPath, true);

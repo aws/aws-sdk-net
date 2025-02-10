@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private ModelCompilationConfig _modelCompilationConfig;
         private ModelQuantizationConfig _modelQuantizationConfig;
+        private ModelShardingConfig _modelShardingConfig;
 
         /// <summary>
         /// Gets and sets the property ModelCompilationConfig. 
@@ -73,6 +74,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelQuantizationConfig()
         {
             return this._modelQuantizationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelShardingConfig. 
+        /// <para>
+        /// Settings for the model sharding technique that's applied by a model optimization job.
+        /// </para>
+        /// </summary>
+        public ModelShardingConfig ModelShardingConfig
+        {
+            get { return this._modelShardingConfig; }
+            set { this._modelShardingConfig = value; }
+        }
+
+        // Check to see if ModelShardingConfig property is set
+        internal bool IsSetModelShardingConfig()
+        {
+            return this._modelShardingConfig != null;
         }
 
     }

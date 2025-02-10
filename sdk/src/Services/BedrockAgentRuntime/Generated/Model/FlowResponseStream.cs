@@ -29,23 +29,13 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// The output of the flow.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used in the following API operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_ResponseSyntax">InvokeFlow
-    /// response</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "FlowResponseStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
@@ -58,8 +48,34 @@ namespace Amazon.BedrockAgentRuntime.Model
         new Dictionary<string,Func<IEventStreamMessage,IEventStreamEvent>>(StringComparer.OrdinalIgnoreCase)
         {
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
-            {"FlowCompletionEvent", payload => new FlowCompletionEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
-            {"FlowOutputEvent", payload => new FlowOutputEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"FlowCompletionEvent", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new FlowCompletionEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {"FlowMultiTurnInputRequestEvent", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new FlowMultiTurnInputRequestEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {"FlowOutputEvent", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new FlowOutputEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
+            {"FlowTraceEvent", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    return new FlowTraceEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
@@ -67,15 +83,69 @@ namespace Amazon.BedrockAgentRuntime.Model
         protected override IDictionary<string,Func<IEventStreamMessage,BedrockAgentRuntimeEventStreamException>> ExceptionMapping {get;} =
         new Dictionary<string,Func<IEventStreamMessage,BedrockAgentRuntimeEventStreamException>>(StringComparer.OrdinalIgnoreCase)
         {
-            { "AccessDeniedException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new AccessDeniedExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "BadGatewayException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new BadGatewayExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ConflictException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "DependencyFailedException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new DependencyFailedExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "InternalServerException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ResourceNotFoundException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceNotFoundExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ServiceQuotaExceededException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceQuotaExceededExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ThrottlingException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
-            { "ValidationException", payload => new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))) },
+                    {"AccessDeniedException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new AccessDeniedExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"BadGatewayException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new BadGatewayExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ConflictException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"DependencyFailedException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new DependencyFailedExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"InternalServerException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ResourceNotFoundException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceNotFoundExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ServiceQuotaExceededException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceQuotaExceededExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ThrottlingException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
+                    {"ValidationException", payload => 
+                        {
+                            var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            return new BedrockAgentRuntimeEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(context, ref reader));
+                        }
+                    },
         };
         // Backing by a volatile bool. The flag only changes one way, so no need for a lock.
         // This is located in the subclass to be CLS compliant.
@@ -108,9 +178,17 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<FlowCompletionEvent>> FlowCompletionEventReceived;
         ///<summary>
+        ///Raised when an FlowMultiTurnInputRequestEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<FlowMultiTurnInputRequestEvent>> FlowMultiTurnInputRequestEventReceived;
+        ///<summary>
         ///Raised when an FlowOutputEvent event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<FlowOutputEvent>> FlowOutputEventReceived;
+        ///<summary>
+        ///Raised when an FlowTraceEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<FlowTraceEvent>> FlowTraceEventReceived;
 
         /// <summary>
         /// Construct an instance
@@ -149,7 +227,9 @@ namespace Amazon.BedrockAgentRuntime.Model
                 var _ =
                     RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(FlowCompletionEventReceived,ev) ||
-                    RaiseEvent(FlowOutputEventReceived,ev);
+                    RaiseEvent(FlowMultiTurnInputRequestEventReceived,ev) ||
+                    RaiseEvent(FlowOutputEventReceived,ev) ||
+                    RaiseEvent(FlowTraceEventReceived,ev);
             };       
         }
         private bool RaiseEvent<T>(EventHandler<EventStreamEventReceivedArgs<T>> eventHandler, IEventStreamEvent ev) where T : class, IEventStreamEvent

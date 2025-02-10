@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for BatchRequestTooLongException operation
     /// </summary>  
-    public class BatchRequestTooLongExceptionUnmarshaller : IErrorResponseUnmarshaller<BatchRequestTooLongException, XmlUnmarshallerContext>
+    public class BatchRequestTooLongExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BatchRequestTooLongException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

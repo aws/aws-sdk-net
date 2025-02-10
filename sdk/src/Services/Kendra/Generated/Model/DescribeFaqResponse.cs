@@ -107,7 +107,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The file format used by the input files for the FAQ.
+        /// The file format used for the FAQ file.
         /// </para>
         /// </summary>
         public FaqFileFormat FileFormat
@@ -204,8 +204,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role that provides access to the S3 bucket containing
-        /// the input files for the FAQ.
+        /// The Amazon Resource Name (ARN) of the IAM role that provides access to the S3 bucket
+        /// containing the FAQ file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

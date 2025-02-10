@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnalysisScheme Object
     /// </summary>  
-    public class AnalysisSchemeUnmarshaller : IUnmarshaller<AnalysisScheme, XmlUnmarshallerContext>, IUnmarshaller<AnalysisScheme, JsonUnmarshallerContext>
+    public class AnalysisSchemeUnmarshaller : IXmlUnmarshaller<AnalysisScheme, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnalysisScheme Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AnalysisSchemeUnmarshaller _instance = new AnalysisSchemeUnmarshaller();        
 

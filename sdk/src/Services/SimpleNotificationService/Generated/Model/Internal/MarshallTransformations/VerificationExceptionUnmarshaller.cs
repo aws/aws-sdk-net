@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for VerificationException operation
     /// </summary>  
-    public class VerificationExceptionUnmarshaller : IErrorResponseUnmarshaller<VerificationException, XmlUnmarshallerContext>
+    public class VerificationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<VerificationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

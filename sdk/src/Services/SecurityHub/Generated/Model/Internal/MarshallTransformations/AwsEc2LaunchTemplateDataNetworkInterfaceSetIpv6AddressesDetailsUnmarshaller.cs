@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails Object
     /// </summary>  
-    public class AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetailsUnmarshaller : IUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails, JsonUnmarshallerContext>
+    public class AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails IUnmarshaller<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails unmarshalledObject = new AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Ipv6Address", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

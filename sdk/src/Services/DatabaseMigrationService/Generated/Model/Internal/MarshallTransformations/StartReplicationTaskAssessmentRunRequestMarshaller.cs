@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,83 +66,104 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssessmentRunName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssessmentRunName())
-                    {
-                        context.Writer.WritePropertyName("AssessmentRunName");
-                        context.Writer.Write(publicRequest.AssessmentRunName);
-                    }
-
-                    if(publicRequest.IsSetExclude())
-                    {
-                        context.Writer.WritePropertyName("Exclude");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestExcludeListValue in publicRequest.Exclude)
-                        {
-                                context.Writer.Write(publicRequestExcludeListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIncludeOnly())
-                    {
-                        context.Writer.WritePropertyName("IncludeOnly");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIncludeOnlyListValue in publicRequest.IncludeOnly)
-                        {
-                                context.Writer.Write(publicRequestIncludeOnlyListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReplicationTaskArn())
-                    {
-                        context.Writer.WritePropertyName("ReplicationTaskArn");
-                        context.Writer.Write(publicRequest.ReplicationTaskArn);
-                    }
-
-                    if(publicRequest.IsSetResultEncryptionMode())
-                    {
-                        context.Writer.WritePropertyName("ResultEncryptionMode");
-                        context.Writer.Write(publicRequest.ResultEncryptionMode);
-                    }
-
-                    if(publicRequest.IsSetResultKmsKeyArn())
-                    {
-                        context.Writer.WritePropertyName("ResultKmsKeyArn");
-                        context.Writer.Write(publicRequest.ResultKmsKeyArn);
-                    }
-
-                    if(publicRequest.IsSetResultLocationBucket())
-                    {
-                        context.Writer.WritePropertyName("ResultLocationBucket");
-                        context.Writer.Write(publicRequest.ResultLocationBucket);
-                    }
-
-                    if(publicRequest.IsSetResultLocationFolder())
-                    {
-                        context.Writer.WritePropertyName("ResultLocationFolder");
-                        context.Writer.Write(publicRequest.ResultLocationFolder);
-                    }
-
-                    if(publicRequest.IsSetServiceAccessRoleArn())
-                    {
-                        context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                        context.Writer.Write(publicRequest.ServiceAccessRoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AssessmentRunName");
+                context.Writer.WriteStringValue(publicRequest.AssessmentRunName);
             }
+
+            if(publicRequest.IsSetExclude())
+            {
+                context.Writer.WritePropertyName("Exclude");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExcludeListValue in publicRequest.Exclude)
+                {
+                        context.Writer.WriteStringValue(publicRequestExcludeListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIncludeOnly())
+            {
+                context.Writer.WritePropertyName("IncludeOnly");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIncludeOnlyListValue in publicRequest.IncludeOnly)
+                {
+                        context.Writer.WriteStringValue(publicRequestIncludeOnlyListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReplicationTaskArn())
+            {
+                context.Writer.WritePropertyName("ReplicationTaskArn");
+                context.Writer.WriteStringValue(publicRequest.ReplicationTaskArn);
+            }
+
+            if(publicRequest.IsSetResultEncryptionMode())
+            {
+                context.Writer.WritePropertyName("ResultEncryptionMode");
+                context.Writer.WriteStringValue(publicRequest.ResultEncryptionMode);
+            }
+
+            if(publicRequest.IsSetResultKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("ResultKmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.ResultKmsKeyArn);
+            }
+
+            if(publicRequest.IsSetResultLocationBucket())
+            {
+                context.Writer.WritePropertyName("ResultLocationBucket");
+                context.Writer.WriteStringValue(publicRequest.ResultLocationBucket);
+            }
+
+            if(publicRequest.IsSetResultLocationFolder())
+            {
+                context.Writer.WritePropertyName("ResultLocationFolder");
+                context.Writer.WriteStringValue(publicRequest.ResultLocationFolder);
+            }
+
+            if(publicRequest.IsSetServiceAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

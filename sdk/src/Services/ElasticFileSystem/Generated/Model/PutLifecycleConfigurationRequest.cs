@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model
     ///  <note> 
     /// <para>
     ///  The Archive storage class is available only for file systems that use the Elastic
-    /// Throughput mode and the General Purpose Performance mode. 
+    /// throughput mode and the General Purpose performance mode. 
     /// </para>
     ///  </note> </li> </ul> <ul> <li> 
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The ID for the file system for which you are enabling, disabling, or modifying Lifecycle
+    /// The ID for the file system for which you are enabling, disabling, or modifying lifecycle
     /// management.
     /// </para>
     ///  </li> <li> 
@@ -132,8 +132,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property LifecyclePolicies. 
         /// <para>
         /// An array of <c>LifecyclePolicy</c> objects that define the file system's <c>LifecycleConfiguration</c>
-        /// object. A <c>LifecycleConfiguration</c> object informs EFS Lifecycle management of
-        /// the following:
+        /// object. A <c>LifecycleConfiguration</c> object informs lifecycle management of the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -152,8 +152,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  The Archive storage class is available only for file systems that use the Elastic
-        /// Throughput mode and the General Purpose Performance mode. 
+        /// The Archive storage class is available only for file systems that use the Elastic
+        /// throughput mode and the General Purpose performance mode. 
         /// </para>
         ///  </note> </li> <li> 
         /// <para>

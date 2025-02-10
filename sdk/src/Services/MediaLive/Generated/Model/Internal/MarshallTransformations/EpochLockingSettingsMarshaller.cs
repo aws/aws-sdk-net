@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomEpoch())
             {
                 context.Writer.WritePropertyName("customEpoch");
-                context.Writer.Write(requestObject.CustomEpoch);
+                context.Writer.WriteStringValue(requestObject.CustomEpoch);
             }
 
             if(requestObject.IsSetJamSyncTime())
             {
                 context.Writer.WritePropertyName("jamSyncTime");
-                context.Writer.Write(requestObject.JamSyncTime);
+                context.Writer.WriteStringValue(requestObject.JamSyncTime);
             }
 
         }

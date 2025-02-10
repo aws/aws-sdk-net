@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IncrementalExportSpecification Object
     /// </summary>  
-    public class IncrementalExportSpecificationUnmarshaller : IUnmarshaller<IncrementalExportSpecification, XmlUnmarshallerContext>, IUnmarshaller<IncrementalExportSpecification, JsonUnmarshallerContext>
+    public class IncrementalExportSpecificationUnmarshaller : IJsonUnmarshaller<IncrementalExportSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IncrementalExportSpecification IUnmarshaller<IncrementalExportSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IncrementalExportSpecification Unmarshall(JsonUnmarshallerContext context)
+        public IncrementalExportSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IncrementalExportSpecification unmarshalledObject = new IncrementalExportSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExportFromTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExportFromTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportFromTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportToTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExportToTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportToTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportViewType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExportViewType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportViewType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

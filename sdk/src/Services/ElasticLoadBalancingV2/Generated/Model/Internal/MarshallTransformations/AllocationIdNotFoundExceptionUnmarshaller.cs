@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AllocationIdNotFoundException operation
     /// </summary>  
-    public class AllocationIdNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<AllocationIdNotFoundException, XmlUnmarshallerContext>
+    public class AllocationIdNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AllocationIdNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

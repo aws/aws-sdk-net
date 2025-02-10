@@ -52,7 +52,14 @@ namespace Amazon.S3.Transfer
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private ChecksumAlgorithm checksumAlgorithm;
+        private string _checksumCRC32;
+        private string _checksumCRC32C;
+        private string _checksumCRC64NVME;
+        private string _checksumSHA1;
+        private string _checksumSHA256;
         private string _ifNoneMatch;
+        private string _ifMatch;
+        private long? _mpuObjectSize;
 
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
@@ -243,7 +250,7 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
-        /// The base64-encoded encryption key for Amazon S3 to use to encrypt the object
+        /// The Base64 encoded encryption key for Amazon S3 to use to encrypt the object
         /// <para>
         /// Using the encryption key you provide as part of your request Amazon S3 manages both the encryption, as it writes 
         /// to disks, and decryption, when you access your objects. Therefore, you don't need to maintain any data encryption code. The only 
@@ -524,10 +531,7 @@ namespace Amazon.S3.Transfer
         /// integrity check on upload requests.</b></para>
         /// <para>When true, checksum verification will not be used in upload requests. This may increase upload 
         /// performance under high CPU loads. Setting DisableDefaultChecksumValidation sets the deprecated property
-        /// DisableMD5Stream to the same value. The default value is false. Set this value to true to 
-        /// disable the default checksum validation used in all S3 upload requests or override this value per
-        /// request by setting the DisableDefaultChecksumValidation property on <see cref="S3.Model.PutObjectRequest"/>,
-        /// <see cref="S3.Model.UploadPartRequest"/>, or <see cref="S3.Transfer.TransferUtilityUploadRequest"/>.</para>
+        /// DisableMD5Stream to the same value. The default value is false.</para>
         /// <para>Checksums, SigV4 payload signing, and HTTPS each provide some data integrity 
         /// verification. If DisableDefaultChecksumValidation is true and DisablePayloadSigning is true, then the 
         /// possibility of data corruption is completely dependent on HTTPS being the only remaining 
@@ -558,6 +562,10 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Gets or sets whether the Content-MD5 header should be calculated for upload.
         /// </summary>
+        /// <remarks>
+        /// If set, the SDK populates the Content-MD5 header but S3 will prioritize the checksum headers (for example, <c>x-amz-checksum-crc32</c>).
+        /// </remarks>
+        [Obsolete("This property is redundant in the latest version of the AWSSDK.S3 package, which automatically calculates a checksum to verify data integrity (using CRC32 by default).")]
         public bool CalculateContentMD5Header
         {
             get { return this.calculateContentMD5Header; }
@@ -611,14 +619,13 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object. Amazon S3 will
-        /// fail the request with a 400 error if there is no checksum associated with the object.
+        /// Indicates the algorithm used to create the checksum for the object.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an individual checksum, Amazon S3 will ignore any provided <code>ChecksumAlgorithm</code>.
+        /// If you provide an individual checksum, Amazon S3 will ignore any provided <c>ChecksumAlgorithm</c>.
         /// </para>
         /// </summary>
         public ChecksumAlgorithm ChecksumAlgorithm
@@ -628,12 +635,127 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumCRC32. 
+        /// <para>
+        /// This specifies the Base64 encoded, 32-bit <c>CRC-32C</c> checksum of the object. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a>
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32
+        {
+            get { return this._checksumCRC32; }
+            set { this._checksumCRC32 = value; }
+        }
+
+        /// <summary>
+        /// Checks if ChecksumCRC32 property is set.
+        /// </summary>
+        /// <returns>true if ChecksumCRC32 property is set.</returns>
+        internal bool IsSetChecksumCRC32()
+        {
+            return !string.IsNullOrEmpty(this._checksumCRC32);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC32C. 
+        /// <para>
+        /// This specifies the Base64 encoded, 32-bit <c>CRC-32C</c> checksum of the object. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a>
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC32C
+        {
+            get { return this._checksumCRC32C; }
+            set { this._checksumCRC32C = value; }
+        }
+
+        /// <summary>
+        /// Checks if ChecksumCRC32C property is set.
+        /// </summary>
+        /// <returns>true if ChecksumCRC32C property is set.</returns>
+        internal bool IsSetChecksumCRC32C()
+        {
+            return !string.IsNullOrEmpty(this._checksumCRC32C);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumCRC64NVME. 
+        /// <para>
+        /// This specifies the Base64 encoded, 64-bit <c>CRC-64NVME</c> checksum of the object. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a>
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC64NVME
+        {
+            get { return this._checksumCRC64NVME; }
+            set { this._checksumCRC64NVME = value; }
+        }
+
+        /// <summary>
+        /// Checks if ChecksumCRC64NVME property is set.
+        /// </summary>
+        /// <returns>true if ChecksumCRC64NVME property is set.</returns>
+        internal bool IsSetChecksumCRC64NVME()
+        {
+            return !string.IsNullOrEmpty(this._checksumCRC64NVME);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA1. 
+        /// <para>
+        /// This specifies the Base64 encoded, 160-bit <c>SHA-1</c> digest of the object. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a>
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA1
+        {
+            get { return this._checksumSHA1; }
+            set { this._checksumSHA1 = value; }
+        }
+
+        /// <summary>
+        /// Checks if ChecksumSHA1 property is set.
+        /// </summary>
+        /// <returns>true if ChecksumSHA1 property is set.</returns>
+        internal bool IsSetChecksumSHA1()
+        {
+            return !string.IsNullOrEmpty(this._checksumSHA1);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumSHA256. 
+        /// <para>
+        /// This specifies the Base64 encoded, 256-bit <c>SHA-256</c> digest of the object. 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a>
+        /// in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ChecksumSHA256
+        {
+            get { return this._checksumSHA256; }
+            set { this._checksumSHA256 = value; }
+        }
+
+        /// <summary>
+        /// Checks if ChecksumSHA256 property is set.
+        /// </summary>
+        /// <returns>true if ChecksumSHA256 property is set.</returns>
+        internal bool IsSetChecksumSHA256()
+        {
+            return !string.IsNullOrEmpty(this._checksumSHA256);
+        }
+
+        /// <summary>
         /// Gets and sets the property IfNoneMatch used when CompleteMultipartUploadRequest is called to 
         /// complete the multipart upload.
         /// <para>Uploads the object only if the object key name does not already exist in the bucket specified. Otherwise, 
-        /// Amazon S3 returns a <code>412 Precondition Failed</code> error.</para> <para>If a conflicting operation occurs 
-        /// during the upload S3 returns a <code>409 ConditionalRequestConflict</code> response. On a 409 failure you should 
-        /// re-initiate the multipart upload with <code>CreateMultipartUpload</code> and re-upload each part.</para> <para>Expects 
+        /// Amazon S3 returns a <c>412 Precondition Failed</c> error.</para> <para>If a conflicting operation occurs 
+        /// during the upload S3 returns a <c>409 ConditionalRequestConflict</c> response. On a 409 failure you should 
+        /// re-initiate the multipart upload with <c>CreateMultipartUpload</c> and re-upload each part.</para> <para>Expects 
         /// the '*' (asterisk) character.</para> <para>For more information about conditional requests, 
         /// see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a> 
         /// in the <i>Amazon S3 User Guide</i>.</para>
@@ -653,8 +775,52 @@ namespace Amazon.S3.Transfer
             return !string.IsNullOrEmpty(this._ifNoneMatch);
         }
 
-    }
+        /// <summary>
+        /// Gets and sets the property IfMatch used when CompleteMultipartUploadRequest is called to 
+        /// complete the multipart upload.
+        /// <para>Uploads the object only if the ETag (entity tag) value provided during the WRITE operation matches the ETag of the object in S3. If the ETag values do not match, the operation returns a <c>412 Precondition Failed</c> error.</para>
+        /// <para>If a conflicting operation occurs during the upload S3 returns a <c>409 ConditionalRequestConflict</c> response. On a 409 failure you should fetch the object's ETag and retry the upload.</para>
+        /// <para>Expects the ETag value as a string.</para>
+        /// <para>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-requests.html">Conditional requests</a> in the <i>Amazon S3 User Guide</i>.</para>
+        /// </summary>
+        public string IfMatch
+        {
+            get { return this._ifMatch; }
+            set { this._ifMatch = value; }
+        }
 
+        /// <summary>
+        /// Checks to see if IfMatch is set.
+        /// </summary>
+        /// <returns>true, if IfMatch property is set.</returns>
+        internal bool IsSetIfMatch()
+        {
+            return !string.IsNullOrEmpty(this._ifMatch);
+        }
+        /// <summary>
+        /// Gets and sets the property MpuObjectSize. 
+        /// <para>
+        /// The expected total object size of the multipart upload request.
+        /// If there's a mismatch between the specified object size value and the actual
+        /// object size value, it results in an <c>HTTP 400 InvalidRequest</c> error.
+        /// </para>
+        /// </summary>
+        public long MpuObjectSize
+        {
+            get { return this._mpuObjectSize.GetValueOrDefault(); }
+            set { this._mpuObjectSize = value; }
+        }
+
+        /// <summary>
+        /// Checks if MpuObjectSize property is set.
+        /// </summary>
+        /// <returns>true if MpuObjectSize property is set.</returns>
+        internal bool IsSetMpuObjectSize()
+        {
+            return this._mpuObjectSize.HasValue;
+        }
+    }
+    
     /// <summary>
     /// Encapsulates the information needed to provide
     /// transfer progress to subscribers of the Put Object

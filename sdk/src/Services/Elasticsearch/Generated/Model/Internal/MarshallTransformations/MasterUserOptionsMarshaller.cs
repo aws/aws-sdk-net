@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMasterUserARN())
             {
                 context.Writer.WritePropertyName("MasterUserARN");
-                context.Writer.Write(requestObject.MasterUserARN);
+                context.Writer.WriteStringValue(requestObject.MasterUserARN);
             }
 
             if(requestObject.IsSetMasterUserName())
             {
                 context.Writer.WritePropertyName("MasterUserName");
-                context.Writer.Write(requestObject.MasterUserName);
+                context.Writer.WriteStringValue(requestObject.MasterUserName);
             }
 
             if(requestObject.IsSetMasterUserPassword())
             {
                 context.Writer.WritePropertyName("MasterUserPassword");
-                context.Writer.Write(requestObject.MasterUserPassword);
+                context.Writer.WriteStringValue(requestObject.MasterUserPassword);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("readCapacityUnits");
-                context.Writer.Write(requestObject.ReadCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.ReadCapacityUnits.Value);
             }
 
             if(requestObject.IsSetThroughputMode())
             {
                 context.Writer.WritePropertyName("throughputMode");
-                context.Writer.Write(requestObject.ThroughputMode);
+                context.Writer.WriteStringValue(requestObject.ThroughputMode);
             }
 
             if(requestObject.IsSetWriteCapacityUnits())
             {
                 context.Writer.WritePropertyName("writeCapacityUnits");
-                context.Writer.Write(requestObject.WriteCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.WriteCapacityUnits.Value);
             }
 
         }

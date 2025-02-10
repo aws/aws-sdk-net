@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
@@ -47,141 +47,141 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             AllocateHostedConnectionResponse response = new AllocateHostedConnectionResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("awsDevice", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AwsDevice = unmarshaller.Unmarshall(context);
+                    response.AwsDevice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsDeviceV2", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context);
+                    response.AwsDeviceV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsLogicalDeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AwsLogicalDeviceId = unmarshaller.Unmarshall(context);
+                    response.AwsLogicalDeviceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bandwidth", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Bandwidth = unmarshaller.Unmarshall(context);
+                    response.Bandwidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionId = unmarshaller.Unmarshall(context);
+                    response.ConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionName = unmarshaller.Unmarshall(context);
+                    response.ConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectionState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConnectionState = unmarshaller.Unmarshall(context);
+                    response.ConnectionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryptionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.EncryptionMode = unmarshaller.Unmarshall(context);
+                    response.EncryptionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hasLogicalRedundancy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HasLogicalRedundancy = unmarshaller.Unmarshall(context);
+                    response.HasLogicalRedundancy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.JumboFrameCapable = unmarshaller.Unmarshall(context);
+                    response.JumboFrameCapable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lagId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LagId = unmarshaller.Unmarshall(context);
+                    response.LagId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("loaIssueTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LoaIssueTime = unmarshaller.Unmarshall(context);
+                    response.LoaIssueTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Location = unmarshaller.Unmarshall(context);
+                    response.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("macSecCapable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.MacSecCapable = unmarshaller.Unmarshall(context);
+                    response.MacSecCapable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("macSecKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance);
-                    response.MacSecKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MacSecKey, MacSecKeyUnmarshaller>(MacSecKeyUnmarshaller.Instance);
+                    response.MacSecKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ownerAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.OwnerAccount = unmarshaller.Unmarshall(context);
+                    response.OwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("partnerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PartnerName = unmarshaller.Unmarshall(context);
+                    response.PartnerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portEncryptionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PortEncryptionStatus = unmarshaller.Unmarshall(context);
+                    response.PortEncryptionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("providerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProviderName = unmarshaller.Unmarshall(context);
+                    response.ProviderName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Region = unmarshaller.Unmarshall(context);
+                    response.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vlan", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Vlan = unmarshaller.Unmarshall(context);
+                    response.Vlan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -198,30 +198,32 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
                 {
-                    return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectServerException"))
                 {
-                    return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DirectConnectServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateTagKeysException"))
                 {
-                    return DuplicateTagKeysExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return DuplicateTagKeysExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
                 {
-                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyTagsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonDirectConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

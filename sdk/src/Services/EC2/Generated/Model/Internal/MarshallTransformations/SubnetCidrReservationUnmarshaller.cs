@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubnetCidrReservation Object
     /// </summary>  
-    public class SubnetCidrReservationUnmarshaller : IUnmarshaller<SubnetCidrReservation, XmlUnmarshallerContext>, IUnmarshaller<SubnetCidrReservation, JsonUnmarshallerContext>
+    public class SubnetCidrReservationUnmarshaller : IXmlUnmarshaller<SubnetCidrReservation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -111,17 +111,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SubnetCidrReservation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SubnetCidrReservationUnmarshaller _instance = new SubnetCidrReservationUnmarshaller();        
 

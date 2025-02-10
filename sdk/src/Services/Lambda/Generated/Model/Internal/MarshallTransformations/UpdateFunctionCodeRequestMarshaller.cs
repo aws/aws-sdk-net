@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
@@ -64,78 +67,89 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
             request.AddPathResource("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
             request.ResourcePath = "/2015-03-31/functions/{FunctionName}/code";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArchitectures())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Architectures");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestArchitecturesListValue in publicRequest.Architectures)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArchitectures())
-                    {
-                        context.Writer.WritePropertyName("Architectures");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestArchitecturesListValue in publicRequest.Architectures)
-                        {
-                                context.Writer.Write(publicRequestArchitecturesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDryRun())
-                    {
-                        context.Writer.WritePropertyName("DryRun");
-                        context.Writer.Write(publicRequest.DryRun.Value);
-                    }
-
-                    if(publicRequest.IsSetImageUri())
-                    {
-                        context.Writer.WritePropertyName("ImageUri");
-                        context.Writer.Write(publicRequest.ImageUri);
-                    }
-
-                    if(publicRequest.IsSetPublish())
-                    {
-                        context.Writer.WritePropertyName("Publish");
-                        context.Writer.Write(publicRequest.Publish.Value);
-                    }
-
-                    if(publicRequest.IsSetRevisionId())
-                    {
-                        context.Writer.WritePropertyName("RevisionId");
-                        context.Writer.Write(publicRequest.RevisionId);
-                    }
-
-                    if(publicRequest.IsSetS3Bucket())
-                    {
-                        context.Writer.WritePropertyName("S3Bucket");
-                        context.Writer.Write(publicRequest.S3Bucket);
-                    }
-
-                    if(publicRequest.IsSetS3Key())
-                    {
-                        context.Writer.WritePropertyName("S3Key");
-                        context.Writer.Write(publicRequest.S3Key);
-                    }
-
-                    if(publicRequest.IsSetS3ObjectVersion())
-                    {
-                        context.Writer.WritePropertyName("S3ObjectVersion");
-                        context.Writer.Write(publicRequest.S3ObjectVersion);
-                    }
-
-                    if(publicRequest.IsSetZipFile())
-                    {
-                        context.Writer.WritePropertyName("ZipFile");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestArchitecturesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("DryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
+            if(publicRequest.IsSetImageUri())
+            {
+                context.Writer.WritePropertyName("ImageUri");
+                context.Writer.WriteStringValue(publicRequest.ImageUri);
+            }
+
+            if(publicRequest.IsSetPublish())
+            {
+                context.Writer.WritePropertyName("Publish");
+                context.Writer.WriteBooleanValue(publicRequest.Publish.Value);
+            }
+
+            if(publicRequest.IsSetRevisionId())
+            {
+                context.Writer.WritePropertyName("RevisionId");
+                context.Writer.WriteStringValue(publicRequest.RevisionId);
+            }
+
+            if(publicRequest.IsSetS3Bucket())
+            {
+                context.Writer.WritePropertyName("S3Bucket");
+                context.Writer.WriteStringValue(publicRequest.S3Bucket);
+            }
+
+            if(publicRequest.IsSetS3Key())
+            {
+                context.Writer.WritePropertyName("S3Key");
+                context.Writer.WriteStringValue(publicRequest.S3Key);
+            }
+
+            if(publicRequest.IsSetS3ObjectVersion())
+            {
+                context.Writer.WritePropertyName("S3ObjectVersion");
+                context.Writer.WriteStringValue(publicRequest.S3ObjectVersion);
+            }
+
+            if(publicRequest.IsSetSourceKMSKeyArn())
+            {
+                context.Writer.WritePropertyName("SourceKMSKeyArn");
+                context.Writer.WriteStringValue(publicRequest.SourceKMSKeyArn);
+            }
+
+            if(publicRequest.IsSetZipFile())
+            {
+                context.Writer.WritePropertyName("ZipFile");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -150,7 +150,7 @@ namespace Amazon.CloudWatch.Model
         /// The <c>image/png</c> setting is intended only for custom HTTP requests. For most use
         /// cases, and all actions using an Amazon Web Services SDK, you should use <c>png</c>.
         /// If you specify <c>image/png</c>, the HTTP response has a content-type set to <c>image/png</c>,
-        /// and the body of the response is a PNG image. 
+        /// and the body of the response is a PNG image.
         /// </para>
         /// </summary>
         public string OutputFormat

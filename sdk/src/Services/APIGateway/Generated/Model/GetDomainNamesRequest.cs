@@ -37,6 +37,7 @@ namespace Amazon.APIGateway.Model
     {
         private int? _limit;
         private string _position;
+        private ResourceOwner _resourceOwner;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -73,6 +74,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetPosition()
         {
             return this._position != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwner. 
+        /// <para>
+        /// The owner of the domain name access association. 
+        /// </para>
+        /// </summary>
+        public ResourceOwner ResourceOwner
+        {
+            get { return this._resourceOwner; }
+            set { this._resourceOwner = value; }
+        }
+
+        // Check to see if ResourceOwner property is set
+        internal bool IsSetResourceOwner()
+        {
+            return this._resourceOwner != null;
         }
 
     }

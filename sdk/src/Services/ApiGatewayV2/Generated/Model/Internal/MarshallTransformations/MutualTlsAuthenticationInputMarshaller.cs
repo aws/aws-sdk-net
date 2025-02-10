@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTruststoreUri())
             {
                 context.Writer.WritePropertyName("truststoreUri");
-                context.Writer.Write(requestObject.TruststoreUri);
+                context.Writer.WriteStringValue(requestObject.TruststoreUri);
             }
 
             if(requestObject.IsSetTruststoreVersion())
             {
                 context.Writer.WritePropertyName("truststoreVersion");
-                context.Writer.Write(requestObject.TruststoreVersion);
+                context.Writer.WriteStringValue(requestObject.TruststoreVersion);
             }
 
         }

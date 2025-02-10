@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ChannelMembershipForAppInstanceUserSummary Object
     /// </summary>  
-    public class ChannelMembershipForAppInstanceUserSummaryUnmarshaller : IUnmarshaller<ChannelMembershipForAppInstanceUserSummary, XmlUnmarshallerContext>, IUnmarshaller<ChannelMembershipForAppInstanceUserSummary, JsonUnmarshallerContext>
+    public class ChannelMembershipForAppInstanceUserSummaryUnmarshaller : IJsonUnmarshaller<ChannelMembershipForAppInstanceUserSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ChannelMembershipForAppInstanceUserSummary IUnmarshaller<ChannelMembershipForAppInstanceUserSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelMembershipForAppInstanceUserSummary Unmarshall(JsonUnmarshallerContext context)
+        public ChannelMembershipForAppInstanceUserSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ChannelMembershipForAppInstanceUserSummary unmarshalledObject = new ChannelMembershipForAppInstanceUserSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AppInstanceUserMembershipSummary", targetDepth))
                 {
                     var unmarshaller = AppInstanceUserMembershipSummaryUnmarshaller.Instance;
-                    unmarshalledObject.AppInstanceUserMembershipSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppInstanceUserMembershipSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChannelSummary", targetDepth))
                 {
                     var unmarshaller = ChannelSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ChannelSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

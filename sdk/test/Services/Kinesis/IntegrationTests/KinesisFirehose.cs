@@ -75,11 +75,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestInitialize()
         {
             // Create S3 Bucket
-            BucketName = "sdk-dotnet-integ-test-bucket-firehose" + DateTime.Now.Ticks;
+            BucketName = "sdk-dotnet-integ-test-bucket-firehose" + DateTime.UtcNow.Ticks;
             s3Client.PutBucket(BucketName);
 
             // Create IAM Role
-            RoleName = "NetFirehoseTestRole" + DateTime.Now.Ticks;
+            RoleName = "NetFirehoseTestRole" + DateTime.UtcNow.Ticks;
             if (string.IsNullOrEmpty(TestAccountId))
                 Assert.Fail("TestAccountId must be specified to run these tests");
 
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsNotNull(roleArn);
 
             // Attach Policy to Role
-            PolicyName = "NetFirehoseTestRolePolicy" + DateTime.Now.Ticks;
+            PolicyName = "NetFirehoseTestRolePolicy" + DateTime.UtcNow.Ticks;
             iamClient.PutRolePolicy(new PutRolePolicyRequest()
             {
                 PolicyDocument = string.Format(RolePolicyDocumentFormat, BucketName),
@@ -105,7 +105,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // Create Firehose Delivery Stream
             string bucketArn = "arn:aws:s3:::" + BucketName;
-            DeliveryStreamName = "dotnet-test-delivery-stream" + DateTime.Now.Ticks;
+            DeliveryStreamName = "dotnet-test-delivery-stream" + DateTime.UtcNow.Ticks;
             string deliveryStreamArn = Client.CreateDeliveryStream(new CreateDeliveryStreamRequest()
             {
                 DeliveryStreamName = DeliveryStreamName,
@@ -122,8 +122,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // Wait for Delivery Stream to be active
             DeliveryStreamStatus streamStatus = DeliveryStreamStatus.CREATING;
-            var timeout = DateTime.Now.AddSeconds(120);
-            while (streamStatus != DeliveryStreamStatus.ACTIVE && DateTime.Now.Ticks < timeout.Ticks)
+            var timeout = DateTime.UtcNow.AddSeconds(120);
+            while (streamStatus != DeliveryStreamStatus.ACTIVE && DateTime.UtcNow.Ticks < timeout.Ticks)
             {
                 streamStatus = Client.DescribeDeliveryStream(new DescribeDeliveryStreamRequest()
                 {

@@ -1,0 +1,6 @@
+<Project>
+  <ItemGroup>
+    <!--The package reference element is dynamically uncommented during the build system ZIP file creation-->
+    <!--<PackageReference Update="System.Text.Json" Version="8.0.5" />-->
+  </ItemGroup>
+</Project>

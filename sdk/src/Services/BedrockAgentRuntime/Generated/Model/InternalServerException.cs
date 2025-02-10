@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     #endif
     public partial class InternalServerException : AmazonBedrockAgentRuntimeException
     {
+        private string _reason;
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error
@@ -98,6 +99,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         protected InternalServerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (string)info.GetValue("Reason", typeof(string));
         }
 
         /// <summary>
@@ -113,8 +115,28 @@ namespace Amazon.BedrockAgentRuntime.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for the exception. If the reason is <c>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</c>,
+        /// the model invocation service is unavailable. Retry your request.
+        /// </para>
+        /// </summary>
+        public string Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

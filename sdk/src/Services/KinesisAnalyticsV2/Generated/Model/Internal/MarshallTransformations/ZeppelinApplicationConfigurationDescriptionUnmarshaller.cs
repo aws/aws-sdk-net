@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ZeppelinApplicationConfigurationDescription Object
     /// </summary>  
-    public class ZeppelinApplicationConfigurationDescriptionUnmarshaller : IUnmarshaller<ZeppelinApplicationConfigurationDescription, XmlUnmarshallerContext>, IUnmarshaller<ZeppelinApplicationConfigurationDescription, JsonUnmarshallerContext>
+    public class ZeppelinApplicationConfigurationDescriptionUnmarshaller : IJsonUnmarshaller<ZeppelinApplicationConfigurationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ZeppelinApplicationConfigurationDescription IUnmarshaller<ZeppelinApplicationConfigurationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ZeppelinApplicationConfigurationDescription Unmarshall(JsonUnmarshallerContext context)
+        public ZeppelinApplicationConfigurationDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ZeppelinApplicationConfigurationDescription unmarshalledObject = new ZeppelinApplicationConfigurationDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CatalogConfigurationDescription", targetDepth))
                 {
                     var unmarshaller = CatalogConfigurationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.CatalogConfigurationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomArtifactsConfigurationDescription", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CustomArtifactConfigurationDescription, CustomArtifactConfigurationDescriptionUnmarshaller>(CustomArtifactConfigurationDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.CustomArtifactsConfigurationDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CustomArtifactConfigurationDescription, CustomArtifactConfigurationDescriptionUnmarshaller>(CustomArtifactConfigurationDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.CustomArtifactsConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeployAsApplicationConfigurationDescription", targetDepth))
                 {
                     var unmarshaller = DeployAsApplicationConfigurationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.DeployAsApplicationConfigurationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeployAsApplicationConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitoringConfigurationDescription", targetDepth))
                 {
                     var unmarshaller = ZeppelinMonitoringConfigurationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.MonitoringConfigurationDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitoringConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

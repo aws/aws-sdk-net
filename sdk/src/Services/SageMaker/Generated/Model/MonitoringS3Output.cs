@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// The local path to the Amazon S3 storage location where Amazon SageMaker saves the
+        /// The local path to the Amazon S3 storage location where Amazon SageMaker AI saves the
         /// results of a monitoring job. LocalPath is an absolute path for the output data.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves
+        /// A URI that identifies the Amazon S3 storage location where Amazon SageMaker AI saves
         /// the results of a monitoring job.
         /// </para>
         /// </summary>

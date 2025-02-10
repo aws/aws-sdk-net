@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A resource with the same name already exists.
+    /// The request conflicts with the current state of the resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

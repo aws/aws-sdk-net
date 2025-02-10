@@ -50,6 +50,7 @@ namespace Amazon.Batch.Model
     {
         private string _launchTemplateId;
         private string _launchTemplateName;
+        private List<LaunchTemplateSpecificationOverride> _overrides = AWSConfigs.InitializeCollections ? new List<LaunchTemplateSpecificationOverride>() : null;
         private string _version;
 
         /// <summary>
@@ -89,21 +90,54 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version. 
+        /// Gets and sets the property Overrides. 
         /// <para>
-        /// The version number of the launch template, <c>$Latest</c>, or <c>$Default</c>.
+        /// A launch template to use in place of the default launch template. You must specify
+        /// either the launch template ID or launch template name in the request, but not both.
         /// </para>
         ///  
         /// <para>
-        /// If the value is <c>$Latest</c>, the latest version of the launch template is used.
+        /// You can specify up to ten (10) launch template overrides that are associated to unique
+        /// instance types or families for each compute environment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To unset all override templates for a compute environment, you can pass an empty array
+        /// to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a>
+        /// parameter, or not include the <c>overrides</c> parameter when submitting the <c>UpdateComputeEnvironment</c>
+        /// API operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<LaunchTemplateSpecificationOverride> Overrides
+        {
+            get { return this._overrides; }
+            set { this._overrides = value; }
+        }
+
+        // Check to see if Overrides property is set
+        internal bool IsSetOverrides()
+        {
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version number of the launch template, <c>$Default</c>, or <c>$Latest</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// If the value is <c>$Default</c>, the default version of the launch template is used.
+        /// If the value is <c>$Latest</c>, the latest version of the launch template is used.
+        /// 
         /// </para>
         ///  <important> 
         /// <para>
         /// If the AMI ID that's used in a compute environment is from the launch template, the
         /// AMI isn't changed when the compute environment is updated. It's only changed if the
         /// <c>updateToLatestImageVersion</c> parameter for the compute environment is set to
-        /// <c>true</c>. During an infrastructure update, if either <c>$Latest</c> or <c>$Default</c>
+        /// <c>true</c>. During an infrastructure update, if either <c>$Default</c> or <c>$Latest</c>
         /// is specified, Batch re-evaluates the launch template version, and it might use a different
         /// version of the launch template. This is the case even if the launch template isn't
         /// specified in the update. When updating a compute environment, changing the launch
@@ -113,7 +147,11 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// Default: <c>$Default</c>.
+        /// Default: <c>$Default</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Latest: <c>$Latest</c> 
         /// </para>
         /// </summary>
         public string Version

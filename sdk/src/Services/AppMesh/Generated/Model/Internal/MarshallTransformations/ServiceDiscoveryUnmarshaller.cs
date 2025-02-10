@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServiceDiscovery Object
     /// </summary>  
-    public class ServiceDiscoveryUnmarshaller : IUnmarshaller<ServiceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<ServiceDiscovery, JsonUnmarshallerContext>
+    public class ServiceDiscoveryUnmarshaller : IJsonUnmarshaller<ServiceDiscovery, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ServiceDiscovery IUnmarshaller<ServiceDiscovery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceDiscovery Unmarshall(JsonUnmarshallerContext context)
+        public ServiceDiscovery Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ServiceDiscovery unmarshalledObject = new ServiceDiscovery();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("awsCloudMap", targetDepth))
                 {
                     var unmarshaller = AwsCloudMapServiceDiscoveryUnmarshaller.Instance;
-                    unmarshalledObject.AwsCloudMap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsCloudMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dns", targetDepth))
                 {
                     var unmarshaller = DnsServiceDiscoveryUnmarshaller.Instance;
-                    unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Dns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -80,7 +80,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't update an existing delivery. You can only create and delete deliveries.
+    /// To update an existing delivery configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.
     /// </para>
     /// </summary>
     public partial class CreateDeliveryRequest : AmazonCloudWatchLogsRequest
@@ -153,7 +153,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property RecordFields. 
         /// <para>
-        /// The list of record fields to be delivered to the destination, in order. If the delivery’s
+        /// The list of record fields to be delivered to the destination, in order. If the delivery's
         /// log source has mandatory fields, they must be included in this list.
         /// </para>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property S3DeliveryConfiguration. 
         /// <para>
-        /// This structure contains parameters that are valid only when the delivery’s delivery
+        /// This structure contains parameters that are valid only when the delivery's delivery
         /// destination is an S3 bucket.
         /// </para>
         /// </summary>

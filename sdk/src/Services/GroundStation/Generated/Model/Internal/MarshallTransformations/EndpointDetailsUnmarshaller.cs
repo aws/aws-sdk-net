@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EndpointDetails Object
     /// </summary>  
-    public class EndpointDetailsUnmarshaller : IUnmarshaller<EndpointDetails, XmlUnmarshallerContext>, IUnmarshaller<EndpointDetails, JsonUnmarshallerContext>
+    public class EndpointDetailsUnmarshaller : IJsonUnmarshaller<EndpointDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EndpointDetails IUnmarshaller<EndpointDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EndpointDetails Unmarshall(JsonUnmarshallerContext context)
+        public EndpointDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EndpointDetails unmarshalledObject = new EndpointDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("awsGroundStationAgentEndpoint", targetDepth))
                 {
                     var unmarshaller = AwsGroundStationAgentEndpointUnmarshaller.Instance;
-                    unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endpoint", targetDepth))
                 {
                     var unmarshaller = DataflowEndpointUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthReasons", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.HealthReasons = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.HealthReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("securityDetails", targetDepth))
                 {
                     var unmarshaller = SecurityDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SecurityDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecurityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

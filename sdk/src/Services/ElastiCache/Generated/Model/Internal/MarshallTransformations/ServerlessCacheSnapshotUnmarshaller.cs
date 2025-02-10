@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServerlessCacheSnapshot Object
     /// </summary>  
-    public class ServerlessCacheSnapshotUnmarshaller : IUnmarshaller<ServerlessCacheSnapshot, XmlUnmarshallerContext>, IUnmarshaller<ServerlessCacheSnapshot, JsonUnmarshallerContext>
+    public class ServerlessCacheSnapshotUnmarshaller : IXmlUnmarshaller<ServerlessCacheSnapshot, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -118,17 +118,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServerlessCacheSnapshot Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServerlessCacheSnapshotUnmarshaller _instance = new ServerlessCacheSnapshotUnmarshaller();        
 

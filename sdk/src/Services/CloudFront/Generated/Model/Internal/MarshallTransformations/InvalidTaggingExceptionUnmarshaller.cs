@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidTaggingException operation
     /// </summary>  
-    public class InvalidTaggingExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidTaggingException, XmlUnmarshallerContext>
+    public class InvalidTaggingExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidTaggingException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

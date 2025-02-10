@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyConfigurationTemplatesException operation
     /// </summary>  
-    public class TooManyConfigurationTemplatesExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyConfigurationTemplatesException, XmlUnmarshallerContext>
+    public class TooManyConfigurationTemplatesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyConfigurationTemplatesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

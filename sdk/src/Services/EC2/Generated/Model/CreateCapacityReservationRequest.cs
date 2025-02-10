@@ -31,41 +31,49 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCapacityReservation operation.
-    /// Creates a new Capacity Reservation with the specified attributes.
+    /// Creates a new Capacity Reservation with the specified attributes. Capacity Reservations
+    /// enable you to reserve capacity for your Amazon EC2 instances in a specific Availability
+    /// Zone for any duration.
     /// 
     ///  
     /// <para>
-    /// Capacity Reservations enable you to reserve capacity for your Amazon EC2 instances
-    /// in a specific Availability Zone for any duration. This gives you the flexibility to
-    /// selectively add capacity reservations and still get the Regional RI discounts for
-    /// that usage. By creating Capacity Reservations, you ensure that you always have access
-    /// to Amazon EC2 capacity when you need it, for as long as you need it. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-    /// Reservations</a> in the <i>Amazon EC2 User Guide</i>.
+    /// You can create a Capacity Reservation at any time, and you can choose when it starts.
+    /// You can create a Capacity Reservation for immediate use or you can request a Capacity
+    /// Reservation for a future date.
     /// </para>
     ///  
     /// <para>
-    /// Your request to create a Capacity Reservation could fail if Amazon EC2 does not have
-    /// sufficient capacity to fulfill the request. If your request fails due to Amazon EC2
-    /// capacity constraints, either try again at a later time, try in a different Availability
-    /// Zone, or request a smaller capacity reservation. If your application is flexible across
-    /// instance types and sizes, try to create a Capacity Reservation with different instance
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">
+    /// Reserve compute capacity with On-Demand Capacity Reservations</a> in the <i>Amazon
+    /// EC2 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Your request to create a Capacity Reservation could fail if:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Amazon EC2 does not have sufficient capacity. In this case, try again at a later time,
+    /// try in a different Availability Zone, or request a smaller Capacity Reservation. If
+    /// your workload is flexible across instance types and sizes, try with different instance
     /// attributes.
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Your request could also fail if the requested quantity exceeds your On-Demand Instance
-    /// limit for the selected instance type. If your request fails due to limit constraints,
-    /// increase your On-Demand Instance limit for the required instance type and try again.
-    /// For more information about increasing your instance limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-    /// EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.
+    /// The requested quantity exceeds your On-Demand Instance quota. In this case, increase
+    /// your On-Demand Instance quota for the requested instance type and try again. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">
+    /// Amazon EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateCapacityReservationRequest : AmazonEC2Request
     {
         private string _availabilityZone;
         private string _availabilityZoneId;
         private string _clientToken;
+        private long? _commitmentDuration;
+        private CapacityReservationDeliveryPreference _deliveryPreference;
         private bool? _ebsOptimized;
         private DateTime? _endDate;
         private EndDateType _endDateType;
@@ -76,6 +84,7 @@ namespace Amazon.EC2.Model
         private string _instanceType;
         private string _outpostArn;
         private string _placementGroupArn;
+        private DateTime? _startDate;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private CapacityReservationTenancy _tenancy;
 
@@ -136,6 +145,70 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CommitmentDuration. <note> 
+        /// <para>
+        /// Required for future-dated Capacity Reservations only. To create a Capacity Reservation
+        /// for immediate use, omit this parameter. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Specify a commitment duration, in seconds, for the future-dated Capacity Reservation.
+        /// </para>
+        ///  
+        /// <para>
+        /// The commitment duration is a minimum duration for which you commit to having the future-dated
+        /// Capacity Reservation in the <c>active</c> state in your account after it has been
+        /// delivered.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-concepts.html#cr-commitment-duration">
+        /// Commitment duration</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200000000)]
+        public long? CommitmentDuration
+        {
+            get { return this._commitmentDuration; }
+            set { this._commitmentDuration = value; }
+        }
+
+        // Check to see if CommitmentDuration property is set
+        internal bool IsSetCommitmentDuration()
+        {
+            return this._commitmentDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryPreference. <note> 
+        /// <para>
+        /// Required for future-dated Capacity Reservations only. To create a Capacity Reservation
+        /// for immediate use, omit this parameter. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Indicates that the requested capacity will be delivered in addition to any running
+        /// instances or reserved capacity that you have in your account at the requested date
+        /// and time.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only supported value is <c>incremental</c>.
+        /// </para>
+        /// </summary>
+        public CapacityReservationDeliveryPreference DeliveryPreference
+        {
+            get { return this._deliveryPreference; }
+            set { this._deliveryPreference = value; }
+        }
+
+        // Check to see if DeliveryPreference property is set
+        internal bool IsSetDeliveryPreference()
+        {
+            return this._deliveryPreference != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
         /// Indicates whether the Capacity Reservation supports EBS-optimized instances. This
@@ -174,6 +247,11 @@ namespace Amazon.EC2.Model
         /// If the <c>EndDateType</c> is <c>limited</c>, the Capacity Reservation is cancelled
         /// within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55,
         /// the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are requesting a future-dated Capacity Reservation, you can't specify an end
+        /// date and time that is within the commitment duration.
         /// </para>
         /// </summary>
         public DateTime? EndDate
@@ -242,7 +320,13 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of instances for which to reserve capacity.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can request future-dated Capacity Reservations for an instance count with a minimum
+        /// of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <c>m5.xlarge</c>
+        /// instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Valid range: 1 - 1000
         /// </para>
@@ -280,7 +364,11 @@ namespace Amazon.EC2.Model
         /// the Capacity Reservation. This ensures that only permitted instances can use the reserved
         /// capacity. 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If you are requesting a future-dated Capacity Reservation, you must specify <c>targeted</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: <c>open</c> 
         /// </para>
@@ -319,7 +407,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// The instance type for which to reserve capacity.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can request future-dated Capacity Reservations for instance types in the C, M,
+        /// R, I, and T instance families only.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -337,7 +434,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutpostArn. 
+        /// Gets and sets the property OutpostArn. <note> 
+        /// <para>
+        /// Not supported for future-dated Capacity Reservations.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity Reservation.
         /// </para>
@@ -355,7 +456,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PlacementGroupArn. 
+        /// Gets and sets the property PlacementGroupArn. <note> 
+        /// <para>
+        /// Not supported for future-dated Capacity Reservations.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The Amazon Resource Name (ARN) of the cluster placement group in which to create the
         /// Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cr-cpg.html">
@@ -372,6 +477,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetPlacementGroupArn()
         {
             return this._placementGroupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartDate. <note> 
+        /// <para>
+        /// Required for future-dated Capacity Reservations only. To create a Capacity Reservation
+        /// for immediate use, omit this parameter. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The date and time at which the future-dated Capacity Reservation should become available
+        /// for use, in the ISO8601 format in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can request a future-dated Capacity Reservation between 5 and 120 days in advance.
+        /// </para>
+        /// </summary>
+        public DateTime? StartDate
+        {
+            get { return this._startDate; }
+            set { this._startDate = value; }
+        }
+
+        // Check to see if StartDate property is set
+        internal bool IsSetStartDate()
+        {
+            return this._startDate.HasValue; 
         }
 
         /// <summary>

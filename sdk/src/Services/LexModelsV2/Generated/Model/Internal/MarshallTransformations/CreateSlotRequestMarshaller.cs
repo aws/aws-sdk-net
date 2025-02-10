@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -73,81 +76,86 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field LocaleId set");
             request.AddPathResource("{localeId}", StringUtils.FromString(publicRequest.LocaleId));
             request.ResourcePath = "/bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetMultipleValuesSetting())
-                    {
-                        context.Writer.WritePropertyName("multipleValuesSetting");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MultipleValuesSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MultipleValuesSetting, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetObfuscationSetting())
-                    {
-                        context.Writer.WritePropertyName("obfuscationSetting");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ObfuscationSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ObfuscationSetting, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSlotName())
-                    {
-                        context.Writer.WritePropertyName("slotName");
-                        context.Writer.Write(publicRequest.SlotName);
-                    }
-
-                    if(publicRequest.IsSetSlotTypeId())
-                    {
-                        context.Writer.WritePropertyName("slotTypeId");
-                        context.Writer.Write(publicRequest.SlotTypeId);
-                    }
-
-                    if(publicRequest.IsSetSubSlotSetting())
-                    {
-                        context.Writer.WritePropertyName("subSlotSetting");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SubSlotSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SubSlotSetting, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetValueElicitationSetting())
-                    {
-                        context.Writer.WritePropertyName("valueElicitationSetting");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SlotValueElicitationSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ValueElicitationSetting, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetMultipleValuesSetting())
+            {
+                context.Writer.WritePropertyName("multipleValuesSetting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MultipleValuesSettingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MultipleValuesSetting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetObfuscationSetting())
+            {
+                context.Writer.WritePropertyName("obfuscationSetting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObfuscationSettingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ObfuscationSetting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSlotName())
+            {
+                context.Writer.WritePropertyName("slotName");
+                context.Writer.WriteStringValue(publicRequest.SlotName);
+            }
+
+            if(publicRequest.IsSetSlotTypeId())
+            {
+                context.Writer.WritePropertyName("slotTypeId");
+                context.Writer.WriteStringValue(publicRequest.SlotTypeId);
+            }
+
+            if(publicRequest.IsSetSubSlotSetting())
+            {
+                context.Writer.WritePropertyName("subSlotSetting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubSlotSettingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SubSlotSetting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetValueElicitationSetting())
+            {
+                context.Writer.WritePropertyName("valueElicitationSetting");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SlotValueElicitationSettingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ValueElicitationSetting, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

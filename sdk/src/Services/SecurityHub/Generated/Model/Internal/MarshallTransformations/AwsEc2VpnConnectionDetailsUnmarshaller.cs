@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2VpnConnectionDetails Object
     /// </summary>  
-    public class AwsEc2VpnConnectionDetailsUnmarshaller : IUnmarshaller<AwsEc2VpnConnectionDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2VpnConnectionDetails, JsonUnmarshallerContext>
+    public class AwsEc2VpnConnectionDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2VpnConnectionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2VpnConnectionDetails IUnmarshaller<AwsEc2VpnConnectionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2VpnConnectionDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2VpnConnectionDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2VpnConnectionDetails unmarshalledObject = new AwsEc2VpnConnectionDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Category", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomerGatewayConfiguration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerGatewayConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomerGatewayConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomerGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomerGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Options", targetDepth))
                 {
                     var unmarshaller = AwsEc2VpnConnectionOptionsDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Routes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2VpnConnectionRoutesDetails, AwsEc2VpnConnectionRoutesDetailsUnmarshaller>(AwsEc2VpnConnectionRoutesDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Routes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2VpnConnectionRoutesDetails, AwsEc2VpnConnectionRoutesDetailsUnmarshaller>(AwsEc2VpnConnectionRoutesDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Routes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransitGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VgwTelemetry", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2VpnConnectionVgwTelemetryDetails, AwsEc2VpnConnectionVgwTelemetryDetailsUnmarshaller>(AwsEc2VpnConnectionVgwTelemetryDetailsUnmarshaller.Instance);
-                    unmarshalledObject.VgwTelemetry = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2VpnConnectionVgwTelemetryDetails, AwsEc2VpnConnectionVgwTelemetryDetailsUnmarshaller>(AwsEc2VpnConnectionVgwTelemetryDetailsUnmarshaller.Instance);
+                    unmarshalledObject.VgwTelemetry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpnConnectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpnConnectionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpnConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpnGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpnGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpnGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

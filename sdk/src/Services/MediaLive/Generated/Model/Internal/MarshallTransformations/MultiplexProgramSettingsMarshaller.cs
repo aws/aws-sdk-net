@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPreferredChannelPipeline())
             {
                 context.Writer.WritePropertyName("preferredChannelPipeline");
-                context.Writer.Write(requestObject.PreferredChannelPipeline);
+                context.Writer.WriteStringValue(requestObject.PreferredChannelPipeline);
             }
 
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetServiceDescriptor())
             {
                 context.Writer.WritePropertyName("serviceDescriptor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiplexProgramServiceDescriptorMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceDescriptor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideoSettings())
             {
                 context.Writer.WritePropertyName("videoSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiplexVideoSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

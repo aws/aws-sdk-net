@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHosts())
             {
                 context.Writer.WritePropertyName("Hosts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHostsListValue in requestObject.Hosts)
                 {
-                        context.Writer.Write(requestObjectHostsListValue);
+                        context.Writer.WriteStringValue(requestObjectHostsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoleBase())
             {
                 context.Writer.WritePropertyName("RoleBase");
-                context.Writer.Write(requestObject.RoleBase);
+                context.Writer.WriteStringValue(requestObject.RoleBase);
             }
 
             if(requestObject.IsSetRoleName())
             {
                 context.Writer.WritePropertyName("RoleName");
-                context.Writer.Write(requestObject.RoleName);
+                context.Writer.WriteStringValue(requestObject.RoleName);
             }
 
             if(requestObject.IsSetRoleSearchMatching())
             {
                 context.Writer.WritePropertyName("RoleSearchMatching");
-                context.Writer.Write(requestObject.RoleSearchMatching);
+                context.Writer.WriteStringValue(requestObject.RoleSearchMatching);
             }
 
             if(requestObject.IsSetRoleSearchSubtree())
             {
                 context.Writer.WritePropertyName("RoleSearchSubtree");
-                context.Writer.Write(requestObject.RoleSearchSubtree.Value);
+                context.Writer.WriteBooleanValue(requestObject.RoleSearchSubtree.Value);
             }
 
             if(requestObject.IsSetServiceAccountUsername())
             {
                 context.Writer.WritePropertyName("ServiceAccountUsername");
-                context.Writer.Write(requestObject.ServiceAccountUsername);
+                context.Writer.WriteStringValue(requestObject.ServiceAccountUsername);
             }
 
             if(requestObject.IsSetUserBase())
             {
                 context.Writer.WritePropertyName("UserBase");
-                context.Writer.Write(requestObject.UserBase);
+                context.Writer.WriteStringValue(requestObject.UserBase);
             }
 
             if(requestObject.IsSetUserRoleName())
             {
                 context.Writer.WritePropertyName("UserRoleName");
-                context.Writer.Write(requestObject.UserRoleName);
+                context.Writer.WriteStringValue(requestObject.UserRoleName);
             }
 
             if(requestObject.IsSetUserSearchMatching())
             {
                 context.Writer.WritePropertyName("UserSearchMatching");
-                context.Writer.Write(requestObject.UserSearchMatching);
+                context.Writer.WriteStringValue(requestObject.UserSearchMatching);
             }
 
             if(requestObject.IsSetUserSearchSubtree())
             {
                 context.Writer.WritePropertyName("UserSearchSubtree");
-                context.Writer.Write(requestObject.UserSearchSubtree.Value);
+                context.Writer.WriteBooleanValue(requestObject.UserSearchSubtree.Value);
             }
 
         }

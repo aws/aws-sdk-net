@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
+
 namespace Amazon.DynamoDBv2.DocumentModel
 {
     public partial interface IDocumentBatchWrite
@@ -31,7 +33,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(DocumentBatchWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
     }
 
@@ -51,7 +57,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableDocumentBatchWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
     }
 }

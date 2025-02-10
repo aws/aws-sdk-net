@@ -31,7 +31,9 @@ namespace Amazon.ControlCatalog.Model
 {
     /// <summary>
     /// Returns information about the control, including the scope of the control, if enabled,
-    /// and the Regions in which the control currently is available for deployment.
+    /// and the Regions in which the control currently is available for deployment. For more
+    /// information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global
+    /// services</a>.
     /// 
     ///  
     /// <para>

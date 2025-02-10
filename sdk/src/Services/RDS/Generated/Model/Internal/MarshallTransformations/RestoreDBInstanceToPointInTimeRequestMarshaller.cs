@@ -228,9 +228,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
                 }
-                if(publicRequest.IsSetRestoreTimeUtc())
+                if(publicRequest.IsSetRestoreTime())
                 {
-                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreTimeUtc));
+                    request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreTime));
                 }
                 if(publicRequest.IsSetSourceDBInstanceAutomatedBackupsArn())
                 {

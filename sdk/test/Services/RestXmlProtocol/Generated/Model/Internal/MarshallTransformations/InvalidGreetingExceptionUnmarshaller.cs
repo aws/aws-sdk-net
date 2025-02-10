@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidGreetingException operation
     /// </summary>  
-    public class InvalidGreetingExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidGreetingException, XmlUnmarshallerContext>
+    public class InvalidGreetingExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidGreetingException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

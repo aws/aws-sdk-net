@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidS3BucketNameException operation
     /// </summary>  
-    public class InvalidS3BucketNameExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidS3BucketNameException, XmlUnmarshallerContext>
+    public class InvalidS3BucketNameExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidS3BucketNameException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

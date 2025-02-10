@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// If the previous paginated request didn't return all of the remaining results, the
         /// response object's <c>NextToken</c> parameter value is set to a token. To retrieve
-        /// the next set of results, call this action again and assign that token to the request
+        /// the next set of results, call this operation again and assign that token to the request
         /// object's <c>NextToken</c> parameter. If there are no remaining results, the previous
         /// response object's <c>NextToken</c> parameter is set to <c>null</c>. 
         /// </para>

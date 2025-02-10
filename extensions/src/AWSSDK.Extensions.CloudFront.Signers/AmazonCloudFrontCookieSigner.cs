@@ -155,7 +155,7 @@ namespace Amazon.CloudFront
         {
             var cookies = new CookiesForCannedPolicy();
 
-            string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn.ToUniversalTime());
+            string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);
             cookies.Expires = new KeyValuePair<string, string>(
                 ExpiresKey, epochSeconds);
 

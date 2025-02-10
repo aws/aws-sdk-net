@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SlotCaptureSetting Object
     /// </summary>  
-    public class SlotCaptureSettingUnmarshaller : IUnmarshaller<SlotCaptureSetting, XmlUnmarshallerContext>, IUnmarshaller<SlotCaptureSetting, JsonUnmarshallerContext>
+    public class SlotCaptureSettingUnmarshaller : IJsonUnmarshaller<SlotCaptureSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SlotCaptureSetting IUnmarshaller<SlotCaptureSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SlotCaptureSetting Unmarshall(JsonUnmarshallerContext context)
+        public SlotCaptureSetting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SlotCaptureSetting unmarshalledObject = new SlotCaptureSetting();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("captureConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CaptureConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CaptureConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("captureNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.CaptureNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CaptureNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("captureResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CaptureResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CaptureResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codeHook", targetDepth))
                 {
                     var unmarshaller = DialogCodeHookInvocationSettingUnmarshaller.Instance;
-                    unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("elicitationCodeHook", targetDepth))
                 {
                     var unmarshaller = ElicitationCodeHookInvocationSettingUnmarshaller.Instance;
-                    unmarshalledObject.ElicitationCodeHook = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElicitationCodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

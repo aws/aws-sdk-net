@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFraudDetectionAction())
             {
                 context.Writer.WritePropertyName("FraudDetectionAction");
-                context.Writer.Write(requestObject.FraudDetectionAction);
+                context.Writer.WriteStringValue(requestObject.FraudDetectionAction);
             }
 
             if(requestObject.IsSetRiskThreshold())
             {
                 context.Writer.WritePropertyName("RiskThreshold");
-                context.Writer.Write(requestObject.RiskThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.RiskThreshold.Value);
             }
 
             if(requestObject.IsSetWatchlistIds())
             {
                 context.Writer.WritePropertyName("WatchlistIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWatchlistIdsListValue in requestObject.WatchlistIds)
                 {
-                        context.Writer.Write(requestObjectWatchlistIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectWatchlistIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

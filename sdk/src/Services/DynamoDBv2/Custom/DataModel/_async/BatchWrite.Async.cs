@@ -16,6 +16,7 @@
 
 using System.Threading.Tasks;
 using System.Threading;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -42,9 +43,13 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class  BatchWrite<T> : BatchWrite, IBatchWrite<T>
     {
         /// <inheritdoc/>
-        public override Task ExecuteAsync(CancellationToken cancellationToken)
+        public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(BatchWrite), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 
@@ -65,9 +70,13 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class MultiTableBatchWrite : IMultiTableBatchWrite
     {
         /// <inheritdoc/>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableBatchWrite), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 }

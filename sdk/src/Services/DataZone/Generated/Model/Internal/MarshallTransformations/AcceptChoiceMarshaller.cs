@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEditedValue())
             {
                 context.Writer.WritePropertyName("editedValue");
-                context.Writer.Write(requestObject.EditedValue);
+                context.Writer.WriteStringValue(requestObject.EditedValue);
             }
 
             if(requestObject.IsSetPredictionChoice())
             {
                 context.Writer.WritePropertyName("predictionChoice");
-                context.Writer.Write(requestObject.PredictionChoice.Value);
+                context.Writer.WriteNumberValue(requestObject.PredictionChoice.Value);
             }
 
             if(requestObject.IsSetPredictionTarget())
             {
                 context.Writer.WritePropertyName("predictionTarget");
-                context.Writer.Write(requestObject.PredictionTarget);
+                context.Writer.WriteStringValue(requestObject.PredictionTarget);
             }
 
         }

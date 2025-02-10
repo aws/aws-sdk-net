@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Redshift")]
         public void CRUDSecurityGroups()
         {
-            string name = "dotnetsdk" + DateTime.Now.Ticks;
+            string name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createRequest = new CreateClusterSecurityGroupRequest() { ClusterSecurityGroupName = name, Description = "Description" };
             CreateClusterSecurityGroupResponse createResponse = null;
             try
@@ -67,7 +67,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Redshift")]
         public void CRUDParameterGroup()
         {
-            string name = "dotnetsdk" + DateTime.Now.Ticks;
+            string name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createRequest = new CreateClusterParameterGroupRequest() { ParameterGroupName = name, ParameterGroupFamily = "redshift-1.0", Description = "A Description" };
             CreateClusterParameterGroupResponse createResponse = Client.CreateClusterParameterGroup(createRequest);
             try

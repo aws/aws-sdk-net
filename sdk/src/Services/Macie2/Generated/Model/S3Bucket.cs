@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the S3 bucket that a finding applies to.
+    /// Provides information about the S3 bucket that a finding applies to. If a quota prevented
+    /// Amazon Macie from retrieving and processing all the bucket's information prior to
+    /// generating the finding, the following values are UNKNOWN or null: allowsUnencryptedObjectUploads,
+    /// defaultServerSideEncryption, publicAccess, and tags.
     /// </summary>
     public partial class S3Bucket
     {

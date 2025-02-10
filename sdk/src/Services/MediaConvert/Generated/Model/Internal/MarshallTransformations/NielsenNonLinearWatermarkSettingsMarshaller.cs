@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveWatermarkProcess())
             {
                 context.Writer.WritePropertyName("activeWatermarkProcess");
-                context.Writer.Write(requestObject.ActiveWatermarkProcess);
+                context.Writer.WriteStringValue(requestObject.ActiveWatermarkProcess);
             }
 
             if(requestObject.IsSetAdiFilename())
             {
                 context.Writer.WritePropertyName("adiFilename");
-                context.Writer.Write(requestObject.AdiFilename);
+                context.Writer.WriteStringValue(requestObject.AdiFilename);
             }
 
             if(requestObject.IsSetAssetId())
             {
                 context.Writer.WritePropertyName("assetId");
-                context.Writer.Write(requestObject.AssetId);
+                context.Writer.WriteStringValue(requestObject.AssetId);
             }
 
             if(requestObject.IsSetAssetName())
             {
                 context.Writer.WritePropertyName("assetName");
-                context.Writer.Write(requestObject.AssetName);
+                context.Writer.WriteStringValue(requestObject.AssetName);
             }
 
             if(requestObject.IsSetCbetSourceId())
             {
                 context.Writer.WritePropertyName("cbetSourceId");
-                context.Writer.Write(requestObject.CbetSourceId);
+                context.Writer.WriteStringValue(requestObject.CbetSourceId);
             }
 
             if(requestObject.IsSetEpisodeId())
             {
                 context.Writer.WritePropertyName("episodeId");
-                context.Writer.Write(requestObject.EpisodeId);
+                context.Writer.WriteStringValue(requestObject.EpisodeId);
             }
 
             if(requestObject.IsSetMetadataDestination())
             {
                 context.Writer.WritePropertyName("metadataDestination");
-                context.Writer.Write(requestObject.MetadataDestination);
+                context.Writer.WriteStringValue(requestObject.MetadataDestination);
             }
 
             if(requestObject.IsSetSourceId())
             {
                 context.Writer.WritePropertyName("sourceId");
-                context.Writer.Write(requestObject.SourceId.Value);
+                context.Writer.WriteNumberValue(requestObject.SourceId.Value);
             }
 
             if(requestObject.IsSetSourceWatermarkStatus())
             {
                 context.Writer.WritePropertyName("sourceWatermarkStatus");
-                context.Writer.Write(requestObject.SourceWatermarkStatus);
+                context.Writer.WriteStringValue(requestObject.SourceWatermarkStatus);
             }
 
             if(requestObject.IsSetTicServerUrl())
             {
                 context.Writer.WritePropertyName("ticServerUrl");
-                context.Writer.Write(requestObject.TicServerUrl);
+                context.Writer.WriteStringValue(requestObject.TicServerUrl);
             }
 
             if(requestObject.IsSetUniqueTicPerAudioTrack())
             {
                 context.Writer.WritePropertyName("uniqueTicPerAudioTrack");
-                context.Writer.Write(requestObject.UniqueTicPerAudioTrack);
+                context.Writer.WriteStringValue(requestObject.UniqueTicPerAudioTrack);
             }
 
         }

@@ -82,9 +82,41 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resources are <c>ConfigRule</c>, <c>ConfigurationAggregator</c>
-        /// and <c>AggregatorAuthorization</c>.
+        /// tags. The following resources are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ConfigurationRecorder</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ConfigRule</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OrganizationConfigRule</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ConformancePack</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OrganizationConformancePack</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ConfigurationAggregator</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AggregationAuthorization</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StoredQuery</c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string ResourceArn

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColorFillType())
             {
                 context.Writer.WritePropertyName("ColorFillType");
-                context.Writer.Write(requestObject.ColorFillType);
+                context.Writer.WriteStringValue(requestObject.ColorFillType);
             }
 
             if(requestObject.IsSetColors())
             {
                 context.Writer.WritePropertyName("Colors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColorsListValue in requestObject.Colors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataColorMarshaller.Instance;
                     marshaller.Marshall(requestObjectColorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNullValueColor())
             {
                 context.Writer.WritePropertyName("NullValueColor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataColorMarshaller.Instance;
                 marshaller.Marshall(requestObject.NullValueColor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

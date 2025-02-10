@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for SubscriptionLimitExceededException operation
     /// </summary>  
-    public class SubscriptionLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<SubscriptionLimitExceededException, XmlUnmarshallerContext>
+    public class SubscriptionLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubscriptionLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

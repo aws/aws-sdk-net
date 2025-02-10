@@ -34,10 +34,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class MutualAuthenticationAttributes
     {
+        private AdvertiseTrustStoreCaNamesEnum _advertiseTrustStoreCaNames;
         private bool? _ignoreClientCertificateExpiry;
         private string _mode;
         private string _trustStoreArn;
         private TrustStoreAssociationStatusEnum _trustStoreAssociationStatus;
+
+        /// <summary>
+        /// Gets and sets the property AdvertiseTrustStoreCaNames. 
+        /// <para>
+        /// Indicates whether trust store CA certificate names are advertised.
+        /// </para>
+        /// </summary>
+        public AdvertiseTrustStoreCaNamesEnum AdvertiseTrustStoreCaNames
+        {
+            get { return this._advertiseTrustStoreCaNames; }
+            set { this._advertiseTrustStoreCaNames = value; }
+        }
+
+        // Check to see if AdvertiseTrustStoreCaNames property is set
+        internal bool IsSetAdvertiseTrustStoreCaNames()
+        {
+            return this._advertiseTrustStoreCaNames != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IgnoreClientCertificateExpiry. 

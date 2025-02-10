@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for FilterPolicyLimitExceededException operation
     /// </summary>  
-    public class FilterPolicyLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<FilterPolicyLimitExceededException, XmlUnmarshallerContext>
+    public class FilterPolicyLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<FilterPolicyLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

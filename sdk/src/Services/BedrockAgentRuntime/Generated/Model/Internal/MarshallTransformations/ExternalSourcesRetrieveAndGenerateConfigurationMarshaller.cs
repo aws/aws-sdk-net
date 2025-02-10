@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGenerationConfiguration())
             {
                 context.Writer.WritePropertyName("generationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExternalSourcesGenerationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenerationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelArn())
             {
                 context.Writer.WritePropertyName("modelArn");
-                context.Writer.Write(requestObject.ModelArn);
+                context.Writer.WriteStringValue(requestObject.ModelArn);
             }
 
             if(requestObject.IsSetSources())
             {
                 context.Writer.WritePropertyName("sources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourcesListValue in requestObject.Sources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExternalSourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("bitDepth");
-                context.Writer.Write(requestObject.BitDepth.Value);
+                context.Writer.WriteNumberValue(requestObject.BitDepth.Value);
             }
 
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("channels");
-                context.Writer.Write(requestObject.Channels.Value);
+                context.Writer.WriteNumberValue(requestObject.Channels.Value);
             }
 
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate.Value);
+                context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
             }
 
         }

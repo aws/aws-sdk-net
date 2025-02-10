@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheBehaviors())
             {
                 context.Writer.WritePropertyName("CacheBehaviors");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionCacheBehaviorsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CacheBehaviors, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultCacheBehavior())
             {
                 context.Writer.WritePropertyName("DefaultCacheBehavior");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionDefaultCacheBehaviorMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultCacheBehavior, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultRootObject())
             {
                 context.Writer.WritePropertyName("DefaultRootObject");
-                context.Writer.Write(requestObject.DefaultRootObject);
+                context.Writer.WriteStringValue(requestObject.DefaultRootObject);
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetETag())
             {
                 context.Writer.WritePropertyName("ETag");
-                context.Writer.Write(requestObject.ETag);
+                context.Writer.WriteStringValue(requestObject.ETag);
             }
 
             if(requestObject.IsSetLastModifiedTime())
             {
                 context.Writer.WritePropertyName("LastModifiedTime");
-                context.Writer.Write(requestObject.LastModifiedTime);
+                context.Writer.WriteStringValue(requestObject.LastModifiedTime);
             }
 
             if(requestObject.IsSetLogging())
             {
                 context.Writer.WritePropertyName("Logging");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionLoggingMarshaller.Instance;
                 marshaller.Marshall(requestObject.Logging, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOriginGroups())
             {
                 context.Writer.WritePropertyName("OriginGroups");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionOriginGroupsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OriginGroups, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrigins())
             {
                 context.Writer.WritePropertyName("Origins");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionOriginsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Origins, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetViewerCertificate())
             {
                 context.Writer.WritePropertyName("ViewerCertificate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionViewerCertificateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ViewerCertificate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWebAclId())
             {
                 context.Writer.WritePropertyName("WebAclId");
-                context.Writer.Write(requestObject.WebAclId);
+                context.Writer.WriteStringValue(requestObject.WebAclId);
             }
 
         }

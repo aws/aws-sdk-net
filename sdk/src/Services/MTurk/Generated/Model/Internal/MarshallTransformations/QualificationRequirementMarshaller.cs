@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionsGuarded())
             {
                 context.Writer.WritePropertyName("ActionsGuarded");
-                context.Writer.Write(requestObject.ActionsGuarded);
+                context.Writer.WriteStringValue(requestObject.ActionsGuarded);
             }
 
             if(requestObject.IsSetComparator())
             {
                 context.Writer.WritePropertyName("Comparator");
-                context.Writer.Write(requestObject.Comparator);
+                context.Writer.WriteStringValue(requestObject.Comparator);
             }
 
             if(requestObject.IsSetIntegerValues())
             {
                 context.Writer.WritePropertyName("IntegerValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIntegerValuesListValue in requestObject.IntegerValues)
                 {
-                        context.Writer.Write(requestObjectIntegerValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectIntegerValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLocaleValues())
             {
                 context.Writer.WritePropertyName("LocaleValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLocaleValuesListValue in requestObject.LocaleValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LocaleMarshaller.Instance;
                     marshaller.Marshall(requestObjectLocaleValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQualificationTypeId())
             {
                 context.Writer.WritePropertyName("QualificationTypeId");
-                context.Writer.Write(requestObject.QualificationTypeId);
+                context.Writer.WriteStringValue(requestObject.QualificationTypeId);
             }
 
             if(requestObject.IsSetRequiredToPreview())
             {
                 context.Writer.WritePropertyName("RequiredToPreview");
-                context.Writer.Write(requestObject.RequiredToPreview.Value);
+                context.Writer.WriteBooleanValue(requestObject.RequiredToPreview.Value);
             }
 
         }

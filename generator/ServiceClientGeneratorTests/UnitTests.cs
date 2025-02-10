@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using Xunit;
 using System.Linq;
+using System.Text;
+using System.Globalization;
+using System.IO;
 
 namespace ServiceClientGeneratorTests
 {
@@ -66,5 +69,39 @@ namespace ServiceClientGeneratorTests
             Assert.Equal(GeneratorDriver.ConstructEndpointName(regionCode), expectedName);
         }
 
+        [Theory]
+        [InlineData("string", "str", "\"str\"")]
+        [InlineData("integer", 5, "5")]
+        [InlineData("float", 0.4, "0.4")]
+        [InlineData("double", 0.5, "0.5")]
+        public void TestExampleShapes(string shapeType, object value, string expectedText)
+        {
+            TextReader tr = new StringReader("{}");
+            ServiceModel testModel = new(tr, null);
+
+            JsonData shapeJsonData = new()
+            {
+                ["type"] = shapeType
+            };
+
+            var sb = new StringBuilder();
+            var cb = new CodeBuilder(sb, 0);
+
+            string operationName = "fake";
+            Example example = new(testModel, operationName, null);
+
+            Shape shape = Shape.CreateShape(testModel, operationName, shapeJsonData);
+            JsonData sampleData = new(value);
+
+            CultureInfo originalCulture = CultureInfo.CurrentCulture;
+            CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("fr-FR"); // In French, the comma is used as a decimal point
+
+            example.GetSampleLiteral(shape, sampleData, cb);
+
+            CultureInfo.CurrentCulture = originalCulture;
+
+            var printedText = sb.ToString();
+            Assert.Equal(expectedText, printedText);
+        }
     }
 }

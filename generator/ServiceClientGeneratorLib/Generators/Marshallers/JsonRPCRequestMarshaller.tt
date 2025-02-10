@@ -8,8 +8,11 @@
 
 	AddCommonUsingStatements();
 #>
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
@@ -93,39 +96,46 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
 #>
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-				    writer.Validate = false;
+#if !NETFRAMEWORK
+			using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+			using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+			using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
 <#		
 		if (shouldMarshallPayload)
 		{
 #>
-				    var context = new JsonMarshallerContext(request, writer);
+			var context = new JsonMarshallerContext(request, writer);
 <#		
-			ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
+			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
+#>
+			writer.Flush();
+<#
 		}
 		else
 		{
 #>
-				    writer.WriteObjectStart();
-				    var context = new JsonMarshallerContext(request, writer);
+			writer.WriteStartObject();
+			var context = new JsonMarshallerContext(request, writer);
 <#		
-				ProcessMembers(2, "publicRequest", this.Operation.RequestBodyMembers);
+			ProcessMembers(0, "publicRequest", this.Operation.RequestBodyMembers);
 #>
-				    writer.WriteObjectEnd();
+			writer.WriteEndObject();
+			writer.Flush();
 <#
 		}
 #>
-                }
-
-                request.Content = memoryStream.ToArray();
+			// ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+			request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+			request.Content = memoryStream.ToArray();
+#endif
 <#
-					GenerateRequestChecksumHandling(this.Operation, "snippet");
-#>
-			}
+			GenerateRequestChecksumHandling(this.Operation, "snippet");
+#>			
 
 <#
 	}
@@ -203,6 +213,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	{
 		ProcessHeaderMembers("publicRequest", this.Operation.RequestHeaderMembers);		
 	}
+	
+	if (this.Operation.UnsignedPayload)
+	{
+#>
+			request.DisablePayloadSigning = true;
+<#	}
 
 	// If there aren't any members that are marshalled as part of the body or streamed	
 	if (this.Operation.UseQueryString)

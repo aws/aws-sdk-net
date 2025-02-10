@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumn())
             {
                 context.Writer.WritePropertyName("Column");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFieldId())
             {
                 context.Writer.WritePropertyName("FieldId");
-                context.Writer.Write(requestObject.FieldId);
+                context.Writer.WriteStringValue(requestObject.FieldId);
             }
 
             if(requestObject.IsSetFormatConfiguration())
             {
                 context.Writer.WritePropertyName("FormatConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumberFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FormatConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHierarchyId())
             {
                 context.Writer.WritePropertyName("HierarchyId");
-                context.Writer.Write(requestObject.HierarchyId);
+                context.Writer.WriteStringValue(requestObject.HierarchyId);
             }
 
         }

@@ -184,6 +184,76 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Name, storedEmployee.Name);
         }
 
+
+        /// <summary>
+        /// Tests that disabling fetching table metadata works with a key that has a property converter.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestTransactWrite_AddSaveItem_DocumentTransaction()
+        {
+            TableCache.Clear();
+            CleanupTables();
+            TableCache.Clear();
+
+            CreateContext(DynamoDBEntryConversion.V2, true, true);
+            
+            {
+
+                var hashRangeOnly = new AnnotatedRangeTable
+                {
+                    Name = "Bob",
+                    Age = 10
+                };
+
+                var transactWrite = Context.CreateTransactWrite<AnnotatedRangeTable>();
+                transactWrite.AddSaveItem(hashRangeOnly);
+                transactWrite.Execute();
+
+                var storedHashOnly = Context.Load<AnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
+                Assert.IsNotNull(storedHashOnly);
+                Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
+            }
+
+            {
+                var hashRangeOnly = new IgnoreAnnotatedRangeTable
+                {
+                    Name = "Bob",
+                    Age = 10,
+                    IgnoreAttribute = 100
+                };
+
+                var transactWrite = Context.CreateTransactWrite<IgnoreAnnotatedRangeTable>();
+                transactWrite.AddSaveItem(hashRangeOnly);
+                transactWrite.Execute();
+
+                var storedHashOnly = Context.Load<IgnoreAnnotatedRangeTable>(hashRangeOnly.Name, hashRangeOnly.Age);
+                Assert.IsNotNull(storedHashOnly);
+                Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
+                Assert.AreEqual(hashRangeOnly.Age, storedHashOnly.Age);
+            }
+
+            {
+                var hashRangeOnly = new AnnotatedRangeTable2
+                {
+                    Name = "Bob",
+                    Age = 10,
+                    NotAnnotatedAttribute = 100
+                };
+
+                var transactWrite = Context.CreateTransactWrite<AnnotatedRangeTable2>();
+                transactWrite.AddSaveItem(hashRangeOnly);
+                transactWrite.Execute();
+
+                var storedHashOnly = Context.Load<AnnotatedRangeTable2>(hashRangeOnly.Name, hashRangeOnly.Age);
+                Assert.IsNotNull(storedHashOnly);
+                Assert.AreEqual(hashRangeOnly.Name, storedHashOnly.Name);
+                Assert.AreEqual(hashRangeOnly.Age, storedHashOnly.Age);
+                Assert.AreEqual(hashRangeOnly.NotAnnotatedAttribute, storedHashOnly.NotAnnotatedAttribute);
+            }
+
+        }
+
         /// <summary>
         /// Tests that the DynamoDB operations can retrieve <see cref="DateTime"/> attributes in UTC and local timezone.
         /// </summary>
@@ -206,7 +276,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context = new DynamoDBContext(Client, config);
 #pragma warning restore CS0618 // Re-enable the warning
 
-            var currTime = DateTime.Now;
+            var currTime = DateTime.UtcNow;
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -219,6 +289,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             Context.Save(employee);
+
+            //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
@@ -280,7 +352,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Add a custom DateTime converter
             Context.ConverterCache.Add(typeof(DateTime), new DateTimeUtcConverter());
 
-            var currTime = DateTime.Now;
+            var currTime = DateTime.UtcNow;
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -349,7 +421,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 #pragma warning restore CS0618 // Re-enable the warning
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
-            var currTime = DateTime.Now;
+            var currTime = DateTime.UtcNow;
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -362,6 +434,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             Context.Save(employee);
+
+            //This is a valid use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
@@ -659,7 +733,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         private void TestContextConversions()
-        {
+        {   
             var conversionV1 = DynamoDBEntryConversion.V1;
             var conversionV2 = DynamoDBEntryConversion.V2;
 
@@ -877,7 +951,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
         private void TestHashObjects()
         {
-            string bucketName = "aws-sdk-net-s3link-" + DateTime.Now.Ticks;
+            string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
             var s3Client = new Amazon.S3.AmazonS3Client(Amazon.RegionEndpoint.USEast1);
             s3Client.PutBucket(bucketName);
             try
@@ -976,7 +1050,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(product.KeySizes.Count, retrieved.KeySizes.Count);
                 Assert.IsNotNull(retrieved.CompanyInfo);
                 Assert.AreEqual(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
-                Assert.AreEqual(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
+                Assert.AreEqual(product.CompanyInfo.Founded.ToUniversalTime(), retrieved.CompanyInfo.Founded);
                 Assert.AreNotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
                 Assert.AreEqual(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);
                 Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, retrieved.CompanyInfo.AllProducts[0].Id);
@@ -2550,6 +2624,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]
             public Status Name { get; set; }
         }
+
+        [DynamoDBTable("HashRangeTable")]
+        public class AnnotatedRangeTable
+        {
+            // Hash key
+            [DynamoDBHashKey]
+            public string Name { get; set; }
+
+            // Range key
+            [DynamoDBRangeKey]
+            internal int Age { get; set; }
+        }
+
+        [DynamoDBTable("HashRangeTable")]
+        public class IgnoreAnnotatedRangeTable : AnnotatedRangeTable
+        {
+            [DynamoDBIgnore]
+            internal int IgnoreAttribute { get; set; }
+        }
+
+
+        [DynamoDBTable("HashRangeTable")]
+        public class AnnotatedRangeTable2 : AnnotatedRangeTable
+        {
+            internal int NotAnnotatedAttribute { get; set; }
+        }
+
+
 
         public class DateTimeUtcConverter : IPropertyConverter
         {

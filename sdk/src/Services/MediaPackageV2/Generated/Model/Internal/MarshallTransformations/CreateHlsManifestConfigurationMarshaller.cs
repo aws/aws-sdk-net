@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,58 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChildManifestName())
             {
                 context.Writer.WritePropertyName("ChildManifestName");
-                context.Writer.Write(requestObject.ChildManifestName);
+                context.Writer.WriteStringValue(requestObject.ChildManifestName);
             }
 
             if(requestObject.IsSetFilterConfiguration())
             {
                 context.Writer.WritePropertyName("FilterConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("ManifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("ManifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("ProgramDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetScteHls())
             {
                 context.Writer.WritePropertyName("ScteHls");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScteHlsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScteHls, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetStartTag())
+            {
+                context.Writer.WritePropertyName("StartTag");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StartTagMarshaller.Instance;
+                marshaller.Marshall(requestObject.StartTag, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

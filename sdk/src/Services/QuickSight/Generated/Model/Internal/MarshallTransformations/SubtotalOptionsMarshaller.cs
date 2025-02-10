@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,84 +49,84 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomLabel())
             {
                 context.Writer.WritePropertyName("CustomLabel");
-                context.Writer.Write(requestObject.CustomLabel);
+                context.Writer.WriteStringValue(requestObject.CustomLabel);
             }
 
             if(requestObject.IsSetFieldLevel())
             {
                 context.Writer.WritePropertyName("FieldLevel");
-                context.Writer.Write(requestObject.FieldLevel);
+                context.Writer.WriteStringValue(requestObject.FieldLevel);
             }
 
             if(requestObject.IsSetFieldLevelOptions())
             {
                 context.Writer.WritePropertyName("FieldLevelOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldLevelOptionsListValue in requestObject.FieldLevelOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PivotTableFieldSubtotalOptionsMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldLevelOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetricHeaderCellStyle())
             {
                 context.Writer.WritePropertyName("MetricHeaderCellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricHeaderCellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStyleTargets())
             {
                 context.Writer.WritePropertyName("StyleTargets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStyleTargetsListValue in requestObject.StyleTargets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TableStyleTargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectStyleTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTotalCellStyle())
             {
                 context.Writer.WritePropertyName("TotalCellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.TotalCellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTotalsVisibility())
             {
                 context.Writer.WritePropertyName("TotalsVisibility");
-                context.Writer.Write(requestObject.TotalsVisibility);
+                context.Writer.WriteStringValue(requestObject.TotalsVisibility);
             }
 
             if(requestObject.IsSetValueCellStyle())
             {
                 context.Writer.WritePropertyName("ValueCellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValueCellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

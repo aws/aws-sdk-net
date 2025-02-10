@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEffect())
             {
                 context.Writer.WritePropertyName("Effect");
-                context.Writer.Write(requestObject.Effect);
+                context.Writer.WriteStringValue(requestObject.Effect);
             }
 
             if(requestObject.IsSetImpersonationRuleId())
             {
                 context.Writer.WritePropertyName("ImpersonationRuleId");
-                context.Writer.Write(requestObject.ImpersonationRuleId);
+                context.Writer.WriteStringValue(requestObject.ImpersonationRuleId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNotTargetUsers())
             {
                 context.Writer.WritePropertyName("NotTargetUsers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotTargetUsersListValue in requestObject.NotTargetUsers)
                 {
-                        context.Writer.Write(requestObjectNotTargetUsersListValue);
+                        context.Writer.WriteStringValue(requestObjectNotTargetUsersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetUsers())
             {
                 context.Writer.WritePropertyName("TargetUsers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetUsersListValue in requestObject.TargetUsers)
                 {
-                        context.Writer.Write(requestObjectTargetUsersListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetUsersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

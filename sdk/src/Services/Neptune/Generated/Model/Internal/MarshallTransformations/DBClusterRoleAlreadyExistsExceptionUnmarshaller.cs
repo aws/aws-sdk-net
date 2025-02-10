@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterRoleAlreadyExistsException operation
     /// </summary>  
-    public class DBClusterRoleAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterRoleAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBClusterRoleAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterRoleAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

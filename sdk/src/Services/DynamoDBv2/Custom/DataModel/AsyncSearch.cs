@@ -14,6 +14,7 @@
  */
 
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -46,6 +47,8 @@ namespace Amazon.DynamoDBv2.DataModel
         private DynamoDBContext _sourceContext { get; set; }
         private DynamoDBFlatConfig _config { get; set; }
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// This constructor is used for mocking. Users that want to mock AsyncSearch can create a subclass of AsyncSearch and make a public parameterless constructor.
         /// </summary>
@@ -59,6 +62,8 @@ namespace Amazon.DynamoDBv2.DataModel
             _sourceContext = source;
             _documentSearch = contextSearch.Search;
             _config = contextSearch.FlatConfig;
+            TracerProvider = source?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         /// <inheritdoc/>

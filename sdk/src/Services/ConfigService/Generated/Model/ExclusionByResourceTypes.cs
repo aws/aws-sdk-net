@@ -68,38 +68,10 @@ namespace Amazon.ConfigService.Model
     /// IAM users, groups, roles, and customer managed policies will be recorded in the Region
     /// where you set up the configuration recorder if that is a Region where Config was available
     /// before February 2022. You cannot be record the global IAM resouce types in Regions
-    /// supported by Config after February 2022. This list where you cannot record the global
-    /// IAM resource types includes the following Regions:
+    /// supported by Config after February 2022. For a list of those Regions, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-all">Recording
+    /// Amazon Web Services Resources | Global Resources</a>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Asia Pacific (Hyderabad)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Asia Pacific (Melbourne)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Canada West (Calgary)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Europe (Spain)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Europe (Zurich)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Israel (Tel Aviv)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Middle East (UAE)
-    /// </para>
-    ///  </li> </ul> </note>
+    ///  </note>
     /// </summary>
     public partial class ExclusionByResourceTypes
     {

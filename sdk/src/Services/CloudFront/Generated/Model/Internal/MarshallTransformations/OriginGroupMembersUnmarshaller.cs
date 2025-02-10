@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginGroupMembers Object
     /// </summary>  
-    public class OriginGroupMembersUnmarshaller : IUnmarshaller<OriginGroupMembers, XmlUnmarshallerContext>, IUnmarshaller<OriginGroupMembers, JsonUnmarshallerContext>
+    public class OriginGroupMembersUnmarshaller : IXmlUnmarshaller<OriginGroupMembers, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,17 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OriginGroupMembers Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static OriginGroupMembersUnmarshaller _instance = new OriginGroupMembersUnmarshaller();        
 
         /// <summary>

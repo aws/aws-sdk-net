@@ -65,7 +65,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property GroupingId. 
         /// <para>
-        /// Indicates the identifier of the grouping recommendation task.
+        /// Identifier of the grouping recommendation task.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

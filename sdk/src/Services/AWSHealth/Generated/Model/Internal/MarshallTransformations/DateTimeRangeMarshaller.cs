@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");
-                context.Writer.Write(requestObject.From.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.From.Value)));
             }
 
             if(requestObject.IsSetTo())
             {
                 context.Writer.WritePropertyName("to");
-                context.Writer.Write(requestObject.To.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.To.Value)));
             }
 
         }

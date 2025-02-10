@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppProtocol())
             {
                 context.Writer.WritePropertyName("appProtocol");
-                context.Writer.Write(requestObject.AppProtocol);
+                context.Writer.WriteStringValue(requestObject.AppProtocol);
             }
 
             if(requestObject.IsSetContainerPort())
             {
                 context.Writer.WritePropertyName("containerPort");
-                context.Writer.Write(requestObject.ContainerPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ContainerPort.Value);
             }
 
             if(requestObject.IsSetContainerPortRange())
             {
                 context.Writer.WritePropertyName("containerPortRange");
-                context.Writer.Write(requestObject.ContainerPortRange);
+                context.Writer.WriteStringValue(requestObject.ContainerPortRange);
             }
 
             if(requestObject.IsSetHostPort())
             {
                 context.Writer.WritePropertyName("hostPort");
-                context.Writer.Write(requestObject.HostPort.Value);
+                context.Writer.WriteNumberValue(requestObject.HostPort.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
         }

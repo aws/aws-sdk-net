@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -63,87 +66,92 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBatchImportMetaDataOnCreate())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBatchImportMetaDataOnCreate())
-                    {
-                        context.Writer.WritePropertyName("BatchImportMetaDataOnCreate");
-                        context.Writer.Write(publicRequest.BatchImportMetaDataOnCreate.Value);
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDataRepositoryPath())
-                    {
-                        context.Writer.WritePropertyName("DataRepositoryPath");
-                        context.Writer.Write(publicRequest.DataRepositoryPath);
-                    }
-
-                    if(publicRequest.IsSetFileSystemId())
-                    {
-                        context.Writer.WritePropertyName("FileSystemId");
-                        context.Writer.Write(publicRequest.FileSystemId);
-                    }
-
-                    if(publicRequest.IsSetFileSystemPath())
-                    {
-                        context.Writer.WritePropertyName("FileSystemPath");
-                        context.Writer.Write(publicRequest.FileSystemPath);
-                    }
-
-                    if(publicRequest.IsSetImportedFileChunkSize())
-                    {
-                        context.Writer.WritePropertyName("ImportedFileChunkSize");
-                        context.Writer.Write(publicRequest.ImportedFileChunkSize.Value);
-                    }
-
-                    if(publicRequest.IsSetS3())
-                    {
-                        context.Writer.WritePropertyName("S3");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3DataRepositoryConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.S3, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("BatchImportMetaDataOnCreate");
+                context.Writer.WriteBooleanValue(publicRequest.BatchImportMetaDataOnCreate.Value);
             }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDataRepositoryPath())
+            {
+                context.Writer.WritePropertyName("DataRepositoryPath");
+                context.Writer.WriteStringValue(publicRequest.DataRepositoryPath);
+            }
+
+            if(publicRequest.IsSetFileSystemId())
+            {
+                context.Writer.WritePropertyName("FileSystemId");
+                context.Writer.WriteStringValue(publicRequest.FileSystemId);
+            }
+
+            if(publicRequest.IsSetFileSystemPath())
+            {
+                context.Writer.WritePropertyName("FileSystemPath");
+                context.Writer.WriteStringValue(publicRequest.FileSystemPath);
+            }
+
+            if(publicRequest.IsSetImportedFileChunkSize())
+            {
+                context.Writer.WritePropertyName("ImportedFileChunkSize");
+                context.Writer.WriteNumberValue(publicRequest.ImportedFileChunkSize.Value);
+            }
+
+            if(publicRequest.IsSetS3())
+            {
+                context.Writer.WritePropertyName("S3");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3DataRepositoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.S3, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

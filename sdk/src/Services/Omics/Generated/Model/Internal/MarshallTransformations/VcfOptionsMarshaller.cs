@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIgnoreFilterField())
             {
                 context.Writer.WritePropertyName("ignoreFilterField");
-                context.Writer.Write(requestObject.IgnoreFilterField.Value);
+                context.Writer.WriteBooleanValue(requestObject.IgnoreFilterField.Value);
             }
 
             if(requestObject.IsSetIgnoreQualField())
             {
                 context.Writer.WritePropertyName("ignoreQualField");
-                context.Writer.Write(requestObject.IgnoreQualField.Value);
+                context.Writer.WriteBooleanValue(requestObject.IgnoreQualField.Value);
             }
 
         }

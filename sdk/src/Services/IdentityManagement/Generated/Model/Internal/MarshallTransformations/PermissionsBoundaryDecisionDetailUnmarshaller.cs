@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PermissionsBoundaryDecisionDetail Object
     /// </summary>  
-    public class PermissionsBoundaryDecisionDetailUnmarshaller : IUnmarshaller<PermissionsBoundaryDecisionDetail, XmlUnmarshallerContext>, IUnmarshaller<PermissionsBoundaryDecisionDetail, JsonUnmarshallerContext>
+    public class PermissionsBoundaryDecisionDetailUnmarshaller : IXmlUnmarshaller<PermissionsBoundaryDecisionDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PermissionsBoundaryDecisionDetail Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PermissionsBoundaryDecisionDetailUnmarshaller _instance = new PermissionsBoundaryDecisionDetailUnmarshaller();        
 

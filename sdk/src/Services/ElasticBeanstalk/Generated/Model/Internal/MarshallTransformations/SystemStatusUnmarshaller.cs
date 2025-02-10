@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SystemStatus Object
     /// </summary>  
-    public class SystemStatusUnmarshaller : IUnmarshaller<SystemStatus, XmlUnmarshallerContext>, IUnmarshaller<SystemStatus, JsonUnmarshallerContext>
+    public class SystemStatusUnmarshaller : IXmlUnmarshaller<SystemStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SystemStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SystemStatusUnmarshaller _instance = new SystemStatusUnmarshaller();        
 

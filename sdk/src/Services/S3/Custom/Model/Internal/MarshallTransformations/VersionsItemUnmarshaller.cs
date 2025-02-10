@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   VersionsItem Unmarshaller
      /// </summary>
-    public class VersionsItemUnmarshaller : IUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext>, IUnmarshaller<S3ObjectVersion, JsonUnmarshallerContext> 
+    public class VersionsItemUnmarshaller : IXmlUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext>, IXmlUnmarshaller<S3ObjectVersion, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -102,6 +102,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if(context.TestExpression("RestoreStatus", targetDepth))
                     {
                         versionsItem.RestoreStatus = RestoreStatusUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumType", targetDepth))
+                    {
+                        versionsItem.ChecksumType = StringUnmarshaller.GetInstance().Unmarshall(context);
 
                         continue;
                     }

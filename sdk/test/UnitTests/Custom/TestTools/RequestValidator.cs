@@ -405,7 +405,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                                 var encodedValue = Convert.ToBase64String(Encoding.UTF8.GetBytes((string)property.GetValue(this.Request)));
                                 Assert.AreEqual(encodedValue, this.MarshalledRequest.Headers[member.MarshallLocationName]);
                             }
-                            else if(member.IsDateTime)
+                            else if(member.IsTimeStamp)
                             {
                                 var value = ParseUsingFormat(this.MarshalledRequest.Headers[member.MarshallLocationName], member.TimestampFormat);
                                 Assert.AreEqual(((DateTime)property.GetValue(this.Request)).ToUniversalTime(), value.ToUniversalTime());

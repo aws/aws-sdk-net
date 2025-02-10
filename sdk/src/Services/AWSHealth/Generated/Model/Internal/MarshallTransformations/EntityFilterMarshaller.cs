@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
@@ -51,80 +49,80 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntityArns())
             {
                 context.Writer.WritePropertyName("entityArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityArnsListValue in requestObject.EntityArns)
                 {
-                        context.Writer.Write(requestObjectEntityArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectEntityArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntityValues())
             {
                 context.Writer.WritePropertyName("entityValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityValuesListValue in requestObject.EntityValues)
                 {
-                        context.Writer.Write(requestObjectEntityValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectEntityValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventArns())
             {
                 context.Writer.WritePropertyName("eventArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventArnsListValue in requestObject.EventArns)
                 {
-                        context.Writer.Write(requestObjectEventArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectEventArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLastUpdatedTimes())
             {
                 context.Writer.WritePropertyName("lastUpdatedTimes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLastUpdatedTimesListValue in requestObject.LastUpdatedTimes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateTimeRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectLastUpdatedTimesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatusCodes())
             {
                 context.Writer.WritePropertyName("statusCodes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusCodesListValue in requestObject.StatusCodes)
                 {
-                        context.Writer.Write(requestObjectStatusCodesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusCodesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectTagsListValueKvp in requestObjectTagsListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectTagsListValueKvp.Key);
                         var requestObjectTagsListValueValue = requestObjectTagsListValueKvp.Value;
 
-                            context.Writer.Write(requestObjectTagsListValueValue);
+                            context.Writer.WriteStringValue(requestObjectTagsListValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

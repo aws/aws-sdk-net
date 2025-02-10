@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSubnetGroupNotAllowedException operation
     /// </summary>  
-    public class DBSubnetGroupNotAllowedExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSubnetGroupNotAllowedException, XmlUnmarshallerContext>
+    public class DBSubnetGroupNotAllowedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSubnetGroupNotAllowedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationFunction())
             {
                 context.Writer.WritePropertyName("AggregationFunction");
-                context.Writer.Write(requestObject.AggregationFunction);
+                context.Writer.WriteStringValue(requestObject.AggregationFunction);
             }
 
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("MetricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
         }

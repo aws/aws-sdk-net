@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnvironmentId())
             {
                 context.Writer.WritePropertyName("environmentId");
-                context.Writer.Write(requestObject.EnvironmentId);
+                context.Writer.WriteStringValue(requestObject.EnvironmentId);
             }
 
             if(requestObject.IsSetJobId())
             {
                 context.Writer.WritePropertyName("jobId");
-                context.Writer.Write(requestObject.JobId);
+                context.Writer.WriteStringValue(requestObject.JobId);
             }
 
         }

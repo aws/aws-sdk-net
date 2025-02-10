@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EnrollmentFlagsV4 Object
     /// </summary>  
-    public class EnrollmentFlagsV4Unmarshaller : IUnmarshaller<EnrollmentFlagsV4, XmlUnmarshallerContext>, IUnmarshaller<EnrollmentFlagsV4, JsonUnmarshallerContext>
+    public class EnrollmentFlagsV4Unmarshaller : IJsonUnmarshaller<EnrollmentFlagsV4, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EnrollmentFlagsV4 IUnmarshaller<EnrollmentFlagsV4, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EnrollmentFlagsV4 Unmarshall(JsonUnmarshallerContext context)
+        public EnrollmentFlagsV4 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EnrollmentFlagsV4 unmarshalledObject = new EnrollmentFlagsV4();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EnableKeyReuseOnNtTokenKeysetStorageFull", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableKeyReuseOnNtTokenKeysetStorageFull = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableKeyReuseOnNtTokenKeysetStorageFull = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeSymmetricAlgorithms", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeSymmetricAlgorithms = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeSymmetricAlgorithms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NoSecurityExtension", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NoSecurityExtension = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NoSecurityExtension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemoveInvalidCertificateFromPersonalStore", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RemoveInvalidCertificateFromPersonalStore = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemoveInvalidCertificateFromPersonalStore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserInteractionRequired", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UserInteractionRequired = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserInteractionRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

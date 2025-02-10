@@ -35,6 +35,11 @@ namespace Amazon.ConnectParticipant.Model
     /// provided in StartAttachmentUpload API. A conflict exception is thrown when an attachment
     /// with that identifier is already being uploaded.
     /// 
+    ///  
+    /// <para>
+    /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
+    /// Connect Chat security best practices</a>.
+    /// </para>
     ///  <note> 
     /// <para>
     ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.

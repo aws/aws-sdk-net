@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PendingProductionVariantSummary Object
     /// </summary>  
-    public class PendingProductionVariantSummaryUnmarshaller : IUnmarshaller<PendingProductionVariantSummary, XmlUnmarshallerContext>, IUnmarshaller<PendingProductionVariantSummary, JsonUnmarshallerContext>
+    public class PendingProductionVariantSummaryUnmarshaller : IJsonUnmarshaller<PendingProductionVariantSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PendingProductionVariantSummary IUnmarshaller<PendingProductionVariantSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PendingProductionVariantSummary Unmarshall(JsonUnmarshallerContext context)
+        public PendingProductionVariantSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PendingProductionVariantSummary unmarshalledObject = new PendingProductionVariantSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AcceleratorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentServerlessConfig", targetDepth))
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
-                    unmarshalledObject.CurrentServerlessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentWeight", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.CurrentWeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeployedImages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DeployedImage, DeployedImageUnmarshaller>(DeployedImageUnmarshaller.Instance);
-                    unmarshalledObject.DeployedImages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DeployedImage, DeployedImageUnmarshaller>(DeployedImageUnmarshaller.Instance);
+                    unmarshalledObject.DeployedImages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DesiredInstanceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredInstanceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DesiredServerlessConfig", targetDepth))
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
-                    unmarshalledObject.DesiredServerlessConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DesiredWeight", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManagedInstanceScaling", targetDepth))
                 {
                     var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;
-                    unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoutingConfig", targetDepth))
                 {
                     var unmarshaller = ProductionVariantRoutingConfigUnmarshaller.Instance;
-                    unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VariantName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VariantName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VariantStatus", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ProductionVariantStatus, ProductionVariantStatusUnmarshaller>(ProductionVariantStatusUnmarshaller.Instance);
-                    unmarshalledObject.VariantStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ProductionVariantStatus, ProductionVariantStatusUnmarshaller>(ProductionVariantStatusUnmarshaller.Instance);
+                    unmarshalledObject.VariantStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

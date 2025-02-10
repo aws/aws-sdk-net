@@ -49,12 +49,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Namespace = "compression-test",
                 MetricData = new List<MetricDatum>()
                 {
-                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow, Unit = StandardUnit.Count, Value = random.Next(100) },
-                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(2), Unit = StandardUnit.Bytes, Value = random.Next(100) },
-                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(4), Unit = StandardUnit.Bytes, Value = random.Next(100) },
-                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(6), Unit = StandardUnit.Bytes, Value = random.Next(100) },
-                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(8), Unit = StandardUnit.Bytes, Value = random.Next(100) },
-                    new MetricDatum { MetricName = "test-request-compression-metric", TimestampUtc = DateTime.UtcNow.AddSeconds(10), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", Timestamp = DateTime.UtcNow, Unit = StandardUnit.Count, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", Timestamp = DateTime.UtcNow.AddSeconds(2), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", Timestamp = DateTime.UtcNow.AddSeconds(4), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", Timestamp = DateTime.UtcNow.AddSeconds(6), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", Timestamp = DateTime.UtcNow.AddSeconds(8), Unit = StandardUnit.Bytes, Value = random.Next(100) },
+                    new MetricDatum { MetricName = "test-request-compression-metric", Timestamp = DateTime.UtcNow.AddSeconds(10), Unit = StandardUnit.Bytes, Value = random.Next(100) },
                 }
             };
 
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 MetricName = "NetworkIn",
                 Namespace = "AWS/EC2",
-                StartTimeUtc = DateTime.Parse("2008-01-01T19:00:00+00:00"),
-                EndTimeUtc = DateTime.Parse("2009-12-01T19:00:00+00:00"),
+                StartTime = DateTime.Parse("2008-01-01T19:00:00+00:00"),
+                EndTime = DateTime.Parse("2009-12-01T19:00:00+00:00"),
                 Statistics = new List<string> { "Average" },
                 Unit = "Percent",
                 Period = 42000,
@@ -126,7 +126,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("CloudWatch")]
         public void AlarmTest()
         {
-            var alarmName = ALARM_BASENAME + DateTime.Now.Ticks;
+            var alarmName = ALARM_BASENAME + DateTime.UtcNow.Ticks;
             var putResponse = Client.PutMetricAlarm(new PutMetricAlarmRequest()
             {
                 AlarmName = alarmName,
@@ -290,7 +290,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             GetMetricStatisticsRequest request = new GetMetricStatisticsRequest()
             {
-                StartTimeUtc = DateTime.UtcNow.AddMilliseconds(-ONE_WEEK_IN_MILLISECONDS),
+                StartTime = DateTime.UtcNow.AddMilliseconds(-ONE_WEEK_IN_MILLISECONDS),
                 Namespace = "AWS/EC2",
                 Period = 60 * 60,
                 Dimensions = new List<Dimension>
@@ -299,7 +299,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 },
                 MetricName = measureName,
                 Statistics = new List<string> { "Average", "Maximum", "Minimum", "Sum" },
-                EndTimeUtc = DateTime.UtcNow
+                EndTime = DateTime.UtcNow
             };
             var result = Client.GetMetricStatistics(request);
 
@@ -314,7 +314,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("CloudWatch")]
         public void TestSetAlarmStateAndHistory()
         {
-            String metricName = this.GetType().Name + DateTime.Now.Ticks;
+            String metricName = this.GetType().Name + DateTime.UtcNow.Ticks;
 
             PutMetricAlarmRequest[] rqs = CreateTwoNewAlarms(metricName);
 
@@ -383,7 +383,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("CloudWatch")]
         public void TestDisableEnableAlarms()
         {
-            String metricName = this.GetType().Name + DateTime.Now.Ticks;
+            String metricName = this.GetType().Name + DateTime.UtcNow.Ticks;
 
             PutMetricAlarmRequest[] rqs = CreateTwoNewAlarms(metricName);
 
@@ -445,7 +445,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("CloudWatch")]
         public void TestDescribeAlarms()
         {
-            string metricName = this.GetType().Name + DateTime.Now.Ticks;
+            string metricName = this.GetType().Name + DateTime.UtcNow.Ticks;
 
             PutMetricAlarmRequest[] rqs = CreateTwoNewAlarms(metricName);
 

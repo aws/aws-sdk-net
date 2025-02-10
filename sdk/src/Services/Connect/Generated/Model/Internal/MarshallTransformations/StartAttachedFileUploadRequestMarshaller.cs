@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -67,79 +70,84 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAssociatedResourceArn())
                 request.Parameters.Add("associatedResourceArn", StringUtils.FromString(publicRequest.AssociatedResourceArn));
             request.ResourcePath = "/attached-files/{InstanceId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCreatedBy())
-                    {
-                        context.Writer.WritePropertyName("CreatedBy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreatedByInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CreatedBy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFileName())
-                    {
-                        context.Writer.WritePropertyName("FileName");
-                        context.Writer.Write(publicRequest.FileName);
-                    }
-
-                    if(publicRequest.IsSetFileSizeInBytes())
-                    {
-                        context.Writer.WritePropertyName("FileSizeInBytes");
-                        context.Writer.Write(publicRequest.FileSizeInBytes.Value);
-                    }
-
-                    if(publicRequest.IsSetFileUseCaseType())
-                    {
-                        context.Writer.WritePropertyName("FileUseCaseType");
-                        context.Writer.Write(publicRequest.FileUseCaseType);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUrlExpiryInSeconds())
-                    {
-                        context.Writer.WritePropertyName("UrlExpiryInSeconds");
-                        context.Writer.Write(publicRequest.UrlExpiryInSeconds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCreatedBy())
+            {
+                context.Writer.WritePropertyName("CreatedBy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreatedByInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CreatedBy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFileName())
+            {
+                context.Writer.WritePropertyName("FileName");
+                context.Writer.WriteStringValue(publicRequest.FileName);
+            }
+
+            if(publicRequest.IsSetFileSizeInBytes())
+            {
+                context.Writer.WritePropertyName("FileSizeInBytes");
+                context.Writer.WriteNumberValue(publicRequest.FileSizeInBytes.Value);
+            }
+
+            if(publicRequest.IsSetFileUseCaseType())
+            {
+                context.Writer.WritePropertyName("FileUseCaseType");
+                context.Writer.WriteStringValue(publicRequest.FileUseCaseType);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUrlExpiryInSeconds())
+            {
+                context.Writer.WritePropertyName("UrlExpiryInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.UrlExpiryInSeconds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

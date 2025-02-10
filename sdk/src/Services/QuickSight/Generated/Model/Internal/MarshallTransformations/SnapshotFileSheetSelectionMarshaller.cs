@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSelectionScope())
             {
                 context.Writer.WritePropertyName("SelectionScope");
-                context.Writer.Write(requestObject.SelectionScope);
+                context.Writer.WriteStringValue(requestObject.SelectionScope);
             }
 
             if(requestObject.IsSetSheetId())
             {
                 context.Writer.WritePropertyName("SheetId");
-                context.Writer.Write(requestObject.SheetId);
+                context.Writer.WriteStringValue(requestObject.SheetId);
             }
 
             if(requestObject.IsSetVisualIds())
             {
                 context.Writer.WritePropertyName("VisualIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVisualIdsListValue in requestObject.VisualIds)
                 {
-                        context.Writer.Write(requestObjectVisualIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectVisualIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

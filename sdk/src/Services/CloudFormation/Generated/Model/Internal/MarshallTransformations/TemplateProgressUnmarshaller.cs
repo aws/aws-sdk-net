@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TemplateProgress Object
     /// </summary>  
-    public class TemplateProgressUnmarshaller : IUnmarshaller<TemplateProgress, XmlUnmarshallerContext>, IUnmarshaller<TemplateProgress, JsonUnmarshallerContext>
+    public class TemplateProgressUnmarshaller : IXmlUnmarshaller<TemplateProgress, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TemplateProgress Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TemplateProgressUnmarshaller _instance = new TemplateProgressUnmarshaller();        
 

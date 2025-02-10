@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RoleLastUsed Object
     /// </summary>  
-    public class RoleLastUsedUnmarshaller : IUnmarshaller<RoleLastUsed, XmlUnmarshallerContext>, IUnmarshaller<RoleLastUsed, JsonUnmarshallerContext>
+    public class RoleLastUsedUnmarshaller : IXmlUnmarshaller<RoleLastUsed, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RoleLastUsed Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RoleLastUsedUnmarshaller _instance = new RoleLastUsedUnmarshaller();        
 

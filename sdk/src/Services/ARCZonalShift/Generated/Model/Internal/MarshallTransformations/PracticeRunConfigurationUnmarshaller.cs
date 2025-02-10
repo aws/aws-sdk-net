@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PracticeRunConfiguration Object
     /// </summary>  
-    public class PracticeRunConfigurationUnmarshaller : IUnmarshaller<PracticeRunConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PracticeRunConfiguration, JsonUnmarshallerContext>
+    public class PracticeRunConfigurationUnmarshaller : IJsonUnmarshaller<PracticeRunConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PracticeRunConfiguration IUnmarshaller<PracticeRunConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PracticeRunConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public PracticeRunConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PracticeRunConfiguration unmarshalledObject = new PracticeRunConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("blockedDates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.BlockedDates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.BlockedDates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blockedWindows", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.BlockedWindows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.BlockedWindows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blockingAlarms", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ControlCondition, ControlConditionUnmarshaller>(ControlConditionUnmarshaller.Instance);
-                    unmarshalledObject.BlockingAlarms = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ControlCondition, ControlConditionUnmarshaller>(ControlConditionUnmarshaller.Instance);
+                    unmarshalledObject.BlockingAlarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outcomeAlarms", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ControlCondition, ControlConditionUnmarshaller>(ControlConditionUnmarshaller.Instance);
-                    unmarshalledObject.OutcomeAlarms = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ControlCondition, ControlConditionUnmarshaller>(ControlConditionUnmarshaller.Instance);
+                    unmarshalledObject.OutcomeAlarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

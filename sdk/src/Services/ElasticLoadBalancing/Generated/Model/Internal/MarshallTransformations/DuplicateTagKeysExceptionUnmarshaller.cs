@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateTagKeysException operation
     /// </summary>  
-    public class DuplicateTagKeysExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateTagKeysException, XmlUnmarshallerContext>
+    public class DuplicateTagKeysExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateTagKeysException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

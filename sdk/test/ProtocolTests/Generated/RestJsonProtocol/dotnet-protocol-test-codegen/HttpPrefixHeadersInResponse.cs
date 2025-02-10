@@ -52,8 +52,8 @@ namespace AWSSDK.ProtocolTests.RestJson
             // Arrange
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Hello"] = "Hello";
-            webResponseData.Headers["X-Foo"] = "Foo";
+            webResponseData.Headers["hello"] = "Hello";
+            webResponseData.Headers["x-foo"] = "Foo";
             byte[] bytes = Encoding.ASCII.GetBytes("");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
@@ -65,8 +65,8 @@ namespace AWSSDK.ProtocolTests.RestJson
                 PrefixHeaders = new Dictionary<string, string>()
                 {
 
-                    { "X-Foo", "Foo" },
-                    { "Hello", "Hello" },
+                    { "x-foo", "Foo" },
+                    { "hello", "Hello" },
                 },
             };
 

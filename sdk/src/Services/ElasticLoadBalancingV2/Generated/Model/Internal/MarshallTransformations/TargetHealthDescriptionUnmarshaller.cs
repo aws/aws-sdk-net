@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetHealthDescription Object
     /// </summary>  
-    public class TargetHealthDescriptionUnmarshaller : IUnmarshaller<TargetHealthDescription, XmlUnmarshallerContext>, IUnmarshaller<TargetHealthDescription, JsonUnmarshallerContext>
+    public class TargetHealthDescriptionUnmarshaller : IXmlUnmarshaller<TargetHealthDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -55,6 +55,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdministrativeOverride", targetDepth))
+                    {
+                        var unmarshaller = AdministrativeOverrideUnmarshaller.Instance;
+                        unmarshalledObject.AdministrativeOverride = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AnomalyDetection", targetDepth))
                     {
                         var unmarshaller = AnomalyDetectionUnmarshaller.Instance;
@@ -88,17 +94,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetHealthDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetHealthDescriptionUnmarshaller _instance = new TargetHealthDescriptionUnmarshaller();        
 

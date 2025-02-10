@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBccAddresses())
             {
                 context.Writer.WritePropertyName("BccAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBccAddressesListValue in requestObject.BccAddresses)
                 {
-                        context.Writer.Write(requestObjectBccAddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectBccAddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCcAddresses())
             {
                 context.Writer.WritePropertyName("CcAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCcAddressesListValue in requestObject.CcAddresses)
                 {
-                        context.Writer.Write(requestObjectCcAddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectCcAddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetToAddresses())
             {
                 context.Writer.WritePropertyName("ToAddresses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectToAddressesListValue in requestObject.ToAddresses)
                 {
-                        context.Writer.Write(requestObjectToAddressesListValue);
+                        context.Writer.WriteStringValue(requestObjectToAddressesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

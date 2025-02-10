@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RegistrationVersionInformation Object
     /// </summary>  
-    public class RegistrationVersionInformationUnmarshaller : IUnmarshaller<RegistrationVersionInformation, XmlUnmarshallerContext>, IUnmarshaller<RegistrationVersionInformation, JsonUnmarshallerContext>
+    public class RegistrationVersionInformationUnmarshaller : IJsonUnmarshaller<RegistrationVersionInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RegistrationVersionInformation IUnmarshaller<RegistrationVersionInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RegistrationVersionInformation Unmarshall(JsonUnmarshallerContext context)
+        public RegistrationVersionInformation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RegistrationVersionInformation unmarshalledObject = new RegistrationVersionInformation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeniedReasons", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RegistrationDeniedReasonInformation, RegistrationDeniedReasonInformationUnmarshaller>(RegistrationDeniedReasonInformationUnmarshaller.Instance);
-                    unmarshalledObject.DeniedReasons = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RegistrationDeniedReasonInformation, RegistrationDeniedReasonInformationUnmarshaller>(RegistrationDeniedReasonInformationUnmarshaller.Instance);
+                    unmarshalledObject.DeniedReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrationVersionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationVersionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistrationVersionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrationVersionStatusHistory", targetDepth))
                 {
                     var unmarshaller = RegistrationVersionStatusHistoryUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationVersionStatusHistory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistrationVersionStatusHistory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VersionNumber", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

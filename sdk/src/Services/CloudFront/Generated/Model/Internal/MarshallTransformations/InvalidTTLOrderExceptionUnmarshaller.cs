@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidTTLOrderException operation
     /// </summary>  
-    public class InvalidTTLOrderExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidTTLOrderException, XmlUnmarshallerContext>
+    public class InvalidTTLOrderExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidTTLOrderException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

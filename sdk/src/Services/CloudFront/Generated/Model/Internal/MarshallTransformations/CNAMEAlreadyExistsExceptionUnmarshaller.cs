@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CNAMEAlreadyExistsException operation
     /// </summary>  
-    public class CNAMEAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<CNAMEAlreadyExistsException, XmlUnmarshallerContext>
+    public class CNAMEAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CNAMEAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

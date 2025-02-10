@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditCheckToReasonCodeFilter())
             {
                 context.Writer.WritePropertyName("auditCheckToReasonCodeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAuditCheckToReasonCodeFilterKvp in requestObject.AuditCheckToReasonCodeFilter)
                 {
                     context.Writer.WritePropertyName(requestObjectAuditCheckToReasonCodeFilterKvp.Key);
                     var requestObjectAuditCheckToReasonCodeFilterValue = requestObjectAuditCheckToReasonCodeFilterKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectAuditCheckToReasonCodeFilterValueListValue in requestObjectAuditCheckToReasonCodeFilterValue)
                     {
-                            context.Writer.Write(requestObjectAuditCheckToReasonCodeFilterValueListValue);
+                            context.Writer.WriteStringValue(requestObjectAuditCheckToReasonCodeFilterValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAuditTaskId())
             {
                 context.Writer.WritePropertyName("auditTaskId");
-                context.Writer.Write(requestObject.AuditTaskId);
+                context.Writer.WriteStringValue(requestObject.AuditTaskId);
             }
 
             if(requestObject.IsSetFindingIds())
             {
                 context.Writer.WritePropertyName("findingIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFindingIdsListValue in requestObject.FindingIds)
                 {
-                        context.Writer.Write(requestObjectFindingIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectFindingIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -37,6 +37,7 @@ namespace Amazon.ControlTower.Model
     public partial class EnabledBaselineFilter
     {
         private List<string> _baselineIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _parentIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _targetIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -56,6 +57,26 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetBaselineIdentifiers()
         {
             return this._baselineIdentifiers != null && (this._baselineIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifiers. 
+        /// <para>
+        /// An optional filter that sets up a list of <c>parentIdentifiers</c> to filter the results
+        /// of the <c>ListEnabledBaseline</c> output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> ParentIdentifiers
+        {
+            get { return this._parentIdentifiers; }
+            set { this._parentIdentifiers = value; }
+        }
+
+        // Check to see if ParentIdentifiers property is set
+        internal bool IsSetParentIdentifiers()
+        {
+            return this._parentIdentifiers != null && (this._parentIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

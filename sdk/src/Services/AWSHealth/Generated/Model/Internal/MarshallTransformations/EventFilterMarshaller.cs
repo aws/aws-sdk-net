@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
@@ -51,167 +49,167 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("availabilityZones");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
                 {
-                        context.Writer.Write(requestObjectAvailabilityZonesListValue);
+                        context.Writer.WriteStringValue(requestObjectAvailabilityZonesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEndTimes())
             {
                 context.Writer.WritePropertyName("endTimes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEndTimesListValue in requestObject.EndTimes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateTimeRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectEndTimesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntityArns())
             {
                 context.Writer.WritePropertyName("entityArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityArnsListValue in requestObject.EntityArns)
                 {
-                        context.Writer.Write(requestObjectEntityArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectEntityArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntityValues())
             {
                 context.Writer.WritePropertyName("entityValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntityValuesListValue in requestObject.EntityValues)
                 {
-                        context.Writer.Write(requestObjectEntityValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectEntityValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventArns())
             {
                 context.Writer.WritePropertyName("eventArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventArnsListValue in requestObject.EventArns)
                 {
-                        context.Writer.Write(requestObjectEventArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectEventArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventStatusCodes())
             {
                 context.Writer.WritePropertyName("eventStatusCodes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventStatusCodesListValue in requestObject.EventStatusCodes)
                 {
-                        context.Writer.Write(requestObjectEventStatusCodesListValue);
+                        context.Writer.WriteStringValue(requestObjectEventStatusCodesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventTypeCategories())
             {
                 context.Writer.WritePropertyName("eventTypeCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventTypeCategoriesListValue in requestObject.EventTypeCategories)
                 {
-                        context.Writer.Write(requestObjectEventTypeCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectEventTypeCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventTypeCodes())
             {
                 context.Writer.WritePropertyName("eventTypeCodes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventTypeCodesListValue in requestObject.EventTypeCodes)
                 {
-                        context.Writer.Write(requestObjectEventTypeCodesListValue);
+                        context.Writer.WriteStringValue(requestObjectEventTypeCodesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLastUpdatedTimes())
             {
                 context.Writer.WritePropertyName("lastUpdatedTimes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLastUpdatedTimesListValue in requestObject.LastUpdatedTimes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateTimeRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectLastUpdatedTimesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetServices())
             {
                 context.Writer.WritePropertyName("services");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServicesListValue in requestObject.Services)
                 {
-                        context.Writer.Write(requestObjectServicesListValue);
+                        context.Writer.WriteStringValue(requestObjectServicesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartTimes())
             {
                 context.Writer.WritePropertyName("startTimes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStartTimesListValue in requestObject.StartTimes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DateTimeRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectStartTimesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectTagsListValueKvp in requestObjectTagsListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectTagsListValueKvp.Key);
                         var requestObjectTagsListValueValue = requestObjectTagsListValueKvp.Value;
 
-                            context.Writer.Write(requestObjectTagsListValueValue);
+                            context.Writer.WriteStringValue(requestObjectTagsListValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

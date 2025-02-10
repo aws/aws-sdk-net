@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VerifiedAccessEndpointEniOptions Object
     /// </summary>  
-    public class VerifiedAccessEndpointEniOptionsUnmarshaller : IUnmarshaller<VerifiedAccessEndpointEniOptions, XmlUnmarshallerContext>, IUnmarshaller<VerifiedAccessEndpointEniOptions, JsonUnmarshallerContext>
+    public class VerifiedAccessEndpointEniOptionsUnmarshaller : IXmlUnmarshaller<VerifiedAccessEndpointEniOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -67,6 +67,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("portRangeSet/item", targetDepth))
+                    {
+                        var unmarshaller = VerifiedAccessEndpointPortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.PortRanges == null)
+                        {
+                            unmarshalledObject.PortRanges = new List<VerifiedAccessEndpointPortRange>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PortRanges.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("protocol", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -82,17 +93,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VerifiedAccessEndpointEniOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VerifiedAccessEndpointEniOptionsUnmarshaller _instance = new VerifiedAccessEndpointEniOptionsUnmarshaller();        
 

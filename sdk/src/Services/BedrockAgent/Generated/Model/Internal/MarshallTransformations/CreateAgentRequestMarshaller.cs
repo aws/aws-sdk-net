@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -61,119 +64,147 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/agents/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAgentCollaboration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAgentName())
-                    {
-                        context.Writer.WritePropertyName("agentName");
-                        context.Writer.Write(publicRequest.AgentName);
-                    }
-
-                    if(publicRequest.IsSetAgentResourceRoleArn())
-                    {
-                        context.Writer.WritePropertyName("agentResourceRoleArn");
-                        context.Writer.Write(publicRequest.AgentResourceRoleArn);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCustomerEncryptionKeyArn())
-                    {
-                        context.Writer.WritePropertyName("customerEncryptionKeyArn");
-                        context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFoundationModel())
-                    {
-                        context.Writer.WritePropertyName("foundationModel");
-                        context.Writer.Write(publicRequest.FoundationModel);
-                    }
-
-                    if(publicRequest.IsSetGuardrailConfiguration())
-                    {
-                        context.Writer.WritePropertyName("guardrailConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GuardrailConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIdleSessionTTLInSeconds())
-                    {
-                        context.Writer.WritePropertyName("idleSessionTTLInSeconds");
-                        context.Writer.Write(publicRequest.IdleSessionTTLInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetInstruction())
-                    {
-                        context.Writer.WritePropertyName("instruction");
-                        context.Writer.Write(publicRequest.Instruction);
-                    }
-
-                    if(publicRequest.IsSetMemoryConfiguration())
-                    {
-                        context.Writer.WritePropertyName("memoryConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MemoryConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MemoryConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPromptOverrideConfiguration())
-                    {
-                        context.Writer.WritePropertyName("promptOverrideConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PromptOverrideConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PromptOverrideConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("agentCollaboration");
+                context.Writer.WriteStringValue(publicRequest.AgentCollaboration);
             }
+
+            if(publicRequest.IsSetAgentName())
+            {
+                context.Writer.WritePropertyName("agentName");
+                context.Writer.WriteStringValue(publicRequest.AgentName);
+            }
+
+            if(publicRequest.IsSetAgentResourceRoleArn())
+            {
+                context.Writer.WritePropertyName("agentResourceRoleArn");
+                context.Writer.WriteStringValue(publicRequest.AgentResourceRoleArn);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCustomerEncryptionKeyArn())
+            {
+                context.Writer.WritePropertyName("customerEncryptionKeyArn");
+                context.Writer.WriteStringValue(publicRequest.CustomerEncryptionKeyArn);
+            }
+
+            if(publicRequest.IsSetCustomOrchestration())
+            {
+                context.Writer.WritePropertyName("customOrchestration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomOrchestrationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomOrchestration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFoundationModel())
+            {
+                context.Writer.WritePropertyName("foundationModel");
+                context.Writer.WriteStringValue(publicRequest.FoundationModel);
+            }
+
+            if(publicRequest.IsSetGuardrailConfiguration())
+            {
+                context.Writer.WritePropertyName("guardrailConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GuardrailConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GuardrailConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIdleSessionTTLInSeconds())
+            {
+                context.Writer.WritePropertyName("idleSessionTTLInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.IdleSessionTTLInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetInstruction())
+            {
+                context.Writer.WritePropertyName("instruction");
+                context.Writer.WriteStringValue(publicRequest.Instruction);
+            }
+
+            if(publicRequest.IsSetMemoryConfiguration())
+            {
+                context.Writer.WritePropertyName("memoryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MemoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MemoryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOrchestrationType())
+            {
+                context.Writer.WritePropertyName("orchestrationType");
+                context.Writer.WriteStringValue(publicRequest.OrchestrationType);
+            }
+
+            if(publicRequest.IsSetPromptOverrideConfiguration())
+            {
+                context.Writer.WritePropertyName("promptOverrideConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PromptOverrideConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PromptOverrideConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,88 +49,88 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage.Value);
+                context.Writer.WriteNumberValue(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetAutoMinorVersionUpgrade())
             {
                 context.Writer.WritePropertyName("AutoMinorVersionUpgrade");
-                context.Writer.Write(requestObject.AutoMinorVersionUpgrade.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoMinorVersionUpgrade.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.Write(requestObject.EngineVersion);
+                context.Writer.WriteStringValue(requestObject.EngineVersion);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetMultiAZ())
             {
                 context.Writer.WritePropertyName("MultiAZ");
-                context.Writer.Write(requestObject.MultiAZ.Value);
+                context.Writer.WriteBooleanValue(requestObject.MultiAZ.Value);
             }
 
             if(requestObject.IsSetPreferredMaintenanceWindow())
             {
                 context.Writer.WritePropertyName("PreferredMaintenanceWindow");
-                context.Writer.Write(requestObject.PreferredMaintenanceWindow);
+                context.Writer.WriteStringValue(requestObject.PreferredMaintenanceWindow);
             }
 
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible.Value);
+                context.Writer.WriteBooleanValue(requestObject.PubliclyAccessible.Value);
             }
 
             if(requestObject.IsSetReplicationInstanceClass())
             {
                 context.Writer.WritePropertyName("ReplicationInstanceClass");
-                context.Writer.Write(requestObject.ReplicationInstanceClass);
+                context.Writer.WriteStringValue(requestObject.ReplicationInstanceClass);
             }
 
             if(requestObject.IsSetReplicationInstanceIdentifier())
             {
                 context.Writer.WritePropertyName("ReplicationInstanceIdentifier");
-                context.Writer.Write(requestObject.ReplicationInstanceIdentifier);
+                context.Writer.WriteStringValue(requestObject.ReplicationInstanceIdentifier);
             }
 
             if(requestObject.IsSetReplicationSubnetGroup())
             {
                 context.Writer.WritePropertyName("ReplicationSubnetGroup");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsDmsReplicationInstanceReplicationSubnetGroupDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReplicationSubnetGroup, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcSecurityGroups())
             {
                 context.Writer.WritePropertyName("VpcSecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpcSecurityGroupsListValue in requestObject.VpcSecurityGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsDmsReplicationInstanceVpcSecurityGroupsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectVpcSecurityGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

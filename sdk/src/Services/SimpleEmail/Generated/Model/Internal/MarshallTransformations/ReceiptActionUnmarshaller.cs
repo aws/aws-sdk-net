@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReceiptAction Object
     /// </summary>  
-    public class ReceiptActionUnmarshaller : IUnmarshaller<ReceiptAction, XmlUnmarshallerContext>, IUnmarshaller<ReceiptAction, JsonUnmarshallerContext>
+    public class ReceiptActionUnmarshaller : IXmlUnmarshaller<ReceiptAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -65,6 +65,12 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BounceActionUnmarshaller.Instance;
                         unmarshalledObject.BounceAction = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ConnectAction", targetDepth))
+                    {
+                        var unmarshaller = ConnectActionUnmarshaller.Instance;
+                        unmarshalledObject.ConnectAction = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("LambdaAction", targetDepth))
@@ -106,17 +112,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReceiptAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReceiptActionUnmarshaller _instance = new ReceiptActionUnmarshaller();        
 

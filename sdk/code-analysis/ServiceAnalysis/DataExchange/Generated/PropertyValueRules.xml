@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.AcceptDataGrantRequest.DataGrantArn</property>
+    <pattern>arn:aws:dataexchange:[\-a-z0-9]*:(\d{12}):data-grants\/[a-zA-Z0-9]{30,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.AcceptDataGrantResponse.Description</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.AcceptDataGrantResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.AcceptDataGrantResponse.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.AcceptDataGrantResponse.SenderPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateDataGrantRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateDataGrantRequest.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateDataGrantResponse.Description</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateDataGrantResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateDataGrantResponse.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.CreateDataGrantResponse.SenderPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.CreateRevisionRequest.Comment</property>
     <min>0</min>
     <max>16384</max>
@@ -16,6 +65,54 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataExchange.Model.DeleteDataGrantRequest.DataGrantId</property>
+    <pattern>[a-zA-Z0-9]{30,40}$|^arn:aws:dataexchange:[\-a-z0-9]*:(\d{12}):data-grants\/[a-zA-Z0-9]{30,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetDataGrantRequest.DataGrantId</property>
+    <pattern>[a-zA-Z0-9]{30,40}$|^arn:aws:dataexchange:[\-a-z0-9]*:(\d{12}):data-grants\/[a-zA-Z0-9]{30,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetDataGrantResponse.Description</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetDataGrantResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetDataGrantResponse.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetDataGrantResponse.SenderPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetReceivedDataGrantRequest.DataGrantArn</property>
+    <pattern>arn:aws:dataexchange:[\-a-z0-9]*:(\d{12}):data-grants\/[a-zA-Z0-9]{30,40}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetReceivedDataGrantResponse.Description</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetReceivedDataGrantResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetReceivedDataGrantResponse.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.GetReceivedDataGrantResponse.SenderPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataExchange.Model.GetRevisionResponse.Comment</property>
     <min>0</min>
     <max>16384</max>
@@ -24,6 +121,11 @@
     <property>Amazon.DataExchange.Model.GetRevisionResponse.RevocationComment</property>
     <min>10</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.ListDataGrantsRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.ListDataSetRevisionsRequest.MaxResults</property>
@@ -42,6 +144,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.ListJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.ListReceivedDataGrantsRequest.MaxResults</property>
     <min>1</min>
     <max>200</max>
   </property-value-rule>
@@ -90,6 +197,19 @@
     <property>Amazon.DataExchange.Model.UpdateRevisionResponse.RevocationComment</property>
     <min>10</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.DataGrantSummaryEntry.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.DataGrantSummaryEntry.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.DataGrantSummaryEntry.SenderPrincipal</property>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.ImportAssetFromApiGatewayApiRequestDetails.ApiSpecificationMd5Hash</property>
@@ -149,6 +269,19 @@
     <min>12</min>
     <max>12</max>
     <pattern>.*/^[\d]{12}$/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.ReceivedDataGrantSummariesEntry.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.ReceivedDataGrantSummariesEntry.ReceiverPrincipal</property>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataExchange.Model.ReceivedDataGrantSummariesEntry.SenderPrincipal</property>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataExchange.Model.RevisionEntry.Comment</property>

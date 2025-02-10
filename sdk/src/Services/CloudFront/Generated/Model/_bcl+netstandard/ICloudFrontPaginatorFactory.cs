@@ -47,6 +47,11 @@ namespace Amazon.CloudFront.Model
         IListKeyValueStoresPaginator ListKeyValueStores(ListKeyValueStoresRequest request);
 
         /// <summary>
+        /// Paginator for ListPublicKeys operation
+        ///</summary>
+        IListPublicKeysPaginator ListPublicKeys(ListPublicKeysRequest request);
+
+        /// <summary>
         /// Paginator for ListStreamingDistributions operation
         ///</summary>
         IListStreamingDistributionsPaginator ListStreamingDistributions(ListStreamingDistributionsRequest request);

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIntermediateSourceConfiguration())
             {
                 context.Writer.WritePropertyName("intermediateSourceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntermediateSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.IntermediateSourceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProviderConfiguration())
@@ -68,7 +66,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProviderServiceArn())
             {
                 context.Writer.WritePropertyName("providerServiceArn");
-                context.Writer.Write(requestObject.ProviderServiceArn);
+                context.Writer.WriteStringValue(requestObject.ProviderServiceArn);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInvocationCondition())
             {
                 context.Writer.WritePropertyName("invocationCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.InvocationCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaArn())
             {
                 context.Writer.WritePropertyName("lambdaArn");
-                context.Writer.Write(requestObject.LambdaArn);
+                context.Writer.WriteStringValue(requestObject.LambdaArn);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("s3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
         }

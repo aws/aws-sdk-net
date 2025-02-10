@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("timeoutInMinutes");
-                context.Writer.Write(requestObject.TimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutInMinutes.Value);
             }
 
         }

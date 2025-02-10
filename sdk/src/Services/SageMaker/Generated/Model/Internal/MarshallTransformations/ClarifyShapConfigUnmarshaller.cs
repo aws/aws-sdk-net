@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClarifyShapConfig Object
     /// </summary>  
-    public class ClarifyShapConfigUnmarshaller : IUnmarshaller<ClarifyShapConfig, XmlUnmarshallerContext>, IUnmarshaller<ClarifyShapConfig, JsonUnmarshallerContext>
+    public class ClarifyShapConfigUnmarshaller : IJsonUnmarshaller<ClarifyShapConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClarifyShapConfig IUnmarshaller<ClarifyShapConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClarifyShapConfig Unmarshall(JsonUnmarshallerContext context)
+        public ClarifyShapConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClarifyShapConfig unmarshalledObject = new ClarifyShapConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("NumberOfSamples", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfSamples = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfSamples = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Seed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Seed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Seed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ShapBaselineConfig", targetDepth))
                 {
                     var unmarshaller = ClarifyShapBaselineConfigUnmarshaller.Instance;
-                    unmarshalledObject.ShapBaselineConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShapBaselineConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextConfig", targetDepth))
                 {
                     var unmarshaller = ClarifyTextConfigUnmarshaller.Instance;
-                    unmarshalledObject.TextConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UseLogit", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseLogit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseLogit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

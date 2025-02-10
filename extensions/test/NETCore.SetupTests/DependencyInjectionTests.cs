@@ -190,6 +190,157 @@ namespace DependencyInjectionTests
             Assert.NotNull(controller.S3Client);
             Assert.Equal(expectRegion, controller.S3Client.Config.RegionEndpoint);
         }
+        
+#if NET8_0_OR_GREATER
+        
+        [Fact]
+        public void InjectKeyedS3ClientWithDefaultConfig()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddDefaultAWSOptions(config.GetAWSOptions());
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key);
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.USWest2, controller.S3Client.Config.RegionEndpoint);
+        }
+        
+        [Fact]
+        public void InjectKeyedS3ClientWithoutDefaultConfig()
+        {
+            ServiceCollection services = new ServiceCollection();
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key, new AWSOptions {Region = RegionEndpoint.USEast1 });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
+        }
+        
+        [Fact]
+        public void InjectKeyedS3ClientWithOverridingConfig()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddDefaultAWSOptions(config.GetAWSOptions());
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key, new AWSOptions {Region = RegionEndpoint.EUCentral1 });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.EUCentral1, controller.S3Client.Config.RegionEndpoint);
+        }
+        
+        [Fact]
+        public void TryAddKeyedCanRegisterWithDefaultConfig()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+
+            ServiceCollection services = new ServiceCollection();
+            services.AddDefaultAWSOptions(config.GetAWSOptions());
+            services.TryAddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key);
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.USWest2, controller.S3Client.Config.RegionEndpoint);
+        }
+        
+        [Fact]
+        public void TryAddKeyedCanRegisterWithoutDefaultConfig()
+        {
+            ServiceCollection services = new ServiceCollection();
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key, new AWSOptions {Region = RegionEndpoint.USEast1 });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
+        }
+        
+        [Fact]
+        public void TryAddKeyedServiceDontOverrideWhenAlreadySetup()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json");
+
+            IConfiguration config = builder.Build();
+            
+            ServiceCollection services = new ServiceCollection();
+            
+            services.AddDefaultAWSOptions(config.GetAWSOptions());
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key, new AWSOptions { Region = RegionEndpoint.EUWest1 });
+            services.TryAddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key);
+            services.TryAddKeyedAWSService<IAmazonS3>(TestControllerKeyed.Key, new AWSOptions { Region = RegionEndpoint.EUCentral1 });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestControllerKeyed>(serviceProvider);
+            Assert.Equal(RegionEndpoint.EUWest1, controller.S3Client.Config.RegionEndpoint);
+        }
+
+        [Fact]
+        public void InjectMultipleS3Clients()
+        {
+            ServiceCollection services = new ServiceCollection();
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerMultiKeyed.Key1, new AWSOptions { Region = RegionEndpoint.USEast1 });
+            services.AddKeyedAWSService<IAmazonS3>(TestControllerMultiKeyed.Key2, new AWSOptions { Region = RegionEndpoint.USWest2 });
+            
+            var serviceProvider = services.BuildServiceProvider();
+            
+            var controller = ActivatorUtilities.CreateInstance<TestControllerMultiKeyed>(serviceProvider);
+            Assert.NotNull(controller.S3Client1);
+            Assert.NotNull(controller.S3Client2);
+            Assert.Equal(RegionEndpoint.USEast1, controller.S3Client1.Config.RegionEndpoint);
+            Assert.Equal(RegionEndpoint.USWest2, controller.S3Client2.Config.RegionEndpoint);
+        }
+        
+        public class TestControllerKeyed
+        {
+            public const string Key = "key";
+            
+            public IAmazonS3 S3Client { get; private set; }
+            public TestControllerKeyed([FromKeyedServices(Key)] IAmazonS3 s3Client)
+            {
+                S3Client = s3Client;
+            }
+        }
+        
+        public class TestControllerMultiKeyed
+        {
+            public const string Key1 = "key1";
+            public const string Key2 = "key2";
+            
+            public IAmazonS3 S3Client1 { get; private set; }
+            public IAmazonS3 S3Client2 { get; private set; }
+            public TestControllerMultiKeyed(
+                [FromKeyedServices(Key1)] IAmazonS3 s3Client1, 
+                [FromKeyedServices(Key2)] IAmazonS3 s3Client2)
+            {
+                S3Client1 = s3Client1;
+                S3Client2 = s3Client2;
+            }
+            
+        }
+#endif
 
         public class TestController
         {

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SecurityGroupRule Object
     /// </summary>  
-    public class SecurityGroupRuleUnmarshaller : IUnmarshaller<SecurityGroupRule, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroupRule, JsonUnmarshallerContext>
+    public class SecurityGroupRuleUnmarshaller : IXmlUnmarshaller<SecurityGroupRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -115,6 +115,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReferencedGroupInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("securityGroupRuleArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SecurityGroupRuleArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("securityGroupRuleId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -147,17 +153,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SecurityGroupRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SecurityGroupRuleUnmarshaller _instance = new SecurityGroupRuleUnmarshaller();        
 

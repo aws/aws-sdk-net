@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TypedLinkSpecifier Object
     /// </summary>  
-    public class TypedLinkSpecifierUnmarshaller : IUnmarshaller<TypedLinkSpecifier, XmlUnmarshallerContext>, IUnmarshaller<TypedLinkSpecifier, JsonUnmarshallerContext>
+    public class TypedLinkSpecifierUnmarshaller : IJsonUnmarshaller<TypedLinkSpecifier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TypedLinkSpecifier IUnmarshaller<TypedLinkSpecifier, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TypedLinkSpecifier Unmarshall(JsonUnmarshallerContext context)
+        public TypedLinkSpecifier Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TypedLinkSpecifier unmarshalledObject = new TypedLinkSpecifier();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IdentityAttributeValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AttributeNameAndValue, AttributeNameAndValueUnmarshaller>(AttributeNameAndValueUnmarshaller.Instance);
-                    unmarshalledObject.IdentityAttributeValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AttributeNameAndValue, AttributeNameAndValueUnmarshaller>(AttributeNameAndValueUnmarshaller.Instance);
+                    unmarshalledObject.IdentityAttributeValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceObjectReference", targetDepth))
                 {
                     var unmarshaller = ObjectReferenceUnmarshaller.Instance;
-                    unmarshalledObject.SourceObjectReference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceObjectReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetObjectReference", targetDepth))
                 {
                     var unmarshaller = ObjectReferenceUnmarshaller.Instance;
-                    unmarshalledObject.TargetObjectReference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetObjectReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TypedLinkFacet", targetDepth))
                 {
                     var unmarshaller = TypedLinkSchemaAndFacetNameUnmarshaller.Instance;
-                    unmarshalledObject.TypedLinkFacet = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TypedLinkFacet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

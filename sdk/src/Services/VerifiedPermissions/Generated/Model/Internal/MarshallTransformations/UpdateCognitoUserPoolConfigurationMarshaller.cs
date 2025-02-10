@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientIds())
             {
                 context.Writer.WritePropertyName("clientIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClientIdsListValue in requestObject.ClientIds)
                 {
-                        context.Writer.Write(requestObjectClientIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectClientIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGroupConfiguration())
             {
                 context.Writer.WritePropertyName("groupConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateCognitoGroupConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroupConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserPoolArn())
             {
                 context.Writer.WritePropertyName("userPoolArn");
-                context.Writer.Write(requestObject.UserPoolArn);
+                context.Writer.WriteStringValue(requestObject.UserPoolArn);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Matcher Object
     /// </summary>  
-    public class MatcherUnmarshaller : IUnmarshaller<Matcher, XmlUnmarshallerContext>, IUnmarshaller<Matcher, JsonUnmarshallerContext>
+    public class MatcherUnmarshaller : IXmlUnmarshaller<Matcher, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Matcher Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MatcherUnmarshaller _instance = new MatcherUnmarshaller();        
 

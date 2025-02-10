@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
         private string _customIamInstanceProfile;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private string _dbParameterGroupName;
@@ -125,6 +126,10 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The amount of storage (in gibibytes) to allocate initially for the read replica. Follow
         /// the allocation rules specified in <c>CreateDBInstance</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting isn't valid for RDS for SQL Server.
         /// </para>
         ///  <note> 
         /// <para>
@@ -287,6 +292,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetCustomIamInstanceProfile()
         {
             return this._customIamInstanceProfile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights to enable for the read replica.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this setting is not supported.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>

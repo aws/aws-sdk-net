@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccuracy())
             {
                 context.Writer.WritePropertyName("Accuracy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PositionalAccuracyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Accuracy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCellSignals())
             {
                 context.Writer.WritePropertyName("CellSignals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CellSignalsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CellSignals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceId())
             {
                 context.Writer.WritePropertyName("DeviceId");
-                context.Writer.Write(requestObject.DeviceId);
+                context.Writer.WriteStringValue(requestObject.DeviceId);
             }
 
             if(requestObject.IsSetIpv4Address())
             {
                 context.Writer.WritePropertyName("Ipv4Address");
-                context.Writer.Write(requestObject.Ipv4Address);
+                context.Writer.WriteStringValue(requestObject.Ipv4Address);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("Position");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPositionListValue in requestObject.Position)
                 {
-                        context.Writer.Write(requestObjectPositionListValue);
+                        context.Writer.WriteNumberValue(requestObjectPositionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSampleTime())
             {
                 context.Writer.WritePropertyName("SampleTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SampleTime));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SampleTime));
             }
 
             if(requestObject.IsSetWiFiAccessPoints())
             {
                 context.Writer.WritePropertyName("WiFiAccessPoints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWiFiAccessPointsListValue in requestObject.WiFiAccessPoints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = WiFiAccessPointMarshaller.Instance;
                     marshaller.Marshall(requestObjectWiFiAccessPointsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

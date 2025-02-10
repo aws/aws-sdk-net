@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationTypeUpdate())
             {
                 context.Writer.WritePropertyName("ConfigurationTypeUpdate");
-                context.Writer.Write(requestObject.ConfigurationTypeUpdate);
+                context.Writer.WriteStringValue(requestObject.ConfigurationTypeUpdate);
             }
 
             if(requestObject.IsSetLogLevelUpdate())
             {
                 context.Writer.WritePropertyName("LogLevelUpdate");
-                context.Writer.Write(requestObject.LogLevelUpdate);
+                context.Writer.WriteStringValue(requestObject.LogLevelUpdate);
             }
 
             if(requestObject.IsSetMetricsLevelUpdate())
             {
                 context.Writer.WritePropertyName("MetricsLevelUpdate");
-                context.Writer.Write(requestObject.MetricsLevelUpdate);
+                context.Writer.WriteStringValue(requestObject.MetricsLevelUpdate);
             }
 
         }

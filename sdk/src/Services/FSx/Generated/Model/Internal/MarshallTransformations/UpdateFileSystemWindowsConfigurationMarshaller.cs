@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditLogConfiguration())
             {
                 context.Writer.WritePropertyName("AuditLogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WindowsAuditLogCreateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuditLogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
             {
                 context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+                context.Writer.WriteStringValue(requestObject.DailyAutomaticBackupStartTime);
             }
 
             if(requestObject.IsSetDiskIopsConfiguration())
             {
                 context.Writer.WritePropertyName("DiskIopsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DiskIopsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelfManagedActiveDirectoryConfiguration())
             {
                 context.Writer.WritePropertyName("SelfManagedActiveDirectoryConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SelfManagedActiveDirectoryConfigurationUpdatesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelfManagedActiveDirectoryConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
-                context.Writer.Write(requestObject.ThroughputCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.ThroughputCapacity.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.WeeklyMaintenanceStartTime);
             }
 
         }

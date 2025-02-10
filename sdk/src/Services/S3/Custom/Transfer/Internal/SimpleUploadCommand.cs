@@ -67,11 +67,17 @@ namespace Amazon.S3.Transfer.Internal
                 ServerSideEncryptionCustomerProvidedKeyMD5 = this._fileTransporterRequest.ServerSideEncryptionCustomerProvidedKeyMD5,
                 ServerSideEncryptionKeyManagementServiceKeyId = this._fileTransporterRequest.ServerSideEncryptionKeyManagementServiceKeyId,
                 IfNoneMatch = this._fileTransporterRequest.IfNoneMatch,
+                IfMatch = this._fileTransporterRequest.IfMatch,
                 Metadata = this._fileTransporterRequest.Metadata,
                 TagSet = this._fileTransporterRequest.TagSet,
                 DisableDefaultChecksumValidation = this._fileTransporterRequest.DisableDefaultChecksumValidation,
                 DisablePayloadSigning = this._fileTransporterRequest.DisablePayloadSigning,
                 ChecksumAlgorithm = this._fileTransporterRequest.ChecksumAlgorithm,
+                ChecksumCRC32 = this._fileTransporterRequest.ChecksumCRC32,
+                ChecksumCRC32C = this._fileTransporterRequest.ChecksumCRC32C,
+                ChecksumCRC64NVME = this._fileTransporterRequest.ChecksumCRC64NVME,
+                ChecksumSHA1 = this._fileTransporterRequest.ChecksumSHA1,
+                ChecksumSHA256 = this._fileTransporterRequest.ChecksumSHA256,
                 RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 
@@ -86,7 +92,9 @@ namespace Amazon.S3.Transfer.Internal
             ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)putRequest).AddBeforeRequestHandler(this.RequestEventHandler);
 
             putRequest.InputStream = this._fileTransporterRequest.InputStream;
+#pragma warning disable CS0618 // Type or member is obsolete
             putRequest.CalculateContentMD5Header = this._fileTransporterRequest.CalculateContentMD5Header;
+#pragma warning restore CS0618 // Type or member is obsolete
             putRequest.ObjectLockLegalHoldStatus = this._fileTransporterRequest.ObjectLockLegalHoldStatus;
             putRequest.ObjectLockMode = this._fileTransporterRequest.ObjectLockMode;
 

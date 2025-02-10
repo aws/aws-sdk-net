@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoggingConfig Object
     /// </summary>  
-    public class LoggingConfigUnmarshaller : IUnmarshaller<LoggingConfig, XmlUnmarshallerContext>, IUnmarshaller<LoggingConfig, JsonUnmarshallerContext>
+    public class LoggingConfigUnmarshaller : IXmlUnmarshaller<LoggingConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LoggingConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LoggingConfigUnmarshaller _instance = new LoggingConfigUnmarshaller();        
 

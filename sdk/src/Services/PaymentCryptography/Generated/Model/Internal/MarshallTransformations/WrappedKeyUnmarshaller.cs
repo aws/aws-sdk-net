@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WrappedKey Object
     /// </summary>  
-    public class WrappedKeyUnmarshaller : IUnmarshaller<WrappedKey, XmlUnmarshallerContext>, IUnmarshaller<WrappedKey, JsonUnmarshallerContext>
+    public class WrappedKeyUnmarshaller : IJsonUnmarshaller<WrappedKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WrappedKey IUnmarshaller<WrappedKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WrappedKey Unmarshall(JsonUnmarshallerContext context)
+        public WrappedKey Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WrappedKey unmarshalledObject = new WrappedKey();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("KeyCheckValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyCheckValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyCheckValueAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyCheckValueAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyCheckValueAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyMaterial", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyMaterial = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyMaterial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WrappedKeyMaterialFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WrappedKeyMaterialFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WrappedKeyMaterialFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WrappingKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WrappingKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WrappingKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

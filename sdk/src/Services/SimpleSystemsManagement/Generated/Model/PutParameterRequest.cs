@@ -284,8 +284,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Policies. 
         /// <para>
         /// One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
-        /// Store, a capability of Amazon Web Services Systems Manager supports the following
-        /// policy types:
+        /// Store, a tool in Amazon Web Services Systems Manager supports the following policy
+        /// types:
         /// </para>
         ///  
         /// <para>
@@ -522,7 +522,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// Parameters can't be referenced or nested in the values of other parameters. You can't
-        /// include <c>{{}}</c> or <c>{{ssm:<i>parameter-name</i>}}</c> in a parameter value.
+        /// include values wrapped in double brackets <c>{{}}</c> or <c>{{ssm:<i>parameter-name</i>}}</c>
+        /// in a parameter value.
         /// </para>
         ///  </note>
         /// </summary>

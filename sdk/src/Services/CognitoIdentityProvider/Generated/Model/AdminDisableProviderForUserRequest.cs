@@ -98,7 +98,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user to be disabled.
+        /// The user profile that you want to delete a linked identity from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,7 +117,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool where you want to delete the user's linked identities.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=131072)]

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("hostname");
-                context.Writer.Write(requestObject.Hostname);
+                context.Writer.WriteStringValue(requestObject.Hostname);
             }
 
             if(requestObject.IsSetIpPreference())
             {
                 context.Writer.WritePropertyName("ipPreference");
-                context.Writer.Write(requestObject.IpPreference);
+                context.Writer.WriteStringValue(requestObject.IpPreference);
             }
 
             if(requestObject.IsSetResponseType())
             {
                 context.Writer.WritePropertyName("responseType");
-                context.Writer.Write(requestObject.ResponseType);
+                context.Writer.WriteStringValue(requestObject.ResponseType);
             }
 
         }

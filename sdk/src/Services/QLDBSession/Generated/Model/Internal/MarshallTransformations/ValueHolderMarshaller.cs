@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIonBinary())
             {
                 context.Writer.WritePropertyName("IonBinary");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.IonBinary));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.IonBinary));
             }
 
             if(requestObject.IsSetIonText())
             {
                 context.Writer.WritePropertyName("IonText");
-                context.Writer.Write(requestObject.IonText);
+                context.Writer.WriteStringValue(requestObject.IonText);
             }
 
         }

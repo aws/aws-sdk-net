@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,81 +66,86 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnabled())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("Enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetEventCategories())
-                    {
-                        context.Writer.WritePropertyName("EventCategories");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventCategoriesListValue in publicRequest.EventCategories)
-                        {
-                                context.Writer.Write(publicRequestEventCategoriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSnsTopicArn())
-                    {
-                        context.Writer.WritePropertyName("SnsTopicArn");
-                        context.Writer.Write(publicRequest.SnsTopicArn);
-                    }
-
-                    if(publicRequest.IsSetSourceIds())
-                    {
-                        context.Writer.WritePropertyName("SourceIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourceIdsListValue in publicRequest.SourceIds)
-                        {
-                                context.Writer.Write(publicRequestSourceIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceType())
-                    {
-                        context.Writer.WritePropertyName("SourceType");
-                        context.Writer.Write(publicRequest.SourceType);
-                    }
-
-                    if(publicRequest.IsSetSubscriptionName())
-                    {
-                        context.Writer.WritePropertyName("SubscriptionName");
-                        context.Writer.Write(publicRequest.SubscriptionName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
             }
+
+            if(publicRequest.IsSetEventCategories())
+            {
+                context.Writer.WritePropertyName("EventCategories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventCategoriesListValue in publicRequest.EventCategories)
+                {
+                        context.Writer.WriteStringValue(publicRequestEventCategoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSnsTopicArn())
+            {
+                context.Writer.WritePropertyName("SnsTopicArn");
+                context.Writer.WriteStringValue(publicRequest.SnsTopicArn);
+            }
+
+            if(publicRequest.IsSetSourceIds())
+            {
+                context.Writer.WritePropertyName("SourceIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourceIdsListValue in publicRequest.SourceIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSourceIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSourceType())
+            {
+                context.Writer.WritePropertyName("SourceType");
+                context.Writer.WriteStringValue(publicRequest.SourceType);
+            }
+
+            if(publicRequest.IsSetSubscriptionName())
+            {
+                context.Writer.WritePropertyName("SubscriptionName");
+                context.Writer.WriteStringValue(publicRequest.SubscriptionName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

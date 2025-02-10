@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
@@ -51,75 +49,75 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddressFamily())
             {
                 context.Writer.WritePropertyName("addressFamily");
-                context.Writer.Write(requestObject.AddressFamily);
+                context.Writer.WriteStringValue(requestObject.AddressFamily);
             }
 
             if(requestObject.IsSetAmazonAddress())
             {
                 context.Writer.WritePropertyName("amazonAddress");
-                context.Writer.Write(requestObject.AmazonAddress);
+                context.Writer.WriteStringValue(requestObject.AmazonAddress);
             }
 
             if(requestObject.IsSetAsn())
             {
                 context.Writer.WritePropertyName("asn");
-                context.Writer.Write(requestObject.Asn.Value);
+                context.Writer.WriteNumberValue(requestObject.Asn.Value);
             }
 
             if(requestObject.IsSetAuthKey())
             {
                 context.Writer.WritePropertyName("authKey");
-                context.Writer.Write(requestObject.AuthKey);
+                context.Writer.WriteStringValue(requestObject.AuthKey);
             }
 
             if(requestObject.IsSetCustomerAddress())
             {
                 context.Writer.WritePropertyName("customerAddress");
-                context.Writer.Write(requestObject.CustomerAddress);
+                context.Writer.WriteStringValue(requestObject.CustomerAddress);
             }
 
             if(requestObject.IsSetRouteFilterPrefixes())
             {
                 context.Writer.WritePropertyName("routeFilterPrefixes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRouteFilterPrefixesListValue in requestObject.RouteFilterPrefixes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RouteFilterPrefixMarshaller.Instance;
                     marshaller.Marshall(requestObjectRouteFilterPrefixesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVirtualInterfaceName())
             {
                 context.Writer.WritePropertyName("virtualInterfaceName");
-                context.Writer.Write(requestObject.VirtualInterfaceName);
+                context.Writer.WriteStringValue(requestObject.VirtualInterfaceName);
             }
 
             if(requestObject.IsSetVlan())
             {
                 context.Writer.WritePropertyName("vlan");
-                context.Writer.Write(requestObject.Vlan.Value);
+                context.Writer.WriteNumberValue(requestObject.Vlan.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -51,90 +49,90 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithmHyperParameters())
             {
                 context.Writer.WritePropertyName("algorithmHyperParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAlgorithmHyperParametersKvp in requestObject.AlgorithmHyperParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectAlgorithmHyperParametersKvp.Key);
                     var requestObjectAlgorithmHyperParametersValue = requestObjectAlgorithmHyperParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectAlgorithmHyperParametersValue);
+                        context.Writer.WriteStringValue(requestObjectAlgorithmHyperParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAutoMLConfig())
             {
                 context.Writer.WritePropertyName("autoMLConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutoMLConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAutoTrainingConfig())
             {
                 context.Writer.WritePropertyName("autoTrainingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoTrainingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutoTrainingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventValueThreshold())
             {
                 context.Writer.WritePropertyName("eventValueThreshold");
-                context.Writer.Write(requestObject.EventValueThreshold);
+                context.Writer.WriteStringValue(requestObject.EventValueThreshold);
             }
 
             if(requestObject.IsSetFeatureTransformationParameters())
             {
                 context.Writer.WritePropertyName("featureTransformationParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFeatureTransformationParametersKvp in requestObject.FeatureTransformationParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectFeatureTransformationParametersKvp.Key);
                     var requestObjectFeatureTransformationParametersValue = requestObjectFeatureTransformationParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectFeatureTransformationParametersValue);
+                        context.Writer.WriteStringValue(requestObjectFeatureTransformationParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHpoConfig())
             {
                 context.Writer.WritePropertyName("hpoConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HPOConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HpoConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOptimizationObjective())
             {
                 context.Writer.WritePropertyName("optimizationObjective");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OptimizationObjectiveMarshaller.Instance;
                 marshaller.Marshall(requestObject.OptimizationObjective, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrainingDataConfig())
             {
                 context.Writer.WritePropertyName("trainingDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainingDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainingDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

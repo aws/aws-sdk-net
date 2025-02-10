@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("accountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetLaunchTemplate())
             {
                 context.Writer.WritePropertyName("launchTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FastLaunchLaunchTemplateSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxParallelLaunches())
             {
                 context.Writer.WritePropertyName("maxParallelLaunches");
-                context.Writer.Write(requestObject.MaxParallelLaunches.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxParallelLaunches.Value);
             }
 
             if(requestObject.IsSetSnapshotConfiguration())
             {
                 context.Writer.WritePropertyName("snapshotConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FastLaunchSnapshotConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnapshotConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

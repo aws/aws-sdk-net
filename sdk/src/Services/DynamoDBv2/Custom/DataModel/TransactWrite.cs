@@ -15,12 +15,17 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Linq;
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
+
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -37,7 +42,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a generic interface for writing/deleting/version-checking multiple items
     /// in a single DynamoDB table in a transaction.
     /// </summary>
-    public interface ITransactWrite<T> : ITransactWrite
+    public interface ITransactWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : ITransactWrite
     {
         /// <summary>
         /// Creates a MultiTableTransactWrite object that is a combination
@@ -165,6 +170,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         internal DocumentTransactWrite DocumentTransaction { get; set; }
 
+        internal TracerProvider TracerProvider { get; set; }
+
         internal abstract void PopulateObjects();
     }
 
@@ -172,10 +179,7 @@ namespace Amazon.DynamoDBv2.DataModel
     /// Represents a strongly-typed object for writing/deleting/version-checking multiple items
     /// in a single DynamoDB table in a transaction.
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
-    public partial class TransactWrite<T> : TransactWrite, ITransactWrite<T>
+    public partial class TransactWrite<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T> : TransactWrite, ITransactWrite<T>
     {
         private readonly DynamoDBContext _context;
         private readonly DynamoDBFlatConfig _config;
@@ -192,6 +196,9 @@ namespace Amazon.DynamoDBv2.DataModel
             // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
             // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
             DocumentTransaction = new DocumentTransactWrite(table);
+
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         /// <inheritdoc/>
@@ -221,11 +228,8 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
-            DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
-            {
-                ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
-            });
+            AddDocumentTransaction(storage, conditionExpression);
+            
             var objectItem = new DynamoDBContext.ObjectWithItemStorage
             {
                 OriginalObject = item,
@@ -428,6 +432,45 @@ namespace Amazon.DynamoDBv2.DataModel
                 DocumentTransaction.TargetTable.IsEmptyStringValueEnabled);
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
+        
+
+        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
+        {
+            var hashKeyPropertyNames = storage.Config.HashKeyPropertyNames;
+            var rangeKeyPropertyNames = storage.Config.RangeKeyPropertyNames;
+
+            var attributeNames = storage.Document.Keys.ToList();
+
+            foreach (var keyPropertyName in hashKeyPropertyNames)
+            {
+                attributeNames.Remove(keyPropertyName);
+            }
+
+            foreach (var rangeKeyPropertyName in rangeKeyPropertyNames)
+            {
+                attributeNames.Remove(rangeKeyPropertyName);
+            }
+
+            // If there are no attributes left, we need to use PutItem
+            // as UpdateItem requires at least one data attribute
+            if (attributeNames.Any())
+            {
+                DocumentTransaction.AddDocumentToUpdate(storage.Document, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                });
+            }
+            else
+            {
+
+                DocumentTransaction.AddDocumentToPut(storage.Document, new TransactWriteItemOperationConfig
+                {
+                    ConditionalExpression = conditionExpression,
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                });
+            }
+        }
 
         private void SetNewVersion(ItemStorage storage)
         {
@@ -457,6 +500,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         private readonly List<ITransactWrite> allTransactionParts;
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// Constructs a MultiTableTransactWrite object from a number of
         /// TransactWrite objects
@@ -465,6 +510,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactWrite(params ITransactWrite[] transactionParts)
         {
             allTransactionParts = new List<ITransactWrite>(transactionParts);
+            TracerProvider = GetTracerProvider(allTransactionParts);
         }
 
         internal MultiTableTransactWrite(ITransactWrite first, params ITransactWrite[] rest)
@@ -472,6 +518,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts = new List<ITransactWrite>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
+            TracerProvider = GetTracerProvider(allTransactionParts);
         }
 
         /// <inheritdoc/>
@@ -513,6 +560,20 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
                 abstractTransactWrite.PopulateObjects();
             }
+        }
+
+        private TracerProvider GetTracerProvider(List<ITransactWrite> allTransactionParts)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (allTransactionParts.Count > 0)
+            {
+                var firstTransactionPart = allTransactionParts[0];
+                if (firstTransactionPart is TransactWrite transactWrite)
+                {
+                    tracerProvider = transactWrite.TracerProvider;
+                }
+            }
+            return tracerProvider;
         }
 #endif
     }

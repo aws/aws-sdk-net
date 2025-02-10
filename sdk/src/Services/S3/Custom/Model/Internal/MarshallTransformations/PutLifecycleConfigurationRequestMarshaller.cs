@@ -57,7 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddSubResource("lifecycle");
 
             var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings(){Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
                 var lifecycleConfigurationLifecycleConfiguration = putLifecycleConfigurationRequest.Configuration;
                 if (lifecycleConfigurationLifecycleConfiguration != null)
@@ -78,9 +78,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     if (expiration != null)
                                     {
                                         xmlWriter.WriteStartElement("Expiration");
-                                        if (expiration.IsSetDateUtc())
+                                        if (expiration.IsSetDate())
                                         {
-                                            xmlWriter.WriteElementString("Date", S3Transforms.ToXmlStringValue(expiration.DateUtc.Value));
+                                            xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(expiration.Date.Value));
                                         }
                                         if (expiration.IsSetDays())
                                         {
@@ -101,9 +101,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                             if (transition != null)
                                             {
                                                 xmlWriter.WriteStartElement("Transition");
-                                                if (transition.IsSetDateUtc())
+                                                if (transition.IsSetDate())
                                                 {
-                                                    xmlWriter.WriteElementString("Date", S3Transforms.ToXmlStringValue(transition.DateUtc.Value));
+                                                    xmlWriter.WriteElementString("Date", StringUtils.FromDateTimeToISO8601WithOptionalMs(transition.Date.Value));
                                                 }
                                                 if (transition.IsSetDays())
                                                 {
@@ -122,6 +122,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     if (noncurrentVersionExpiration != null)
                                     {
                                         xmlWriter.WriteStartElement("NoncurrentVersionExpiration");
+                                        if (noncurrentVersionExpiration.IsSetNewerNoncurrentVersions())
+                                        {
+                                            xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NewerNoncurrentVersions.Value));
+                                        }
                                         if (noncurrentVersionExpiration.IsSetNoncurrentDays())
                                         {
                                             xmlWriter.WriteElementString("NoncurrentDays", S3Transforms.ToXmlStringValue(noncurrentVersionExpiration.NoncurrentDays.Value));
@@ -137,6 +141,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                             if (noncurrentVersionTransition != null)
                                             {
                                                 xmlWriter.WriteStartElement("NoncurrentVersionTransition");
+                                                if (noncurrentVersionTransition.IsSetNewerNoncurrentVersions())
+                                                {
+                                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NewerNoncurrentVersions.Value));
+                                                }
                                                 if (noncurrentVersionTransition.IsSetNoncurrentDays())
                                                 {
                                                     xmlWriter.WriteElementString("NoncurrentDays", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NoncurrentDays.Value));
@@ -207,7 +215,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                ChecksumUtils.SetChecksumData(request, putLifecycleConfigurationRequest.ChecksumAlgorithm);
+                ChecksumUtils.SetChecksumData(
+                    request, 
+                    putLifecycleConfigurationRequest.ChecksumAlgorithm, 
+                    fallbackToMD5: false, 
+                    isRequestChecksumRequired: true, 
+                    headerName: S3Constants.AmzHeaderSdkChecksumAlgorithm
+                );
             }
             catch (EncoderFallbackException e)
             {

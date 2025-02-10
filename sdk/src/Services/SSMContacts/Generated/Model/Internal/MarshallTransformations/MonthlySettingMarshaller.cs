@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDayOfMonth())
             {
                 context.Writer.WritePropertyName("DayOfMonth");
-                context.Writer.Write(requestObject.DayOfMonth.Value);
+                context.Writer.WriteNumberValue(requestObject.DayOfMonth.Value);
             }
 
             if(requestObject.IsSetHandOffTime())
             {
                 context.Writer.WritePropertyName("HandOffTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HandOffTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.HandOffTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

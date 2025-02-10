@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,99 +49,99 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetB())
             {
                 context.Writer.WritePropertyName("B");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.B));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.B));
             }
 
             if(requestObject.IsSetBOOL())
             {
                 context.Writer.WritePropertyName("BOOL");
-                context.Writer.Write(requestObject.BOOL.Value);
+                context.Writer.WriteBooleanValue(requestObject.BOOL.Value);
             }
 
             if(requestObject.IsSetBS())
             {
                 context.Writer.WritePropertyName("BS");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBSListValue in requestObject.BS)
                 {
-                    context.Writer.Write(StringUtils.FromMemoryStream(requestObjectBSListValue));
+                    context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObjectBSListValue));
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetL())
             {
                 context.Writer.WritePropertyName("L");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLListValue in requestObject.L)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectLListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetM())
             {
                 context.Writer.WritePropertyName("M");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMKvp in requestObject.M)
                 {
                     context.Writer.WritePropertyName(requestObjectMKvp.Key);
                     var requestObjectMValue = requestObjectMKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetN())
             {
                 context.Writer.WritePropertyName("N");
-                context.Writer.Write(requestObject.N);
+                context.Writer.WriteStringValue(requestObject.N);
             }
 
             if(requestObject.IsSetNS())
             {
                 context.Writer.WritePropertyName("NS");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNSListValue in requestObject.NS)
                 {
-                        context.Writer.Write(requestObjectNSListValue);
+                        context.Writer.WriteStringValue(requestObjectNSListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNULL())
             {
                 context.Writer.WritePropertyName("NULL");
-                context.Writer.Write(requestObject.NULL.Value);
+                context.Writer.WriteBooleanValue(requestObject.NULL.Value);
             }
 
             if(requestObject.IsSetS())
             {
                 context.Writer.WritePropertyName("S");
-                context.Writer.Write(requestObject.S);
+                context.Writer.WriteStringValue(requestObject.S);
             }
 
             if(requestObject.IsSetSS())
             {
                 context.Writer.WritePropertyName("SS");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSSListValue in requestObject.SS)
                 {
-                        context.Writer.Write(requestObjectSSListValue);
+                        context.Writer.WriteStringValue(requestObjectSSListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

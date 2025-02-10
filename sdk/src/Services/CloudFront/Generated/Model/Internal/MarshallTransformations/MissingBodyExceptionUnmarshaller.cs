@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MissingBodyException operation
     /// </summary>  
-    public class MissingBodyExceptionUnmarshaller : IErrorResponseUnmarshaller<MissingBodyException, XmlUnmarshallerContext>
+    public class MissingBodyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MissingBodyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

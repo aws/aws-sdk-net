@@ -29,95 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TemplateVersionDefinition Object
     /// </summary>  
-    public class TemplateVersionDefinitionUnmarshaller : IUnmarshaller<TemplateVersionDefinition, XmlUnmarshallerContext>, IUnmarshaller<TemplateVersionDefinition, JsonUnmarshallerContext>
+    public class TemplateVersionDefinitionUnmarshaller : IJsonUnmarshaller<TemplateVersionDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TemplateVersionDefinition IUnmarshaller<TemplateVersionDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TemplateVersionDefinition Unmarshall(JsonUnmarshallerContext context)
+        public TemplateVersionDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TemplateVersionDefinition unmarshalledObject = new TemplateVersionDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AnalysisDefaults", targetDepth))
                 {
                     var unmarshaller = AnalysisDefaultsUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisDefaults = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalysisDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CalculatedFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CalculatedField, CalculatedFieldUnmarshaller>(CalculatedFieldUnmarshaller.Instance);
-                    unmarshalledObject.CalculatedFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CalculatedField, CalculatedFieldUnmarshaller>(CalculatedFieldUnmarshaller.Instance);
+                    unmarshalledObject.CalculatedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ColumnConfiguration, ColumnConfigurationUnmarshaller>(ColumnConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.ColumnConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ColumnConfiguration, ColumnConfigurationUnmarshaller>(ColumnConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ColumnConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSetConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataSetConfiguration, DataSetConfigurationUnmarshaller>(DataSetConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.DataSetConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataSetConfiguration, DataSetConfigurationUnmarshaller>(DataSetConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.DataSetConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FilterGroup, FilterGroupUnmarshaller>(FilterGroupUnmarshaller.Instance);
-                    unmarshalledObject.FilterGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FilterGroup, FilterGroupUnmarshaller>(FilterGroupUnmarshaller.Instance);
+                    unmarshalledObject.FilterGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Options", targetDepth))
                 {
                     var unmarshaller = AssetOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParameterDeclarations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ParameterDeclaration, ParameterDeclarationUnmarshaller>(ParameterDeclarationUnmarshaller.Instance);
-                    unmarshalledObject.ParameterDeclarations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ParameterDeclaration, ParameterDeclarationUnmarshaller>(ParameterDeclarationUnmarshaller.Instance);
+                    unmarshalledObject.ParameterDeclarations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryExecutionOptions", targetDepth))
                 {
                     var unmarshaller = QueryExecutionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.QueryExecutionOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryExecutionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sheets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SheetDefinition, SheetDefinitionUnmarshaller>(SheetDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.Sheets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SheetDefinition, SheetDefinitionUnmarshaller>(SheetDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.Sheets = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("StaticFiles", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<StaticFile, StaticFileUnmarshaller>(StaticFileUnmarshaller.Instance);
+                    unmarshalledObject.StaticFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

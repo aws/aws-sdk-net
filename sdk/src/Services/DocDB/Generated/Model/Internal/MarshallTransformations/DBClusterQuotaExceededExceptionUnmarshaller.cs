@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterQuotaExceededException operation
     /// </summary>  
-    public class DBClusterQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterQuotaExceededException, XmlUnmarshallerContext>
+    public class DBClusterQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

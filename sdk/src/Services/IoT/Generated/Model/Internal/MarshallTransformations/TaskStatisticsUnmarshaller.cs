@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TaskStatistics Object
     /// </summary>  
-    public class TaskStatisticsUnmarshaller : IUnmarshaller<TaskStatistics, XmlUnmarshallerContext>, IUnmarshaller<TaskStatistics, JsonUnmarshallerContext>
+    public class TaskStatisticsUnmarshaller : IJsonUnmarshaller<TaskStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TaskStatistics IUnmarshaller<TaskStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskStatistics Unmarshall(JsonUnmarshallerContext context)
+        public TaskStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TaskStatistics unmarshalledObject = new TaskStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("canceledChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CanceledChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanceledChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("compliantChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failedChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FailedChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailedChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inProgressChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InProgressChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InProgressChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nonCompliantChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("waitingForDataCollectionChecks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.WaitingForDataCollectionChecks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WaitingForDataCollectionChecks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

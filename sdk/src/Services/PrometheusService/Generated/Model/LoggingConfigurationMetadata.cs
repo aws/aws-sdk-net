@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Contains information about the logging configuration.
+    /// Contains information about the logging configuration for the workspace.
     /// </summary>
     public partial class LoggingConfigurationMetadata
     {

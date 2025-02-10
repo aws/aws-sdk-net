@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2NetworkInterfaceDetails Object
     /// </summary>  
-    public class AwsEc2NetworkInterfaceDetailsUnmarshaller : IUnmarshaller<AwsEc2NetworkInterfaceDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2NetworkInterfaceDetails, JsonUnmarshallerContext>
+    public class AwsEc2NetworkInterfaceDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2NetworkInterfaceDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2NetworkInterfaceDetails IUnmarshaller<AwsEc2NetworkInterfaceDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2NetworkInterfaceDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2NetworkInterfaceDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2NetworkInterfaceDetails unmarshalledObject = new AwsEc2NetworkInterfaceDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Attachment", targetDepth))
                 {
                     var unmarshaller = AwsEc2NetworkInterfaceAttachmentUnmarshaller.Instance;
-                    unmarshalledObject.Attachment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Attachment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IpV6Addresses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller>(AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller.Instance);
-                    unmarshalledObject.IpV6Addresses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller>(AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller.Instance);
+                    unmarshalledObject.IpV6Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkInterfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrivateIpAddresses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2NetworkInterfacePrivateIpAddressDetail, AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller>(AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller.Instance);
-                    unmarshalledObject.PrivateIpAddresses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfacePrivateIpAddressDetail, AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller>(AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller.Instance);
+                    unmarshalledObject.PrivateIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PublicDnsName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PublicIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecurityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEc2NetworkInterfaceSecurityGroup, AwsEc2NetworkInterfaceSecurityGroupUnmarshaller>(AwsEc2NetworkInterfaceSecurityGroupUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfaceSecurityGroup, AwsEc2NetworkInterfaceSecurityGroupUnmarshaller>(AwsEc2NetworkInterfaceSecurityGroupUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceDestCheck", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

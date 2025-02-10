@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBeaconing())
             {
                 context.Writer.WritePropertyName("Beaconing");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BeaconingMarshaller.Instance;
                 marshaller.Marshall(requestObject.Beaconing, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGatewayEui())
             {
                 context.Writer.WritePropertyName("GatewayEui");
-                context.Writer.Write(requestObject.GatewayEui);
+                context.Writer.WriteStringValue(requestObject.GatewayEui);
             }
 
             if(requestObject.IsSetJoinEuiFilters())
             {
                 context.Writer.WritePropertyName("JoinEuiFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJoinEuiFiltersListValue in requestObject.JoinEuiFilters)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectJoinEuiFiltersListValueListValue in requestObjectJoinEuiFiltersListValue)
                     {
-                            context.Writer.Write(requestObjectJoinEuiFiltersListValueListValue);
+                            context.Writer.WriteStringValue(requestObjectJoinEuiFiltersListValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxEirp())
@@ -86,40 +84,40 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MaxEirp");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MaxEirp.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MaxEirp.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MaxEirp.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxEirp.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxEirp.Value);
                 }
             }
 
             if(requestObject.IsSetNetIdFilters())
             {
                 context.Writer.WritePropertyName("NetIdFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNetIdFiltersListValue in requestObject.NetIdFilters)
                 {
-                        context.Writer.Write(requestObjectNetIdFiltersListValue);
+                        context.Writer.WriteStringValue(requestObjectNetIdFiltersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRfRegion())
             {
                 context.Writer.WritePropertyName("RfRegion");
-                context.Writer.Write(requestObject.RfRegion);
+                context.Writer.WriteStringValue(requestObject.RfRegion);
             }
 
             if(requestObject.IsSetSubBands())
             {
                 context.Writer.WritePropertyName("SubBands");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubBandsListValue in requestObject.SubBands)
                 {
-                        context.Writer.Write(requestObjectSubBandsListValue);
+                        context.Writer.WriteNumberValue(requestObjectSubBandsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

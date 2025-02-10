@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FieldConfig Object
     /// </summary>  
-    public class FieldConfigUnmarshaller : IUnmarshaller<FieldConfig, XmlUnmarshallerContext>, IUnmarshaller<FieldConfig, JsonUnmarshallerContext>
+    public class FieldConfigUnmarshaller : IJsonUnmarshaller<FieldConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FieldConfig IUnmarshaller<FieldConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldConfig Unmarshall(JsonUnmarshallerContext context)
+        public FieldConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FieldConfig unmarshalledObject = new FieldConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("excluded", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputType", targetDepth))
                 {
                     var unmarshaller = FieldInputConfigUnmarshaller.Instance;
-                    unmarshalledObject.InputType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("label", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("position", targetDepth))
                 {
                     var unmarshaller = FieldPositionUnmarshaller.Instance;
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("validations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FieldValidationConfiguration, FieldValidationConfigurationUnmarshaller>(FieldValidationConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.Validations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FieldValidationConfiguration, FieldValidationConfigurationUnmarshaller>(FieldValidationConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Validations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

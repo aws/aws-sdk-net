@@ -437,8 +437,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The Identity and Access Management (IAM) service role that Run Command, a capability
-        /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications
+        /// The Identity and Access Management (IAM) service role that Run Command, a tool in
+        /// Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications
         /// about command status changes. 
         /// </para>
         /// </summary>

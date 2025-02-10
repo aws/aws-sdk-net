@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -47,129 +47,135 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetPlaybackConfigurationResponse response = new GetPlaybackConfigurationResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AdConditioningConfiguration", targetDepth))
+                {
+                    var unmarshaller = AdConditioningConfigurationUnmarshaller.Instance;
+                    response.AdConditioningConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AdDecisionServerUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AdDecisionServerUrl = unmarshaller.Unmarshall(context);
+                    response.AdDecisionServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailSuppression", targetDepth))
                 {
                     var unmarshaller = AvailSuppressionUnmarshaller.Instance;
-                    response.AvailSuppression = unmarshaller.Unmarshall(context);
+                    response.AvailSuppression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Bumper", targetDepth))
                 {
                     var unmarshaller = BumperUnmarshaller.Instance;
-                    response.Bumper = unmarshaller.Unmarshall(context);
+                    response.Bumper = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CdnConfiguration", targetDepth))
                 {
                     var unmarshaller = CdnConfigurationUnmarshaller.Instance;
-                    response.CdnConfiguration = unmarshaller.Unmarshall(context);
+                    response.CdnConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigurationAliases", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
-                    response.ConfigurationAliases = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    response.ConfigurationAliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DashConfiguration", targetDepth))
                 {
                     var unmarshaller = DashConfigurationUnmarshaller.Instance;
-                    response.DashConfiguration = unmarshaller.Unmarshall(context);
+                    response.DashConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HlsConfiguration", targetDepth))
                 {
                     var unmarshaller = HlsConfigurationUnmarshaller.Instance;
-                    response.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    response.HlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InsertionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.InsertionMode = unmarshaller.Unmarshall(context);
+                    response.InsertionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LivePreRollConfiguration", targetDepth))
                 {
                     var unmarshaller = LivePreRollConfigurationUnmarshaller.Instance;
-                    response.LivePreRollConfiguration = unmarshaller.Unmarshall(context);
+                    response.LivePreRollConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogConfiguration", targetDepth))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
-                    response.LogConfiguration = unmarshaller.Unmarshall(context);
+                    response.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ManifestProcessingRules", targetDepth))
                 {
                     var unmarshaller = ManifestProcessingRulesUnmarshaller.Instance;
-                    response.ManifestProcessingRules = unmarshaller.Unmarshall(context);
+                    response.ManifestProcessingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
+                    response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PersonalizationThresholdSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.PersonalizationThresholdSeconds = unmarshaller.Unmarshall(context);
+                    response.PersonalizationThresholdSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlaybackConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PlaybackConfigurationArn = unmarshaller.Unmarshall(context);
+                    response.PlaybackConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PlaybackEndpointPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PlaybackEndpointPrefix = unmarshaller.Unmarshall(context);
+                    response.PlaybackEndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SessionInitializationEndpointPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SessionInitializationEndpointPrefix = unmarshaller.Unmarshall(context);
+                    response.SessionInitializationEndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SlateAdUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SlateAdUrl = unmarshaller.Unmarshall(context);
+                    response.SlateAdUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TranscodeProfileName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TranscodeProfileName = unmarshaller.Unmarshall(context);
+                    response.TranscodeProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VideoContentSourceUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VideoContentSourceUrl = unmarshaller.Unmarshall(context);
+                    response.VideoContentSourceUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -186,15 +192,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
             }
             return new AmazonMediaTailorException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

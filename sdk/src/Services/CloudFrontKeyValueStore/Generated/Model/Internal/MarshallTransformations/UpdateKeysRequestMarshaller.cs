@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
 {
@@ -64,51 +67,56 @@ namespace Amazon.CloudFrontKeyValueStore.Model.Internal.MarshallTransformations
                 throw new AmazonCloudFrontKeyValueStoreException("Request object does not have required field KvsARN set");
             request.AddPathResource("{KvsARN}", StringUtils.FromString(publicRequest.KvsARN));
             request.ResourcePath = "/key-value-stores/{KvsARN}/keys";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeletes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Deletes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDeletesListValue in publicRequest.Deletes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeletes())
-                    {
-                        context.Writer.WritePropertyName("Deletes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDeletesListValue in publicRequest.Deletes)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = DeleteKeyRequestListItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDeletesListValue, context);
+                    var marshaller = DeleteKeyRequestListItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDeletesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPuts())
-                    {
-                        context.Writer.WritePropertyName("Puts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPutsListValue in publicRequest.Puts)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PutKeyRequestListItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPutsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetPuts())
+            {
+                context.Writer.WritePropertyName("Puts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPutsListValue in publicRequest.Puts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PutKeyRequestListItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPutsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetIfMatch()) 

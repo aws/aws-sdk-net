@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAutoMLJobRuntimeInSeconds())
             {
                 context.Writer.WritePropertyName("MaxAutoMLJobRuntimeInSeconds");
-                context.Writer.Write(requestObject.MaxAutoMLJobRuntimeInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAutoMLJobRuntimeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaxCandidates())
             {
                 context.Writer.WritePropertyName("MaxCandidates");
-                context.Writer.Write(requestObject.MaxCandidates.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCandidates.Value);
             }
 
             if(requestObject.IsSetMaxRuntimePerTrainingJobInSeconds())
             {
                 context.Writer.WritePropertyName("MaxRuntimePerTrainingJobInSeconds");
-                context.Writer.Write(requestObject.MaxRuntimePerTrainingJobInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRuntimePerTrainingJobInSeconds.Value);
             }
 
         }

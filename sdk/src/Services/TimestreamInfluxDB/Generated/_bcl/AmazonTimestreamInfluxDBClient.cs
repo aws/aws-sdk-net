@@ -41,10 +41,10 @@ namespace Amazon.TimestreamInfluxDB
     /// <para>Implementation for accessing TimestreamInfluxDB</para>
     ///
     /// Amazon Timestream for InfluxDB is a managed time-series database engine that makes
-    /// it easy for application developers and DevOps teams to run InfluxDB databases on AWS
-    /// for near real-time time-series applications using open-source APIs. With Amazon Timestream
-    /// for InfluxDB, it is easy to set up, operate, and scale time-series workloads that
-    /// can answer queries with single-digit millisecond query response time.
+    /// it easy for application developers and DevOps teams to run InfluxDB databases on Amazon
+    /// Web Services for near real-time time-series applications using open-source APIs. With
+    /// Amazon Timestream for InfluxDB, it is easy to set up, operate, and scale time-series
+    /// workloads that can answer queries with single-digit millisecond query response time.
     /// </summary>
     public partial class AmazonTimestreamInfluxDBClient : AmazonServiceClient, IAmazonTimestreamInfluxDB
     {
@@ -856,6 +856,9 @@ namespace Amazon.TimestreamInfluxDB
         /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
         /// The requested resource was not found or does not exist.
         /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
@@ -879,6 +882,9 @@ namespace Amazon.TimestreamInfluxDB
         /// <returns>The response from the TagResource service method, as returned by TimestreamInfluxDB.</returns>
         /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
         /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

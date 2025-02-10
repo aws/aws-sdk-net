@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBillingMethod())
             {
                 context.Writer.WritePropertyName("billingMethod");
-                context.Writer.Write(requestObject.BillingMethod);
+                context.Writer.WriteStringValue(requestObject.BillingMethod);
             }
 
             if(requestObject.IsSetVpceConfigurationArns())
             {
                 context.Writer.WritePropertyName("vpceConfigurationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpceConfigurationArnsListValue in requestObject.VpceConfigurationArns)
                 {
-                        context.Writer.Write(requestObjectVpceConfigurationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectVpceConfigurationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

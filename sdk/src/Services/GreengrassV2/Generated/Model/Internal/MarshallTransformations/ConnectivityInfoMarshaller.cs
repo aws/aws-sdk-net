@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostAddress())
             {
                 context.Writer.WritePropertyName("HostAddress");
-                context.Writer.Write(requestObject.HostAddress);
+                context.Writer.WriteStringValue(requestObject.HostAddress);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("Metadata");
-                context.Writer.Write(requestObject.Metadata);
+                context.Writer.WriteStringValue(requestObject.Metadata);
             }
 
             if(requestObject.IsSetPortNumber())
             {
                 context.Writer.WritePropertyName("PortNumber");
-                context.Writer.Write(requestObject.PortNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.PortNumber.Value);
             }
 
         }

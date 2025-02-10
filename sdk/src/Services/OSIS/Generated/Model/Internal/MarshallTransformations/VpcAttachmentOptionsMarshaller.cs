@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachToVpc())
             {
                 context.Writer.WritePropertyName("AttachToVpc");
-                context.Writer.Write(requestObject.AttachToVpc.Value);
+                context.Writer.WriteBooleanValue(requestObject.AttachToVpc.Value);
             }
 
             if(requestObject.IsSetCidrBlock())
             {
                 context.Writer.WritePropertyName("CidrBlock");
-                context.Writer.Write(requestObject.CidrBlock);
+                context.Writer.WriteStringValue(requestObject.CidrBlock);
             }
 
         }

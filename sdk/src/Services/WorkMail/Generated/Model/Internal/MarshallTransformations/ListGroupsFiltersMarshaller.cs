@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNamePrefix())
             {
                 context.Writer.WritePropertyName("NamePrefix");
-                context.Writer.Write(requestObject.NamePrefix);
+                context.Writer.WriteStringValue(requestObject.NamePrefix);
             }
 
             if(requestObject.IsSetPrimaryEmailPrefix())
             {
                 context.Writer.WritePropertyName("PrimaryEmailPrefix");
-                context.Writer.Write(requestObject.PrimaryEmailPrefix);
+                context.Writer.WriteStringValue(requestObject.PrimaryEmailPrefix);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdMarkersListValue in requestObject.AdMarkers)
                 {
-                        context.Writer.Write(requestObjectAdMarkersListValue);
+                        context.Writer.WriteStringValue(requestObjectAdMarkersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAuthenticationScheme())
             {
                 context.Writer.WritePropertyName("authenticationScheme");
-                context.Writer.Write(requestObject.AuthenticationScheme);
+                context.Writer.WriteStringValue(requestObject.AuthenticationScheme);
             }
 
             if(requestObject.IsSetCacheFullBehavior())
             {
                 context.Writer.WritePropertyName("cacheFullBehavior");
-                context.Writer.Write(requestObject.CacheFullBehavior);
+                context.Writer.WriteStringValue(requestObject.CacheFullBehavior);
             }
 
             if(requestObject.IsSetCacheLength())
             {
                 context.Writer.WritePropertyName("cacheLength");
-                context.Writer.Write(requestObject.CacheLength.Value);
+                context.Writer.WriteNumberValue(requestObject.CacheLength.Value);
             }
 
             if(requestObject.IsSetCaptionData())
             {
                 context.Writer.WritePropertyName("captionData");
-                context.Writer.Write(requestObject.CaptionData);
+                context.Writer.WriteStringValue(requestObject.CaptionData);
             }
 
             if(requestObject.IsSetIncludeFillerNalUnits())
             {
                 context.Writer.WritePropertyName("includeFillerNalUnits");
-                context.Writer.Write(requestObject.IncludeFillerNalUnits);
+                context.Writer.WriteStringValue(requestObject.IncludeFillerNalUnits);
             }
 
             if(requestObject.IsSetInputLossAction())
             {
                 context.Writer.WritePropertyName("inputLossAction");
-                context.Writer.Write(requestObject.InputLossAction);
+                context.Writer.WriteStringValue(requestObject.InputLossAction);
             }
 
             if(requestObject.IsSetRestartDelay())
             {
                 context.Writer.WritePropertyName("restartDelay");
-                context.Writer.Write(requestObject.RestartDelay.Value);
+                context.Writer.WriteNumberValue(requestObject.RestartDelay.Value);
             }
 
         }

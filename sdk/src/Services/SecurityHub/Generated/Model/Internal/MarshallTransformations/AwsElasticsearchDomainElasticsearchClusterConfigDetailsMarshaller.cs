@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDedicatedMasterCount())
             {
                 context.Writer.WritePropertyName("DedicatedMasterCount");
-                context.Writer.Write(requestObject.DedicatedMasterCount.Value);
+                context.Writer.WriteNumberValue(requestObject.DedicatedMasterCount.Value);
             }
 
             if(requestObject.IsSetDedicatedMasterEnabled())
             {
                 context.Writer.WritePropertyName("DedicatedMasterEnabled");
-                context.Writer.Write(requestObject.DedicatedMasterEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.DedicatedMasterEnabled.Value);
             }
 
             if(requestObject.IsSetDedicatedMasterType())
             {
                 context.Writer.WritePropertyName("DedicatedMasterType");
-                context.Writer.Write(requestObject.DedicatedMasterType);
+                context.Writer.WriteStringValue(requestObject.DedicatedMasterType);
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetZoneAwarenessConfig())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ZoneAwarenessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZoneAwarenessEnabled())
             {
                 context.Writer.WritePropertyName("ZoneAwarenessEnabled");
-                context.Writer.Write(requestObject.ZoneAwarenessEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ZoneAwarenessEnabled.Value);
             }
 
         }

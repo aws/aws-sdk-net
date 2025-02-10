@@ -214,8 +214,8 @@ namespace Amazon.S3.Transfer.Internal
                 long minPartSize = request?.PartSize != 0 ? request.PartSize : S3Constants.MinPartSize;
                 var uploadPartResponses = new List<UploadPartResponse>();
                 var readBuffer = ArrayPool<byte>.Shared.Rent(READ_BUFFER_SIZE);
-                var partBuffer = ArrayPool<byte>.Shared.Rent((int)minPartSize + (READ_BUFFER_SIZE));
-
+                var partBuffer = ArrayPool<byte>.Shared.Rent((int)minPartSize + readBuffer.Length);
+                
                 MemoryStream nextUploadBuffer = new MemoryStream(partBuffer);
                 using (var stream = request.InputStream)
                 {
@@ -232,7 +232,6 @@ namespace Amazon.S3.Transfer.Internal
                             // read the stream ahead and process it in the next iteration.
                             // this is used to set isLastPart when there is no data left in the stream.
                             readAheadBytesCount = await stream.ReadAsync(readBuffer, 0, readBuffer.Length).ConfigureAwait(false);
-
                             if ((nextUploadBuffer.Position > minPartSize || readAheadBytesCount == 0))
                             {
                                 if (nextUploadBuffer.Position == 0)

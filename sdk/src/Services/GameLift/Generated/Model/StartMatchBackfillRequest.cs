@@ -123,7 +123,7 @@ namespace Amazon.GameLift.Model
         /// as a standalone matchmaking solution, this parameter is not needed. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=512)]
         public string GameSessionArn
         {
             get { return this._gameSessionArn; }

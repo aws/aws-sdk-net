@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkInfo Object
     /// </summary>  
-    public class NetworkInfoUnmarshaller : IUnmarshaller<NetworkInfo, XmlUnmarshallerContext>, IUnmarshaller<NetworkInfo, JsonUnmarshallerContext>
+    public class NetworkInfoUnmarshaller : IXmlUnmarshaller<NetworkInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("bandwidthWeightings/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.BandwidthWeightings == null)
+                        {
+                            unmarshalledObject.BandwidthWeightings = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.BandwidthWeightings.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("defaultNetworkCardIndex", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -147,17 +158,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkInfoUnmarshaller _instance = new NetworkInfoUnmarshaller();        
 

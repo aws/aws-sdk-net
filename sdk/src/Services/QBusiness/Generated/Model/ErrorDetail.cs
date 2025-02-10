@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information about a data source sync error.
+    /// Provides information about a Amazon Q Business request error.
     /// </summary>
     public partial class ErrorDetail
     {
@@ -40,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code associated with the data source sync error.
+        /// The code associated with the Amazon Q Business request error.
         /// </para>
         /// </summary>
         public ErrorCode ErrorCode
@@ -58,7 +58,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The message explaining the data source sync error.
+        /// The message explaining the Amazon Q Business request error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

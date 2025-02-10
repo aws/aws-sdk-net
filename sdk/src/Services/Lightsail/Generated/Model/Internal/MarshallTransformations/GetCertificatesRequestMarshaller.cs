@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -63,48 +66,53 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCertificateName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCertificateName())
-                    {
-                        context.Writer.WritePropertyName("certificateName");
-                        context.Writer.Write(publicRequest.CertificateName);
-                    }
-
-                    if(publicRequest.IsSetCertificateStatuses())
-                    {
-                        context.Writer.WritePropertyName("certificateStatuses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCertificateStatusesListValue in publicRequest.CertificateStatuses)
-                        {
-                                context.Writer.Write(publicRequestCertificateStatusesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIncludeCertificateDetails())
-                    {
-                        context.Writer.WritePropertyName("includeCertificateDetails");
-                        context.Writer.Write(publicRequest.IncludeCertificateDetails.Value);
-                    }
-
-                    if(publicRequest.IsSetPageToken())
-                    {
-                        context.Writer.WritePropertyName("pageToken");
-                        context.Writer.Write(publicRequest.PageToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("certificateName");
+                context.Writer.WriteStringValue(publicRequest.CertificateName);
             }
+
+            if(publicRequest.IsSetCertificateStatuses())
+            {
+                context.Writer.WritePropertyName("certificateStatuses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCertificateStatusesListValue in publicRequest.CertificateStatuses)
+                {
+                        context.Writer.WriteStringValue(publicRequestCertificateStatusesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIncludeCertificateDetails())
+            {
+                context.Writer.WritePropertyName("includeCertificateDetails");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeCertificateDetails.Value);
+            }
+
+            if(publicRequest.IsSetPageToken())
+            {
+                context.Writer.WritePropertyName("pageToken");
+                context.Writer.WriteStringValue(publicRequest.PageToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceIntegrationsUnion Object
     /// </summary>  
-    public class ServiceIntegrationsUnionUnmarshaller : IUnmarshaller<ServiceIntegrationsUnion, XmlUnmarshallerContext>, IUnmarshaller<ServiceIntegrationsUnion, JsonUnmarshallerContext>
+    public class ServiceIntegrationsUnionUnmarshaller : IXmlUnmarshaller<ServiceIntegrationsUnion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -66,6 +66,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.LakeFormation.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("S3AccessGrants/member", targetDepth))
+                    {
+                        var unmarshaller = S3AccessGrantsScopeUnionUnmarshaller.Instance;
+                        if (unmarshalledObject.S3AccessGrants == null)
+                        {
+                            unmarshalledObject.S3AccessGrants = new List<S3AccessGrantsScopeUnion>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.S3AccessGrants.Add(item);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -75,17 +86,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServiceIntegrationsUnion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServiceIntegrationsUnionUnmarshaller _instance = new ServiceIntegrationsUnionUnmarshaller();        
 

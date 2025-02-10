@@ -45,6 +45,7 @@ namespace Amazon.ApplicationInsights.Model
         private ResolutionMethod _resolutionMethod;
         private string _resourceGroupName;
         private SeverityLevel _severityLevel;
+        private string _shortName;
         private DateTime? _startTime;
         private Status _status;
         private string _title;
@@ -53,7 +54,8 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the owner of the resource group affected by the problem.
+        /// The Amazon Web Services account ID for the owner of the resource group affected by
+        /// the problem.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -253,6 +255,24 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetSeverityLevel()
         {
             return this._severityLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShortName. 
+        /// <para>
+        ///  The short name of the problem associated with the SNS notification. 
+        /// </para>
+        /// </summary>
+        public string ShortName
+        {
+            get { return this._shortName; }
+            set { this._shortName = value; }
+        }
+
+        // Check to see if ShortName property is set
+        internal bool IsSetShortName()
+        {
+            return this._shortName != null;
         }
 
         /// <summary>

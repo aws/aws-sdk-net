@@ -86,6 +86,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
+                // This operation is modeled with "httpChecksum":{"requestChecksumRequired":true}, but S3 doesn't validate the checksum at the moment. 
+                // We'll use the default behavior for now (which is to populate the Content-MD5 header).
                 ChecksumUtils.SetChecksumData(request);
             }
             catch (EncoderFallbackException e)

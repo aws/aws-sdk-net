@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHiddenAppTypes())
             {
                 context.Writer.WritePropertyName("HiddenAppTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHiddenAppTypesListValue in requestObject.HiddenAppTypes)
                 {
-                        context.Writer.Write(requestObjectHiddenAppTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectHiddenAppTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHiddenInstanceTypes())
             {
                 context.Writer.WritePropertyName("HiddenInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHiddenInstanceTypesListValue in requestObject.HiddenInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectHiddenInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectHiddenInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHiddenMlTools())
             {
                 context.Writer.WritePropertyName("HiddenMlTools");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHiddenMlToolsListValue in requestObject.HiddenMlTools)
                 {
-                        context.Writer.Write(requestObjectHiddenMlToolsListValue);
+                        context.Writer.WriteStringValue(requestObjectHiddenMlToolsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHiddenSageMakerImageVersionAliases())
             {
                 context.Writer.WritePropertyName("HiddenSageMakerImageVersionAliases");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHiddenSageMakerImageVersionAliasesListValue in requestObject.HiddenSageMakerImageVersionAliases)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HiddenSageMakerImageMarshaller.Instance;
                     marshaller.Marshall(requestObjectHiddenSageMakerImageVersionAliasesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

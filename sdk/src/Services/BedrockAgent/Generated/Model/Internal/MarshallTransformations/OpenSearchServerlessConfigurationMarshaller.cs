@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCollectionArn())
             {
                 context.Writer.WritePropertyName("collectionArn");
-                context.Writer.Write(requestObject.CollectionArn);
+                context.Writer.WriteStringValue(requestObject.CollectionArn);
             }
 
             if(requestObject.IsSetFieldMapping())
             {
                 context.Writer.WritePropertyName("fieldMapping");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenSearchServerlessFieldMappingMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldMapping, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVectorIndexName())
             {
                 context.Writer.WritePropertyName("vectorIndexName");
-                context.Writer.Write(requestObject.VectorIndexName);
+                context.Writer.WriteStringValue(requestObject.VectorIndexName);
             }
 
         }

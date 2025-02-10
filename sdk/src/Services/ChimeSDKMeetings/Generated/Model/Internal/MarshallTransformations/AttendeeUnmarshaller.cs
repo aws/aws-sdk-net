@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Attendee Object
     /// </summary>  
-    public class AttendeeUnmarshaller : IUnmarshaller<Attendee, XmlUnmarshallerContext>, IUnmarshaller<Attendee, JsonUnmarshallerContext>
+    public class AttendeeUnmarshaller : IJsonUnmarshaller<Attendee, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Attendee IUnmarshaller<Attendee, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Attendee Unmarshall(JsonUnmarshallerContext context)
+        public Attendee Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Attendee unmarshalledObject = new Attendee();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AttendeeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttendeeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttendeeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Capabilities", targetDepth))
                 {
                     var unmarshaller = AttendeeCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExternalUserId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalUserId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalUserId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JoinToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JoinToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JoinToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,173 +49,173 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocatedStorage())
             {
                 context.Writer.WritePropertyName("AllocatedStorage");
-                context.Writer.Write(requestObject.AllocatedStorage.Value);
+                context.Writer.WriteNumberValue(requestObject.AllocatedStorage.Value);
             }
 
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetDbInstanceIdentifier())
             {
                 context.Writer.WritePropertyName("DbInstanceIdentifier");
-                context.Writer.Write(requestObject.DbInstanceIdentifier);
+                context.Writer.WriteStringValue(requestObject.DbInstanceIdentifier);
             }
 
             if(requestObject.IsSetDbiResourceId())
             {
                 context.Writer.WritePropertyName("DbiResourceId");
-                context.Writer.Write(requestObject.DbiResourceId);
+                context.Writer.WriteStringValue(requestObject.DbiResourceId);
             }
 
             if(requestObject.IsSetDbSnapshotIdentifier())
             {
                 context.Writer.WritePropertyName("DbSnapshotIdentifier");
-                context.Writer.Write(requestObject.DbSnapshotIdentifier);
+                context.Writer.WriteStringValue(requestObject.DbSnapshotIdentifier);
             }
 
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("Encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetEngine())
             {
                 context.Writer.WritePropertyName("Engine");
-                context.Writer.Write(requestObject.Engine);
+                context.Writer.WriteStringValue(requestObject.Engine);
             }
 
             if(requestObject.IsSetEngineVersion())
             {
                 context.Writer.WritePropertyName("EngineVersion");
-                context.Writer.Write(requestObject.EngineVersion);
+                context.Writer.WriteStringValue(requestObject.EngineVersion);
             }
 
             if(requestObject.IsSetIamDatabaseAuthenticationEnabled())
             {
                 context.Writer.WritePropertyName("IamDatabaseAuthenticationEnabled");
-                context.Writer.Write(requestObject.IamDatabaseAuthenticationEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.IamDatabaseAuthenticationEnabled.Value);
             }
 
             if(requestObject.IsSetInstanceCreateTime())
             {
                 context.Writer.WritePropertyName("InstanceCreateTime");
-                context.Writer.Write(requestObject.InstanceCreateTime);
+                context.Writer.WriteStringValue(requestObject.InstanceCreateTime);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("Iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetLicenseModel())
             {
                 context.Writer.WritePropertyName("LicenseModel");
-                context.Writer.Write(requestObject.LicenseModel);
+                context.Writer.WriteStringValue(requestObject.LicenseModel);
             }
 
             if(requestObject.IsSetMasterUsername())
             {
                 context.Writer.WritePropertyName("MasterUsername");
-                context.Writer.Write(requestObject.MasterUsername);
+                context.Writer.WriteStringValue(requestObject.MasterUsername);
             }
 
             if(requestObject.IsSetOptionGroupName())
             {
                 context.Writer.WritePropertyName("OptionGroupName");
-                context.Writer.Write(requestObject.OptionGroupName);
+                context.Writer.WriteStringValue(requestObject.OptionGroupName);
             }
 
             if(requestObject.IsSetPercentProgress())
             {
                 context.Writer.WritePropertyName("PercentProgress");
-                context.Writer.Write(requestObject.PercentProgress.Value);
+                context.Writer.WriteNumberValue(requestObject.PercentProgress.Value);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProcessorFeatures())
             {
                 context.Writer.WritePropertyName("ProcessorFeatures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProcessorFeaturesListValue in requestObject.ProcessorFeatures)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRdsDbProcessorFeatureMarshaller.Instance;
                     marshaller.Marshall(requestObjectProcessorFeaturesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSnapshotCreateTime())
             {
                 context.Writer.WritePropertyName("SnapshotCreateTime");
-                context.Writer.Write(requestObject.SnapshotCreateTime);
+                context.Writer.WriteStringValue(requestObject.SnapshotCreateTime);
             }
 
             if(requestObject.IsSetSnapshotType())
             {
                 context.Writer.WritePropertyName("SnapshotType");
-                context.Writer.Write(requestObject.SnapshotType);
+                context.Writer.WriteStringValue(requestObject.SnapshotType);
             }
 
             if(requestObject.IsSetSourceDbSnapshotIdentifier())
             {
                 context.Writer.WritePropertyName("SourceDbSnapshotIdentifier");
-                context.Writer.Write(requestObject.SourceDbSnapshotIdentifier);
+                context.Writer.WriteStringValue(requestObject.SourceDbSnapshotIdentifier);
             }
 
             if(requestObject.IsSetSourceRegion())
             {
                 context.Writer.WritePropertyName("SourceRegion");
-                context.Writer.Write(requestObject.SourceRegion);
+                context.Writer.WriteStringValue(requestObject.SourceRegion);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetStorageType())
             {
                 context.Writer.WritePropertyName("StorageType");
-                context.Writer.Write(requestObject.StorageType);
+                context.Writer.WriteStringValue(requestObject.StorageType);
             }
 
             if(requestObject.IsSetTdeCredentialArn())
             {
                 context.Writer.WritePropertyName("TdeCredentialArn");
-                context.Writer.Write(requestObject.TdeCredentialArn);
+                context.Writer.WriteStringValue(requestObject.TdeCredentialArn);
             }
 
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

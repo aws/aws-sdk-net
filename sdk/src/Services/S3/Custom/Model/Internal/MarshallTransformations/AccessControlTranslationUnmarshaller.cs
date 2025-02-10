@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// AccessControlTranslation unmarshaller
     /// </summary>
-    public class AccessControlTranslationUnmarshaller : IUnmarshaller<AccessControlTranslation, XmlUnmarshallerContext>, IUnmarshaller<AccessControlTranslation, JsonUnmarshallerContext>
+    public class AccessControlTranslationUnmarshaller : IXmlUnmarshaller<AccessControlTranslation, XmlUnmarshallerContext>, IXmlUnmarshaller<AccessControlTranslation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

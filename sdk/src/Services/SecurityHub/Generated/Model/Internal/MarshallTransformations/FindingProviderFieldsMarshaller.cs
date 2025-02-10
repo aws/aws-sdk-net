@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfidence())
             {
                 context.Writer.WritePropertyName("Confidence");
-                context.Writer.Write(requestObject.Confidence.Value);
+                context.Writer.WriteNumberValue(requestObject.Confidence.Value);
             }
 
             if(requestObject.IsSetCriticality())
             {
                 context.Writer.WritePropertyName("Criticality");
-                context.Writer.Write(requestObject.Criticality.Value);
+                context.Writer.WriteNumberValue(requestObject.Criticality.Value);
             }
 
             if(requestObject.IsSetRelatedFindings())
             {
                 context.Writer.WritePropertyName("RelatedFindings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelatedFindingsListValue in requestObject.RelatedFindings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RelatedFindingMarshaller.Instance;
                     marshaller.Marshall(requestObjectRelatedFindingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("Severity");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FindingProviderSeverityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Severity, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("Types");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTypesListValue in requestObject.Types)
                 {
-                        context.Writer.Write(requestObjectTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

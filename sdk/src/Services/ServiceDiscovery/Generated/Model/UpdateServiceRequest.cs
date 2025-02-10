@@ -92,7 +92,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// A complex type that contains the new settings for the service.
+        /// A complex type that contains the new settings for the service. You can specify a maximum
+        /// of 30 attributes (key-value pairs).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

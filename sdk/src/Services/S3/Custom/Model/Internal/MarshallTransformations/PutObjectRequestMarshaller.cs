@@ -111,6 +111,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectRequest.IsSetChecksumCRC32C())
                 request.Headers.Add("x-amz-checksum-crc32c", S3Transforms.ToStringValue(putObjectRequest.ChecksumCRC32C));
 
+            if (putObjectRequest.IsSetChecksumCRC64NVME())
+                request.Headers.Add("x-amz-checksum-crc64nvme", S3Transforms.ToStringValue(putObjectRequest.ChecksumCRC64NVME));
+
             if (putObjectRequest.IsSetChecksumSHA1())
                 request.Headers.Add("x-amz-checksum-sha1", S3Transforms.ToStringValue(putObjectRequest.ChecksumSHA1));
 
@@ -119,6 +122,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (putObjectRequest.IsSetIfNoneMatch())
                 request.Headers["If-None-Match"] = putObjectRequest.IfNoneMatch;
+
+            if (putObjectRequest.IsSetIfMatch())
+                request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(putObjectRequest.IfMatch));
+
+                
+            if (putObjectRequest.IsSetWriteOffsetBytes())
+                request.Headers.Add("x-amz-write-offset-bytes", S3Transforms.ToStringValue(putObjectRequest.WriteOffsetBytes));
 
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 

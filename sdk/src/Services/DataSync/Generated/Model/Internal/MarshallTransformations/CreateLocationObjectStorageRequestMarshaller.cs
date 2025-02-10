@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -63,94 +66,99 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessKey())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessKey())
-                    {
-                        context.Writer.WritePropertyName("AccessKey");
-                        context.Writer.Write(publicRequest.AccessKey);
-                    }
-
-                    if(publicRequest.IsSetAgentArns())
-                    {
-                        context.Writer.WritePropertyName("AgentArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
-                        {
-                                context.Writer.Write(publicRequestAgentArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetBucketName())
-                    {
-                        context.Writer.WritePropertyName("BucketName");
-                        context.Writer.Write(publicRequest.BucketName);
-                    }
-
-                    if(publicRequest.IsSetSecretKey())
-                    {
-                        context.Writer.WritePropertyName("SecretKey");
-                        context.Writer.Write(publicRequest.SecretKey);
-                    }
-
-                    if(publicRequest.IsSetServerCertificate())
-                    {
-                        context.Writer.WritePropertyName("ServerCertificate");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
-                    }
-
-                    if(publicRequest.IsSetServerHostname())
-                    {
-                        context.Writer.WritePropertyName("ServerHostname");
-                        context.Writer.Write(publicRequest.ServerHostname);
-                    }
-
-                    if(publicRequest.IsSetServerPort())
-                    {
-                        context.Writer.WritePropertyName("ServerPort");
-                        context.Writer.Write(publicRequest.ServerPort.Value);
-                    }
-
-                    if(publicRequest.IsSetServerProtocol())
-                    {
-                        context.Writer.WritePropertyName("ServerProtocol");
-                        context.Writer.Write(publicRequest.ServerProtocol);
-                    }
-
-                    if(publicRequest.IsSetSubdirectory())
-                    {
-                        context.Writer.WritePropertyName("Subdirectory");
-                        context.Writer.Write(publicRequest.Subdirectory);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagListEntryMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessKey");
+                context.Writer.WriteStringValue(publicRequest.AccessKey);
             }
+
+            if(publicRequest.IsSetAgentArns())
+            {
+                context.Writer.WritePropertyName("AgentArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestAgentArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetBucketName())
+            {
+                context.Writer.WritePropertyName("BucketName");
+                context.Writer.WriteStringValue(publicRequest.BucketName);
+            }
+
+            if(publicRequest.IsSetSecretKey())
+            {
+                context.Writer.WritePropertyName("SecretKey");
+                context.Writer.WriteStringValue(publicRequest.SecretKey);
+            }
+
+            if(publicRequest.IsSetServerCertificate())
+            {
+                context.Writer.WritePropertyName("ServerCertificate");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
+            }
+
+            if(publicRequest.IsSetServerHostname())
+            {
+                context.Writer.WritePropertyName("ServerHostname");
+                context.Writer.WriteStringValue(publicRequest.ServerHostname);
+            }
+
+            if(publicRequest.IsSetServerPort())
+            {
+                context.Writer.WritePropertyName("ServerPort");
+                context.Writer.WriteNumberValue(publicRequest.ServerPort.Value);
+            }
+
+            if(publicRequest.IsSetServerProtocol())
+            {
+                context.Writer.WritePropertyName("ServerProtocol");
+                context.Writer.WriteStringValue(publicRequest.ServerProtocol);
+            }
+
+            if(publicRequest.IsSetSubdirectory())
+            {
+                context.Writer.WritePropertyName("Subdirectory");
+                context.Writer.WriteStringValue(publicRequest.Subdirectory);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagListEntryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileFormatDescriptor())
             {
                 context.Writer.WritePropertyName("FileFormatDescriptor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileFormatDescriptorMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileFormatDescriptor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHistoricalDataPathList())
             {
                 context.Writer.WritePropertyName("HistoricalDataPathList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHistoricalDataPathListListValue in requestObject.HistoricalDataPathList)
                 {
-                        context.Writer.Write(requestObjectHistoricalDataPathListListValue);
+                        context.Writer.WriteStringValue(requestObjectHistoricalDataPathListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetTemplatedPathList())
             {
                 context.Writer.WritePropertyName("TemplatedPathList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTemplatedPathListListValue in requestObject.TemplatedPathList)
                 {
-                        context.Writer.Write(requestObjectTemplatedPathListListValue);
+                        context.Writer.WriteStringValue(requestObjectTemplatedPathListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalAuditContext())
             {
                 context.Writer.WritePropertyName("AdditionalAuditContext");
-                context.Writer.Write(requestObject.AdditionalAuditContext);
+                context.Writer.WriteStringValue(requestObject.AdditionalAuditContext);
             }
 
             if(requestObject.IsSetAllColumnsRequested())
             {
                 context.Writer.WritePropertyName("AllColumnsRequested");
-                context.Writer.Write(requestObject.AllColumnsRequested.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllColumnsRequested.Value);
             }
 
             if(requestObject.IsSetRequestedColumns())
             {
                 context.Writer.WritePropertyName("RequestedColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRequestedColumnsListValue in requestObject.RequestedColumns)
                 {
-                        context.Writer.Write(requestObjectRequestedColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectRequestedColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

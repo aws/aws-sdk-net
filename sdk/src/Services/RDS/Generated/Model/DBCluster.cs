@@ -79,9 +79,11 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
+        private ClusterScalabilityType _clusterScalabilityType;
         private bool? _copyTagsToSnapshot;
         private bool? _crossAccountClone;
         private List<string> _customEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
@@ -288,7 +290,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
@@ -455,7 +457,20 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CloneGroupId. 
         /// <para>
-        /// The ID of the clone group with which the DB cluster is associated.
+        /// The ID of the clone group with which the DB cluster is associated. For newly created
+        /// clusters, the ID is typically null. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you clone a DB cluster when the ID is null, the operation populates the ID value
+        /// for the source cluster and the clone because both clusters become part of the same
+        /// clone group. Even if you delete the clone cluster, the clone group ID remains for
+        /// the lifetime of the source cluster to show that it was used in a cloning operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For PITR, the clone group ID is inherited from the source cluster. For snapshot restore
+        /// operations, the clone group ID isn't inherited from the source cluster.
         /// </para>
         /// </summary>
         public string CloneGroupId
@@ -486,6 +501,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetClusterCreateTime()
         {
             return this._clusterCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterScalabilityType. 
+        /// <para>
+        /// The scalability mode of the Aurora DB cluster. When set to <c>limitless</c>, the cluster
+        /// operates as an Aurora Limitless Database. When set to <c>standard</c> (the default),
+        /// the cluster uses normal DB instance creation.
+        /// </para>
+        /// </summary>
+        public ClusterScalabilityType ClusterScalabilityType
+        {
+            get { return this._clusterScalabilityType; }
+            set { this._clusterScalabilityType = value; }
+        }
+
+        // Check to see if ClusterScalabilityType property is set
+        internal bool IsSetClusterScalabilityType()
+        {
+            return this._clusterScalabilityType != null;
         }
 
         /// <summary>
@@ -541,6 +576,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetCustomEndpoints()
         {
             return this._customEndpoints != null && (this._customEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights that is enabled for the DB cluster.
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>
@@ -1210,7 +1263,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for -Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public int? MonitoringInterval
@@ -1233,7 +1286,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public string MonitoringRoleArn
@@ -1347,7 +1400,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public bool? PerformanceInsightsEnabled
@@ -1375,7 +1428,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1397,7 +1450,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
+        /// This setting is only for Aurora DB clusters and Multi-AZ DB clusters.
         /// </para>
         ///  
         /// <para>

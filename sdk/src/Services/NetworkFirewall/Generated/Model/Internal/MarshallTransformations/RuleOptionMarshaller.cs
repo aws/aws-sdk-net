@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyword())
             {
                 context.Writer.WritePropertyName("Keyword");
-                context.Writer.Write(requestObject.Keyword);
+                context.Writer.WriteStringValue(requestObject.Keyword);
             }
 
             if(requestObject.IsSetSettings())
             {
                 context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSettingsListValue in requestObject.Settings)
                 {
-                        context.Writer.Write(requestObjectSettingsListValue);
+                        context.Writer.WriteStringValue(requestObjectSettingsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class AgentVersion
     {
         private string _agentArn;
+        private AgentCollaboration _agentCollaboration;
         private string _agentId;
         private string _agentName;
         private string _agentResourceRoleArn;
@@ -70,6 +71,24 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetAgentArn()
         {
             return this._agentArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        /// The agent's collaboration settings.
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
         }
 
         /// <summary>

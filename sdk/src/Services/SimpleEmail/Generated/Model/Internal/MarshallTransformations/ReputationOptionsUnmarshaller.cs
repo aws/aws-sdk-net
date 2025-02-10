@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReputationOptions Object
     /// </summary>  
-    public class ReputationOptionsUnmarshaller : IUnmarshaller<ReputationOptions, XmlUnmarshallerContext>, IUnmarshaller<ReputationOptions, JsonUnmarshallerContext>
+    public class ReputationOptionsUnmarshaller : IXmlUnmarshaller<ReputationOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReputationOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReputationOptionsUnmarshaller _instance = new ReputationOptionsUnmarshaller();        
 

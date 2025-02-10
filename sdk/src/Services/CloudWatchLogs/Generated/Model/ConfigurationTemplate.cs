@@ -149,7 +149,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DefaultDeliveryConfigValues. 
         /// <para>
-        /// A mapping that displays the default value of each property within a delivery’s configuration,
+        /// A mapping that displays the default value of each property within a delivery's configuration,
         /// if it is not specified in the request.
         /// </para>
         /// </summary>

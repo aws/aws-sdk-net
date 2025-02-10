@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentHealthCodes())
             {
                 context.Writer.WritePropertyName("agentHealthCodes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAgentHealthCodesListValue in requestObject.AgentHealthCodes)
                 {
-                        context.Writer.Write(requestObjectAgentHealthCodesListValue);
+                        context.Writer.WriteStringValue(requestObjectAgentHealthCodesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAgentHealths())
             {
                 context.Writer.WritePropertyName("agentHealths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAgentHealthsListValue in requestObject.AgentHealths)
                 {
-                        context.Writer.Write(requestObjectAgentHealthsListValue);
+                        context.Writer.WriteStringValue(requestObjectAgentHealthsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

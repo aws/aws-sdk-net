@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -67,74 +70,90 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field NodegroupName set");
             request.AddPathResource("{nodegroupName}", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/node-groups/{nodegroupName}/update-config";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientRequestToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetLabels())
-                    {
-                        context.Writer.WritePropertyName("labels");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateLabelsPayloadMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Labels, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetScalingConfig())
-                    {
-                        context.Writer.WritePropertyName("scalingConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodegroupScalingConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScalingConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTaints())
-                    {
-                        context.Writer.WritePropertyName("taints");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateTaintsPayloadMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Taints, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUpdateConfig())
-                    {
-                        context.Writer.WritePropertyName("updateConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodegroupUpdateConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.UpdateConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
             }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetLabels())
+            {
+                context.Writer.WritePropertyName("labels");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateLabelsPayloadMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Labels, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNodeRepairConfig())
+            {
+                context.Writer.WritePropertyName("nodeRepairConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodeRepairConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NodeRepairConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScalingConfig())
+            {
+                context.Writer.WritePropertyName("scalingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodegroupScalingConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScalingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTaints())
+            {
+                context.Writer.WritePropertyName("taints");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateTaintsPayloadMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Taints, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUpdateConfig())
+            {
+                context.Writer.WritePropertyName("updateConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodegroupUpdateConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UpdateConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,6 +29,7 @@ using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model

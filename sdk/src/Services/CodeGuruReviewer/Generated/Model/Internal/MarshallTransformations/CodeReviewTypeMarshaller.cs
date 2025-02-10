@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalysisTypes())
             {
                 context.Writer.WritePropertyName("AnalysisTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAnalysisTypesListValue in requestObject.AnalysisTypes)
                 {
-                        context.Writer.Write(requestObjectAnalysisTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectAnalysisTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRepositoryAnalysis())
             {
                 context.Writer.WritePropertyName("RepositoryAnalysis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RepositoryAnalysisMarshaller.Instance;
                 marshaller.Marshall(requestObject.RepositoryAnalysis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

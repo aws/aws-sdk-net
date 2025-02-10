@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,59 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeTypeName())
             {
                 context.Writer.WritePropertyName("ComputeTypeName");
-                context.Writer.Write(requestObject.ComputeTypeName);
+                context.Writer.WriteStringValue(requestObject.ComputeTypeName);
+            }
+
+            if(requestObject.IsSetGlobalAccelerator())
+            {
+                context.Writer.WritePropertyName("GlobalAccelerator");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GlobalAcceleratorForWorkSpaceMarshaller.Instance;
+                marshaller.Marshall(requestObject.GlobalAccelerator, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOperatingSystemName())
             {
                 context.Writer.WritePropertyName("OperatingSystemName");
-                context.Writer.Write(requestObject.OperatingSystemName);
+                context.Writer.WriteStringValue(requestObject.OperatingSystemName);
             }
 
             if(requestObject.IsSetProtocols())
             {
                 context.Writer.WritePropertyName("Protocols");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtocolsListValue in requestObject.Protocols)
                 {
-                        context.Writer.Write(requestObjectProtocolsListValue);
+                        context.Writer.WriteStringValue(requestObjectProtocolsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRootVolumeSizeGib())
             {
                 context.Writer.WritePropertyName("RootVolumeSizeGib");
-                context.Writer.Write(requestObject.RootVolumeSizeGib.Value);
+                context.Writer.WriteNumberValue(requestObject.RootVolumeSizeGib.Value);
             }
 
             if(requestObject.IsSetRunningMode())
             {
                 context.Writer.WritePropertyName("RunningMode");
-                context.Writer.Write(requestObject.RunningMode);
+                context.Writer.WriteStringValue(requestObject.RunningMode);
             }
 
             if(requestObject.IsSetRunningModeAutoStopTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("RunningModeAutoStopTimeoutInMinutes");
-                context.Writer.Write(requestObject.RunningModeAutoStopTimeoutInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.RunningModeAutoStopTimeoutInMinutes.Value);
             }
 
             if(requestObject.IsSetUserVolumeSizeGib())
             {
                 context.Writer.WritePropertyName("UserVolumeSizeGib");
-                context.Writer.Write(requestObject.UserVolumeSizeGib.Value);
+                context.Writer.WriteNumberValue(requestObject.UserVolumeSizeGib.Value);
             }
 
         }

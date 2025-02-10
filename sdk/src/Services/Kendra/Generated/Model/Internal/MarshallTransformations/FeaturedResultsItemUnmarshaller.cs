@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FeaturedResultsItem Object
     /// </summary>  
-    public class FeaturedResultsItemUnmarshaller : IUnmarshaller<FeaturedResultsItem, XmlUnmarshallerContext>, IUnmarshaller<FeaturedResultsItem, JsonUnmarshallerContext>
+    public class FeaturedResultsItemUnmarshaller : IJsonUnmarshaller<FeaturedResultsItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FeaturedResultsItem IUnmarshaller<FeaturedResultsItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FeaturedResultsItem Unmarshall(JsonUnmarshallerContext context)
+        public FeaturedResultsItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FeaturedResultsItem unmarshalledObject = new FeaturedResultsItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdditionalAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AdditionalResultAttribute, AdditionalResultAttributeUnmarshaller>(AdditionalResultAttributeUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AdditionalResultAttribute, AdditionalResultAttributeUnmarshaller>(AdditionalResultAttributeUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DocumentAttribute, DocumentAttributeUnmarshaller>(DocumentAttributeUnmarshaller.Instance);
-                    unmarshalledObject.DocumentAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DocumentAttribute, DocumentAttributeUnmarshaller>(DocumentAttributeUnmarshaller.Instance);
+                    unmarshalledObject.DocumentAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentExcerpt", targetDepth))
                 {
                     var unmarshaller = TextWithHighlightsUnmarshaller.Instance;
-                    unmarshalledObject.DocumentExcerpt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentExcerpt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentTitle", targetDepth))
                 {
                     var unmarshaller = TextWithHighlightsUnmarshaller.Instance;
-                    unmarshalledObject.DocumentTitle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentURI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentURI = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentURI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeedbackToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeedbackToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeedbackToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

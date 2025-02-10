@@ -42,7 +42,7 @@ namespace Amazon.Chatbot.Model
         /// <summary>
         /// Gets and sets the property ChatConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the MicrosoftTeamsChannelConfiguration associated
+        /// The Amazon Resource Name (ARN) of the MicrosoftTeamsChannelConfiguration associated
         /// with the user identities to list.
         /// </para>
         /// </summary>

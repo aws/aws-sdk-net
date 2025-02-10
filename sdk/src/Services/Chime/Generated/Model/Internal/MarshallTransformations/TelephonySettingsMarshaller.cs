@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInboundCalling())
             {
                 context.Writer.WritePropertyName("InboundCalling");
-                context.Writer.Write(requestObject.InboundCalling.Value);
+                context.Writer.WriteBooleanValue(requestObject.InboundCalling.Value);
             }
 
             if(requestObject.IsSetOutboundCalling())
             {
                 context.Writer.WritePropertyName("OutboundCalling");
-                context.Writer.Write(requestObject.OutboundCalling.Value);
+                context.Writer.WriteBooleanValue(requestObject.OutboundCalling.Value);
             }
 
             if(requestObject.IsSetSMS())
             {
                 context.Writer.WritePropertyName("SMS");
-                context.Writer.Write(requestObject.SMS.Value);
+                context.Writer.WriteBooleanValue(requestObject.SMS.Value);
             }
 
         }

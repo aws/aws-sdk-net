@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeAggregationFunction())
             {
                 context.Writer.WritePropertyName("AttributeAggregationFunction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeAggregationFunctionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeAggregationFunction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCategoricalAggregationFunction())
             {
                 context.Writer.WritePropertyName("CategoricalAggregationFunction");
-                context.Writer.Write(requestObject.CategoricalAggregationFunction);
+                context.Writer.WriteStringValue(requestObject.CategoricalAggregationFunction);
             }
 
             if(requestObject.IsSetDateAggregationFunction())
             {
                 context.Writer.WritePropertyName("DateAggregationFunction");
-                context.Writer.Write(requestObject.DateAggregationFunction);
+                context.Writer.WriteStringValue(requestObject.DateAggregationFunction);
             }
 
             if(requestObject.IsSetNumericalAggregationFunction())
             {
                 context.Writer.WritePropertyName("NumericalAggregationFunction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumericalAggregationFunctionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumericalAggregationFunction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

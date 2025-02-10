@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoricalParameterRangeSpecification())
             {
                 context.Writer.WritePropertyName("CategoricalParameterRangeSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CategoricalParameterRangeSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CategoricalParameterRangeSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContinuousParameterRangeSpecification())
             {
                 context.Writer.WritePropertyName("ContinuousParameterRangeSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContinuousParameterRangeSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContinuousParameterRangeSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIntegerParameterRangeSpecification())
             {
                 context.Writer.WritePropertyName("IntegerParameterRangeSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntegerParameterRangeSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.IntegerParameterRangeSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

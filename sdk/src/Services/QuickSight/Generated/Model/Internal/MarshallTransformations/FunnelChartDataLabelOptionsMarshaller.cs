@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoryLabelVisibility())
             {
                 context.Writer.WritePropertyName("CategoryLabelVisibility");
-                context.Writer.Write(requestObject.CategoryLabelVisibility);
+                context.Writer.WriteStringValue(requestObject.CategoryLabelVisibility);
             }
 
             if(requestObject.IsSetLabelColor())
             {
                 context.Writer.WritePropertyName("LabelColor");
-                context.Writer.Write(requestObject.LabelColor);
+                context.Writer.WriteStringValue(requestObject.LabelColor);
             }
 
             if(requestObject.IsSetLabelFontConfiguration())
             {
                 context.Writer.WritePropertyName("LabelFontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LabelFontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMeasureDataLabelStyle())
             {
                 context.Writer.WritePropertyName("MeasureDataLabelStyle");
-                context.Writer.Write(requestObject.MeasureDataLabelStyle);
+                context.Writer.WriteStringValue(requestObject.MeasureDataLabelStyle);
             }
 
             if(requestObject.IsSetMeasureLabelVisibility())
             {
                 context.Writer.WritePropertyName("MeasureLabelVisibility");
-                context.Writer.Write(requestObject.MeasureLabelVisibility);
+                context.Writer.WriteStringValue(requestObject.MeasureLabelVisibility);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("Position");
-                context.Writer.Write(requestObject.Position);
+                context.Writer.WriteStringValue(requestObject.Position);
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ebs Object
     /// </summary>  
-    public class EbsUnmarshaller : IUnmarshaller<Ebs, XmlUnmarshallerContext>, IUnmarshaller<Ebs, JsonUnmarshallerContext>
+    public class EbsUnmarshaller : IXmlUnmarshaller<Ebs, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -106,17 +106,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Ebs Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EbsUnmarshaller _instance = new EbsUnmarshaller();        
 

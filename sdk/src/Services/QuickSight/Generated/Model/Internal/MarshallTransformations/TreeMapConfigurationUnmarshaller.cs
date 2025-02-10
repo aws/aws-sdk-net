@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TreeMapConfiguration Object
     /// </summary>  
-    public class TreeMapConfigurationUnmarshaller : IUnmarshaller<TreeMapConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TreeMapConfiguration, JsonUnmarshallerContext>
+    public class TreeMapConfigurationUnmarshaller : IJsonUnmarshaller<TreeMapConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TreeMapConfiguration IUnmarshaller<TreeMapConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TreeMapConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TreeMapConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TreeMapConfiguration unmarshalledObject = new TreeMapConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ColorLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ColorLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColorScale", targetDepth))
                 {
                     var unmarshaller = ColorScaleUnmarshaller.Instance;
-                    unmarshalledObject.ColorScale = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorScale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataLabels", targetDepth))
                 {
                     var unmarshaller = DataLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DataLabels = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldWells", targetDepth))
                 {
                     var unmarshaller = TreeMapFieldWellsUnmarshaller.Instance;
-                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GroupLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.GroupLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Interactions", targetDepth))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Legend", targetDepth))
                 {
                     var unmarshaller = LegendOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Legend = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Legend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SizeLabelOptions", targetDepth))
                 {
                     var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.SizeLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SizeLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortConfiguration", targetDepth))
                 {
                     var unmarshaller = TreeMapSortConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tooltip", targetDepth))
                 {
                     var unmarshaller = TooltipOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Tooltip = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tooltip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

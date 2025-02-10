@@ -34,7 +34,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FontSize
     {
+        private string _absolute;
         private RelativeFontSize _relative;
+
+        /// <summary>
+        /// Gets and sets the property Absolute. 
+        /// <para>
+        /// The font size that you want to use in px.
+        /// </para>
+        /// </summary>
+        public string Absolute
+        {
+            get { return this._absolute; }
+            set { this._absolute = value; }
+        }
+
+        // Check to see if Absolute property is set
+        internal bool IsSetAbsolute()
+        {
+            return this._absolute != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Relative. 

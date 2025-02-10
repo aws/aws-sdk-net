@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TimeSeriesForecastingJobConfig Object
     /// </summary>  
-    public class TimeSeriesForecastingJobConfigUnmarshaller : IUnmarshaller<TimeSeriesForecastingJobConfig, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesForecastingJobConfig, JsonUnmarshallerContext>
+    public class TimeSeriesForecastingJobConfigUnmarshaller : IJsonUnmarshaller<TimeSeriesForecastingJobConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TimeSeriesForecastingJobConfig IUnmarshaller<TimeSeriesForecastingJobConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TimeSeriesForecastingJobConfig Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesForecastingJobConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TimeSeriesForecastingJobConfig unmarshalledObject = new TimeSeriesForecastingJobConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CandidateGenerationConfig", targetDepth))
                 {
                     var unmarshaller = CandidateGenerationConfigUnmarshaller.Instance;
-                    unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
-                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForecastFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ForecastFrequency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForecastFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForecastHorizon", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ForecastHorizon = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForecastHorizon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForecastQuantiles", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ForecastQuantiles = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ForecastQuantiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HolidayConfig", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HolidayConfigAttributes, HolidayConfigAttributesUnmarshaller>(HolidayConfigAttributesUnmarshaller.Instance);
-                    unmarshalledObject.HolidayConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HolidayConfigAttributes, HolidayConfigAttributesUnmarshaller>(HolidayConfigAttributesUnmarshaller.Instance);
+                    unmarshalledObject.HolidayConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeSeriesConfig", targetDepth))
                 {
                     var unmarshaller = TimeSeriesConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeSeriesConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Transformations", targetDepth))
                 {
                     var unmarshaller = TimeSeriesTransformationsUnmarshaller.Instance;
-                    unmarshalledObject.Transformations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Transformations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

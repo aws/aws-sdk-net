@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IdMappingJobMetrics Object
     /// </summary>  
-    public class IdMappingJobMetricsUnmarshaller : IUnmarshaller<IdMappingJobMetrics, XmlUnmarshallerContext>, IUnmarshaller<IdMappingJobMetrics, JsonUnmarshallerContext>
+    public class IdMappingJobMetricsUnmarshaller : IJsonUnmarshaller<IdMappingJobMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IdMappingJobMetrics IUnmarshaller<IdMappingJobMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdMappingJobMetrics Unmarshall(JsonUnmarshallerContext context)
+        public IdMappingJobMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IdMappingJobMetrics unmarshalledObject = new IdMappingJobMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("inputRecords", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recordsNotProcessed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordsNotProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalMappedRecords", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMappedRecords = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalMappedRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalMappedSourceRecords", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMappedSourceRecords = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalMappedSourceRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalMappedTargetRecords", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMappedTargetRecords = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalMappedTargetRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalRecordsProcessed", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalRecordsProcessed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalRecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

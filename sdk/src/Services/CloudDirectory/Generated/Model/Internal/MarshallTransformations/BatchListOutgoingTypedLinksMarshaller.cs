@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterAttributeRanges())
             {
                 context.Writer.WritePropertyName("FilterAttributeRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilterAttributeRangesListValue in requestObject.FilterAttributeRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TypedLinkAttributeRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectFilterAttributeRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFilterTypedLink())
             {
                 context.Writer.WritePropertyName("FilterTypedLink");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterTypedLink, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
-                context.Writer.Write(requestObject.MaxResults.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("NextToken");
-                context.Writer.Write(requestObject.NextToken);
+                context.Writer.WriteStringValue(requestObject.NextToken);
             }
 
             if(requestObject.IsSetObjectReference())
             {
                 context.Writer.WritePropertyName("ObjectReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ObjectReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.ObjectReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

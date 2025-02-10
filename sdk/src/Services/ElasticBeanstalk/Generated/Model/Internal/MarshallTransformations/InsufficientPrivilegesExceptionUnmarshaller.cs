@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientPrivilegesException operation
     /// </summary>  
-    public class InsufficientPrivilegesExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientPrivilegesException, XmlUnmarshallerContext>
+    public class InsufficientPrivilegesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientPrivilegesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

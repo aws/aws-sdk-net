@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxVersions())
             {
                 context.Writer.WritePropertyName("maxVersions");
-                context.Writer.Write(requestObject.MaxVersions.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxVersions.Value);
             }
 
             if(requestObject.IsSetUnlimited())
             {
                 context.Writer.WritePropertyName("unlimited");
-                context.Writer.Write(requestObject.Unlimited.Value);
+                context.Writer.WriteBooleanValue(requestObject.Unlimited.Value);
             }
 
         }

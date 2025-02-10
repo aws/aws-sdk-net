@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ByoipCidr Object
     /// </summary>  
-    public class ByoipCidrUnmarshaller : IUnmarshaller<ByoipCidr, XmlUnmarshallerContext>, IUnmarshaller<ByoipCidr, JsonUnmarshallerContext>
+    public class ByoipCidrUnmarshaller : IXmlUnmarshaller<ByoipCidr, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,17 +105,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ByoipCidr Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ByoipCidrUnmarshaller _instance = new ByoipCidrUnmarshaller();        
 

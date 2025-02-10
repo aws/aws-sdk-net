@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetDestinationPort())
             {
                 context.Writer.WritePropertyName("destinationPort");
-                context.Writer.Write(requestObject.DestinationPort.Value);
+                context.Writer.WriteNumberValue(requestObject.DestinationPort.Value);
             }
 
             if(requestObject.IsSetPacketSize())
             {
                 context.Writer.WritePropertyName("packetSize");
-                context.Writer.Write(requestObject.PacketSize.Value);
+                context.Writer.WriteNumberValue(requestObject.PacketSize.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetSourceArn())
             {
                 context.Writer.WritePropertyName("sourceArn");
-                context.Writer.Write(requestObject.SourceArn);
+                context.Writer.WriteStringValue(requestObject.SourceArn);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

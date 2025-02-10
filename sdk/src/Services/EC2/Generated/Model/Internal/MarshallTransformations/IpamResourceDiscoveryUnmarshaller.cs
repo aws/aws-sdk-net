@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamResourceDiscovery Object
     /// </summary>  
-    public class IpamResourceDiscoveryUnmarshaller : IUnmarshaller<IpamResourceDiscovery, XmlUnmarshallerContext>, IUnmarshaller<IpamResourceDiscovery, JsonUnmarshallerContext>
+    public class IpamResourceDiscoveryUnmarshaller : IXmlUnmarshaller<IpamResourceDiscovery, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -96,6 +96,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OperatingRegions.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("organizationalUnitExclusionSet/item", targetDepth))
+                    {
+                        var unmarshaller = IpamOrganizationalUnitExclusionUnmarshaller.Instance;
+                        if (unmarshalledObject.OrganizationalUnitExclusions == null)
+                        {
+                            unmarshalledObject.OrganizationalUnitExclusions = new List<IpamOrganizationalUnitExclusion>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OrganizationalUnitExclusions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -128,17 +139,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamResourceDiscovery Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamResourceDiscoveryUnmarshaller _instance = new IpamResourceDiscoveryUnmarshaller();        
 

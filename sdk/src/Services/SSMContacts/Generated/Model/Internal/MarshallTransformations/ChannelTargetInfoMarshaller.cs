@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContactChannelId())
             {
                 context.Writer.WritePropertyName("ContactChannelId");
-                context.Writer.Write(requestObject.ContactChannelId);
+                context.Writer.WriteStringValue(requestObject.ContactChannelId);
             }
 
             if(requestObject.IsSetRetryIntervalInMinutes())
             {
                 context.Writer.WritePropertyName("RetryIntervalInMinutes");
-                context.Writer.Write(requestObject.RetryIntervalInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.RetryIntervalInMinutes.Value);
             }
 
         }

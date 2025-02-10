@@ -36,6 +36,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _allowedFormat;
         private List<ActionReviewPayloadFieldAllowedValue> _allowedValues = AWSConfigs.InitializeCollections ? new List<ActionReviewPayloadFieldAllowedValue>() : null;
+        private Amazon.Runtime.Documents.Document _arrayItemJsonSchema;
         private string _displayDescription;
         private string _displayName;
         private int? _displayOrder;
@@ -81,6 +82,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAllowedValues()
         {
             return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ArrayItemJsonSchema. 
+        /// <para>
+        /// Use to create a custom form with array fields (fields with nested objects inside an
+        /// array).
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document ArrayItemJsonSchema
+        {
+            get { return this._arrayItemJsonSchema; }
+            set { this._arrayItemJsonSchema = value; }
+        }
+
+        // Check to see if ArrayItemJsonSchema property is set
+        internal bool IsSetArrayItemJsonSchema()
+        {
+            return !this._arrayItemJsonSchema.IsNull();
         }
 
         /// <summary>

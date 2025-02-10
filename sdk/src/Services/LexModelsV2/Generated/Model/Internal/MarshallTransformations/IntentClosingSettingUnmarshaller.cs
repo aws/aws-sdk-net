@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IntentClosingSetting Object
     /// </summary>  
-    public class IntentClosingSettingUnmarshaller : IUnmarshaller<IntentClosingSetting, XmlUnmarshallerContext>, IUnmarshaller<IntentClosingSetting, JsonUnmarshallerContext>
+    public class IntentClosingSettingUnmarshaller : IJsonUnmarshaller<IntentClosingSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IntentClosingSetting IUnmarshaller<IntentClosingSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IntentClosingSetting Unmarshall(JsonUnmarshallerContext context)
+        public IntentClosingSetting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IntentClosingSetting unmarshalledObject = new IntentClosingSetting();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("active", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("closingResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ClosingResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClosingResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("conditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.Conditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Conditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.NextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

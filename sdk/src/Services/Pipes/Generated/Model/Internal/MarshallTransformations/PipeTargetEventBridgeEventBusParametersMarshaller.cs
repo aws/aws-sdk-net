@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetailType())
             {
                 context.Writer.WritePropertyName("DetailType");
-                context.Writer.Write(requestObject.DetailType);
+                context.Writer.WriteStringValue(requestObject.DetailType);
             }
 
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");
-                context.Writer.Write(requestObject.EndpointId);
+                context.Writer.WriteStringValue(requestObject.EndpointId);
             }
 
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("Resources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourcesListValue in requestObject.Resources)
                 {
-                        context.Writer.Write(requestObjectResourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.Write(requestObject.Time);
+                context.Writer.WriteStringValue(requestObject.Time);
             }
 
         }

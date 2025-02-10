@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <c>load_balancing.cross_zone.enabled</c> - Indicates whether cross-zone load balancing
         /// is enabled. The possible values are <c>true</c> and <c>false</c>. The default for
         /// Network Load Balancers and Gateway Load Balancers is <c>false</c>. The default for
-        /// Application Load Balancers is <c>true</c>, and cannot be changed.
+        /// Application Load Balancers is <c>true</c>, and can't be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -86,6 +86,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// balancer. It is set to <c>false</c> for internet-facing load balancers and <c>true</c>
         /// for internal load balancers, preventing unintended access to your internal load balancer
         /// through an internet gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>zonal_shift.config.enabled</c> - Indicates whether zonal shift is enabled. The
+        /// possible values are <c>true</c> and <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

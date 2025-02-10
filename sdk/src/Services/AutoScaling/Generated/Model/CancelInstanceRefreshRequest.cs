@@ -43,7 +43,8 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// When you cancel an instance refresh, this does not roll back any changes that it made.
-    /// Use the <a>RollbackInstanceRefresh</a> API to roll back instead.
+    /// Use the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RollbackInstanceRefresh.html">RollbackInstanceRefresh</a>
+    /// API to roll back instead.
     /// </para>
     /// </summary>
     public partial class CancelInstanceRefreshRequest : AmazonAutoScalingRequest

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Contains all of the attributes of a specific Redis OSS replication group.
+    /// Contains all of the attributes of a specific Valkey or Redis OSS replication group.
     /// </summary>
     public partial class ReplicationGroup
     {
@@ -46,6 +46,7 @@ namespace Amazon.ElastiCache.Model
         private Endpoint _configurationEndpoint;
         private DataTieringStatus _dataTiering;
         private string _description;
+        private string _engine;
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
@@ -120,7 +121,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis OSS commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Valkey or Redis
+        /// OSS commands.
         /// </para>
         ///  
         /// <para>
@@ -160,7 +162,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailover. 
         /// <para>
-        /// Indicates the status of automatic failover for this Redis OSS replication group.
+        /// Indicates the status of automatic failover for this Valkey or Redis OSS replication
+        /// group.
         /// </para>
         /// </summary>
         public AutomaticFailoverStatus AutomaticFailover
@@ -178,9 +181,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
-        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions. 
+        /// If you are running Valkey 7.2 and above, or Redis OSS engine version 6.0 and above,
+        /// set this parameter to yes if you want to opt-in to the next auto minor version upgrade
+        /// campaign. This parameter is disabled for previous versions. 
         /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
@@ -241,10 +244,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
-        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
-        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
-        /// configuration and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Valkey or Redis OSS
+        /// clients to connect using both cluster mode enabled and cluster mode disabled. After
+        /// you migrate all Valkey or Redis OSS clients to use cluster mode enabled, you can then
+        /// complete cluster mode configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode
@@ -283,7 +286,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Enables data tiering. Data tiering is only supported for replication groups using
         /// the r6gd node type. This parameter must be set to true when using r6gd nodes. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/data-tiering.html">Data
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/data-tiering.html">Data
         /// tiering</a>.
         /// </para>
         /// </summary>
@@ -318,6 +321,24 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The engine used in a replication group. The options are redis, memcached or valkey.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GlobalReplicationGroupInfo. 
         /// <para>
         /// The name of the Global datastore and role of this replication group in the Global
@@ -340,9 +361,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-        /// system</a>.
+        /// IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version
+        /// 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on
+        /// the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public IpDiscovery IpDiscovery
@@ -433,7 +454,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property MultiAZ. 
         /// <para>
         /// A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/AutoFailover.html">Minimizing
         /// Downtime: Multi-AZ</a> 
         /// </para>
         /// </summary>
@@ -453,8 +474,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6
-        /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached
+        /// engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
         /// </para>
         /// </summary>
         public NetworkType NetworkType
@@ -472,9 +494,10 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroups. 
         /// <para>
-        /// A list of node groups in this replication group. For Redis OSS (cluster mode disabled)
-        /// replication groups, this is a single-element list. For Redis OSS (cluster mode enabled)
-        /// replication groups, the list contains an entry for each node group (shard).
+        /// A list of node groups in this replication group. For Valkey or Redis OSS (cluster
+        /// mode disabled) replication groups, this is a single-element list. For Valkey or Redis
+        /// OSS (cluster mode enabled) replication groups, the list contains an entry for each
+        /// node group (shard).
         /// </para>
         /// </summary>
         public List<NodeGroup> NodeGroups

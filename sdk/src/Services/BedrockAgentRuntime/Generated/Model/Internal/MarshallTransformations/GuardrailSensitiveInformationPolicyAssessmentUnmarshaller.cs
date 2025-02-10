@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GuardrailSensitiveInformationPolicyAssessment Object
     /// </summary>  
-    public class GuardrailSensitiveInformationPolicyAssessmentUnmarshaller : IUnmarshaller<GuardrailSensitiveInformationPolicyAssessment, XmlUnmarshallerContext>, IUnmarshaller<GuardrailSensitiveInformationPolicyAssessment, JsonUnmarshallerContext>
+    public class GuardrailSensitiveInformationPolicyAssessmentUnmarshaller : IJsonUnmarshaller<GuardrailSensitiveInformationPolicyAssessment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GuardrailSensitiveInformationPolicyAssessment IUnmarshaller<GuardrailSensitiveInformationPolicyAssessment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailSensitiveInformationPolicyAssessment Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailSensitiveInformationPolicyAssessment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GuardrailSensitiveInformationPolicyAssessment unmarshalledObject = new GuardrailSensitiveInformationPolicyAssessment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("piiEntities", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GuardrailPiiEntityFilter, GuardrailPiiEntityFilterUnmarshaller>(GuardrailPiiEntityFilterUnmarshaller.Instance);
-                    unmarshalledObject.PiiEntities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GuardrailPiiEntityFilter, GuardrailPiiEntityFilterUnmarshaller>(GuardrailPiiEntityFilterUnmarshaller.Instance);
+                    unmarshalledObject.PiiEntities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("regexes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GuardrailRegexFilter, GuardrailRegexFilterUnmarshaller>(GuardrailRegexFilterUnmarshaller.Instance);
-                    unmarshalledObject.Regexes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GuardrailRegexFilter, GuardrailRegexFilterUnmarshaller>(GuardrailRegexFilterUnmarshaller.Instance);
+                    unmarshalledObject.Regexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

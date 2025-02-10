@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApproveAfterDays())
             {
                 context.Writer.WritePropertyName("ApproveAfterDays");
-                context.Writer.Write(requestObject.ApproveAfterDays.Value);
+                context.Writer.WriteNumberValue(requestObject.ApproveAfterDays.Value);
             }
 
             if(requestObject.IsSetApproveUntilDate())
             {
                 context.Writer.WritePropertyName("ApproveUntilDate");
-                context.Writer.Write(requestObject.ApproveUntilDate);
+                context.Writer.WriteStringValue(requestObject.ApproveUntilDate);
             }
 
             if(requestObject.IsSetComplianceLevel())
             {
                 context.Writer.WritePropertyName("ComplianceLevel");
-                context.Writer.Write(requestObject.ComplianceLevel);
+                context.Writer.WriteStringValue(requestObject.ComplianceLevel);
             }
 
             if(requestObject.IsSetEnableNonSecurity())
             {
                 context.Writer.WritePropertyName("EnableNonSecurity");
-                context.Writer.Write(requestObject.EnableNonSecurity.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableNonSecurity.Value);
             }
 
             if(requestObject.IsSetPatchFilterGroup())
             {
                 context.Writer.WritePropertyName("PatchFilterGroup");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PatchFilterGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.PatchFilterGroup, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

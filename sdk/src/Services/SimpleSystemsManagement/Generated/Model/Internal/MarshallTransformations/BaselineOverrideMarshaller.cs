@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,85 +49,85 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApprovalRules())
             {
                 context.Writer.WritePropertyName("ApprovalRules");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PatchRuleGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApprovalRules, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetApprovedPatches())
             {
                 context.Writer.WritePropertyName("ApprovedPatches");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectApprovedPatchesListValue in requestObject.ApprovedPatches)
                 {
-                        context.Writer.Write(requestObjectApprovedPatchesListValue);
+                        context.Writer.WriteStringValue(requestObjectApprovedPatchesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetApprovedPatchesComplianceLevel())
             {
                 context.Writer.WritePropertyName("ApprovedPatchesComplianceLevel");
-                context.Writer.Write(requestObject.ApprovedPatchesComplianceLevel);
+                context.Writer.WriteStringValue(requestObject.ApprovedPatchesComplianceLevel);
             }
 
             if(requestObject.IsSetApprovedPatchesEnableNonSecurity())
             {
                 context.Writer.WritePropertyName("ApprovedPatchesEnableNonSecurity");
-                context.Writer.Write(requestObject.ApprovedPatchesEnableNonSecurity.Value);
+                context.Writer.WriteBooleanValue(requestObject.ApprovedPatchesEnableNonSecurity.Value);
             }
 
             if(requestObject.IsSetGlobalFilters())
             {
                 context.Writer.WritePropertyName("GlobalFilters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PatchFilterGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.GlobalFilters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOperatingSystem())
             {
                 context.Writer.WritePropertyName("OperatingSystem");
-                context.Writer.Write(requestObject.OperatingSystem);
+                context.Writer.WriteStringValue(requestObject.OperatingSystem);
             }
 
             if(requestObject.IsSetRejectedPatches())
             {
                 context.Writer.WritePropertyName("RejectedPatches");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRejectedPatchesListValue in requestObject.RejectedPatches)
                 {
-                        context.Writer.Write(requestObjectRejectedPatchesListValue);
+                        context.Writer.WriteStringValue(requestObjectRejectedPatchesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRejectedPatchesAction())
             {
                 context.Writer.WritePropertyName("RejectedPatchesAction");
-                context.Writer.Write(requestObject.RejectedPatchesAction);
+                context.Writer.WriteStringValue(requestObject.RejectedPatchesAction);
             }
 
             if(requestObject.IsSetSources())
             {
                 context.Writer.WritePropertyName("Sources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourcesListValue in requestObject.Sources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PatchSourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

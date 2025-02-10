@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetworkAclAssociationId())
             {
                 context.Writer.WritePropertyName("NetworkAclAssociationId");
-                context.Writer.Write(requestObject.NetworkAclAssociationId);
+                context.Writer.WriteStringValue(requestObject.NetworkAclAssociationId);
             }
 
             if(requestObject.IsSetNetworkAclId())
             {
                 context.Writer.WritePropertyName("NetworkAclId");
-                context.Writer.Write(requestObject.NetworkAclId);
+                context.Writer.WriteStringValue(requestObject.NetworkAclId);
             }
 
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");
-                context.Writer.Write(requestObject.SubnetId);
+                context.Writer.WriteStringValue(requestObject.SubnetId);
             }
 
         }

@@ -41,6 +41,8 @@ namespace Amazon.Amplify.Model
         private string _jobArn;
         private string _jobId;
         private JobType _jobType;
+        private string _sourceUrl;
+        private SourceUrlType _sourceUrlType;
         private DateTime? _startTime;
         private JobStatus _status;
 
@@ -85,7 +87,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property CommitTime. 
         /// <para>
-        ///  The commit date and time for the job. 
+        /// The commit date and time for the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,9 +163,15 @@ namespace Amazon.Amplify.Model
         /// Gets and sets the property JobType. 
         /// <para>
         ///  The type for the job. If the value is <c>RELEASE</c>, the job was manually released
-        /// from its source by using the <c>StartJob</c> API. If the value is <c>RETRY</c>, the
-        /// job was manually retried using the <c>StartJob</c> API. If the value is <c>WEB_HOOK</c>,
-        /// the job was automatically triggered by webhooks. 
+        /// from its source by using the <c>StartJob</c> API. This value is available only for
+        /// apps that are connected to a repository.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value is <c>RETRY</c>, the job was manually retried using the <c>StartJob</c>
+        /// API. If the value is <c>WEB_HOOK</c>, the job was automatically triggered by webhooks.
+        /// If the value is <c>MANUAL</c>, the job is for a manually deployed app. Manually deployed
+        /// apps are not connected to a Git repository.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]
@@ -177,6 +185,47 @@ namespace Amazon.Amplify.Model
         internal bool IsSetJobType()
         {
             return this._jobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceUrl. 
+        /// <para>
+        /// The source URL for the files to deploy. The source URL can be either an HTTP GET URL
+        /// that is publicly accessible and downloads a single .zip file, or an Amazon S3 bucket
+        /// and prefix.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3000)]
+        public string SourceUrl
+        {
+            get { return this._sourceUrl; }
+            set { this._sourceUrl = value; }
+        }
+
+        // Check to see if SourceUrl property is set
+        internal bool IsSetSourceUrl()
+        {
+            return this._sourceUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceUrlType. 
+        /// <para>
+        /// The type of source specified by the <c>sourceURL</c>. If the value is <c>ZIP</c>,
+        /// the source is a .zip file. If the value is <c>BUCKET_PREFIX</c>, the source is an
+        /// Amazon S3 bucket and prefix. If no value is specified, the default is <c>ZIP</c>.
+        /// </para>
+        /// </summary>
+        public SourceUrlType SourceUrlType
+        {
+            get { return this._sourceUrlType; }
+            set { this._sourceUrlType = value; }
+        }
+
+        // Check to see if SourceUrlType property is set
+        internal bool IsSetSourceUrlType()
+        {
+            return this._sourceUrlType != null;
         }
 
         /// <summary>

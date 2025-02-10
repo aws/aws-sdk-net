@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlarms())
             {
                 context.Writer.WritePropertyName("alarms");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeploymentAlarmsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Alarms, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeploymentCircuitBreaker())
             {
                 context.Writer.WritePropertyName("deploymentCircuitBreaker");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeploymentCircuitBreakerMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeploymentCircuitBreaker, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumPercent())
             {
                 context.Writer.WritePropertyName("maximumPercent");
-                context.Writer.Write(requestObject.MaximumPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumPercent.Value);
             }
 
             if(requestObject.IsSetMinimumHealthyPercent())
             {
                 context.Writer.WritePropertyName("minimumHealthyPercent");
-                context.Writer.Write(requestObject.MinimumHealthyPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumHealthyPercent.Value);
             }
 
         }

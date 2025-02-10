@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputReferenceArn())
             {
                 context.Writer.WritePropertyName("inputReferenceArn");
-                context.Writer.Write(requestObject.InputReferenceArn);
+                context.Writer.WriteStringValue(requestObject.InputReferenceArn);
             }
 
             if(requestObject.IsSetManageResourcePolicies())
             {
                 context.Writer.WritePropertyName("manageResourcePolicies");
-                context.Writer.Write(requestObject.ManageResourcePolicies.Value);
+                context.Writer.WriteBooleanValue(requestObject.ManageResourcePolicies.Value);
             }
 
         }

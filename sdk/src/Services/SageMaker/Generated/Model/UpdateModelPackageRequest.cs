@@ -37,11 +37,13 @@ namespace Amazon.SageMaker.Model
     {
         private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecificationsToAdd = AWSConfigs.InitializeCollections ? new List<AdditionalInferenceSpecificationDefinition>() : null;
         private string _approvalDescription;
+        private string _clientToken;
         private Dictionary<string, string> _customerMetadataProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _customerMetadataPropertiesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InferenceSpecification _inferenceSpecification;
         private ModelApprovalStatus _modelApprovalStatus;
         private ModelPackageModelCard _modelCard;
+        private ModelLifeCycle _modelLifeCycle;
         private string _modelPackageArn;
         private string _sourceUri;
 
@@ -85,6 +87,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetApprovalDescription()
         {
             return this._approvalDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        ///  A unique token that guarantees that the call to this API is idempotent. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>
@@ -199,6 +220,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelCard()
         {
             return this._modelCard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelLifeCycle. 
+        /// <para>
+        ///  A structure describing the current state of the model in its life cycle. 
+        /// </para>
+        /// </summary>
+        public ModelLifeCycle ModelLifeCycle
+        {
+            get { return this._modelLifeCycle; }
+            set { this._modelLifeCycle = value; }
+        }
+
+        // Check to see if ModelLifeCycle property is set
+        internal bool IsSetModelLifeCycle()
+        {
+            return this._modelLifeCycle != null;
         }
 
         /// <summary>

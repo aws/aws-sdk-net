@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         // Name of the domain used for all the integration tests.        
-        private static string domainName = "aws-net-sdk-domain-" + DateTime.Now.Ticks;
+        private static string domainName = "aws-net-sdk-domain-" + DateTime.UtcNow.Ticks;
 
         // All test data used in these integration tests.        
         private static List<ReplaceableItem> ALL_TEST_DATA = new List<ReplaceableItem>{

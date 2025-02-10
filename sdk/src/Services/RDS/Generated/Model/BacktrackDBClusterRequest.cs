@@ -46,13 +46,13 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class BacktrackDBClusterRequest : AmazonRDSRequest
     {
-        private DateTime? _backtrackToUtc;
+        private DateTime? _backtrackTo;
         private string _dbClusterIdentifier;
         private bool? _force;
         private bool? _useEarliestTimeOnPointInTimeUnavailable;
 
         /// <summary>
-        /// Gets and sets the property BacktrackToUtc. 
+        /// Gets and sets the property BacktrackTo. 
         /// <para>
         /// The timestamp of the time to backtrack the DB cluster to, specified in ISO 8601 format.
         /// For more information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
@@ -81,16 +81,16 @@ namespace Amazon.RDS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime? BacktrackToUtc
+        public DateTime? BacktrackTo
         {
-            get { return this._backtrackToUtc; }
-            set { this._backtrackTo = this._backtrackToUtc = value; }
+            get { return this._backtrackTo; }
+            set { this._backtrackTo = value; }
         }
 
-        // Check to see if BacktrackToUtc property is set
-        internal bool IsSetBacktrackToUtc()
+        // Check to see if BacktrackTo property is set
+        internal bool IsSetBacktrackTo()
         {
-            return this._backtrackToUtc.HasValue; 
+            return this._backtrackTo.HasValue; 
         }
 
         /// <summary>
@@ -173,68 +173,5 @@ namespace Amazon.RDS.Model
             return this._useEarliestTimeOnPointInTimeUnavailable.HasValue; 
         }
 
-#region Backwards compatible properties
-        private DateTime? _backtrackTo;
-
-        /// <summary>
-        /// Gets and sets the property BacktrackToUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use BacktrackToUtc instead. Setting either BacktrackTo
-        /// or BacktrackToUtc results in both BacktrackTo and BacktrackToUtc being assigned, the
-        /// latest assignment to either one of the two property is reflected in the value of both.
-        /// BacktrackTo is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The timestamp of the time to backtrack the DB cluster to, specified in ISO 8601 format.
-        /// For more information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601
-        /// Wikipedia page.</a> 
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If the specified time isn't a consistent time for the DB cluster, Aurora automatically
-        /// chooses the nearest possible consistent time for the DB cluster.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must contain a valid ISO 8601 timestamp.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't contain a timestamp set in the future.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Example: <c>2017-07-08T18:00Z</c> 
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use BacktrackToUtc instead. Setting either BacktrackTo or BacktrackToUtc results in both BacktrackTo and " +
-            "BacktrackToUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. BacktrackTo is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? BacktrackTo
-        {
-            get { return this._backtrackTo.GetValueOrDefault(); }
-            set
-            {
-                this._backtrackTo = value;
-                if (value != null)
-                {
-                    this._backtrackToUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._backtrackToUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

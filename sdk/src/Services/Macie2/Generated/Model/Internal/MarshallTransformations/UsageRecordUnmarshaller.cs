@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UsageRecord Object
     /// </summary>  
-    public class UsageRecordUnmarshaller : IUnmarshaller<UsageRecord, XmlUnmarshallerContext>, IUnmarshaller<UsageRecord, JsonUnmarshallerContext>
+    public class UsageRecordUnmarshaller : IJsonUnmarshaller<UsageRecord, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UsageRecord IUnmarshaller<UsageRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UsageRecord Unmarshall(JsonUnmarshallerContext context)
+        public UsageRecord Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UsageRecord unmarshalledObject = new UsageRecord();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("automatedDiscoveryFreeTrialStartDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.AutomatedDiscoveryFreeTrialStartDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutomatedDiscoveryFreeTrialStartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("freeTrialStartDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FreeTrialStartDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FreeTrialStartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("usage", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageByAccount, UsageByAccountUnmarshaller>(UsageByAccountUnmarshaller.Instance);
-                    unmarshalledObject.Usage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageByAccount, UsageByAccountUnmarshaller>(UsageByAccountUnmarshaller.Instance);
+                    unmarshalledObject.Usage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

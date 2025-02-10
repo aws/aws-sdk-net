@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -61,98 +64,103 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListEntities";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalog())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCatalog())
-                    {
-                        context.Writer.WritePropertyName("Catalog");
-                        context.Writer.Write(publicRequest.Catalog);
-                    }
-
-                    if(publicRequest.IsSetEntityType())
-                    {
-                        context.Writer.WritePropertyName("EntityType");
-                        context.Writer.Write(publicRequest.EntityType);
-                    }
-
-                    if(publicRequest.IsSetEntityTypeFilters())
-                    {
-                        context.Writer.WritePropertyName("EntityTypeFilters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntityTypeFiltersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EntityTypeFilters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEntityTypeSort())
-                    {
-                        context.Writer.WritePropertyName("EntityTypeSort");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntityTypeSortMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EntityTypeSort, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFilterList())
-                    {
-                        context.Writer.WritePropertyName("FilterList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterListListValue in publicRequest.FilterList)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFilterListListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetOwnershipType())
-                    {
-                        context.Writer.WritePropertyName("OwnershipType");
-                        context.Writer.Write(publicRequest.OwnershipType);
-                    }
-
-                    if(publicRequest.IsSetSort())
-                    {
-                        context.Writer.WritePropertyName("Sort");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SortMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Sort, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Catalog");
+                context.Writer.WriteStringValue(publicRequest.Catalog);
             }
+
+            if(publicRequest.IsSetEntityType())
+            {
+                context.Writer.WritePropertyName("EntityType");
+                context.Writer.WriteStringValue(publicRequest.EntityType);
+            }
+
+            if(publicRequest.IsSetEntityTypeFilters())
+            {
+                context.Writer.WritePropertyName("EntityTypeFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EntityTypeFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EntityTypeFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEntityTypeSort())
+            {
+                context.Writer.WritePropertyName("EntityTypeSort");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EntityTypeSortMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EntityTypeSort, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFilterList())
+            {
+                context.Writer.WritePropertyName("FilterList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilterListListValue in publicRequest.FilterList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilterListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetOwnershipType())
+            {
+                context.Writer.WritePropertyName("OwnershipType");
+                context.Writer.WriteStringValue(publicRequest.OwnershipType);
+            }
+
+            if(publicRequest.IsSetSort())
+            {
+                context.Writer.WritePropertyName("Sort");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SortMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Sort, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

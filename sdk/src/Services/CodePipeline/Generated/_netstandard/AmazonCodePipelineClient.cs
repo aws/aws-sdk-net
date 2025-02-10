@@ -165,6 +165,10 @@ namespace Amazon.CodePipeline
     /// <para>
     /// Invoke
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Compute
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Pipelines also include <i>transitions</i>, which allow the transition of artifacts
@@ -1870,7 +1874,9 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Lists the rules for the condition.
+        /// Lists the rules for the condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage
+        /// conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
+        /// rule reference</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleTypes service method.</param>
         /// <param name="cancellationToken">

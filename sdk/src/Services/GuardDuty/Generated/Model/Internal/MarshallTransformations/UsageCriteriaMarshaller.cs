@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountIds())
             {
                 context.Writer.WritePropertyName("accountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
                 {
-                        context.Writer.Write(requestObjectAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSources())
             {
                 context.Writer.WritePropertyName("dataSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataSourcesListValue in requestObject.DataSources)
                 {
-                        context.Writer.Write(requestObjectDataSourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectDataSourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFeatures())
             {
                 context.Writer.WritePropertyName("features");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeaturesListValue in requestObject.Features)
                 {
-                        context.Writer.Write(requestObjectFeaturesListValue);
+                        context.Writer.WriteStringValue(requestObjectFeaturesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("resources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourcesListValue in requestObject.Resources)
                 {
-                        context.Writer.Write(requestObjectResourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

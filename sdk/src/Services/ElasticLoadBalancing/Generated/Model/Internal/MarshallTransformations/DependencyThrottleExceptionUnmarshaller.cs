@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DependencyThrottleException operation
     /// </summary>  
-    public class DependencyThrottleExceptionUnmarshaller : IErrorResponseUnmarshaller<DependencyThrottleException, XmlUnmarshallerContext>
+    public class DependencyThrottleExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DependencyThrottleException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProcessType Object
     /// </summary>  
-    public class ProcessTypeUnmarshaller : IUnmarshaller<ProcessType, XmlUnmarshallerContext>, IUnmarshaller<ProcessType, JsonUnmarshallerContext>
+    public class ProcessTypeUnmarshaller : IXmlUnmarshaller<ProcessType, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ProcessType Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ProcessTypeUnmarshaller _instance = new ProcessTypeUnmarshaller();        
 

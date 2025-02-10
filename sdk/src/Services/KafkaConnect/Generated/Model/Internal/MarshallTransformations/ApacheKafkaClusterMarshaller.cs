@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBootstrapServers())
             {
                 context.Writer.WritePropertyName("bootstrapServers");
-                context.Writer.Write(requestObject.BootstrapServers);
+                context.Writer.WriteStringValue(requestObject.BootstrapServers);
             }
 
             if(requestObject.IsSetVpc())
             {
                 context.Writer.WritePropertyName("vpc");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcMarshaller.Instance;
                 marshaller.Marshall(requestObject.Vpc, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

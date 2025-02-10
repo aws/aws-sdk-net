@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccelerator())
             {
                 context.Writer.WritePropertyName("Accelerator");
-                context.Writer.Write(requestObject.Accelerator);
+                context.Writer.WriteStringValue(requestObject.Accelerator);
             }
 
             if(requestObject.IsSetArch())
             {
                 context.Writer.WritePropertyName("Arch");
-                context.Writer.Write(requestObject.Arch);
+                context.Writer.WriteStringValue(requestObject.Arch);
             }
 
             if(requestObject.IsSetOs())
             {
                 context.Writer.WritePropertyName("Os");
-                context.Writer.Write(requestObject.Os);
+                context.Writer.WriteStringValue(requestObject.Os);
             }
 
         }

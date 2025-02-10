@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChatControlsConfiguration operation.
-    /// Gets information about an chat controls configured for an existing Amazon Q Business
+    /// Gets information about chat controls configured for an existing Amazon Q Business
     /// application.
     /// </summary>
     public partial class GetChatControlsConfigurationRequest : AmazonQBusinessRequest

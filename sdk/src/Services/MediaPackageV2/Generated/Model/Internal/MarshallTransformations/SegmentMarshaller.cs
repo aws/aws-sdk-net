@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeIframeOnlyStreams())
             {
                 context.Writer.WritePropertyName("IncludeIframeOnlyStreams");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStreams.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeIframeOnlyStreams.Value);
             }
 
             if(requestObject.IsSetScte())
             {
                 context.Writer.WritePropertyName("Scte");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Scte, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("SegmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentName())
             {
                 context.Writer.WritePropertyName("SegmentName");
-                context.Writer.Write(requestObject.SegmentName);
+                context.Writer.WriteStringValue(requestObject.SegmentName);
             }
 
             if(requestObject.IsSetTsIncludeDvbSubtitles())
             {
                 context.Writer.WritePropertyName("TsIncludeDvbSubtitles");
-                context.Writer.Write(requestObject.TsIncludeDvbSubtitles.Value);
+                context.Writer.WriteBooleanValue(requestObject.TsIncludeDvbSubtitles.Value);
             }
 
             if(requestObject.IsSetTsUseAudioRenditionGroup())
             {
                 context.Writer.WritePropertyName("TsUseAudioRenditionGroup");
-                context.Writer.Write(requestObject.TsUseAudioRenditionGroup.Value);
+                context.Writer.WriteBooleanValue(requestObject.TsUseAudioRenditionGroup.Value);
             }
 
         }

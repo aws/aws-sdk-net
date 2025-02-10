@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpInputs())
             {
                 context.Writer.WritePropertyName("httpInputs");
-                context.Writer.Write(requestObject.HttpInputs);
+                context.Writer.WriteStringValue(requestObject.HttpInputs);
             }
 
             if(requestObject.IsSetHttpsInputs())
             {
                 context.Writer.WritePropertyName("httpsInputs");
-                context.Writer.Write(requestObject.HttpsInputs);
+                context.Writer.WriteStringValue(requestObject.HttpsInputs);
             }
 
             if(requestObject.IsSetS3Inputs())
             {
                 context.Writer.WritePropertyName("s3Inputs");
-                context.Writer.Write(requestObject.S3Inputs);
+                context.Writer.WriteStringValue(requestObject.S3Inputs);
             }
 
         }

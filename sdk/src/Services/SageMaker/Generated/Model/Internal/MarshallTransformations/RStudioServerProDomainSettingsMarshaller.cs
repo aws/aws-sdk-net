@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultResourceSpec())
             {
                 context.Writer.WritePropertyName("DefaultResourceSpec");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResourceSpecMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultResourceSpec, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("DomainExecutionRoleArn");
-                context.Writer.Write(requestObject.DomainExecutionRoleArn);
+                context.Writer.WriteStringValue(requestObject.DomainExecutionRoleArn);
             }
 
             if(requestObject.IsSetRStudioConnectUrl())
             {
                 context.Writer.WritePropertyName("RStudioConnectUrl");
-                context.Writer.Write(requestObject.RStudioConnectUrl);
+                context.Writer.WriteStringValue(requestObject.RStudioConnectUrl);
             }
 
             if(requestObject.IsSetRStudioPackageManagerUrl())
             {
                 context.Writer.WritePropertyName("RStudioPackageManagerUrl");
-                context.Writer.Write(requestObject.RStudioPackageManagerUrl);
+                context.Writer.WriteStringValue(requestObject.RStudioPackageManagerUrl);
             }
 
         }

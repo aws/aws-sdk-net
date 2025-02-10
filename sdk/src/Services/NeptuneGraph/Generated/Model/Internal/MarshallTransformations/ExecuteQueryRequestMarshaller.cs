@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
@@ -61,63 +64,68 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/queries";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExplainMode())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExplainMode())
-                    {
-                        context.Writer.WritePropertyName("explain");
-                        context.Writer.Write(publicRequest.ExplainMode);
-                    }
-
-                    if(publicRequest.IsSetLanguage())
-                    {
-                        context.Writer.WritePropertyName("language");
-                        context.Writer.Write(publicRequest.Language);
-                    }
-
-                    if(publicRequest.IsSetParameters())
-                    {
-                        context.Writer.WritePropertyName("parameters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParametersKvp in publicRequest.Parameters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
-                            var publicRequestParametersValue = publicRequestParametersKvp.Value;
-
-                            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestParametersValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPlanCache())
-                    {
-                        context.Writer.WritePropertyName("planCache");
-                        context.Writer.Write(publicRequest.PlanCache);
-                    }
-
-                    if(publicRequest.IsSetQueryString())
-                    {
-                        context.Writer.WritePropertyName("query");
-                        context.Writer.Write(publicRequest.QueryString);
-                    }
-
-                    if(publicRequest.IsSetQueryTimeoutMilliseconds())
-                    {
-                        context.Writer.WritePropertyName("queryTimeoutMilliseconds");
-                        context.Writer.Write(publicRequest.QueryTimeoutMilliseconds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("explain");
+                context.Writer.WriteStringValue(publicRequest.ExplainMode);
             }
+
+            if(publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+
+            if(publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParametersKvp in publicRequest.Parameters)
+                {
+                    context.Writer.WritePropertyName(publicRequestParametersKvp.Key);
+                    var publicRequestParametersValue = publicRequestParametersKvp.Value;
+
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPlanCache())
+            {
+                context.Writer.WritePropertyName("planCache");
+                context.Writer.WriteStringValue(publicRequest.PlanCache);
+            }
+
+            if(publicRequest.IsSetQueryString())
+            {
+                context.Writer.WritePropertyName("query");
+                context.Writer.WriteStringValue(publicRequest.QueryString);
+            }
+
+            if(publicRequest.IsSetQueryTimeoutMilliseconds())
+            {
+                context.Writer.WritePropertyName("queryTimeoutMilliseconds");
+                context.Writer.WriteNumberValue(publicRequest.QueryTimeoutMilliseconds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetGraphIdentifier()) 

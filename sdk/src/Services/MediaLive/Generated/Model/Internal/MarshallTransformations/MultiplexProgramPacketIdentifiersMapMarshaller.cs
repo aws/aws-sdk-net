@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,128 +49,128 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAribCaptionsPid())
             {
                 context.Writer.WritePropertyName("aribCaptionsPid");
-                context.Writer.Write(requestObject.AribCaptionsPid.Value);
+                context.Writer.WriteNumberValue(requestObject.AribCaptionsPid.Value);
             }
 
             if(requestObject.IsSetAudioPids())
             {
                 context.Writer.WritePropertyName("audioPids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioPidsListValue in requestObject.AudioPids)
                 {
-                        context.Writer.Write(requestObjectAudioPidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectAudioPidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDvbSubPids())
             {
                 context.Writer.WritePropertyName("dvbSubPids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDvbSubPidsListValue in requestObject.DvbSubPids)
                 {
-                        context.Writer.Write(requestObjectDvbSubPidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectDvbSubPidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDvbTeletextPid())
             {
                 context.Writer.WritePropertyName("dvbTeletextPid");
-                context.Writer.Write(requestObject.DvbTeletextPid.Value);
+                context.Writer.WriteNumberValue(requestObject.DvbTeletextPid.Value);
             }
 
             if(requestObject.IsSetDvbTeletextPids())
             {
                 context.Writer.WritePropertyName("dvbTeletextPids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDvbTeletextPidsListValue in requestObject.DvbTeletextPids)
                 {
-                        context.Writer.Write(requestObjectDvbTeletextPidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectDvbTeletextPidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEcmPid())
             {
                 context.Writer.WritePropertyName("ecmPid");
-                context.Writer.Write(requestObject.EcmPid.Value);
+                context.Writer.WriteNumberValue(requestObject.EcmPid.Value);
             }
 
             if(requestObject.IsSetEtvPlatformPid())
             {
                 context.Writer.WritePropertyName("etvPlatformPid");
-                context.Writer.Write(requestObject.EtvPlatformPid.Value);
+                context.Writer.WriteNumberValue(requestObject.EtvPlatformPid.Value);
             }
 
             if(requestObject.IsSetEtvSignalPid())
             {
                 context.Writer.WritePropertyName("etvSignalPid");
-                context.Writer.Write(requestObject.EtvSignalPid.Value);
+                context.Writer.WriteNumberValue(requestObject.EtvSignalPid.Value);
             }
 
             if(requestObject.IsSetKlvDataPids())
             {
                 context.Writer.WritePropertyName("klvDataPids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKlvDataPidsListValue in requestObject.KlvDataPids)
                 {
-                        context.Writer.Write(requestObjectKlvDataPidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectKlvDataPidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPcrPid())
             {
                 context.Writer.WritePropertyName("pcrPid");
-                context.Writer.Write(requestObject.PcrPid.Value);
+                context.Writer.WriteNumberValue(requestObject.PcrPid.Value);
             }
 
             if(requestObject.IsSetPmtPid())
             {
                 context.Writer.WritePropertyName("pmtPid");
-                context.Writer.Write(requestObject.PmtPid.Value);
+                context.Writer.WriteNumberValue(requestObject.PmtPid.Value);
             }
 
             if(requestObject.IsSetPrivateMetadataPid())
             {
                 context.Writer.WritePropertyName("privateMetadataPid");
-                context.Writer.Write(requestObject.PrivateMetadataPid.Value);
+                context.Writer.WriteNumberValue(requestObject.PrivateMetadataPid.Value);
             }
 
             if(requestObject.IsSetScte27Pids())
             {
                 context.Writer.WritePropertyName("scte27Pids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectScte27PidsListValue in requestObject.Scte27Pids)
                 {
-                        context.Writer.Write(requestObjectScte27PidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectScte27PidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Scte35Pid.Value);
             }
 
             if(requestObject.IsSetSmpte2038Pid())
             {
                 context.Writer.WritePropertyName("smpte2038Pid");
-                context.Writer.Write(requestObject.Smpte2038Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Smpte2038Pid.Value);
             }
 
             if(requestObject.IsSetTimedMetadataPid())
             {
                 context.Writer.WritePropertyName("timedMetadataPid");
-                context.Writer.Write(requestObject.TimedMetadataPid.Value);
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataPid.Value);
             }
 
             if(requestObject.IsSetVideoPid())
             {
                 context.Writer.WritePropertyName("videoPid");
-                context.Writer.Write(requestObject.VideoPid.Value);
+                context.Writer.WriteNumberValue(requestObject.VideoPid.Value);
             }
 
         }

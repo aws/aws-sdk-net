@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,90 +49,90 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchOutputConfig())
             {
                 context.Writer.WritePropertyName("CloudWatchOutputConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchOutputConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchOutputConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("Comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetDocumentHash())
             {
                 context.Writer.WritePropertyName("DocumentHash");
-                context.Writer.Write(requestObject.DocumentHash);
+                context.Writer.WriteStringValue(requestObject.DocumentHash);
             }
 
             if(requestObject.IsSetDocumentHashType())
             {
                 context.Writer.WritePropertyName("DocumentHashType");
-                context.Writer.Write(requestObject.DocumentHashType);
+                context.Writer.WriteStringValue(requestObject.DocumentHashType);
             }
 
             if(requestObject.IsSetDocumentVersion())
             {
                 context.Writer.WritePropertyName("DocumentVersion");
-                context.Writer.Write(requestObject.DocumentVersion);
+                context.Writer.WriteStringValue(requestObject.DocumentVersion);
             }
 
             if(requestObject.IsSetNotificationConfig())
             {
                 context.Writer.WritePropertyName("NotificationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotificationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotificationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputS3BucketName())
             {
                 context.Writer.WritePropertyName("OutputS3BucketName");
-                context.Writer.Write(requestObject.OutputS3BucketName);
+                context.Writer.WriteStringValue(requestObject.OutputS3BucketName);
             }
 
             if(requestObject.IsSetOutputS3KeyPrefix())
             {
                 context.Writer.WritePropertyName("OutputS3KeyPrefix");
-                context.Writer.Write(requestObject.OutputS3KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.OutputS3KeyPrefix);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectParametersValueListValue in requestObjectParametersValue)
                     {
-                            context.Writer.Write(requestObjectParametersValueListValue);
+                            context.Writer.WriteStringValue(requestObjectParametersValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceRoleArn())
             {
                 context.Writer.WritePropertyName("ServiceRoleArn");
-                context.Writer.Write(requestObject.ServiceRoleArn);
+                context.Writer.WriteStringValue(requestObject.ServiceRoleArn);
             }
 
             if(requestObject.IsSetTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("TimeoutSeconds");
-                context.Writer.Write(requestObject.TimeoutSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutSeconds.Value);
             }
 
         }

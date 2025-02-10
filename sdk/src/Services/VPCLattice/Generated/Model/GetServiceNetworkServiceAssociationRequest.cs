@@ -41,7 +41,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceNetworkServiceAssociationIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the association.
+        /// The ID or ARN of the association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=2048)]

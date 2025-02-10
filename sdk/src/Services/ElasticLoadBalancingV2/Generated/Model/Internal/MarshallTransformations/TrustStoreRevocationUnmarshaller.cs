@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrustStoreRevocation Object
     /// </summary>  
-    public class TrustStoreRevocationUnmarshaller : IUnmarshaller<TrustStoreRevocation, XmlUnmarshallerContext>, IUnmarshaller<TrustStoreRevocation, JsonUnmarshallerContext>
+    public class TrustStoreRevocationUnmarshaller : IXmlUnmarshaller<TrustStoreRevocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrustStoreRevocation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TrustStoreRevocationUnmarshaller _instance = new TrustStoreRevocationUnmarshaller();        
 

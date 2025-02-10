@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEpsilon())
             {
                 context.Writer.WritePropertyName("epsilon");
-                context.Writer.Write(requestObject.Epsilon.Value);
+                context.Writer.WriteNumberValue(requestObject.Epsilon.Value);
             }
 
             if(requestObject.IsSetUsersNoisePerQuery())
             {
                 context.Writer.WritePropertyName("usersNoisePerQuery");
-                context.Writer.Write(requestObject.UsersNoisePerQuery.Value);
+                context.Writer.WriteNumberValue(requestObject.UsersNoisePerQuery.Value);
             }
 
         }

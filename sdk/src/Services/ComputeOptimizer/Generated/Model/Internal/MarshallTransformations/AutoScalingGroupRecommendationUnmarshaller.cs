@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoScalingGroupRecommendation Object
     /// </summary>  
-    public class AutoScalingGroupRecommendationUnmarshaller : IUnmarshaller<AutoScalingGroupRecommendation, XmlUnmarshallerContext>, IUnmarshaller<AutoScalingGroupRecommendation, JsonUnmarshallerContext>
+    public class AutoScalingGroupRecommendationUnmarshaller : IJsonUnmarshaller<AutoScalingGroupRecommendation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoScalingGroupRecommendation IUnmarshaller<AutoScalingGroupRecommendation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingGroupRecommendation Unmarshall(JsonUnmarshallerContext context)
+        public AutoScalingGroupRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoScalingGroupRecommendation unmarshalledObject = new AutoScalingGroupRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("autoScalingGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScalingGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("autoScalingGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentConfiguration", targetDepth))
                 {
                     var unmarshaller = AutoScalingGroupConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentInstanceGpuInfo", targetDepth))
                 {
                     var unmarshaller = GpuInfoUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInstanceGpuInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentInstanceGpuInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentPerformanceRisk", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
                 {
                     var unmarshaller = EffectiveRecommendationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("finding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inferredWorkloadTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lookBackPeriodInDays", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendationOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutoScalingGroupRecommendationOption, AutoScalingGroupRecommendationOptionUnmarshaller>(AutoScalingGroupRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.RecommendationOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AutoScalingGroupRecommendationOption, AutoScalingGroupRecommendationOptionUnmarshaller>(AutoScalingGroupRecommendationOptionUnmarshaller.Instance);
+                    unmarshalledObject.RecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utilizationMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UtilizationMetric, UtilizationMetricUnmarshaller>(UtilizationMetricUnmarshaller.Instance);
+                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

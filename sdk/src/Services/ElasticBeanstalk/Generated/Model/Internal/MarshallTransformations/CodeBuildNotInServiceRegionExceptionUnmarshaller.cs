@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CodeBuildNotInServiceRegionException operation
     /// </summary>  
-    public class CodeBuildNotInServiceRegionExceptionUnmarshaller : IErrorResponseUnmarshaller<CodeBuildNotInServiceRegionException, XmlUnmarshallerContext>
+    public class CodeBuildNotInServiceRegionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CodeBuildNotInServiceRegionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

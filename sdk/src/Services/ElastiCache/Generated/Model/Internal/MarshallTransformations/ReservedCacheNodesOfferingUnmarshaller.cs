@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedCacheNodesOffering Object
     /// </summary>  
-    public class ReservedCacheNodesOfferingUnmarshaller : IUnmarshaller<ReservedCacheNodesOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedCacheNodesOffering, JsonUnmarshallerContext>
+    public class ReservedCacheNodesOfferingUnmarshaller : IXmlUnmarshaller<ReservedCacheNodesOffering, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -117,17 +117,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReservedCacheNodesOffering Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReservedCacheNodesOfferingUnmarshaller _instance = new ReservedCacheNodesOfferingUnmarshaller();        
 

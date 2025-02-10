@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
@@ -65,6 +68,9 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDomainOwner())
                 request.Parameters.Add("domain-owner", StringUtils.FromString(publicRequest.DomainOwner));
+            
+            if (publicRequest.IsSetEndpointType())
+                request.Parameters.Add("endpointType", StringUtils.FromString(publicRequest.EndpointType));
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));

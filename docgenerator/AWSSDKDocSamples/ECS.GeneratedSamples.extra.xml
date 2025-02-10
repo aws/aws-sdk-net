@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateCapacityProvider(Amazon.ECS.Model.CreateCapacityProviderRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateCapacityProvider(Amazon.ECS.Model.CreateCapacityProviderRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateCapacityProviderRequest" />
+            <member name="T:Amazon.ECS.Model.CreateCapacityProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a capacity provider that uses the specified Auto Scaling group MyASG and has managed scaling and manager termination protection enabled. 
+                </para>
+                <code
+                    title="To create a capacity provider "
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-create-a-capacity-provider--1733861347945" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.CreateCluster(Amazon.ECS.Model.CreateClusterRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.CreateCluster(Amazon.ECS.Model.CreateClusterRequest)" />
             <member name="T:Amazon.ECS.Model.CreateClusterRequest" />
@@ -59,6 +78,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateTaskSet(Amazon.ECS.Model.CreateTaskSetRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateTaskSet(Amazon.ECS.Model.CreateTaskSetRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateTaskSetRequest" />
+            <member name="T:Amazon.ECS.Model.CreateTaskSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a task set in a service that uses the EXTERNAL deployment controller.
+                </para>
+                <code
+                    title="To create a task set"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-create-a-task-set-1733864092815" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.DeleteAccountSetting(Amazon.ECS.Model.DeleteAccountSettingRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.DeleteAccountSetting(Amazon.ECS.Model.DeleteAccountSettingRequest)" />
             <member name="T:Amazon.ECS.Model.DeleteAccountSettingRequest" />
@@ -92,6 +130,44 @@
                     title="To delete the account settings for a specific IAM user or IAM role"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="to-delete-the-account-setting-for-a-specific-iam-user-or-iam-role-1549524612917" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteAttributes(Amazon.ECS.Model.DeleteAttributesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteAttributes(Amazon.ECS.Model.DeleteAttributesRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteAttributesRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes an attribute named stack from a container instance. 
+                </para>
+                <code
+                    title="To delete a custom attribute from an Amazon ECS instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-a-custom-attribute-from-an-amazon-ecs-instance-1733867267541" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteCapacityProvider(Amazon.ECS.Model.DeleteCapacityProviderRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteCapacityProvider(Amazon.ECS.Model.DeleteCapacityProviderRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteCapacityProviderRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteCapacityProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a specified capacity provider. 
+                </para>
+                <code
+                    title="To delete a specified capacity provider"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-a-specified-capacity-provider-1733868702678" />
             </example>
         </value>
     </doc>
@@ -135,6 +211,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteTaskDefinitions(Amazon.ECS.Model.DeleteTaskDefinitionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteTaskDefinitions(Amazon.ECS.Model.DeleteTaskDefinitionsRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteTaskDefinitionsRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteTaskDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a specified deregistered task definition. 
+                </para>
+                <code
+                    title="To delete a task definition that has been deregistered"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-a-task-definition-that-has-been-deregistered-1733940790186" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeleteTaskSet(Amazon.ECS.Model.DeleteTaskSetRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeleteTaskSet(Amazon.ECS.Model.DeleteTaskSetRequest)" />
+            <member name="T:Amazon.ECS.Model.DeleteTaskSetRequest" />
+            <member name="T:Amazon.ECS.Model.DeleteTaskSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes a task set and uses the force flag to force deletion if it hasn't scaled to zero.
+                </para>
+                <code
+                    title="To delete a task set within a service that uses the EXTERNAL deployment controller type"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-delete-a-task-set-within-a-service-that-uses-the-external-deployment-controller-type-1733949897807" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.DeregisterContainerInstance(Amazon.ECS.Model.DeregisterContainerInstanceRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.DeregisterContainerInstance(Amazon.ECS.Model.DeregisterContainerInstanceRequest)" />
             <member name="T:Amazon.ECS.Model.DeregisterContainerInstanceRequest" />
@@ -149,6 +263,63 @@
                     title="To deregister a container instance from a cluster"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="bf624927-cf64-4f4b-8b7e-c024a4e682f6" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DeregisterTaskDefinition(Amazon.ECS.Model.DeregisterTaskDefinitionRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DeregisterTaskDefinition(Amazon.ECS.Model.DeregisterTaskDefinitionRequest)" />
+            <member name="T:Amazon.ECS.Model.DeregisterTaskDefinitionRequest" />
+            <member name="T:Amazon.ECS.Model.DeregisterTaskDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deregisters the first revision of the curler task definition
+                </para>
+                <code
+                    title="To deregister a revision of a task definition"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-deregister-a-revision-of-a-task-definition-1733950214421" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeCapacityProviders(Amazon.ECS.Model.DescribeCapacityProvidersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeCapacityProviders(Amazon.ECS.Model.DescribeCapacityProvidersRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeCapacityProvidersRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeCapacityProvidersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example retrieves details about all capacity providers. 
+                </para>
+                <code
+                    title="To describe all capacity providers"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-describe-all-capacity-providers-1733951199913" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeCapacityProviders(Amazon.ECS.Model.DescribeCapacityProvidersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeCapacityProviders(Amazon.ECS.Model.DescribeCapacityProvidersRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeCapacityProvidersRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeCapacityProvidersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example retrieves details about the capacity provider MyCapacityProvider
+                </para>
+                <code
+                    title="To describe a specific capacity provider"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-describe-a-specific-capacity-provider-1733951378688" />
             </example>
         </value>
     </doc>
@@ -187,6 +358,44 @@
                     title="To describe container instance"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="c8f439de-eb27-4269-8ca7-2c0a7ba75ab0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeServiceDeployments(Amazon.ECS.Model.DescribeServiceDeploymentsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeServiceDeployments(Amazon.ECS.Model.DescribeServiceDeploymentsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceDeploymentsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a service deployment for the service sd-example in the example cluster. 
+                </para>
+                <code
+                    title="To describe a service deployment "
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-describe-a-service-deployment--1733954961143" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeServiceRevisions(Amazon.ECS.Model.DescribeServiceRevisionsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeServiceRevisions(Amazon.ECS.Model.DescribeServiceRevisionsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceRevisionsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceRevisionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a service revision with the specified ARN
+                </para>
+                <code
+                    title="To describe a service revision "
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-describe-a-service-revision--1734033215738" />
             </example>
         </value>
     </doc>
@@ -249,6 +458,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeTaskSets(Amazon.ECS.Model.DescribeTaskSetsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeTaskSets(Amazon.ECS.Model.DescribeTaskSetsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeTaskSetsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeTaskSetsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a task set in service MyService that uses an EXTERNAL deployment controller. 
+                </para>
+                <code
+                    title="To describe a task set "
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-describe-a-task-set--1734035629507" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ExecuteCommand(Amazon.ECS.Model.ExecuteCommandRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ExecuteCommand(Amazon.ECS.Model.ExecuteCommandRequest)" />
+            <member name="T:Amazon.ECS.Model.ExecuteCommandRequest" />
+            <member name="T:Amazon.ECS.Model.ExecuteCommandResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example runs an interactive /bin/sh command on a container MyContainer. 
+                </para>
+                <code
+                    title="To run a command remotely on a container in a task"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-run-a-command-remotely-on-a-container-in-a-task-1734037663312" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.GetTaskProtection(Amazon.ECS.Model.GetTaskProtectionRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.GetTaskProtection(Amazon.ECS.Model.GetTaskProtectionRequest)" />
             <member name="T:Amazon.ECS.Model.GetTaskProtectionRequest" />
@@ -306,6 +553,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListAttributes(Amazon.ECS.Model.ListAttributesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListAttributes(Amazon.ECS.Model.ListAttributesRequest)" />
+            <member name="T:Amazon.ECS.Model.ListAttributesRequest" />
+            <member name="T:Amazon.ECS.Model.ListAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists attributes for a container instance with the attribute "stack" equal to the value "production".
+                </para>
+                <code
+                    title="To list container instances that have a specific attribute"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-list-container-instances-that-have-a-specific-attribute-1734368946577" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.ListClusters(Amazon.ECS.Model.ListClustersRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.ListClusters(Amazon.ECS.Model.ListClustersRequest)" />
             <member name="T:Amazon.ECS.Model.ListClustersRequest" />
@@ -339,6 +605,25 @@
                     title="To list your available container instances in a cluster"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="62a82a94-713c-4e18-8420-1d2b2ba9d484" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ListServiceDeployments(Amazon.ECS.Model.ListServiceDeploymentsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ListServiceDeployments(Amazon.ECS.Model.ListServiceDeploymentsRequest)" />
+            <member name="T:Amazon.ECS.Model.ListServiceDeploymentsRequest" />
+            <member name="T:Amazon.ECS.Model.ListServiceDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all successful service deployments for the service "sd-example" in the cluster "example".
+                </para>
+                <code
+                    title="To list service deployments that meet the specified criteria"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-list-service-deployments-that-meet-the-specified-criteria-1734370445427" />
             </example>
         </value>
     </doc>
@@ -553,6 +838,82 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutAttributes(Amazon.ECS.Model.PutAttributesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutAttributes(Amazon.ECS.Model.PutAttributesRequest)" />
+            <member name="T:Amazon.ECS.Model.PutAttributesRequest" />
+            <member name="T:Amazon.ECS.Model.PutAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds an attribute "stack" with the value "production" to a container instance.
+                </para>
+                <code
+                    title="To create or update an attribute on a resource"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-create-or-update-an-attribute-on-a-resource-1734382423405" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutClusterCapacityProviders(Amazon.ECS.Model.PutClusterCapacityProvidersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutClusterCapacityProviders(Amazon.ECS.Model.PutClusterCapacityProvidersRequest)" />
+            <member name="T:Amazon.ECS.Model.PutClusterCapacityProvidersRequest" />
+            <member name="T:Amazon.ECS.Model.PutClusterCapacityProvidersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds an existing capacity provider "MyCapacityProvider2" to a cluster that already has the capacity provider "MyCapacityProvider1" associated with it. Both "MyCapacityProvider2" and "MyCapacityProvider1" need to be specified. 
+                </para>
+                <code
+                    title="To add an existing capacity provider to a cluuster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-add-an-existing-capacity-provider-to-a-cluster-1734385195698" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutClusterCapacityProviders(Amazon.ECS.Model.PutClusterCapacityProvidersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutClusterCapacityProviders(Amazon.ECS.Model.PutClusterCapacityProvidersRequest)" />
+            <member name="T:Amazon.ECS.Model.PutClusterCapacityProvidersRequest" />
+            <member name="T:Amazon.ECS.Model.PutClusterCapacityProvidersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes a capacity provider "MyCapacityProvider2" from a cluster that has both "MyCapacityProvider2" and "MyCapacityProvider1" associated with it. Only "MyCapacityProvider1" needs to be specified in this scenario. 
+                </para>
+                <code
+                    title="To remove a capacity provider from a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-remove-a-capacity-provider-from-a-cluster-1734386641517" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.PutClusterCapacityProviders(Amazon.ECS.Model.PutClusterCapacityProvidersRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.PutClusterCapacityProviders(Amazon.ECS.Model.PutClusterCapacityProvidersRequest)" />
+            <member name="T:Amazon.ECS.Model.PutClusterCapacityProvidersRequest" />
+            <member name="T:Amazon.ECS.Model.PutClusterCapacityProvidersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes all capacity providers associated with a cluster. 
+                </para>
+                <code
+                    title="To remove all capacity providers from a cluster"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-remove-all-capacity-providers-from-a-cluster-1734387170874" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.RegisterTaskDefinition(Amazon.ECS.Model.RegisterTaskDefinitionRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.RegisterTaskDefinition(Amazon.ECS.Model.RegisterTaskDefinitionRequest)" />
             <member name="T:Amazon.ECS.Model.RegisterTaskDefinitionRequest" />
@@ -586,6 +947,44 @@
                     title="To run a task on your default cluster"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="6f238c83-a133-42cd-ab3d-abeca0560445" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.StartTask(Amazon.ECS.Model.StartTaskRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.StartTask(Amazon.ECS.Model.StartTaskRequest)" />
+            <member name="T:Amazon.ECS.Model.StartTaskRequest" />
+            <member name="T:Amazon.ECS.Model.StartTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example starts a new task in the cluster "MyCluster" on the specified container instance using the latest revision of the "hello-world" task definition.
+                </para>
+                <code
+                    title="To start a new task"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-start-a-new-task-1734455482966" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.StopTask(Amazon.ECS.Model.StopTaskRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.StopTask(Amazon.ECS.Model.StopTaskRequest)" />
+            <member name="T:Amazon.ECS.Model.StopTaskRequest" />
+            <member name="T:Amazon.ECS.Model.StopTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example stops a task with ID "1dc5c17a-422b-4dc4-b493-371970c6c4d6" in cluster "MyCluster".
+                </para>
+                <code
+                    title="To stop a task"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-stop-a-task-1734457210346" />
             </example>
         </value>
     </doc>
@@ -629,6 +1028,120 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateCapacityProvider(Amazon.ECS.Model.UpdateCapacityProviderRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateCapacityProvider(Amazon.ECS.Model.UpdateCapacityProviderRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateCapacityProviderRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateCapacityProviderResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the targetCapacity and instanceWarmupPeriod parameters for the capacity provider MyCapacityProvider to 90 and 150 respectively.
+                </para>
+                <code
+                    title="To update a capacity provider's parameters"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-a-capacity-providers-parameters-1734557290198" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateCluster(Amazon.ECS.Model.UpdateClusterRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateCluster(Amazon.ECS.Model.UpdateClusterRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateClusterRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example turns on enhanced containerInsights in an existing cluster. 
+                </para>
+                <code
+                    title="To update a cluster's observability settings."
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-a-clusters-observability-settings-1734626018966" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateCluster(Amazon.ECS.Model.UpdateClusterRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateCluster(Amazon.ECS.Model.UpdateClusterRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateClusterRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example sets a default Service Connect namespace. 
+                </para>
+                <code
+                    title="To update a cluster's Service Connect defaults."
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-a-clusters-service-connect-defaults-1734626891648" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateClusterSettings(Amazon.ECS.Model.UpdateClusterSettingsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateClusterSettings(Amazon.ECS.Model.UpdateClusterSettingsRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateClusterSettingsRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateClusterSettingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example enables CloudWatch Container Insights for the default cluster.
+                </para>
+                <code
+                    title="To update a cluster's settings"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-a-clusters-settings-1734628004887" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateContainerAgent(Amazon.ECS.Model.UpdateContainerAgentRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateContainerAgent(Amazon.ECS.Model.UpdateContainerAgentRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateContainerAgentRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateContainerAgentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the container agent version on the specified container instance in cluster MyCluster.
+                </para>
+                <code
+                    title="To update the container agent version on a container instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-the-container-agent-version-on-a-container-instance-1734628653210" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateContainerInstancesState(Amazon.ECS.Model.UpdateContainerInstancesStateRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateContainerInstancesState(Amazon.ECS.Model.UpdateContainerInstancesStateRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateContainerInstancesStateRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateContainerInstancesStateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the state of the specified container instance in the default cluster to DRAINING. 
+                </para>
+                <code
+                    title="To update the state of a container instance"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-the-state-of-a-container-instance-1734630991280" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
             <member name="T:Amazon.ECS.Model.UpdateServiceRequest" />
@@ -662,6 +1175,25 @@
                     title="To change the number of tasks in a service"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="9581d6c5-02e3-4140-8cc1-5a4301586633" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateServicePrimaryTaskSet(Amazon.ECS.Model.UpdateServicePrimaryTaskSetRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateServicePrimaryTaskSet(Amazon.ECS.Model.UpdateServicePrimaryTaskSetRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateServicePrimaryTaskSetRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateServicePrimaryTaskSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the primary task set for a service MyService that uses the EXTERNAL deployment controller type. 
+                </para>
+                <code
+                    title="To update the primary task set for a service"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-the-primary-task-set-for-a-service-1734637150370" />
             </example>
         </value>
     </doc>
@@ -719,6 +1251,25 @@
                     title="To remove task scale-in protection"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="disable-scale-in-protection-on-a-single-task" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateTaskSet(Amazon.ECS.Model.UpdateTaskSetRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateTaskSet(Amazon.ECS.Model.UpdateTaskSetRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskSetRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateTaskSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the task set to adjust the scale.
+                </para>
+                <code
+                    title="To update a task set"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="to-update-a-task-set-1734638754368" />
             </example>
         </value>
     </doc>

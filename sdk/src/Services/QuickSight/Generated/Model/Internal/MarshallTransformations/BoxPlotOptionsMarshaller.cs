@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllDataPointsVisibility())
             {
                 context.Writer.WritePropertyName("AllDataPointsVisibility");
-                context.Writer.Write(requestObject.AllDataPointsVisibility);
+                context.Writer.WriteStringValue(requestObject.AllDataPointsVisibility);
             }
 
             if(requestObject.IsSetOutlierVisibility())
             {
                 context.Writer.WritePropertyName("OutlierVisibility");
-                context.Writer.Write(requestObject.OutlierVisibility);
+                context.Writer.WriteStringValue(requestObject.OutlierVisibility);
             }
 
             if(requestObject.IsSetStyleOptions())
             {
                 context.Writer.WritePropertyName("StyleOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BoxPlotStyleOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StyleOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

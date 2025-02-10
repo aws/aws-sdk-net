@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -63,54 +66,59 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationAggregatorName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfigurationAggregatorName())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationAggregatorName");
-                        context.Writer.Write(publicRequest.ConfigurationAggregatorName);
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("Filters");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ConfigRuleComplianceSummaryFiltersMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Filters, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGroupByKey())
-                    {
-                        context.Writer.WritePropertyName("GroupByKey");
-                        context.Writer.Write(publicRequest.GroupByKey);
-                    }
-
-                    if(publicRequest.IsSetLimit())
-                    {
-                        context.Writer.WritePropertyName("Limit");
-                        context.Writer.Write(publicRequest.Limit.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ConfigurationAggregatorName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationAggregatorName);
             }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("Filters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfigRuleComplianceSummaryFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGroupByKey())
+            {
+                context.Writer.WritePropertyName("GroupByKey");
+                context.Writer.WriteStringValue(publicRequest.GroupByKey);
+            }
+
+            if(publicRequest.IsSetLimit())
+            {
+                context.Writer.WritePropertyName("Limit");
+                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

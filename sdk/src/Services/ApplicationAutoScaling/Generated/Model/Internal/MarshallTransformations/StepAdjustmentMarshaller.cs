@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MetricIntervalLowerBound");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalLowerBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricIntervalLowerBound.Value);
+                    context.Writer.WriteNumberValue(requestObject.MetricIntervalLowerBound.Value);
                 }
             }
 
@@ -66,18 +64,18 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MetricIntervalUpperBound");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MetricIntervalUpperBound.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MetricIntervalUpperBound.Value);
+                    context.Writer.WriteNumberValue(requestObject.MetricIntervalUpperBound.Value);
                 }
             }
 
             if(requestObject.IsSetScalingAdjustment())
             {
                 context.Writer.WritePropertyName("ScalingAdjustment");
-                context.Writer.Write(requestObject.ScalingAdjustment.Value);
+                context.Writer.WriteNumberValue(requestObject.ScalingAdjustment.Value);
             }
 
         }

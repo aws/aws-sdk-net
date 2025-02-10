@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetIsRequired())
             {
                 context.Writer.WritePropertyName("IsRequired");
-                context.Writer.Write(requestObject.IsRequired.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsRequired.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSupportedCompressionTypes())
             {
                 context.Writer.WritePropertyName("SupportedCompressionTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedCompressionTypesListValue in requestObject.SupportedCompressionTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedCompressionTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedCompressionTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedContentTypes())
             {
                 context.Writer.WritePropertyName("SupportedContentTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedContentTypesListValue in requestObject.SupportedContentTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedContentTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedContentTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedInputModes())
             {
                 context.Writer.WritePropertyName("SupportedInputModes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedInputModesListValue in requestObject.SupportedInputModes)
                 {
-                        context.Writer.Write(requestObjectSupportedInputModesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedInputModesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

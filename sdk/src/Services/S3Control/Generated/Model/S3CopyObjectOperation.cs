@@ -84,12 +84,16 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i>
+        /// Specifying this header with an <i>Copy</i> action doesn’t affect <i>bucket-level</i>
         /// settings for S3 Bucket Key.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This functionality is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - S3 Bucket Keys aren't supported, when you copy SSE-KMS
+        /// encrypted objects from general purpose buckets to directory buckets, from directory
+        /// buckets to general purpose buckets, or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-objects-Batch-Ops">the
+        /// Copy operation in Batch Operations</a>. In this case, Amazon S3 makes a call to KMS
+        /// every time a copy request is made for a KMS-encrypted object.
         /// </para>
         ///  </note>
         /// </summary>
@@ -338,9 +342,30 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SSEAwsKmsKeyId.  <note> 
+        /// Gets and sets the property SSEAwsKmsKeyId. 
         /// <para>
-        /// This functionality is not supported by directory buckets.
+        /// Specifies the KMS key ID (Key ID, Key ARN, or Key Alias) to use for object encryption.
+        /// If the KMS key doesn't exist in the same account that's issuing the command, you must
+        /// use the full Key ARN not the Key ID.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets</b> - If you specify <c>SSEAlgorithm</c> with <c>KMS</c>, you
+        /// must specify the <c> SSEAwsKmsKeyId</c> parameter with the ID (Key ID or Key ARN)
+        /// of the KMS symmetric encryption customer managed key to use. Otherwise, you get an
+        /// HTTP <c>400 Bad Request</c> error. The key alias format of the KMS key isn't supported.
+        /// To encrypt new object copies in a directory bucket with SSE-KMS, you must specify
+        /// SSE-KMS as the directory bucket's default encryption configuration with a KMS key
+        /// (specifically, a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed key</a>). The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. Your SSE-KMS configuration
+        /// can only support 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed key</a> per directory bucket for the lifetime of the bucket. After you specify
+        /// a customer managed key for SSE-KMS as the bucket default encryption, you can't override
+        /// the customer managed key for the bucket's SSE-KMS configuration. Then, when you specify
+        /// server-side encryption settings for new object copies with SSE-KMS, you must make
+        /// sure the encryption key is the same customer managed key that you specified for the
+        /// directory bucket's default encryption configuration. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -415,10 +440,19 @@ namespace Amazon.S3Control.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For example, to copy objects to a directory bucket named
-        /// <c>destinationBucket</c> in the Availability Zone; identified by the AZ ID <c>usw2-az1</c>,
+        /// <c>destinationBucket</c> in the Availability Zone identified by the AZ ID <c>usw2-az1</c>,
         /// set the <c>TargetResource</c> property to <c>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az1</i>--x-s3</c>.
+        /// A directory bucket as a destination bucket can be in Availability Zone or Local Zone.
+        /// 
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// Copying objects across different Amazon Web Services Regions isn't supported when
+        /// the source or destination bucket is in Amazon Web Services Local Zones. The source
+        /// and destination buckets must have the same parent Amazon Web Services Region. Otherwise,
+        /// you get an HTTP <c>400 Bad Request</c> error with the error code <c>InvalidRequest</c>.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TargetResource

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TaskReportConfig Object
     /// </summary>  
-    public class TaskReportConfigUnmarshaller : IUnmarshaller<TaskReportConfig, XmlUnmarshallerContext>, IUnmarshaller<TaskReportConfig, JsonUnmarshallerContext>
+    public class TaskReportConfigUnmarshaller : IJsonUnmarshaller<TaskReportConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TaskReportConfig IUnmarshaller<TaskReportConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskReportConfig Unmarshall(JsonUnmarshallerContext context)
+        public TaskReportConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TaskReportConfig unmarshalledObject = new TaskReportConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Destination", targetDepth))
                 {
                     var unmarshaller = ReportDestinationUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ObjectVersionIds", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ObjectVersionIds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ObjectVersionIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Overrides", targetDepth))
                 {
                     var unmarshaller = ReportOverridesUnmarshaller.Instance;
-                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReportLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReportLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReportLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -42,6 +42,10 @@ namespace Amazon.ECS.Model
     /// authorization. When a task definition revision is not specified, authorization will
     /// occur using the latest revision of a task definition.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Amazon Elastic Inference (EI) is no longer available to customers.
+    /// </para>
     ///  </note> 
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
@@ -150,19 +154,10 @@ namespace Amazon.ECS.Model
     /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
     /// 
     /// </para>
-    ///  
-    /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
-    /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
+        private AvailabilityZoneRebalancing _availabilityZoneRebalancing;
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clientToken;
         private string _cluster;
@@ -187,6 +182,31 @@ namespace Amazon.ECS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
         private List<ServiceVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceVolumeConfiguration>() : null;
+        private List<VpcLatticeConfiguration> _vpcLatticeConfigurations = AWSConfigs.InitializeCollections ? new List<VpcLatticeConfiguration>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRebalancing. 
+        /// <para>
+        /// Indicates whether to use Availability Zone rebalancing for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+        /// an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
+        {
+            get { return this._availabilityZoneRebalancing; }
+            set { this._availabilityZoneRebalancing = value; }
+        }
+
+        // Check to see if AvailabilityZoneRebalancing property is set
+        internal bool IsSetAvailabilityZoneRebalancing()
+        {
+            return this._availabilityZoneRebalancing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -201,7 +221,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+        /// A capacity provider strategy can contain a maximum of 20 capacity providers.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
@@ -367,24 +387,18 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started. This is
-        /// only used when your service is configured to use a load balancer. If your service
-        /// has a load balancer defined and you don't specify a health check grace period value,
-        /// the default value of <c>0</c> is used.
+        /// Elastic Load Balancing, VPC Lattice, and container health checks after a task has
+        /// first started. If you don't specify a health check grace period value, the default
+        /// value of <c>0</c> is used. If you don't use any of the health checks, then <c>healthCheckGracePeriodSeconds</c>
+        /// is unused.
         /// </para>
         ///  
         /// <para>
-        /// If you do not use an Elastic Load Balancing, we recommend that you use the <c>startPeriod</c>
-        /// in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
-        /// check</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If your service's tasks take a while to start and respond to Elastic Load Balancing
-        /// health checks, you can specify a health check grace period of up to 2,147,483,647
-        /// seconds (about 69 years). During that time, the Amazon ECS service scheduler ignores
-        /// health check status. This grace period can prevent the service scheduler from marking
-        /// tasks as unhealthy and stopping them before they have time to come up.
+        /// If your service's tasks take a while to start and respond to health checks, you can
+        /// specify a health check grace period of up to 2,147,483,647 seconds (about 69 years).
+        /// During that time, the Amazon ECS service scheduler ignores health check status. This
+        /// grace period can prevent the service scheduler from marking tasks as unhealthy and
+        /// stopping them before they have time to come up.
         /// </para>
         /// </summary>
         public int? HealthCheckGracePeriodSeconds
@@ -898,6 +912,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetVolumeConfigurations()
         {
             return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcLatticeConfigurations. 
+        /// <para>
+        /// The VPC Lattice configuration for the service being created.
+        /// </para>
+        /// </summary>
+        public List<VpcLatticeConfiguration> VpcLatticeConfigurations
+        {
+            get { return this._vpcLatticeConfigurations; }
+            set { this._vpcLatticeConfigurations = value; }
+        }
+
+        // Check to see if VpcLatticeConfigurations property is set
+        internal bool IsSetVpcLatticeConfigurations()
+        {
+            return this._vpcLatticeConfigurations != null && (this._vpcLatticeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

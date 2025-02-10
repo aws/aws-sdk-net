@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetPathFormat())
             {
                 context.Writer.WritePropertyName("pathFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PathFormatMarshaller.Instance;
                 marshaller.Marshall(requestObject.PathFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("s3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
             if(requestObject.IsSetTranscriptFilter())
             {
                 context.Writer.WritePropertyName("transcriptFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TranscriptFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TranscriptFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTranscriptFormat())
             {
                 context.Writer.WritePropertyName("transcriptFormat");
-                context.Writer.Write(requestObject.TranscriptFormat);
+                context.Writer.WriteStringValue(requestObject.TranscriptFormat);
             }
 
         }

@@ -76,9 +76,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DesiredCapacity", StringUtils.FromInt(publicRequestlistValue.DesiredCapacity));
                             }
-                            if(publicRequestlistValue.IsSetEndTimeUtc())
+                            if(publicRequestlistValue.IsSetEndTime())
                             {
-                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTimeUtc));
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTime));
                             }
                             if(publicRequestlistValue.IsSetMaxSize())
                             {
@@ -96,9 +96,9 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ScheduledActionName", StringUtils.FromString(publicRequestlistValue.ScheduledActionName));
                             }
-                            if(publicRequestlistValue.IsSetStartTimeUtc())
+                            if(publicRequestlistValue.IsSetStartTime())
                             {
-                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTimeUtc));
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTime));
                             }
                             if(publicRequestlistValue.IsSetTimeZone())
                             {

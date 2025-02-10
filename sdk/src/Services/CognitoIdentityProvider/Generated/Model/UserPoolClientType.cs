@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// Contains information about a user pool client.
+    /// The configuration of a user pool client.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.
+    /// </para>
     /// </summary>
     public partial class UserPoolClientType
     {
@@ -100,7 +107,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthFlows. 
         /// <para>
-        /// The allowed OAuth flows.
+        /// The OAuth grant types that you want your app client to generate. To create an app
+        /// client that generates client credentials grants, you must add <c>client_credentials</c>
+        /// as the only allowed OAuth flow.
         /// </para>
         ///  <dl> <dt>code</dt> <dd> 
         /// <para>
@@ -182,10 +191,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowedOAuthScopes. 
         /// <para>
-        /// The OAuth scopes that your app client supports. Possible values that OAuth provides
-        /// are <c>phone</c>, <c>email</c>, <c>openid</c>, and <c>profile</c>. Possible values
-        /// that Amazon Web Services provides are <c>aws.cognito.signin.user.admin</c>. Amazon
-        /// Cognito also supports custom scopes that you create in Resource Servers.
+        /// The OAuth 2.0 scopes that you want your app client to support. Can include standard
+        /// OAuth scopes like <c>phone</c>, <c>email</c>, <c>openid</c>, and <c>profile</c>. Can
+        /// also include the <c>aws.cognito.signin.user.admin</c> scope that authorizes user profile
+        /// self-service operations and custom scopes from resource servers.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -204,13 +213,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsConfiguration. 
         /// <para>
-        /// The Amazon Pinpoint analytics configuration for the user pool client.
+        /// The user pool analytics configuration for collecting metrics and sending them to your
+        /// Amazon Pinpoint campaign.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Cognito user pools only support sending events to Amazon Pinpoint projects
-        /// in the US East (N. Virginia) us-east-1 Region, regardless of the Region where the
-        /// user pool resides.
+        /// In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools only
+        /// support sending events to Amazon Pinpoint projects in Amazon Web Services Region us-east-1.
+        /// In Regions where Amazon Pinpoint is available, user pools support sending events to
+        /// Amazon Pinpoint projects within that same Region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -300,7 +311,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The ID of the client associated with the user pool.
+        /// The ID of the app client.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -319,7 +330,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientName. 
         /// <para>
-        /// The client name from the user pool request of the client type.
+        /// The name of the app client.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -338,7 +349,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientSecret. 
         /// <para>
-        /// The client secret from the user pool request of the client type.
+        /// The app client secret.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=64)]
@@ -499,6 +510,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Valid values include:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>ALLOW_USER_AUTH</c>: Enable selection-based sign-in with <c>USER_AUTH</c>. This
+        /// setting covers username-password, secure remote password (SRP), passwordless, and
+        /// passkey authentication. This authentiation flow can do username-password and SRP authentication
+        /// without other <c>ExplicitAuthFlows</c> permitting them. For example users can complete
+        /// an SRP challenge through <c>USER_AUTH</c> without the flow <c>USER_SRP_AUTH</c> being
+        /// active for the app client. This flow doesn't include <c>CUSTOM_AUTH</c>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>ALLOW_ADMIN_USER_PASSWORD_AUTH</c>: Enable admin based user password authentication
         /// flow <c>ADMIN_USER_PASSWORD_AUTH</c>. This setting replaces the <c>ADMIN_NO_SRP_AUTH</c>
@@ -736,9 +756,19 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SupportedIdentityProviders. 
         /// <para>
-        /// A list of provider names for the IdPs that this client supports. The following are
-        /// supported: <c>COGNITO</c>, <c>Facebook</c>, <c>Google</c>, <c>SignInWithApple</c>,
-        /// <c>LoginWithAmazon</c>, and the names of your own SAML and OIDC providers.
+        /// A list of provider names for the identity providers (IdPs) that are supported on this
+        /// client. The following are supported: <c>COGNITO</c>, <c>Facebook</c>, <c>Google</c>,
+        /// <c>SignInWithApple</c>, and <c>LoginWithAmazon</c>. You can also specify the names
+        /// that you configured for the SAML and OIDC IdPs in your user pool, for example <c>MySAMLIdP</c>
+        /// or <c>MyOIDCIdP</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+        /// login</a>. The removal of <c>COGNITO</c> from this list doesn't prevent authentication
+        /// operations for local users with the user pools API in an Amazon Web Services SDK.
+        /// The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
+        /// rule</a>.
         /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders
@@ -756,8 +786,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TokenValidityUnits. 
         /// <para>
-        /// The time units used to specify the token validity times of each token type: ID, access,
-        /// and refresh.
+        /// The time units that, with <c>IdTokenValidity</c>, <c>AccessTokenValidity</c>, and
+        /// <c>RefreshTokenValidity</c>, set and display the duration of ID, access, and refresh
+        /// tokens for an app client. You can assign a separate token validity unit to each type
+        /// of token. 
         /// </para>
         /// </summary>
         public TokenValidityUnitsType TokenValidityUnits
@@ -775,7 +807,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool client.
+        /// The ID of the user pool associated with the app client.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

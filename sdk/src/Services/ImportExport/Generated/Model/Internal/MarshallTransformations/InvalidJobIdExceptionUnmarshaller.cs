@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidJobIdException operation
     /// </summary>  
-    public class InvalidJobIdExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidJobIdException, XmlUnmarshallerContext>
+    public class InvalidJobIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidJobIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

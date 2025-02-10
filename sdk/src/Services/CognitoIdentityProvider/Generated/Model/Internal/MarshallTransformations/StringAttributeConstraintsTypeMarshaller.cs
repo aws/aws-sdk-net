@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxLength())
             {
                 context.Writer.WritePropertyName("MaxLength");
-                context.Writer.Write(requestObject.MaxLength);
+                context.Writer.WriteStringValue(requestObject.MaxLength);
             }
 
             if(requestObject.IsSetMinLength())
             {
                 context.Writer.WritePropertyName("MinLength");
-                context.Writer.Write(requestObject.MinLength);
+                context.Writer.WriteStringValue(requestObject.MinLength);
             }
 
         }

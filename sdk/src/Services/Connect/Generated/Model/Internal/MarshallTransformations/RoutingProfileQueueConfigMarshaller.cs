@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDelay())
             {
                 context.Writer.WritePropertyName("Delay");
-                context.Writer.Write(requestObject.Delay.Value);
+                context.Writer.WriteNumberValue(requestObject.Delay.Value);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetQueueReference())
             {
                 context.Writer.WritePropertyName("QueueReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RoutingProfileQueueReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueueReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

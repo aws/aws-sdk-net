@@ -40,11 +40,25 @@ namespace Amazon.PaymentCryptographyData.Model
     /// You can generate an encryption key within Amazon Web Services Payment Cryptography
     /// by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
     /// You can import your own encryption key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// For this operation, the key must have <c>KeyModesOfUse</c> set to <c>Encrypt</c>.
     /// In asymmetric encryption, plaintext is encrypted using public component. You can import
     /// the public component of an asymmetric key pair created outside Amazon Web Services
     /// Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
     /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation also supports dynamic keys, allowing you to pass a dynamic encryption
+    /// key as a TR-31 WrappedKeyBlock. This can be used when key material is frequently rotated,
+    /// such as during every card transaction, and there is need to avoid importing short-lived
+    /// keys into Amazon Web Services Payment Cryptography. To encrypt using dynamic keys,
+    /// the <c>keyARN</c> is the Key Encryption Key (KEK) of the TR-31 wrapped encryption
+    /// key material. The incoming wrapped key shall have a key purpose of D0 with a mode
+    /// of use of B or D. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/use-cases-acquirers-dynamickeys.html">Using
+    /// Dynamic Keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -168,7 +182,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=4064)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4064)]
         public string PlainText
         {
             get { return this._plainText; }

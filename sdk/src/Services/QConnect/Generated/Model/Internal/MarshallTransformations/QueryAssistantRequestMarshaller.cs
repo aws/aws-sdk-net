@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -64,59 +67,81 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field AssistantId set");
             request.AddPathResource("{assistantId}", StringUtils.FromString(publicRequest.AssistantId));
             request.ResourcePath = "/assistants/{assistantId}/query";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaxResults())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetQueryCondition())
-                    {
-                        context.Writer.WritePropertyName("queryCondition");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestQueryConditionListValue in publicRequest.QueryCondition)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = QueryConditionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestQueryConditionListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetQueryText())
-                    {
-                        context.Writer.WritePropertyName("queryText");
-                        context.Writer.Write(publicRequest.QueryText);
-                    }
-
-                    if(publicRequest.IsSetSessionId())
-                    {
-                        context.Writer.WritePropertyName("sessionId");
-                        context.Writer.Write(publicRequest.SessionId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetOverrideKnowledgeBaseSearchType())
+            {
+                context.Writer.WritePropertyName("overrideKnowledgeBaseSearchType");
+                context.Writer.WriteStringValue(publicRequest.OverrideKnowledgeBaseSearchType);
+            }
+
+            if(publicRequest.IsSetQueryCondition())
+            {
+                context.Writer.WritePropertyName("queryCondition");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestQueryConditionListValue in publicRequest.QueryCondition)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = QueryConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestQueryConditionListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetQueryInputData())
+            {
+                context.Writer.WritePropertyName("queryInputData");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QueryInputDataMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QueryInputData, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueryText())
+            {
+                context.Writer.WritePropertyName("queryText");
+                context.Writer.WriteStringValue(publicRequest.QueryText);
+            }
+
+            if(publicRequest.IsSetSessionId())
+            {
+                context.Writer.WritePropertyName("sessionId");
+                context.Writer.WriteStringValue(publicRequest.SessionId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

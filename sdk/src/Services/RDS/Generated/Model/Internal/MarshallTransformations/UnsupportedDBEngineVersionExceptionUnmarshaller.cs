@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnsupportedDBEngineVersionException operation
     /// </summary>  
-    public class UnsupportedDBEngineVersionExceptionUnmarshaller : IErrorResponseUnmarshaller<UnsupportedDBEngineVersionException, XmlUnmarshallerContext>
+    public class UnsupportedDBEngineVersionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UnsupportedDBEngineVersionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

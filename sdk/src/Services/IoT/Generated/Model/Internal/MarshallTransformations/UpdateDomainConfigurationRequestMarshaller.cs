@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -64,64 +67,92 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field DomainConfigurationName set");
             request.AddPathResource("{domainConfigurationName}", StringUtils.FromString(publicRequest.DomainConfigurationName));
             request.ResourcePath = "/domainConfigurations/{domainConfigurationName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationProtocol())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuthorizerConfig())
-                    {
-                        context.Writer.WritePropertyName("authorizerConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AuthorizerConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AuthorizerConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDomainConfigurationStatus())
-                    {
-                        context.Writer.WritePropertyName("domainConfigurationStatus");
-                        context.Writer.Write(publicRequest.DomainConfigurationStatus);
-                    }
-
-                    if(publicRequest.IsSetRemoveAuthorizerConfig())
-                    {
-                        context.Writer.WritePropertyName("removeAuthorizerConfig");
-                        context.Writer.Write(publicRequest.RemoveAuthorizerConfig.Value);
-                    }
-
-                    if(publicRequest.IsSetServerCertificateConfig())
-                    {
-                        context.Writer.WritePropertyName("serverCertificateConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ServerCertificateConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTlsConfig())
-                    {
-                        context.Writer.WritePropertyName("tlsConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TlsConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TlsConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applicationProtocol");
+                context.Writer.WriteStringValue(publicRequest.ApplicationProtocol);
             }
+
+            if(publicRequest.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("authenticationType");
+                context.Writer.WriteStringValue(publicRequest.AuthenticationType);
+            }
+
+            if(publicRequest.IsSetAuthorizerConfig())
+            {
+                context.Writer.WritePropertyName("authorizerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuthorizerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuthorizerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientCertificateConfig())
+            {
+                context.Writer.WritePropertyName("clientCertificateConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClientCertificateConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ClientCertificateConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDomainConfigurationStatus())
+            {
+                context.Writer.WritePropertyName("domainConfigurationStatus");
+                context.Writer.WriteStringValue(publicRequest.DomainConfigurationStatus);
+            }
+
+            if(publicRequest.IsSetRemoveAuthorizerConfig())
+            {
+                context.Writer.WritePropertyName("removeAuthorizerConfig");
+                context.Writer.WriteBooleanValue(publicRequest.RemoveAuthorizerConfig.Value);
+            }
+
+            if(publicRequest.IsSetServerCertificateConfig())
+            {
+                context.Writer.WritePropertyName("serverCertificateConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServerCertificateConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTlsConfig())
+            {
+                context.Writer.WritePropertyName("tlsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TlsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

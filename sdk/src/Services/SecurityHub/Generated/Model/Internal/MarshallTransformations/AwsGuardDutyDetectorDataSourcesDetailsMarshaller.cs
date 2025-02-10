@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudTrail())
             {
                 context.Writer.WritePropertyName("CloudTrail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesCloudTrailDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudTrail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDnsLogs())
             {
                 context.Writer.WritePropertyName("DnsLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesDnsLogsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DnsLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFlowLogs())
             {
                 context.Writer.WritePropertyName("FlowLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesFlowLogsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FlowLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKubernetes())
             {
                 context.Writer.WritePropertyName("Kubernetes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesKubernetesDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Kubernetes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMalwareProtection())
             {
                 context.Writer.WritePropertyName("MalwareProtection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesMalwareProtectionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MalwareProtection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Logs())
             {
                 context.Writer.WritePropertyName("S3Logs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesS3LogsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Logs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -75,6 +75,21 @@
         "UseS3ExpressControlEndpoint":{"value":true}
       }
     },
+    "CreateBucketMetadataTableConfiguration":{
+      "name":"CreateBucketMetadataTableConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/{Bucket}?metadataTable"
+      },
+      "input":{"shape":"CreateBucketMetadataTableConfigurationRequest"},
+      "httpChecksum":{
+        "requestAlgorithmMember":"ChecksumAlgorithm",
+        "requestChecksumRequired":true
+      },
+      "staticContextParams":{
+        "UseS3ExpressControlEndpoint":{"value":true}
+      }
+    },
     "CreateMultipartUpload":{
       "name":"CreateMultipartUpload",
       "http":{
@@ -184,6 +199,18 @@
       },
       "input":{"shape":"DeleteBucketLifecycleRequest"},
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/RESTBucketDELETElifecycle.html",
+      "staticContextParams":{
+        "UseS3ExpressControlEndpoint":{"value":true}
+      }
+    },
+    "DeleteBucketMetadataTableConfiguration":{
+      "name":"DeleteBucketMetadataTableConfiguration",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/{Bucket}?metadataTable",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteBucketMetadataTableConfigurationRequest"},
       "staticContextParams":{
         "UseS3ExpressControlEndpoint":{"value":true}
       }
@@ -449,6 +476,18 @@
         "UseS3ExpressControlEndpoint":{"value":true}
       }
     },
+    "GetBucketMetadataTableConfiguration":{
+      "name":"GetBucketMetadataTableConfiguration",
+      "http":{
+        "method":"GET",
+        "requestUri":"/{Bucket}?metadataTable"
+      },
+      "input":{"shape":"GetBucketMetadataTableConfigurationRequest"},
+      "output":{"shape":"GetBucketMetadataTableConfigurationOutput"},
+      "staticContextParams":{
+        "UseS3ExpressControlEndpoint":{"value":true}
+      }
+    },
     "GetBucketMetricsConfiguration":{
       "name":"GetBucketMetricsConfiguration",
       "http":{
@@ -604,6 +643,7 @@
       "httpChecksum":{
         "requestValidationModeMember":"ChecksumMode",
         "responseAlgorithms":[
+          "CRC64NVME",
           "CRC32",
           "CRC32C",
           "SHA256",
@@ -964,6 +1004,7 @@
         "requestUri":"/{Bucket}?lifecycle"
       },
       "input":{"shape":"PutBucketLifecycleConfigurationRequest"},
+      "output":{"shape":"PutBucketLifecycleConfigurationOutput"},
       "httpChecksum":{
         "requestAlgorithmMember":"ChecksumAlgorithm",
         "requestChecksumRequired":true
@@ -1142,6 +1183,12 @@
       },
       "input":{"shape":"PutObjectRequest"},
       "output":{"shape":"PutObjectOutput"},
+      "errors":[
+        {"shape":"InvalidRequest"},
+        {"shape":"InvalidWriteOffset"},
+        {"shape":"TooManyParts"},
+        {"shape":"EncryptionTypeMismatch"}
+      ],
       "documentationUrl":"http://docs.amazonwebservices.com/AmazonS3/latest/API/RESTObjectPUT.html",
       "httpChecksum":{
         "requestAlgorithmMember":"ChecksumAlgorithm",
@@ -1359,6 +1406,11 @@
           "shape":"AccountId",
           "location":"header",
           "locationName":"x-amz-expected-bucket-owner"
+        },
+        "IfMatchInitiatedTime":{
+          "shape":"IfMatchInitiatedTime",
+          "location":"header",
+          "locationName":"x-amz-if-match-initiated-time"
         }
       }
     },
@@ -1489,7 +1541,8 @@
       "type":"structure",
       "members":{
         "Name":{"shape":"BucketName"},
-        "CreationDate":{"shape":"CreationDate"}
+        "CreationDate":{"shape":"CreationDate"},
+        "BucketRegion":{"shape":"BucketRegion"}
       }
     },
     "BucketAccelerateStatus":{
@@ -1592,6 +1645,7 @@
       ]
     },
     "BucketName":{"type":"string"},
+    "BucketRegion":{"type":"string"},
     "BucketType":{
       "type":"string",
       "enum":["Directory"]
@@ -1696,8 +1750,10 @@
       "members":{
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
-        "ChecksumSHA256":{"shape":"ChecksumSHA256"}
+        "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumType":{"shape":"ChecksumType"}
       }
     },
     "ChecksumAlgorithm":{
@@ -1706,7 +1762,8 @@
         "CRC32",
         "CRC32C",
         "SHA1",
-        "SHA256"
+        "SHA256",
+        "CRC64NVME"
       ]
     },
     "ChecksumAlgorithmList":{
@@ -1716,12 +1773,20 @@
     },
     "ChecksumCRC32":{"type":"string"},
     "ChecksumCRC32C":{"type":"string"},
+    "ChecksumCRC64NVME":{"type":"string"},
     "ChecksumMode":{
       "type":"string",
       "enum":["ENABLED"]
     },
     "ChecksumSHA1":{"type":"string"},
     "ChecksumSHA256":{"type":"string"},
+    "ChecksumType":{
+      "type":"string",
+      "enum":[
+        "COMPOSITE",
+        "FULL_OBJECT"
+      ]
+    },
     "CloudFunction":{"type":"string"},
     "CloudFunctionConfiguration":{
       "type":"structure",
@@ -1767,8 +1832,10 @@
         "ETag":{"shape":"ETag"},
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"},
+        "ChecksumType":{"shape":"ChecksumType"},
         "ServerSideEncryption":{
           "shape":"ServerSideEncryption",
           "location":"header",
@@ -1836,6 +1903,11 @@
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -1846,6 +1918,16 @@
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
         },
+        "ChecksumType":{
+          "shape":"ChecksumType",
+          "location":"header",
+          "locationName":"x-amz-checksum-type"
+        },
+        "MpuObjectSize":{
+          "shape":"MpuObjectSize",
+          "location":"header",
+          "locationName":"x-amz-mp-object-size"
+        },
         "RequestPayer":{
           "shape":"RequestPayer",
           "location":"header",
@@ -1855,6 +1937,11 @@
           "shape":"AccountId",
           "location":"header",
           "locationName":"x-amz-expected-bucket-owner"
+        },
+        "IfMatch":{
+          "shape":"IfMatch",
+          "location":"header",
+          "locationName":"If-Match"
         },
         "IfNoneMatch":{
           "shape":"IfNoneMatch",
@@ -1894,6 +1981,7 @@
         "ETag":{"shape":"ETag"},
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"},
         "PartNumber":{"shape":"PartNumber"}
@@ -2216,8 +2304,10 @@
       "members":{
         "ETag":{"shape":"ETag"},
         "LastModified":{"shape":"LastModified"},
+        "ChecksumType":{"shape":"ChecksumType"},
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"}
       }
@@ -2229,13 +2319,14 @@
         "LastModified":{"shape":"LastModified"},
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"}
       }
     },
     "CopySource":{
       "type":"string",
-      "pattern":"\\/.+\\/.+"
+      "pattern":"\\/?.+\\/.+"
     },
     "CopySourceIfMatch":{"type":"string"},
     "CopySourceIfModifiedSince":{"type":"timestamp"},
@@ -2256,6 +2347,42 @@
         "Location":{"shape":"LocationInfo"},
         "Bucket":{"shape":"BucketInfo"}
       }
+    },
+    "CreateBucketMetadataTableConfigurationRequest":{
+      "type":"structure",
+      "required":[
+        "Bucket",
+        "MetadataTableConfiguration"
+      ],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "contextParam":{"name":"Bucket"},
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "ContentMD5":{
+          "shape":"ContentMD5",
+          "location":"header",
+          "locationName":"Content-MD5"
+        },
+        "ChecksumAlgorithm":{
+          "shape":"ChecksumAlgorithm",
+          "location":"header",
+          "locationName":"x-amz-sdk-checksum-algorithm"
+        },
+        "MetadataTableConfiguration":{
+          "shape":"MetadataTableConfiguration",
+          "locationName":"MetadataTableConfiguration",
+          "xmlNamespace":{"uri":"http://s3.amazonaws.com/doc/2006-03-01/"}
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
+        }
+      },
+      "payload":"MetadataTableConfiguration"
     },
     "CreateBucketOutput":{
       "type":"structure",
@@ -2383,6 +2510,11 @@
           "shape":"ChecksumAlgorithm",
           "location":"header",
           "locationName":"x-amz-checksum-algorithm"
+        },
+        "ChecksumType":{
+          "shape":"ChecksumType",
+          "location":"header",
+          "locationName":"x-amz-checksum-type"
         }
       }
     },
@@ -2544,6 +2676,11 @@
           "shape":"ChecksumAlgorithm",
           "location":"header",
           "locationName":"x-amz-checksum-algorithm"
+        },
+        "ChecksumType":{
+          "shape":"ChecksumType",
+          "location":"header",
+          "locationName":"x-amz-checksum-type"
         }
       }
     },
@@ -2617,7 +2754,10 @@
     "CreationDate":{"type":"timestamp"},
     "DataRedundancy":{
       "type":"string",
-      "enum":["SingleAvailabilityZone"]
+      "enum":[
+        "SingleAvailabilityZone",
+        "SingleLocalZone"
+      ]
     },
     "Date":{
       "type":"timestamp",
@@ -2755,6 +2895,23 @@
       }
     },
     "DeleteBucketLifecycleRequest":{
+      "type":"structure",
+      "required":["Bucket"],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "contextParam":{"name":"Bucket"},
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
+        }
+      }
+    },
+    "DeleteBucketMetadataTableConfigurationRequest":{
       "type":"structure",
       "required":["Bucket"],
       "members":{
@@ -2991,6 +3148,21 @@
           "shape":"AccountId",
           "location":"header",
           "locationName":"x-amz-expected-bucket-owner"
+        },
+        "IfMatch":{
+          "shape":"IfMatch",
+          "location":"header",
+          "locationName":"If-Match"
+        },
+        "IfMatchLastModifiedTime":{
+          "shape":"IfMatchLastModifiedTime",
+          "location":"header",
+          "locationName":"x-amz-if-match-last-modified-time"
+        },
+        "IfMatchSize":{
+          "shape":"IfMatchSize",
+          "location":"header",
+          "locationName":"x-amz-if-match-size"
         }
       }
     },
@@ -3172,6 +3344,13 @@
         "ReplicaKmsKeyID":{"shape":"ReplicaKmsKeyID"}
       }
     },
+    "EncryptionTypeMismatch":{
+      "type":"structure",
+      "members":{
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "End":{
       "type":"long",
       "box":true
@@ -3192,6 +3371,13 @@
       }
     },
     "ErrorCode":{"type":"string"},
+    "ErrorDetails":{
+      "type":"structure",
+      "members":{
+        "ErrorCode":{"shape":"ErrorCode"},
+        "ErrorMessage":{"shape":"ErrorMessage"}
+      }
+    },
     "ErrorDocument":{
       "type":"structure",
       "required":["Key"],
@@ -3525,6 +3711,11 @@
         "Rules":{
           "shape":"LifecycleRules",
           "locationName":"Rule"
+        },
+        "TransitionDefaultMinimumObjectSize":{
+          "shape":"TransitionDefaultMinimumObjectSize",
+          "location":"header",
+          "locationName":"x-amz-transition-default-minimum-object-size"
         }
       }
     },
@@ -3615,6 +3806,42 @@
           "location":"header",
           "locationName":"x-amz-expected-bucket-owner"
         }
+      }
+    },
+    "GetBucketMetadataTableConfigurationOutput":{
+      "type":"structure",
+      "members":{
+        "GetBucketMetadataTableConfigurationResult":{"shape":"GetBucketMetadataTableConfigurationResult"}
+      },
+      "payload":"GetBucketMetadataTableConfigurationResult"
+    },
+    "GetBucketMetadataTableConfigurationRequest":{
+      "type":"structure",
+      "required":["Bucket"],
+      "members":{
+        "Bucket":{
+          "shape":"BucketName",
+          "contextParam":{"name":"Bucket"},
+          "location":"uri",
+          "locationName":"Bucket"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"AccountId",
+          "location":"header",
+          "locationName":"x-amz-expected-bucket-owner"
+        }
+      }
+    },
+    "GetBucketMetadataTableConfigurationResult":{
+      "type":"structure",
+      "required":[
+        "MetadataTableConfigurationResult",
+        "Status"
+      ],
+      "members":{
+        "MetadataTableConfigurationResult":{"shape":"MetadataTableConfigurationResult"},
+        "Status":{"shape":"MetadataTableStatus"},
+        "Error":{"shape":"ErrorDetails"}
       }
     },
     "GetBucketMetricsConfigurationOutput":{
@@ -4147,6 +4374,11 @@
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -4156,6 +4388,11 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
+        },
+        "ChecksumType":{
+          "shape":"ChecksumType",
+          "location":"header",
+          "locationName":"x-amz-checksum-type"
         },
         "MissingMeta":{
           "shape":"MissingMeta",
@@ -4696,6 +4933,11 @@
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -4705,6 +4947,11 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
+        },
+        "ChecksumType":{
+          "shape":"ChecksumType",
+          "location":"header",
+          "locationName":"x-amz-checksum-type"
         },
         "ETag":{
           "shape":"ETag",
@@ -4944,6 +5191,18 @@
     "HttpRedirectCode":{"type":"string"},
     "ID":{"type":"string"},
     "IfMatch":{"type":"string"},
+    "IfMatchInitiatedTime":{
+      "type":"timestamp",
+      "timestampFormat":"rfc822"
+    },
+    "IfMatchLastModifiedTime":{
+      "type":"timestamp",
+      "timestampFormat":"rfc822"
+    },
+    "IfMatchSize":{
+      "type":"long",
+      "box":true
+    },
     "IfModifiedSince":{"type":"timestamp"},
     "IfNoneMatch":{"type":"string"},
     "IfUnmodifiedSince":{"type":"timestamp"},
@@ -5038,6 +5297,20 @@
         "AccessTier":{"shape":"IntelligentTieringAccessTier"}
       },
       "error":{"httpStatusCode":403},
+      "exception":true
+    },
+    "InvalidRequest":{
+      "type":"structure",
+      "members":{
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
+    "InvalidWriteOffset":{
+      "type":"structure",
+      "members":{
+      },
+      "error":{"httpStatusCode":400},
       "exception":true
     },
     "InventoryConfiguration":{
@@ -5231,6 +5504,10 @@
       "flattened":true
     },
     "LastModified":{"type":"timestamp"},
+    "LastModifiedTime":{
+      "type":"timestamp",
+      "timestampFormat":"rfc822"
+    },
     "LifecycleConfiguration":{
       "type":"structure",
       "required":["Rules"],
@@ -5437,7 +5714,8 @@
       "members":{
         "Buckets":{"shape":"Buckets"},
         "Owner":{"shape":"Owner"},
-        "ContinuationToken":{"shape":"NextToken"}
+        "ContinuationToken":{"shape":"NextToken"},
+        "Prefix":{"shape":"Prefix"}
       }
     },
     "ListBucketsRequest":{
@@ -5452,6 +5730,16 @@
           "shape":"Token",
           "location":"querystring",
           "locationName":"continuation-token"
+        },
+        "Prefix":{
+          "shape":"Prefix",
+          "location":"querystring",
+          "locationName":"prefix"
+        },
+        "BucketRegion":{
+          "shape":"BucketRegion",
+          "location":"querystring",
+          "locationName":"bucket-region"
         }
       }
     },
@@ -5832,7 +6120,8 @@
           "location":"header",
           "locationName":"x-amz-request-charged"
         },
-        "ChecksumAlgorithm":{"shape":"ChecksumAlgorithm"}
+        "ChecksumAlgorithm":{"shape":"ChecksumAlgorithm"},
+        "ChecksumType":{"shape":"ChecksumType"}
       }
     },
     "ListPartsRequest":{
@@ -5909,7 +6198,10 @@
     "LocationPrefix":{"type":"string"},
     "LocationType":{
       "type":"string",
-      "enum":["AvailabilityZone"]
+      "enum":[
+        "AvailabilityZone",
+        "LocalZone"
+      ]
     },
     "LoggingEnabled":{
       "type":"structure",
@@ -5947,7 +6239,7 @@
     "MaxBuckets":{
       "type":"integer",
       "box":true,
-      "max":1000,
+      "max":10000,
       "min":1
     },
     "MaxDirectoryBuckets":{
@@ -5980,6 +6272,21 @@
       }
     },
     "MetadataKey":{"type":"string"},
+    "MetadataTableConfiguration":{
+      "type":"structure",
+      "required":["S3TablesDestination"],
+      "members":{
+        "S3TablesDestination":{"shape":"S3TablesDestination"}
+      }
+    },
+    "MetadataTableConfigurationResult":{
+      "type":"structure",
+      "required":["S3TablesDestinationResult"],
+      "members":{
+        "S3TablesDestinationResult":{"shape":"S3TablesDestinationResult"}
+      }
+    },
+    "MetadataTableStatus":{"type":"string"},
     "MetadataValue":{"type":"string"},
     "Metrics":{
       "type":"structure",
@@ -6036,6 +6343,7 @@
       "box":true
     },
     "MissingMeta":{"type":"integer"},
+    "MpuObjectSize":{"type":"long"},
     "MultipartUpload":{
       "type":"structure",
       "members":{
@@ -6045,7 +6353,8 @@
         "StorageClass":{"shape":"StorageClass"},
         "Owner":{"shape":"Owner"},
         "Initiator":{"shape":"Initiator"},
-        "ChecksumAlgorithm":{"shape":"ChecksumAlgorithm"}
+        "ChecksumAlgorithm":{"shape":"ChecksumAlgorithm"},
+        "ChecksumType":{"shape":"ChecksumType"}
       }
     },
     "MultipartUploadId":{"type":"string"},
@@ -6147,6 +6456,7 @@
         "LastModified":{"shape":"LastModified"},
         "ETag":{"shape":"ETag"},
         "ChecksumAlgorithm":{"shape":"ChecksumAlgorithmList"},
+        "ChecksumType":{"shape":"ChecksumType"},
         "Size":{"shape":"Size"},
         "StorageClass":{"shape":"ObjectStorageClass"},
         "Owner":{"shape":"Owner"},
@@ -6191,7 +6501,10 @@
       "required":["Key"],
       "members":{
         "Key":{"shape":"ObjectKey"},
-        "VersionId":{"shape":"ObjectVersionId"}
+        "VersionId":{"shape":"ObjectVersionId"},
+        "ETag":{"shape":"ETag"},
+        "LastModifiedTime":{"shape":"LastModifiedTime"},
+        "Size":{"shape":"Size"}
       }
     },
     "ObjectIdentifierList":{
@@ -6290,6 +6603,7 @@
         "Size":{"shape":"Size"},
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"}
       }
@@ -6327,6 +6641,7 @@
       "members":{
         "ETag":{"shape":"ETag"},
         "ChecksumAlgorithm":{"shape":"ChecksumAlgorithmList"},
+        "ChecksumType":{"shape":"ChecksumType"},
         "Size":{"shape":"Size"},
         "StorageClass":{"shape":"ObjectVersionStorageClass"},
         "Key":{"shape":"ObjectKey"},
@@ -6415,6 +6730,7 @@
         "Size":{"shape":"Size"},
         "ChecksumCRC32":{"shape":"ChecksumCRC32"},
         "ChecksumCRC32C":{"shape":"ChecksumCRC32C"},
+        "ChecksumCRC64NVME":{"shape":"ChecksumCRC64NVME"},
         "ChecksumSHA1":{"shape":"ChecksumSHA1"},
         "ChecksumSHA256":{"shape":"ChecksumSHA256"}
       }
@@ -6784,6 +7100,16 @@
       },
       "payload":"InventoryConfiguration"
     },
+    "PutBucketLifecycleConfigurationOutput":{
+      "type":"structure",
+      "members":{
+        "TransitionDefaultMinimumObjectSize":{
+          "shape":"TransitionDefaultMinimumObjectSize",
+          "location":"header",
+          "locationName":"x-amz-transition-default-minimum-object-size"
+        }
+      }
+    },
     "PutBucketLifecycleConfigurationRequest":{
       "type":"structure",
       "required":["Bucket"],
@@ -6808,6 +7134,11 @@
           "shape":"AccountId",
           "location":"header",
           "locationName":"x-amz-expected-bucket-owner"
+        },
+        "TransitionDefaultMinimumObjectSize":{
+          "shape":"TransitionDefaultMinimumObjectSize",
+          "location":"header",
+          "locationName":"x-amz-transition-default-minimum-object-size"
         }
       },
       "payload":"LifecycleConfiguration"
@@ -7467,6 +7798,11 @@
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -7476,6 +7812,11 @@
           "shape":"ChecksumSHA256",
           "location":"header",
           "locationName":"x-amz-checksum-sha256"
+        },
+        "ChecksumType":{
+          "shape":"ChecksumType",
+          "location":"header",
+          "locationName":"x-amz-checksum-type"
         },
         "ServerSideEncryption":{
           "shape":"ServerSideEncryption",
@@ -7511,6 +7852,11 @@
           "shape":"BucketKeyEnabled",
           "location":"header",
           "locationName":"x-amz-server-side-encryption-bucket-key-enabled"
+        },
+        "Size":{
+          "shape":"Size",
+          "location":"header",
+          "locationName":"x-amz-object-size"
         },
         "RequestCharged":{
           "shape":"RequestCharged",
@@ -7591,6 +7937,11 @@
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -7605,6 +7956,11 @@
           "shape":"Expires",
           "location":"header",
           "locationName":"Expires"
+        },
+        "IfMatch":{
+          "shape":"IfMatch",
+          "location":"header",
+          "locationName":"If-Match"
         },
         "IfNoneMatch":{
           "shape":"IfNoneMatch",
@@ -7636,6 +7992,11 @@
           "contextParam":{"name":"Key"},
           "location":"uri",
           "locationName":"Key"
+        },
+        "WriteOffsetBytes":{
+          "shape":"WriteOffsetBytes",
+          "location":"header",
+          "locationName":"x-amz-write-offset-bytes"
         },
         "Metadata":{
           "shape":"Metadata",
@@ -8272,6 +8633,36 @@
         "StorageClass":{"shape":"StorageClass"}
       }
     },
+    "S3TablesArn":{"type":"string"},
+    "S3TablesBucketArn":{"type":"string"},
+    "S3TablesDestination":{
+      "type":"structure",
+      "required":[
+        "TableBucketArn",
+        "TableName"
+      ],
+      "members":{
+        "TableBucketArn":{"shape":"S3TablesBucketArn"},
+        "TableName":{"shape":"S3TablesName"}
+      }
+    },
+    "S3TablesDestinationResult":{
+      "type":"structure",
+      "required":[
+        "TableBucketArn",
+        "TableName",
+        "TableArn",
+        "TableNamespace"
+      ],
+      "members":{
+        "TableBucketArn":{"shape":"S3TablesBucketArn"},
+        "TableName":{"shape":"S3TablesName"},
+        "TableArn":{"shape":"S3TablesArn"},
+        "TableNamespace":{"shape":"S3TablesNamespace"}
+      }
+    },
+    "S3TablesName":{"type":"string"},
+    "S3TablesNamespace":{"type":"string"},
     "SSECustomerAlgorithm":{"type":"string"},
     "SSECustomerKey":{
       "type":"string",
@@ -8658,6 +9049,13 @@
       "flattened":true
     },
     "Token":{"type":"string"},
+    "TooManyParts":{
+      "type":"structure",
+      "members":{
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "TopicArn":{"type":"string"},
     "TopicConfiguration":{
       "type":"structure",
@@ -8705,6 +9103,13 @@
         "Days":{"shape":"Days"},
         "StorageClass":{"shape":"TransitionStorageClass"}
       }
+    },
+    "TransitionDefaultMinimumObjectSize":{
+      "type":"string",
+      "enum":[
+        "varies_by_storage_class",
+        "all_storage_classes_128K"
+      ]
     },
     "TransitionList":{
       "type":"list",
@@ -8905,6 +9310,11 @@
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -8985,6 +9395,11 @@
           "shape":"ChecksumCRC32C",
           "location":"header",
           "locationName":"x-amz-checksum-crc32c"
+        },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-checksum-crc64nvme"
         },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
@@ -9160,6 +9575,11 @@
           "location":"header",
           "locationName":"x-amz-fwd-header-x-amz-checksum-crc32c"
         },
+        "ChecksumCRC64NVME":{
+          "shape":"ChecksumCRC64NVME",
+          "location":"header",
+          "locationName":"x-amz-fwd-header-x-amz-checksum-crc64nvme"
+        },
         "ChecksumSHA1":{
           "shape":"ChecksumSHA1",
           "location":"header",
@@ -9282,6 +9702,10 @@
         }
       },
       "payload":"Body"
+    },
+    "WriteOffsetBytes":{
+      "type":"long",
+      "box":true
     },
     "Years":{
       "type":"integer",

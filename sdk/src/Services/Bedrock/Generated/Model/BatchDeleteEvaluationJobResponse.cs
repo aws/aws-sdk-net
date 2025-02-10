@@ -40,8 +40,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A JSON object containing the HTTP status codes and the ARNs of model evaluation jobs
-        /// that failed to be deleted.
+        /// A JSON object containing the HTTP status codes and the ARNs of evaluation jobs that
+        /// failed to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=25)]
@@ -60,7 +60,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property EvaluationJobs. 
         /// <para>
-        /// The list of model evaluation jobs to be deleted.
+        /// The list of evaluation jobs for deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

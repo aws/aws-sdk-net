@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrackingOptions Object
     /// </summary>  
-    public class TrackingOptionsUnmarshaller : IUnmarshaller<TrackingOptions, XmlUnmarshallerContext>, IUnmarshaller<TrackingOptions, JsonUnmarshallerContext>
+    public class TrackingOptionsUnmarshaller : IXmlUnmarshaller<TrackingOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrackingOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TrackingOptionsUnmarshaller _instance = new TrackingOptionsUnmarshaller();        
 

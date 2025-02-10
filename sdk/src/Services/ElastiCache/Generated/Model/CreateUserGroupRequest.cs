@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserGroup operation.
-    /// For Redis OSS engine version 6.0 onwards: Creates a Redis OSS user group. For more
-    /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+    /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Creates a user group.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>
     /// </summary>
     public partial class CreateUserGroupRequest : AmazonElastiCacheRequest
@@ -65,8 +65,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of tags to be added to this resource. A tag is a key-value pair. A tag key
-        /// must be accompanied by a tag value, although null is accepted. Available for Redis
-        /// OSS only.
+        /// must be accompanied by a tag value, although null is accepted. Available for Valkey
+        /// and Redis OSS only.
         /// </para>
         /// </summary>
         public List<Tag> Tags

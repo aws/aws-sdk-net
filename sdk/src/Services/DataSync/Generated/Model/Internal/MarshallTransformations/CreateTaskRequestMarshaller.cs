@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -63,135 +66,146 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCloudWatchLogGroupArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCloudWatchLogGroupArn())
-                    {
-                        context.Writer.WritePropertyName("CloudWatchLogGroupArn");
-                        context.Writer.Write(publicRequest.CloudWatchLogGroupArn);
-                    }
-
-                    if(publicRequest.IsSetDestinationLocationArn())
-                    {
-                        context.Writer.WritePropertyName("DestinationLocationArn");
-                        context.Writer.Write(publicRequest.DestinationLocationArn);
-                    }
-
-                    if(publicRequest.IsSetExcludes())
-                    {
-                        context.Writer.WritePropertyName("Excludes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestExcludesListValue in publicRequest.Excludes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FilterRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestExcludesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIncludes())
-                    {
-                        context.Writer.WritePropertyName("Includes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIncludesListValue in publicRequest.Includes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FilterRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestIncludesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetManifestConfig())
-                    {
-                        context.Writer.WritePropertyName("ManifestConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ManifestConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ManifestConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOptions())
-                    {
-                        context.Writer.WritePropertyName("Options");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Options, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchedule())
-                    {
-                        context.Writer.WritePropertyName("Schedule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TaskScheduleMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Schedule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceLocationArn())
-                    {
-                        context.Writer.WritePropertyName("SourceLocationArn");
-                        context.Writer.Write(publicRequest.SourceLocationArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagListEntryMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTaskReportConfig())
-                    {
-                        context.Writer.WritePropertyName("TaskReportConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TaskReportConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TaskReportConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CloudWatchLogGroupArn");
+                context.Writer.WriteStringValue(publicRequest.CloudWatchLogGroupArn);
             }
+
+            if(publicRequest.IsSetDestinationLocationArn())
+            {
+                context.Writer.WritePropertyName("DestinationLocationArn");
+                context.Writer.WriteStringValue(publicRequest.DestinationLocationArn);
+            }
+
+            if(publicRequest.IsSetExcludes())
+            {
+                context.Writer.WritePropertyName("Excludes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExcludesListValue in publicRequest.Excludes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FilterRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExcludesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIncludes())
+            {
+                context.Writer.WritePropertyName("Includes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIncludesListValue in publicRequest.Includes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FilterRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestIncludesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetManifestConfig())
+            {
+                context.Writer.WritePropertyName("ManifestConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManifestConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManifestConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Options, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("Schedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TaskScheduleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Schedule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceLocationArn())
+            {
+                context.Writer.WritePropertyName("SourceLocationArn");
+                context.Writer.WriteStringValue(publicRequest.SourceLocationArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagListEntryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTaskMode())
+            {
+                context.Writer.WritePropertyName("TaskMode");
+                context.Writer.WriteStringValue(publicRequest.TaskMode);
+            }
+
+            if(publicRequest.IsSetTaskReportConfig())
+            {
+                context.Writer.WritePropertyName("TaskReportConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TaskReportConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TaskReportConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

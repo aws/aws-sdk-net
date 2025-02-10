@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptureContentTypeHeader())
             {
                 context.Writer.WritePropertyName("CaptureContentTypeHeader");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaptureContentTypeHeaderMarshaller.Instance;
                 marshaller.Marshall(requestObject.CaptureContentTypeHeader, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCaptureOptions())
             {
                 context.Writer.WritePropertyName("CaptureOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptureOptionsListValue in requestObject.CaptureOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptureOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptureOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDestinationS3Uri())
             {
                 context.Writer.WritePropertyName("DestinationS3Uri");
-                context.Writer.Write(requestObject.DestinationS3Uri);
+                context.Writer.WriteStringValue(requestObject.DestinationS3Uri);
             }
 
             if(requestObject.IsSetEnableCapture())
             {
                 context.Writer.WritePropertyName("EnableCapture");
-                context.Writer.Write(requestObject.EnableCapture.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableCapture.Value);
             }
 
             if(requestObject.IsSetInitialSamplingPercentage())
             {
                 context.Writer.WritePropertyName("InitialSamplingPercentage");
-                context.Writer.Write(requestObject.InitialSamplingPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.InitialSamplingPercentage.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
         }

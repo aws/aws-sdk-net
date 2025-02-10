@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -64,95 +67,100 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                 throw new AmazonIoTTwinMakerException("Request object does not have required field WorkspaceId set");
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/entities";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComponents())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("components");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestComponentsKvp in publicRequest.Components)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComponents())
-                    {
-                        context.Writer.WritePropertyName("components");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestComponentsKvp in publicRequest.Components)
-                        {
-                            context.Writer.WritePropertyName(publicRequestComponentsKvp.Key);
-                            var publicRequestComponentsValue = publicRequestComponentsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestComponentsKvp.Key);
+                    var publicRequestComponentsValue = publicRequestComponentsKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ComponentRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestComponentsValue, context);
+                    var marshaller = ComponentRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestComponentsValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCompositeComponents())
-                    {
-                        context.Writer.WritePropertyName("compositeComponents");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestCompositeComponentsKvp in publicRequest.CompositeComponents)
-                        {
-                            context.Writer.WritePropertyName(publicRequestCompositeComponentsKvp.Key);
-                            var publicRequestCompositeComponentsValue = publicRequestCompositeComponentsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CompositeComponentRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCompositeComponentsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEntityId())
-                    {
-                        context.Writer.WritePropertyName("entityId");
-                        context.Writer.Write(publicRequest.EntityId);
-                    }
-
-                    if(publicRequest.IsSetEntityName())
-                    {
-                        context.Writer.WritePropertyName("entityName");
-                        context.Writer.Write(publicRequest.EntityName);
-                    }
-
-                    if(publicRequest.IsSetParentEntityId())
-                    {
-                        context.Writer.WritePropertyName("parentEntityId");
-                        context.Writer.Write(publicRequest.ParentEntityId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetCompositeComponents())
+            {
+                context.Writer.WritePropertyName("compositeComponents");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCompositeComponentsKvp in publicRequest.CompositeComponents)
+                {
+                    context.Writer.WritePropertyName(publicRequestCompositeComponentsKvp.Key);
+                    var publicRequestCompositeComponentsValue = publicRequestCompositeComponentsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CompositeComponentRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCompositeComponentsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEntityId())
+            {
+                context.Writer.WritePropertyName("entityId");
+                context.Writer.WriteStringValue(publicRequest.EntityId);
+            }
+
+            if(publicRequest.IsSetEntityName())
+            {
+                context.Writer.WritePropertyName("entityName");
+                context.Writer.WriteStringValue(publicRequest.EntityName);
+            }
+
+            if(publicRequest.IsSetParentEntityId())
+            {
+                context.Writer.WritePropertyName("parentEntityId");
+                context.Writer.WriteStringValue(publicRequest.ParentEntityId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"api.";

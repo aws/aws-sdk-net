@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EngineDefaults Object
     /// </summary>  
-    public class EngineDefaultsUnmarshaller : IUnmarshaller<EngineDefaults, XmlUnmarshallerContext>, IUnmarshaller<EngineDefaults, JsonUnmarshallerContext>
+    public class EngineDefaultsUnmarshaller : IXmlUnmarshaller<EngineDefaults, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EngineDefaults Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EngineDefaultsUnmarshaller _instance = new EngineDefaultsUnmarshaller();        
 

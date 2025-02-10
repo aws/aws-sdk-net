@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptanceRequired())
             {
                 context.Writer.WritePropertyName("AcceptanceRequired");
-                context.Writer.Write(requestObject.AcceptanceRequired.Value);
+                context.Writer.WriteBooleanValue(requestObject.AcceptanceRequired.Value);
             }
 
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("AvailabilityZones");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
                 {
-                        context.Writer.Write(requestObjectAvailabilityZonesListValue);
+                        context.Writer.WriteStringValue(requestObjectAvailabilityZonesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBaseEndpointDnsNames())
             {
                 context.Writer.WritePropertyName("BaseEndpointDnsNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBaseEndpointDnsNamesListValue in requestObject.BaseEndpointDnsNames)
                 {
-                        context.Writer.Write(requestObjectBaseEndpointDnsNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectBaseEndpointDnsNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGatewayLoadBalancerArns())
             {
                 context.Writer.WritePropertyName("GatewayLoadBalancerArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGatewayLoadBalancerArnsListValue in requestObject.GatewayLoadBalancerArns)
                 {
-                        context.Writer.Write(requestObjectGatewayLoadBalancerArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectGatewayLoadBalancerArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetManagesVpcEndpoints())
             {
                 context.Writer.WritePropertyName("ManagesVpcEndpoints");
-                context.Writer.Write(requestObject.ManagesVpcEndpoints.Value);
+                context.Writer.WriteBooleanValue(requestObject.ManagesVpcEndpoints.Value);
             }
 
             if(requestObject.IsSetNetworkLoadBalancerArns())
             {
                 context.Writer.WritePropertyName("NetworkLoadBalancerArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNetworkLoadBalancerArnsListValue in requestObject.NetworkLoadBalancerArns)
                 {
-                        context.Writer.Write(requestObjectNetworkLoadBalancerArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectNetworkLoadBalancerArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrivateDnsName())
             {
                 context.Writer.WritePropertyName("PrivateDnsName");
-                context.Writer.Write(requestObject.PrivateDnsName);
+                context.Writer.WriteStringValue(requestObject.PrivateDnsName);
             }
 
             if(requestObject.IsSetServiceId())
             {
                 context.Writer.WritePropertyName("ServiceId");
-                context.Writer.Write(requestObject.ServiceId);
+                context.Writer.WriteStringValue(requestObject.ServiceId);
             }
 
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("ServiceName");
-                context.Writer.Write(requestObject.ServiceName);
+                context.Writer.WriteStringValue(requestObject.ServiceName);
             }
 
             if(requestObject.IsSetServiceState())
             {
                 context.Writer.WritePropertyName("ServiceState");
-                context.Writer.Write(requestObject.ServiceState);
+                context.Writer.WriteStringValue(requestObject.ServiceState);
             }
 
             if(requestObject.IsSetServiceType())
             {
                 context.Writer.WritePropertyName("ServiceType");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServiceTypeListValue in requestObject.ServiceType)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2VpcEndpointServiceServiceTypeDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectServiceTypeListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

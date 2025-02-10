@@ -31,11 +31,7 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgent operation.
-    /// <note> 
-    /// <para>
-    /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeAgent</c>.
-    /// </para>
-    ///  </note> 
+    /// <note> </note> 
     /// <para>
     /// Sends a prompt for the agent to process and respond to. Note the following fields
     /// for the request:
@@ -55,6 +51,23 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// To stream agent responses, make sure that only orchestration prompt is enabled. Agent
+    /// streaming is not supported for the following steps: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Pre-processing</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Post-processing</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Agent with 1 Knowledge base and <c>User Input</c> not enabled
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
     /// End a conversation by setting <c>endSession</c> to <c>true</c>.
     /// </para>
     ///  </li> <li> 
@@ -65,7 +78,12 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+    /// The response contains both <b>chunk</b> and <b>trace</b> attributes.
+    /// </para>
+    ///  
+    /// <para>
+    /// The final response is returned in the <c>bytes</c> field of the <c>chunk</c> object.
+    /// The <c>InvokeAgent</c> returns one chunk for the entire interaction.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -91,12 +109,15 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private string _agentAliasId;
         private string _agentId;
+        private BedrockModelConfigurations _bedrockModelConfigurations;
         private bool? _enableTrace;
         private bool? _endSession;
         private string _inputText;
         private string _memoryId;
         private string _sessionId;
         private SessionState _sessionState;
+        private string _sourceArn;
+        private StreamingConfigurations _streamingConfigurations;
 
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
@@ -134,6 +155,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetAgentId()
         {
             return this._agentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockModelConfigurations. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public BedrockModelConfigurations BedrockModelConfigurations
+        {
+            get { return this._bedrockModelConfigurations; }
+            set { this._bedrockModelConfigurations = value; }
+        }
+
+        // Check to see if BedrockModelConfigurations property is set
+        internal bool IsSetBedrockModelConfigurations()
+        {
+            return this._bedrockModelConfigurations != null;
         }
 
         /// <summary>
@@ -262,6 +301,49 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSessionState()
         {
             return this._sessionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// The ARN of the resource making the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return !string.IsNullOrEmpty(this._sourceArn);
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingConfigurations. 
+        /// <para>
+        ///  Specifies the configurations for streaming. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To use agent streaming, you need permissions to perform the <c>bedrock:InvokeModelWithResponseStream</c>
+        /// action.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public StreamingConfigurations StreamingConfigurations
+        {
+            get { return this._streamingConfigurations; }
+            set { this._streamingConfigurations = value; }
+        }
+
+        // Check to see if StreamingConfigurations property is set
+        internal bool IsSetStreamingConfigurations()
+        {
+            return this._streamingConfigurations != null;
         }
 
     }

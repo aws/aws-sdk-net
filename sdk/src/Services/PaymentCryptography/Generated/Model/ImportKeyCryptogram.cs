@@ -103,7 +103,7 @@ namespace Amazon.PaymentCryptography.Model
         /// The RSA wrapped key cryptogram under import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=16, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=4096)]
         public string WrappedKeyCryptogram
         {
             get { return this._wrappedKeyCryptogram; }

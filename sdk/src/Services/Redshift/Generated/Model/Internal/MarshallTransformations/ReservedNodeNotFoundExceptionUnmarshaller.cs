@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedNodeNotFoundException operation
     /// </summary>  
-    public class ReservedNodeNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedNodeNotFoundException, XmlUnmarshallerContext>
+    public class ReservedNodeNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedNodeNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

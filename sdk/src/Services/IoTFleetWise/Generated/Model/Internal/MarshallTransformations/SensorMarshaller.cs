@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedValues())
             {
                 context.Writer.WritePropertyName("allowedValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedValuesListValue in requestObject.AllowedValues)
                 {
-                        context.Writer.Write(requestObjectAllowedValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
             if(requestObject.IsSetDeprecationMessage())
             {
                 context.Writer.WritePropertyName("deprecationMessage");
-                context.Writer.Write(requestObject.DeprecationMessage);
+                context.Writer.WriteStringValue(requestObject.DeprecationMessage);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WriteStringValue(requestObject.FullyQualifiedName);
             }
 
             if(requestObject.IsSetMax())
@@ -94,11 +92,11 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("max");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Max.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Max.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Max.Value);
+                    context.Writer.WriteNumberValue(requestObject.Max.Value);
                 }
             }
 
@@ -107,24 +105,24 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("min");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Min.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Min.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Min.Value);
+                    context.Writer.WriteNumberValue(requestObject.Min.Value);
                 }
             }
 
             if(requestObject.IsSetStructFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("structFullyQualifiedName");
-                context.Writer.Write(requestObject.StructFullyQualifiedName);
+                context.Writer.WriteStringValue(requestObject.StructFullyQualifiedName);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

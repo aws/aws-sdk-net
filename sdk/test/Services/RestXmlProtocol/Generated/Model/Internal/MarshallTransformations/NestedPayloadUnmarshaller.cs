@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NestedPayload Object
     /// </summary>  
-    public class NestedPayloadUnmarshaller : IUnmarshaller<NestedPayload, XmlUnmarshallerContext>, IUnmarshaller<NestedPayload, JsonUnmarshallerContext>
+    public class NestedPayloadUnmarshaller : IXmlUnmarshaller<NestedPayload, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NestedPayload Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static NestedPayloadUnmarshaller _instance = new NestedPayloadUnmarshaller();        
 
         /// <summary>

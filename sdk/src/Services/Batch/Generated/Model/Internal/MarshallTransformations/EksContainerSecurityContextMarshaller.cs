@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowPrivilegeEscalation())
             {
                 context.Writer.WritePropertyName("allowPrivilegeEscalation");
-                context.Writer.Write(requestObject.AllowPrivilegeEscalation.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowPrivilegeEscalation.Value);
             }
 
             if(requestObject.IsSetPrivileged())
             {
                 context.Writer.WritePropertyName("privileged");
-                context.Writer.Write(requestObject.Privileged.Value);
+                context.Writer.WriteBooleanValue(requestObject.Privileged.Value);
             }
 
             if(requestObject.IsSetReadOnlyRootFilesystem())
             {
                 context.Writer.WritePropertyName("readOnlyRootFilesystem");
-                context.Writer.Write(requestObject.ReadOnlyRootFilesystem.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadOnlyRootFilesystem.Value);
             }
 
             if(requestObject.IsSetRunAsGroup())
             {
                 context.Writer.WritePropertyName("runAsGroup");
-                context.Writer.Write(requestObject.RunAsGroup.Value);
+                context.Writer.WriteNumberValue(requestObject.RunAsGroup.Value);
             }
 
             if(requestObject.IsSetRunAsNonRoot())
             {
                 context.Writer.WritePropertyName("runAsNonRoot");
-                context.Writer.Write(requestObject.RunAsNonRoot.Value);
+                context.Writer.WriteBooleanValue(requestObject.RunAsNonRoot.Value);
             }
 
             if(requestObject.IsSetRunAsUser())
             {
                 context.Writer.WritePropertyName("runAsUser");
-                context.Writer.Write(requestObject.RunAsUser.Value);
+                context.Writer.WriteNumberValue(requestObject.RunAsUser.Value);
             }
 
         }

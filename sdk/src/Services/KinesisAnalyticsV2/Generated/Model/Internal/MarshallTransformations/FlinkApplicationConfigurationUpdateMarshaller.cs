@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCheckpointConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("CheckpointConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CheckpointConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.CheckpointConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMonitoringConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("MonitoringConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MonitoringConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.MonitoringConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParallelismConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("ParallelismConfigurationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParallelismConfigurationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParallelismConfigurationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

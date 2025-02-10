@@ -37,6 +37,7 @@ namespace Amazon.CleanRooms.Model
         private string _bucket;
         private string _keyPrefix;
         private ResultFormat _resultFormat;
+        private bool? _singleFileOutput;
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -93,6 +94,26 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetResultFormat()
         {
             return this._resultFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SingleFileOutput. 
+        /// <para>
+        /// Indicates whether files should be output as a single file (<c>TRUE</c>) or output
+        /// as multiple files (<c>FALSE</c>). This parameter is only supported for analyses with
+        /// the Spark analytics engine.
+        /// </para>
+        /// </summary>
+        public bool? SingleFileOutput
+        {
+            get { return this._singleFileOutput; }
+            set { this._singleFileOutput = value; }
+        }
+
+        // Check to see if SingleFileOutput property is set
+        internal bool IsSetSingleFileOutput()
+        {
+            return this._singleFileOutput.HasValue; 
         }
 
     }

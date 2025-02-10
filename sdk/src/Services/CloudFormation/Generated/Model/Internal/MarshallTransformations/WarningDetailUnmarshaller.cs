@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WarningDetail Object
     /// </summary>  
-    public class WarningDetailUnmarshaller : IUnmarshaller<WarningDetail, XmlUnmarshallerContext>, IUnmarshaller<WarningDetail, JsonUnmarshallerContext>
+    public class WarningDetailUnmarshaller : IXmlUnmarshaller<WarningDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public WarningDetail Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static WarningDetailUnmarshaller _instance = new WarningDetailUnmarshaller();        
 

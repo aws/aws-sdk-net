@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -64,39 +67,44 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
                 throw new AmazonEntityResolutionException("Request object does not have required field WorkflowName set");
             request.AddPathResource("{workflowName}", StringUtils.FromString(publicRequest.WorkflowName));
             request.ResourcePath = "/matchingworkflows/{workflowName}/matches";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplyNormalization())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplyNormalization())
-                    {
-                        context.Writer.WritePropertyName("applyNormalization");
-                        context.Writer.Write(publicRequest.ApplyNormalization.Value);
-                    }
-
-                    if(publicRequest.IsSetRecord())
-                    {
-                        context.Writer.WritePropertyName("record");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRecordKvp in publicRequest.Record)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRecordKvp.Key);
-                            var publicRequestRecordValue = publicRequestRecordKvp.Value;
-
-                                context.Writer.Write(publicRequestRecordValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applyNormalization");
+                context.Writer.WriteBooleanValue(publicRequest.ApplyNormalization.Value);
             }
+
+            if(publicRequest.IsSetRecord())
+            {
+                context.Writer.WritePropertyName("record");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRecordKvp in publicRequest.Record)
+                {
+                    context.Writer.WritePropertyName(publicRequestRecordKvp.Key);
+                    var publicRequestRecordValue = publicRequestRecordKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRecordValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

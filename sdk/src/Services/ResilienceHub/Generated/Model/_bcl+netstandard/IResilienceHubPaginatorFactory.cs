@@ -87,6 +87,11 @@ namespace Amazon.ResilienceHub.Model
         IListAppVersionsPaginator ListAppVersions(ListAppVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListMetrics operation
+        ///</summary>
+        IListMetricsPaginator ListMetrics(ListMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommendationTemplates operation
         ///</summary>
         IListRecommendationTemplatesPaginator ListRecommendationTemplates(ListRecommendationTemplatesRequest request);

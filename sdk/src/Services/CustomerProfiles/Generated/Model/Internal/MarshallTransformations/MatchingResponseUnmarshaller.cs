@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MatchingResponse Object
     /// </summary>  
-    public class MatchingResponseUnmarshaller : IUnmarshaller<MatchingResponse, XmlUnmarshallerContext>, IUnmarshaller<MatchingResponse, JsonUnmarshallerContext>
+    public class MatchingResponseUnmarshaller : IJsonUnmarshaller<MatchingResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MatchingResponse IUnmarshaller<MatchingResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MatchingResponse Unmarshall(JsonUnmarshallerContext context)
+        public MatchingResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MatchingResponse unmarshalledObject = new MatchingResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoMerging", targetDepth))
                 {
                     var unmarshaller = AutoMergingUnmarshaller.Instance;
-                    unmarshalledObject.AutoMerging = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoMerging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Enabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExportingConfig", targetDepth))
                 {
                     var unmarshaller = ExportingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ExportingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExportingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobSchedule", targetDepth))
                 {
                     var unmarshaller = JobScheduleUnmarshaller.Instance;
-                    unmarshalledObject.JobSchedule = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobSchedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

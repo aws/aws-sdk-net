@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ApiStage Object
     /// </summary>  
-    public class ApiStageUnmarshaller : IUnmarshaller<ApiStage, XmlUnmarshallerContext>, IUnmarshaller<ApiStage, JsonUnmarshallerContext>
+    public class ApiStageUnmarshaller : IJsonUnmarshaller<ApiStage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ApiStage IUnmarshaller<ApiStage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApiStage Unmarshall(JsonUnmarshallerContext context)
+        public ApiStage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ApiStage unmarshalledObject = new ApiStage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("apiId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("throttle", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ThrottleSettings, StringUnmarshaller, ThrottleSettingsUnmarshaller>(StringUnmarshaller.Instance, ThrottleSettingsUnmarshaller.Instance);
-                    unmarshalledObject.Throttle = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ThrottleSettings, StringUnmarshaller, ThrottleSettingsUnmarshaller>(StringUnmarshaller.Instance, ThrottleSettingsUnmarshaller.Instance);
+                    unmarshalledObject.Throttle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

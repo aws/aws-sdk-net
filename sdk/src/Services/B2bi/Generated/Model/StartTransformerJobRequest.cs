@@ -32,7 +32,7 @@ namespace Amazon.B2bi.Model
     /// <summary>
     /// Container for the parameters to the StartTransformerJob operation.
     /// Runs a job, using a transformer, to parse input EDI (electronic data interchange)
-    /// file into the output structures used by Amazon Web Services B2BI Data Interchange.
+    /// file into the output structures used by Amazon Web Services B2B Data Interchange.
     /// 
     ///  
     /// <para>

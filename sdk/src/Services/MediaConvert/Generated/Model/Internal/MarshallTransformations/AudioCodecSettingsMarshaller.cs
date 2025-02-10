@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,128 +49,128 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAacSettings())
             {
                 context.Writer.WritePropertyName("aacSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AacSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AacSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAc3Settings())
             {
                 context.Writer.WritePropertyName("ac3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ac3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ac3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAiffSettings())
             {
                 context.Writer.WritePropertyName("aiffSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AiffSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AiffSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCodec())
             {
                 context.Writer.WritePropertyName("codec");
-                context.Writer.Write(requestObject.Codec);
+                context.Writer.WriteStringValue(requestObject.Codec);
             }
 
             if(requestObject.IsSetEac3AtmosSettings())
             {
                 context.Writer.WritePropertyName("eac3AtmosSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Eac3AtmosSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Eac3AtmosSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEac3Settings())
             {
                 context.Writer.WritePropertyName("eac3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Eac3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Eac3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFlacSettings())
             {
                 context.Writer.WritePropertyName("flacSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FlacSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FlacSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMp2Settings())
             {
                 context.Writer.WritePropertyName("mp2Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Mp2SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mp2Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMp3Settings())
             {
                 context.Writer.WritePropertyName("mp3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Mp3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mp3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpusSettings())
             {
                 context.Writer.WritePropertyName("opusSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpusSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpusSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVorbisSettings())
             {
                 context.Writer.WritePropertyName("vorbisSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VorbisSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VorbisSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWavSettings())
             {
                 context.Writer.WritePropertyName("wavSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WavSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.WavSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

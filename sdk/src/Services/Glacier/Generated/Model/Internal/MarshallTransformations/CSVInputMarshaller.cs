@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComments())
             {
                 context.Writer.WritePropertyName("Comments");
-                context.Writer.Write(requestObject.Comments);
+                context.Writer.WriteStringValue(requestObject.Comments);
             }
 
             if(requestObject.IsSetFieldDelimiter())
             {
                 context.Writer.WritePropertyName("FieldDelimiter");
-                context.Writer.Write(requestObject.FieldDelimiter);
+                context.Writer.WriteStringValue(requestObject.FieldDelimiter);
             }
 
             if(requestObject.IsSetFileHeaderInfo())
             {
                 context.Writer.WritePropertyName("FileHeaderInfo");
-                context.Writer.Write(requestObject.FileHeaderInfo);
+                context.Writer.WriteStringValue(requestObject.FileHeaderInfo);
             }
 
             if(requestObject.IsSetQuoteCharacter())
             {
                 context.Writer.WritePropertyName("QuoteCharacter");
-                context.Writer.Write(requestObject.QuoteCharacter);
+                context.Writer.WriteStringValue(requestObject.QuoteCharacter);
             }
 
             if(requestObject.IsSetQuoteEscapeCharacter())
             {
                 context.Writer.WritePropertyName("QuoteEscapeCharacter");
-                context.Writer.Write(requestObject.QuoteEscapeCharacter);
+                context.Writer.WriteStringValue(requestObject.QuoteEscapeCharacter);
             }
 
             if(requestObject.IsSetRecordDelimiter())
             {
                 context.Writer.WritePropertyName("RecordDelimiter");
-                context.Writer.Write(requestObject.RecordDelimiter);
+                context.Writer.WriteStringValue(requestObject.RecordDelimiter);
             }
 
         }

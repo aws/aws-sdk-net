@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImage operation.
-    /// Describes a SageMaker image.
+    /// Describes a SageMaker AI image.
     /// </summary>
     public partial class DescribeImageRequest : AmazonSageMakerRequest
     {

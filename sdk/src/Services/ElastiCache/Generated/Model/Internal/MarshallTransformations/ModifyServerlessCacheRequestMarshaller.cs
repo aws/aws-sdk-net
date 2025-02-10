@@ -96,6 +96,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetEngine())
+                {
+                    request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));
+                }
+                if(publicRequest.IsSetMajorEngineVersion())
+                {
+                    request.Parameters.Add("MajorEngineVersion", StringUtils.FromString(publicRequest.MajorEngineVersion));
+                }
                 if(publicRequest.IsSetRemoveUserGroup())
                 {
                     request.Parameters.Add("RemoveUserGroup", StringUtils.FromBool(publicRequest.RemoveUserGroup));

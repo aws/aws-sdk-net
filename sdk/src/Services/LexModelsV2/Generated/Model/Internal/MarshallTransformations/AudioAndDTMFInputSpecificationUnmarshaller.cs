@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudioAndDTMFInputSpecification Object
     /// </summary>  
-    public class AudioAndDTMFInputSpecificationUnmarshaller : IUnmarshaller<AudioAndDTMFInputSpecification, XmlUnmarshallerContext>, IUnmarshaller<AudioAndDTMFInputSpecification, JsonUnmarshallerContext>
+    public class AudioAndDTMFInputSpecificationUnmarshaller : IJsonUnmarshaller<AudioAndDTMFInputSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudioAndDTMFInputSpecification IUnmarshaller<AudioAndDTMFInputSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioAndDTMFInputSpecification Unmarshall(JsonUnmarshallerContext context)
+        public AudioAndDTMFInputSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudioAndDTMFInputSpecification unmarshalledObject = new AudioAndDTMFInputSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioSpecification", targetDepth))
                 {
                     var unmarshaller = AudioSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.AudioSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dtmfSpecification", targetDepth))
                 {
                     var unmarshaller = DTMFSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.DtmfSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DtmfSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTimeoutMs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StartTimeoutMs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTimeoutMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

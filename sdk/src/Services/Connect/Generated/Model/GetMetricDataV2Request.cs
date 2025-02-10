@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
     /// the previous version of this API. It has new metrics, offers filtering at a metric
     /// level, and offers the ability to filter and group data by channels, queues, routing
     /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-    /// the last 3 months, at varying intervals. 
+    /// the last 3 months, at varying intervals. It does not support agent queues.
     /// </para>
     ///  
     /// <para>
@@ -142,12 +142,16 @@ namespace Amazon.Connect.Model
         ///  <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request.
         /// Valid filter keys: <c>AGENT</c> | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_THREE</c> | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>
-        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>CAMPAIGN</c> | <c>CASE_TEMPLATE_ARN</c>
-        /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
-        /// | <c>DISCONNECT_REASON</c> | <c>FEATURE</c> | <c>FLOW_TYPE</c> | <c>FLOWS_NEXT_RESOURCE_ID</c>
-        /// | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c>
-        /// | <c>INITIATION_METHOD</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c>
-        /// | <c>ROUTING_STEP_EXPRESSION</c> | <c>QUEUE</c> | <c>Q_CONNECT_ENABLED</c> | 
+        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c> BOT_ID</c> | <c>BOT_ALIAS</c> |
+        /// <c>BOT_VERSION</c> | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c> | <c>CAMPAIGN</c>
+        /// | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> |<c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c>
+        /// | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c> | <c>DISCONNECT_REASON</c>
+        /// | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_MODULE_RESOURCE_ID</c>
+        /// | <c>FLOWS_NEXT_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c>
+        /// | <c>FLOWS_RESOURCE_ID</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c>
+        /// | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> | <c>QUEUE</c> | <c>Q_CONNECT_ENABLED</c>
+        /// | 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -228,15 +232,17 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid grouping keys: <c>AGENT</c> | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_THREE</c> | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>
-        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>CAMPAIGN</c> | <c>CASE_TEMPLATE_ARN</c>
-        /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
+        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>BOT_ID</c> | <c>BOT_ALIAS</c> | <c>BOT_VERSION</c>
+        /// | <c>BOT_LOCALE</c> | <c>BOT_INTENT_NAME</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>
+        /// | <c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
         /// | <c>DISCONNECT_REASON</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FLOWS_MODULE_RESOURCE_ID</c>
-        /// | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>INITIATION_METHOD</c> | <c>Q_CONNECT_ENABLED</c>
-        /// | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
-        /// 
+        /// | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>INITIATION_METHOD</c>
+        /// | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c>
+        /// | <c>Q_CONNECT_ENABLED</c> | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> |
+        /// <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Max=4)]
         public List<string> Groupings
         {
             get { return this._groupings; }
@@ -557,7 +563,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
+        /// The <c>Negate</c> key in metric-level filters is not applicable for this metric.
         /// </para>
         ///  </note> </dd> <dt>AVG_AGENT_PAUSE_TIME</dt> <dd> 
         /// <para>
@@ -572,6 +578,38 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-pause-time-historical">Average
         /// agent pause time</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_BOT_CONVERSATION_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot
+        /// ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID,
+        /// Flow type, Flow action ID, Invoking resource published timestamp, Initiation method,
+        /// Invoking resource type, Parent flows resource ID
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#average-bot-conversation-time-metric">Average
+        /// bot conversation time</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_BOT_CONVERSATION_TURNS</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot
+        /// ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID,
+        /// Flow type, Flow action ID, Invoking resource published timestamp, Initiation method,
+        /// Invoking resource type, Parent flows resource ID
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#average-bot-conversation-turns-metric">Average
+        /// bot conversation turns</a> 
         /// </para>
         ///  </dd> <dt>AVG_CASE_RELATED_CONTACTS</dt> <dd> 
         /// <para>
@@ -641,7 +679,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>AVG_DIALS_PER_MINUTE</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns that use the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -649,7 +688,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent, Queue, Routing Profile
+        /// Valid groupings and filters: Agent, Campaign, Queue, Routing Profile
         /// </para>
         ///  
         /// <para>
@@ -942,7 +981,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns that use the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -957,9 +997,42 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average
         /// wait time after customer connection</a> 
         /// </para>
+        ///  </dd> <dt>BOT_CONVERSATIONS_COMPLETED</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot
+        /// ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID,
+        /// Flow type, Flow action ID, Invoking resource published timestamp, Initiation method,
+        /// Invoking resource type, Parent flows resource ID
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot
+        /// conversations</a> 
+        /// </para>
+        ///  </dd> <dt>BOT_INTENTS_COMPLETED</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot
+        /// ID, Bot alias, Bot version, Bot locale, Bot intent name, Flows resource ID, Flows
+        /// module resource ID, Flow type, Flow action ID, Invoking resource published timestamp,
+        /// Initiation method, Invoking resource type, Parent flows resource ID
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot
+        /// intents completed</a> 
+        /// </para>
         ///  </dd> <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns using the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -967,7 +1040,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent 
+        /// Valid groupings and filters: Agent, Campaign
         /// </para>
         ///  
         /// <para>
@@ -981,7 +1054,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns using the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -989,7 +1063,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent 
+        /// Valid groupings and filters: Agent, Campaign
         /// </para>
         ///  
         /// <para>
@@ -1000,6 +1074,46 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign
         /// contacts abandoned after X rate</a> 
+        /// </para>
+        ///  </dd> <dt>CAMPAIGN_INTERACTIONS</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns using the email delivery mode.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: CAMPAIGN_INTERACTION_EVENT_TYPE
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-interactions-historical">Campaign
+        /// interactions</a> 
+        /// </para>
+        ///  </dd> <dt>CAMPAIGN_SEND_ATTEMPTS</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-send-attempts-historical">Campaign
+        /// send attempts</a> 
         /// </para>
         ///  </dd> <dt>CASES_CREATED</dt> <dd> 
         /// <para>
@@ -1202,7 +1316,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1220,8 +1335,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <c>ThresholdValue</c> enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
+        /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1293,7 +1409,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>DELIVERY_ATTEMPTS</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns.
         /// </para>
         ///  
         /// <para>
@@ -1301,23 +1417,32 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>DISCONNECT_REASON</c>
-        /// 
+        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>,
+        /// <c>DISCONNECT_REASON</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine
-        /// Detection Status, Disconnect Reason
+        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign,
+        /// Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype, Disconnect
+        /// Reason, Queue, Routing Profile
         /// </para>
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery
         /// attempts</a> 
         /// </para>
-        ///  </dd> <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> 
+        ///  <note> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics,
-        /// and with the answering machine detection enabled.
+        /// Campaign Delivery EventType filter and grouping are only available for SMS and Email
+        /// campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection
+        /// Status and Disconnect Reason are only available for agent assisted voice and automated
+        /// voice delivery modes. 
+        /// </para>
+        ///  </note> </dd> <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns. Dispositions for the agent assisted
+        /// voice and automated voice delivery modes are only available with answering machine
+        /// detection enabled.
         /// </para>
         ///  
         /// <para>
@@ -1325,25 +1450,28 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>DISCONNECT_REASON</c>
-        /// 
+        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>,
+        /// <c>DISCONNECT_REASON</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status,
-        /// Disconnect Reason
+        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign,
+        /// Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing
+        /// Profile
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Answering Machine Detection Status and Disconnect Reason are valid filters but not
-        /// valid groupings.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery
         /// attempt disposition rate</a> 
         /// </para>
-        ///  </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Campaign Delivery Event Type filter and grouping are only available for SMS and Email
+        /// campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection
+        /// Status and Disconnect Reason are only available for agent assisted voice and automated
+        /// voice delivery modes. 
+        /// </para>
+        ///  </note> </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -1375,8 +1503,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>HUMAN_ANSWERED_CALLS</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics,
-        /// and with the answering machine detection enabled.
+        /// This metric is available only for outbound campaigns. Dispositions for the agent assisted
+        /// voice and automated voice delivery modes are only available with answering machine
+        /// detection enabled. 
         /// </para>
         ///  
         /// <para>
@@ -1384,7 +1513,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent
+        /// Valid groupings and filters: Agent, Campaign
         /// </para>
         ///  
         /// <para>
@@ -1434,6 +1563,38 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum
         /// flow time</a> 
+        /// </para>
+        ///  </dd> <dt>PERCENT_BOT_CONVERSATIONS_OUTCOME</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot
+        /// ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID,
+        /// Flow type, Flow action ID, Invoking resource published timestamp, Initiation method,
+        /// Invoking resource type, Parent flows resource ID
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#percent-bot-conversations-outcome-metric">Percent
+        /// bot conversations outcome</a> 
+        /// </para>
+        ///  </dd> <dt>PERCENT_BOT_INTENTS_OUTCOME</dt> <dd> 
+        /// <para>
+        /// Unit: Percent
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot
+        /// ID, Bot alias, Bot version, Bot locale, Bot intent name, Flows resource ID, Flows
+        /// module resource ID, Flow type, Flow action ID, Invoking resource published timestamp,
+        /// Initiation method, Invoking resource type, Parent flows resource ID
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#percent-bot-intents-outcome-metric">Percent
+        /// bot intents outcome</a> 
         /// </para>
         ///  </dd> <dt>PERCENT_CASES_FIRST_CONTACT_RESOLVED</dt> <dd> 
         /// <para>
@@ -1626,7 +1787,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1681,7 +1843,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
+        /// The <c>Negate</c> key in metric-level filters is not applicable for this metric.
         /// </para>
         ///  </note> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
         /// <para>
@@ -1718,7 +1880,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1737,7 +1900,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>

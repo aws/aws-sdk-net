@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LoadBasedAutoScalingConfiguration Object
     /// </summary>  
-    public class LoadBasedAutoScalingConfigurationUnmarshaller : IUnmarshaller<LoadBasedAutoScalingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LoadBasedAutoScalingConfiguration, JsonUnmarshallerContext>
+    public class LoadBasedAutoScalingConfigurationUnmarshaller : IJsonUnmarshaller<LoadBasedAutoScalingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LoadBasedAutoScalingConfiguration IUnmarshaller<LoadBasedAutoScalingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoadBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public LoadBasedAutoScalingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LoadBasedAutoScalingConfiguration unmarshalledObject = new LoadBasedAutoScalingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DownScaling", targetDepth))
                 {
                     var unmarshaller = AutoScalingThresholdsUnmarshaller.Instance;
-                    unmarshalledObject.DownScaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DownScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Enable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Enable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LayerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LayerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LayerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpScaling", targetDepth))
                 {
                     var unmarshaller = AutoScalingThresholdsUnmarshaller.Instance;
-                    unmarshalledObject.UpScaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

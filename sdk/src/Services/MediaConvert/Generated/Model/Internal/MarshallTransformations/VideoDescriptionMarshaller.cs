@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,117 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfdSignaling())
             {
                 context.Writer.WritePropertyName("afdSignaling");
-                context.Writer.Write(requestObject.AfdSignaling);
+                context.Writer.WriteStringValue(requestObject.AfdSignaling);
             }
 
             if(requestObject.IsSetAntiAlias())
             {
                 context.Writer.WritePropertyName("antiAlias");
-                context.Writer.Write(requestObject.AntiAlias);
+                context.Writer.WriteStringValue(requestObject.AntiAlias);
             }
 
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoCodecSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodecSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColorMetadata())
             {
                 context.Writer.WritePropertyName("colorMetadata");
-                context.Writer.Write(requestObject.ColorMetadata);
+                context.Writer.WriteStringValue(requestObject.ColorMetadata);
             }
 
             if(requestObject.IsSetCrop())
             {
                 context.Writer.WritePropertyName("crop");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RectangleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Crop, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDropFrameTimecode())
             {
                 context.Writer.WritePropertyName("dropFrameTimecode");
-                context.Writer.Write(requestObject.DropFrameTimecode);
+                context.Writer.WriteStringValue(requestObject.DropFrameTimecode);
             }
 
             if(requestObject.IsSetFixedAfd())
             {
                 context.Writer.WritePropertyName("fixedAfd");
-                context.Writer.Write(requestObject.FixedAfd.Value);
+                context.Writer.WriteNumberValue(requestObject.FixedAfd.Value);
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RectangleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Position, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRespondToAfd())
             {
                 context.Writer.WritePropertyName("respondToAfd");
-                context.Writer.Write(requestObject.RespondToAfd);
+                context.Writer.WriteStringValue(requestObject.RespondToAfd);
             }
 
             if(requestObject.IsSetScalingBehavior())
             {
                 context.Writer.WritePropertyName("scalingBehavior");
-                context.Writer.Write(requestObject.ScalingBehavior);
+                context.Writer.WriteStringValue(requestObject.ScalingBehavior);
             }
 
             if(requestObject.IsSetSharpness())
             {
                 context.Writer.WritePropertyName("sharpness");
-                context.Writer.Write(requestObject.Sharpness.Value);
+                context.Writer.WriteNumberValue(requestObject.Sharpness.Value);
             }
 
             if(requestObject.IsSetTimecodeInsertion())
             {
                 context.Writer.WritePropertyName("timecodeInsertion");
-                context.Writer.Write(requestObject.TimecodeInsertion);
+                context.Writer.WriteStringValue(requestObject.TimecodeInsertion);
+            }
+
+            if(requestObject.IsSetTimecodeTrack())
+            {
+                context.Writer.WritePropertyName("timecodeTrack");
+                context.Writer.WriteStringValue(requestObject.TimecodeTrack);
             }
 
             if(requestObject.IsSetVideoPreprocessors())
             {
                 context.Writer.WritePropertyName("videoPreprocessors");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoPreprocessorMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoPreprocessors, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

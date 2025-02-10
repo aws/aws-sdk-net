@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataQuery())
             {
                 context.Writer.WritePropertyName("DataQuery");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataQueryMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataQuery, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDestinationConfigurations())
             {
                 context.Writer.WritePropertyName("DestinationConfigurations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DestinationConfigurationsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DestinationConfigurations, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExportArn())
             {
                 context.Writer.WritePropertyName("ExportArn");
-                context.Writer.Write(requestObject.ExportArn);
+                context.Writer.WriteStringValue(requestObject.ExportArn);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRefreshCadence())
             {
                 context.Writer.WritePropertyName("RefreshCadence");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RefreshCadenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.RefreshCadence, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

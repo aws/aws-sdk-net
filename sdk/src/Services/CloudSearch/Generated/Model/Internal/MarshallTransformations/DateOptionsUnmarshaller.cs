@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DateOptions Object
     /// </summary>  
-    public class DateOptionsUnmarshaller : IUnmarshaller<DateOptions, XmlUnmarshallerContext>, IUnmarshaller<DateOptions, JsonUnmarshallerContext>
+    public class DateOptionsUnmarshaller : IXmlUnmarshaller<DateOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DateOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DateOptionsUnmarshaller _instance = new DateOptionsUnmarshaller();        
 

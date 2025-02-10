@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachmentNetworkAclConfiguration())
             {
                 context.Writer.WritePropertyName("attachmentNetworkAclConfiguration");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttachmentNetworkAclConfigurationListValue in requestObject.AttachmentNetworkAclConfiguration)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NetworkACLEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttachmentNetworkAclConfigurationListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRoutableCIDRSpace())
             {
                 context.Writer.WritePropertyName("routableCIDRSpace");
-                context.Writer.Write(requestObject.RoutableCIDRSpace);
+                context.Writer.WriteStringValue(requestObject.RoutableCIDRSpace);
             }
 
             if(requestObject.IsSetTransitGatewayID())
             {
                 context.Writer.WritePropertyName("transitGatewayID");
-                context.Writer.Write(requestObject.TransitGatewayID);
+                context.Writer.WriteStringValue(requestObject.TransitGatewayID);
             }
 
         }

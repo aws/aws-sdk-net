@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -63,128 +66,133 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppId())
-                    {
-                        context.Writer.WritePropertyName("AppId");
-                        context.Writer.Write(publicRequest.AppId);
-                    }
-
-                    if(publicRequest.IsSetAppSource())
-                    {
-                        context.Writer.WritePropertyName("AppSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AppSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAttributes())
-                    {
-                        context.Writer.WritePropertyName("Attributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                            var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
-
-                                context.Writer.Write(publicRequestAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataSources())
-                    {
-                        context.Writer.WritePropertyName("DataSources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DataSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDataSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDomains())
-                    {
-                        context.Writer.WritePropertyName("Domains");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDomainsListValue in publicRequest.Domains)
-                        {
-                                context.Writer.Write(publicRequestDomainsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEnableSsl())
-                    {
-                        context.Writer.WritePropertyName("EnableSsl");
-                        context.Writer.Write(publicRequest.EnableSsl.Value);
-                    }
-
-                    if(publicRequest.IsSetEnvironment())
-                    {
-                        context.Writer.WritePropertyName("Environment");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEnvironmentListValue in publicRequest.Environment)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EnvironmentVariableMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEnvironmentListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetSslConfiguration())
-                    {
-                        context.Writer.WritePropertyName("SslConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SslConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SslConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("Type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AppId");
+                context.Writer.WriteStringValue(publicRequest.AppId);
             }
+
+            if(publicRequest.IsSetAppSource())
+            {
+                context.Writer.WritePropertyName("AppSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AppSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAttributes())
+            {
+                context.Writer.WritePropertyName("Attributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
+                    var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestAttributesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDataSources())
+            {
+                context.Writer.WritePropertyName("DataSources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DataSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDataSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDomains())
+            {
+                context.Writer.WritePropertyName("Domains");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDomainsListValue in publicRequest.Domains)
+                {
+                        context.Writer.WriteStringValue(publicRequestDomainsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEnableSsl())
+            {
+                context.Writer.WritePropertyName("EnableSsl");
+                context.Writer.WriteBooleanValue(publicRequest.EnableSsl.Value);
+            }
+
+            if(publicRequest.IsSetEnvironment())
+            {
+                context.Writer.WritePropertyName("Environment");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEnvironmentListValue in publicRequest.Environment)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EnvironmentVariableMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEnvironmentListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetSslConfiguration())
+            {
+                context.Writer.WritePropertyName("SslConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SslConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SslConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

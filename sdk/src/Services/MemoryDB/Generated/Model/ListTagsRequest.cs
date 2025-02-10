@@ -34,7 +34,7 @@ namespace Amazon.MemoryDB.Model
     /// Lists all tags currently on a named resource. A tag is a key-value pair where the
     /// key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
     /// resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
-    /// your MemoryDB resources</a>
+    /// your MemoryDB resources</a>.
     /// </summary>
     public partial class ListTagsRequest : AmazonMemoryDBRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource for which you want the list of tags
+        /// The Amazon Resource Name (ARN) of the resource for which you want the list of tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

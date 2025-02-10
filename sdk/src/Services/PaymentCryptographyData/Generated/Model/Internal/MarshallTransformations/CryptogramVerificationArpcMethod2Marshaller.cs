@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCardStatusUpdate())
             {
                 context.Writer.WritePropertyName("CardStatusUpdate");
-                context.Writer.Write(requestObject.CardStatusUpdate);
+                context.Writer.WriteStringValue(requestObject.CardStatusUpdate);
             }
 
             if(requestObject.IsSetProprietaryAuthenticationData())
             {
                 context.Writer.WritePropertyName("ProprietaryAuthenticationData");
-                context.Writer.Write(requestObject.ProprietaryAuthenticationData);
+                context.Writer.WriteStringValue(requestObject.ProprietaryAuthenticationData);
             }
 
         }

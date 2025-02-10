@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlarms())
             {
                 context.Writer.WritePropertyName("Alarms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAlarmsListValue in requestObject.Alarms)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AlarmMarshaller.Instance;
                     marshaller.Marshall(requestObjectAlarmsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIgnorePollAlarmFailure())
             {
                 context.Writer.WritePropertyName("IgnorePollAlarmFailure");
-                context.Writer.Write(requestObject.IgnorePollAlarmFailure.Value);
+                context.Writer.WriteBooleanValue(requestObject.IgnorePollAlarmFailure.Value);
             }
 
         }

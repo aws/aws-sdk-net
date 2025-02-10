@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             if(requestObject.IsSetAddSubnets())
             {
                 context.Writer.WritePropertyName("AddSubnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddSubnetsListValue in requestObject.AddSubnets)
                 {
-                        context.Writer.Write(requestObjectAddSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectAddSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRemoveSubnets())
             {
                 context.Writer.WritePropertyName("RemoveSubnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRemoveSubnetsListValue in requestObject.RemoveSubnets)
                 {
-                        context.Writer.Write(requestObjectRemoveSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectRemoveSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityGroupId())
             {
                 context.Writer.WritePropertyName("SecurityGroupId");
-                context.Writer.Write(requestObject.SecurityGroupId);
+                context.Writer.WriteStringValue(requestObject.SecurityGroupId);
             }
 
         }

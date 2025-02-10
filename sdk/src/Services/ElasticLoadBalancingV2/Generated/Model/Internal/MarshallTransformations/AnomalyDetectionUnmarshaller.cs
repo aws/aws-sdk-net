@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnomalyDetection Object
     /// </summary>  
-    public class AnomalyDetectionUnmarshaller : IUnmarshaller<AnomalyDetection, XmlUnmarshallerContext>, IUnmarshaller<AnomalyDetection, JsonUnmarshallerContext>
+    public class AnomalyDetectionUnmarshaller : IXmlUnmarshaller<AnomalyDetection, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnomalyDetection Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AnomalyDetectionUnmarshaller _instance = new AnomalyDetectionUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDynamicCategoryDimensionConfiguration())
             {
                 context.Writer.WritePropertyName("DynamicCategoryDimensionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BodySectionDynamicCategoryDimensionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamicCategoryDimensionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamicNumericDimensionConfiguration())
             {
                 context.Writer.WritePropertyName("DynamicNumericDimensionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BodySectionDynamicNumericDimensionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamicNumericDimensionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -8,8 +8,6 @@
 
 	AddCommonUsingStatements();
 #>
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
@@ -54,27 +52,27 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			string memberProperty = variableName + "." + member.PropertyName + (member.IsNullable ? ".Value" : string.Empty);
 			if(member.IsStructure || member.IsList || member.IsMap)
 			{
-				this.ProcessStructure(level, variableName + "." + member.PropertyName, member.Shape);
+				this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape);
 			}
             else if(!string.IsNullOrEmpty(member.CustomMarshallerTransformation))
             {
+				DetermineCustomMarshallerJsonWriteMethod(member, memberProperty, level);
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));
 <#+
             }
 			else if(member.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(StringUtils.FromMemoryStream(<#=variableName + "." + member.PropertyName#>));
+<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(<#=variableName + "." + member.PropertyName#>));
 <#+
 			}
 			else
 			{
 				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
-				if(member.IsDateTime && member.TimestampFormat != TimestampFormat.UnixTimestamp)
+				if(member.IsTimeStamp && member.TimestampFormat != TimestampFormat.UnixTimestamp)
 				{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.PrimitiveMarshaller#>(<#=variableName + "." + member.PropertyName#>));
+<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(<#=member.PrimitiveMarshaller#>(<#=variableName + "." + member.PropertyName#>));
 <#+
 				}
 				else if(member.Shape.IsDouble)
@@ -82,11 +80,11 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 <#=new string(' ', level * 4)#>				if(StringUtils.IsSpecialDoubleValue(<#=memberProperty#>))
 <#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					context.Writer.Write(StringUtils.FromSpecialDoubleValue(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>					context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(<#=memberProperty#>));
 <#=new string(' ', level * 4)#>				}
 <#=new string(' ', level * 4)#>				else
 <#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					context.Writer.Write(<#=memberProperty#>);
+<#=new string(' ', level * 4)#>					context.Writer.WriteNumberValue(<#=memberProperty#>);
 <#=new string(' ', level * 4)#>				}
 <#+
 				}
@@ -95,18 +93,18 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 <#=new string(' ', level * 4)#>				if(StringUtils.IsSpecialFloatValue(<#=memberProperty#>))
 <#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					context.Writer.Write(StringUtils.FromSpecialFloatValue(<#=memberProperty#>));
+<#=new string(' ', level * 4)#>					context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(<#=memberProperty#>));
 <#=new string(' ', level * 4)#>				}
 <#=new string(' ', level * 4)#>				else
 <#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					context.Writer.Write(<#=memberProperty#>);
+<#=new string(' ', level * 4)#>					context.Writer.WriteNumberValue(<#=memberProperty#>);
 <#=new string(' ', level * 4)#>				}
 <#+
 				}
 				else
 				{
+					DetermineNormalJsonWriteMethod(member.Shape, memberProperty, level);
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(<#=memberProperty#>);
 <#+
 				}
 			}
@@ -120,7 +118,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#> 		   else if(!(<#=variableName#>.IsSet<#=member.PropertyName#>()))
 <#=new string(' ', level * 4)#> 		   {
 <#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
-<#=new string(' ', level * 4)#>                context.Writer.Write(Guid.NewGuid().ToString());
+<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
 <#=new string(' ', level * 4)#> 		   }
 <#+					
 			}
@@ -143,73 +141,134 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			if(structure.IsList)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteArrayStart();
-<#=new string(' ', level * 4)#>                foreach(var <#=flatVariableName#>ListValue in <#=variableName#>)
-<#=new string(' ', level * 4)#>                {
+<#=new string(' ', level * 4)#>            context.Writer.WriteStartArray();
+<#=new string(' ', level * 4)#>            foreach(var <#=flatVariableName#>ListValue in <#=variableName#>)
+<#=new string(' ', level * 4)#>            {
 <#+ 
 				ProcessStructure(level + 1, flatVariableName + "ListValue", structure.ListShape);
 #>
-<#=new string(' ', level * 4)#>                }
-<#=new string(' ', level * 4)#>                context.Writer.WriteArrayEnd();
+<#=new string(' ', level * 4)#>            }
+<#=new string(' ', level * 4)#>            context.Writer.WriteEndArray();
 <#+
 			}
 			else if(structure.IsMap)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteObjectStart();
-<#=new string(' ', level * 4)#>                foreach (var <#=flatVariableName#>Kvp in <#=variableName#>)
-<#=new string(' ', level * 4)#>                {
-<#=new string(' ', level * 4)#>                    context.Writer.WritePropertyName(<#=flatVariableName#>Kvp.Key);
-<#=new string(' ', level * 4)#>                    var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
+<#=new string(' ', level * 4)#>            context.Writer.WriteStartObject();
+<#=new string(' ', level * 4)#>            foreach (var <#=flatVariableName#>Kvp in <#=variableName#>)
+<#=new string(' ', level * 4)#>            {
+<#=new string(' ', level * 4)#>                context.Writer.WritePropertyName(<#=flatVariableName#>Kvp.Key);
+<#=new string(' ', level * 4)#>                var <#=flatVariableName#>Value = <#=flatVariableName#>Kvp.Value;
 
 <#+ 
 				ProcessStructure(level + 1, flatVariableName + "Value", structure.ValueShape);
 #>
-<#=new string(' ', level * 4)#>                }
-<#=new string(' ', level * 4)#>                context.Writer.WriteObjectEnd();
+<#=new string(' ', level * 4)#>            }
+<#=new string(' ', level * 4)#>            context.Writer.WriteEndObject();
 <#+
 			}
 			else if(structure.IsDocument)
 			{
 #>
-<#=new string(' ', level * 4)#>                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, <#=variableName#>);
+<#=new string(' ', level * 4)#>            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, <#=variableName#>);
 <#+
 
 			}
 			else if(structure.IsStructure)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteObjectStart();
+<#=new string(' ', level * 4)#>            context.Writer.WriteStartObject();
 
-<#=new string(' ', level * 4)#>                var marshaller = <#=structure.Name#>Marshaller.Instance;
-<#=new string(' ', level * 4)#>                marshaller.Marshall(<#=variableName#>, context);
+<#=new string(' ', level * 4)#>            var marshaller = <#=structure.Name#>Marshaller.Instance;
+<#=new string(' ', level * 4)#>            marshaller.Marshall(<#=variableName#>, context);
 
-<#=new string(' ', level * 4)#>                context.Writer.WriteObjectEnd();
+<#=new string(' ', level * 4)#>            context.Writer.WriteEndObject();
 <#+
 			}
 			else if(structure.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.Write(StringUtils.FromMemoryStream(<#=variableName#>));
+<#=new string(' ', level * 4)#>            context.Writer.WriteStringValue(StringUtils.FromMemoryStream(<#=variableName#>));
 <#+
 			}
 			else
 			{
 				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
-				if(structure.IsDateTime && structure.GetTimestampFormat(MarshallLocation.Body) != TimestampFormat.UnixTimestamp)
+				if(structure.IsTimeStamp && structure.GetTimestampFormat(MarshallLocation.Body) != TimestampFormat.UnixTimestamp)
 				{
 #>
-<#=new string(' ', level * 4)#>				    context.Writer.Write(<#=structure.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableName#>));
+<#=new string(' ', level * 4)#>				context.Writer.WriteStringValue(<#=structure.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableName#>));
 <#+
 				}
 				else
 				{
-
-#>
-<#=new string(' ', level * 4)#>                    context.Writer.Write(<#=variableName#>);
-<#+
+					DetermineNormalJsonWriteMethod(structure, variableName, level);
 				}
 				
 			}
+	}
+#>
+<#+
+	protected void DetermineCustomMarshallerJsonWriteMethod(Member member, string memberProperty, int level)
+	{
+		if (String.Equals(member.CustomMarshallerTransformation,"Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds", StringComparison.OrdinalIgnoreCase))
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));
+<#+
+		}
+		else
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(<#=member.CustomMarshallerTransformation#>(<#=memberProperty#>));
+<#+
+		}	
+	}
+#>
+<#+
+	/// https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html#json-shape-serialization
+	/// timestamps in json protocols use unixtimestamp if none is specified (by default)
+	protected void DetermineNormalJsonWriteMethod(Shape shape, string memberProperty, int level)
+	{
+		// One of the overloads for WriteStringValue accepts a datetime, which by default always uses ISO 8601-1 format.
+		// If the timestamp format is UnixTimestamp or there is none specified, we need to write raw value in epoch seconds,
+		// which can only be done by using WriteNumberValue.
+		if (shape.IsString || shape.IsEnum)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsTimeStamp)
+		{
+			if (shape.data[Shape.TimestampFormatKey] != null && !string.Equals(shape.data["timestampFormat"].ToString(),"unixTimestamp"))
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(<#=memberProperty#>);
+<#+
+			}
+			else
+			{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=memberProperty#>)));
+<#+
+			}
+		}
+		else if (shape.IsInt || shape.IsLong || shape.IsFloat || shape.IsDouble)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(<#=memberProperty#>);
+<#+
+		}
+		else if (shape.IsBoolean)
+		{
+#>
+<#=new string(' ', level * 4)#>                context.Writer.WriteBooleanValue(<#=memberProperty#>);
+<#+
+		}
+		else
+		{
+			throw new Exception ("Unknown primitive type encountered");
+		}
 	}
 #>

@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SpaceSettings Object
     /// </summary>  
-    public class SpaceSettingsUnmarshaller : IUnmarshaller<SpaceSettings, XmlUnmarshallerContext>, IUnmarshaller<SpaceSettings, JsonUnmarshallerContext>
+    public class SpaceSettingsUnmarshaller : IJsonUnmarshaller<SpaceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SpaceSettings IUnmarshaller<SpaceSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpaceSettings Unmarshall(JsonUnmarshallerContext context)
+        public SpaceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SpaceSettings unmarshalledObject = new SpaceSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AppType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CodeEditorAppSettings", targetDepth))
                 {
                     var unmarshaller = SpaceCodeEditorAppSettingsUnmarshaller.Instance;
-                    unmarshalledObject.CodeEditorAppSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeEditorAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomFileSystems", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CustomFileSystem, CustomFileSystemUnmarshaller>(CustomFileSystemUnmarshaller.Instance);
-                    unmarshalledObject.CustomFileSystems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CustomFileSystem, CustomFileSystemUnmarshaller>(CustomFileSystemUnmarshaller.Instance);
+                    unmarshalledObject.CustomFileSystems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JupyterLabAppSettings", targetDepth))
                 {
                     var unmarshaller = SpaceJupyterLabAppSettingsUnmarshaller.Instance;
-                    unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JupyterServerAppSettings", targetDepth))
                 {
                     var unmarshaller = JupyterServerAppSettingsUnmarshaller.Instance;
-                    unmarshalledObject.JupyterServerAppSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JupyterServerAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KernelGatewayAppSettings", targetDepth))
                 {
                     var unmarshaller = KernelGatewayAppSettingsUnmarshaller.Instance;
-                    unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpaceStorageSettings", targetDepth))
                 {
                     var unmarshaller = SpaceStorageSettingsUnmarshaller.Instance;
-                    unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

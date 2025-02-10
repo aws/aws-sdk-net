@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessKeyLastUsed Object
     /// </summary>  
-    public class AccessKeyLastUsedUnmarshaller : IUnmarshaller<AccessKeyLastUsed, XmlUnmarshallerContext>, IUnmarshaller<AccessKeyLastUsed, JsonUnmarshallerContext>
+    public class AccessKeyLastUsedUnmarshaller : IXmlUnmarshaller<AccessKeyLastUsed, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AccessKeyLastUsed Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AccessKeyLastUsedUnmarshaller _instance = new AccessKeyLastUsedUnmarshaller();        
 

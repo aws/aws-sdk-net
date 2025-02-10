@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             if(requestObject.IsSetActivationState())
             {
                 context.Writer.WritePropertyName("ActivationState");
-                context.Writer.Write(requestObject.ActivationState);
+                context.Writer.WriteStringValue(requestObject.ActivationState);
             }
 
             if(requestObject.IsSetAppendSourcePath())
             {
                 context.Writer.WritePropertyName("AppendSourcePath");
-                context.Writer.Write(requestObject.AppendSourcePath.Value);
+                context.Writer.WriteBooleanValue(requestObject.AppendSourcePath.Value);
             }
 
             if(requestObject.IsSetIncludeChildPaths())
             {
                 context.Writer.WritePropertyName("IncludeChildPaths");
-                context.Writer.Write(requestObject.IncludeChildPaths.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeChildPaths.Value);
             }
 
             if(requestObject.IsSetMethods())
             {
                 context.Writer.WritePropertyName("Methods");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMethodsListValue in requestObject.Methods)
                 {
-                        context.Writer.Write(requestObjectMethodsListValue);
+                        context.Writer.WriteStringValue(requestObjectMethodsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourcePath())
             {
                 context.Writer.WritePropertyName("SourcePath");
-                context.Writer.Write(requestObject.SourcePath);
+                context.Writer.WriteStringValue(requestObject.SourcePath);
             }
 
         }

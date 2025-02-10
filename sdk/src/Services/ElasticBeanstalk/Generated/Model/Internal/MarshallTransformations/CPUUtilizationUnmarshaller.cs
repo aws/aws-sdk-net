@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CPUUtilization Object
     /// </summary>  
-    public class CPUUtilizationUnmarshaller : IUnmarshaller<CPUUtilization, XmlUnmarshallerContext>, IUnmarshaller<CPUUtilization, JsonUnmarshallerContext>
+    public class CPUUtilizationUnmarshaller : IXmlUnmarshaller<CPUUtilization, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CPUUtilization Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CPUUtilizationUnmarshaller _instance = new CPUUtilizationUnmarshaller();        
 

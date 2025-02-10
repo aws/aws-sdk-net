@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelArn())
             {
                 context.Writer.WritePropertyName("channelArn");
-                context.Writer.Write(requestObject.ChannelArn);
+                context.Writer.WriteStringValue(requestObject.ChannelArn);
             }
 
             if(requestObject.IsSetViewerId())
             {
                 context.Writer.WritePropertyName("viewerId");
-                context.Writer.Write(requestObject.ViewerId);
+                context.Writer.WriteStringValue(requestObject.ViewerId);
             }
 
             if(requestObject.IsSetViewerSessionVersionsLessThanOrEqualTo())
             {
                 context.Writer.WritePropertyName("viewerSessionVersionsLessThanOrEqualTo");
-                context.Writer.Write(requestObject.ViewerSessionVersionsLessThanOrEqualTo.Value);
+                context.Writer.WriteNumberValue(requestObject.ViewerSessionVersionsLessThanOrEqualTo.Value);
             }
 
         }

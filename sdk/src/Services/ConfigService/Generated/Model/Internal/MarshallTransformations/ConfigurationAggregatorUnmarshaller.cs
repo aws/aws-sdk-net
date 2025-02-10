@@ -29,83 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurationAggregator Object
     /// </summary>  
-    public class ConfigurationAggregatorUnmarshaller : IUnmarshaller<ConfigurationAggregator, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationAggregator, JsonUnmarshallerContext>
+    public class ConfigurationAggregatorUnmarshaller : IJsonUnmarshaller<ConfigurationAggregator, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigurationAggregator IUnmarshaller<ConfigurationAggregator, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationAggregator Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationAggregator Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigurationAggregator unmarshalledObject = new ConfigurationAggregator();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountAggregationSources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AccountAggregationSource, AccountAggregationSourceUnmarshaller>(AccountAggregationSourceUnmarshaller.Instance);
-                    unmarshalledObject.AccountAggregationSources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AccountAggregationSource, AccountAggregationSourceUnmarshaller>(AccountAggregationSourceUnmarshaller.Instance);
+                    unmarshalledObject.AccountAggregationSources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AggregatorFilters", targetDepth))
+                {
+                    var unmarshaller = AggregatorFiltersUnmarshaller.Instance;
+                    unmarshalledObject.AggregatorFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigurationAggregatorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationAggregatorArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationAggregatorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigurationAggregatorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationAggregatorName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationAggregatorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationAggregationSource", targetDepth))
                 {
                     var unmarshaller = OrganizationAggregationSourceUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationAggregationSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationAggregationSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -305,6 +305,109 @@ namespace Amazon.QBusiness
         #endregion
 
 
+        #region  AssociatePermission
+
+
+        /// <summary>
+        /// Adds or updates a permission policy for a Amazon Q Business application, allowing
+        /// cross-account access for an ISV. This operation creates a new policy statement for
+        /// the specified Amazon Q Business application. The policy statement defines the IAM
+        /// actions that the ISV is allowed to perform on the Amazon Q Business application's
+        /// resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePermission service method.</param>
+        /// 
+        /// <returns>The response from the AssociatePermission service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AssociatePermission">REST API Reference for AssociatePermission Operation</seealso>
+        public virtual AssociatePermissionResponse AssociatePermission(AssociatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePermissionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds or updates a permission policy for a Amazon Q Business application, allowing
+        /// cross-account access for an ISV. This operation creates a new policy statement for
+        /// the specified Amazon Q Business application. The policy statement defines the IAM
+        /// actions that the ISV is allowed to perform on the Amazon Q Business application's
+        /// resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociatePermission service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AssociatePermission">REST API Reference for AssociatePermission Operation</seealso>
+        public virtual Task<AssociatePermissionResponse> AssociatePermissionAsync(AssociatePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociatePermissionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteDocument
 
 
@@ -327,7 +430,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -335,8 +438,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -378,7 +481,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -386,8 +489,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -446,7 +549,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -454,8 +557,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -516,7 +619,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -524,8 +627,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -549,6 +652,91 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CancelSubscription
+
+
+        /// <summary>
+        /// Unsubscribes a user or a group from their pricing tier in an Amazon Q Business application.
+        /// An unsubscribed user or group loses all Amazon Q Business feature access at the start
+        /// of next month.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CancelSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CancelSubscription">REST API Reference for CancelSubscription Operation</seealso>
+        public virtual CancelSubscriptionResponse CancelSubscription(CancelSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Unsubscribes a user or a group from their pricing tier in an Amazon Q Business application.
+        /// An unsubscribed user or group loses all Amazon Q Business feature access at the start
+        /// of next month.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CancelSubscription">REST API Reference for CancelSubscription Operation</seealso>
+        public virtual Task<CancelSubscriptionResponse> CancelSubscriptionAsync(CancelSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ChatSync
 
 
@@ -564,7 +752,11 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ExternalResourceException">
+        /// An external resource that you configured with your application is returning errors
+        /// and preventing this operation from succeeding. Fix those errors and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -576,8 +768,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -612,7 +804,11 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ExternalResourceException">
+        /// An external resource that you configured with your application is returning errors
+        /// and preventing this operation from succeeding. Fix those errors and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -624,8 +820,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -658,7 +854,21 @@ namespace Amazon.QBusiness
         /// are also available in Amazon Q Business Lite. For information on what's included in
         /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
         /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
-        /// tiers to users.
+        /// tiers to users. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An Amazon Q Apps service linked role will be created if it's absent in the Amazon
+        /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+        /// Using service-linked roles for Q Apps</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create an application, Amazon Q Business may securely transmit data for processing
+        /// from your selected Amazon Web Services region, but within your geography. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -671,7 +881,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -679,8 +889,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -712,7 +922,21 @@ namespace Amazon.QBusiness
         /// are also available in Amazon Q Business Lite. For information on what's included in
         /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
         /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
-        /// tiers to users.
+        /// tiers to users. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An Amazon Q Apps service linked role will be created if it's absent in the Amazon
+        /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+        /// Using service-linked roles for Q Apps</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create an application, Amazon Q Business may securely transmit data for processing
+        /// from your selected Amazon Web Services region, but within your geography. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -728,7 +952,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -736,8 +960,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -757,6 +981,113 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataAccessor
+
+
+        /// <summary>
+        /// Creates a new data accessor for an ISV to access data from a Amazon Q Business application.
+        /// The data accessor is an entity that represents the ISV's access to the Amazon Q Business
+        /// application's data. It includes the IAM role ARN for the ISV, a friendly name, and
+        /// a set of action configurations that define the specific actions the ISV is allowed
+        /// to perform and any associated data filters. When the data accessor is created, an
+        /// IAM Identity Center application is also created to manage the ISV's identity and authentication
+        /// for accessing the Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataAccessor">REST API Reference for CreateDataAccessor Operation</seealso>
+        public virtual CreateDataAccessorResponse CreateDataAccessor(CreateDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new data accessor for an ISV to access data from a Amazon Q Business application.
+        /// The data accessor is an entity that represents the ISV's access to the Amazon Q Business
+        /// application's data. It includes the IAM role ARN for the ISV, a friendly name, and
+        /// a set of action configurations that define the specific actions the ISV is allowed
+        /// to perform and any associated data filters. When the data accessor is created, an
+        /// IAM Identity Center application is also created to manage the ISV's identity and authentication
+        /// for accessing the Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataAccessor">REST API Reference for CreateDataAccessor Operation</seealso>
+        public virtual Task<CreateDataAccessorResponse> CreateDataAccessorAsync(CreateDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDataAccessorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -782,7 +1113,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -790,8 +1121,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -835,7 +1166,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -843,8 +1174,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -896,7 +1227,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -904,8 +1235,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -956,7 +1287,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -964,8 +1295,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1004,7 +1335,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1012,8 +1343,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1051,7 +1382,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1059,8 +1390,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1099,7 +1430,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1107,8 +1438,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1146,7 +1477,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1154,8 +1485,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1179,6 +1510,113 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CreateSubscription
+
+
+        /// <summary>
+        /// Subscribes an IAM Identity Center user or a group to a pricing tier for an Amazon
+        /// Q Business application.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Q Business offers two subscription tiers: <c>Q_LITE</c> and <c>Q_BUSINESS</c>.
+        /// Subscription tier determines feature access for the user. For more information on
+        /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
+        /// Q Business pricing</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
+        public virtual CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Subscribes an IAM Identity Center user or a group to a pricing tier for an Amazon
+        /// Q Business application.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Q Business offers two subscription tiers: <c>Q_LITE</c> and <c>Q_BUSINESS</c>.
+        /// Subscription tier determines feature access for the user. For more information on
+        /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
+        /// Q Business pricing</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
+        public virtual Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUser
 
 
@@ -1195,7 +1633,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1203,8 +1641,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1243,7 +1681,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1251,8 +1689,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1291,7 +1729,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1299,8 +1737,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1338,7 +1776,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1346,8 +1784,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1386,7 +1824,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1394,8 +1832,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1430,7 +1868,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1438,8 +1876,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1479,8 +1917,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1519,8 +1957,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1564,8 +2002,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1608,8 +2046,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1626,6 +2064,99 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = DeleteConversationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteConversationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataAccessor
+
+
+        /// <summary>
+        /// Deletes a specified data accessor. This operation permanently removes the data accessor
+        /// and its associated IAM Identity Center application. Any access granted to the ISV
+        /// through this data accessor will be revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataAccessor">REST API Reference for DeleteDataAccessor Operation</seealso>
+        public virtual DeleteDataAccessorResponse DeleteDataAccessor(DeleteDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a specified data accessor. This operation permanently removes the data accessor
+        /// and its associated IAM Identity Center application. Any access granted to the ISV
+        /// through this data accessor will be revoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataAccessor">REST API Reference for DeleteDataAccessor Operation</seealso>
+        public virtual Task<DeleteDataAccessorResponse> DeleteDataAccessorAsync(DeleteDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDataAccessorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1647,7 +2178,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1655,8 +2186,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1693,7 +2224,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1701,8 +2232,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1749,7 +2280,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1757,8 +2288,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1804,7 +2335,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1812,8 +2343,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1849,7 +2380,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1857,8 +2388,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1893,7 +2424,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1901,8 +2432,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1938,7 +2469,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1946,8 +2477,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1982,7 +2513,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1990,8 +2521,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2027,7 +2558,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2035,8 +2566,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2071,7 +2602,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2079,8 +2610,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2116,7 +2647,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2124,8 +2655,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2160,7 +2691,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2168,8 +2699,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2205,7 +2736,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2213,8 +2744,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2249,7 +2780,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2257,8 +2788,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2275,6 +2806,99 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = DeleteWebExperienceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteWebExperienceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociatePermission
+
+
+        /// <summary>
+        /// Removes a permission policy from a Amazon Q Business application, revoking the cross-account
+        /// access that was previously granted to an ISV. This operation deletes the specified
+        /// policy statement from the application's permission policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePermission service method.</param>
+        /// 
+        /// <returns>The response from the DisassociatePermission service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DisassociatePermission">REST API Reference for DisassociatePermission Operation</seealso>
+        public virtual DisassociatePermissionResponse DisassociatePermission(DisassociatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociatePermissionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a permission policy from a Amazon Q Business application, revoking the cross-account
+        /// access that was previously granted to an ISV. This operation deletes the specified
+        /// policy statement from the application's permission policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociatePermission service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DisassociatePermission">REST API Reference for DisassociatePermission Operation</seealso>
+        public virtual Task<DisassociatePermissionResponse> DisassociatePermissionAsync(DisassociatePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePermissionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociatePermissionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2298,8 +2922,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2338,8 +2962,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2364,7 +2988,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an chat controls configured for an existing Amazon Q Business
+        /// Gets information about chat controls configured for an existing Amazon Q Business
         /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChatControlsConfiguration service method.</param>
@@ -2380,8 +3004,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2402,7 +3026,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an chat controls configured for an existing Amazon Q Business
+        /// Gets information about chat controls configured for an existing Amazon Q Business
         /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChatControlsConfiguration service method.</param>
@@ -2421,8 +3045,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2439,6 +3063,95 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = GetChatControlsConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetChatControlsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDataAccessor
+
+
+        /// <summary>
+        /// Retrieves information about a specified data accessor. This operation returns details
+        /// about the data accessor, including its display name, unique identifier, Amazon Resource
+        /// Name (ARN), the associated Amazon Q Business application and IAM Identity Center application,
+        /// the IAM role for the ISV, the action configurations, and the timestamps for when the
+        /// data accessor was created and last updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the GetDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataAccessor">REST API Reference for GetDataAccessor Operation</seealso>
+        public virtual GetDataAccessorResponse GetDataAccessor(GetDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specified data accessor. This operation returns details
+        /// about the data accessor, including its display name, unique identifier, Amazon Resource
+        /// Name (ARN), the associated Amazon Q Business application and IAM Identity Center application,
+        /// the IAM role for the ISV, the action configurations, and the timestamps for when the
+        /// data accessor was created and last updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataAccessor">REST API Reference for GetDataAccessor Operation</seealso>
+        public virtual Task<GetDataAccessorResponse> GetDataAccessorAsync(GetDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataAccessorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2462,8 +3175,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2502,8 +3215,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2539,7 +3252,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2547,8 +3260,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2583,7 +3296,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2591,8 +3304,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2632,8 +3345,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2672,8 +3385,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2690,6 +3403,119 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetIndexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMedia
+
+
+        /// <summary>
+        /// Returns the image bytes corresponding to a media object. If you have implemented your
+        /// own application with the Chat and ChatSync APIs, and have enabled content extraction
+        /// from visual data in Amazon Q Business, you use the GetMedia API operation to download
+        /// the images so you can show them in your UI with responses.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting
+        /// semantic meaning from images and visuals</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedia service method.</param>
+        /// 
+        /// <returns>The response from the GetMedia service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.MediaTooLargeException">
+        /// The requested media object is too large to be returned.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">REST API Reference for GetMedia Operation</seealso>
+        public virtual GetMediaResponse GetMedia(GetMediaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
+
+            return Invoke<GetMediaResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the image bytes corresponding to a media object. If you have implemented your
+        /// own application with the Chat and ChatSync APIs, and have enabled content extraction
+        /// from visual data in Amazon Q Business, you use the GetMedia API operation to download
+        /// the images so you can show them in your UI with responses.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting
+        /// semantic meaning from images and visuals</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMedia service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.MediaTooLargeException">
+        /// The requested media object is too large to be returned.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">REST API Reference for GetMedia Operation</seealso>
+        public virtual Task<GetMediaResponse> GetMediaAsync(GetMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMediaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMediaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2713,8 +3539,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2753,8 +3579,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2771,6 +3597,91 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = GetPluginResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetPluginResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPolicy
+
+
+        /// <summary>
+        /// Retrieves the current permission policy for a Amazon Q Business application. The policy
+        /// is returned as a JSON-formatted string and defines the IAM actions that are allowed
+        /// or denied for the application's resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current permission policy for a Amazon Q Business application. The policy
+        /// is returned as a JSON-formatted string and defines the IAM actions that are allowed
+        /// or denied for the application's resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2794,8 +3705,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2834,8 +3745,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2872,7 +3783,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2880,8 +3791,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2917,7 +3828,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2925,8 +3836,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2966,8 +3877,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3006,8 +3917,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3033,6 +3944,14 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Lists Amazon Q Business applications.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Q Business applications may securely transmit data for processing across Amazon
+        /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -3066,6 +3985,14 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Lists Amazon Q Business applications.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Q Business applications may securely transmit data for processing across Amazon
+        /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -3101,6 +4028,97 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  ListAttachments
+
+
+        /// <summary>
+        /// Gets a list of attachments associated with an Amazon Q Business web experience or
+        /// a list of attachements associated with a specific Amazon Q Business conversation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        public virtual ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachmentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a list of attachments associated with an Amazon Q Business web experience or
+        /// a list of attachements associated with a specific Amazon Q Business conversation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        public virtual Task<ListAttachmentsResponse> ListAttachmentsAsync(ListAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAttachmentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListConversations
 
 
@@ -3124,8 +4142,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3168,8 +4186,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3186,6 +4204,91 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = ListConversationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListConversationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataAccessors
+
+
+        /// <summary>
+        /// Lists the data accessors for a Amazon Q Business application. This operation returns
+        /// a paginated list of data accessor summaries, including the friendly name, unique identifier,
+        /// ARN, associated IAM role, and creation/update timestamps for each data accessor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAccessors service method.</param>
+        /// 
+        /// <returns>The response from the ListDataAccessors service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataAccessors">REST API Reference for ListDataAccessors Operation</seealso>
+        public virtual ListDataAccessorsResponse ListDataAccessors(ListDataAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataAccessorsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the data accessors for a Amazon Q Business application. This operation returns
+        /// a paginated list of data accessor summaries, including the friendly name, unique identifier,
+        /// ARN, associated IAM role, and creation/update timestamps for each data accessor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAccessors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataAccessors service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataAccessors">REST API Reference for ListDataAccessors Operation</seealso>
+        public virtual Task<ListDataAccessorsResponse> ListDataAccessorsAsync(ListDataAccessorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataAccessorsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataAccessorsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3209,8 +4312,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3249,8 +4352,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3284,14 +4387,18 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3324,14 +4431,18 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3371,8 +4482,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3411,8 +4522,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3448,7 +4559,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3456,8 +4567,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3492,7 +4603,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3500,8 +4611,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3541,8 +4652,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3581,8 +4692,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3626,8 +4737,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3670,8 +4781,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3688,6 +4799,89 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = ListMessagesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListMessagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPluginActions
+
+
+        /// <summary>
+        /// Lists configured Amazon Q Business actions for a specific plugin in an Amazon Q Business
+        /// application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginActions service method.</param>
+        /// 
+        /// <returns>The response from the ListPluginActions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginActions">REST API Reference for ListPluginActions Operation</seealso>
+        public virtual ListPluginActionsResponse ListPluginActions(ListPluginActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPluginActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists configured Amazon Q Business actions for a specific plugin in an Amazon Q Business
+        /// application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPluginActions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginActions">REST API Reference for ListPluginActions Operation</seealso>
+        public virtual Task<ListPluginActionsResponse> ListPluginActionsAsync(ListPluginActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPluginActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3711,8 +4905,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3751,8 +4945,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3769,6 +4963,152 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = ListPluginsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPluginsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPluginTypeActions
+
+
+        /// <summary>
+        /// Lists configured Amazon Q Business actions for any plugin type—both built-in and custom.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeActions service method.</param>
+        /// 
+        /// <returns>The response from the ListPluginTypeActions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeActions">REST API Reference for ListPluginTypeActions Operation</seealso>
+        public virtual ListPluginTypeActionsResponse ListPluginTypeActions(ListPluginTypeActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPluginTypeActionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists configured Amazon Q Business actions for any plugin type—both built-in and custom.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPluginTypeActions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeActions">REST API Reference for ListPluginTypeActions Operation</seealso>
+        public virtual Task<ListPluginTypeActionsResponse> ListPluginTypeActionsAsync(ListPluginTypeActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeActionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPluginTypeActionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPluginTypeMetadata
+
+
+        /// <summary>
+        /// Lists metadata for all Amazon Q Business plugin types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListPluginTypeMetadata service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeMetadata">REST API Reference for ListPluginTypeMetadata Operation</seealso>
+        public virtual ListPluginTypeMetadataResponse ListPluginTypeMetadata(ListPluginTypeMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<ListPluginTypeMetadataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists metadata for all Amazon Q Business plugin types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPluginTypeMetadata service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeMetadata">REST API Reference for ListPluginTypeMetadata Operation</seealso>
+        public virtual Task<ListPluginTypeMetadataResponse> ListPluginTypeMetadataAsync(ListPluginTypeMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeMetadataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPluginTypeMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3792,8 +5132,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3832,8 +5172,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3850,6 +5190,95 @@ namespace Amazon.QBusiness
             options.ResponseUnmarshaller = ListRetrieversResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListRetrieversResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSubscriptions
+
+
+        /// <summary>
+        /// Lists all subscriptions created in an Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the ListSubscriptions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
+        public virtual ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSubscriptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all subscriptions created in an Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubscriptions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
+        public virtual Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSubscriptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSubscriptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSubscriptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3874,8 +5303,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3915,8 +5344,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3956,8 +5385,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3996,8 +5425,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4038,8 +5467,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4079,8 +5508,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4115,6 +5544,14 @@ namespace Amazon.QBusiness
         /// work in research and engineering, and therefore belong in the intellectual property
         /// group, can see top-secret company documents in their Amazon Q Business chat results.
         /// </para>
+        ///  
+        /// <para>
+        /// There are two options for creating groups, either passing group members inline or
+        /// using an S3 file via the S3PathForGroupMembers field. For inline groups, there is
+        /// a limit of 1000 members per group and for provided S3 files there is a limit of 100
+        /// thousand members. When creating a group using an S3 file, you provide both an S3 file
+        /// and a <c>RoleArn</c> for Amazon Q Buisness to access the file.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroup service method.</param>
         /// 
@@ -4125,7 +5562,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4133,8 +5570,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4168,6 +5605,14 @@ namespace Amazon.QBusiness
         /// work in research and engineering, and therefore belong in the intellectual property
         /// group, can see top-secret company documents in their Amazon Q Business chat results.
         /// </para>
+        ///  
+        /// <para>
+        /// There are two options for creating groups, either passing group members inline or
+        /// using an S3 file via the S3PathForGroupMembers field. For inline groups, there is
+        /// a limit of 1000 members per group and for provided S3 files there is a limit of 100
+        /// thousand members. When creating a group using an S3 file, you provide both an S3 file
+        /// and a <c>RoleArn</c> for Amazon Q Buisness to access the file.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4181,7 +5626,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4189,8 +5634,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4214,6 +5659,105 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  SearchRelevantContent
+
+
+        /// <summary>
+        /// Searches for relevant content in a Amazon Q Business application based on a query.
+        /// This operation takes a search query text, the Amazon Q Business application identifier,
+        /// and optional filters (such as content source and maximum results) as input. It returns
+        /// a list of relevant content items, where each item includes the content text, the unique
+        /// document identifier, the document title, the document URI, any relevant document attributes,
+        /// and score attributes indicating the confidence level of the relevance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRelevantContent service method.</param>
+        /// 
+        /// <returns>The response from the SearchRelevantContent service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SearchRelevantContent">REST API Reference for SearchRelevantContent Operation</seealso>
+        public virtual SearchRelevantContentResponse SearchRelevantContent(SearchRelevantContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRelevantContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRelevantContentResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRelevantContentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches for relevant content in a Amazon Q Business application based on a query.
+        /// This operation takes a search query text, the Amazon Q Business application identifier,
+        /// and optional filters (such as content source and maximum results) as input. It returns
+        /// a list of relevant content items, where each item includes the content text, the unique
+        /// document identifier, the document title, the document URI, any relevant document attributes,
+        /// and score attributes indicating the confidence level of the relevance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRelevantContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchRelevantContent service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SearchRelevantContent">REST API Reference for SearchRelevantContent Operation</seealso>
+        public virtual Task<SearchRelevantContentResponse> SearchRelevantContentAsync(SearchRelevantContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRelevantContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRelevantContentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchRelevantContentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartDataSourceSyncJob
 
 
@@ -4230,7 +5774,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4238,8 +5782,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4278,7 +5822,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4286,8 +5830,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4324,14 +5868,18 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4364,14 +5912,18 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4408,7 +5960,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4416,8 +5968,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4453,7 +6005,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4461,8 +6013,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4502,8 +6054,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4542,8 +6094,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4569,6 +6121,21 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Updates an existing Amazon Q Business application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Q Business applications may securely transmit data for processing across Amazon
+        /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// An Amazon Q Apps service-linked role will be created if it's absent in the Amazon
+        /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">Using
+        /// service-linked roles for Q Apps</a>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// 
@@ -4579,7 +6146,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4587,8 +6154,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4610,6 +6177,21 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Updates an existing Amazon Q Business application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Q Business applications may securely transmit data for processing across Amazon
+        /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// An Amazon Q Apps service-linked role will be created if it's absent in the Amazon
+        /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">Using
+        /// service-linked roles for Q Apps</a>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -4623,7 +6205,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4631,8 +6213,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4657,7 +6239,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an set of chat controls configured for an existing Amazon Q Business application.
+        /// Updates a set of chat controls configured for an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChatControlsConfiguration service method.</param>
         /// 
@@ -4668,7 +6250,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4676,8 +6258,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4701,7 +6283,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an set of chat controls configured for an existing Amazon Q Business application.
+        /// Updates a set of chat controls configured for an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChatControlsConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4715,7 +6297,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4723,8 +6305,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4748,6 +6330,101 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  UpdateDataAccessor
+
+
+        /// <summary>
+        /// Updates an existing data accessor. This operation allows modifying the action configurations
+        /// (the allowed actions and associated filters) and the display name of the data accessor.
+        /// It does not allow changing the IAM role associated with the data accessor or other
+        /// core properties of the data accessor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataAccessor">REST API Reference for UpdateDataAccessor Operation</seealso>
+        public virtual UpdateDataAccessorResponse UpdateDataAccessor(UpdateDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataAccessorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing data accessor. This operation allows modifying the action configurations
+        /// (the allowed actions and associated filters) and the display name of the data accessor.
+        /// It does not allow changing the IAM role associated with the data accessor or other
+        /// core properties of the data accessor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataAccessor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataAccessor">REST API Reference for UpdateDataAccessor Operation</seealso>
+        public virtual Task<UpdateDataAccessorResponse> UpdateDataAccessorAsync(UpdateDataAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataAccessorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateDataAccessorResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDataSource
 
 
@@ -4763,7 +6440,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4771,8 +6448,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4807,7 +6484,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4815,8 +6492,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4852,7 +6529,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4860,8 +6537,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4899,7 +6576,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4907,8 +6584,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4947,7 +6624,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -4955,8 +6632,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4994,7 +6671,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -5002,8 +6679,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -5042,7 +6719,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -5050,8 +6727,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -5089,7 +6766,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -5097,8 +6774,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -5122,6 +6799,101 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  UpdateSubscription
+
+
+        /// <summary>
+        /// Updates the pricing tier for an Amazon Q Business subscription. Upgrades are instant.
+        /// Downgrades apply at the start of the next month. Subscription tier determines feature
+        /// access for the user. For more information on subscriptions and pricing tiers, see
+        /// <a href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business pricing</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscription service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
+        public virtual UpdateSubscriptionResponse UpdateSubscription(UpdateSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSubscriptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the pricing tier for an Amazon Q Business subscription. Upgrades are instant.
+        /// Downgrades apply at the start of the next month. Subscription tier determines feature
+        /// access for the user. For more information on subscriptions and pricing tiers, see
+        /// <a href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business pricing</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
+        public virtual Task<UpdateSubscriptionResponse> UpdateSubscriptionAsync(UpdateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUser
 
 
@@ -5141,8 +6913,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -5184,8 +6956,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -5224,7 +6996,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -5232,8 +7004,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -5268,7 +7040,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -5276,8 +7048,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.

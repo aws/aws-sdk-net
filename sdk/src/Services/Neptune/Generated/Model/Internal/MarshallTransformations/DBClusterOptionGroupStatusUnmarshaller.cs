@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterOptionGroupStatus Object
     /// </summary>  
-    public class DBClusterOptionGroupStatusUnmarshaller : IUnmarshaller<DBClusterOptionGroupStatus, XmlUnmarshallerContext>, IUnmarshaller<DBClusterOptionGroupStatus, JsonUnmarshallerContext>
+    public class DBClusterOptionGroupStatusUnmarshaller : IXmlUnmarshaller<DBClusterOptionGroupStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBClusterOptionGroupStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBClusterOptionGroupStatusUnmarshaller _instance = new DBClusterOptionGroupStatusUnmarshaller();        
 

@@ -32,7 +32,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Checksum Object
     /// </summary>  
-    public class ChecksumUnmarshaller : IUnmarshaller<Checksum, XmlUnmarshallerContext>
+    public class ChecksumUnmarshaller : IXmlUnmarshaller<Checksum, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ChecksumSHA256 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumCRC64NVME", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumCRC64NVME = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ChecksumType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ChecksumType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -56,6 +59,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public IRequest Marshall(AssociatePackageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
@@ -66,6 +70,47 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field PackageID set");
             request.AddPathResource("{PackageID}", StringUtils.FromString(publicRequest.PackageID));
             request.ResourcePath = "/2021-01-01/packages/associate/{PackageID}/{DomainName}";
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssociationConfiguration())
+            {
+                context.Writer.WritePropertyName("AssociationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PackageAssociationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AssociationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPrerequisitePackageIDList())
+            {
+                context.Writer.WritePropertyName("PrerequisitePackageIDList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPrerequisitePackageIDListListValue in publicRequest.PrerequisitePackageIDList)
+                {
+                        context.Writer.WriteStringValue(publicRequestPrerequisitePackageIDListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
 
             return request;
         }

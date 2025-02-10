@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInsightsEnabled())
             {
                 context.Writer.WritePropertyName("InsightsEnabled");
-                context.Writer.Write(requestObject.InsightsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.InsightsEnabled.Value);
             }
 
             if(requestObject.IsSetNotificationsEnabled())
             {
                 context.Writer.WritePropertyName("NotificationsEnabled");
-                context.Writer.Write(requestObject.NotificationsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.NotificationsEnabled.Value);
             }
 
         }

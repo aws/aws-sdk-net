@@ -13,11 +13,11 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
     {
         public static string GetTestDate(Member member, Shape shape)
         {
-            if (member.IsDateTime)
+            if (member.IsTimeStamp)
             {
                 return GetTestDate(member.TimestampFormat);
             }
-            else if ((member.IsList || member.IsMap) && shape.IsDateTime)
+            else if ((member.IsList || member.IsMap) && shape.IsTimeStamp)
             {
                 // Member is of type list or map, and the shape is a date time
                 return GetTestDate(shape.GetTimestampFormat(member.MarshallLocation));

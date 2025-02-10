@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("Cpu");
-                context.Writer.Write(requestObject.Cpu);
+                context.Writer.WriteStringValue(requestObject.Cpu);
             }
 
             if(requestObject.IsSetInstanceRoleArn())
             {
                 context.Writer.WritePropertyName("InstanceRoleArn");
-                context.Writer.Write(requestObject.InstanceRoleArn);
+                context.Writer.WriteStringValue(requestObject.InstanceRoleArn);
             }
 
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("Memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.WriteStringValue(requestObject.Memory);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,133 +49,133 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEqualTo())
             {
                 context.Writer.WritePropertyName("equalTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EqualToExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.EqualTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreaterThan())
             {
                 context.Writer.WritePropertyName("greaterThan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreaterThanExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreaterThan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreaterThanOrEqualTo())
             {
                 context.Writer.WritePropertyName("greaterThanOrEqualTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreaterThanOrEqualToExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreaterThanOrEqualTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIn())
             {
                 context.Writer.WritePropertyName("in");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.In, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsNotNull())
             {
                 context.Writer.WritePropertyName("isNotNull");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IsNotNullExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IsNotNull, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsNull())
             {
                 context.Writer.WritePropertyName("isNull");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IsNullExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IsNull, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLessThan())
             {
                 context.Writer.WritePropertyName("lessThan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LessThanExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.LessThan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLessThanOrEqualTo())
             {
                 context.Writer.WritePropertyName("lessThanOrEqualTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LessThanOrEqualToExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.LessThanOrEqualTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLike())
             {
                 context.Writer.WritePropertyName("like");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LikeExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Like, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotEqualTo())
             {
                 context.Writer.WritePropertyName("notEqualTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotEqualToExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotEqualTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotIn())
             {
                 context.Writer.WritePropertyName("notIn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotInExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotIn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotLike())
             {
                 context.Writer.WritePropertyName("notLike");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotLikeExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotLike, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

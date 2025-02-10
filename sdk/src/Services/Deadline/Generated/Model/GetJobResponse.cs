@@ -44,9 +44,11 @@ namespace Amazon.Deadline.Model
         private string _lifecycleStatusMessage;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
+        private int? _maxWorkerCount;
         private string _name;
         private Dictionary<string, JobParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, JobParameter>() : null;
         private int? _priority;
+        private string _sourceJobId;
         private DateTime? _startedAt;
         private string _storageProfileId;
         private JobTargetTaskRunStatus _targetTaskRunStatus;
@@ -250,6 +252,32 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxWorkerCount. 
+        /// <para>
+        /// The maximum number of worker hosts that can concurrently process a job. When the <c>maxWorkerCount</c>
+        /// is reached, no more workers will be assigned to process the job, even if the fleets
+        /// assigned to the job's queue has available workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't set the <c>maxWorkerCount</c> when you create a job, this value is not
+        /// returned in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-1, Max=2147483647)]
+        public int? MaxWorkerCount
+        {
+            get { return this._maxWorkerCount; }
+            set { this._maxWorkerCount = value; }
+        }
+
+        // Check to see if MaxWorkerCount property is set
+        internal bool IsSetMaxWorkerCount()
+        {
+            return this._maxWorkerCount.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the job.
@@ -304,6 +332,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceJobId. 
+        /// <para>
+        /// The job ID for the source job.
+        /// </para>
+        /// </summary>
+        public string SourceJobId
+        {
+            get { return this._sourceJobId; }
+            set { this._sourceJobId = value; }
+        }
+
+        // Check to see if SourceJobId property is set
+        internal bool IsSetSourceJobId()
+        {
+            return this._sourceJobId != null;
         }
 
         /// <summary>

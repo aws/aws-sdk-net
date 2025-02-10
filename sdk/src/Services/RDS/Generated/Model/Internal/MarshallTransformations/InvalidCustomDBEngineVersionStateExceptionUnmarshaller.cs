@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidCustomDBEngineVersionStateException operation
     /// </summary>  
-    public class InvalidCustomDBEngineVersionStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidCustomDBEngineVersionStateException, XmlUnmarshallerContext>
+    public class InvalidCustomDBEngineVersionStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidCustomDBEngineVersionStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -54,6 +54,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _resultLocationBucket;
         private string _resultLocationFolder;
         private string _serviceAccessRoleArn;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentRunName. 
@@ -264,6 +265,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServiceAccessRoleArn()
         {
             return this._serviceAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// One or more tags to be assigned to the premigration assessment run that you want to
+        /// start.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

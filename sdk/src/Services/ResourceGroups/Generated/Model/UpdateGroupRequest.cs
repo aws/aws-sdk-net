@@ -50,9 +50,32 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class UpdateGroupRequest : AmazonResourceGroupsRequest
     {
+        private int? _criticality;
         private string _description;
+        private string _displayName;
         private string _group;
         private string _groupName;
+        private string _owner;
+
+        /// <summary>
+        /// Gets and sets the property Criticality. 
+        /// <para>
+        /// The critical rank of the application group on a scale of 1 to 10, with a rank of 1
+        /// being the most critical, and a rank of 10 being least critical.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public int? Criticality
+        {
+            get { return this._criticality; }
+            set { this._criticality = value; }
+        }
+
+        // Check to see if Criticality property is set
+        internal bool IsSetCriticality()
+        {
+            return this._criticality.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -75,9 +98,28 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The name of the application group, which you can change at any time. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public string DisplayName
+        {
+            get { return this._displayName; }
+            set { this._displayName = value; }
+        }
+
+        // Check to see if DisplayName property is set
+        internal bool IsSetDisplayName()
+        {
+            return this._displayName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name or the ARN of the resource group to modify.
+        /// The name or the ARN of the resource group to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -111,6 +153,26 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// A name, email address or other identifier for the person or group who is considered
+        /// as the owner of this application group within your organization. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=300)]
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
         }
 
     }

@@ -52,6 +52,7 @@ namespace Amazon.NeptuneGraph.Model
         private string _kmsKeyIdentifier;
         private int? _maxProvisionedMemory;
         private int? _minProvisionedMemory;
+        private ParquetType _parquetType;
         private bool? _publicConnectivity;
         private int? _replicaCount;
         private string _roleArn;
@@ -123,8 +124,9 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// Specifies the format of S3 data to be imported. Valid values are <c>CSV</c>, which
         /// identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-        /// CSV format</a> or <c>OPENCYPHER</c>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
-        /// load format</a>.
+        /// CSV format</a>, <c>OPEN_CYPHER</c>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
+        /// load format</a>, or <c>ntriples</c>, which identifies the <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html">RDF
+        /// n-triples</a> format.
         /// </para>
         /// </summary>
         public Format Format
@@ -212,12 +214,12 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         ///  
         /// <para>
-        ///  If both the minimum and maximum values are specified, the max of the <c>min-provisioned-memory</c>
-        /// and <c>max-provisioned memory</c> is used to create the graph. If neither value is
-        /// specified 128 m-NCUs are used.
+        ///  If both the minimum and maximum values are specified, the final <c>provisioned-memory</c>
+        /// will be chosen per the actual size of your imported data. If neither value is specified,
+        /// 128 m-NCUs are used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=24576)]
+        [AWSProperty(Min=16, Max=24576)]
         public int? MaxProvisionedMemory
         {
             get { return this._maxProvisionedMemory; }
@@ -237,7 +239,7 @@ namespace Amazon.NeptuneGraph.Model
         /// the graph. Default: 128
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=24576)]
+        [AWSProperty(Min=16, Max=24576)]
         public int? MinProvisionedMemory
         {
             get { return this._minProvisionedMemory; }
@@ -248,6 +250,24 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetMinProvisionedMemory()
         {
             return this._minProvisionedMemory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParquetType. 
+        /// <para>
+        /// The parquet type of the import task.
+        /// </para>
+        /// </summary>
+        public ParquetType ParquetType
+        {
+            get { return this._parquetType; }
+            set { this._parquetType = value; }
+        }
+
+        // Check to see if ParquetType property is set
+        internal bool IsSetParquetType()
+        {
+            return this._parquetType != null;
         }
 
         /// <summary>

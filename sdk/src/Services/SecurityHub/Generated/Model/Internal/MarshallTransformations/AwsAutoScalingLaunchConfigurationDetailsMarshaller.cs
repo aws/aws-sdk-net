@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,145 +49,145 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociatePublicIpAddress())
             {
                 context.Writer.WritePropertyName("AssociatePublicIpAddress");
-                context.Writer.Write(requestObject.AssociatePublicIpAddress.Value);
+                context.Writer.WriteBooleanValue(requestObject.AssociatePublicIpAddress.Value);
             }
 
             if(requestObject.IsSetBlockDeviceMappings())
             {
                 context.Writer.WritePropertyName("BlockDeviceMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBlockDeviceMappingsListValue in requestObject.BlockDeviceMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectBlockDeviceMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetClassicLinkVpcId())
             {
                 context.Writer.WritePropertyName("ClassicLinkVpcId");
-                context.Writer.Write(requestObject.ClassicLinkVpcId);
+                context.Writer.WriteStringValue(requestObject.ClassicLinkVpcId);
             }
 
             if(requestObject.IsSetClassicLinkVpcSecurityGroups())
             {
                 context.Writer.WritePropertyName("ClassicLinkVpcSecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClassicLinkVpcSecurityGroupsListValue in requestObject.ClassicLinkVpcSecurityGroups)
                 {
-                        context.Writer.Write(requestObjectClassicLinkVpcSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectClassicLinkVpcSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
-                context.Writer.Write(requestObject.CreatedTime);
+                context.Writer.WriteStringValue(requestObject.CreatedTime);
             }
 
             if(requestObject.IsSetEbsOptimized())
             {
                 context.Writer.WritePropertyName("EbsOptimized");
-                context.Writer.Write(requestObject.EbsOptimized.Value);
+                context.Writer.WriteBooleanValue(requestObject.EbsOptimized.Value);
             }
 
             if(requestObject.IsSetIamInstanceProfile())
             {
                 context.Writer.WritePropertyName("IamInstanceProfile");
-                context.Writer.Write(requestObject.IamInstanceProfile);
+                context.Writer.WriteStringValue(requestObject.IamInstanceProfile);
             }
 
             if(requestObject.IsSetImageId())
             {
                 context.Writer.WritePropertyName("ImageId");
-                context.Writer.Write(requestObject.ImageId);
+                context.Writer.WriteStringValue(requestObject.ImageId);
             }
 
             if(requestObject.IsSetInstanceMonitoring())
             {
                 context.Writer.WritePropertyName("InstanceMonitoring");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAutoScalingLaunchConfigurationInstanceMonitoringDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceMonitoring, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetKernelId())
             {
                 context.Writer.WritePropertyName("KernelId");
-                context.Writer.Write(requestObject.KernelId);
+                context.Writer.WriteStringValue(requestObject.KernelId);
             }
 
             if(requestObject.IsSetKeyName())
             {
                 context.Writer.WritePropertyName("KeyName");
-                context.Writer.Write(requestObject.KeyName);
+                context.Writer.WriteStringValue(requestObject.KeyName);
             }
 
             if(requestObject.IsSetLaunchConfigurationName())
             {
                 context.Writer.WritePropertyName("LaunchConfigurationName");
-                context.Writer.Write(requestObject.LaunchConfigurationName);
+                context.Writer.WriteStringValue(requestObject.LaunchConfigurationName);
             }
 
             if(requestObject.IsSetMetadataOptions())
             {
                 context.Writer.WritePropertyName("MetadataOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAutoScalingLaunchConfigurationMetadataOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetadataOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlacementTenancy())
             {
                 context.Writer.WritePropertyName("PlacementTenancy");
-                context.Writer.Write(requestObject.PlacementTenancy);
+                context.Writer.WriteStringValue(requestObject.PlacementTenancy);
             }
 
             if(requestObject.IsSetRamdiskId())
             {
                 context.Writer.WritePropertyName("RamdiskId");
-                context.Writer.Write(requestObject.RamdiskId);
+                context.Writer.WriteStringValue(requestObject.RamdiskId);
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("SecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSpotPrice())
             {
                 context.Writer.WritePropertyName("SpotPrice");
-                context.Writer.Write(requestObject.SpotPrice);
+                context.Writer.WriteStringValue(requestObject.SpotPrice);
             }
 
             if(requestObject.IsSetUserData())
             {
                 context.Writer.WritePropertyName("UserData");
-                context.Writer.Write(requestObject.UserData);
+                context.Writer.WriteStringValue(requestObject.UserData);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateVersion Object
     /// </summary>  
-    public class LaunchTemplateVersionUnmarshaller : IUnmarshaller<LaunchTemplateVersion, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateVersion, JsonUnmarshallerContext>
+    public class LaunchTemplateVersionUnmarshaller : IXmlUnmarshaller<LaunchTemplateVersion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -91,6 +91,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchTemplateName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("operator", targetDepth))
+                    {
+                        var unmarshaller = OperatorResponseUnmarshaller.Instance;
+                        unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("versionDescription", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -112,17 +118,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchTemplateVersion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchTemplateVersionUnmarshaller _instance = new LaunchTemplateVersionUnmarshaller();        
 

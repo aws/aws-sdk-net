@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -48,26 +46,37 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMqttTopicConfig())
+            {
+                context.Writer.WritePropertyName("mqttTopicConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MqttTopicConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MqttTopicConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetS3Config())
             {
                 context.Writer.WritePropertyName("s3Config");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Config, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimestreamConfig())
             {
                 context.Writer.WritePropertyName("timestreamConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestreamConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimestreamConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

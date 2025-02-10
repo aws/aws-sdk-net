@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetGroupAttribute Object
     /// </summary>  
-    public class TargetGroupAttributeUnmarshaller : IUnmarshaller<TargetGroupAttribute, XmlUnmarshallerContext>, IUnmarshaller<TargetGroupAttribute, JsonUnmarshallerContext>
+    public class TargetGroupAttributeUnmarshaller : IXmlUnmarshaller<TargetGroupAttribute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetGroupAttribute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetGroupAttributeUnmarshaller _instance = new TargetGroupAttributeUnmarshaller();        
 

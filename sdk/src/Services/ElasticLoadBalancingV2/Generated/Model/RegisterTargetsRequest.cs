@@ -47,7 +47,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </para>
     ///  
     /// <para>
-    /// With a Network Load Balancer, you cannot register instances by instance ID if they
+    /// With a Network Load Balancer, you can't register instances by instance ID if they
     /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
     /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
     /// </para>

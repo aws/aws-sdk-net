@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NullCheckBoxList Object
     /// </summary>  
-    public class NullCheckBoxListUnmarshaller : IUnmarshaller<NullCheckBoxList, XmlUnmarshallerContext>, IUnmarshaller<NullCheckBoxList, JsonUnmarshallerContext>
+    public class NullCheckBoxListUnmarshaller : IJsonUnmarshaller<NullCheckBoxList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NullCheckBoxList IUnmarshaller<NullCheckBoxList, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NullCheckBoxList Unmarshall(JsonUnmarshallerContext context)
+        public NullCheckBoxList Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NullCheckBoxList unmarshalledObject = new NullCheckBoxList();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IsEmpty", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsEmpty = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsEmpty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsNegOne", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNegOne = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsNegOne = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsNullString", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsNullString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsNullString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

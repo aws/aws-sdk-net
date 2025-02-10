@@ -51,6 +51,113 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <c>tcp.idle_timeout.seconds</c> - The tcp idle timeout value, in seconds. The valid
         /// range is 60-6000 seconds. The default is 350 seconds.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are only supported by Application Load Balancers.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_mtls_clientcert_serial_number.header_name</c> - Enables
+        /// you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Serial-Number</b> HTTP
+        /// request header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_mtls_clientcert_issuer.header_name</c> - Enables you
+        /// to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Issuer</b> HTTP request
+        /// header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_mtls_clientcert_subject.header_name</c> - Enables
+        /// you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Subject</b> HTTP request
+        /// header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_mtls_clientcert_validity.header_name</c> - Enables
+        /// you to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Validity</b> HTTP request
+        /// header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_mtls_clientcert_leaf.header_name</c> - Enables you
+        /// to modify the header name of the <b>X-Amzn-Mtls-Clientcert-Leaf</b> HTTP request header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_mtls_clientcert.header_name</c> - Enables you to modify
+        /// the header name of the <b>X-Amzn-Mtls-Clientcert</b> HTTP request header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_tls_version.header_name</c> - Enables you to modify
+        /// the header name of the <b>X-Amzn-Tls-Version</b> HTTP request header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.request.x_amzn_tls_cipher_suite.header_name</c> - Enables you to
+        /// modify the header name of the <b>X-Amzn-Tls-Cipher-Suite</b> HTTP request header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.server.enabled</c> - Enables you to allow or remove the
+        /// HTTP response server header.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.strict_transport_security.header_value</c> - Informs browsers
+        /// that the site should only be accessed using HTTPS, and that any future attempts to
+        /// access it using HTTP should automatically be converted to HTTPS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.access_control_allow_origin.header_value</c> - Specifies
+        /// which origins are allowed to access the server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.access_control_allow_methods.header_value</c> - Returns
+        /// which HTTP methods are allowed when accessing the server from a different origin.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.access_control_allow_headers.header_value</c> - Specifies
+        /// which headers can be used during the request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.access_control_allow_credentials.header_value</c> - Indicates
+        /// whether the browser should include credentials such as cookies or authentication when
+        /// making requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.access_control_expose_headers.header_value</c> - Returns
+        /// which headers the browser can expose to the requesting client.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.access_control_max_age.header_value</c> - Specifies how
+        /// long the results of a preflight request can be cached, in seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.content_security_policy.header_value</c> - Specifies restrictions
+        /// enforced by the browser to help minimize the risk of certain types of security threats.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.x_content_type_options.header_value</c> - Indicates whether
+        /// the MIME types advertised in the <b>Content-Type</b> headers should be followed and
+        /// not be changed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>routing.http.response.x_frame_options.header_value</c> - Indicates whether the
+        /// browser is allowed to render a page in a <b>frame</b>, <b>iframe</b>, <b>embed</b>
+        /// or <b>object</b>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]

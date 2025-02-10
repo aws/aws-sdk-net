@@ -59,6 +59,14 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAddPrivateKey())
+                {
+                    request.Parameters.Add("AddPrivateKey", StringUtils.FromString(publicRequest.AddPrivateKey));
+                }
+                if(publicRequest.IsSetAssertionEncryptionMode())
+                {
+                    request.Parameters.Add("AssertionEncryptionMode", StringUtils.FromString(publicRequest.AssertionEncryptionMode));
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));

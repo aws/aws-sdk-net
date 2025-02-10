@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -64,79 +67,95 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/queues/{InstanceId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetHoursOfOperationId())
-                    {
-                        context.Writer.WritePropertyName("HoursOfOperationId");
-                        context.Writer.Write(publicRequest.HoursOfOperationId);
-                    }
-
-                    if(publicRequest.IsSetMaxContacts())
-                    {
-                        context.Writer.WritePropertyName("MaxContacts");
-                        context.Writer.Write(publicRequest.MaxContacts.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOutboundCallerConfig())
-                    {
-                        context.Writer.WritePropertyName("OutboundCallerConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OutboundCallerConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutboundCallerConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQuickConnectIds())
-                    {
-                        context.Writer.WritePropertyName("QuickConnectIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
-                        {
-                                context.Writer.Write(publicRequestQuickConnectIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetHoursOfOperationId())
+            {
+                context.Writer.WritePropertyName("HoursOfOperationId");
+                context.Writer.WriteStringValue(publicRequest.HoursOfOperationId);
+            }
+
+            if(publicRequest.IsSetMaxContacts())
+            {
+                context.Writer.WritePropertyName("MaxContacts");
+                context.Writer.WriteNumberValue(publicRequest.MaxContacts.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOutboundCallerConfig())
+            {
+                context.Writer.WritePropertyName("OutboundCallerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutboundCallerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutboundCallerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutboundEmailConfig())
+            {
+                context.Writer.WritePropertyName("OutboundEmailConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutboundEmailConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutboundEmailConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQuickConnectIds())
+            {
+                context.Writer.WritePropertyName("QuickConnectIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestQuickConnectIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

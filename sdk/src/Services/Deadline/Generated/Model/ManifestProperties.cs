@@ -63,7 +63,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property InputManifestHash. 
         /// <para>
-        /// The has value of the file.
+        /// The hash value of the file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

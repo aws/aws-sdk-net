@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCallingName())
             {
                 context.Writer.WritePropertyName("CallingName");
-                context.Writer.Write(requestObject.CallingName);
+                context.Writer.WriteStringValue(requestObject.CallingName);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPhoneNumberId())
             {
                 context.Writer.WritePropertyName("PhoneNumberId");
-                context.Writer.Write(requestObject.PhoneNumberId);
+                context.Writer.WriteStringValue(requestObject.PhoneNumberId);
             }
 
             if(requestObject.IsSetProductType())
             {
                 context.Writer.WritePropertyName("ProductType");
-                context.Writer.Write(requestObject.ProductType);
+                context.Writer.WriteStringValue(requestObject.ProductType);
             }
 
         }

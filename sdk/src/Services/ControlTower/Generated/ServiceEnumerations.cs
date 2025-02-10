@@ -205,6 +205,10 @@ namespace Amazon.ControlTower
         /// </summary>
         public static readonly ControlOperationType ENABLE_CONTROL = new ControlOperationType("ENABLE_CONTROL");
         /// <summary>
+        /// Constant RESET_ENABLED_CONTROL for ControlOperationType
+        /// </summary>
+        public static readonly ControlOperationType RESET_ENABLED_CONTROL = new ControlOperationType("RESET_ENABLED_CONTROL");
+        /// <summary>
         /// Constant UPDATE_ENABLED_CONTROL for ControlOperationType
         /// </summary>
         public static readonly ControlOperationType UPDATE_ENABLED_CONTROL = new ControlOperationType("UPDATE_ENABLED_CONTROL");

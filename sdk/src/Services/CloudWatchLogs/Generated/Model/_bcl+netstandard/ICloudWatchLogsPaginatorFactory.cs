@@ -90,5 +90,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// Paginator for ListLogAnomalyDetectors operation
         ///</summary>
         IListLogAnomalyDetectorsPaginator ListLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLogGroupsForQuery operation
+        ///</summary>
+        IListLogGroupsForQueryPaginator ListLogGroupsForQuery(ListLogGroupsForQueryRequest request);
     }
 }

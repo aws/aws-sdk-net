@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationDomain())
             {
                 context.Writer.WritePropertyName("DestinationDomain");
-                context.Writer.Write(requestObject.DestinationDomain);
+                context.Writer.WriteStringValue(requestObject.DestinationDomain);
             }
 
             if(requestObject.IsSetDestinationIpV4())
             {
                 context.Writer.WritePropertyName("DestinationIpV4");
-                context.Writer.Write(requestObject.DestinationIpV4);
+                context.Writer.WriteStringValue(requestObject.DestinationIpV4);
             }
 
             if(requestObject.IsSetDestinationIpV6())
             {
                 context.Writer.WritePropertyName("DestinationIpV6");
-                context.Writer.Write(requestObject.DestinationIpV6);
+                context.Writer.WriteStringValue(requestObject.DestinationIpV6);
             }
 
             if(requestObject.IsSetDestinationPort())
             {
                 context.Writer.WritePropertyName("DestinationPort");
-                context.Writer.Write(requestObject.DestinationPort.Value);
+                context.Writer.WriteNumberValue(requestObject.DestinationPort.Value);
             }
 
             if(requestObject.IsSetDirection())
             {
                 context.Writer.WritePropertyName("Direction");
-                context.Writer.Write(requestObject.Direction);
+                context.Writer.WriteStringValue(requestObject.Direction);
             }
 
             if(requestObject.IsSetOpenPortRange())
             {
                 context.Writer.WritePropertyName("OpenPortRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PortRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenPortRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetSourceDomain())
             {
                 context.Writer.WritePropertyName("SourceDomain");
-                context.Writer.Write(requestObject.SourceDomain);
+                context.Writer.WriteStringValue(requestObject.SourceDomain);
             }
 
             if(requestObject.IsSetSourceIpV4())
             {
                 context.Writer.WritePropertyName("SourceIpV4");
-                context.Writer.Write(requestObject.SourceIpV4);
+                context.Writer.WriteStringValue(requestObject.SourceIpV4);
             }
 
             if(requestObject.IsSetSourceIpV6())
             {
                 context.Writer.WritePropertyName("SourceIpV6");
-                context.Writer.Write(requestObject.SourceIpV6);
+                context.Writer.WriteStringValue(requestObject.SourceIpV6);
             }
 
             if(requestObject.IsSetSourceMac())
             {
                 context.Writer.WritePropertyName("SourceMac");
-                context.Writer.Write(requestObject.SourceMac);
+                context.Writer.WriteStringValue(requestObject.SourceMac);
             }
 
             if(requestObject.IsSetSourcePort())
             {
                 context.Writer.WritePropertyName("SourcePort");
-                context.Writer.Write(requestObject.SourcePort.Value);
+                context.Writer.WriteNumberValue(requestObject.SourcePort.Value);
             }
 
         }

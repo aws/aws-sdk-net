@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioGroupId())
             {
                 context.Writer.WritePropertyName("audioGroupId");
-                context.Writer.Write(requestObject.AudioGroupId);
+                context.Writer.WriteStringValue(requestObject.AudioGroupId);
             }
 
             if(requestObject.IsSetAudioOnlyImage())
             {
                 context.Writer.WritePropertyName("audioOnlyImage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioOnlyImage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioTrackType())
             {
                 context.Writer.WritePropertyName("audioTrackType");
-                context.Writer.Write(requestObject.AudioTrackType);
+                context.Writer.WriteStringValue(requestObject.AudioTrackType);
             }
 
             if(requestObject.IsSetSegmentType())
             {
                 context.Writer.WritePropertyName("segmentType");
-                context.Writer.Write(requestObject.SegmentType);
+                context.Writer.WriteStringValue(requestObject.SegmentType);
             }
 
         }

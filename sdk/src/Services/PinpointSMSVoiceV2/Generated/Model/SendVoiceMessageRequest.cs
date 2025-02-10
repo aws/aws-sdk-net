@@ -43,6 +43,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _maxPricePerMinute;
         private string _messageBody;
         private VoiceMessageBodyTextType _messageBodyTextType;
+        private bool? _messageFeedbackEnabled;
         private string _originationIdentity;
         private string _protectConfigurationId;
         private int? _timeToLive;
@@ -190,6 +191,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetMessageBodyTextType()
         {
             return this._messageBodyTextType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageFeedbackEnabled. 
+        /// <para>
+        /// Set to true to enable message feedback for the message. When a user receives the message
+        /// you need to update the message status using <a>PutMessageFeedback</a>.
+        /// </para>
+        /// </summary>
+        public bool? MessageFeedbackEnabled
+        {
+            get { return this._messageFeedbackEnabled; }
+            set { this._messageFeedbackEnabled = value; }
+        }
+
+        // Check to see if MessageFeedbackEnabled property is set
+        internal bool IsSetMessageFeedbackEnabled()
+        {
+            return this._messageFeedbackEnabled.HasValue; 
         }
 
         /// <summary>

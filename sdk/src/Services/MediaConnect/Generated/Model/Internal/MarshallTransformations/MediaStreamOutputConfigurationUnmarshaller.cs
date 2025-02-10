@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaStreamOutputConfiguration Object
     /// </summary>  
-    public class MediaStreamOutputConfigurationUnmarshaller : IUnmarshaller<MediaStreamOutputConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MediaStreamOutputConfiguration, JsonUnmarshallerContext>
+    public class MediaStreamOutputConfigurationUnmarshaller : IJsonUnmarshaller<MediaStreamOutputConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaStreamOutputConfiguration IUnmarshaller<MediaStreamOutputConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaStreamOutputConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MediaStreamOutputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaStreamOutputConfiguration unmarshalledObject = new MediaStreamOutputConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("destinationConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DestinationConfiguration, DestinationConfigurationUnmarshaller>(DestinationConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.DestinationConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DestinationConfiguration, DestinationConfigurationUnmarshaller>(DestinationConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.DestinationConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encodingName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncodingName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncodingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encodingParameters", targetDepth))
                 {
                     var unmarshaller = EncodingParametersUnmarshaller.Instance;
-                    unmarshalledObject.EncodingParameters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncodingParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaStreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaStreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

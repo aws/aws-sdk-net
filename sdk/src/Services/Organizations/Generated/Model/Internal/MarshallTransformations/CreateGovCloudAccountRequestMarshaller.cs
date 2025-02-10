@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Organizations.Model.Internal.MarshallTransformations
 {
@@ -63,59 +66,64 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountName())
-                    {
-                        context.Writer.WritePropertyName("AccountName");
-                        context.Writer.Write(publicRequest.AccountName);
-                    }
-
-                    if(publicRequest.IsSetEmail())
-                    {
-                        context.Writer.WritePropertyName("Email");
-                        context.Writer.Write(publicRequest.Email);
-                    }
-
-                    if(publicRequest.IsSetIamUserAccessToBilling())
-                    {
-                        context.Writer.WritePropertyName("IamUserAccessToBilling");
-                        context.Writer.Write(publicRequest.IamUserAccessToBilling);
-                    }
-
-                    if(publicRequest.IsSetRoleName())
-                    {
-                        context.Writer.WritePropertyName("RoleName");
-                        context.Writer.Write(publicRequest.RoleName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccountName");
+                context.Writer.WriteStringValue(publicRequest.AccountName);
             }
+
+            if(publicRequest.IsSetEmail())
+            {
+                context.Writer.WritePropertyName("Email");
+                context.Writer.WriteStringValue(publicRequest.Email);
+            }
+
+            if(publicRequest.IsSetIamUserAccessToBilling())
+            {
+                context.Writer.WritePropertyName("IamUserAccessToBilling");
+                context.Writer.WriteStringValue(publicRequest.IamUserAccessToBilling);
+            }
+
+            if(publicRequest.IsSetRoleName())
+            {
+                context.Writer.WritePropertyName("RoleName");
+                context.Writer.WriteStringValue(publicRequest.RoleName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

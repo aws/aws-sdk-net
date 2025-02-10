@@ -39,8 +39,8 @@ namespace Amazon.GameLift.Model
     /// ID/ARN, region, IP address/DNS, and port aren't final. A game session is not active
     /// and ready to accept players until placement status reaches <c>FULFILLED</c>. When
     /// the placement is in <c>PENDING</c> status, Amazon GameLift may attempt to place a
-    /// game session multiple times before succeeding. With each attempt it creates a <a>GameSession</a>
-    /// object and updates this placement object with the new game session properties..
+    /// game session multiple times before succeeding. With each attempt it creates a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameSession</a>
+    /// object and updates this placement object with the new game session properties.
     /// </para>
     ///  </note>
     /// </summary>
@@ -62,6 +62,7 @@ namespace Amazon.GameLift.Model
         private string _placementId;
         private List<PlayerLatency> _playerLatencies = AWSConfigs.InitializeCollections ? new List<PlayerLatency>() : null;
         private int? _port;
+        private PriorityConfigurationOverride _priorityConfigurationOverride;
         private DateTime? _startTime;
         private GameSessionPlacementState _status;
 
@@ -161,9 +162,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionData. 
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
-        /// data is passed to a game server process in the <c>GameSession</c> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>).
+        /// data is passed to a game server process with a request to start a new game session.
+        /// For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a game session</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=262144)]
@@ -401,6 +402,29 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PriorityConfigurationOverride. 
+        /// <para>
+        /// A prioritized list of locations to use with a game session placement request and instructions
+        /// on how to use it. This list overrides a queue's prioritized location list for a single
+        /// game session placement request only. The list can include Amazon Web Services Regions,
+        /// local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs
+        /// Amazon GameLift to use the override list for the first placement attempt only or for
+        /// all placement attempts.
+        /// </para>
+        /// </summary>
+        public PriorityConfigurationOverride PriorityConfigurationOverride
+        {
+            get { return this._priorityConfigurationOverride; }
+            set { this._priorityConfigurationOverride = value; }
+        }
+
+        // Check to see if PriorityConfigurationOverride property is set
+        internal bool IsSetPriorityConfigurationOverride()
+        {
+            return this._priorityConfigurationOverride != null;
         }
 
         /// <summary>

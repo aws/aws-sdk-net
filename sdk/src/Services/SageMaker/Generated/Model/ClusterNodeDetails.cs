@@ -42,9 +42,11 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private VpcConfig _overrideVpcConfig;
         private ClusterInstancePlacement _placement;
         private string _privateDnsHostname;
         private string _privatePrimaryIp;
+        private string _privatePrimaryIpv6;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -177,6 +179,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OverrideVpcConfig. 
+        /// <para>
+        /// The customized VPC configuration at the instance group level that overrides the default
+        /// VPC configuration of the SageMaker HyperPod cluster.
+        /// </para>
+        /// </summary>
+        public VpcConfig OverrideVpcConfig
+        {
+            get { return this._overrideVpcConfig; }
+            set { this._overrideVpcConfig = value; }
+        }
+
+        // Check to see if OverrideVpcConfig property is set
+        internal bool IsSetOverrideVpcConfig()
+        {
+            return this._overrideVpcConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
         /// The placement details of the SageMaker HyperPod cluster node.
@@ -228,6 +249,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPrivatePrimaryIp()
         {
             return this._privatePrimaryIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivatePrimaryIpv6. 
+        /// <para>
+        /// The private primary IPv6 address of the SageMaker HyperPod cluster node when configured
+        /// with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled
+        /// in either the cluster VPC configuration or the instance group VPC configuration.
+        /// </para>
+        /// </summary>
+        public string PrivatePrimaryIpv6
+        {
+            get { return this._privatePrimaryIpv6; }
+            set { this._privatePrimaryIpv6 = value; }
+        }
+
+        // Check to see if PrivatePrimaryIpv6 property is set
+        internal bool IsSetPrivatePrimaryIpv6()
+        {
+            return this._privatePrimaryIpv6 != null;
         }
 
         /// <summary>

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlarmArn())
             {
                 context.Writer.WritePropertyName("AlarmArn");
-                context.Writer.Write(requestObject.AlarmArn);
+                context.Writer.WriteStringValue(requestObject.AlarmArn);
             }
 
             if(requestObject.IsSetAlarmRoleArn())
             {
                 context.Writer.WritePropertyName("AlarmRoleArn");
-                context.Writer.Write(requestObject.AlarmRoleArn);
+                context.Writer.WriteStringValue(requestObject.AlarmRoleArn);
             }
 
         }

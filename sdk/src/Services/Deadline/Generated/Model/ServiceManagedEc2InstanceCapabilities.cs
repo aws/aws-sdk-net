@@ -34,6 +34,7 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class ServiceManagedEc2InstanceCapabilities
     {
+        private AcceleratorCapabilities _acceleratorCapabilities;
         private List<string> _allowedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CpuArchitectureType _cpuArchitectureType;
         private List<FleetAmountCapability> _customAmounts = AWSConfigs.InitializeCollections ? new List<FleetAmountCapability>() : null;
@@ -43,6 +44,25 @@ namespace Amazon.Deadline.Model
         private ServiceManagedFleetOperatingSystemFamily _osFamily;
         private Ec2EbsVolume _rootEbsVolume;
         private VCpuCountRange _vCpuCount;
+
+        /// <summary>
+        /// Gets and sets the property AcceleratorCapabilities. 
+        /// <para>
+        /// Describes the GPU accelerator capabilities required for worker host instances in this
+        /// fleet.
+        /// </para>
+        /// </summary>
+        public AcceleratorCapabilities AcceleratorCapabilities
+        {
+            get { return this._acceleratorCapabilities; }
+            set { this._acceleratorCapabilities = value; }
+        }
+
+        // Check to see if AcceleratorCapabilities property is set
+        internal bool IsSetAcceleratorCapabilities()
+        {
+            return this._acceleratorCapabilities != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedInstanceTypes. 

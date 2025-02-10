@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBProxyAlreadyExistsException operation
     /// </summary>  
-    public class DBProxyAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBProxyAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBProxyAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBProxyAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetScanAll())
             {
                 context.Writer.WritePropertyName("scanAll");
-                context.Writer.Write(requestObject.ScanAll.Value);
+                context.Writer.WriteBooleanValue(requestObject.ScanAll.Value);
             }
 
             if(requestObject.IsSetScanRate())
@@ -65,11 +63,11 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scanRate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ScanRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScanRate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ScanRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ScanRate.Value);
+                    context.Writer.WriteNumberValue(requestObject.ScanRate.Value);
                 }
             }
 

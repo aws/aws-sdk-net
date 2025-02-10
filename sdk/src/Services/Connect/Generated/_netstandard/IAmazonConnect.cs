@@ -62,7 +62,7 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
+    /// You can use an endpoint to connect programmatically to an Amazon Web Services service.
     /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
@@ -115,13 +115,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates the specified dataset for a Amazon Connect instance with the target account.
         /// You can associate only one dataset in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -615,7 +610,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an agent with a traffic distribution group.
+        /// Associates an agent with a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
         /// <param name="cancellationToken">
@@ -651,7 +647,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// &gt;Associates a set of proficiencies with a user.
+        /// Associates a set of proficiencies with a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateUserProficiencies service method.</param>
         /// <param name="cancellationToken">
@@ -684,13 +680,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
         /// account. You can associate multiple datasets in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -723,13 +714,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
         /// You can disassociate multiple datasets in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -1028,6 +1014,52 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  CreateContact
+
+
+
+        /// <summary>
+        /// Creates a new contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        Task<CreateContactResponse> CreateContactAsync(CreateContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateContactFlow
 
 
@@ -1124,6 +1156,98 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  CreateContactFlowVersion
+
+
+
+        /// <summary>
+        /// Publishes a new version of the flow provided. Versions are immutable and monotonically
+        /// increasing. If the <c>FlowContentSha256</c> provided is different from the <c>FlowContentSha256</c>
+        /// of the <c>$LATEST</c> published flow content, then an error is returned. This API
+        /// only supports creating versions for flows of type <c>Campaign</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        Task<CreateContactFlowVersionResponse> CreateContactFlowVersionAsync(CreateContactFlowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateEmailAddress
+
+
+
+        /// <summary>
+        /// Create new email address in the specified Amazon Connect instance. For more information
+        /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEmailAddress service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEmailAddress">REST API Reference for CreateEmailAddress Operation</seealso>
+        Task<CreateEmailAddressResponse> CreateEmailAddressAsync(CreateEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEvaluationForm
 
 
@@ -1204,6 +1328,45 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperation">REST API Reference for CreateHoursOfOperation Operation</seealso>
         Task<CreateHoursOfOperationResponse> CreateHoursOfOperationAsync(CreateHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateHoursOfOperationOverride
+
+
+
+        /// <summary>
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        Task<CreateHoursOfOperationOverrideResponse> CreateHoursOfOperationOverrideAsync(CreateHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1448,17 +1611,52 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  CreatePushNotificationRegistration
+
+
+
+        /// <summary>
+        /// Creates registration for a device token and a chat contact to receive real-time push
+        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html">Set
+        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        Task<CreatePushNotificationRegistrationResponse> CreatePushNotificationRegistrationAsync(CreatePushNotificationRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateQueue
 
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -1729,7 +1927,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
-        /// replicated. 
+        /// replicated.
         /// 
         ///  <note> 
         /// <para>
@@ -2238,6 +2436,81 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  DeleteContactFlowVersion
+
+
+
+        /// <summary>
+        /// Deletes the particular version specified in flow version identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowVersion">REST API Reference for DeleteContactFlowVersion Operation</seealso>
+        Task<DeleteContactFlowVersionResponse> DeleteContactFlowVersionAsync(DeleteContactFlowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteEmailAddress
+
+
+
+        /// <summary>
+        /// Deletes email address from the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEmailAddress service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEmailAddress">REST API Reference for DeleteEmailAddress Operation</seealso>
+        Task<DeleteEmailAddressResponse> DeleteEmailAddressAsync(DeleteEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteEvaluationForm
 
 
@@ -2317,6 +2590,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperation">REST API Reference for DeleteHoursOfOperation Operation</seealso>
         Task<DeleteHoursOfOperationResponse> DeleteHoursOfOperationAsync(DeleteHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteHoursOfOperationOverride
+
+
+
+        /// <summary>
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        Task<DeleteHoursOfOperationOverrideResponse> DeleteHoursOfOperationOverrideAsync(DeleteHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2461,13 +2767,45 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  DeletePushNotificationRegistration
+
+
+
+        /// <summary>
+        /// Deletes registration for a device token and a chat contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        Task<DeletePushNotificationRegistrationResponse> DeletePushNotificationRegistrationAsync(DeletePushNotificationRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteQueue
 
 
 
         /// <summary>
-        /// Deletes a queue. It isn't possible to delete a queue by using the Amazon Connect admin
-        /// website.
+        /// Deletes a queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// <param name="cancellationToken">
@@ -3067,12 +3405,9 @@ namespace Amazon.Connect
         /// </para>
         ///  <important> 
         /// <para>
-        /// Contact information remains available in Amazon Connect for 24 months, and then it
-        /// is deleted.
-        /// </para>
-        ///  
-        /// <para>
-        /// Only data from November 12, 2021, and later is returned by this API.
+        /// Contact information remains available in Amazon Connect for 24 months from the InitiationTimestamp,
+        /// and then it is deleted. Only contact information that is available in Amazon Connect
+        /// is returned by this API
         /// </para>
         ///  </important>
         /// </summary>
@@ -3147,9 +3482,14 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>arn:aws:.../contact-flow/{id}:{version}</c> to retrieve the content of a specific
+        /// flow version.
         /// </para>
         ///  
         /// <para>
@@ -3198,9 +3538,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
@@ -3229,6 +3569,42 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">REST API Reference for DescribeContactFlowModule Operation</seealso>
         Task<DescribeContactFlowModuleResponse> DescribeContactFlowModuleAsync(DescribeContactFlowModuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeEmailAddress
+
+
+
+        /// <summary>
+        /// Describe email address form the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEmailAddress service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEmailAddress">REST API Reference for DescribeEmailAddress Operation</seealso>
+        Task<DescribeEmailAddressResponse> DescribeEmailAddressAsync(DescribeEmailAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3298,6 +3674,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">REST API Reference for DescribeHoursOfOperation Operation</seealso>
         Task<DescribeHoursOfOperationResponse> DescribeHoursOfOperationAsync(DescribeHoursOfOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeHoursOfOperationOverride
+
+
+
+        /// <summary>
+        /// Describes the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        Task<DescribeHoursOfOperationOverrideResponse> DescribeHoursOfOperationOverrideAsync(DescribeHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3433,7 +3842,7 @@ namespace Amazon.Connect
         /// parameter. However, if the number is claimed to a traffic distribution group and you
         /// are calling this API in the alternate Amazon Web Services Region associated with the
         /// traffic distribution group, you must provide a full phone number ARN. If a UUID is
-        /// provided in this scenario, you will receive a <c>ResourceNotFoundException</c>.
+        /// provided in this scenario, you receive a <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3937,12 +4346,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes the dataset ID associated with a given Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -4357,7 +4761,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Disassociates an agent from a traffic distribution group.
+        /// Disassociates an agent from a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
         /// <param name="cancellationToken">
@@ -4595,6 +5000,39 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  GetEffectiveHoursOfOperations
+
+
+
+        /// <summary>
+        /// Get the hours of operations with the effective override applied.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEffectiveHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        Task<GetEffectiveHoursOfOperationsResponse> GetEffectiveHoursOfOperationsAsync(GetEffectiveHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetFederationToken
 
 
@@ -4750,7 +5188,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 3 months, at varying intervals. 
+        /// the last 3 months, at varying intervals. It does not support agent queues.
         /// </para>
         ///  
         /// <para>
@@ -4889,9 +5327,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
-        /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
-        /// Services Region where the Amazon Connect instance was created.
+        /// Imports a claimed phone number from an external service, such as Amazon Web Services
+        /// End User Messaging, into an Amazon Connect instance. You can call this API only in
+        /// the same Amazon Web Services Region where the Amazon Connect instance was created.
         /// 
         ///  <important> 
         /// <para>
@@ -4994,12 +5432,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -5065,6 +5498,40 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  ListAssociatedContacts
+
+
+
+        /// <summary>
+        /// Provides information about contact tree, a list of associated contacts with a unique
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedContacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociatedContacts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAssociatedContacts">REST API Reference for ListAssociatedContacts Operation</seealso>
+        Task<ListAssociatedContactsResponse> ListAssociatedContactsAsync(ListAssociatedContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListAuthenticationProfiles
 
 
@@ -5115,7 +5582,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified version of Amazon Lex, returns a paginated list of all the Amazon
-        /// Lex bots currently associated with the instance. Use this API to returns both Amazon
+        /// Lex bots currently associated with the instance. Use this API to return both Amazon
         /// Lex V1 and V2 bots.
         /// </para>
         /// </summary>
@@ -5249,6 +5716,43 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">REST API Reference for ListContactFlows Operation</seealso>
         Task<ListContactFlowsResponse> ListContactFlowsAsync(ListContactFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListContactFlowVersions
+
+
+
+        /// <summary>
+        /// Returns all the available versions for the specified Amazon Connect instance and flow
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        Task<ListContactFlowVersionsResponse> ListContactFlowVersionsAsync(ListContactFlowVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5415,6 +5919,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListFlowAssociations">REST API Reference for ListFlowAssociations Operation</seealso>
         Task<ListFlowAssociationsResponse> ListFlowAssociationsAsync(ListFlowAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListHoursOfOperationOverrides
+
+
+
+        /// <summary>
+        /// List the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperationOverrides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        Task<ListHoursOfOperationOverridesResponse> ListHoursOfOperationOverridesAsync(ListHoursOfOperationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5999,7 +6536,7 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
         /// Thrown for analyzed content when requested OutputType was not enabled for a given
         /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
-        /// Redaction policy set in Contact flow.
+        /// Redaction policy set in the flow.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -7059,7 +7596,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+        /// Searches the flows in an Amazon Connect instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
         /// <param name="cancellationToken">
@@ -7117,6 +7654,75 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
         Task<SearchContactsResponse> SearchContactsAsync(SearchContactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SearchEmailAddresses
+
+
+
+        /// <summary>
+        /// Searches email address in an instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEmailAddresses">REST API Reference for SearchEmailAddresses Operation</seealso>
+        Task<SearchEmailAddressesResponse> SearchEmailAddressesAsync(SearchEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  SearchHoursOfOperationOverrides
+
+
+
+        /// <summary>
+        /// Searches the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperationOverrides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        Task<SearchHoursOfOperationOverridesResponse> SearchHoursOfOperationOverridesAsync(SearchHoursOfOperationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7535,8 +8141,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
-        /// 
+        /// Access to this API is currently restricted to Amazon Web Services End User Messaging
+        /// for supporting SMS integration. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent service method.</param>
@@ -7565,6 +8171,54 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  SendOutboundEmail
+
+
+
+        /// <summary>
+        /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+        /// up Amazon Connect outbound campaigns</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendOutboundEmail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendOutboundEmail service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SendOutboundEmail">REST API Reference for SendOutboundEmail Operation</seealso>
+        Task<SendOutboundEmailResponse> SendOutboundEmailAsync(SendOutboundEmailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartAttachedFileUpload
 
 
@@ -7575,7 +8229,8 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-        /// Connect Case</a>.
+        /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
+        /// Connect Email</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -7845,6 +8500,156 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  StartEmailContact
+
+
+
+        /// <summary>
+        /// Creates an inbound email contact and initiates a flow to start the email contact for
+        /// the customer. Response of this API provides the ContactId of the email contact created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEmailContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartEmailContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartEmailContact">REST API Reference for StartEmailContact Operation</seealso>
+        Task<StartEmailContactResponse> StartEmailContactAsync(StartEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartOutboundChatContact
+
+
+
+        /// <summary>
+        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
+        /// the <c>ContactId</c> of the outbound SMS contact created.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
+        /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
+        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// Flow Action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using SMS in Amazon Connect, see the following topics in
+        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set
+        /// up SMS messaging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
+        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundChatContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOutboundChatContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">REST API Reference for StartOutboundChatContact Operation</seealso>
+        Task<StartOutboundChatContactResponse> StartOutboundChatContactAsync(StartOutboundChatContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartOutboundEmailContact
+
+
+
+        /// <summary>
+        /// Initiates a flow to send an agent reply or outbound email contact (created from the
+        /// CreateContact API) to a customer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundEmailContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOutboundEmailContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundEmailContact">REST API Reference for StartOutboundEmailContact Operation</seealso>
+        Task<StartOutboundEmailContactResponse> StartOutboundEmailContactAsync(StartOutboundEmailContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartOutboundVoiceContact
 
 
@@ -7909,6 +8714,45 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">REST API Reference for StartOutboundVoiceContact Operation</seealso>
         Task<StartOutboundVoiceContactResponse> StartOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartScreenSharing
+
+
+
+        /// <summary>
+        /// Starts screen sharing for a contact. For more information about screen sharing, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
+        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
+        /// Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartScreenSharing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        Task<StartScreenSharingResponse> StartScreenSharingAsync(StartScreenSharingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8297,8 +9141,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
-        /// contact flows, agent statuses, hours of operation, phone numbers, security profiles,
-        /// and task templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+        /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
+        /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
         /// resources in Amazon Connect</a>.
         /// </para>
         ///  
@@ -8580,6 +9424,13 @@ namespace Amazon.Connect
         /// </param>
         /// 
         /// <returns>The response from the UpdateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -8699,9 +9550,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
@@ -8779,9 +9630,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
@@ -8982,6 +9833,47 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  UpdateEmailAddressMetadata
+
+
+
+        /// <summary>
+        /// Updates an email address metadata. For more information about email addresses, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEmailAddressMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEmailAddressMetadata">REST API Reference for UpdateEmailAddressMetadata Operation</seealso>
+        Task<UpdateEmailAddressMetadataResponse> UpdateEmailAddressMetadataAsync(UpdateEmailAddressMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateEvaluationForm
 
 
@@ -9067,6 +9959,45 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  UpdateHoursOfOperationOverride
+
+
+
+        /// <summary>
+        /// Update the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        Task<UpdateHoursOfOperationOverrideResponse> UpdateHoursOfOperationOverrideAsync(UpdateHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateInstanceAttribute
 
 
@@ -9140,6 +10071,61 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
         Task<UpdateInstanceStorageConfigResponse> UpdateInstanceStorageConfigAsync(UpdateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateParticipantAuthentication
+
+
+
+        /// <summary>
+        /// Instructs Amazon Connect to resume the authentication process. The subsequent actions
+        /// depend on the request body contents:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>If a code is provided</b>: Connect retrieves the identity information from Amazon
+        /// Cognito and imports it into Connect Customer Profiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>If an error is provided</b>: The error branch of the Authenticate Customer block
+        /// is executed.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The API returns a success response to acknowledge the request. However, the interaction
+        /// and exchange of identity information occur asynchronously after the response is returned.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParticipantAuthentication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateParticipantAuthentication service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantAuthentication">REST API Reference for UpdateParticipantAuthentication Operation</seealso>
+        Task<UpdateParticipantAuthenticationResponse> UpdateParticipantAuthenticationAsync(UpdateParticipantAuthenticationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -9559,6 +10545,45 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">REST API Reference for UpdateQueueOutboundCallerConfig Operation</seealso>
         Task<UpdateQueueOutboundCallerConfigResponse> UpdateQueueOutboundCallerConfigAsync(UpdateQueueOutboundCallerConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateQueueOutboundEmailConfig
+
+
+
+        /// <summary>
+        /// Updates the outbound email address Id for a specified queue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundEmailConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQueueOutboundEmailConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundEmailConfig">REST API Reference for UpdateQueueOutboundEmailConfig Operation</seealso>
+        Task<UpdateQueueOutboundEmailConfigResponse> UpdateQueueOutboundEmailConfigAsync(UpdateQueueOutboundEmailConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

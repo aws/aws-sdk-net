@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAdminCreateUserOnly())
             {
                 context.Writer.WritePropertyName("AllowAdminCreateUserOnly");
-                context.Writer.Write(requestObject.AllowAdminCreateUserOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowAdminCreateUserOnly.Value);
             }
 
             if(requestObject.IsSetInviteMessageTemplate())
             {
                 context.Writer.WritePropertyName("InviteMessageTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MessageTemplateTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.InviteMessageTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnusedAccountValidityDays())
             {
                 context.Writer.WritePropertyName("UnusedAccountValidityDays");
-                context.Writer.Write(requestObject.UnusedAccountValidityDays.Value);
+                context.Writer.WriteNumberValue(requestObject.UnusedAccountValidityDays.Value);
             }
 
         }

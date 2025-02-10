@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class InstanceFleet
     {
+        private string _context;
         private string _id;
         private InstanceFleetType _instanceFleetType;
         private List<InstanceTypeSpecification> _instanceTypeSpecifications = AWSConfigs.InitializeCollections ? new List<InstanceTypeSpecification>() : null;
@@ -55,6 +56,25 @@ namespace Amazon.ElasticMapReduce.Model
         private InstanceFleetStatus _status;
         private int? _targetOnDemandCapacity;
         private int? _targetSpotCapacity;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 

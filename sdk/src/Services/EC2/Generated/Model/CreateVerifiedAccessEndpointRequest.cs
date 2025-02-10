@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
     {
         private string _applicationDomain;
         private VerifiedAccessEndpointAttachmentType _attachmentType;
+        private CreateVerifiedAccessEndpointCidrOptions _cidrOptions;
         private string _clientToken;
         private string _description;
         private string _domainCertificateArn;
@@ -46,6 +47,7 @@ namespace Amazon.EC2.Model
         private CreateVerifiedAccessEndpointLoadBalancerOptions _loadBalancerOptions;
         private CreateVerifiedAccessEndpointEniOptions _networkInterfaceOptions;
         private string _policyDocument;
+        private CreateVerifiedAccessEndpointRdsOptions _rdsOptions;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VerifiedAccessSseSpecificationRequest _sseSpecification;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
@@ -57,7 +59,6 @@ namespace Amazon.EC2.Model
         /// The DNS name for users to reach your application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ApplicationDomain
         {
             get { return this._applicationDomain; }
@@ -87,6 +88,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachmentType()
         {
             return this._attachmentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrOptions. 
+        /// <para>
+        /// The CIDR options. This parameter is required if the endpoint type is <c>cidr</c>.
+        /// </para>
+        /// </summary>
+        public CreateVerifiedAccessEndpointCidrOptions CidrOptions
+        {
+            get { return this._cidrOptions; }
+            set { this._cidrOptions = value; }
+        }
+
+        // Check to see if CidrOptions property is set
+        internal bool IsSetCidrOptions()
+        {
+            return this._cidrOptions != null;
         }
 
         /// <summary>
@@ -135,7 +154,6 @@ namespace Amazon.EC2.Model
         /// your end users will use to reach your application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DomainCertificateArn
         {
             get { return this._domainCertificateArn; }
@@ -154,7 +172,6 @@ namespace Amazon.EC2.Model
         /// A custom identifier that is prepended to the DNS name that is generated for the endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EndpointDomainPrefix
         {
             get { return this._endpointDomainPrefix; }
@@ -239,6 +256,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPolicyDocument()
         {
             return this._policyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsOptions. 
+        /// <para>
+        /// The RDS details. This parameter is required if the endpoint type is <c>rds</c>.
+        /// </para>
+        /// </summary>
+        public CreateVerifiedAccessEndpointRdsOptions RdsOptions
+        {
+            get { return this._rdsOptions; }
+            set { this._rdsOptions = value; }
+        }
+
+        // Check to see if RdsOptions property is set
+        internal bool IsSetRdsOptions()
+        {
+            return this._rdsOptions != null;
         }
 
         /// <summary>

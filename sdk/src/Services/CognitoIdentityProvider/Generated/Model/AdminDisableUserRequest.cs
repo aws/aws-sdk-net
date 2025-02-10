@@ -31,9 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminDisableUser operation.
-    /// Deactivates a user and revokes all access tokens for the user. A deactivated user
-    /// can't sign in, but still appears in the responses to <c>GetUser</c> and <c>ListUsers</c>
-    /// API requests.
+    /// Deactivates a user profile and revokes all access tokens for the user. A deactivated
+    /// user can't sign in, but still appears in the responses to <c>ListUsers</c> API requests.
     /// 
     ///  <note> 
     /// <para>
@@ -87,7 +86,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to disable the user.
+        /// The ID of the user pool where you want to disable the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

@@ -25,6 +25,258 @@ namespace Amazon.KafkaConnect
 {
 
     /// <summary>
+    /// Constants used for properties of type ConnectorOperationState.
+    /// </summary>
+    public class ConnectorOperationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PENDING for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState PENDING = new ConnectorOperationState("PENDING");
+        /// <summary>
+        /// Constant ROLLBACK_COMPLETE for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState ROLLBACK_COMPLETE = new ConnectorOperationState("ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant ROLLBACK_FAILED for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState ROLLBACK_FAILED = new ConnectorOperationState("ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState ROLLBACK_IN_PROGRESS = new ConnectorOperationState("ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant UPDATE_COMPLETE for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState UPDATE_COMPLETE = new ConnectorOperationState("UPDATE_COMPLETE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState UPDATE_FAILED = new ConnectorOperationState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState UPDATE_IN_PROGRESS = new ConnectorOperationState("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorOperationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorOperationState FindValue(string value)
+        {
+            return FindValue<ConnectorOperationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorOperationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorOperationStepState.
+    /// </summary>
+    public class ConnectorOperationStepState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for ConnectorOperationStepState
+        /// </summary>
+        public static readonly ConnectorOperationStepState CANCELLED = new ConnectorOperationStepState("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for ConnectorOperationStepState
+        /// </summary>
+        public static readonly ConnectorOperationStepState COMPLETED = new ConnectorOperationStepState("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ConnectorOperationStepState
+        /// </summary>
+        public static readonly ConnectorOperationStepState FAILED = new ConnectorOperationStepState("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ConnectorOperationStepState
+        /// </summary>
+        public static readonly ConnectorOperationStepState IN_PROGRESS = new ConnectorOperationStepState("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for ConnectorOperationStepState
+        /// </summary>
+        public static readonly ConnectorOperationStepState PENDING = new ConnectorOperationStepState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorOperationStepState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorOperationStepState FindValue(string value)
+        {
+            return FindValue<ConnectorOperationStepState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorOperationStepState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorOperationStepType.
+    /// </summary>
+    public class ConnectorOperationStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FINALIZE_UPDATE for ConnectorOperationStepType
+        /// </summary>
+        public static readonly ConnectorOperationStepType FINALIZE_UPDATE = new ConnectorOperationStepType("FINALIZE_UPDATE");
+        /// <summary>
+        /// Constant INITIALIZE_UPDATE for ConnectorOperationStepType
+        /// </summary>
+        public static readonly ConnectorOperationStepType INITIALIZE_UPDATE = new ConnectorOperationStepType("INITIALIZE_UPDATE");
+        /// <summary>
+        /// Constant UPDATE_CONNECTOR_CONFIGURATION for ConnectorOperationStepType
+        /// </summary>
+        public static readonly ConnectorOperationStepType UPDATE_CONNECTOR_CONFIGURATION = new ConnectorOperationStepType("UPDATE_CONNECTOR_CONFIGURATION");
+        /// <summary>
+        /// Constant UPDATE_WORKER_SETTING for ConnectorOperationStepType
+        /// </summary>
+        public static readonly ConnectorOperationStepType UPDATE_WORKER_SETTING = new ConnectorOperationStepType("UPDATE_WORKER_SETTING");
+        /// <summary>
+        /// Constant VALIDATE_UPDATE for ConnectorOperationStepType
+        /// </summary>
+        public static readonly ConnectorOperationStepType VALIDATE_UPDATE = new ConnectorOperationStepType("VALIDATE_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorOperationStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorOperationStepType FindValue(string value)
+        {
+            return FindValue<ConnectorOperationStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorOperationStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorOperationType.
+    /// </summary>
+    public class ConnectorOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ISOLATE_CONNECTOR for ConnectorOperationType
+        /// </summary>
+        public static readonly ConnectorOperationType ISOLATE_CONNECTOR = new ConnectorOperationType("ISOLATE_CONNECTOR");
+        /// <summary>
+        /// Constant RESTORE_CONNECTOR for ConnectorOperationType
+        /// </summary>
+        public static readonly ConnectorOperationType RESTORE_CONNECTOR = new ConnectorOperationType("RESTORE_CONNECTOR");
+        /// <summary>
+        /// Constant UPDATE_CONNECTOR_CONFIGURATION for ConnectorOperationType
+        /// </summary>
+        public static readonly ConnectorOperationType UPDATE_CONNECTOR_CONFIGURATION = new ConnectorOperationType("UPDATE_CONNECTOR_CONFIGURATION");
+        /// <summary>
+        /// Constant UPDATE_WORKER_SETTING for ConnectorOperationType
+        /// </summary>
+        public static readonly ConnectorOperationType UPDATE_WORKER_SETTING = new ConnectorOperationType("UPDATE_WORKER_SETTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorOperationType FindValue(string value)
+        {
+            return FindValue<ConnectorOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorOperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectorState.
     /// </summary>
     public class ConnectorState : ConstantClass

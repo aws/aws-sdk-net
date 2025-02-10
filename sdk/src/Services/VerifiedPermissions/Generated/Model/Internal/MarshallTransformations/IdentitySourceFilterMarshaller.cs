@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrincipalEntityType())
             {
                 context.Writer.WritePropertyName("principalEntityType");
-                context.Writer.Write(requestObject.PrincipalEntityType);
+                context.Writer.WriteStringValue(requestObject.PrincipalEntityType);
             }
 
         }

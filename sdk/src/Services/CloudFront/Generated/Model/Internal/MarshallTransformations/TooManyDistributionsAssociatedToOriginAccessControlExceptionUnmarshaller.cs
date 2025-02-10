@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyDistributionsAssociatedToOriginAccessControlException operation
     /// </summary>  
-    public class TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyDistributionsAssociatedToOriginAccessControlException, XmlUnmarshallerContext>
+    public class TooManyDistributionsAssociatedToOriginAccessControlExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyDistributionsAssociatedToOriginAccessControlException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudwatchLogsLogDestination())
             {
                 context.Writer.WritePropertyName("CloudwatchLogsLogDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudwatchLogsLogDestinationParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudwatchLogsLogDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirehoseLogDestination())
             {
                 context.Writer.WritePropertyName("FirehoseLogDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FirehoseLogDestinationParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.FirehoseLogDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeExecutionData())
             {
                 context.Writer.WritePropertyName("IncludeExecutionData");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeExecutionDataListValue in requestObject.IncludeExecutionData)
                 {
-                        context.Writer.Write(requestObjectIncludeExecutionDataListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeExecutionDataListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level);
+                context.Writer.WriteStringValue(requestObject.Level);
             }
 
             if(requestObject.IsSetS3LogDestination())
             {
                 context.Writer.WritePropertyName("S3LogDestination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LogDestinationParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3LogDestination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

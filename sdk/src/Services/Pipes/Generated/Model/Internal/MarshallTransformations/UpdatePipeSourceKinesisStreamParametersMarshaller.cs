@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize.Value);
+                context.Writer.WriteNumberValue(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetDeadLetterConfig())
             {
                 context.Writer.WritePropertyName("DeadLetterConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeadLetterConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeadLetterConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumBatchingWindowInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
-                context.Writer.Write(requestObject.MaximumBatchingWindowInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumBatchingWindowInSeconds.Value);
             }
 
             if(requestObject.IsSetMaximumRecordAgeInSeconds())
             {
                 context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
-                context.Writer.Write(requestObject.MaximumRecordAgeInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumRecordAgeInSeconds.Value);
             }
 
             if(requestObject.IsSetMaximumRetryAttempts())
             {
                 context.Writer.WritePropertyName("MaximumRetryAttempts");
-                context.Writer.Write(requestObject.MaximumRetryAttempts.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumRetryAttempts.Value);
             }
 
             if(requestObject.IsSetOnPartialBatchItemFailure())
             {
                 context.Writer.WritePropertyName("OnPartialBatchItemFailure");
-                context.Writer.Write(requestObject.OnPartialBatchItemFailure);
+                context.Writer.WriteStringValue(requestObject.OnPartialBatchItemFailure);
             }
 
             if(requestObject.IsSetParallelizationFactor())
             {
                 context.Writer.WritePropertyName("ParallelizationFactor");
-                context.Writer.Write(requestObject.ParallelizationFactor.Value);
+                context.Writer.WriteNumberValue(requestObject.ParallelizationFactor.Value);
             }
 
         }

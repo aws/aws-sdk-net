@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails Object
     /// </summary>  
-    public class AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsUnmarshaller : IUnmarshaller<AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails, JsonUnmarshallerContext>
+    public class AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails IUnmarshaller<AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails unmarshalledObject = new AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BlockDurationMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BlockDurationMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockDurationMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceInterruptionBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceInterruptionBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceInterruptionBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxPrice", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaxPrice = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpotInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpotInstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpotInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ValidUntil", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

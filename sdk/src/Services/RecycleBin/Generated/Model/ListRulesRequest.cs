@@ -35,11 +35,32 @@ namespace Amazon.RecycleBin.Model
     /// </summary>
     public partial class ListRulesRequest : AmazonRecycleBinRequest
     {
+        private List<ResourceTag> _excludeResourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private LockState _lockState;
         private int? _maxResults;
         private string _nextToken;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private ResourceType _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property ExcludeResourceTags. 
+        /// <para>
+        /// [Region-level retention rules only] Information about the exclusion tags used to identify
+        /// resources that are to be excluded, or ignored, by the retention rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<ResourceTag> ExcludeResourceTags
+        {
+            get { return this._excludeResourceTags; }
+            set { this._excludeResourceTags = value; }
+        }
+
+        // Check to see if ExcludeResourceTags property is set
+        internal bool IsSetExcludeResourceTags()
+        {
+            return this._excludeResourceTags != null && (this._excludeResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property LockState. 
@@ -101,8 +122,8 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// Information about the resource tags used to identify resources that are retained by
-        /// the retention rule.
+        /// [Tag-level retention rules only] Information about the resource tags used to identify
+        /// resources that are retained by the retention rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

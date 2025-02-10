@@ -42,6 +42,7 @@ namespace Amazon.AutoScaling.Model
     public partial class TargetTrackingMetricStat
     {
         private Metric _metric;
+        private int? _period;
         private string _stat;
         private string _unit;
 
@@ -62,6 +63,28 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetMetric()
         {
             return this._metric != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Period. 
+        /// <para>
+        ///  The period of the metric in seconds. The default value is 60. Accepted values are
+        /// 10, 30, and 60. For high resolution metric, set the value to less than 60. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/policy-creating-high-resolution-metrics.html">Create
+        /// a target tracking policy using high-resolution metrics for faster response</a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? Period
+        {
+            get { return this._period; }
+            set { this._period = value; }
+        }
+
+        // Check to see if Period property is set
+        internal bool IsSetPeriod()
+        {
+            return this._period.HasValue; 
         }
 
         /// <summary>

@@ -195,6 +195,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <para>
         /// Turns language identification on or off for multiple languages.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Calls to this API must include a <c>LanguageCode</c>, <c>IdentifyLanguage</c>, or
+        /// <c>IdentifyMultipleLanguages</c> parameter. If you include more than one of those
+        /// parameters, your transcription job fails.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool? IdentifyMultipleLanguages
         {

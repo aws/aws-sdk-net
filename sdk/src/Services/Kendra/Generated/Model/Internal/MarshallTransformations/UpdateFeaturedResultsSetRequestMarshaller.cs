@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -63,76 +66,81 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFeaturedDocuments())
-                    {
-                        context.Writer.WritePropertyName("FeaturedDocuments");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFeaturedDocumentsListValue in publicRequest.FeaturedDocuments)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FeaturedDocumentMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFeaturedDocumentsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFeaturedResultsSetId())
-                    {
-                        context.Writer.WritePropertyName("FeaturedResultsSetId");
-                        context.Writer.Write(publicRequest.FeaturedResultsSetId);
-                    }
-
-                    if(publicRequest.IsSetFeaturedResultsSetName())
-                    {
-                        context.Writer.WritePropertyName("FeaturedResultsSetName");
-                        context.Writer.Write(publicRequest.FeaturedResultsSetName);
-                    }
-
-                    if(publicRequest.IsSetIndexId())
-                    {
-                        context.Writer.WritePropertyName("IndexId");
-                        context.Writer.Write(publicRequest.IndexId);
-                    }
-
-                    if(publicRequest.IsSetQueryTexts())
-                    {
-                        context.Writer.WritePropertyName("QueryTexts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestQueryTextsListValue in publicRequest.QueryTexts)
-                        {
-                                context.Writer.Write(publicRequestQueryTextsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetFeaturedDocuments())
+            {
+                context.Writer.WritePropertyName("FeaturedDocuments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFeaturedDocumentsListValue in publicRequest.FeaturedDocuments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FeaturedDocumentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFeaturedDocumentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFeaturedResultsSetId())
+            {
+                context.Writer.WritePropertyName("FeaturedResultsSetId");
+                context.Writer.WriteStringValue(publicRequest.FeaturedResultsSetId);
+            }
+
+            if(publicRequest.IsSetFeaturedResultsSetName())
+            {
+                context.Writer.WritePropertyName("FeaturedResultsSetName");
+                context.Writer.WriteStringValue(publicRequest.FeaturedResultsSetName);
+            }
+
+            if(publicRequest.IsSetIndexId())
+            {
+                context.Writer.WritePropertyName("IndexId");
+                context.Writer.WriteStringValue(publicRequest.IndexId);
+            }
+
+            if(publicRequest.IsSetQueryTexts())
+            {
+                context.Writer.WritePropertyName("QueryTexts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestQueryTextsListValue in publicRequest.QueryTexts)
+                {
+                        context.Writer.WriteStringValue(publicRequestQueryTextsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

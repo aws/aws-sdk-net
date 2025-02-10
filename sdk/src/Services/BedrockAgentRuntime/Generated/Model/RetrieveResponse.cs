@@ -34,8 +34,27 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RetrieveResponse : AmazonWebServiceResponse
     {
+        private GuadrailAction _guardrailAction;
         private string _nextToken;
         private List<KnowledgeBaseRetrievalResult> _retrievalResults = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseRetrievalResult>() : null;
+
+        /// <summary>
+        /// Gets and sets the property GuardrailAction. 
+        /// <para>
+        /// Specifies if there is a guardrail intervention in the response.
+        /// </para>
+        /// </summary>
+        public GuadrailAction GuardrailAction
+        {
+            get { return this._guardrailAction; }
+            set { this._guardrailAction = value; }
+        }
+
+        // Check to see if GuardrailAction property is set
+        internal bool IsSetGuardrailAction()
+        {
+            return this._guardrailAction != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AcceleratorCount Object
     /// </summary>  
-    public class AcceleratorCountUnmarshaller : IUnmarshaller<AcceleratorCount, XmlUnmarshallerContext>, IUnmarshaller<AcceleratorCount, JsonUnmarshallerContext>
+    public class AcceleratorCountUnmarshaller : IXmlUnmarshaller<AcceleratorCount, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AcceleratorCount Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AcceleratorCountUnmarshaller _instance = new AcceleratorCountUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBShardGroupStateException operation
     /// </summary>  
-    public class InvalidDBShardGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBShardGroupStateException, XmlUnmarshallerContext>
+    public class InvalidDBShardGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBShardGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

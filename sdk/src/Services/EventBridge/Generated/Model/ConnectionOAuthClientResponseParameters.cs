@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the client response parameters for the connection when OAuth is specified
-    /// as the authorization type.
+    /// The client response parameters for the connection when OAuth is specified as the authorization
+    /// type.
     /// </summary>
     public partial class ConnectionOAuthClientResponseParameters
     {

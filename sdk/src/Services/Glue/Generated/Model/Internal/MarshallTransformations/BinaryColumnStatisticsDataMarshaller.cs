@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -53,24 +51,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("AverageLength");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.AverageLength.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AverageLength.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.AverageLength.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AverageLength.Value);
+                    context.Writer.WriteNumberValue(requestObject.AverageLength.Value);
                 }
             }
 
             if(requestObject.IsSetMaximumLength())
             {
                 context.Writer.WritePropertyName("MaximumLength");
-                context.Writer.Write(requestObject.MaximumLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumLength.Value);
             }
 
             if(requestObject.IsSetNumberOfNulls())
             {
                 context.Writer.WritePropertyName("NumberOfNulls");
-                context.Writer.Write(requestObject.NumberOfNulls.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfNulls.Value);
             }
 
         }

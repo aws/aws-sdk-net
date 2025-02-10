@@ -62,6 +62,21 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CreateLFTagExpressionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CreateLFTagExpressionRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CreateLFTagExpressionRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.DeleteDataCellsFilterRequest.DatabaseName</property>
     <min>1</min>
     <max>255</max>
@@ -96,6 +111,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteLFTagExpressionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DeleteLFTagExpressionRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.DeleteObjectsOnCancelRequest.CatalogId</property>
@@ -198,6 +223,31 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetLFTagExpressionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetLFTagExpressionRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetLFTagExpressionResponse.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetLFTagExpressionResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetLFTagExpressionResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetQueryStateRequest.QueryId</property>
     <min>36</min>
     <max>36</max>
@@ -291,6 +341,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.ListLakeFormationOptInsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListLFTagExpressionsRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.ListLFTagExpressionsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -428,6 +488,21 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateLFTagExpressionRequest.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateLFTagExpressionRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.UpdateLFTagExpressionRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.UpdateResourceRequest.RoleArn</property>
     <pattern>arn:aws:iam::[0-9]*:role/.*</pattern>
   </property-value-rule>
@@ -489,9 +564,18 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.CatalogResource.Id</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.ColumnLFTag.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.Condition.Expression</property>
+    <max>3000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.DatabaseResource.CatalogId</property>
@@ -591,6 +675,31 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LFTagExpression.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LFTagExpression.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LFTagExpression.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LFTagExpressionResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LFTagExpressionResource.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.LFTagKeyResource.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -613,6 +722,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.LFTagPolicyResource.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.LFTagPolicyResource.ExpressionName</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

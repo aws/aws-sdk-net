@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,46 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("filter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetrievalFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Filter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetImplicitFilterConfiguration())
+            {
+                context.Writer.WritePropertyName("implicitFilterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImplicitFilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImplicitFilterConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumberOfResults())
             {
                 context.Writer.WritePropertyName("numberOfResults");
-                context.Writer.Write(requestObject.NumberOfResults.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfResults.Value);
             }
 
             if(requestObject.IsSetOverrideSearchType())
             {
                 context.Writer.WritePropertyName("overrideSearchType");
-                context.Writer.Write(requestObject.OverrideSearchType);
+                context.Writer.WriteStringValue(requestObject.OverrideSearchType);
+            }
+
+            if(requestObject.IsSetRerankingConfiguration())
+            {
+                context.Writer.WritePropertyName("rerankingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VectorSearchRerankingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RerankingConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

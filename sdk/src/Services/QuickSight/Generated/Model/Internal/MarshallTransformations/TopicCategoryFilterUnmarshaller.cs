@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicCategoryFilter Object
     /// </summary>  
-    public class TopicCategoryFilterUnmarshaller : IUnmarshaller<TopicCategoryFilter, XmlUnmarshallerContext>, IUnmarshaller<TopicCategoryFilter, JsonUnmarshallerContext>
+    public class TopicCategoryFilterUnmarshaller : IJsonUnmarshaller<TopicCategoryFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicCategoryFilter IUnmarshaller<TopicCategoryFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicCategoryFilter Unmarshall(JsonUnmarshallerContext context)
+        public TopicCategoryFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicCategoryFilter unmarshalledObject = new TopicCategoryFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoryFilterFunction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CategoryFilterFunction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryFilterFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CategoryFilterType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CategoryFilterType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryFilterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Constant", targetDepth))
                 {
                     var unmarshaller = TopicCategoryFilterConstantUnmarshaller.Instance;
-                    unmarshalledObject.Constant = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Inverse", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Inverse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Inverse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

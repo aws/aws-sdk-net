@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataCaptureConfig Object
     /// </summary>  
-    public class DataCaptureConfigUnmarshaller : IUnmarshaller<DataCaptureConfig, XmlUnmarshallerContext>, IUnmarshaller<DataCaptureConfig, JsonUnmarshallerContext>
+    public class DataCaptureConfigUnmarshaller : IJsonUnmarshaller<DataCaptureConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataCaptureConfig IUnmarshaller<DataCaptureConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataCaptureConfig Unmarshall(JsonUnmarshallerContext context)
+        public DataCaptureConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataCaptureConfig unmarshalledObject = new DataCaptureConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CaptureContentTypeHeader", targetDepth))
                 {
                     var unmarshaller = CaptureContentTypeHeaderUnmarshaller.Instance;
-                    unmarshalledObject.CaptureContentTypeHeader = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CaptureContentTypeHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CaptureOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CaptureOption, CaptureOptionUnmarshaller>(CaptureOptionUnmarshaller.Instance);
-                    unmarshalledObject.CaptureOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CaptureOption, CaptureOptionUnmarshaller>(CaptureOptionUnmarshaller.Instance);
+                    unmarshalledObject.CaptureOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableCapture", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableCapture = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableCapture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InitialSamplingPercentage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InitialSamplingPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InitialSamplingPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

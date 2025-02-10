@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,144 +49,144 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomConnector())
             {
                 context.Writer.WritePropertyName("CustomConnector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomConnectorDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomConnector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomerProfiles())
             {
                 context.Writer.WritePropertyName("CustomerProfiles");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomerProfilesDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomerProfiles, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEventBridge())
             {
                 context.Writer.WritePropertyName("EventBridge");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventBridgeDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventBridge, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHoneycode())
             {
                 context.Writer.WritePropertyName("Honeycode");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HoneycodeDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Honeycode, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLookoutMetrics())
             {
                 context.Writer.WritePropertyName("LookoutMetrics");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LookoutMetricsDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.LookoutMetrics, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMarketo())
             {
                 context.Writer.WritePropertyName("Marketo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MarketoDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Marketo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshift())
             {
                 context.Writer.WritePropertyName("Redshift");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Redshift, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("S3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSalesforce())
             {
                 context.Writer.WritePropertyName("Salesforce");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Salesforce, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSAPOData())
             {
                 context.Writer.WritePropertyName("SAPOData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SAPODataDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SAPOData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnowflake())
             {
                 context.Writer.WritePropertyName("Snowflake");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnowflakeDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Snowflake, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUpsolver())
             {
                 context.Writer.WritePropertyName("Upsolver");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpsolverDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Upsolver, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZendesk())
             {
                 context.Writer.WritePropertyName("Zendesk");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ZendeskDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Zendesk, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

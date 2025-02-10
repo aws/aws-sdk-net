@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInferenceInputNameConfiguration())
             {
                 context.Writer.WritePropertyName("InferenceInputNameConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InferenceInputNameConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InferenceInputNameConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputTimeZoneOffset())
             {
                 context.Writer.WritePropertyName("InputTimeZoneOffset");
-                context.Writer.Write(requestObject.InputTimeZoneOffset);
+                context.Writer.WriteStringValue(requestObject.InputTimeZoneOffset);
             }
 
             if(requestObject.IsSetS3InputConfiguration())
             {
                 context.Writer.WritePropertyName("S3InputConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InferenceS3InputConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3InputConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,64 +49,64 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeranCid())
             {
                 context.Writer.WritePropertyName("GeranCid");
-                context.Writer.Write(requestObject.GeranCid.Value);
+                context.Writer.WriteNumberValue(requestObject.GeranCid.Value);
             }
 
             if(requestObject.IsSetGsmLocalId())
             {
                 context.Writer.WritePropertyName("GsmLocalId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GsmLocalIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.GsmLocalId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGsmNmr())
             {
                 context.Writer.WritePropertyName("GsmNmr");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGsmNmrListValue in requestObject.GsmNmr)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GsmNmrObjMarshaller.Instance;
                     marshaller.Marshall(requestObjectGsmNmrListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGsmTimingAdvance())
             {
                 context.Writer.WritePropertyName("GsmTimingAdvance");
-                context.Writer.Write(requestObject.GsmTimingAdvance.Value);
+                context.Writer.WriteNumberValue(requestObject.GsmTimingAdvance.Value);
             }
 
             if(requestObject.IsSetLac())
             {
                 context.Writer.WritePropertyName("Lac");
-                context.Writer.Write(requestObject.Lac.Value);
+                context.Writer.WriteNumberValue(requestObject.Lac.Value);
             }
 
             if(requestObject.IsSetMcc())
             {
                 context.Writer.WritePropertyName("Mcc");
-                context.Writer.Write(requestObject.Mcc.Value);
+                context.Writer.WriteNumberValue(requestObject.Mcc.Value);
             }
 
             if(requestObject.IsSetMnc())
             {
                 context.Writer.WritePropertyName("Mnc");
-                context.Writer.Write(requestObject.Mnc.Value);
+                context.Writer.WriteNumberValue(requestObject.Mnc.Value);
             }
 
             if(requestObject.IsSetRxLevel())
             {
                 context.Writer.WritePropertyName("RxLevel");
-                context.Writer.Write(requestObject.RxLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.RxLevel.Value);
             }
 
         }

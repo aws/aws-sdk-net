@@ -81,7 +81,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property StorageOptimizerConfig. 
         /// <para>
-        /// Name of the table for which to enable the storage optimizer.
+        /// Name of the configuration for the storage optimizer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

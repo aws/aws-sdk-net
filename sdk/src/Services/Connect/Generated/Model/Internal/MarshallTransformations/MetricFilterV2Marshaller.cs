@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricFilterKey())
             {
                 context.Writer.WritePropertyName("MetricFilterKey");
-                context.Writer.Write(requestObject.MetricFilterKey);
+                context.Writer.WriteStringValue(requestObject.MetricFilterKey);
             }
 
             if(requestObject.IsSetMetricFilterValues())
             {
                 context.Writer.WritePropertyName("MetricFilterValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricFilterValuesListValue in requestObject.MetricFilterValues)
                 {
-                        context.Writer.Write(requestObjectMetricFilterValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectMetricFilterValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNegate())
             {
                 context.Writer.WritePropertyName("Negate");
-                context.Writer.Write(requestObject.Negate.Value);
+                context.Writer.WriteBooleanValue(requestObject.Negate.Value);
             }
 
         }

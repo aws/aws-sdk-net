@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OAM.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogGroupConfiguration())
             {
                 context.Writer.WritePropertyName("LogGroupConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LogGroupConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogGroupConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricConfiguration())
             {
                 context.Writer.WritePropertyName("MetricConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

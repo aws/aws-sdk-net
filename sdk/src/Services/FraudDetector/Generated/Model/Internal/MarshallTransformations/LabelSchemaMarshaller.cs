@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLabelMapper())
             {
                 context.Writer.WritePropertyName("labelMapper");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLabelMapperKvp in requestObject.LabelMapper)
                 {
                     context.Writer.WritePropertyName(requestObjectLabelMapperKvp.Key);
                     var requestObjectLabelMapperValue = requestObjectLabelMapperKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectLabelMapperValueListValue in requestObjectLabelMapperValue)
                     {
-                            context.Writer.Write(requestObjectLabelMapperValueListValue);
+                            context.Writer.WriteStringValue(requestObjectLabelMapperValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnlabeledEventsTreatment())
             {
                 context.Writer.WritePropertyName("unlabeledEventsTreatment");
-                context.Writer.Write(requestObject.UnlabeledEventsTreatment);
+                context.Writer.WriteStringValue(requestObject.UnlabeledEventsTreatment);
             }
 
         }

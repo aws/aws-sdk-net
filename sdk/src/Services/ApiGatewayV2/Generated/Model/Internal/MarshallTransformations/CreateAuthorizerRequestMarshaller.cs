@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
@@ -64,89 +67,94 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 throw new AmazonApiGatewayV2Exception("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v2/apis/{apiId}/authorizers";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuthorizerCredentialsArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuthorizerCredentialsArn())
-                    {
-                        context.Writer.WritePropertyName("authorizerCredentialsArn");
-                        context.Writer.Write(publicRequest.AuthorizerCredentialsArn);
-                    }
-
-                    if(publicRequest.IsSetAuthorizerPayloadFormatVersion())
-                    {
-                        context.Writer.WritePropertyName("authorizerPayloadFormatVersion");
-                        context.Writer.Write(publicRequest.AuthorizerPayloadFormatVersion);
-                    }
-
-                    if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
-                    {
-                        context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
-                        context.Writer.Write(publicRequest.AuthorizerResultTtlInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetAuthorizerType())
-                    {
-                        context.Writer.WritePropertyName("authorizerType");
-                        context.Writer.Write(publicRequest.AuthorizerType);
-                    }
-
-                    if(publicRequest.IsSetAuthorizerUri())
-                    {
-                        context.Writer.WritePropertyName("authorizerUri");
-                        context.Writer.Write(publicRequest.AuthorizerUri);
-                    }
-
-                    if(publicRequest.IsSetEnableSimpleResponses())
-                    {
-                        context.Writer.WritePropertyName("enableSimpleResponses");
-                        context.Writer.Write(publicRequest.EnableSimpleResponses.Value);
-                    }
-
-                    if(publicRequest.IsSetIdentitySource())
-                    {
-                        context.Writer.WritePropertyName("identitySource");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIdentitySourceListValue in publicRequest.IdentitySource)
-                        {
-                                context.Writer.Write(publicRequestIdentitySourceListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdentityValidationExpression())
-                    {
-                        context.Writer.WritePropertyName("identityValidationExpression");
-                        context.Writer.Write(publicRequest.IdentityValidationExpression);
-                    }
-
-                    if(publicRequest.IsSetJwtConfiguration())
-                    {
-                        context.Writer.WritePropertyName("jwtConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JWTConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JwtConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("authorizerCredentialsArn");
+                context.Writer.WriteStringValue(publicRequest.AuthorizerCredentialsArn);
             }
+
+            if(publicRequest.IsSetAuthorizerPayloadFormatVersion())
+            {
+                context.Writer.WritePropertyName("authorizerPayloadFormatVersion");
+                context.Writer.WriteStringValue(publicRequest.AuthorizerPayloadFormatVersion);
+            }
+
+            if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
+            {
+                context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.AuthorizerResultTtlInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetAuthorizerType())
+            {
+                context.Writer.WritePropertyName("authorizerType");
+                context.Writer.WriteStringValue(publicRequest.AuthorizerType);
+            }
+
+            if(publicRequest.IsSetAuthorizerUri())
+            {
+                context.Writer.WritePropertyName("authorizerUri");
+                context.Writer.WriteStringValue(publicRequest.AuthorizerUri);
+            }
+
+            if(publicRequest.IsSetEnableSimpleResponses())
+            {
+                context.Writer.WritePropertyName("enableSimpleResponses");
+                context.Writer.WriteBooleanValue(publicRequest.EnableSimpleResponses.Value);
+            }
+
+            if(publicRequest.IsSetIdentitySource())
+            {
+                context.Writer.WritePropertyName("identitySource");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIdentitySourceListValue in publicRequest.IdentitySource)
+                {
+                        context.Writer.WriteStringValue(publicRequestIdentitySourceListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIdentityValidationExpression())
+            {
+                context.Writer.WritePropertyName("identityValidationExpression");
+                context.Writer.WriteStringValue(publicRequest.IdentityValidationExpression);
+            }
+
+            if(publicRequest.IsSetJwtConfiguration())
+            {
+                context.Writer.WritePropertyName("jwtConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JWTConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JwtConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PrioritizeBusinessGoals Object
     /// </summary>  
-    public class PrioritizeBusinessGoalsUnmarshaller : IUnmarshaller<PrioritizeBusinessGoals, XmlUnmarshallerContext>, IUnmarshaller<PrioritizeBusinessGoals, JsonUnmarshallerContext>
+    public class PrioritizeBusinessGoalsUnmarshaller : IJsonUnmarshaller<PrioritizeBusinessGoals, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PrioritizeBusinessGoals IUnmarshaller<PrioritizeBusinessGoals, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PrioritizeBusinessGoals Unmarshall(JsonUnmarshallerContext context)
+        public PrioritizeBusinessGoals Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PrioritizeBusinessGoals unmarshalledObject = new PrioritizeBusinessGoals();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("businessGoals", targetDepth))
                 {
                     var unmarshaller = BusinessGoalsUnmarshaller.Instance;
-                    unmarshalledObject.BusinessGoals = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BusinessGoals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

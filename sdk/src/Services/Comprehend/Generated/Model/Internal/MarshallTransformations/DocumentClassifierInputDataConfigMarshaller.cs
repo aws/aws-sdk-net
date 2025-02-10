@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAugmentedManifests())
             {
                 context.Writer.WritePropertyName("AugmentedManifests");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AugmentedManifestsListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataFormat())
             {
                 context.Writer.WritePropertyName("DataFormat");
-                context.Writer.Write(requestObject.DataFormat);
+                context.Writer.WriteStringValue(requestObject.DataFormat);
             }
 
             if(requestObject.IsSetDocumentReaderConfig())
             {
                 context.Writer.WritePropertyName("DocumentReaderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentReaderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentReaderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDocuments())
             {
                 context.Writer.WritePropertyName("Documents");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentClassifierDocumentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Documents, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDocumentType())
             {
                 context.Writer.WritePropertyName("DocumentType");
-                context.Writer.Write(requestObject.DocumentType);
+                context.Writer.WriteStringValue(requestObject.DocumentType);
             }
 
             if(requestObject.IsSetLabelDelimiter())
             {
                 context.Writer.WritePropertyName("LabelDelimiter");
-                context.Writer.Write(requestObject.LabelDelimiter);
+                context.Writer.WriteStringValue(requestObject.LabelDelimiter);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
             if(requestObject.IsSetTestS3Uri())
             {
                 context.Writer.WritePropertyName("TestS3Uri");
-                context.Writer.Write(requestObject.TestS3Uri);
+                context.Writer.WriteStringValue(requestObject.TestS3Uri);
             }
 
         }

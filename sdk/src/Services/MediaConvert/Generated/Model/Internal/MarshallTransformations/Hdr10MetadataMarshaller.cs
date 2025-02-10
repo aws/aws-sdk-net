@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBluePrimaryX())
             {
                 context.Writer.WritePropertyName("bluePrimaryX");
-                context.Writer.Write(requestObject.BluePrimaryX.Value);
+                context.Writer.WriteNumberValue(requestObject.BluePrimaryX.Value);
             }
 
             if(requestObject.IsSetBluePrimaryY())
             {
                 context.Writer.WritePropertyName("bluePrimaryY");
-                context.Writer.Write(requestObject.BluePrimaryY.Value);
+                context.Writer.WriteNumberValue(requestObject.BluePrimaryY.Value);
             }
 
             if(requestObject.IsSetGreenPrimaryX())
             {
                 context.Writer.WritePropertyName("greenPrimaryX");
-                context.Writer.Write(requestObject.GreenPrimaryX.Value);
+                context.Writer.WriteNumberValue(requestObject.GreenPrimaryX.Value);
             }
 
             if(requestObject.IsSetGreenPrimaryY())
             {
                 context.Writer.WritePropertyName("greenPrimaryY");
-                context.Writer.Write(requestObject.GreenPrimaryY.Value);
+                context.Writer.WriteNumberValue(requestObject.GreenPrimaryY.Value);
             }
 
             if(requestObject.IsSetMaxContentLightLevel())
             {
                 context.Writer.WritePropertyName("maxContentLightLevel");
-                context.Writer.Write(requestObject.MaxContentLightLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxContentLightLevel.Value);
             }
 
             if(requestObject.IsSetMaxFrameAverageLightLevel())
             {
                 context.Writer.WritePropertyName("maxFrameAverageLightLevel");
-                context.Writer.Write(requestObject.MaxFrameAverageLightLevel.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFrameAverageLightLevel.Value);
             }
 
             if(requestObject.IsSetMaxLuminance())
             {
                 context.Writer.WritePropertyName("maxLuminance");
-                context.Writer.Write(requestObject.MaxLuminance.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLuminance.Value);
             }
 
             if(requestObject.IsSetMinLuminance())
             {
                 context.Writer.WritePropertyName("minLuminance");
-                context.Writer.Write(requestObject.MinLuminance.Value);
+                context.Writer.WriteNumberValue(requestObject.MinLuminance.Value);
             }
 
             if(requestObject.IsSetRedPrimaryX())
             {
                 context.Writer.WritePropertyName("redPrimaryX");
-                context.Writer.Write(requestObject.RedPrimaryX.Value);
+                context.Writer.WriteNumberValue(requestObject.RedPrimaryX.Value);
             }
 
             if(requestObject.IsSetRedPrimaryY())
             {
                 context.Writer.WritePropertyName("redPrimaryY");
-                context.Writer.Write(requestObject.RedPrimaryY.Value);
+                context.Writer.WriteNumberValue(requestObject.RedPrimaryY.Value);
             }
 
             if(requestObject.IsSetWhitePointX())
             {
                 context.Writer.WritePropertyName("whitePointX");
-                context.Writer.Write(requestObject.WhitePointX.Value);
+                context.Writer.WriteNumberValue(requestObject.WhitePointX.Value);
             }
 
             if(requestObject.IsSetWhitePointY())
             {
                 context.Writer.WritePropertyName("whitePointY");
-                context.Writer.Write(requestObject.WhitePointY.Value);
+                context.Writer.WriteNumberValue(requestObject.WhitePointY.Value);
             }
 
         }

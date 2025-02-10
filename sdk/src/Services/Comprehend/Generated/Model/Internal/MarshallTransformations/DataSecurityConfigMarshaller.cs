@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataLakeKmsKeyId())
             {
                 context.Writer.WritePropertyName("DataLakeKmsKeyId");
-                context.Writer.Write(requestObject.DataLakeKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.DataLakeKmsKeyId);
             }
 
             if(requestObject.IsSetModelKmsKeyId())
             {
                 context.Writer.WritePropertyName("ModelKmsKeyId");
-                context.Writer.Write(requestObject.ModelKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.ModelKmsKeyId);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())
             {
                 context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.Write(requestObject.VolumeKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

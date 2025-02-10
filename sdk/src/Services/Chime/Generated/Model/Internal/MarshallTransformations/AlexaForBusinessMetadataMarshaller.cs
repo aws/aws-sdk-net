@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlexaForBusinessRoomArn())
             {
                 context.Writer.WritePropertyName("AlexaForBusinessRoomArn");
-                context.Writer.Write(requestObject.AlexaForBusinessRoomArn);
+                context.Writer.WriteStringValue(requestObject.AlexaForBusinessRoomArn);
             }
 
             if(requestObject.IsSetIsAlexaForBusinessEnabled())
             {
                 context.Writer.WritePropertyName("IsAlexaForBusinessEnabled");
-                context.Writer.Write(requestObject.IsAlexaForBusinessEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsAlexaForBusinessEnabled.Value);
             }
 
         }

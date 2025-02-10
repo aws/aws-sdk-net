@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,264 +49,270 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessAlternateDirectly())
             {
                 context.Writer.WritePropertyName("AccessAlternateDirectly");
-                context.Writer.Write(requestObject.AccessAlternateDirectly.Value);
+                context.Writer.WriteBooleanValue(requestObject.AccessAlternateDirectly.Value);
             }
 
             if(requestObject.IsSetAdditionalArchivedLogDestId())
             {
                 context.Writer.WritePropertyName("AdditionalArchivedLogDestId");
-                context.Writer.Write(requestObject.AdditionalArchivedLogDestId.Value);
+                context.Writer.WriteNumberValue(requestObject.AdditionalArchivedLogDestId.Value);
             }
 
             if(requestObject.IsSetAddSupplementalLogging())
             {
                 context.Writer.WritePropertyName("AddSupplementalLogging");
-                context.Writer.Write(requestObject.AddSupplementalLogging.Value);
+                context.Writer.WriteBooleanValue(requestObject.AddSupplementalLogging.Value);
             }
 
             if(requestObject.IsSetAllowSelectNestedTables())
             {
                 context.Writer.WritePropertyName("AllowSelectNestedTables");
-                context.Writer.Write(requestObject.AllowSelectNestedTables.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowSelectNestedTables.Value);
             }
 
             if(requestObject.IsSetArchivedLogDestId())
             {
                 context.Writer.WritePropertyName("ArchivedLogDestId");
-                context.Writer.Write(requestObject.ArchivedLogDestId.Value);
+                context.Writer.WriteNumberValue(requestObject.ArchivedLogDestId.Value);
             }
 
             if(requestObject.IsSetArchivedLogsOnly())
             {
                 context.Writer.WritePropertyName("ArchivedLogsOnly");
-                context.Writer.Write(requestObject.ArchivedLogsOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.ArchivedLogsOnly.Value);
             }
 
             if(requestObject.IsSetAsmPassword())
             {
                 context.Writer.WritePropertyName("AsmPassword");
-                context.Writer.Write(requestObject.AsmPassword);
+                context.Writer.WriteStringValue(requestObject.AsmPassword);
             }
 
             if(requestObject.IsSetAsmServer())
             {
                 context.Writer.WritePropertyName("AsmServer");
-                context.Writer.Write(requestObject.AsmServer);
+                context.Writer.WriteStringValue(requestObject.AsmServer);
             }
 
             if(requestObject.IsSetAsmUser())
             {
                 context.Writer.WritePropertyName("AsmUser");
-                context.Writer.Write(requestObject.AsmUser);
+                context.Writer.WriteStringValue(requestObject.AsmUser);
+            }
+
+            if(requestObject.IsSetAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("AuthenticationMethod");
+                context.Writer.WriteStringValue(requestObject.AuthenticationMethod);
             }
 
             if(requestObject.IsSetCharLengthSemantics())
             {
                 context.Writer.WritePropertyName("CharLengthSemantics");
-                context.Writer.Write(requestObject.CharLengthSemantics);
+                context.Writer.WriteStringValue(requestObject.CharLengthSemantics);
             }
 
             if(requestObject.IsSetConvertTimestampWithZoneToUTC())
             {
                 context.Writer.WritePropertyName("ConvertTimestampWithZoneToUTC");
-                context.Writer.Write(requestObject.ConvertTimestampWithZoneToUTC.Value);
+                context.Writer.WriteBooleanValue(requestObject.ConvertTimestampWithZoneToUTC.Value);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDirectPathNoLog())
             {
                 context.Writer.WritePropertyName("DirectPathNoLog");
-                context.Writer.Write(requestObject.DirectPathNoLog.Value);
+                context.Writer.WriteBooleanValue(requestObject.DirectPathNoLog.Value);
             }
 
             if(requestObject.IsSetDirectPathParallelLoad())
             {
                 context.Writer.WritePropertyName("DirectPathParallelLoad");
-                context.Writer.Write(requestObject.DirectPathParallelLoad.Value);
+                context.Writer.WriteBooleanValue(requestObject.DirectPathParallelLoad.Value);
             }
 
             if(requestObject.IsSetEnableHomogenousTablespace())
             {
                 context.Writer.WritePropertyName("EnableHomogenousTablespace");
-                context.Writer.Write(requestObject.EnableHomogenousTablespace.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableHomogenousTablespace.Value);
             }
 
             if(requestObject.IsSetExtraArchivedLogDestIds())
             {
                 context.Writer.WritePropertyName("ExtraArchivedLogDestIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExtraArchivedLogDestIdsListValue in requestObject.ExtraArchivedLogDestIds)
                 {
-                        context.Writer.Write(requestObjectExtraArchivedLogDestIdsListValue);
+                        context.Writer.WriteNumberValue(requestObjectExtraArchivedLogDestIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFailTasksOnLobTruncation())
             {
                 context.Writer.WritePropertyName("FailTasksOnLobTruncation");
-                context.Writer.Write(requestObject.FailTasksOnLobTruncation.Value);
+                context.Writer.WriteBooleanValue(requestObject.FailTasksOnLobTruncation.Value);
             }
 
             if(requestObject.IsSetNumberDatatypeScale())
             {
                 context.Writer.WritePropertyName("NumberDatatypeScale");
-                context.Writer.Write(requestObject.NumberDatatypeScale.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberDatatypeScale.Value);
             }
 
             if(requestObject.IsSetOpenTransactionWindow())
             {
                 context.Writer.WritePropertyName("OpenTransactionWindow");
-                context.Writer.Write(requestObject.OpenTransactionWindow.Value);
+                context.Writer.WriteNumberValue(requestObject.OpenTransactionWindow.Value);
             }
 
             if(requestObject.IsSetOraclePathPrefix())
             {
                 context.Writer.WritePropertyName("OraclePathPrefix");
-                context.Writer.Write(requestObject.OraclePathPrefix);
+                context.Writer.WriteStringValue(requestObject.OraclePathPrefix);
             }
 
             if(requestObject.IsSetParallelAsmReadThreads())
             {
                 context.Writer.WritePropertyName("ParallelAsmReadThreads");
-                context.Writer.Write(requestObject.ParallelAsmReadThreads.Value);
+                context.Writer.WriteNumberValue(requestObject.ParallelAsmReadThreads.Value);
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetReadAheadBlocks())
             {
                 context.Writer.WritePropertyName("ReadAheadBlocks");
-                context.Writer.Write(requestObject.ReadAheadBlocks.Value);
+                context.Writer.WriteNumberValue(requestObject.ReadAheadBlocks.Value);
             }
 
             if(requestObject.IsSetReadTableSpaceName())
             {
                 context.Writer.WritePropertyName("ReadTableSpaceName");
-                context.Writer.Write(requestObject.ReadTableSpaceName.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadTableSpaceName.Value);
             }
 
             if(requestObject.IsSetReplacePathPrefix())
             {
                 context.Writer.WritePropertyName("ReplacePathPrefix");
-                context.Writer.Write(requestObject.ReplacePathPrefix.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReplacePathPrefix.Value);
             }
 
             if(requestObject.IsSetRetryInterval())
             {
                 context.Writer.WritePropertyName("RetryInterval");
-                context.Writer.Write(requestObject.RetryInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.RetryInterval.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerOracleAsmAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerOracleAsmAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerOracleAsmAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerOracleAsmAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerOracleAsmSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerOracleAsmSecretId");
-                context.Writer.Write(requestObject.SecretsManagerOracleAsmSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerOracleAsmSecretId);
             }
 
             if(requestObject.IsSetSecretsManagerSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecretId");
-                context.Writer.Write(requestObject.SecretsManagerSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecretId);
             }
 
             if(requestObject.IsSetSecurityDbEncryption())
             {
                 context.Writer.WritePropertyName("SecurityDbEncryption");
-                context.Writer.Write(requestObject.SecurityDbEncryption);
+                context.Writer.WriteStringValue(requestObject.SecurityDbEncryption);
             }
 
             if(requestObject.IsSetSecurityDbEncryptionName())
             {
                 context.Writer.WritePropertyName("SecurityDbEncryptionName");
-                context.Writer.Write(requestObject.SecurityDbEncryptionName);
+                context.Writer.WriteStringValue(requestObject.SecurityDbEncryptionName);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetSpatialDataOptionToGeoJsonFunctionName())
             {
                 context.Writer.WritePropertyName("SpatialDataOptionToGeoJsonFunctionName");
-                context.Writer.Write(requestObject.SpatialDataOptionToGeoJsonFunctionName);
+                context.Writer.WriteStringValue(requestObject.SpatialDataOptionToGeoJsonFunctionName);
             }
 
             if(requestObject.IsSetStandbyDelayTime())
             {
                 context.Writer.WritePropertyName("StandbyDelayTime");
-                context.Writer.Write(requestObject.StandbyDelayTime.Value);
+                context.Writer.WriteNumberValue(requestObject.StandbyDelayTime.Value);
             }
 
             if(requestObject.IsSetTrimSpaceInChar())
             {
                 context.Writer.WritePropertyName("TrimSpaceInChar");
-                context.Writer.Write(requestObject.TrimSpaceInChar.Value);
+                context.Writer.WriteBooleanValue(requestObject.TrimSpaceInChar.Value);
             }
 
             if(requestObject.IsSetUseAlternateFolderForOnline())
             {
                 context.Writer.WritePropertyName("UseAlternateFolderForOnline");
-                context.Writer.Write(requestObject.UseAlternateFolderForOnline.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseAlternateFolderForOnline.Value);
             }
 
             if(requestObject.IsSetUseBFile())
             {
                 context.Writer.WritePropertyName("UseBFile");
-                context.Writer.Write(requestObject.UseBFile.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseBFile.Value);
             }
 
             if(requestObject.IsSetUseDirectPathFullLoad())
             {
                 context.Writer.WritePropertyName("UseDirectPathFullLoad");
-                context.Writer.Write(requestObject.UseDirectPathFullLoad.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseDirectPathFullLoad.Value);
             }
 
             if(requestObject.IsSetUseLogminerReader())
             {
                 context.Writer.WritePropertyName("UseLogminerReader");
-                context.Writer.Write(requestObject.UseLogminerReader.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseLogminerReader.Value);
             }
 
             if(requestObject.IsSetUsePathPrefix())
             {
                 context.Writer.WritePropertyName("UsePathPrefix");
-                context.Writer.Write(requestObject.UsePathPrefix);
+                context.Writer.WriteStringValue(requestObject.UsePathPrefix);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

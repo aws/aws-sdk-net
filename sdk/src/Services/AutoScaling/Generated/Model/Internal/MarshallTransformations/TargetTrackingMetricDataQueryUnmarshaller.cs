@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetTrackingMetricDataQuery Object
     /// </summary>  
-    public class TargetTrackingMetricDataQueryUnmarshaller : IUnmarshaller<TargetTrackingMetricDataQuery, XmlUnmarshallerContext>, IUnmarshaller<TargetTrackingMetricDataQuery, JsonUnmarshallerContext>
+    public class TargetTrackingMetricDataQueryUnmarshaller : IXmlUnmarshaller<TargetTrackingMetricDataQuery, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -79,6 +79,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.MetricStat = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Period", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.Period = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReturnData", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -94,17 +100,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetTrackingMetricDataQuery Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetTrackingMetricDataQueryUnmarshaller _instance = new TargetTrackingMetricDataQueryUnmarshaller();        
 

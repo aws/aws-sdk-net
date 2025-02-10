@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportable())
             {
                 context.Writer.WritePropertyName("Exportable");
-                context.Writer.Write(requestObject.Exportable.Value);
+                context.Writer.WriteBooleanValue(requestObject.Exportable.Value);
             }
 
             if(requestObject.IsSetImportToken())
             {
                 context.Writer.WritePropertyName("ImportToken");
-                context.Writer.Write(requestObject.ImportToken);
+                context.Writer.WriteStringValue(requestObject.ImportToken);
             }
 
             if(requestObject.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWrappedKeyCryptogram())
             {
                 context.Writer.WritePropertyName("WrappedKeyCryptogram");
-                context.Writer.Write(requestObject.WrappedKeyCryptogram);
+                context.Writer.WriteStringValue(requestObject.WrappedKeyCryptogram);
             }
 
             if(requestObject.IsSetWrappingSpec())
             {
                 context.Writer.WritePropertyName("WrappingSpec");
-                context.Writer.Write(requestObject.WrappingSpec);
+                context.Writer.WriteStringValue(requestObject.WrappingSpec);
             }
 
         }

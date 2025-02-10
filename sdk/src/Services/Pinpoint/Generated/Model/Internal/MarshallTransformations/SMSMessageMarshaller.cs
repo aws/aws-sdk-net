@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WriteStringValue(requestObject.Body);
             }
 
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");
-                context.Writer.Write(requestObject.EntityId);
+                context.Writer.WriteStringValue(requestObject.EntityId);
             }
 
             if(requestObject.IsSetKeyword())
             {
                 context.Writer.WritePropertyName("Keyword");
-                context.Writer.Write(requestObject.Keyword);
+                context.Writer.WriteStringValue(requestObject.Keyword);
             }
 
             if(requestObject.IsSetMediaUrl())
             {
                 context.Writer.WritePropertyName("MediaUrl");
-                context.Writer.Write(requestObject.MediaUrl);
+                context.Writer.WriteStringValue(requestObject.MediaUrl);
             }
 
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
-                context.Writer.Write(requestObject.MessageType);
+                context.Writer.WriteStringValue(requestObject.MessageType);
             }
 
             if(requestObject.IsSetOriginationNumber())
             {
                 context.Writer.WritePropertyName("OriginationNumber");
-                context.Writer.Write(requestObject.OriginationNumber);
+                context.Writer.WriteStringValue(requestObject.OriginationNumber);
             }
 
             if(requestObject.IsSetSenderId())
             {
                 context.Writer.WritePropertyName("SenderId");
-                context.Writer.Write(requestObject.SenderId);
+                context.Writer.WriteStringValue(requestObject.SenderId);
             }
 
             if(requestObject.IsSetSubstitutions())
             {
                 context.Writer.WritePropertyName("Substitutions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubstitutionsKvp in requestObject.Substitutions)
                 {
                     context.Writer.WritePropertyName(requestObjectSubstitutionsKvp.Key);
                     var requestObjectSubstitutionsValue = requestObjectSubstitutionsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectSubstitutionsValueListValue in requestObjectSubstitutionsValue)
                     {
-                            context.Writer.Write(requestObjectSubstitutionsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectSubstitutionsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateId())
             {
                 context.Writer.WritePropertyName("TemplateId");
-                context.Writer.Write(requestObject.TemplateId);
+                context.Writer.WriteStringValue(requestObject.TemplateId);
             }
 
         }

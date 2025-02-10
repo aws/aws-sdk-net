@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetEvaluationContext())
             {
                 context.Writer.WritePropertyName("EvaluationContext");
-                context.Writer.Write(requestObject.EvaluationContext);
+                context.Writer.WriteStringValue(requestObject.EvaluationContext);
             }
 
             if(requestObject.IsSetResultsPublishingEnabled())
             {
                 context.Writer.WritePropertyName("ResultsPublishingEnabled");
-                context.Writer.Write(requestObject.ResultsPublishingEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ResultsPublishingEnabled.Value);
             }
 
             if(requestObject.IsSetResultsS3Prefix())
             {
                 context.Writer.WritePropertyName("ResultsS3Prefix");
-                context.Writer.Write(requestObject.ResultsS3Prefix);
+                context.Writer.WriteStringValue(requestObject.ResultsS3Prefix);
             }
 
         }

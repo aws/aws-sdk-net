@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
 {
@@ -63,67 +66,72 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetEniIp())
-                    {
-                        context.Writer.WritePropertyName("EniIp");
-                        context.Writer.Write(publicRequest.EniIp);
-                    }
-
-                    if(publicRequest.IsSetExternalId())
-                    {
-                        context.Writer.WritePropertyName("ExternalId");
-                        context.Writer.Write(publicRequest.ExternalId);
-                    }
-
-                    if(publicRequest.IsSetIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("IamRoleArn");
-                        context.Writer.Write(publicRequest.IamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetSshKey())
-                    {
-                        context.Writer.WritePropertyName("SshKey");
-                        context.Writer.Write(publicRequest.SshKey);
-                    }
-
-                    if(publicRequest.IsSetSubnetId())
-                    {
-                        context.Writer.WritePropertyName("SubnetId");
-                        context.Writer.Write(publicRequest.SubnetId);
-                    }
-
-                    if(publicRequest.IsSetSubscriptionType())
-                    {
-                        context.Writer.WritePropertyName("SubscriptionType");
-                        context.Writer.Write(publicRequest.SubscriptionType);
-                    }
-
-                    if(publicRequest.IsSetSyslogIp())
-                    {
-                        context.Writer.WritePropertyName("SyslogIp");
-                        context.Writer.Write(publicRequest.SyslogIp);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            if(publicRequest.IsSetEniIp())
+            {
+                context.Writer.WritePropertyName("EniIp");
+                context.Writer.WriteStringValue(publicRequest.EniIp);
+            }
+
+            if(publicRequest.IsSetExternalId())
+            {
+                context.Writer.WritePropertyName("ExternalId");
+                context.Writer.WriteStringValue(publicRequest.ExternalId);
+            }
+
+            if(publicRequest.IsSetIamRoleArn())
+            {
+                context.Writer.WritePropertyName("IamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
+            }
+
+            if(publicRequest.IsSetSshKey())
+            {
+                context.Writer.WritePropertyName("SshKey");
+                context.Writer.WriteStringValue(publicRequest.SshKey);
+            }
+
+            if(publicRequest.IsSetSubnetId())
+            {
+                context.Writer.WritePropertyName("SubnetId");
+                context.Writer.WriteStringValue(publicRequest.SubnetId);
+            }
+
+            if(publicRequest.IsSetSubscriptionType())
+            {
+                context.Writer.WritePropertyName("SubscriptionType");
+                context.Writer.WriteStringValue(publicRequest.SubscriptionType);
+            }
+
+            if(publicRequest.IsSetSyslogIp())
+            {
+                context.Writer.WritePropertyName("SyslogIp");
+                context.Writer.WriteStringValue(publicRequest.SyslogIp);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

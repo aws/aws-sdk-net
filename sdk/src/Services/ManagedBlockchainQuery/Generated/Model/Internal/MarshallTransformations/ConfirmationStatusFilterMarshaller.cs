@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInclude())
             {
                 context.Writer.WritePropertyName("include");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeListValue in requestObject.Include)
                 {
-                        context.Writer.Write(requestObjectIncludeListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioSelectors())
             {
                 context.Writer.WritePropertyName("audioSelectors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioSelectorsListValue in requestObject.AudioSelectors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AudioSelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectAudioSelectorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptionSelectors())
             {
                 context.Writer.WritePropertyName("captionSelectors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionSelectorsListValue in requestObject.CaptionSelectors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptionSelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionSelectorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDeblockFilter())
             {
                 context.Writer.WritePropertyName("deblockFilter");
-                context.Writer.Write(requestObject.DeblockFilter);
+                context.Writer.WriteStringValue(requestObject.DeblockFilter);
             }
 
             if(requestObject.IsSetDenoiseFilter())
             {
                 context.Writer.WritePropertyName("denoiseFilter");
-                context.Writer.Write(requestObject.DenoiseFilter);
+                context.Writer.WriteStringValue(requestObject.DenoiseFilter);
             }
 
             if(requestObject.IsSetFilterStrength())
             {
                 context.Writer.WritePropertyName("filterStrength");
-                context.Writer.Write(requestObject.FilterStrength.Value);
+                context.Writer.WriteNumberValue(requestObject.FilterStrength.Value);
             }
 
             if(requestObject.IsSetInputFilter())
             {
                 context.Writer.WritePropertyName("inputFilter");
-                context.Writer.Write(requestObject.InputFilter);
+                context.Writer.WriteStringValue(requestObject.InputFilter);
             }
 
             if(requestObject.IsSetNetworkInputSettings())
             {
                 context.Writer.WritePropertyName("networkInputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkInputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkInputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScte35Pid())
             {
                 context.Writer.WritePropertyName("scte35Pid");
-                context.Writer.Write(requestObject.Scte35Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Scte35Pid.Value);
             }
 
             if(requestObject.IsSetSmpte2038DataPreference())
             {
                 context.Writer.WritePropertyName("smpte2038DataPreference");
-                context.Writer.Write(requestObject.Smpte2038DataPreference);
+                context.Writer.WriteStringValue(requestObject.Smpte2038DataPreference);
             }
 
             if(requestObject.IsSetSourceEndBehavior())
             {
                 context.Writer.WritePropertyName("sourceEndBehavior");
-                context.Writer.Write(requestObject.SourceEndBehavior);
+                context.Writer.WriteStringValue(requestObject.SourceEndBehavior);
             }
 
             if(requestObject.IsSetVideoSelector())
             {
                 context.Writer.WritePropertyName("videoSelector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoSelectorMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoSelector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

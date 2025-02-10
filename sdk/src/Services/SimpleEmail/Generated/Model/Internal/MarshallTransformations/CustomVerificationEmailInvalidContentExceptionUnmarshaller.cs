@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomVerificationEmailInvalidContentException operation
     /// </summary>  
-    public class CustomVerificationEmailInvalidContentExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomVerificationEmailInvalidContentException, XmlUnmarshallerContext>
+    public class CustomVerificationEmailInvalidContentExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomVerificationEmailInvalidContentException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

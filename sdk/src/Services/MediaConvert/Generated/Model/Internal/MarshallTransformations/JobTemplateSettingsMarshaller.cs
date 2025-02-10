@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,160 +49,160 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdAvailOffset())
             {
                 context.Writer.WritePropertyName("adAvailOffset");
-                context.Writer.Write(requestObject.AdAvailOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.AdAvailOffset.Value);
             }
 
             if(requestObject.IsSetAvailBlanking())
             {
                 context.Writer.WritePropertyName("availBlanking");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AvailBlankingMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvailBlanking, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColorConversion3DLUTSettings())
             {
                 context.Writer.WritePropertyName("colorConversion3DLUTSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColorConversion3DLUTSettingsListValue in requestObject.ColorConversion3DLUTSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColorConversion3DLUTSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectColorConversion3DLUTSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEsam())
             {
                 context.Writer.WritePropertyName("esam");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EsamSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Esam, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExtendedDataServices())
             {
                 context.Writer.WritePropertyName("extendedDataServices");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExtendedDataServicesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExtendedDataServices, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFollowSource())
             {
                 context.Writer.WritePropertyName("followSource");
-                context.Writer.Write(requestObject.FollowSource.Value);
+                context.Writer.WriteNumberValue(requestObject.FollowSource.Value);
             }
 
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("inputs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputsListValue in requestObject.Inputs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputTemplateMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKantarWatermark())
             {
                 context.Writer.WritePropertyName("kantarWatermark");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KantarWatermarkSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.KantarWatermark, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMotionImageInserter())
             {
                 context.Writer.WritePropertyName("motionImageInserter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MotionImageInserterMarshaller.Instance;
                 marshaller.Marshall(requestObject.MotionImageInserter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNielsenConfiguration())
             {
                 context.Writer.WritePropertyName("nielsenConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NielsenConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NielsenConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNielsenNonLinearWatermark())
             {
                 context.Writer.WritePropertyName("nielsenNonLinearWatermark");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NielsenNonLinearWatermarkSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NielsenNonLinearWatermark, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputGroups())
             {
                 context.Writer.WritePropertyName("outputGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputGroupsListValue in requestObject.OutputGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OutputGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTimecodeConfig())
             {
                 context.Writer.WritePropertyName("timecodeConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimecodeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimecodeConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimedMetadataInsertion())
             {
                 context.Writer.WritePropertyName("timedMetadataInsertion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimedMetadataInsertionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimedMetadataInsertion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

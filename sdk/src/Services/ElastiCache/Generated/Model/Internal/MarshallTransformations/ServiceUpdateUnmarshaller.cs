@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceUpdate Object
     /// </summary>  
-    public class ServiceUpdateUnmarshaller : IUnmarshaller<ServiceUpdate, XmlUnmarshallerContext>, IUnmarshaller<ServiceUpdate, JsonUnmarshallerContext>
+    public class ServiceUpdateUnmarshaller : IXmlUnmarshaller<ServiceUpdate, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -136,17 +136,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ServiceUpdate Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ServiceUpdateUnmarshaller _instance = new ServiceUpdateUnmarshaller();        
 

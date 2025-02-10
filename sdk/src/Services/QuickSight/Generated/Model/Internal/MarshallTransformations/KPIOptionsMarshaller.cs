@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparison())
             {
                 context.Writer.WritePropertyName("Comparison");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComparisonConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Comparison, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrimaryValueDisplayType())
             {
                 context.Writer.WritePropertyName("PrimaryValueDisplayType");
-                context.Writer.Write(requestObject.PrimaryValueDisplayType);
+                context.Writer.WriteStringValue(requestObject.PrimaryValueDisplayType);
             }
 
             if(requestObject.IsSetPrimaryValueFontConfiguration())
             {
                 context.Writer.WritePropertyName("PrimaryValueFontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryValueFontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProgressBar())
             {
                 context.Writer.WritePropertyName("ProgressBar");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProgressBarOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProgressBar, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecondaryValue())
             {
                 context.Writer.WritePropertyName("SecondaryValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SecondaryValueOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecondaryValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecondaryValueFontConfiguration())
             {
                 context.Writer.WritePropertyName("SecondaryValueFontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecondaryValueFontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSparkline())
             {
                 context.Writer.WritePropertyName("Sparkline");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KPISparklineOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sparkline, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrendArrows())
             {
                 context.Writer.WritePropertyName("TrendArrows");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrendArrowOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrendArrows, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisualLayoutOptions())
             {
                 context.Writer.WritePropertyName("VisualLayoutOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KPIVisualLayoutOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisualLayoutOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
 {
@@ -62,7 +65,11 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSourceFileSystemId())
                 throw new AmazonElasticFileSystemException("Request object does not have required field SourceFileSystemId set");
             request.AddPathResource("{SourceFileSystemId}", StringUtils.FromString(publicRequest.SourceFileSystemId));
+            
+            if (publicRequest.IsSetDeletionMode())
+                request.Parameters.Add("deletionMode", StringUtils.FromString(publicRequest.DeletionMode));
             request.ResourcePath = "/2015-02-01/file-systems/{SourceFileSystemId}/replication-configuration";
+            request.UseQueryString = true;
 
             return request;
         }

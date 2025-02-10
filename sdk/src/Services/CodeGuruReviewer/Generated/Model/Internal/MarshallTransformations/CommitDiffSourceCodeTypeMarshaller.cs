@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationCommit())
             {
                 context.Writer.WritePropertyName("DestinationCommit");
-                context.Writer.Write(requestObject.DestinationCommit);
+                context.Writer.WriteStringValue(requestObject.DestinationCommit);
             }
 
             if(requestObject.IsSetMergeBaseCommit())
             {
                 context.Writer.WritePropertyName("MergeBaseCommit");
-                context.Writer.Write(requestObject.MergeBaseCommit);
+                context.Writer.WriteStringValue(requestObject.MergeBaseCommit);
             }
 
             if(requestObject.IsSetSourceCommit())
             {
                 context.Writer.WritePropertyName("SourceCommit");
-                context.Writer.Write(requestObject.SourceCommit);
+                context.Writer.WriteStringValue(requestObject.SourceCommit);
             }
 
         }

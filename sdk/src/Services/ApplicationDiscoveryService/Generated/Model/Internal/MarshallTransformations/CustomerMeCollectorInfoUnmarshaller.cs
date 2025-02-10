@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerMeCollectorInfo Object
     /// </summary>  
-    public class CustomerMeCollectorInfoUnmarshaller : IUnmarshaller<CustomerMeCollectorInfo, XmlUnmarshallerContext>, IUnmarshaller<CustomerMeCollectorInfo, JsonUnmarshallerContext>
+    public class CustomerMeCollectorInfoUnmarshaller : IJsonUnmarshaller<CustomerMeCollectorInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerMeCollectorInfo IUnmarshaller<CustomerMeCollectorInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerMeCollectorInfo Unmarshall(JsonUnmarshallerContext context)
+        public CustomerMeCollectorInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerMeCollectorInfo unmarshalledObject = new CustomerMeCollectorInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("denyListedMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DenyListedMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DenyListedMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthyMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthyMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthyMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shutdownMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShutdownMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShutdownMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unhealthyMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnhealthyMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnhealthyMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unknownMeCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnknownMeCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnknownMeCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("active");
-                context.Writer.Write(requestObject.Active.Value);
+                context.Writer.WriteBooleanValue(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetConditionalBranches())
             {
                 context.Writer.WritePropertyName("conditionalBranches");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConditionalBranchesListValue in requestObject.ConditionalBranches)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConditionalBranchMarshaller.Instance;
                     marshaller.Marshall(requestObjectConditionalBranchesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDefaultBranch())
             {
                 context.Writer.WritePropertyName("defaultBranch");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultConditionalBranchMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultBranch, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

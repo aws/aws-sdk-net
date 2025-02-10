@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LogDeliveryConfigurationType Object
     /// </summary>  
-    public class LogDeliveryConfigurationTypeUnmarshaller : IUnmarshaller<LogDeliveryConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<LogDeliveryConfigurationType, JsonUnmarshallerContext>
+    public class LogDeliveryConfigurationTypeUnmarshaller : IJsonUnmarshaller<LogDeliveryConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LogDeliveryConfigurationType IUnmarshaller<LogDeliveryConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogDeliveryConfigurationType Unmarshall(JsonUnmarshallerContext context)
+        public LogDeliveryConfigurationType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LogDeliveryConfigurationType unmarshalledObject = new LogDeliveryConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LogConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LogConfigurationType, LogConfigurationTypeUnmarshaller>(LogConfigurationTypeUnmarshaller.Instance);
-                    unmarshalledObject.LogConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LogConfigurationType, LogConfigurationTypeUnmarshaller>(LogConfigurationTypeUnmarshaller.Instance);
+                    unmarshalledObject.LogConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserPoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserPoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

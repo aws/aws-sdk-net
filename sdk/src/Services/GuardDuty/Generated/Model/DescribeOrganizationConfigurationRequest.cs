@@ -54,6 +54,12 @@ namespace Amazon.GuardDuty.Model
         /// The detector ID of the delegated administrator for which you need to retrieve the
         /// information.
         /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId

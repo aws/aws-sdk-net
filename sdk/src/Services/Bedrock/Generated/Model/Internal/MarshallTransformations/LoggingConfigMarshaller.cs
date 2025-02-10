@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,47 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchConfig())
             {
                 context.Writer.WritePropertyName("cloudWatchConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmbeddingDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("embeddingDataDeliveryEnabled");
-                context.Writer.Write(requestObject.EmbeddingDataDeliveryEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.EmbeddingDataDeliveryEnabled.Value);
             }
 
             if(requestObject.IsSetImageDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("imageDataDeliveryEnabled");
-                context.Writer.Write(requestObject.ImageDataDeliveryEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ImageDataDeliveryEnabled.Value);
             }
 
             if(requestObject.IsSetS3Config())
             {
                 context.Writer.WritePropertyName("s3Config");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Config, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextDataDeliveryEnabled())
             {
                 context.Writer.WritePropertyName("textDataDeliveryEnabled");
-                context.Writer.Write(requestObject.TextDataDeliveryEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.TextDataDeliveryEnabled.Value);
+            }
+
+            if(requestObject.IsSetVideoDataDeliveryEnabled())
+            {
+                context.Writer.WritePropertyName("videoDataDeliveryEnabled");
+                context.Writer.WriteBooleanValue(requestObject.VideoDataDeliveryEnabled.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDbSubnetGroupArn())
             {
                 context.Writer.WritePropertyName("DbSubnetGroupArn");
-                context.Writer.Write(requestObject.DbSubnetGroupArn);
+                context.Writer.WriteStringValue(requestObject.DbSubnetGroupArn);
             }
 
             if(requestObject.IsSetDbSubnetGroupDescription())
             {
                 context.Writer.WritePropertyName("DbSubnetGroupDescription");
-                context.Writer.Write(requestObject.DbSubnetGroupDescription);
+                context.Writer.WriteStringValue(requestObject.DbSubnetGroupDescription);
             }
 
             if(requestObject.IsSetDbSubnetGroupName())
             {
                 context.Writer.WritePropertyName("DbSubnetGroupName");
-                context.Writer.Write(requestObject.DbSubnetGroupName);
+                context.Writer.WriteStringValue(requestObject.DbSubnetGroupName);
             }
 
             if(requestObject.IsSetSubnetGroupStatus())
             {
                 context.Writer.WritePropertyName("SubnetGroupStatus");
-                context.Writer.Write(requestObject.SubnetGroupStatus);
+                context.Writer.WriteStringValue(requestObject.SubnetGroupStatus);
             }
 
             if(requestObject.IsSetSubnets())
             {
                 context.Writer.WritePropertyName("Subnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRdsDbSubnetGroupSubnetMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubnetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

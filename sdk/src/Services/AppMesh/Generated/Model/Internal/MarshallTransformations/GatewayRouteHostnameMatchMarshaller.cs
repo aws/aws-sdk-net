@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExact())
             {
                 context.Writer.WritePropertyName("exact");
-                context.Writer.Write(requestObject.Exact);
+                context.Writer.WriteStringValue(requestObject.Exact);
             }
 
             if(requestObject.IsSetSuffix())
             {
                 context.Writer.WritePropertyName("suffix");
-                context.Writer.Write(requestObject.Suffix);
+                context.Writer.WriteStringValue(requestObject.Suffix);
             }
 
         }

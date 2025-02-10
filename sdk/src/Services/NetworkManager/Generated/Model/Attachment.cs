@@ -41,6 +41,7 @@ namespace Amazon.NetworkManager.Model
         private string _coreNetworkId;
         private DateTime? _createdAt;
         private string _edgeLocation;
+        private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<AttachmentError> _lastModificationErrors = AWSConfigs.InitializeCollections ? new List<AttachmentError>() : null;
         private string _networkFunctionGroupName;
         private string _ownerAccountId;
@@ -166,7 +167,8 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property EdgeLocation. 
         /// <para>
-        /// The Region where the edge is located.
+        /// The Region where the edge is located. This is returned for all attachment types except
+        /// a Direct Connect gateway attachment, which instead returns <c>EdgeLocations</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -180,6 +182,25 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetEdgeLocation()
         {
             return this._edgeLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EdgeLocations. 
+        /// <para>
+        /// The edge locations that the Direct Connect gateway is associated with. This is returned
+        /// only for Direct Connect gateway attachments. All other attachment types retrun <c>EdgeLocation</c>.
+        /// </para>
+        /// </summary>
+        public List<string> EdgeLocations
+        {
+            get { return this._edgeLocations; }
+            set { this._edgeLocations = value; }
+        }
+
+        // Check to see if EdgeLocations property is set
+        internal bool IsSetEdgeLocations()
+        {
+            return this._edgeLocations != null && (this._edgeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

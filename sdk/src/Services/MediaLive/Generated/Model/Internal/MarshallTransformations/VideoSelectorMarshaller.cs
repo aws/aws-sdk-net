@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColorSpace())
             {
                 context.Writer.WritePropertyName("colorSpace");
-                context.Writer.Write(requestObject.ColorSpace);
+                context.Writer.WriteStringValue(requestObject.ColorSpace);
             }
 
             if(requestObject.IsSetColorSpaceSettings())
             {
                 context.Writer.WritePropertyName("colorSpaceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoSelectorColorSpaceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorSpaceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetColorSpaceUsage())
             {
                 context.Writer.WritePropertyName("colorSpaceUsage");
-                context.Writer.Write(requestObject.ColorSpaceUsage);
+                context.Writer.WriteStringValue(requestObject.ColorSpaceUsage);
             }
 
             if(requestObject.IsSetSelectorSettings())
             {
                 context.Writer.WritePropertyName("selectorSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoSelectorSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelectorSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

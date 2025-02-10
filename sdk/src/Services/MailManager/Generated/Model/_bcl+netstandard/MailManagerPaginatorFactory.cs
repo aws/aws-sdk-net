@@ -53,6 +53,22 @@ namespace Amazon.MailManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListAddressListImportJobs operation
+        ///</summary>
+        public IListAddressListImportJobsPaginator ListAddressListImportJobs(ListAddressListImportJobsRequest request) 
+        {
+            return new ListAddressListImportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAddressLists operation
+        ///</summary>
+        public IListAddressListsPaginator ListAddressLists(ListAddressListsRequest request) 
+        {
+            return new ListAddressListsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListArchiveExports operation
         ///</summary>
         public IListArchiveExportsPaginator ListArchiveExports(ListArchiveExportsRequest request) 
@@ -82,6 +98,14 @@ namespace Amazon.MailManager.Model
         public IListIngressPointsPaginator ListIngressPoints(ListIngressPointsRequest request) 
         {
             return new ListIngressPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMembersOfAddressList operation
+        ///</summary>
+        public IListMembersOfAddressListPaginator ListMembersOfAddressList(ListMembersOfAddressListRequest request) 
+        {
+            return new ListMembersOfAddressListPaginator(this.client, request);
         }
 
         /// <summary>

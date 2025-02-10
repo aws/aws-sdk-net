@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelType())
             {
                 context.Writer.WritePropertyName("ChannelType");
-                context.Writer.Write(requestObject.ChannelType);
+                context.Writer.WriteStringValue(requestObject.ChannelType);
             }
 
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
+                context.Writer.WriteStringValue(requestObject.CompressionType);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLDataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSampleWeightAttributeName())
             {
                 context.Writer.WritePropertyName("SampleWeightAttributeName");
-                context.Writer.Write(requestObject.SampleWeightAttributeName);
+                context.Writer.WriteStringValue(requestObject.SampleWeightAttributeName);
             }
 
             if(requestObject.IsSetTargetAttributeName())
             {
                 context.Writer.WritePropertyName("TargetAttributeName");
-                context.Writer.Write(requestObject.TargetAttributeName);
+                context.Writer.WriteStringValue(requestObject.TargetAttributeName);
             }
 
         }

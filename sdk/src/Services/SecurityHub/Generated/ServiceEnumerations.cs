@@ -25,6 +25,56 @@ namespace Amazon.SecurityHub
 {
 
     /// <summary>
+    /// Constants used for properties of type ActorSessionMfaStatus.
+    /// </summary>
+    public class ActorSessionMfaStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ActorSessionMfaStatus
+        /// </summary>
+        public static readonly ActorSessionMfaStatus DISABLED = new ActorSessionMfaStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ActorSessionMfaStatus
+        /// </summary>
+        public static readonly ActorSessionMfaStatus ENABLED = new ActorSessionMfaStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActorSessionMfaStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActorSessionMfaStatus FindValue(string value)
+        {
+            return FindValue<ActorSessionMfaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActorSessionMfaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AdminStatus.
     /// </summary>
     public class AdminStatus : ConstantClass
@@ -476,6 +526,56 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConfigurationPolicyAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionDirection.
+    /// </summary>
+    public class ConnectionDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INBOUND for ConnectionDirection
+        /// </summary>
+        public static readonly ConnectionDirection INBOUND = new ConnectionDirection("INBOUND");
+        /// <summary>
+        /// Constant OUTBOUND for ConnectionDirection
+        /// </summary>
+        public static readonly ConnectionDirection OUTBOUND = new ConnectionDirection("OUTBOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionDirection FindValue(string value)
+        {
+            return FindValue<ConnectionDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionDirection(string value)
         {
             return FindValue(value);
         }

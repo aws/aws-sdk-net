@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityBlockOffering Object
     /// </summary>  
-    public class CapacityBlockOfferingUnmarshaller : IUnmarshaller<CapacityBlockOffering, XmlUnmarshallerContext>, IUnmarshaller<CapacityBlockOffering, JsonUnmarshallerContext>
+    public class CapacityBlockOfferingUnmarshaller : IXmlUnmarshaller<CapacityBlockOffering, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -65,6 +65,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.CapacityBlockDurationHours = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockDurationMinutes", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockDurationMinutes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("capacityBlockOfferingId", targetDepth))
@@ -124,17 +130,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityBlockOffering Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityBlockOfferingUnmarshaller _instance = new CapacityBlockOfferingUnmarshaller();        
 

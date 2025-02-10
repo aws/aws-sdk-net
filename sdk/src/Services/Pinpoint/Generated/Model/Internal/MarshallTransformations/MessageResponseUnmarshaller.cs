@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MessageResponse Object
     /// </summary>  
-    public class MessageResponseUnmarshaller : IUnmarshaller<MessageResponse, XmlUnmarshallerContext>, IUnmarshaller<MessageResponse, JsonUnmarshallerContext>
+    public class MessageResponseUnmarshaller : IJsonUnmarshaller<MessageResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MessageResponse IUnmarshaller<MessageResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageResponse Unmarshall(JsonUnmarshallerContext context)
+        public MessageResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MessageResponse unmarshalledObject = new MessageResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApplicationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointResult", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, EndpointMessageResult, StringUnmarshaller, EndpointMessageResultUnmarshaller>(StringUnmarshaller.Instance, EndpointMessageResultUnmarshaller.Instance);
-                    unmarshalledObject.EndpointResult = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, EndpointMessageResult, StringUnmarshaller, EndpointMessageResultUnmarshaller>(StringUnmarshaller.Instance, EndpointMessageResultUnmarshaller.Instance);
+                    unmarshalledObject.EndpointResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Result", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, MessageResult, StringUnmarshaller, MessageResultUnmarshaller>(StringUnmarshaller.Instance, MessageResultUnmarshaller.Instance);
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, MessageResult, StringUnmarshaller, MessageResultUnmarshaller>(StringUnmarshaller.Instance, MessageResultUnmarshaller.Instance);
+                    unmarshalledObject.Result = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

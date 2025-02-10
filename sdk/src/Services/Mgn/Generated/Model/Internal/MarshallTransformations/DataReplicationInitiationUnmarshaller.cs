@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataReplicationInitiation Object
     /// </summary>  
-    public class DataReplicationInitiationUnmarshaller : IUnmarshaller<DataReplicationInitiation, XmlUnmarshallerContext>, IUnmarshaller<DataReplicationInitiation, JsonUnmarshallerContext>
+    public class DataReplicationInitiationUnmarshaller : IJsonUnmarshaller<DataReplicationInitiation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataReplicationInitiation IUnmarshaller<DataReplicationInitiation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataReplicationInitiation Unmarshall(JsonUnmarshallerContext context)
+        public DataReplicationInitiation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataReplicationInitiation unmarshalledObject = new DataReplicationInitiation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("nextAttemptDateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextAttemptDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextAttemptDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startDateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("steps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataReplicationInitiationStep, DataReplicationInitiationStepUnmarshaller>(DataReplicationInitiationStepUnmarshaller.Instance);
-                    unmarshalledObject.Steps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataReplicationInitiationStep, DataReplicationInitiationStepUnmarshaller>(DataReplicationInitiationStepUnmarshaller.Instance);
+                    unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

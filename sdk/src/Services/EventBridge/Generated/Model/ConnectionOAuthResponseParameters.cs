@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the response parameters when OAuth is specified as the authorization type.
+    /// The response parameters when OAuth is specified as the authorization type.
     /// </summary>
     public partial class ConnectionOAuthResponseParameters
     {
@@ -61,8 +61,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ClientParameters. 
         /// <para>
-        /// A <c>ConnectionOAuthClientResponseParameters</c> object that contains details about
-        /// the client parameters returned when OAuth is specified as the authorization type.
+        /// Details about the client parameters returned when OAuth is specified as the authorization
+        /// type.
         /// </para>
         /// </summary>
         public ConnectionOAuthClientResponseParameters ClientParameters

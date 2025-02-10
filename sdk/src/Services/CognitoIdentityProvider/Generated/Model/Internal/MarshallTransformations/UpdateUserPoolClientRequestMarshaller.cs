@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -63,201 +66,206 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessTokenValidity())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessTokenValidity())
-                    {
-                        context.Writer.WritePropertyName("AccessTokenValidity");
-                        context.Writer.Write(publicRequest.AccessTokenValidity.Value);
-                    }
-
-                    if(publicRequest.IsSetAllowedOAuthFlows())
-                    {
-                        context.Writer.WritePropertyName("AllowedOAuthFlows");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedOAuthFlowsListValue in publicRequest.AllowedOAuthFlows)
-                        {
-                                context.Writer.Write(publicRequestAllowedOAuthFlowsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAllowedOAuthFlowsUserPoolClient())
-                    {
-                        context.Writer.WritePropertyName("AllowedOAuthFlowsUserPoolClient");
-                        context.Writer.Write(publicRequest.AllowedOAuthFlowsUserPoolClient.Value);
-                    }
-
-                    if(publicRequest.IsSetAllowedOAuthScopes())
-                    {
-                        context.Writer.WritePropertyName("AllowedOAuthScopes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedOAuthScopesListValue in publicRequest.AllowedOAuthScopes)
-                        {
-                                context.Writer.Write(publicRequestAllowedOAuthScopesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAnalyticsConfiguration())
-                    {
-                        context.Writer.WritePropertyName("AnalyticsConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AnalyticsConfigurationTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AnalyticsConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthSessionValidity())
-                    {
-                        context.Writer.WritePropertyName("AuthSessionValidity");
-                        context.Writer.Write(publicRequest.AuthSessionValidity.Value);
-                    }
-
-                    if(publicRequest.IsSetCallbackURLs())
-                    {
-                        context.Writer.WritePropertyName("CallbackURLs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCallbackURLsListValue in publicRequest.CallbackURLs)
-                        {
-                                context.Writer.Write(publicRequestCallbackURLsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientId())
-                    {
-                        context.Writer.WritePropertyName("ClientId");
-                        context.Writer.Write(publicRequest.ClientId);
-                    }
-
-                    if(publicRequest.IsSetClientName())
-                    {
-                        context.Writer.WritePropertyName("ClientName");
-                        context.Writer.Write(publicRequest.ClientName);
-                    }
-
-                    if(publicRequest.IsSetDefaultRedirectURI())
-                    {
-                        context.Writer.WritePropertyName("DefaultRedirectURI");
-                        context.Writer.Write(publicRequest.DefaultRedirectURI);
-                    }
-
-                    if(publicRequest.IsSetEnablePropagateAdditionalUserContextData())
-                    {
-                        context.Writer.WritePropertyName("EnablePropagateAdditionalUserContextData");
-                        context.Writer.Write(publicRequest.EnablePropagateAdditionalUserContextData.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableTokenRevocation())
-                    {
-                        context.Writer.WritePropertyName("EnableTokenRevocation");
-                        context.Writer.Write(publicRequest.EnableTokenRevocation.Value);
-                    }
-
-                    if(publicRequest.IsSetExplicitAuthFlows())
-                    {
-                        context.Writer.WritePropertyName("ExplicitAuthFlows");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestExplicitAuthFlowsListValue in publicRequest.ExplicitAuthFlows)
-                        {
-                                context.Writer.Write(publicRequestExplicitAuthFlowsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdTokenValidity())
-                    {
-                        context.Writer.WritePropertyName("IdTokenValidity");
-                        context.Writer.Write(publicRequest.IdTokenValidity.Value);
-                    }
-
-                    if(publicRequest.IsSetLogoutURLs())
-                    {
-                        context.Writer.WritePropertyName("LogoutURLs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogoutURLsListValue in publicRequest.LogoutURLs)
-                        {
-                                context.Writer.Write(publicRequestLogoutURLsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPreventUserExistenceErrors())
-                    {
-                        context.Writer.WritePropertyName("PreventUserExistenceErrors");
-                        context.Writer.Write(publicRequest.PreventUserExistenceErrors);
-                    }
-
-                    if(publicRequest.IsSetReadAttributes())
-                    {
-                        context.Writer.WritePropertyName("ReadAttributes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReadAttributesListValue in publicRequest.ReadAttributes)
-                        {
-                                context.Writer.Write(publicRequestReadAttributesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRefreshTokenValidity())
-                    {
-                        context.Writer.WritePropertyName("RefreshTokenValidity");
-                        context.Writer.Write(publicRequest.RefreshTokenValidity.Value);
-                    }
-
-                    if(publicRequest.IsSetSupportedIdentityProviders())
-                    {
-                        context.Writer.WritePropertyName("SupportedIdentityProviders");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSupportedIdentityProvidersListValue in publicRequest.SupportedIdentityProviders)
-                        {
-                                context.Writer.Write(publicRequestSupportedIdentityProvidersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTokenValidityUnits())
-                    {
-                        context.Writer.WritePropertyName("TokenValidityUnits");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TokenValidityUnitsTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TokenValidityUnits, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUserPoolId())
-                    {
-                        context.Writer.WritePropertyName("UserPoolId");
-                        context.Writer.Write(publicRequest.UserPoolId);
-                    }
-
-                    if(publicRequest.IsSetWriteAttributes())
-                    {
-                        context.Writer.WritePropertyName("WriteAttributes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestWriteAttributesListValue in publicRequest.WriteAttributes)
-                        {
-                                context.Writer.Write(publicRequestWriteAttributesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessTokenValidity");
+                context.Writer.WriteNumberValue(publicRequest.AccessTokenValidity.Value);
             }
+
+            if(publicRequest.IsSetAllowedOAuthFlows())
+            {
+                context.Writer.WritePropertyName("AllowedOAuthFlows");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedOAuthFlowsListValue in publicRequest.AllowedOAuthFlows)
+                {
+                        context.Writer.WriteStringValue(publicRequestAllowedOAuthFlowsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAllowedOAuthFlowsUserPoolClient())
+            {
+                context.Writer.WritePropertyName("AllowedOAuthFlowsUserPoolClient");
+                context.Writer.WriteBooleanValue(publicRequest.AllowedOAuthFlowsUserPoolClient.Value);
+            }
+
+            if(publicRequest.IsSetAllowedOAuthScopes())
+            {
+                context.Writer.WritePropertyName("AllowedOAuthScopes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedOAuthScopesListValue in publicRequest.AllowedOAuthScopes)
+                {
+                        context.Writer.WriteStringValue(publicRequestAllowedOAuthScopesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAnalyticsConfiguration())
+            {
+                context.Writer.WritePropertyName("AnalyticsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalyticsConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AnalyticsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAuthSessionValidity())
+            {
+                context.Writer.WritePropertyName("AuthSessionValidity");
+                context.Writer.WriteNumberValue(publicRequest.AuthSessionValidity.Value);
+            }
+
+            if(publicRequest.IsSetCallbackURLs())
+            {
+                context.Writer.WritePropertyName("CallbackURLs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCallbackURLsListValue in publicRequest.CallbackURLs)
+                {
+                        context.Writer.WriteStringValue(publicRequestCallbackURLsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("ClientId");
+                context.Writer.WriteStringValue(publicRequest.ClientId);
+            }
+
+            if(publicRequest.IsSetClientName())
+            {
+                context.Writer.WritePropertyName("ClientName");
+                context.Writer.WriteStringValue(publicRequest.ClientName);
+            }
+
+            if(publicRequest.IsSetDefaultRedirectURI())
+            {
+                context.Writer.WritePropertyName("DefaultRedirectURI");
+                context.Writer.WriteStringValue(publicRequest.DefaultRedirectURI);
+            }
+
+            if(publicRequest.IsSetEnablePropagateAdditionalUserContextData())
+            {
+                context.Writer.WritePropertyName("EnablePropagateAdditionalUserContextData");
+                context.Writer.WriteBooleanValue(publicRequest.EnablePropagateAdditionalUserContextData.Value);
+            }
+
+            if(publicRequest.IsSetEnableTokenRevocation())
+            {
+                context.Writer.WritePropertyName("EnableTokenRevocation");
+                context.Writer.WriteBooleanValue(publicRequest.EnableTokenRevocation.Value);
+            }
+
+            if(publicRequest.IsSetExplicitAuthFlows())
+            {
+                context.Writer.WritePropertyName("ExplicitAuthFlows");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExplicitAuthFlowsListValue in publicRequest.ExplicitAuthFlows)
+                {
+                        context.Writer.WriteStringValue(publicRequestExplicitAuthFlowsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIdTokenValidity())
+            {
+                context.Writer.WritePropertyName("IdTokenValidity");
+                context.Writer.WriteNumberValue(publicRequest.IdTokenValidity.Value);
+            }
+
+            if(publicRequest.IsSetLogoutURLs())
+            {
+                context.Writer.WritePropertyName("LogoutURLs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogoutURLsListValue in publicRequest.LogoutURLs)
+                {
+                        context.Writer.WriteStringValue(publicRequestLogoutURLsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPreventUserExistenceErrors())
+            {
+                context.Writer.WritePropertyName("PreventUserExistenceErrors");
+                context.Writer.WriteStringValue(publicRequest.PreventUserExistenceErrors);
+            }
+
+            if(publicRequest.IsSetReadAttributes())
+            {
+                context.Writer.WritePropertyName("ReadAttributes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReadAttributesListValue in publicRequest.ReadAttributes)
+                {
+                        context.Writer.WriteStringValue(publicRequestReadAttributesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRefreshTokenValidity())
+            {
+                context.Writer.WritePropertyName("RefreshTokenValidity");
+                context.Writer.WriteNumberValue(publicRequest.RefreshTokenValidity.Value);
+            }
+
+            if(publicRequest.IsSetSupportedIdentityProviders())
+            {
+                context.Writer.WritePropertyName("SupportedIdentityProviders");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSupportedIdentityProvidersListValue in publicRequest.SupportedIdentityProviders)
+                {
+                        context.Writer.WriteStringValue(publicRequestSupportedIdentityProvidersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTokenValidityUnits())
+            {
+                context.Writer.WritePropertyName("TokenValidityUnits");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TokenValidityUnitsTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TokenValidityUnits, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUserPoolId())
+            {
+                context.Writer.WritePropertyName("UserPoolId");
+                context.Writer.WriteStringValue(publicRequest.UserPoolId);
+            }
+
+            if(publicRequest.IsSetWriteAttributes())
+            {
+                context.Writer.WritePropertyName("WriteAttributes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestWriteAttributesListValue in publicRequest.WriteAttributes)
+                {
+                        context.Writer.WriteStringValue(publicRequestWriteAttributesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

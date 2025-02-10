@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,71 +66,82 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(publicRequest.EndTime.Value);
-                    }
-
-                    if(publicRequest.IsSetLimit())
-                    {
-                        context.Writer.WritePropertyName("limit");
-                        context.Writer.Write(publicRequest.Limit.Value);
-                    }
-
-                    if(publicRequest.IsSetLogGroupIdentifiers())
-                    {
-                        context.Writer.WritePropertyName("logGroupIdentifiers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
-                        {
-                                context.Writer.Write(publicRequestLogGroupIdentifiersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLogGroupName())
-                    {
-                        context.Writer.WritePropertyName("logGroupName");
-                        context.Writer.Write(publicRequest.LogGroupName);
-                    }
-
-                    if(publicRequest.IsSetLogGroupNames())
-                    {
-                        context.Writer.WritePropertyName("logGroupNames");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
-                        {
-                                context.Writer.Write(publicRequestLogGroupNamesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetQueryString())
-                    {
-                        context.Writer.WritePropertyName("queryString");
-                        context.Writer.Write(publicRequest.QueryString);
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteNumberValue(publicRequest.EndTime.Value);
             }
+
+            if(publicRequest.IsSetLimit())
+            {
+                context.Writer.WritePropertyName("limit");
+                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
+            }
+
+            if(publicRequest.IsSetLogGroupIdentifiers())
+            {
+                context.Writer.WritePropertyName("logGroupIdentifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogGroupIdentifiersListValue in publicRequest.LogGroupIdentifiers)
+                {
+                        context.Writer.WriteStringValue(publicRequestLogGroupIdentifiersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLogGroupName())
+            {
+                context.Writer.WritePropertyName("logGroupName");
+                context.Writer.WriteStringValue(publicRequest.LogGroupName);
+            }
+
+            if(publicRequest.IsSetLogGroupNames())
+            {
+                context.Writer.WritePropertyName("logGroupNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogGroupNamesListValue in publicRequest.LogGroupNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestLogGroupNamesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetQueryLanguage())
+            {
+                context.Writer.WritePropertyName("queryLanguage");
+                context.Writer.WriteStringValue(publicRequest.QueryLanguage);
+            }
+
+            if(publicRequest.IsSetQueryString())
+            {
+                context.Writer.WritePropertyName("queryString");
+                context.Writer.WriteStringValue(publicRequest.QueryString);
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteNumberValue(publicRequest.StartTime.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

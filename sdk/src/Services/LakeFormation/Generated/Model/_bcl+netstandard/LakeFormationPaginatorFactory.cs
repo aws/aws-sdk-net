@@ -77,6 +77,14 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
+        /// Paginator for ListLFTagExpressions operation
+        ///</summary>
+        public IListLFTagExpressionsPaginator ListLFTagExpressions(ListLFTagExpressionsRequest request) 
+        {
+            return new ListLFTagExpressionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLFTags operation
         ///</summary>
         public IListLFTagsPaginator ListLFTags(ListLFTagsRequest request) 

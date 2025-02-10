@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBranch())
             {
                 context.Writer.WritePropertyName("Branch");
-                context.Writer.Write(requestObject.Branch);
+                context.Writer.WriteStringValue(requestObject.Branch);
             }
 
             if(requestObject.IsSetRepositoryUrl())
             {
                 context.Writer.WritePropertyName("RepositoryUrl");
-                context.Writer.Write(requestObject.RepositoryUrl);
+                context.Writer.WriteStringValue(requestObject.RepositoryUrl);
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }

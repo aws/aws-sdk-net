@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExecutionProperty Object
     /// </summary>  
-    public class ExecutionPropertyUnmarshaller : IUnmarshaller<ExecutionProperty, XmlUnmarshallerContext>, IUnmarshaller<ExecutionProperty, JsonUnmarshallerContext>
+    public class ExecutionPropertyUnmarshaller : IJsonUnmarshaller<ExecutionProperty, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExecutionProperty IUnmarshaller<ExecutionProperty, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExecutionProperty Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionProperty Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExecutionProperty unmarshalledObject = new ExecutionProperty();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MaxConcurrentRuns", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

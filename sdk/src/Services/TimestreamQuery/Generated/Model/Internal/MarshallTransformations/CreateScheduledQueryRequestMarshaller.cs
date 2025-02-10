@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
@@ -63,114 +66,119 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetErrorReportConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ErrorReportConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ErrorReportConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ErrorReportConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyId");
-                        context.Writer.Write(publicRequest.KmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNotificationConfiguration())
-                    {
-                        context.Writer.WritePropertyName("NotificationConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotificationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NotificationConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQueryString())
-                    {
-                        context.Writer.WritePropertyName("QueryString");
-                        context.Writer.Write(publicRequest.QueryString);
-                    }
-
-                    if(publicRequest.IsSetScheduleConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ScheduleConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScheduleConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetScheduledQueryExecutionRoleArn())
-                    {
-                        context.Writer.WritePropertyName("ScheduledQueryExecutionRoleArn");
-                        context.Writer.Write(publicRequest.ScheduledQueryExecutionRoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("TargetConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TargetConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TargetConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetErrorReportConfiguration())
+            {
+                context.Writer.WritePropertyName("ErrorReportConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ErrorReportConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ErrorReportConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNotificationConfiguration())
+            {
+                context.Writer.WritePropertyName("NotificationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NotificationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NotificationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueryString())
+            {
+                context.Writer.WritePropertyName("QueryString");
+                context.Writer.WriteStringValue(publicRequest.QueryString);
+            }
+
+            if(publicRequest.IsSetScheduleConfiguration())
+            {
+                context.Writer.WritePropertyName("ScheduleConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScheduleConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetScheduledQueryExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("ScheduledQueryExecutionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ScheduledQueryExecutionRoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargetConfiguration())
+            {
+                context.Writer.WritePropertyName("TargetConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MediaPipeline Object
     /// </summary>  
-    public class MediaPipelineUnmarshaller : IUnmarshaller<MediaPipeline, XmlUnmarshallerContext>, IUnmarshaller<MediaPipeline, JsonUnmarshallerContext>
+    public class MediaPipelineUnmarshaller : IJsonUnmarshaller<MediaPipeline, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MediaPipeline IUnmarshaller<MediaPipeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaPipeline Unmarshall(JsonUnmarshallerContext context)
+        public MediaPipeline Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MediaPipeline unmarshalledObject = new MediaPipeline();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MediaCapturePipeline", targetDepth))
                 {
                     var unmarshaller = MediaCapturePipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaCapturePipeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaCapturePipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaConcatenationPipeline", targetDepth))
                 {
                     var unmarshaller = MediaConcatenationPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaConcatenationPipeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaConcatenationPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaInsightsPipeline", targetDepth))
                 {
                     var unmarshaller = MediaInsightsPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaInsightsPipeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaInsightsPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaLiveConnectorPipeline", targetDepth))
                 {
                     var unmarshaller = MediaLiveConnectorPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaLiveConnectorPipeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaLiveConnectorPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MediaStreamPipeline", targetDepth))
                 {
                     var unmarshaller = MediaStreamPipelineUnmarshaller.Instance;
-                    unmarshalledObject.MediaStreamPipeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaStreamPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaUriSecretArn())
             {
                 context.Writer.WritePropertyName("MediaUriSecretArn");
-                context.Writer.Write(requestObject.MediaUriSecretArn);
+                context.Writer.WriteStringValue(requestObject.MediaUriSecretArn);
             }
 
             if(requestObject.IsSetMediaUriType())
             {
                 context.Writer.WritePropertyName("MediaUriType");
-                context.Writer.Write(requestObject.MediaUriType);
+                context.Writer.WriteStringValue(requestObject.MediaUriType);
             }
 
         }

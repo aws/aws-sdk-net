@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapabilities())
             {
                 context.Writer.WritePropertyName("Capabilities");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Capabilities, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDevices())
             {
                 context.Writer.WritePropertyName("Devices");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDevicesListValue in requestObject.Devices)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectDevicesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInitProcessEnabled())
             {
                 context.Writer.WritePropertyName("InitProcessEnabled");
-                context.Writer.Write(requestObject.InitProcessEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.InitProcessEnabled.Value);
             }
 
             if(requestObject.IsSetMaxSwap())
             {
                 context.Writer.WritePropertyName("MaxSwap");
-                context.Writer.Write(requestObject.MaxSwap.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSwap.Value);
             }
 
             if(requestObject.IsSetSharedMemorySize())
             {
                 context.Writer.WritePropertyName("SharedMemorySize");
-                context.Writer.Write(requestObject.SharedMemorySize.Value);
+                context.Writer.WriteNumberValue(requestObject.SharedMemorySize.Value);
             }
 
             if(requestObject.IsSetSwappiness())
             {
                 context.Writer.WritePropertyName("Swappiness");
-                context.Writer.Write(requestObject.Swappiness.Value);
+                context.Writer.WriteNumberValue(requestObject.Swappiness.Value);
             }
 
             if(requestObject.IsSetTmpfs())
             {
                 context.Writer.WritePropertyName("Tmpfs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTmpfsListValue in requestObject.Tmpfs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectTmpfsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

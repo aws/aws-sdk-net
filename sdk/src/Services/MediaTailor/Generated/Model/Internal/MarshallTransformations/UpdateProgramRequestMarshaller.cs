@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -67,62 +70,67 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 throw new AmazonMediaTailorException("Request object does not have required field ProgramName set");
             request.AddPathResource("{ProgramName}", StringUtils.FromString(publicRequest.ProgramName));
             request.ResourcePath = "/channel/{ChannelName}/program/{ProgramName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdBreaks())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AdBreaks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdBreaksListValue in publicRequest.AdBreaks)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdBreaks())
-                    {
-                        context.Writer.WritePropertyName("AdBreaks");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdBreaksListValue in publicRequest.AdBreaks)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AdBreakMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAdBreaksListValue, context);
+                    var marshaller = AdBreakMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAdBreaksListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAudienceMedia())
-                    {
-                        context.Writer.WritePropertyName("AudienceMedia");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAudienceMediaListValue in publicRequest.AudienceMedia)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AudienceMediaMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAudienceMediaListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetScheduleConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ScheduleConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateProgramScheduleConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAudienceMedia())
+            {
+                context.Writer.WritePropertyName("AudienceMedia");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAudienceMediaListValue in publicRequest.AudienceMedia)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AudienceMediaMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAudienceMediaListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetScheduleConfiguration())
+            {
+                context.Writer.WritePropertyName("ScheduleConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateProgramScheduleConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

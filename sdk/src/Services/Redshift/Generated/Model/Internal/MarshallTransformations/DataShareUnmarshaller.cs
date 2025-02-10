@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DataShare Object
     /// </summary>  
-    public class DataShareUnmarshaller : IUnmarshaller<DataShare, XmlUnmarshallerContext>, IUnmarshaller<DataShare, JsonUnmarshallerContext>
+    public class DataShareUnmarshaller : IXmlUnmarshaller<DataShare, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,6 +78,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.DataShareAssociations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("DataShareType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DataShareType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ManagedBy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -99,17 +105,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DataShare Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DataShareUnmarshaller _instance = new DataShareUnmarshaller();        
 

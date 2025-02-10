@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -47,141 +47,141 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeGatewayInformationResponse response = new DescribeGatewayInformationResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CloudWatchLogGroupARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CloudWatchLogGroupARN = unmarshaller.Unmarshall(context);
+                    response.CloudWatchLogGroupARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeprecationDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeprecationDate = unmarshaller.Unmarshall(context);
+                    response.DeprecationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ec2InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Ec2InstanceId = unmarshaller.Unmarshall(context);
+                    response.Ec2InstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ec2InstanceRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Ec2InstanceRegion = unmarshaller.Unmarshall(context);
+                    response.Ec2InstanceRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.EndpointType = unmarshaller.Unmarshall(context);
+                    response.EndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayARN = unmarshaller.Unmarshall(context);
+                    response.GatewayARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayCapacity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayCapacity = unmarshaller.Unmarshall(context);
+                    response.GatewayCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayId = unmarshaller.Unmarshall(context);
+                    response.GatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayName = unmarshaller.Unmarshall(context);
+                    response.GatewayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayNetworkInterfaces", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
-                    response.GatewayNetworkInterfaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
+                    response.GatewayNetworkInterfaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayState = unmarshaller.Unmarshall(context);
+                    response.GatewayState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayTimezone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayTimezone = unmarshaller.Unmarshall(context);
+                    response.GatewayTimezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GatewayType = unmarshaller.Unmarshall(context);
+                    response.GatewayType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HostEnvironment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HostEnvironment = unmarshaller.Unmarshall(context);
+                    response.HostEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HostEnvironmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.HostEnvironmentId = unmarshaller.Unmarshall(context);
+                    response.HostEnvironmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSoftwareUpdate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LastSoftwareUpdate = unmarshaller.Unmarshall(context);
+                    response.LastSoftwareUpdate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NextUpdateAvailabilityDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextUpdateAvailabilityDate = unmarshaller.Unmarshall(context);
+                    response.NextUpdateAvailabilityDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SoftwareUpdatesEndDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SoftwareUpdatesEndDate = unmarshaller.Unmarshall(context);
+                    response.SoftwareUpdatesEndDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SoftwareVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SoftwareVersion = unmarshaller.Unmarshall(context);
+                    response.SoftwareVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupportedGatewayCapacities", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.SupportedGatewayCapacities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SupportedGatewayCapacities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VPCEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VPCEndpoint = unmarshaller.Unmarshall(context);
+                    response.VPCEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -198,22 +198,24 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerError"))
                 {
-                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGatewayRequestException"))
                 {
-                    return InvalidGatewayRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidGatewayRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonStorageGatewayException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

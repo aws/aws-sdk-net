@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("frequency");
-                context.Writer.Write(requestObject.Frequency.Value);
+                context.Writer.WriteNumberValue(requestObject.Frequency.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetLicenseType())
             {
                 context.Writer.WritePropertyName("licenseType");
-                context.Writer.Write(requestObject.LicenseType);
+                context.Writer.WriteStringValue(requestObject.LicenseType);
             }
 
             if(requestObject.IsSetNumberOfRecentAmisToKeep())
             {
                 context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
-                context.Writer.Write(requestObject.NumberOfRecentAmisToKeep.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfRecentAmisToKeep.Value);
             }
 
             if(requestObject.IsSetRunOnce())
             {
                 context.Writer.WritePropertyName("runOnce");
-                context.Writer.Write(requestObject.RunOnce.Value);
+                context.Writer.WriteBooleanValue(requestObject.RunOnce.Value);
             }
 
             if(requestObject.IsSetSeedTime())
             {
                 context.Writer.WritePropertyName("seedTime");
-                context.Writer.Write(requestObject.SeedTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SeedTime.Value)));
             }
 
         }

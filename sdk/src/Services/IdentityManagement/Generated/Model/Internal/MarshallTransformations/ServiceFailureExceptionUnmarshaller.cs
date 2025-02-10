@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceFailureException operation
     /// </summary>  
-    public class ServiceFailureExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceFailureException, XmlUnmarshallerContext>
+    public class ServiceFailureExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServiceFailureException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

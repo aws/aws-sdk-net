@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OperationIdAlreadyExistsException operation
     /// </summary>  
-    public class OperationIdAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<OperationIdAlreadyExistsException, XmlUnmarshallerContext>
+    public class OperationIdAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OperationIdAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

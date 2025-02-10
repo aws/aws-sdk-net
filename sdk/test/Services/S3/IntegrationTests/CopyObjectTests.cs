@@ -157,12 +157,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "newtag1" && tag.Value == "1"));
         }
 
-        [DataRow(false, testKey, "/destinationTestKey1.txt", "destinationTestKey1.txt")]
-        [DataRow(true, testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
-        [DataRow(true, testKeyWithSlash, "/", "/")]
+        [DataRow(testKey, "destinationTestKey1.txt", "destinationTestKey1.txt")]
+        [DataRow(testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
+        [DataRow(testKeyWithSlash, "/", "/")]
         [DataTestMethod]
         [TestCategory("S3")]
-        public void TestCopyObjectWithLeadingSlash(bool disableTrimmingLeadingSlash, string sourceKey, string destinationKey, string expectedKey)
+        public void TestCopyObjectWithLeadingSlash(string sourceKey, string destinationKey, string expectedKey)
         {
             var copyObjectResponse = usEastClient.CopyObject(new CopyObjectRequest
             {
@@ -172,7 +172,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 DestinationBucket = westBucketName,
                 DestinationKey = destinationKey,
 
-                DisableTrimmingLeadingSlash = disableTrimmingLeadingSlash
             });
             Assert.AreEqual(HttpStatusCode.OK, copyObjectResponse.HttpStatusCode);
 

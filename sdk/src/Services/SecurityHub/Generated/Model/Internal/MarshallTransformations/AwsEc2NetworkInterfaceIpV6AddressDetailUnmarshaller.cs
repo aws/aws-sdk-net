@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2NetworkInterfaceIpV6AddressDetail Object
     /// </summary>  
-    public class AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller : IUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, JsonUnmarshallerContext>
+    public class AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller : IJsonUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2NetworkInterfaceIpV6AddressDetail IUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2NetworkInterfaceIpV6AddressDetail Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2NetworkInterfaceIpV6AddressDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2NetworkInterfaceIpV6AddressDetail unmarshalledObject = new AwsEc2NetworkInterfaceIpV6AddressDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IpV6Address", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpV6Address = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpV6Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

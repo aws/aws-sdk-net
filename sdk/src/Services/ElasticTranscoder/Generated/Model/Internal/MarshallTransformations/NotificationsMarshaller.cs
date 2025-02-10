@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompleted())
             {
                 context.Writer.WritePropertyName("Completed");
-                context.Writer.Write(requestObject.Completed);
+                context.Writer.WriteStringValue(requestObject.Completed);
             }
 
             if(requestObject.IsSetError())
             {
                 context.Writer.WritePropertyName("Error");
-                context.Writer.Write(requestObject.Error);
+                context.Writer.WriteStringValue(requestObject.Error);
             }
 
             if(requestObject.IsSetProgressing())
             {
                 context.Writer.WritePropertyName("Progressing");
-                context.Writer.Write(requestObject.Progressing);
+                context.Writer.WriteStringValue(requestObject.Progressing);
             }
 
             if(requestObject.IsSetWarning())
             {
                 context.Writer.WritePropertyName("Warning");
-                context.Writer.Write(requestObject.Warning);
+                context.Writer.WriteStringValue(requestObject.Warning);
             }
 
         }

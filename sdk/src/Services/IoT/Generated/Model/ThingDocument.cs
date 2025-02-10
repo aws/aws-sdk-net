@@ -128,7 +128,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ThingGroupNames. 
         /// <para>
-        /// Thing group names.
+        /// Thing group and billing group names.
         /// </para>
         /// </summary>
         public List<string> ThingGroupNames

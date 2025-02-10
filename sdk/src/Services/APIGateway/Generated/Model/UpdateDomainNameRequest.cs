@@ -36,6 +36,7 @@ namespace Amazon.APIGateway.Model
     public partial class UpdateDomainNameRequest : AmazonAPIGatewayRequest
     {
         private string _domainName;
+        private string _domainNameId;
         private List<PatchOperation> _patchOperations = AWSConfigs.InitializeCollections ? new List<PatchOperation>() : null;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainNameId. 
+        /// <para>
+        ///  The identifier for the domain name resource. Supported only for private custom domain
+        /// names. 
+        /// </para>
+        /// </summary>
+        public string DomainNameId
+        {
+            get { return this._domainNameId; }
+            set { this._domainNameId = value; }
+        }
+
+        // Check to see if DomainNameId property is set
+        internal bool IsSetDomainNameId()
+        {
+            return this._domainNameId != null;
         }
 
         /// <summary>

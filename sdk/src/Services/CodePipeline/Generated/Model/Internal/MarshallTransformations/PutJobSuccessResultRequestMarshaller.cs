@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -63,67 +66,72 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContinuationToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContinuationToken())
-                    {
-                        context.Writer.WritePropertyName("continuationToken");
-                        context.Writer.Write(publicRequest.ContinuationToken);
-                    }
-
-                    if(publicRequest.IsSetCurrentRevision())
-                    {
-                        context.Writer.WritePropertyName("currentRevision");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CurrentRevisionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CurrentRevision, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExecutionDetails())
-                    {
-                        context.Writer.WritePropertyName("executionDetails");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExecutionDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExecutionDetails, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobId())
-                    {
-                        context.Writer.WritePropertyName("jobId");
-                        context.Writer.Write(publicRequest.JobId);
-                    }
-
-                    if(publicRequest.IsSetOutputVariables())
-                    {
-                        context.Writer.WritePropertyName("outputVariables");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestOutputVariablesKvp in publicRequest.OutputVariables)
-                        {
-                            context.Writer.WritePropertyName(publicRequestOutputVariablesKvp.Key);
-                            var publicRequestOutputVariablesValue = publicRequestOutputVariablesKvp.Value;
-
-                                context.Writer.Write(publicRequestOutputVariablesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("continuationToken");
+                context.Writer.WriteStringValue(publicRequest.ContinuationToken);
             }
+
+            if(publicRequest.IsSetCurrentRevision())
+            {
+                context.Writer.WritePropertyName("currentRevision");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CurrentRevisionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CurrentRevision, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExecutionDetails())
+            {
+                context.Writer.WritePropertyName("executionDetails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExecutionDetailsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExecutionDetails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobId())
+            {
+                context.Writer.WritePropertyName("jobId");
+                context.Writer.WriteStringValue(publicRequest.JobId);
+            }
+
+            if(publicRequest.IsSetOutputVariables())
+            {
+                context.Writer.WritePropertyName("outputVariables");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestOutputVariablesKvp in publicRequest.OutputVariables)
+                {
+                    context.Writer.WritePropertyName(publicRequestOutputVariablesKvp.Key);
+                    var publicRequestOutputVariablesValue = publicRequestOutputVariablesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestOutputVariablesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

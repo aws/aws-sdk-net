@@ -1,59 +1,43 @@
 <Project ToolsVersion="4.0" 
-	DefaultTargets="doc-build"
-	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	
-
-	<PropertyGroup>
+    DefaultTargets="doc-build"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    
+    <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
-	
+    
         <!-- default expected location of SDK assemblies root if not specified -->
         <SDKAssembliesRoot Condition="'$(SDKAssembliesRoot)'==''">$(MSBuildProjectDirectory)\$(Deployment)\assemblies</SDKAssembliesRoot>
-	
+    
         <!-- the relative location (to the project file) of the generator executable -->
         <DocGeneratorPath>$(MSBuildProjectDirectory)\..\docgenerator\SDKDocGenerator\bin\Release</DocGeneratorPath>
         <DocGenerator>SDKDocGenerator.exe</DocGenerator>
 
-		<DocBuildReleaseBuild Condition="'$(DocBuildReleaseBuild)'==''">False</DocBuildReleaseBuild>
-		
+        <DocBuildReleaseBuild Condition="'$(DocBuildReleaseBuild)'==''">False</DocBuildReleaseBuild>
+        
         <!-- default output path to ..\DocDeployment\docs if not specified -->
         <DocOutputRoot Condition="'$(DocOutputRoot)'==''">$(MSBuildProjectDirectory)\..\DocDeployment\docs</DocOutputRoot>
         
-		<!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
-		
-		<DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
-		
+        <!-- default location of the documentation samples. This should be the folder ABOVE AWSSDKDocSamples -->
+        <DocSamplesFolder>$(MSBuildProjectDirectory)\..\docgenerator</DocSamplesFolder>
+        
         <!-- use net45 platform as the primary determinant of assemblies to inspect, and generate 
              for all services 
         -->
         <SDKPlatform Condition="'$(SDKPlatform)'==''">net45</SDKPlatform>
         <SDKServices Condition="'$(SDKServices)'==''">*</SDKServices>
-		
-	</PropertyGroup>
+        
+        <DocBuildAssemblies>$(MSBuildProjectDirectory)\..\Deployment\assemblies</DocBuildAssemblies>
+        <SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Deployment\_sdk-versions.json</SDKVersionFilePath>
+    </PropertyGroup>
 
-	<Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
-
-	<Choose>
-		<When Condition="'$(DocBuildReleaseBuild)'=='True' ">
-			<PropertyGroup>
-				<DocBuildAssemblies>$(MSBuildProjectDirectory)\..\DocBuildAssemblies</DocBuildAssemblies>
-				<SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Include\sdk\_sdk-versions.json</SDKVersionFilePath>
-			</PropertyGroup>
-		</When>
-		<Otherwise>
-			<PropertyGroup>
-				<DocBuildAssemblies>$(MSBuildProjectDirectory)\..\Deployment\assemblies</DocBuildAssemblies>
-				<SDKVersionFilePath>$(MSBuildProjectDirectory)\..\Deployment\_sdk-versions.json</SDKVersionFilePath>
-			</PropertyGroup>
-		</Otherwise>
-	</Choose>
-	
-	<Target Name="doc-build" DependsOnTargets="setup-production-doc-build;build-docgenerator">
+    <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
     
+    <Target Name="doc-build" DependsOnTargets="build-docgenerator">
         <Message Text="Clearing doc output folder $(DocOutputRoot)" />
-		<RemoveDir Directories="$(DocOutputRoot)" />
-		<MakeDir Directories="$(DocOutputRoot)" />
+        <RemoveDir Directories="$(DocOutputRoot)" />
+        <MakeDir Directories="$(DocOutputRoot)" />
     
-		<Message Text="Build documentation for all platforms, all assemblies (Release Build: $(DocBuildReleaseBuild))"/>
+		<Message Text="Build documentation for all platforms, all assemblies"/>
 		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(DocBuildAssemblies) -sdkversionfile $(SDKVersionFilePath) -o $(DocOutputRoot) -sf $(DocSamplesFolder) -p $(SDKPlatform)" />
 		
     </Target>
@@ -89,35 +73,15 @@
             SourceFolder="$(DocOutputRoot)"
             BaseUrl="http://docs.aws.amazon.com/sdkfornet/v3/apidocs/"
             OutputFile="$(DocOutputRoot)\sitemap.xml" />
-	</Target>
-	
-	<Target Name="optional-build-tools" Condition="'$(DocBuildReleaseBuild)'!='True'">
-		<MSBuild Projects ="$(MSBuildProjectFullPath)" Targets="build-tools"/>
-	</Target>
-    
-    <Target Name="build-docgenerator">
-	
-		<Message Text="Restore nuget references for ..\docgenerator\AWSSDKDocGenerator.sln"/>
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\docgenerator\AWSSDKDocGenerator.sln" />
-	
-		<Message Text="Building documentation generator"/>
-		<MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
-			Targets="Clean;Build"
-			Properties="Configuration=Release" />
     </Target>
     
-	<Target Name="doc-platform-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation for selected platform, all services"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform)" />
-	</Target>
-
-	<Target Name="doc-platform-service-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation for selected service(s) in platform"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -sdk $(SDKAssembliesRoot) -o $(DocOutputRoot) -p $(SDKPlatform) -svc $(SDKServices)" />
-	</Target>
+    <Target Name="build-docgenerator">
+        <Message Text="Restore nuget references for ..\docgenerator\AWSSDKDocGenerator.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\docgenerator\AWSSDKDocGenerator.sln" />
     
-	<Target Name="test-doc-build" DependsOnTargets="build-docgenerator">
-		<Message Text="Build documentation in test mode (net45 platform, selected services)"/>
-		<Exec Command="$(DocGeneratorPath)\$(DocGenerator) -t  -sdk $(SDKAssembliesRoot) -sf $(DocSamplesFolder) -o $(DocOutputRoot) -v" />
-	</Target>    
+        <Message Text="Building documentation generator"/>
+        <MSBuild Projects="..\docgenerator\AWSSDKDocGenerator.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Release" />
+    </Target> 
 </Project>

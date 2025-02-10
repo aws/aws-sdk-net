@@ -88,7 +88,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// The decrypted plaintext data in hexBinary format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=4096)]
         public string PlainText
         {
             get { return this._plainText; }

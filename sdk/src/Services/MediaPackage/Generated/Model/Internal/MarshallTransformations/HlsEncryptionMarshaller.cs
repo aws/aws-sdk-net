@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstantInitializationVector())
             {
                 context.Writer.WritePropertyName("constantInitializationVector");
-                context.Writer.Write(requestObject.ConstantInitializationVector);
+                context.Writer.WriteStringValue(requestObject.ConstantInitializationVector);
             }
 
             if(requestObject.IsSetEncryptionMethod())
             {
                 context.Writer.WritePropertyName("encryptionMethod");
-                context.Writer.Write(requestObject.EncryptionMethod);
+                context.Writer.WriteStringValue(requestObject.EncryptionMethod);
             }
 
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("keyRotationIntervalSeconds");
-                context.Writer.Write(requestObject.KeyRotationIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.KeyRotationIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetRepeatExtXKey())
             {
                 context.Writer.WritePropertyName("repeatExtXKey");
-                context.Writer.Write(requestObject.RepeatExtXKey.Value);
+                context.Writer.WriteBooleanValue(requestObject.RepeatExtXKey.Value);
             }
 
             if(requestObject.IsSetSpekeKeyProvider())
             {
                 context.Writer.WritePropertyName("spekeKeyProvider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpekeKeyProviderMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpekeKeyProvider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

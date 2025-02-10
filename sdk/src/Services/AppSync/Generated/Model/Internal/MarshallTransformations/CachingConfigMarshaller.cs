@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCachingKeys())
             {
                 context.Writer.WritePropertyName("cachingKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCachingKeysListValue in requestObject.CachingKeys)
                 {
-                        context.Writer.Write(requestObjectCachingKeysListValue);
+                        context.Writer.WriteStringValue(requestObjectCachingKeysListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTtl())
             {
                 context.Writer.WritePropertyName("ttl");
-                context.Writer.Write(requestObject.Ttl.Value);
+                context.Writer.WriteNumberValue(requestObject.Ttl.Value);
             }
 
         }

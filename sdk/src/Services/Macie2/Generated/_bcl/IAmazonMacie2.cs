@@ -4107,7 +4107,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves a subset of information about all the custom data identifiers for an account.
+        /// Retrieves a subset of information about the custom data identifiers for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomDataIdentifiers service method.</param>
         /// 
@@ -4145,7 +4145,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves a subset of information about all the custom data identifiers for an account.
+        /// Retrieves a subset of information about the custom data identifiers for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCustomDataIdentifiers service method.</param>
         /// <param name="cancellationToken">
@@ -5040,7 +5040,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves (queries) statistical data and other information about Amazon Web Services
-        /// resources that Amazon Macie monitors and analyzes.
+        /// resources that Amazon Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
         /// 
@@ -5079,7 +5079,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves (queries) statistical data and other information about Amazon Web Services
-        /// resources that Amazon Macie monitors and analyzes.
+        /// resources that Amazon Macie monitors and analyzes for an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
         /// <param name="cancellationToken">

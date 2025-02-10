@@ -375,6 +375,10 @@ namespace Amazon.EventBridge
     {
 
         /// <summary>
+        /// Constant ACTIVE for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState ACTIVE = new ConnectionState("ACTIVE");
+        /// <summary>
         /// Constant AUTHORIZED for ConnectionState
         /// </summary>
         public static readonly ConnectionState AUTHORIZED = new ConnectionState("AUTHORIZED");
@@ -398,6 +402,10 @@ namespace Amazon.EventBridge
         /// Constant DELETING for ConnectionState
         /// </summary>
         public static readonly ConnectionState DELETING = new ConnectionState("DELETING");
+        /// <summary>
+        /// Constant FAILED_CONNECTIVITY for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState FAILED_CONNECTIVITY = new ConnectionState("FAILED_CONNECTIVITY");
         /// <summary>
         /// Constant UPDATING for ConnectionState
         /// </summary>

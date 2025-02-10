@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CatalogItem Object
     /// </summary>  
-    public class CatalogItemUnmarshaller : IUnmarshaller<CatalogItem, XmlUnmarshallerContext>, IUnmarshaller<CatalogItem, JsonUnmarshallerContext>
+    public class CatalogItemUnmarshaller : IJsonUnmarshaller<CatalogItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CatalogItem IUnmarshaller<CatalogItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CatalogItem Unmarshall(JsonUnmarshallerContext context)
+        public CatalogItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CatalogItem unmarshalledObject = new CatalogItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CatalogItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EC2Capacities", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EC2Capacity, EC2CapacityUnmarshaller>(EC2CapacityUnmarshaller.Instance);
-                    unmarshalledObject.EC2Capacities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EC2Capacity, EC2CapacityUnmarshaller>(EC2CapacityUnmarshaller.Instance);
+                    unmarshalledObject.EC2Capacities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ItemStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ItemStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PowerKva", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.PowerKva = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PowerKva = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupportedStorage", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedStorage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupportedUplinkGbps", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.SupportedUplinkGbps = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.SupportedUplinkGbps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WeightLbs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.WeightLbs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WeightLbs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

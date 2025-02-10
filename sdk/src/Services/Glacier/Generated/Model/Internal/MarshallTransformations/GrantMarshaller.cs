@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGrantee())
             {
                 context.Writer.WritePropertyName("Grantee");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GranteeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Grantee, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPermission())
             {
                 context.Writer.WritePropertyName("Permission");
-                context.Writer.Write(requestObject.Permission);
+                context.Writer.WriteStringValue(requestObject.Permission);
             }
 
         }

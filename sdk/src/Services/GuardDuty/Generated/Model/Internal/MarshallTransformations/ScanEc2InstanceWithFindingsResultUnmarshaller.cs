@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScanEc2InstanceWithFindingsResult Object
     /// </summary>  
-    public class ScanEc2InstanceWithFindingsResultUnmarshaller : IUnmarshaller<ScanEc2InstanceWithFindingsResult, XmlUnmarshallerContext>, IUnmarshaller<ScanEc2InstanceWithFindingsResult, JsonUnmarshallerContext>
+    public class ScanEc2InstanceWithFindingsResultUnmarshaller : IJsonUnmarshaller<ScanEc2InstanceWithFindingsResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScanEc2InstanceWithFindingsResult IUnmarshaller<ScanEc2InstanceWithFindingsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScanEc2InstanceWithFindingsResult Unmarshall(JsonUnmarshallerContext context)
+        public ScanEc2InstanceWithFindingsResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScanEc2InstanceWithFindingsResult unmarshalledObject = new ScanEc2InstanceWithFindingsResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ebsVolumes", targetDepth))
                 {
                     var unmarshaller = EbsVolumesResultUnmarshaller.Instance;
-                    unmarshalledObject.EbsVolumes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsVolumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

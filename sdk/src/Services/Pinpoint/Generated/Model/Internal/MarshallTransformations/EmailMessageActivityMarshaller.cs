@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMessageConfig())
             {
                 context.Writer.WritePropertyName("MessageConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JourneyEmailMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.MessageConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNextActivity())
             {
                 context.Writer.WritePropertyName("NextActivity");
-                context.Writer.Write(requestObject.NextActivity);
+                context.Writer.WriteStringValue(requestObject.NextActivity);
             }
 
             if(requestObject.IsSetTemplateName())
             {
                 context.Writer.WritePropertyName("TemplateName");
-                context.Writer.Write(requestObject.TemplateName);
+                context.Writer.WriteStringValue(requestObject.TemplateName);
             }
 
             if(requestObject.IsSetTemplateVersion())
             {
                 context.Writer.WritePropertyName("TemplateVersion");
-                context.Writer.Write(requestObject.TemplateVersion);
+                context.Writer.WriteStringValue(requestObject.TemplateVersion);
             }
 
         }

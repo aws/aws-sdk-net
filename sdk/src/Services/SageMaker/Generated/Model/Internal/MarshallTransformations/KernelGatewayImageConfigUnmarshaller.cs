@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KernelGatewayImageConfig Object
     /// </summary>  
-    public class KernelGatewayImageConfigUnmarshaller : IUnmarshaller<KernelGatewayImageConfig, XmlUnmarshallerContext>, IUnmarshaller<KernelGatewayImageConfig, JsonUnmarshallerContext>
+    public class KernelGatewayImageConfigUnmarshaller : IJsonUnmarshaller<KernelGatewayImageConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KernelGatewayImageConfig IUnmarshaller<KernelGatewayImageConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KernelGatewayImageConfig Unmarshall(JsonUnmarshallerContext context)
+        public KernelGatewayImageConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KernelGatewayImageConfig unmarshalledObject = new KernelGatewayImageConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FileSystemConfig", targetDepth))
                 {
                     var unmarshaller = FileSystemConfigUnmarshaller.Instance;
-                    unmarshalledObject.FileSystemConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileSystemConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KernelSpecs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KernelSpec, KernelSpecUnmarshaller>(KernelSpecUnmarshaller.Instance);
-                    unmarshalledObject.KernelSpecs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KernelSpec, KernelSpecUnmarshaller>(KernelSpecUnmarshaller.Instance);
+                    unmarshalledObject.KernelSpecs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

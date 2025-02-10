@@ -29,467 +29,457 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CodeGenConfigurationNode Object
     /// </summary>  
-    public class CodeGenConfigurationNodeUnmarshaller : IUnmarshaller<CodeGenConfigurationNode, XmlUnmarshallerContext>, IUnmarshaller<CodeGenConfigurationNode, JsonUnmarshallerContext>
+    public class CodeGenConfigurationNodeUnmarshaller : IJsonUnmarshaller<CodeGenConfigurationNode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CodeGenConfigurationNode IUnmarshaller<CodeGenConfigurationNode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CodeGenConfigurationNode Unmarshall(JsonUnmarshallerContext context)
+        public CodeGenConfigurationNode Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CodeGenConfigurationNode unmarshalledObject = new CodeGenConfigurationNode();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Aggregate", targetDepth))
                 {
                     var unmarshaller = AggregateUnmarshaller.Instance;
-                    unmarshalledObject.Aggregate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Aggregate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AmazonRedshiftSource", targetDepth))
                 {
                     var unmarshaller = AmazonRedshiftSourceUnmarshaller.Instance;
-                    unmarshalledObject.AmazonRedshiftSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AmazonRedshiftSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AmazonRedshiftTarget", targetDepth))
                 {
                     var unmarshaller = AmazonRedshiftTargetUnmarshaller.Instance;
-                    unmarshalledObject.AmazonRedshiftTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AmazonRedshiftTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ApplyMapping", targetDepth))
                 {
                     var unmarshaller = ApplyMappingUnmarshaller.Instance;
-                    unmarshalledObject.ApplyMapping = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplyMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AthenaConnectorSource", targetDepth))
                 {
                     var unmarshaller = AthenaConnectorSourceUnmarshaller.Instance;
-                    unmarshalledObject.AthenaConnectorSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AthenaConnectorSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogDeltaSource", targetDepth))
                 {
                     var unmarshaller = CatalogDeltaSourceUnmarshaller.Instance;
-                    unmarshalledObject.CatalogDeltaSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogDeltaSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogHudiSource", targetDepth))
                 {
                     var unmarshaller = CatalogHudiSourceUnmarshaller.Instance;
-                    unmarshalledObject.CatalogHudiSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogHudiSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogKafkaSource", targetDepth))
                 {
                     var unmarshaller = CatalogKafkaSourceUnmarshaller.Instance;
-                    unmarshalledObject.CatalogKafkaSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogKafkaSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogKinesisSource", targetDepth))
                 {
                     var unmarshaller = CatalogKinesisSourceUnmarshaller.Instance;
-                    unmarshalledObject.CatalogKinesisSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogKinesisSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogSource", targetDepth))
                 {
                     var unmarshaller = CatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.CatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogTarget", targetDepth))
                 {
                     var unmarshaller = BasicCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.CatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectorDataSource", targetDepth))
                 {
                     var unmarshaller = ConnectorDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorDataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConnectorDataTarget", targetDepth))
                 {
                     var unmarshaller = ConnectorDataTargetUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorDataTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorDataTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CustomCode", targetDepth))
                 {
                     var unmarshaller = CustomCodeUnmarshaller.Instance;
-                    unmarshalledObject.CustomCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DirectJDBCSource", targetDepth))
                 {
                     var unmarshaller = DirectJDBCSourceUnmarshaller.Instance;
-                    unmarshalledObject.DirectJDBCSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectJDBCSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DirectKafkaSource", targetDepth))
                 {
                     var unmarshaller = DirectKafkaSourceUnmarshaller.Instance;
-                    unmarshalledObject.DirectKafkaSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectKafkaSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DirectKinesisSource", targetDepth))
                 {
                     var unmarshaller = DirectKinesisSourceUnmarshaller.Instance;
-                    unmarshalledObject.DirectKinesisSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectKinesisSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DropDuplicates", targetDepth))
                 {
                     var unmarshaller = DropDuplicatesUnmarshaller.Instance;
-                    unmarshalledObject.DropDuplicates = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DropDuplicates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DropFields", targetDepth))
                 {
                     var unmarshaller = DropFieldsUnmarshaller.Instance;
-                    unmarshalledObject.DropFields = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DropFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DropNullFields", targetDepth))
                 {
                     var unmarshaller = DropNullFieldsUnmarshaller.Instance;
-                    unmarshalledObject.DropNullFields = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DropNullFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DynamicTransform", targetDepth))
                 {
                     var unmarshaller = DynamicTransformUnmarshaller.Instance;
-                    unmarshalledObject.DynamicTransform = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamicTransform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DynamoDBCatalogSource", targetDepth))
                 {
                     var unmarshaller = DynamoDBCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.DynamoDBCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamoDBCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluateDataQuality", targetDepth))
                 {
                     var unmarshaller = EvaluateDataQualityUnmarshaller.Instance;
-                    unmarshalledObject.EvaluateDataQuality = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluateDataQuality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluateDataQualityMultiFrame", targetDepth))
                 {
                     var unmarshaller = EvaluateDataQualityMultiFrameUnmarshaller.Instance;
-                    unmarshalledObject.EvaluateDataQualityMultiFrame = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluateDataQualityMultiFrame = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FillMissingValues", targetDepth))
                 {
                     var unmarshaller = FillMissingValuesUnmarshaller.Instance;
-                    unmarshalledObject.FillMissingValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FillMissingValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Filter", targetDepth))
                 {
                     var unmarshaller = FilterUnmarshaller.Instance;
-                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GovernedCatalogSource", targetDepth))
                 {
                     var unmarshaller = GovernedCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.GovernedCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GovernedCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GovernedCatalogTarget", targetDepth))
                 {
                     var unmarshaller = GovernedCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.GovernedCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GovernedCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JDBCConnectorSource", targetDepth))
                 {
                     var unmarshaller = JDBCConnectorSourceUnmarshaller.Instance;
-                    unmarshalledObject.JDBCConnectorSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JDBCConnectorSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JDBCConnectorTarget", targetDepth))
                 {
                     var unmarshaller = JDBCConnectorTargetUnmarshaller.Instance;
-                    unmarshalledObject.JDBCConnectorTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JDBCConnectorTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Join", targetDepth))
                 {
                     var unmarshaller = JoinUnmarshaller.Instance;
-                    unmarshalledObject.Join = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Join = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Merge", targetDepth))
                 {
                     var unmarshaller = MergeUnmarshaller.Instance;
-                    unmarshalledObject.Merge = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Merge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicrosoftSQLServerCatalogSource", targetDepth))
                 {
                     var unmarshaller = MicrosoftSQLServerCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.MicrosoftSQLServerCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicrosoftSQLServerCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicrosoftSQLServerCatalogTarget", targetDepth))
                 {
                     var unmarshaller = MicrosoftSQLServerCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.MicrosoftSQLServerCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicrosoftSQLServerCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MySQLCatalogSource", targetDepth))
                 {
                     var unmarshaller = MySQLCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.MySQLCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MySQLCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MySQLCatalogTarget", targetDepth))
                 {
                     var unmarshaller = MySQLCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.MySQLCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MySQLCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OracleSQLCatalogSource", targetDepth))
                 {
                     var unmarshaller = OracleSQLCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.OracleSQLCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OracleSQLCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OracleSQLCatalogTarget", targetDepth))
                 {
                     var unmarshaller = OracleSQLCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.OracleSQLCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OracleSQLCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PIIDetection", targetDepth))
                 {
                     var unmarshaller = PIIDetectionUnmarshaller.Instance;
-                    unmarshalledObject.PIIDetection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PIIDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostgreSQLCatalogSource", targetDepth))
                 {
                     var unmarshaller = PostgreSQLCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.PostgreSQLCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostgreSQLCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostgreSQLCatalogTarget", targetDepth))
                 {
                     var unmarshaller = PostgreSQLCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.PostgreSQLCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostgreSQLCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Recipe", targetDepth))
                 {
                     var unmarshaller = RecipeUnmarshaller.Instance;
-                    unmarshalledObject.Recipe = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Recipe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedshiftSource", targetDepth))
                 {
                     var unmarshaller = RedshiftSourceUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedshiftTarget", targetDepth))
                 {
                     var unmarshaller = RedshiftTargetUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RelationalCatalogSource", targetDepth))
                 {
                     var unmarshaller = RelationalCatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.RelationalCatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelationalCatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RenameField", targetDepth))
                 {
                     var unmarshaller = RenameFieldUnmarshaller.Instance;
-                    unmarshalledObject.RenameField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RenameField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3CatalogDeltaSource", targetDepth))
                 {
                     var unmarshaller = S3CatalogDeltaSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3CatalogDeltaSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3CatalogDeltaSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3CatalogHudiSource", targetDepth))
                 {
                     var unmarshaller = S3CatalogHudiSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3CatalogHudiSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3CatalogHudiSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3CatalogSource", targetDepth))
                 {
                     var unmarshaller = S3CatalogSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3CatalogSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3CatalogSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3CatalogTarget", targetDepth))
                 {
                     var unmarshaller = S3CatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3CatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3CatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3CsvSource", targetDepth))
                 {
                     var unmarshaller = S3CsvSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3CsvSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3CsvSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DeltaCatalogTarget", targetDepth))
                 {
                     var unmarshaller = S3DeltaCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3DeltaCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DeltaCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DeltaDirectTarget", targetDepth))
                 {
                     var unmarshaller = S3DeltaDirectTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3DeltaDirectTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DeltaDirectTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DeltaSource", targetDepth))
                 {
                     var unmarshaller = S3DeltaSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3DeltaSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DeltaSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DirectTarget", targetDepth))
                 {
                     var unmarshaller = S3DirectTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3DirectTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DirectTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3GlueParquetTarget", targetDepth))
                 {
                     var unmarshaller = S3GlueParquetTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3GlueParquetTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3GlueParquetTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3HudiCatalogTarget", targetDepth))
                 {
                     var unmarshaller = S3HudiCatalogTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3HudiCatalogTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3HudiCatalogTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3HudiDirectTarget", targetDepth))
                 {
                     var unmarshaller = S3HudiDirectTargetUnmarshaller.Instance;
-                    unmarshalledObject.S3HudiDirectTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3HudiDirectTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3HudiSource", targetDepth))
                 {
                     var unmarshaller = S3HudiSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3HudiSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3HudiSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3JsonSource", targetDepth))
                 {
                     var unmarshaller = S3JsonSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3JsonSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3JsonSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3ParquetSource", targetDepth))
                 {
                     var unmarshaller = S3ParquetSourceUnmarshaller.Instance;
-                    unmarshalledObject.S3ParquetSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3ParquetSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectFields", targetDepth))
                 {
                     var unmarshaller = SelectFieldsUnmarshaller.Instance;
-                    unmarshalledObject.SelectFields = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectFromCollection", targetDepth))
                 {
                     var unmarshaller = SelectFromCollectionUnmarshaller.Instance;
-                    unmarshalledObject.SelectFromCollection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectFromCollection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnowflakeSource", targetDepth))
                 {
                     var unmarshaller = SnowflakeSourceUnmarshaller.Instance;
-                    unmarshalledObject.SnowflakeSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnowflakeSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnowflakeTarget", targetDepth))
                 {
                     var unmarshaller = SnowflakeTargetUnmarshaller.Instance;
-                    unmarshalledObject.SnowflakeTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnowflakeTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SparkConnectorSource", targetDepth))
                 {
                     var unmarshaller = SparkConnectorSourceUnmarshaller.Instance;
-                    unmarshalledObject.SparkConnectorSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SparkConnectorSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SparkConnectorTarget", targetDepth))
                 {
                     var unmarshaller = SparkConnectorTargetUnmarshaller.Instance;
-                    unmarshalledObject.SparkConnectorTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SparkConnectorTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SparkSQL", targetDepth))
                 {
                     var unmarshaller = SparkSQLUnmarshaller.Instance;
-                    unmarshalledObject.SparkSQL = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SparkSQL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Spigot", targetDepth))
                 {
                     var unmarshaller = SpigotUnmarshaller.Instance;
-                    unmarshalledObject.Spigot = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Spigot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SplitFields", targetDepth))
                 {
                     var unmarshaller = SplitFieldsUnmarshaller.Instance;
-                    unmarshalledObject.SplitFields = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SplitFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Union", targetDepth))
                 {
                     var unmarshaller = UnionUnmarshaller.Instance;
-                    unmarshalledObject.Union = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Union = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

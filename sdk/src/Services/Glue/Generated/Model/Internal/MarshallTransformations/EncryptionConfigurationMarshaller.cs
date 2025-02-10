@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,50 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchEncryption())
             {
                 context.Writer.WritePropertyName("CloudWatchEncryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchEncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchEncryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetDataQualityEncryption())
+            {
+                context.Writer.WritePropertyName("DataQualityEncryption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataQualityEncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataQualityEncryption, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobBookmarksEncryption())
             {
                 context.Writer.WritePropertyName("JobBookmarksEncryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobBookmarksEncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobBookmarksEncryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Encryption())
             {
                 context.Writer.WritePropertyName("S3Encryption");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectS3EncryptionListValue in requestObject.S3Encryption)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = S3EncryptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectS3EncryptionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

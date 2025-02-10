@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClaimAttributePath())
             {
                 context.Writer.WritePropertyName("ClaimAttributePath");
-                context.Writer.Write(requestObject.ClaimAttributePath);
+                context.Writer.WriteStringValue(requestObject.ClaimAttributePath);
             }
 
             if(requestObject.IsSetIdentityStoreAttributePath())
             {
                 context.Writer.WritePropertyName("IdentityStoreAttributePath");
-                context.Writer.Write(requestObject.IdentityStoreAttributePath);
+                context.Writer.WriteStringValue(requestObject.IdentityStoreAttributePath);
             }
 
             if(requestObject.IsSetIssuerUrl())
             {
                 context.Writer.WritePropertyName("IssuerUrl");
-                context.Writer.Write(requestObject.IssuerUrl);
+                context.Writer.WriteStringValue(requestObject.IssuerUrl);
             }
 
             if(requestObject.IsSetJwksRetrievalOption())
             {
                 context.Writer.WritePropertyName("JwksRetrievalOption");
-                context.Writer.Write(requestObject.JwksRetrievalOption);
+                context.Writer.WriteStringValue(requestObject.JwksRetrievalOption);
             }
 
         }

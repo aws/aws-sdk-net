@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnName())
             {
                 context.Writer.WritePropertyName("ColumnName");
-                context.Writer.Write(requestObject.ColumnName);
+                context.Writer.WriteStringValue(requestObject.ColumnName);
             }
 
             if(requestObject.IsSetMatchAllValue())
             {
                 context.Writer.WritePropertyName("MatchAllValue");
-                context.Writer.Write(requestObject.MatchAllValue);
+                context.Writer.WriteStringValue(requestObject.MatchAllValue);
             }
 
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("TagKey");
-                context.Writer.Write(requestObject.TagKey);
+                context.Writer.WriteStringValue(requestObject.TagKey);
             }
 
             if(requestObject.IsSetTagMultiValueDelimiter())
             {
                 context.Writer.WritePropertyName("TagMultiValueDelimiter");
-                context.Writer.Write(requestObject.TagMultiValueDelimiter);
+                context.Writer.WriteStringValue(requestObject.TagMultiValueDelimiter);
             }
 
         }

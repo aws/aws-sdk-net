@@ -47,6 +47,16 @@ namespace Amazon.Chatbot.Model
         IDescribeSlackWorkspacesPaginator DescribeSlackWorkspaces(DescribeSlackWorkspacesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssociations operation
+        ///</summary>
+        IListAssociationsPaginator ListAssociations(ListAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomActions operation
+        ///</summary>
+        IListCustomActionsPaginator ListCustomActions(ListCustomActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListMicrosoftTeamsChannelConfigurations operation
         ///</summary>
         IListMicrosoftTeamsChannelConfigurationsPaginator ListMicrosoftTeamsChannelConfigurations(ListMicrosoftTeamsChannelConfigurationsRequest request);

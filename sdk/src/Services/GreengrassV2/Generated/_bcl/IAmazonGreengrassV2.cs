@@ -1649,7 +1649,14 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <c>BROKEN</c> 
+        /// For Greengrass nucleus 2.12.2 and earlier, the core device sends status updates when
+        /// the status of any component on the core device becomes <c>ERRORED</c> or <c>BROKEN</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Greengrass nucleus 2.12.3 and later, the core device sends status updates when
+        /// the status of any component on the core device becomes <c>ERRORED</c>, <c>BROKEN</c>,
+        /// <c>RUNNING</c>, or <c>FINISHED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1710,7 +1717,14 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <c>BROKEN</c> 
+        /// For Greengrass nucleus 2.12.2 and earlier, the core device sends status updates when
+        /// the status of any component on the core device becomes <c>ERRORED</c> or <c>BROKEN</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Greengrass nucleus 2.12.3 and later, the core device sends status updates when
+        /// the status of any component on the core device becomes <c>ERRORED</c>, <c>BROKEN</c>,
+        /// <c>RUNNING</c>, or <c>FINISHED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

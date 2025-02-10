@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.Write(requestObject.Command);
+                context.Writer.WriteStringValue(requestObject.Command);
             }
 
             if(requestObject.IsSetExecutionTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("executionTimeoutSeconds");
-                context.Writer.Write(requestObject.ExecutionTimeoutSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ExecutionTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("instanceId");
-                context.Writer.Write(requestObject.InstanceId);
+                context.Writer.WriteStringValue(requestObject.InstanceId);
             }
 
             if(requestObject.IsSetOutputS3BucketName())
             {
                 context.Writer.WritePropertyName("outputS3BucketName");
-                context.Writer.Write(requestObject.OutputS3BucketName);
+                context.Writer.WriteStringValue(requestObject.OutputS3BucketName);
             }
 
             if(requestObject.IsSetScriptType())
             {
                 context.Writer.WritePropertyName("scriptType");
-                context.Writer.Write(requestObject.ScriptType);
+                context.Writer.WriteStringValue(requestObject.ScriptType);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Source, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

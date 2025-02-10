@@ -41,7 +41,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// Your secret ARN, which you can create in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
+        /// The Amazon Resource Name (ARN) of an Secrets Manager secret. You create a secret to
+        /// store your credentials in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Secrets
         /// Manager</a> 
         /// </para>
         ///  

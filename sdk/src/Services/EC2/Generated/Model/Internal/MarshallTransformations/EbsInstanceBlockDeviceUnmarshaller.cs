@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EbsInstanceBlockDevice Object
     /// </summary>  
-    public class EbsInstanceBlockDeviceUnmarshaller : IUnmarshaller<EbsInstanceBlockDevice, XmlUnmarshallerContext>, IUnmarshaller<EbsInstanceBlockDevice, JsonUnmarshallerContext>
+    public class EbsInstanceBlockDeviceUnmarshaller : IXmlUnmarshaller<EbsInstanceBlockDevice, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("operator", targetDepth))
+                    {
+                        var unmarshaller = OperatorResponseUnmarshaller.Instance;
+                        unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -100,17 +106,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EbsInstanceBlockDevice Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EbsInstanceBlockDeviceUnmarshaller _instance = new EbsInstanceBlockDeviceUnmarshaller();        
 

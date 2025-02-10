@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PatchFilterGroup Object
     /// </summary>  
-    public class PatchFilterGroupUnmarshaller : IUnmarshaller<PatchFilterGroup, XmlUnmarshallerContext>, IUnmarshaller<PatchFilterGroup, JsonUnmarshallerContext>
+    public class PatchFilterGroupUnmarshaller : IJsonUnmarshaller<PatchFilterGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PatchFilterGroup IUnmarshaller<PatchFilterGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PatchFilterGroup Unmarshall(JsonUnmarshallerContext context)
+        public PatchFilterGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PatchFilterGroup unmarshalledObject = new PatchFilterGroup();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("PatchFilters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PatchFilter, PatchFilterUnmarshaller>(PatchFilterUnmarshaller.Instance);
-                    unmarshalledObject.PatchFilters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PatchFilter, PatchFilterUnmarshaller>(PatchFilterUnmarshaller.Instance);
+                    unmarshalledObject.PatchFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

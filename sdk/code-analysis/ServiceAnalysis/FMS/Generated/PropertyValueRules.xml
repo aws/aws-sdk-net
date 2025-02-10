@@ -1384,12 +1384,12 @@
     <property>Amazon.FMS.Model.ResourceTag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@*\\]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.ResourceTag.Value</property>
     <max>256</max>
-    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:\/=+\-@*\\]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.Route.Destination</property>
@@ -1653,6 +1653,23 @@
     <property>Amazon.FMS.Model.ViolationDetail.ResourceType</property>
     <min>1</min>
     <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.WebACLHasIncompatibleConfigurationViolation.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.WebACLHasIncompatibleConfigurationViolation.WebACLArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.WebACLHasOutOfScopeResourcesViolation.WebACLArn</property>
+    <min>1</min>
+    <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

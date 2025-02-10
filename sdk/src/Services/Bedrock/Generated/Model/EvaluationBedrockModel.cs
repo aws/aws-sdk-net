@@ -31,9 +31,9 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Contains the ARN of the Amazon Bedrock model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-    /// profile</a> specified in your model evaluation job. Each Amazon Bedrock model supports
-    /// different <c>inferenceParams</c>. To learn more about supported inference parameters
-    /// for Amazon Bedrock models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+    /// profile</a> specified in your evaluation job. Each Amazon Bedrock model supports different
+    /// <c>inferenceParams</c>. To learn more about supported inference parameters for Amazon
+    /// Bedrock models, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
     /// parameters for foundation models</a>.
     /// 
     ///  
@@ -48,6 +48,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _inferenceParams;
         private string _modelIdentifier;
+        private PerformanceConfiguration _performanceConfig;
 
         /// <summary>
         /// Gets and sets the property InferenceParams. 
@@ -56,7 +57,7 @@ namespace Amazon.Bedrock.Model
         /// behaves during inference.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1023)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1023)]
         public string InferenceParams
         {
             get { return this._inferenceParams; }
@@ -86,6 +87,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelIdentifier()
         {
             return this._modelIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// Specifies performance settings for the model or inference profile.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
         }
 
     }

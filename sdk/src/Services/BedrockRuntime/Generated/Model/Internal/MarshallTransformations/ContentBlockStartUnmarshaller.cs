@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ContentBlockStart Object
     /// </summary>  
-    public class ContentBlockStartUnmarshaller : IUnmarshaller<ContentBlockStart, XmlUnmarshallerContext>, IUnmarshaller<ContentBlockStart, JsonUnmarshallerContext>
+    public class ContentBlockStartUnmarshaller : IJsonUnmarshaller<ContentBlockStart, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ContentBlockStart IUnmarshaller<ContentBlockStart, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlockStart Unmarshall(JsonUnmarshallerContext context)
+        public ContentBlockStart Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ContentBlockStart unmarshalledObject = new ContentBlockStart();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("toolUse", targetDepth))
                 {
                     var unmarshaller = ToolUseBlockStartUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

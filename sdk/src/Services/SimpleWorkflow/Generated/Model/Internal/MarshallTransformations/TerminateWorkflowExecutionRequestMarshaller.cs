@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChildPolicy())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChildPolicy())
-                    {
-                        context.Writer.WritePropertyName("childPolicy");
-                        context.Writer.Write(publicRequest.ChildPolicy);
-                    }
-
-                    if(publicRequest.IsSetDetails())
-                    {
-                        context.Writer.WritePropertyName("details");
-                        context.Writer.Write(publicRequest.Details);
-                    }
-
-                    if(publicRequest.IsSetDomain())
-                    {
-                        context.Writer.WritePropertyName("domain");
-                        context.Writer.Write(publicRequest.Domain);
-                    }
-
-                    if(publicRequest.IsSetReason())
-                    {
-                        context.Writer.WritePropertyName("reason");
-                        context.Writer.Write(publicRequest.Reason);
-                    }
-
-                    if(publicRequest.IsSetRunId())
-                    {
-                        context.Writer.WritePropertyName("runId");
-                        context.Writer.Write(publicRequest.RunId);
-                    }
-
-                    if(publicRequest.IsSetWorkflowId())
-                    {
-                        context.Writer.WritePropertyName("workflowId");
-                        context.Writer.Write(publicRequest.WorkflowId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("childPolicy");
+                context.Writer.WriteStringValue(publicRequest.ChildPolicy);
             }
+
+            if(publicRequest.IsSetDetails())
+            {
+                context.Writer.WritePropertyName("details");
+                context.Writer.WriteStringValue(publicRequest.Details);
+            }
+
+            if(publicRequest.IsSetDomain())
+            {
+                context.Writer.WritePropertyName("domain");
+                context.Writer.WriteStringValue(publicRequest.Domain);
+            }
+
+            if(publicRequest.IsSetReason())
+            {
+                context.Writer.WritePropertyName("reason");
+                context.Writer.WriteStringValue(publicRequest.Reason);
+            }
+
+            if(publicRequest.IsSetRunId())
+            {
+                context.Writer.WritePropertyName("runId");
+                context.Writer.WriteStringValue(publicRequest.RunId);
+            }
+
+            if(publicRequest.IsSetWorkflowId())
+            {
+                context.Writer.WritePropertyName("workflowId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

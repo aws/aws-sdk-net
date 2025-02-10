@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
+                context.Writer.WriteStringValue(requestObject.DataType);
             }
 
             if(requestObject.IsSetDataTypeValue())
             {
                 context.Writer.WritePropertyName("dataTypeValue");
-                context.Writer.Write(requestObject.DataTypeValue);
+                context.Writer.WriteStringValue(requestObject.DataTypeValue);
             }
 
             if(requestObject.IsSetIsArray())
             {
                 context.Writer.WritePropertyName("isArray");
-                context.Writer.Write(requestObject.IsArray.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsArray.Value);
             }
 
             if(requestObject.IsSetReadOnly())
             {
                 context.Writer.WritePropertyName("readOnly");
-                context.Writer.Write(requestObject.ReadOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReadOnly.Value);
             }
 
             if(requestObject.IsSetRelationship())
             {
                 context.Writer.WritePropertyName("relationship");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodegenGenericDataRelationshipTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Relationship, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required.Value);
+                context.Writer.WriteBooleanValue(requestObject.Required.Value);
             }
 
         }

@@ -34,7 +34,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class TransferUtilityObjectLockMD5Tests : TestBase<AmazonS3Client>
     {
         private static string bucketName;
-        
+
         [ClassInitialize()]
         public static void Initialize(TestContext a)
         {
@@ -107,106 +107,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var getBody = new StreamReader(getResponse.ResponseStream).ReadToEnd();
                 Assert.AreEqual(content, getBody);
             }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 HTTP header is required for Put Part requests with Object Lock parameters")]
-        public void TestMultipartUploadFileFailViaTransferUtility()
-        {
-            var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
-
-            var transfer = new TransferUtility(Client, transferConfig);
-            var content = new string('a', 7000000);
-            var key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests));
-            var filePath = Path.Combine(Path.GetTempPath(), key + ".txt");
-
-            // Create the file
-            using (StreamWriter writer = File.CreateText(filePath))
-            {
-                writer.Write(content);
-            }
-
-            // Do not set CalculateContentMD5Header as true which should cause upload to fail.
-            var uploadRequest = new TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath
-            };
-
-            transfer.Upload(uploadRequest);
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 HTTP header is required for Put Part requests with Object Lock parameters")]
-        public void TestSimpleUploadFileFailViaTransferUtility()
-        {
-            var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
-
-            var transfer = new TransferUtility(Client, transferConfig);
-            var content = new string('a', 2000000);
-            var key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests));
-            var filePath = Path.Combine(Path.GetTempPath(), key + ".txt");
-
-            // Create the file
-            using (StreamWriter writer = File.CreateText(filePath))
-            {
-                writer.Write(content);
-            }
-
-            // Do not set CalculateContentMD5Header as true which should cause upload to fail.
-            var uploadRequest = new TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = key,
-                FilePath = filePath
-            };
-
-            transfer.Upload(uploadRequest);
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 HTTP header is required for Put Part requests with Object Lock parameters")]
-        public void TestMultipartUploadStreamFailViaTransferUtility()
-        {
-            var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
-            var transfer = new TransferUtility(Client, transferConfig);
-            var content = new string('a', 7000000);
-            var contentStream = new MemoryStream(Encoding.UTF8.GetBytes(content));
-
-            // Do not set CalculateContentMD5Header as true which should cause upload to fail.
-            var uploadRequest = new TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests)),
-                InputStream = contentStream
-            };
-
-            transfer.Upload(uploadRequest);
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 HTTP header is required for Put Part requests with Object Lock parameters")]
-        public void TestSimpleUploadStreamFailViaTransferUtility()
-        {
-            var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
-            var transfer = new TransferUtility(Client, transferConfig);
-            var content = new string('a', 2000000);
-            var contentStream = new MemoryStream(Encoding.UTF8.GetBytes(content));
-
-            // Do not set CalculateContentMD5Header as true which should cause upload to fail.
-            var uploadRequest = new TransferUtilityUploadRequest
-            {
-                BucketName = bucketName,
-                Key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests)),
-                InputStream = contentStream
-            };
-
-            transfer.Upload(uploadRequest);
         }
 
         [TestMethod]
@@ -526,6 +426,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestSimpleUploadFileWithoutMD5ViaTransferUtility()
+        {
+            var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
+
+            var transfer = new TransferUtility(Client, transferConfig);
+            var content = new string('a', 2000000);
+            var key = UtilityMethods.GenerateName(nameof(ObjectLockConfigurationTests));
+            var filePath = Path.Combine(Path.GetTempPath(), key + ".txt");
+
+            // Create the file
+            using (StreamWriter writer = File.CreateText(filePath))
+            {
+                writer.Write(content);
+            }
+
+            // Upload should still succeed without MD5 (as the SDK is calculating CRC checksums by default).
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath
+            };
+
+            transfer.Upload(uploadRequest);
+        }
+
         private static void CreateBucketWithObjectLockConfiguration()
         {
             bucketName = S3TestUtils.CreateBucketWithWait(Client, new PutBucketRequest
@@ -555,7 +483,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         private static void DeleteBucketObjectsIncludingLocked(IAmazonS3 s3Client, string bucketName)
-        {            
+        {
             var listVersionsRequest = new ListVersionsRequest
             {
                 BucketName = bucketName

@@ -31,17 +31,22 @@ namespace Amazon.B2bi.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTransformer operation.
-    /// Updates the specified parameters for a transformer. A transformer describes how to
-    /// process the incoming EDI documents and extract the necessary information to the output
-    /// file.
+    /// Updates the specified parameters for a transformer. A transformer can take an EDI
+    /// file as input and transform it into a JSON-or XML-formatted document. Alternatively,
+    /// a transformer can take a JSON-or XML-formatted document as input and transform it
+    /// into an EDI file.
     /// </summary>
     public partial class UpdateTransformerRequest : AmazonB2biRequest
     {
         private EdiType _ediType;
         private FileFormat _fileFormat;
+        private InputConversion _inputConversion;
+        private Mapping _mapping;
         private string _mappingTemplate;
         private string _name;
+        private OutputConversion _outputConversion;
         private string _sampleDocument;
+        private SampleDocuments _sampleDocuments;
         private TransformerStatus _status;
         private string _transformerId;
 
@@ -53,6 +58,7 @@ namespace Amazon.B2bi.Model
         /// that define specific business documents.
         /// </para>
         /// </summary>
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         public EdiType EdiType
         {
             get { return this._ediType; }
@@ -72,6 +78,7 @@ namespace Amazon.B2bi.Model
         /// and <c>XML</c>.
         /// </para>
         /// </summary>
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         public FileFormat FileFormat
         {
             get { return this._fileFormat; }
@@ -85,12 +92,57 @@ namespace Amazon.B2bi.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputConversion. 
+        /// <para>
+        /// To update, specify the <c>InputConversion</c> object, which contains the format options
+        /// for the inbound transformation.
+        /// </para>
+        /// </summary>
+        public InputConversion InputConversion
+        {
+            get { return this._inputConversion; }
+            set { this._inputConversion = value; }
+        }
+
+        // Check to see if InputConversion property is set
+        internal bool IsSetInputConversion()
+        {
+            return this._inputConversion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mapping. 
+        /// <para>
+        /// Specify the structure that contains the mapping template and its language (either
+        /// XSLT or JSONATA).
+        /// </para>
+        /// </summary>
+        public Mapping Mapping
+        {
+            get { return this._mapping; }
+            set { this._mapping = value; }
+        }
+
+        // Check to see if Mapping property is set
+        internal bool IsSetMapping()
+        {
+            return this._mapping != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MappingTemplate. 
         /// <para>
         /// Specifies the mapping template for the transformer. This template is used to map the
         /// parsed EDI file using JSONata or XSLT.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is available for backwards compatibility. Use the <a href="https://docs.aws.amazon.com/b2bi/latest/APIReference/API_Mapping.html">Mapping</a>
+        /// data type instead.
+        /// </para>
+        ///  </note>
         /// </summary>
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         [AWSProperty(Min=0, Max=350000)]
         public string MappingTemplate
         {
@@ -124,12 +176,32 @@ namespace Amazon.B2bi.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputConversion. 
+        /// <para>
+        /// To update, specify the <c>OutputConversion</c> object, which contains the format options
+        /// for the outbound transformation.
+        /// </para>
+        /// </summary>
+        public OutputConversion OutputConversion
+        {
+            get { return this._outputConversion; }
+            set { this._outputConversion = value; }
+        }
+
+        // Check to see if OutputConversion property is set
+        internal bool IsSetOutputConversion()
+        {
+            return this._outputConversion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SampleDocument. 
         /// <para>
         /// Specifies a sample EDI document that is used by a transformer as a guide for processing
         /// the EDI data.
         /// </para>
         /// </summary>
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         [AWSProperty(Min=0, Max=1024)]
         public string SampleDocument
         {
@@ -144,10 +216,29 @@ namespace Amazon.B2bi.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SampleDocuments. 
+        /// <para>
+        /// Specify a structure that contains the Amazon S3 bucket and an array of the corresponding
+        /// keys used to identify the location for your sample documents.
+        /// </para>
+        /// </summary>
+        public SampleDocuments SampleDocuments
+        {
+            get { return this._sampleDocuments; }
+            set { this._sampleDocuments = value; }
+        }
+
+        // Check to see if SampleDocuments property is set
+        internal bool IsSetSampleDocuments()
+        {
+            return this._sampleDocuments != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the transformer's status. You can update the state of the transformer, from
-        /// <c>active</c> to <c>inactive</c>, or <c>inactive</c> to <c>active</c>.
+        /// Specifies the transformer's status. You can update the state of the transformer from
+        /// <c>inactive</c> to <c>active</c>.
         /// </para>
         /// </summary>
         public TransformerStatus Status

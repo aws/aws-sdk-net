@@ -53,6 +53,7 @@ namespace Amazon.Deadline.Model
         private UpdateJobLifecycleStatus _lifecycleStatus;
         private int? _maxFailedTasksCount;
         private int? _maxRetriesPerTask;
+        private int? _maxWorkerCount;
         private int? _priority;
         private string _queueId;
         private JobTargetTaskRunStatus _targetTaskRunStatus;
@@ -175,6 +176,40 @@ namespace Amazon.Deadline.Model
         internal bool IsSetMaxRetriesPerTask()
         {
             return this._maxRetriesPerTask.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxWorkerCount. 
+        /// <para>
+        /// The maximum number of worker hosts that can concurrently process a job. When the <c>maxWorkerCount</c>
+        /// is reached, no more workers will be assigned to process the job, even if the fleets
+        /// assigned to the job's queue has available workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't set the <c>maxWorkerCount</c> to 0. If you set it to -1, there is no maximum
+        /// number of workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify the <c>maxWorkerCount</c>, the default is -1.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of workers that can process tasks in the job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-1, Max=2147483647)]
+        public int? MaxWorkerCount
+        {
+            get { return this._maxWorkerCount; }
+            set { this._maxWorkerCount = value; }
+        }
+
+        // Check to see if MaxWorkerCount property is set
+        internal bool IsSetMaxWorkerCount()
+        {
+            return this._maxWorkerCount.HasValue; 
         }
 
         /// <summary>

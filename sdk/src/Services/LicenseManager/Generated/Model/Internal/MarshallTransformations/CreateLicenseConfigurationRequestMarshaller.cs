@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -63,98 +66,103 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisassociateWhenNotFound())
-                    {
-                        context.Writer.WritePropertyName("DisassociateWhenNotFound");
-                        context.Writer.Write(publicRequest.DisassociateWhenNotFound.Value);
-                    }
-
-                    if(publicRequest.IsSetLicenseCount())
-                    {
-                        context.Writer.WritePropertyName("LicenseCount");
-                        context.Writer.Write(publicRequest.LicenseCount.Value);
-                    }
-
-                    if(publicRequest.IsSetLicenseCountHardLimit())
-                    {
-                        context.Writer.WritePropertyName("LicenseCountHardLimit");
-                        context.Writer.Write(publicRequest.LicenseCountHardLimit.Value);
-                    }
-
-                    if(publicRequest.IsSetLicenseCountingType())
-                    {
-                        context.Writer.WritePropertyName("LicenseCountingType");
-                        context.Writer.Write(publicRequest.LicenseCountingType);
-                    }
-
-                    if(publicRequest.IsSetLicenseRules())
-                    {
-                        context.Writer.WritePropertyName("LicenseRules");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLicenseRulesListValue in publicRequest.LicenseRules)
-                        {
-                                context.Writer.Write(publicRequestLicenseRulesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetProductInformationList())
-                    {
-                        context.Writer.WritePropertyName("ProductInformationList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestProductInformationListListValue in publicRequest.ProductInformationList)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ProductInformationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestProductInformationListListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetDisassociateWhenNotFound())
+            {
+                context.Writer.WritePropertyName("DisassociateWhenNotFound");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociateWhenNotFound.Value);
+            }
+
+            if(publicRequest.IsSetLicenseCount())
+            {
+                context.Writer.WritePropertyName("LicenseCount");
+                context.Writer.WriteNumberValue(publicRequest.LicenseCount.Value);
+            }
+
+            if(publicRequest.IsSetLicenseCountHardLimit())
+            {
+                context.Writer.WritePropertyName("LicenseCountHardLimit");
+                context.Writer.WriteBooleanValue(publicRequest.LicenseCountHardLimit.Value);
+            }
+
+            if(publicRequest.IsSetLicenseCountingType())
+            {
+                context.Writer.WritePropertyName("LicenseCountingType");
+                context.Writer.WriteStringValue(publicRequest.LicenseCountingType);
+            }
+
+            if(publicRequest.IsSetLicenseRules())
+            {
+                context.Writer.WritePropertyName("LicenseRules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLicenseRulesListValue in publicRequest.LicenseRules)
+                {
+                        context.Writer.WriteStringValue(publicRequestLicenseRulesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetProductInformationList())
+            {
+                context.Writer.WritePropertyName("ProductInformationList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestProductInformationListListValue in publicRequest.ProductInformationList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProductInformationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestProductInformationListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

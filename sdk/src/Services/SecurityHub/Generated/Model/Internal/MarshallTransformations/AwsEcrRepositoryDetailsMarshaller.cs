@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetImageScanningConfiguration())
             {
                 context.Writer.WritePropertyName("ImageScanningConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcrRepositoryImageScanningConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageScanningConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageTagMutability())
             {
                 context.Writer.WritePropertyName("ImageTagMutability");
-                context.Writer.Write(requestObject.ImageTagMutability);
+                context.Writer.WriteStringValue(requestObject.ImageTagMutability);
             }
 
             if(requestObject.IsSetLifecyclePolicy())
             {
                 context.Writer.WritePropertyName("LifecyclePolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcrRepositoryLifecyclePolicyDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LifecyclePolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRepositoryName())
             {
                 context.Writer.WritePropertyName("RepositoryName");
-                context.Writer.Write(requestObject.RepositoryName);
+                context.Writer.WriteStringValue(requestObject.RepositoryName);
             }
 
             if(requestObject.IsSetRepositoryPolicyText())
             {
                 context.Writer.WritePropertyName("RepositoryPolicyText");
-                context.Writer.Write(requestObject.RepositoryPolicyText);
+                context.Writer.WriteStringValue(requestObject.RepositoryPolicyText);
             }
 
         }

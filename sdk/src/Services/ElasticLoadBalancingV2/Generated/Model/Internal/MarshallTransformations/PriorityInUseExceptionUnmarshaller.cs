@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PriorityInUseException operation
     /// </summary>  
-    public class PriorityInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<PriorityInUseException, XmlUnmarshallerContext>
+    public class PriorityInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PriorityInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

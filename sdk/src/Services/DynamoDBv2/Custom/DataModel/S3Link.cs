@@ -1,10 +1,14 @@
 ﻿using Amazon.DynamoDBv2.DocumentModel;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+using Amazon.Util.Internal;
 using ThirdParty.Json.LitJson;
+
+#if NET8_0_OR_GREATER
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
+#endif
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -12,9 +16,6 @@ namespace Amazon.DynamoDBv2.DataModel
     /// S3Link is an object that provides a connection to an S3 resource
     /// that can be stored in a DynamoDB field through DynamoDBContext
     /// </summary>
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     public partial class S3Link
     {
         #region Statics
@@ -159,12 +160,12 @@ namespace Amazon.DynamoDBv2.DataModel
             if (clientCache == null) throw new ArgumentNullException("clientCache");
             if (json == null) throw new ArgumentNullException("json");
             this.s3ClientCache = clientCache;
-            linker = JsonMapper.ToObject<LinkInfo>(json);
+            linker = JsonSerializerHelper.Deserialize<LinkInfo>(json, S3LinkInfoJsonSerializerContexts.Default);
         }
 
         internal static RegionEndpoint GetRegionFromJSON(string json)
         {
-            var linker = JsonMapper.ToObject<LinkInfo>(json);
+            var linker = JsonSerializerHelper.Deserialize<LinkInfo>(json, S3LinkInfoJsonSerializerContexts.Default);
             if (linker.s3.region == null)
             {
                 return RegionEndpoint.GetBySystemName("us-east-1");
@@ -208,7 +209,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal string ToJson()
         {
-            return JsonMapper.ToJson(linker);
+            return JsonSerializerHelper.Serialize<LinkInfo>(linker, S3LinkInfoJsonSerializerContexts.Default);
         }
 
         #endregion
@@ -216,9 +217,6 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
 
         #region Helper Classes
-#if NET8_0_OR_GREATER
-        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
 
         internal class S3LinkConverter : IPropertyConverter
         {
@@ -246,7 +244,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }            
         }
 
-        private class LinkInfo
+        internal class LinkInfo
         {
             public S3 s3 { get; set; }
 
@@ -268,7 +266,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private class S3
+        internal class S3
         {
             public string bucket { get; set; }
             public string key { get; set; }
@@ -291,5 +289,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        [JsonSerializable(typeof(LinkInfo))]
+        internal partial class S3LinkInfoJsonSerializerContexts : JsonSerializerContext
+        {
+        }
     }
 }

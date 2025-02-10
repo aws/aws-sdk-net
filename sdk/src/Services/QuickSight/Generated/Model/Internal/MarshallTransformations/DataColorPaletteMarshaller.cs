@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColors())
             {
                 context.Writer.WritePropertyName("Colors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColorsListValue in requestObject.Colors)
                 {
-                        context.Writer.Write(requestObjectColorsListValue);
+                        context.Writer.WriteStringValue(requestObjectColorsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEmptyFillColor())
             {
                 context.Writer.WritePropertyName("EmptyFillColor");
-                context.Writer.Write(requestObject.EmptyFillColor);
+                context.Writer.WriteStringValue(requestObject.EmptyFillColor);
             }
 
             if(requestObject.IsSetMinMaxGradient())
             {
                 context.Writer.WritePropertyName("MinMaxGradient");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMinMaxGradientListValue in requestObject.MinMaxGradient)
                 {
-                        context.Writer.Write(requestObjectMinMaxGradientListValue);
+                        context.Writer.WriteStringValue(requestObjectMinMaxGradientListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

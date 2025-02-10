@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -63,115 +66,120 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBatchInferenceJobConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBatchInferenceJobConfig())
-                    {
-                        context.Writer.WritePropertyName("batchInferenceJobConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("batchInferenceJobConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BatchInferenceJobConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BatchInferenceJobConfig, context);
+                var marshaller = BatchInferenceJobConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BatchInferenceJobConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBatchInferenceJobMode())
-                    {
-                        context.Writer.WritePropertyName("batchInferenceJobMode");
-                        context.Writer.Write(publicRequest.BatchInferenceJobMode);
-                    }
-
-                    if(publicRequest.IsSetFilterArn())
-                    {
-                        context.Writer.WritePropertyName("filterArn");
-                        context.Writer.Write(publicRequest.FilterArn);
-                    }
-
-                    if(publicRequest.IsSetJobInput())
-                    {
-                        context.Writer.WritePropertyName("jobInput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BatchInferenceJobInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobInput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobName())
-                    {
-                        context.Writer.WritePropertyName("jobName");
-                        context.Writer.Write(publicRequest.JobName);
-                    }
-
-                    if(publicRequest.IsSetJobOutput())
-                    {
-                        context.Writer.WritePropertyName("jobOutput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BatchInferenceJobOutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobOutput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNumResults())
-                    {
-                        context.Writer.WritePropertyName("numResults");
-                        context.Writer.Write(publicRequest.NumResults.Value);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSolutionVersionArn())
-                    {
-                        context.Writer.WritePropertyName("solutionVersionArn");
-                        context.Writer.Write(publicRequest.SolutionVersionArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetThemeGenerationConfig())
-                    {
-                        context.Writer.WritePropertyName("themeGenerationConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ThemeGenerationConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ThemeGenerationConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetBatchInferenceJobMode())
+            {
+                context.Writer.WritePropertyName("batchInferenceJobMode");
+                context.Writer.WriteStringValue(publicRequest.BatchInferenceJobMode);
+            }
+
+            if(publicRequest.IsSetFilterArn())
+            {
+                context.Writer.WritePropertyName("filterArn");
+                context.Writer.WriteStringValue(publicRequest.FilterArn);
+            }
+
+            if(publicRequest.IsSetJobInput())
+            {
+                context.Writer.WritePropertyName("jobInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BatchInferenceJobInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("jobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
+
+            if(publicRequest.IsSetJobOutput())
+            {
+                context.Writer.WritePropertyName("jobOutput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BatchInferenceJobOutputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobOutput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNumResults())
+            {
+                context.Writer.WritePropertyName("numResults");
+                context.Writer.WriteNumberValue(publicRequest.NumResults.Value);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSolutionVersionArn())
+            {
+                context.Writer.WritePropertyName("solutionVersionArn");
+                context.Writer.WriteStringValue(publicRequest.SolutionVersionArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetThemeGenerationConfig())
+            {
+                context.Writer.WritePropertyName("themeGenerationConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ThemeGenerationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ThemeGenerationConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

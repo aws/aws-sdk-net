@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentCpuCores())
             {
                 context.Writer.WritePropertyName("agentCpuCores");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAgentCpuCoresListValue in requestObject.AgentCpuCores)
                 {
-                        context.Writer.Write(requestObjectAgentCpuCoresListValue);
+                        context.Writer.WriteNumberValue(requestObjectAgentCpuCoresListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAgentVersion())
             {
                 context.Writer.WritePropertyName("agentVersion");
-                context.Writer.Write(requestObject.AgentVersion);
+                context.Writer.WriteStringValue(requestObject.AgentVersion);
             }
 
             if(requestObject.IsSetComponentVersions())
             {
                 context.Writer.WritePropertyName("componentVersions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectComponentVersionsListValue in requestObject.ComponentVersions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentVersionMarshaller.Instance;
                     marshaller.Marshall(requestObjectComponentVersionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("instanceId");
-                context.Writer.Write(requestObject.InstanceId);
+                context.Writer.WriteStringValue(requestObject.InstanceId);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetReservedCpuCores())
             {
                 context.Writer.WritePropertyName("reservedCpuCores");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReservedCpuCoresListValue in requestObject.ReservedCpuCores)
                 {
-                        context.Writer.Write(requestObjectReservedCpuCoresListValue);
+                        context.Writer.WriteNumberValue(requestObjectReservedCpuCoresListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

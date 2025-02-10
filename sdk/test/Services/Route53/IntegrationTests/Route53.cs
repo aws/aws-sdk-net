@@ -171,9 +171,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsNotNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
 
             GetHealthCheckStatusResponse status = null;
-            var stopTime = DateTime.Now + maxWaitTime;
+            var stopTime = DateTime.UtcNow + maxWaitTime;
 
-            while (DateTime.Now < stopTime)
+            while (DateTime.UtcNow < stopTime)
             {
                 try
                 {
@@ -263,7 +263,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var sets = Client.ListReusableDelegationSets(new ListReusableDelegationSetsRequest());
             var setCount = sets.DelegationSets.Count;
 
-            var callerReference = "DNSMigration" + DateTime.Now.ToFileTime();
+            var callerReference = "DNSMigration" + DateTime.UtcNow.ToFileTime();
             var createResponse = Client.CreateReusableDelegationSet(new CreateReusableDelegationSetRequest
             {
                 CallerReference = callerReference
@@ -306,7 +306,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(1, hostedZones.Count);
 
             // add a second set
-            callerReference = "DNSMigration" + DateTime.Now.ToFileTime();
+            callerReference = "DNSMigration" + DateTime.UtcNow.ToFileTime();
             createResponse = Client.CreateReusableDelegationSet(new CreateReusableDelegationSetRequest
             {
                 CallerReference = callerReference

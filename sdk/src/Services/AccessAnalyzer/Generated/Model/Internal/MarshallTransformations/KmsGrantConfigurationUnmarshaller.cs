@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KmsGrantConfiguration Object
     /// </summary>  
-    public class KmsGrantConfigurationUnmarshaller : IUnmarshaller<KmsGrantConfiguration, XmlUnmarshallerContext>, IUnmarshaller<KmsGrantConfiguration, JsonUnmarshallerContext>
+    public class KmsGrantConfigurationUnmarshaller : IJsonUnmarshaller<KmsGrantConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KmsGrantConfiguration IUnmarshaller<KmsGrantConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KmsGrantConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public KmsGrantConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KmsGrantConfiguration unmarshalledObject = new KmsGrantConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("constraints", targetDepth))
                 {
                     var unmarshaller = KmsGrantConstraintsUnmarshaller.Instance;
-                    unmarshalledObject.Constraints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Constraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("granteePrincipal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GranteePrincipal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GranteePrincipal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("issuingAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IssuingAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IssuingAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("operations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Operations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Operations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("retiringPrincipal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RetiringPrincipal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetiringPrincipal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

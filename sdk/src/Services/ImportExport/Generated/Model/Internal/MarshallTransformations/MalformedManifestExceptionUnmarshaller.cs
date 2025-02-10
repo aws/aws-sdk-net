@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MalformedManifestException operation
     /// </summary>  
-    public class MalformedManifestExceptionUnmarshaller : IErrorResponseUnmarshaller<MalformedManifestException, XmlUnmarshallerContext>
+    public class MalformedManifestExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MalformedManifestException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

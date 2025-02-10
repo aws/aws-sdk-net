@@ -30,24 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift containers feature, which is currently
-    /// in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// A container's dependency on another container in the same container group. The dependency
     /// impacts how the dependent container is able to start or shut down based the status
     /// of the other container.
+    /// 
+    ///  
+    /// <para>
+    /// For example, <i>ContainerA</i> is configured with the following dependency: a <c>START</c>
+    /// dependency on <i>ContainerB</i>. This means that <i>ContainerA</i> can't start until
+    /// <i>ContainerB</i> has started. It also means that <i>ContainerA</i> must shut down
+    /// before <i>ContainerB</i>.
     /// </para>
     ///  
     /// <para>
-    /// For example, ContainerA is configured with the following dependency: a <c>START</c>
-    /// dependency on ContainerB. This means that ContainerA can't start until ContainerB
-    /// has started. It also means that ContainerA must shut down before ContainerB.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Part of:</b> <a>ContainerDefinition</a> 
+    ///  <b>Part of:</b> <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinition.html">GameServerContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerContainerDefinitionInput.html">GameServerContainerDefinitionInput</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+    /// 
     /// </para>
     /// </summary>
     public partial class ContainerDependency

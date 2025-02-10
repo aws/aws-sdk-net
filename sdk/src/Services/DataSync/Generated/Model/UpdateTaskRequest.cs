@@ -52,6 +52,20 @@ namespace Amazon.DataSync.Model
         /// Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring
         /// your task.
         /// </para>
+        ///  
+        /// <para>
+        /// For Enhanced mode tasks, you must use <c>/aws/datasync</c> as your log group name.
+        /// For example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:logs:us-east-1:111222333444:log-group:/aws/datasync:*</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-logging.html">Monitoring
+        /// data transfers with CloudWatch Logs</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
         public string CloudWatchLogGroupArn

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,81 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddRouteTableIds())
             {
                 context.Writer.WritePropertyName("AddRouteTableIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddRouteTableIdsListValue in requestObject.AddRouteTableIds)
                 {
-                        context.Writer.Write(requestObjectAddRouteTableIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAddRouteTableIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetCopyTagsToVolumes())
             {
                 context.Writer.WritePropertyName("CopyTagsToVolumes");
-                context.Writer.Write(requestObject.CopyTagsToVolumes.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToVolumes.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
             {
                 context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+                context.Writer.WriteStringValue(requestObject.DailyAutomaticBackupStartTime);
             }
 
             if(requestObject.IsSetDiskIopsConfiguration())
             {
                 context.Writer.WritePropertyName("DiskIopsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DiskIopsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetReadCacheConfiguration())
+            {
+                context.Writer.WritePropertyName("ReadCacheConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpenZFSReadCacheConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ReadCacheConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRemoveRouteTableIds())
             {
                 context.Writer.WritePropertyName("RemoveRouteTableIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRemoveRouteTableIdsListValue in requestObject.RemoveRouteTableIds)
                 {
-                        context.Writer.Write(requestObjectRemoveRouteTableIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectRemoveRouteTableIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
-                context.Writer.Write(requestObject.ThroughputCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.ThroughputCapacity.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.WeeklyMaintenanceStartTime);
             }
 
         }

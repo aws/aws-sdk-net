@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IndexFieldStatus Object
     /// </summary>  
-    public class IndexFieldStatusUnmarshaller : IUnmarshaller<IndexFieldStatus, XmlUnmarshallerContext>, IUnmarshaller<IndexFieldStatus, JsonUnmarshallerContext>
+    public class IndexFieldStatusUnmarshaller : IXmlUnmarshaller<IndexFieldStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IndexFieldStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IndexFieldStatusUnmarshaller _instance = new IndexFieldStatusUnmarshaller();        
 

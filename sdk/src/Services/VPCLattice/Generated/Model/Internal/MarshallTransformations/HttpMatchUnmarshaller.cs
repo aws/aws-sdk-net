@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HttpMatch Object
     /// </summary>  
-    public class HttpMatchUnmarshaller : IUnmarshaller<HttpMatch, XmlUnmarshallerContext>, IUnmarshaller<HttpMatch, JsonUnmarshallerContext>
+    public class HttpMatchUnmarshaller : IJsonUnmarshaller<HttpMatch, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HttpMatch IUnmarshaller<HttpMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HttpMatch Unmarshall(JsonUnmarshallerContext context)
+        public HttpMatch Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HttpMatch unmarshalledObject = new HttpMatch();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("headerMatches", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<HeaderMatch, HeaderMatchUnmarshaller>(HeaderMatchUnmarshaller.Instance);
-                    unmarshalledObject.HeaderMatches = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<HeaderMatch, HeaderMatchUnmarshaller>(HeaderMatchUnmarshaller.Instance);
+                    unmarshalledObject.HeaderMatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("method", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pathMatch", targetDepth))
                 {
                     var unmarshaller = PathMatchUnmarshaller.Instance;
-                    unmarshalledObject.PathMatch = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PathMatch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

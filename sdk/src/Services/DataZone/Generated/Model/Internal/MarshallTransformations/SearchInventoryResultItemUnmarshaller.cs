@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SearchInventoryResultItem Object
     /// </summary>  
-    public class SearchInventoryResultItemUnmarshaller : IUnmarshaller<SearchInventoryResultItem, XmlUnmarshallerContext>, IUnmarshaller<SearchInventoryResultItem, JsonUnmarshallerContext>
+    public class SearchInventoryResultItemUnmarshaller : IJsonUnmarshaller<SearchInventoryResultItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SearchInventoryResultItem IUnmarshaller<SearchInventoryResultItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SearchInventoryResultItem Unmarshall(JsonUnmarshallerContext context)
+        public SearchInventoryResultItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SearchInventoryResultItem unmarshalledObject = new SearchInventoryResultItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("assetItem", targetDepth))
                 {
                     var unmarshaller = AssetItemUnmarshaller.Instance;
-                    unmarshalledObject.AssetItem = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataProductItem", targetDepth))
                 {
                     var unmarshaller = DataProductResultItemUnmarshaller.Instance;
-                    unmarshalledObject.DataProductItem = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataProductItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("glossaryItem", targetDepth))
                 {
                     var unmarshaller = GlossaryItemUnmarshaller.Instance;
-                    unmarshalledObject.GlossaryItem = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlossaryItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("glossaryTermItem", targetDepth))
                 {
                     var unmarshaller = GlossaryTermItemUnmarshaller.Instance;
-                    unmarshalledObject.GlossaryTermItem = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlossaryTermItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

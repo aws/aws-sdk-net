@@ -76,10 +76,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestGroupWithUsers()
         {
             string
-                username1 = "user1" + DateTime.Now.Ticks,
-                username2 = "user2" + DateTime.Now.Ticks,
-                username3 = "user3" + DateTime.Now.Ticks,
-                groupname = "group" + DateTime.Now.Ticks;
+                username1 = "user1" + DateTime.UtcNow.Ticks,
+                username2 = "user2" + DateTime.UtcNow.Ticks,
+                username3 = "user3" + DateTime.UtcNow.Ticks,
+                groupname = "group" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -131,10 +131,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestRemoveUsersFromGroup()
         {
             string
-                username1 = "user1" + DateTime.Now.Ticks,
-                username2 = "user2" + DateTime.Now.Ticks,
-                username3 = "user3" + DateTime.Now.Ticks,
-                groupname = "group" + DateTime.Now.Ticks;
+                username1 = "user1" + DateTime.UtcNow.Ticks,
+                username2 = "user2" + DateTime.UtcNow.Ticks,
+                username3 = "user3" + DateTime.UtcNow.Ticks,
+                groupname = "group" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -191,11 +191,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestGroupPaging()
         {
             string
-                username1 = "user1" + DateTime.Now.Ticks,
-                username2 = "user2" + DateTime.Now.Ticks,
-                username3 = "user3" + DateTime.Now.Ticks,
-                username4 = "user4" + DateTime.Now.Ticks,
-                groupname = "group" + DateTime.Now.Ticks;
+                username1 = "user1" + DateTime.UtcNow.Ticks,
+                username2 = "user2" + DateTime.UtcNow.Ticks,
+                username3 = "user3" + DateTime.UtcNow.Ticks,
+                username4 = "user4" + DateTime.UtcNow.Ticks,
+                groupname = "group" + DateTime.UtcNow.Ticks;
 
 
             try
@@ -275,10 +275,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         {
 
             string
-                groupname1 = "group1" + DateTime.Now.Ticks,
-                groupname2 = "group2" + DateTime.Now.Ticks,
-                groupname3 = "group3" + DateTime.Now.Ticks,
-                groupname4 = "group4" + DateTime.Now.Ticks;
+                groupname1 = "group1" + DateTime.UtcNow.Ticks,
+                groupname2 = "group2" + DateTime.UtcNow.Ticks,
+                groupname3 = "group3" + DateTime.UtcNow.Ticks,
+                groupname4 = "group4" + DateTime.UtcNow.Ticks;
 
             string
                 pathA = IAMUtil.MakePath("A"),
@@ -344,10 +344,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestListGroupsPaging()
         {
             string
-                groupname1 = "group1" + DateTime.Now.Ticks,
-                groupname2 = "group2" + DateTime.Now.Ticks,
-                groupname3 = "group3" + DateTime.Now.Ticks,
-                groupname4 = "group4" + DateTime.Now.Ticks;
+                groupname1 = "group1" + DateTime.UtcNow.Ticks,
+                groupname2 = "group2" + DateTime.UtcNow.Ticks,
+                groupname3 = "group3" + DateTime.UtcNow.Ticks,
+                groupname4 = "group4" + DateTime.UtcNow.Ticks;
 
 
             try
@@ -420,8 +420,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void AddUserToNonExistentGroup()
         {
             string
-                username = "user" + DateTime.Now.Ticks,
-                grpname = "group" + DateTime.Now.Ticks;
+                username = "user" + DateTime.UtcNow.Ticks,
+                grpname = "group" + DateTime.UtcNow.Ticks;
             try
             {
                 Client.CreateUser(new CreateUserRequest() { UserName = username, Path = IAMUtil.TEST_PATH });
@@ -440,7 +440,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestDoubleCreation()
         {
             string
-                grpname = "group" + DateTime.Now.Ticks;
+                grpname = "group" + DateTime.UtcNow.Ticks;
            
             try
             {
@@ -460,8 +460,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestDeleteUserInGroupThrowsException()
         {
             string
-                username = "user" + DateTime.Now.Ticks,
-                grpname = "group" + DateTime.Now.Ticks;
+                username = "user" + DateTime.UtcNow.Ticks,
+                grpname = "group" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestDeleteGroupWithUsersThrowsException()
         {
             string
-                username = "user" + DateTime.Now.Ticks,
-                grpname = "group" + DateTime.Now.Ticks;
+                username = "user" + DateTime.UtcNow.Ticks,
+                grpname = "group" + DateTime.UtcNow.Ticks;
 
 
             try

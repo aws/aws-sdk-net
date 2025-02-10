@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetElse())
             {
                 context.Writer.WritePropertyName("else");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Else, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetOperand())
             {
                 context.Writer.WritePropertyName("operand");
-                context.Writer.Write(requestObject.Operand);
+                context.Writer.WriteStringValue(requestObject.Operand);
             }
 
             if(requestObject.IsSetOperandType())
             {
                 context.Writer.WritePropertyName("operandType");
-                context.Writer.Write(requestObject.OperandType);
+                context.Writer.WriteStringValue(requestObject.OperandType);
             }
 
             if(requestObject.IsSetOperator())
             {
                 context.Writer.WritePropertyName("operator");
-                context.Writer.Write(requestObject.Operator);
+                context.Writer.WriteStringValue(requestObject.Operator);
             }
 
             if(requestObject.IsSetProperty())
             {
                 context.Writer.WritePropertyName("property");
-                context.Writer.Write(requestObject.Property);
+                context.Writer.WriteStringValue(requestObject.Property);
             }
 
             if(requestObject.IsSetThen())
             {
                 context.Writer.WritePropertyName("then");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Then, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalContext())
             {
                 context.Writer.WritePropertyName("AdditionalContext");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalContextKvp in requestObject.AdditionalContext)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalContextKvp.Key);
                     var requestObjectAdditionalContextValue = requestObjectAdditionalContextKvp.Value;
 
-                        context.Writer.Write(requestObjectAdditionalContextValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalContextValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClusterId())
             {
                 context.Writer.WritePropertyName("ClusterId");
-                context.Writer.Write(requestObject.ClusterId);
+                context.Writer.WriteStringValue(requestObject.ClusterId);
             }
 
             if(requestObject.IsSetQueryAuthorizationId())
             {
                 context.Writer.WritePropertyName("QueryAuthorizationId");
-                context.Writer.Write(requestObject.QueryAuthorizationId);
+                context.Writer.WriteStringValue(requestObject.QueryAuthorizationId);
             }
 
             if(requestObject.IsSetQueryId())
             {
                 context.Writer.WritePropertyName("QueryId");
-                context.Writer.Write(requestObject.QueryId);
+                context.Writer.WriteStringValue(requestObject.QueryId);
             }
 
             if(requestObject.IsSetQueryStartTime())
             {
                 context.Writer.WritePropertyName("QueryStartTime");
-                context.Writer.Write(requestObject.QueryStartTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.QueryStartTime.Value)));
             }
 
         }

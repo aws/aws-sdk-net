@@ -27,6 +27,11 @@ namespace Amazon.KafkaConnect.Model
     {
 
         /// <summary>
+        /// Paginator for ListConnectorOperations operation
+        ///</summary>
+        IListConnectorOperationsPaginator ListConnectorOperations(ListConnectorOperationsRequest request);
+
+        /// <summary>
         /// Paginator for ListConnectors operation
         ///</summary>
         IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);

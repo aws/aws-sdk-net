@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("createdAt");
-                context.Writer.Write(requestObject.CreatedAt.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedAt.Value)));
             }
 
             if(requestObject.IsSetDICOMAccessionNumber())
             {
                 context.Writer.WritePropertyName("DICOMAccessionNumber");
-                context.Writer.Write(requestObject.DICOMAccessionNumber);
+                context.Writer.WriteStringValue(requestObject.DICOMAccessionNumber);
             }
 
             if(requestObject.IsSetDICOMPatientId())
             {
                 context.Writer.WritePropertyName("DICOMPatientId");
-                context.Writer.Write(requestObject.DICOMPatientId);
+                context.Writer.WriteStringValue(requestObject.DICOMPatientId);
             }
 
             if(requestObject.IsSetDICOMSeriesInstanceUID())
             {
                 context.Writer.WritePropertyName("DICOMSeriesInstanceUID");
-                context.Writer.Write(requestObject.DICOMSeriesInstanceUID);
+                context.Writer.WriteStringValue(requestObject.DICOMSeriesInstanceUID);
             }
 
             if(requestObject.IsSetDICOMStudyDateAndTime())
             {
                 context.Writer.WritePropertyName("DICOMStudyDateAndTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DICOMStudyDateAndTimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DICOMStudyDateAndTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDICOMStudyId())
             {
                 context.Writer.WritePropertyName("DICOMStudyId");
-                context.Writer.Write(requestObject.DICOMStudyId);
+                context.Writer.WriteStringValue(requestObject.DICOMStudyId);
             }
 
             if(requestObject.IsSetDICOMStudyInstanceUID())
             {
                 context.Writer.WritePropertyName("DICOMStudyInstanceUID");
-                context.Writer.Write(requestObject.DICOMStudyInstanceUID);
+                context.Writer.WriteStringValue(requestObject.DICOMStudyInstanceUID);
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("updatedAt");
-                context.Writer.Write(requestObject.UpdatedAt.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.UpdatedAt.Value)));
             }
 
         }

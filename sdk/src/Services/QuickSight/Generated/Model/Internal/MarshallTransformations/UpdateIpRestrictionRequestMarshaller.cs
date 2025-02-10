@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -64,67 +67,72 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/ip-restriction";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnabled())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("Enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetIpRestrictionRuleMap())
-                    {
-                        context.Writer.WritePropertyName("IpRestrictionRuleMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestIpRestrictionRuleMapKvp in publicRequest.IpRestrictionRuleMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestIpRestrictionRuleMapKvp.Key);
-                            var publicRequestIpRestrictionRuleMapValue = publicRequestIpRestrictionRuleMapKvp.Value;
-
-                                context.Writer.Write(publicRequestIpRestrictionRuleMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVpcEndpointIdRestrictionRuleMap())
-                    {
-                        context.Writer.WritePropertyName("VpcEndpointIdRestrictionRuleMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestVpcEndpointIdRestrictionRuleMapKvp in publicRequest.VpcEndpointIdRestrictionRuleMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestVpcEndpointIdRestrictionRuleMapKvp.Key);
-                            var publicRequestVpcEndpointIdRestrictionRuleMapValue = publicRequestVpcEndpointIdRestrictionRuleMapKvp.Value;
-
-                                context.Writer.Write(publicRequestVpcEndpointIdRestrictionRuleMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVpcIdRestrictionRuleMap())
-                    {
-                        context.Writer.WritePropertyName("VpcIdRestrictionRuleMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestVpcIdRestrictionRuleMapKvp in publicRequest.VpcIdRestrictionRuleMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestVpcIdRestrictionRuleMapKvp.Key);
-                            var publicRequestVpcIdRestrictionRuleMapValue = publicRequestVpcIdRestrictionRuleMapKvp.Value;
-
-                                context.Writer.Write(publicRequestVpcIdRestrictionRuleMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
             }
+
+            if(publicRequest.IsSetIpRestrictionRuleMap())
+            {
+                context.Writer.WritePropertyName("IpRestrictionRuleMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestIpRestrictionRuleMapKvp in publicRequest.IpRestrictionRuleMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestIpRestrictionRuleMapKvp.Key);
+                    var publicRequestIpRestrictionRuleMapValue = publicRequestIpRestrictionRuleMapKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestIpRestrictionRuleMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVpcEndpointIdRestrictionRuleMap())
+            {
+                context.Writer.WritePropertyName("VpcEndpointIdRestrictionRuleMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestVpcEndpointIdRestrictionRuleMapKvp in publicRequest.VpcEndpointIdRestrictionRuleMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestVpcEndpointIdRestrictionRuleMapKvp.Key);
+                    var publicRequestVpcEndpointIdRestrictionRuleMapValue = publicRequestVpcEndpointIdRestrictionRuleMapKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestVpcEndpointIdRestrictionRuleMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVpcIdRestrictionRuleMap())
+            {
+                context.Writer.WritePropertyName("VpcIdRestrictionRuleMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestVpcIdRestrictionRuleMapKvp in publicRequest.VpcIdRestrictionRuleMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestVpcIdRestrictionRuleMapKvp.Key);
+                    var publicRequestVpcIdRestrictionRuleMapValue = publicRequestVpcIdRestrictionRuleMapKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestVpcIdRestrictionRuleMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

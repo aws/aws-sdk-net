@@ -43,6 +43,78 @@ namespace Amazon.BedrockAgent
         IBedrockAgentPaginatorFactory Paginators { get; }
 
         
+        #region  AssociateAgentCollaborator
+
+
+        /// <summary>
+        /// Makes an agent a collaborator for another agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentCollaborator">REST API Reference for AssociateAgentCollaborator Operation</seealso>
+        AssociateAgentCollaboratorResponse AssociateAgentCollaborator(AssociateAgentCollaboratorRequest request);
+
+
+
+        /// <summary>
+        /// Makes an agent a collaborator for another agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAgentCollaborator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentCollaborator">REST API Reference for AssociateAgentCollaborator Operation</seealso>
+        Task<AssociateAgentCollaboratorResponse> AssociateAgentCollaboratorAsync(AssociateAgentCollaboratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateAgentKnowledgeBase
 
 
@@ -471,7 +543,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates a data source connector for a knowledge base.
+        /// Connects a knowledge base to a data source. You specify the configuration for the
+        /// specific data source service in the <c>dataSourceConfiguration</c> field.
         /// 
         ///  <important> 
         /// <para>
@@ -511,7 +584,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates a data source connector for a knowledge base.
+        /// Connects a knowledge base to a data source. You specify the configuration for the
+        /// specific data source service in the <c>dataSourceConfiguration</c> field.
         /// 
         ///  <important> 
         /// <para>
@@ -779,10 +853,11 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates a knowledge base that contains data sources from which information can be
-        /// queried and used by LLMs. To create a knowledge base, you must first set up your data
-        /// sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
-        /// up your data for ingestion</a>.
+        /// Creates a knowledge base. A knowledge base contains your data sources so that Large
+        /// Language Models (LLMs) can use your data. To create a knowledge base, you must first
+        /// set up your data sources and configure a supported vector store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowlege-base-prereq.html">Set
+        /// up a knowledge base</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -862,10 +937,11 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates a knowledge base that contains data sources from which information can be
-        /// queried and used by LLMs. To create a knowledge base, you must first set up your data
-        /// sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
-        /// up your data for ingestion</a>.
+        /// Creates a knowledge base. A knowledge base contains your data sources so that Large
+        /// Language Models (LLMs) can use your data. To create a knowledge base, you must first
+        /// set up your data sources and configure a supported vector store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowlege-base-prereq.html">Set
+        /// up a knowledge base</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -1689,6 +1765,76 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  DeleteKnowledgeBaseDocuments
+
+
+        /// <summary>
+        /// Deletes documents from a data source and syncs the changes to the knowledge base that
+        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">REST API Reference for DeleteKnowledgeBaseDocuments Operation</seealso>
+        DeleteKnowledgeBaseDocumentsResponse DeleteKnowledgeBaseDocuments(DeleteKnowledgeBaseDocumentsRequest request);
+
+
+
+        /// <summary>
+        /// Deletes documents from a data source and syncs the changes to the knowledge base that
+        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseDocuments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">REST API Reference for DeleteKnowledgeBaseDocuments Operation</seealso>
+        Task<DeleteKnowledgeBaseDocumentsResponse> DeleteKnowledgeBaseDocumentsAsync(DeleteKnowledgeBaseDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePrompt
 
 
@@ -1760,6 +1906,72 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
         Task<DeletePromptResponse> DeletePromptAsync(DeletePromptRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateAgentCollaborator
+
+
+        /// <summary>
+        /// Disassociates an agent collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentCollaborator">REST API Reference for DisassociateAgentCollaborator Operation</seealso>
+        DisassociateAgentCollaboratorResponse DisassociateAgentCollaborator(DisassociateAgentCollaboratorRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates an agent collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAgentCollaborator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentCollaborator">REST API Reference for DisassociateAgentCollaborator Operation</seealso>
+        Task<DisassociateAgentCollaboratorResponse> DisassociateAgentCollaboratorAsync(DisassociateAgentCollaboratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2006,6 +2218,66 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAlias">REST API Reference for GetAgentAlias Operation</seealso>
         Task<GetAgentAliasResponse> GetAgentAliasAsync(GetAgentAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAgentCollaborator
+
+
+        /// <summary>
+        /// Retrieves information about an agent's collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentCollaborator">REST API Reference for GetAgentCollaborator Operation</seealso>
+        GetAgentCollaboratorResponse GetAgentCollaborator(GetAgentCollaboratorRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about an agent's collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCollaborator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentCollaborator">REST API Reference for GetAgentCollaborator Operation</seealso>
+        Task<GetAgentCollaboratorResponse> GetAgentCollaboratorAsync(GetAgentCollaboratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2379,8 +2651,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets information about a ingestion job, in which a data source is added to a knowledge
-        /// base.
+        /// Gets information about a data ingestion job. Data sources are ingested into your knowledge
+        /// base so that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
         /// 
@@ -2407,8 +2679,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets information about a ingestion job, in which a data source is added to a knowledge
-        /// base.
+        /// Gets information about a data ingestion job. Data sources are ingested into your knowledge
+        /// base so that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -2497,6 +2769,76 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  GetKnowledgeBaseDocuments
+
+
+        /// <summary>
+        /// Retrieves specific documents from a data source that is connected to a knowledge base.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the GetKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">REST API Reference for GetKnowledgeBaseDocuments Operation</seealso>
+        GetKnowledgeBaseDocumentsResponse GetKnowledgeBaseDocuments(GetKnowledgeBaseDocumentsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves specific documents from a data source that is connected to a knowledge base.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBaseDocuments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">REST API Reference for GetKnowledgeBaseDocuments Operation</seealso>
+        Task<GetKnowledgeBaseDocumentsResponse> GetKnowledgeBaseDocumentsAsync(GetKnowledgeBaseDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetPrompt
 
 
@@ -2562,6 +2904,80 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetPrompt">REST API Reference for GetPrompt Operation</seealso>
         Task<GetPromptResponse> GetPromptAsync(GetPromptRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  IngestKnowledgeBaseDocuments
+
+
+        /// <summary>
+        /// Ingests documents directly into the knowledge base that is connected to the data source.
+        /// The <c>dataSourceType</c> specified in the content for each document must match the
+        /// type of the data source that you specify in the header. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IngestKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the IngestKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">REST API Reference for IngestKnowledgeBaseDocuments Operation</seealso>
+        IngestKnowledgeBaseDocumentsResponse IngestKnowledgeBaseDocuments(IngestKnowledgeBaseDocumentsRequest request);
+
+
+
+        /// <summary>
+        /// Ingests documents directly into the knowledge base that is connected to the data source.
+        /// The <c>dataSourceType</c> specified in the content for each document must match the
+        /// type of the data source that you specify in the header. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IngestKnowledgeBaseDocuments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the IngestKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">REST API Reference for IngestKnowledgeBaseDocuments Operation</seealso>
+        Task<IngestKnowledgeBaseDocumentsResponse> IngestKnowledgeBaseDocumentsAsync(IngestKnowledgeBaseDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2682,6 +3098,66 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentAliases">REST API Reference for ListAgentAliases Operation</seealso>
         Task<ListAgentAliasesResponse> ListAgentAliasesAsync(ListAgentAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentCollaborators
+
+
+        /// <summary>
+        /// Retrieve a list of an agent's collaborators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentCollaborators service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentCollaborators service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentCollaborators">REST API Reference for ListAgentCollaborators Operation</seealso>
+        ListAgentCollaboratorsResponse ListAgentCollaborators(ListAgentCollaboratorsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve a list of an agent's collaborators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentCollaborators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentCollaborators service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentCollaborators">REST API Reference for ListAgentCollaborators Operation</seealso>
+        Task<ListAgentCollaboratorsResponse> ListAgentCollaboratorsAsync(ListAgentCollaboratorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3099,7 +3575,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists the ingestion jobs for a data source and information about each of them.
+        /// Lists the data ingestion jobs for a data source. The list also includes information
+        /// about each job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
         /// 
@@ -3126,7 +3603,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists the ingestion jobs for a data source and information about each of them.
+        /// Lists the data ingestion jobs for a data source. The list also includes information
+        /// about each job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3155,11 +3633,82 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  ListKnowledgeBaseDocuments
+
+
+        /// <summary>
+        /// Retrieves all the documents contained in a data source that is connected to a knowledge
+        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the ListKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">REST API Reference for ListKnowledgeBaseDocuments Operation</seealso>
+        ListKnowledgeBaseDocumentsResponse ListKnowledgeBaseDocuments(ListKnowledgeBaseDocumentsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves all the documents contained in a data source that is connected to a knowledge
+        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseDocuments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">REST API Reference for ListKnowledgeBaseDocuments Operation</seealso>
+        Task<ListKnowledgeBaseDocumentsResponse> ListKnowledgeBaseDocumentsAsync(ListKnowledgeBaseDocumentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListKnowledgeBases
 
 
         /// <summary>
-        /// Lists the knowledge bases in an account and information about each of them.
+        /// Lists the knowledge bases in an account. The list also includesinformation about each
+        /// knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
         /// 
@@ -3182,7 +3731,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists the knowledge bases in an account and information about each of them.
+        /// Lists the knowledge bases in an account. The list also includesinformation about each
+        /// knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
         /// <param name="cancellationToken">
@@ -3487,7 +4037,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Begins an ingestion job, in which a data source is added to a knowledge base.
+        /// Begins a data ingestion job. Data sources are ingested into your knowledge base so
+        /// that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartIngestionJob service method.</param>
         /// 
@@ -3520,7 +4071,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Begins an ingestion job, in which a data source is added to a knowledge base.
+        /// Begins a data ingestion job. Data sources are ingested into your knowledge base so
+        /// that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -3552,6 +4104,74 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StartIngestionJob">REST API Reference for StartIngestionJob Operation</seealso>
         Task<StartIngestionJobResponse> StartIngestionJobAsync(StartIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopIngestionJob
+
+
+        /// <summary>
+        /// Stops a currently running data ingestion job. You can send a <c>StartIngestionJob</c>
+        /// request again to ingest the rest of your data when you are ready.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopIngestionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopIngestionJob service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StopIngestionJob">REST API Reference for StopIngestionJob Operation</seealso>
+        StopIngestionJobResponse StopIngestionJob(StopIngestionJobRequest request);
+
+
+
+        /// <summary>
+        /// Stops a currently running data ingestion job. You can send a <c>StartIngestionJob</c>
+        /// request again to ingest the rest of your data when you are ready.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopIngestionJob service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StopIngestionJob">REST API Reference for StopIngestionJob Operation</seealso>
+        Task<StopIngestionJobResponse> StopIngestionJobAsync(StopIngestionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3896,6 +4516,78 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentAlias">REST API Reference for UpdateAgentAlias Operation</seealso>
         Task<UpdateAgentAliasResponse> UpdateAgentAliasAsync(UpdateAgentAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgentCollaborator
+
+
+        /// <summary>
+        /// Updates an agent's collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentCollaborator">REST API Reference for UpdateAgentCollaborator Operation</seealso>
+        UpdateAgentCollaboratorResponse UpdateAgentCollaborator(UpdateAgentCollaboratorRequest request);
+
+
+
+        /// <summary>
+        /// Updates an agent's collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentCollaborator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentCollaborator">REST API Reference for UpdateAgentCollaborator Operation</seealso>
+        Task<UpdateAgentCollaboratorResponse> UpdateAgentCollaboratorAsync(UpdateAgentCollaboratorRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4392,6 +5084,58 @@ namespace Amazon.BedrockAgent
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
         Task<UpdatePromptResponse> UpdatePromptAsync(UpdatePromptRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ValidateFlowDefinition
+
+
+        /// <summary>
+        /// Validates the definition of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateFlowDefinition service method.</param>
+        /// 
+        /// <returns>The response from the ValidateFlowDefinition service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        ValidateFlowDefinitionResponse ValidateFlowDefinition(ValidateFlowDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// Validates the definition of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateFlowDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateFlowDefinition service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        Task<ValidateFlowDefinitionResponse> ValidateFlowDefinitionAsync(ValidateFlowDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

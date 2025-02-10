@@ -49,9 +49,28 @@ namespace Amazon.EMRServerless.Model
     /// </summary>
     public partial class GetDashboardForJobRunRequest : AmazonEMRServerlessRequest
     {
+        private bool? _accessSystemProfileLogs;
         private string _applicationId;
         private int? _attempt;
         private string _jobRunId;
+
+        /// <summary>
+        /// Gets and sets the property AccessSystemProfileLogs. 
+        /// <para>
+        /// Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.
+        /// </para>
+        /// </summary>
+        public bool? AccessSystemProfileLogs
+        {
+            get { return this._accessSystemProfileLogs; }
+            set { this._accessSystemProfileLogs = value; }
+        }
+
+        // Check to see if AccessSystemProfileLogs property is set
+        internal bool IsSetAccessSystemProfileLogs()
+        {
+            return this._accessSystemProfileLogs.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 

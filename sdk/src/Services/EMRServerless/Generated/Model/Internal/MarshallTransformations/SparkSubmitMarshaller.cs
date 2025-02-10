@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntryPoint())
             {
                 context.Writer.WritePropertyName("entryPoint");
-                context.Writer.Write(requestObject.EntryPoint);
+                context.Writer.WriteStringValue(requestObject.EntryPoint);
             }
 
             if(requestObject.IsSetEntryPointArguments())
             {
                 context.Writer.WritePropertyName("entryPointArguments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntryPointArgumentsListValue in requestObject.EntryPointArguments)
                 {
-                        context.Writer.Write(requestObjectEntryPointArgumentsListValue);
+                        context.Writer.WriteStringValue(requestObjectEntryPointArgumentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSparkSubmitParameters())
             {
                 context.Writer.WritePropertyName("sparkSubmitParameters");
-                context.Writer.Write(requestObject.SparkSubmitParameters);
+                context.Writer.WriteStringValue(requestObject.SparkSubmitParameters);
             }
 
         }

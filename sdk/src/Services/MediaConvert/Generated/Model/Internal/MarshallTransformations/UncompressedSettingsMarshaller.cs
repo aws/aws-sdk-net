@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFourcc())
             {
                 context.Writer.WritePropertyName("fourcc");
-                context.Writer.Write(requestObject.Fourcc);
+                context.Writer.WriteStringValue(requestObject.Fourcc);
             }
 
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");
-                context.Writer.Write(requestObject.FramerateControl);
+                context.Writer.WriteStringValue(requestObject.FramerateControl);
             }
 
             if(requestObject.IsSetFramerateConversionAlgorithm())
             {
                 context.Writer.WritePropertyName("framerateConversionAlgorithm");
-                context.Writer.Write(requestObject.FramerateConversionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.FramerateConversionAlgorithm);
             }
 
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetInterlaceMode())
             {
                 context.Writer.WritePropertyName("interlaceMode");
-                context.Writer.Write(requestObject.InterlaceMode);
+                context.Writer.WriteStringValue(requestObject.InterlaceMode);
             }
 
             if(requestObject.IsSetScanTypeConversionMode())
             {
                 context.Writer.WritePropertyName("scanTypeConversionMode");
-                context.Writer.Write(requestObject.ScanTypeConversionMode);
+                context.Writer.WriteStringValue(requestObject.ScanTypeConversionMode);
             }
 
             if(requestObject.IsSetSlowPal())
             {
                 context.Writer.WritePropertyName("slowPal");
-                context.Writer.Write(requestObject.SlowPal);
+                context.Writer.WriteStringValue(requestObject.SlowPal);
             }
 
             if(requestObject.IsSetTelecine())
             {
                 context.Writer.WritePropertyName("telecine");
-                context.Writer.Write(requestObject.Telecine);
+                context.Writer.WriteStringValue(requestObject.Telecine);
             }
 
         }

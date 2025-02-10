@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeployerAddress())
             {
                 context.Writer.WritePropertyName("deployerAddress");
-                context.Writer.Write(requestObject.DeployerAddress);
+                context.Writer.WriteStringValue(requestObject.DeployerAddress);
             }
 
             if(requestObject.IsSetNetwork())
             {
                 context.Writer.WritePropertyName("network");
-                context.Writer.Write(requestObject.Network);
+                context.Writer.WriteStringValue(requestObject.Network);
             }
 
             if(requestObject.IsSetTokenStandard())
             {
                 context.Writer.WritePropertyName("tokenStandard");
-                context.Writer.Write(requestObject.TokenStandard);
+                context.Writer.WriteStringValue(requestObject.TokenStandard);
             }
 
         }

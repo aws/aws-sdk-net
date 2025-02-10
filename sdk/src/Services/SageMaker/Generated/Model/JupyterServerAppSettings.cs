@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CodeRepositories. 
         /// <para>
-        /// A list of Git repositories that SageMaker automatically displays to users for cloning
+        /// A list of Git repositories that SageMaker AI automatically displays to users for cloning
         /// in the JupyterServer application.
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DefaultResourceSpec. 
         /// <para>
         /// The default instance type and the Amazon Resource Name (ARN) of the default SageMaker
-        /// image used by the JupyterServer app. If you use the <c>LifecycleConfigArns</c> parameter,
-        /// then this parameter is also required.
+        /// AI image used by the JupyterServer app. If you use the <c>LifecycleConfigArns</c>
+        /// parameter, then this parameter is also required.
         /// </para>
         /// </summary>
         public ResourceSpec DefaultResourceSpec

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.Write(requestObject.CreatedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedAfter.Value)));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.Write(requestObject.CreatedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedBefore.Value)));
             }
 
             if(requestObject.IsSetLineageTypes())
             {
                 context.Writer.WritePropertyName("LineageTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLineageTypesListValue in requestObject.LineageTypes)
                 {
-                        context.Writer.Write(requestObjectLineageTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectLineageTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetModifiedAfter())
             {
                 context.Writer.WritePropertyName("ModifiedAfter");
-                context.Writer.Write(requestObject.ModifiedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ModifiedAfter.Value)));
             }
 
             if(requestObject.IsSetModifiedBefore())
             {
                 context.Writer.WritePropertyName("ModifiedBefore");
-                context.Writer.Write(requestObject.ModifiedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ModifiedBefore.Value)));
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("Properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPropertiesKvp in requestObject.Properties)
                 {
                     context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
                     var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("Types");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTypesListValue in requestObject.Types)
                 {
-                        context.Writer.Write(requestObjectTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("AwsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetSipMediaApplicationId())
             {
                 context.Writer.WritePropertyName("SipMediaApplicationId");
-                context.Writer.Write(requestObject.SipMediaApplicationId);
+                context.Writer.WriteStringValue(requestObject.SipMediaApplicationId);
             }
 
         }

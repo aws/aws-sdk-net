@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityReservation Object
     /// </summary>  
-    public class CapacityReservationUnmarshaller : IUnmarshaller<CapacityReservation, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservation, JsonUnmarshallerContext>
+    public class CapacityReservationUnmarshaller : IXmlUnmarshaller<CapacityReservation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -102,10 +102,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("commitmentInfo", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationCommitmentInfoUnmarshaller.Instance;
+                        unmarshalledObject.CommitmentInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("createDate", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                         unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("deliveryPreference", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeliveryPreference = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ebsOptimized", targetDepth))
@@ -209,6 +221,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("unusedReservationBillingOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UnusedReservationBillingOwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -218,17 +236,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityReservation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityReservationUnmarshaller _instance = new CapacityReservationUnmarshaller();        
 

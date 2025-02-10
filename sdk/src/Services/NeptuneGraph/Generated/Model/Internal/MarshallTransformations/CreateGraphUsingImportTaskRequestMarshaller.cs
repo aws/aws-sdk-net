@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
@@ -61,127 +64,138 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/importtasks";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBlankNodeHandling())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBlankNodeHandling())
-                    {
-                        context.Writer.WritePropertyName("blankNodeHandling");
-                        context.Writer.Write(publicRequest.BlankNodeHandling);
-                    }
-
-                    if(publicRequest.IsSetDeletionProtection())
-                    {
-                        context.Writer.WritePropertyName("deletionProtection");
-                        context.Writer.Write(publicRequest.DeletionProtection.Value);
-                    }
-
-                    if(publicRequest.IsSetFailOnError())
-                    {
-                        context.Writer.WritePropertyName("failOnError");
-                        context.Writer.Write(publicRequest.FailOnError.Value);
-                    }
-
-                    if(publicRequest.IsSetFormat())
-                    {
-                        context.Writer.WritePropertyName("format");
-                        context.Writer.Write(publicRequest.Format);
-                    }
-
-                    if(publicRequest.IsSetGraphName())
-                    {
-                        context.Writer.WritePropertyName("graphName");
-                        context.Writer.Write(publicRequest.GraphName);
-                    }
-
-                    if(publicRequest.IsSetImportOptions())
-                    {
-                        context.Writer.WritePropertyName("importOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImportOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ImportOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetKmsKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("kmsKeyIdentifier");
-                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetMaxProvisionedMemory())
-                    {
-                        context.Writer.WritePropertyName("maxProvisionedMemory");
-                        context.Writer.Write(publicRequest.MaxProvisionedMemory.Value);
-                    }
-
-                    if(publicRequest.IsSetMinProvisionedMemory())
-                    {
-                        context.Writer.WritePropertyName("minProvisionedMemory");
-                        context.Writer.Write(publicRequest.MinProvisionedMemory.Value);
-                    }
-
-                    if(publicRequest.IsSetPublicConnectivity())
-                    {
-                        context.Writer.WritePropertyName("publicConnectivity");
-                        context.Writer.Write(publicRequest.PublicConnectivity.Value);
-                    }
-
-                    if(publicRequest.IsSetReplicaCount())
-                    {
-                        context.Writer.WritePropertyName("replicaCount");
-                        context.Writer.Write(publicRequest.ReplicaCount.Value);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSource())
-                    {
-                        context.Writer.WritePropertyName("source");
-                        context.Writer.Write(publicRequest.Source);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVectorSearchConfiguration())
-                    {
-                        context.Writer.WritePropertyName("vectorSearchConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VectorSearchConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VectorSearchConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("blankNodeHandling");
+                context.Writer.WriteStringValue(publicRequest.BlankNodeHandling);
             }
+
+            if(publicRequest.IsSetDeletionProtection())
+            {
+                context.Writer.WritePropertyName("deletionProtection");
+                context.Writer.WriteBooleanValue(publicRequest.DeletionProtection.Value);
+            }
+
+            if(publicRequest.IsSetFailOnError())
+            {
+                context.Writer.WritePropertyName("failOnError");
+                context.Writer.WriteBooleanValue(publicRequest.FailOnError.Value);
+            }
+
+            if(publicRequest.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("format");
+                context.Writer.WriteStringValue(publicRequest.Format);
+            }
+
+            if(publicRequest.IsSetGraphName())
+            {
+                context.Writer.WritePropertyName("graphName");
+                context.Writer.WriteStringValue(publicRequest.GraphName);
+            }
+
+            if(publicRequest.IsSetImportOptions())
+            {
+                context.Writer.WritePropertyName("importOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImportOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ImportOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKmsKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("kmsKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetMaxProvisionedMemory())
+            {
+                context.Writer.WritePropertyName("maxProvisionedMemory");
+                context.Writer.WriteNumberValue(publicRequest.MaxProvisionedMemory.Value);
+            }
+
+            if(publicRequest.IsSetMinProvisionedMemory())
+            {
+                context.Writer.WritePropertyName("minProvisionedMemory");
+                context.Writer.WriteNumberValue(publicRequest.MinProvisionedMemory.Value);
+            }
+
+            if(publicRequest.IsSetParquetType())
+            {
+                context.Writer.WritePropertyName("parquetType");
+                context.Writer.WriteStringValue(publicRequest.ParquetType);
+            }
+
+            if(publicRequest.IsSetPublicConnectivity())
+            {
+                context.Writer.WritePropertyName("publicConnectivity");
+                context.Writer.WriteBooleanValue(publicRequest.PublicConnectivity.Value);
+            }
+
+            if(publicRequest.IsSetReplicaCount())
+            {
+                context.Writer.WritePropertyName("replicaCount");
+                context.Writer.WriteNumberValue(publicRequest.ReplicaCount.Value);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStringValue(publicRequest.Source);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVectorSearchConfiguration())
+            {
+                context.Writer.WritePropertyName("vectorSearchConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VectorSearchConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VectorSearchConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

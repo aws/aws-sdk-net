@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllSupported())
             {
                 context.Writer.WritePropertyName("allSupported");
-                context.Writer.Write(requestObject.AllSupported.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllSupported.Value);
             }
 
             if(requestObject.IsSetExclusionByResourceTypes())
             {
                 context.Writer.WritePropertyName("exclusionByResourceTypes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExclusionByResourceTypesMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExclusionByResourceTypes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeGlobalResourceTypes())
             {
                 context.Writer.WritePropertyName("includeGlobalResourceTypes");
-                context.Writer.Write(requestObject.IncludeGlobalResourceTypes.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeGlobalResourceTypes.Value);
             }
 
             if(requestObject.IsSetRecordingStrategy())
             {
                 context.Writer.WritePropertyName("recordingStrategy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecordingStrategyMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecordingStrategy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("resourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

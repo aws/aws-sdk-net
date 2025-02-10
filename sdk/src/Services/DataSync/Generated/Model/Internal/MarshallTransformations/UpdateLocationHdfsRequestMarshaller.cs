@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
@@ -63,117 +66,122 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAgentArns())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AgentArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAgentArns())
-                    {
-                        context.Writer.WritePropertyName("AgentArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
-                        {
-                                context.Writer.Write(publicRequestAgentArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthenticationType())
-                    {
-                        context.Writer.WritePropertyName("AuthenticationType");
-                        context.Writer.Write(publicRequest.AuthenticationType);
-                    }
-
-                    if(publicRequest.IsSetBlockSize())
-                    {
-                        context.Writer.WritePropertyName("BlockSize");
-                        context.Writer.Write(publicRequest.BlockSize.Value);
-                    }
-
-                    if(publicRequest.IsSetKerberosKeytab())
-                    {
-                        context.Writer.WritePropertyName("KerberosKeytab");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKeytab));
-                    }
-
-                    if(publicRequest.IsSetKerberosKrb5Conf())
-                    {
-                        context.Writer.WritePropertyName("KerberosKrb5Conf");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.KerberosKrb5Conf));
-                    }
-
-                    if(publicRequest.IsSetKerberosPrincipal())
-                    {
-                        context.Writer.WritePropertyName("KerberosPrincipal");
-                        context.Writer.Write(publicRequest.KerberosPrincipal);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyProviderUri())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyProviderUri");
-                        context.Writer.Write(publicRequest.KmsKeyProviderUri);
-                    }
-
-                    if(publicRequest.IsSetLocationArn())
-                    {
-                        context.Writer.WritePropertyName("LocationArn");
-                        context.Writer.Write(publicRequest.LocationArn);
-                    }
-
-                    if(publicRequest.IsSetNameNodes())
-                    {
-                        context.Writer.WritePropertyName("NameNodes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNameNodesListValue in publicRequest.NameNodes)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = HdfsNameNodeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestNameNodesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetQopConfiguration())
-                    {
-                        context.Writer.WritePropertyName("QopConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = QopConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.QopConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReplicationFactor())
-                    {
-                        context.Writer.WritePropertyName("ReplicationFactor");
-                        context.Writer.Write(publicRequest.ReplicationFactor.Value);
-                    }
-
-                    if(publicRequest.IsSetSimpleUser())
-                    {
-                        context.Writer.WritePropertyName("SimpleUser");
-                        context.Writer.Write(publicRequest.SimpleUser);
-                    }
-
-                    if(publicRequest.IsSetSubdirectory())
-                    {
-                        context.Writer.WritePropertyName("Subdirectory");
-                        context.Writer.Write(publicRequest.Subdirectory);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAgentArnsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAuthenticationType())
+            {
+                context.Writer.WritePropertyName("AuthenticationType");
+                context.Writer.WriteStringValue(publicRequest.AuthenticationType);
+            }
+
+            if(publicRequest.IsSetBlockSize())
+            {
+                context.Writer.WritePropertyName("BlockSize");
+                context.Writer.WriteNumberValue(publicRequest.BlockSize.Value);
+            }
+
+            if(publicRequest.IsSetKerberosKeytab())
+            {
+                context.Writer.WritePropertyName("KerberosKeytab");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.KerberosKeytab));
+            }
+
+            if(publicRequest.IsSetKerberosKrb5Conf())
+            {
+                context.Writer.WritePropertyName("KerberosKrb5Conf");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.KerberosKrb5Conf));
+            }
+
+            if(publicRequest.IsSetKerberosPrincipal())
+            {
+                context.Writer.WritePropertyName("KerberosPrincipal");
+                context.Writer.WriteStringValue(publicRequest.KerberosPrincipal);
+            }
+
+            if(publicRequest.IsSetKmsKeyProviderUri())
+            {
+                context.Writer.WritePropertyName("KmsKeyProviderUri");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyProviderUri);
+            }
+
+            if(publicRequest.IsSetLocationArn())
+            {
+                context.Writer.WritePropertyName("LocationArn");
+                context.Writer.WriteStringValue(publicRequest.LocationArn);
+            }
+
+            if(publicRequest.IsSetNameNodes())
+            {
+                context.Writer.WritePropertyName("NameNodes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNameNodesListValue in publicRequest.NameNodes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = HdfsNameNodeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNameNodesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetQopConfiguration())
+            {
+                context.Writer.WritePropertyName("QopConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QopConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.QopConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReplicationFactor())
+            {
+                context.Writer.WritePropertyName("ReplicationFactor");
+                context.Writer.WriteNumberValue(publicRequest.ReplicationFactor.Value);
+            }
+
+            if(publicRequest.IsSetSimpleUser())
+            {
+                context.Writer.WritePropertyName("SimpleUser");
+                context.Writer.WriteStringValue(publicRequest.SimpleUser);
+            }
+
+            if(publicRequest.IsSetSubdirectory())
+            {
+                context.Writer.WritePropertyName("Subdirectory");
+                context.Writer.WriteStringValue(publicRequest.Subdirectory);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

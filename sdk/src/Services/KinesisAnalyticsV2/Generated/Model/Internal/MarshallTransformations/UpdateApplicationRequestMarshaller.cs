@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -63,87 +66,92 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationConfigurationUpdate())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationConfigurationUpdate())
-                    {
-                        context.Writer.WritePropertyName("ApplicationConfigurationUpdate");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("ApplicationConfigurationUpdate");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ApplicationConfigurationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ApplicationConfigurationUpdate, context);
+                var marshaller = ApplicationConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ApplicationConfigurationUpdate, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetApplicationName())
-                    {
-                        context.Writer.WritePropertyName("ApplicationName");
-                        context.Writer.Write(publicRequest.ApplicationName);
-                    }
-
-                    if(publicRequest.IsSetCloudWatchLoggingOptionUpdates())
-                    {
-                        context.Writer.WritePropertyName("CloudWatchLoggingOptionUpdates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCloudWatchLoggingOptionUpdatesListValue in publicRequest.CloudWatchLoggingOptionUpdates)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CloudWatchLoggingOptionUpdateMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCloudWatchLoggingOptionUpdatesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetConditionalToken())
-                    {
-                        context.Writer.WritePropertyName("ConditionalToken");
-                        context.Writer.Write(publicRequest.ConditionalToken);
-                    }
-
-                    if(publicRequest.IsSetCurrentApplicationVersionId())
-                    {
-                        context.Writer.WritePropertyName("CurrentApplicationVersionId");
-                        context.Writer.Write(publicRequest.CurrentApplicationVersionId.Value);
-                    }
-
-                    if(publicRequest.IsSetRunConfigurationUpdate())
-                    {
-                        context.Writer.WritePropertyName("RunConfigurationUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RunConfigurationUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RunConfigurationUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRuntimeEnvironmentUpdate())
-                    {
-                        context.Writer.WritePropertyName("RuntimeEnvironmentUpdate");
-                        context.Writer.Write(publicRequest.RuntimeEnvironmentUpdate);
-                    }
-
-                    if(publicRequest.IsSetServiceExecutionRoleUpdate())
-                    {
-                        context.Writer.WritePropertyName("ServiceExecutionRoleUpdate");
-                        context.Writer.Write(publicRequest.ServiceExecutionRoleUpdate);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetApplicationName())
+            {
+                context.Writer.WritePropertyName("ApplicationName");
+                context.Writer.WriteStringValue(publicRequest.ApplicationName);
+            }
+
+            if(publicRequest.IsSetCloudWatchLoggingOptionUpdates())
+            {
+                context.Writer.WritePropertyName("CloudWatchLoggingOptionUpdates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCloudWatchLoggingOptionUpdatesListValue in publicRequest.CloudWatchLoggingOptionUpdates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CloudWatchLoggingOptionUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCloudWatchLoggingOptionUpdatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetConditionalToken())
+            {
+                context.Writer.WritePropertyName("ConditionalToken");
+                context.Writer.WriteStringValue(publicRequest.ConditionalToken);
+            }
+
+            if(publicRequest.IsSetCurrentApplicationVersionId())
+            {
+                context.Writer.WritePropertyName("CurrentApplicationVersionId");
+                context.Writer.WriteNumberValue(publicRequest.CurrentApplicationVersionId.Value);
+            }
+
+            if(publicRequest.IsSetRunConfigurationUpdate())
+            {
+                context.Writer.WritePropertyName("RunConfigurationUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RunConfigurationUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RunConfigurationUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRuntimeEnvironmentUpdate())
+            {
+                context.Writer.WritePropertyName("RuntimeEnvironmentUpdate");
+                context.Writer.WriteStringValue(publicRequest.RuntimeEnvironmentUpdate);
+            }
+
+            if(publicRequest.IsSetServiceExecutionRoleUpdate())
+            {
+                context.Writer.WritePropertyName("ServiceExecutionRoleUpdate");
+                context.Writer.WriteStringValue(publicRequest.ServiceExecutionRoleUpdate);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

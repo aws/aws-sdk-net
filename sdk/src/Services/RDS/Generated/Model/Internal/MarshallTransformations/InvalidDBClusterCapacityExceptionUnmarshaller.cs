@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBClusterCapacityException operation
     /// </summary>  
-    public class InvalidDBClusterCapacityExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBClusterCapacityException, XmlUnmarshallerContext>
+    public class InvalidDBClusterCapacityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBClusterCapacityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

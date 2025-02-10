@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCaptionChannel())
             {
                 context.Writer.WritePropertyName("captionChannel");
-                context.Writer.Write(requestObject.CaptionChannel.Value);
+                context.Writer.WriteNumberValue(requestObject.CaptionChannel.Value);
             }
 
             if(requestObject.IsSetCustomLanguageCode())
             {
                 context.Writer.WritePropertyName("customLanguageCode");
-                context.Writer.Write(requestObject.CustomLanguageCode);
+                context.Writer.WriteStringValue(requestObject.CustomLanguageCode);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetLanguageDescription())
             {
                 context.Writer.WritePropertyName("languageDescription");
-                context.Writer.Write(requestObject.LanguageDescription);
+                context.Writer.WriteStringValue(requestObject.LanguageDescription);
             }
 
         }

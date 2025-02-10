@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssetModelExternalId())
             {
                 context.Writer.WritePropertyName("assetModelExternalId");
-                context.Writer.Write(requestObject.AssetModelExternalId);
+                context.Writer.WriteStringValue(requestObject.AssetModelExternalId);
             }
 
             if(requestObject.IsSetAssetModelId())
             {
                 context.Writer.WritePropertyName("assetModelId");
-                context.Writer.Write(requestObject.AssetModelId);
+                context.Writer.WriteStringValue(requestObject.AssetModelId);
             }
 
             if(requestObject.IsSetIncludeAssets())
             {
                 context.Writer.WritePropertyName("includeAssets");
-                context.Writer.Write(requestObject.IncludeAssets.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeAssets.Value);
             }
 
             if(requestObject.IsSetIncludeOffspring())
             {
                 context.Writer.WritePropertyName("includeOffspring");
-                context.Writer.Write(requestObject.IncludeOffspring.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeOffspring.Value);
             }
 
         }

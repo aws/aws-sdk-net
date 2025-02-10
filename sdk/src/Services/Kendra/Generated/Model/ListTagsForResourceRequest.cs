@@ -31,8 +31,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Gets a list of tags associated with a specified resource. Indexes, FAQs, and data
-    /// sources can have tags associated with them.
+    /// Gets a list of tags associated with a resource. Indexes, FAQs, data sources, and other
+    /// resources can have tags associated with them.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonKendraRequest
     {
@@ -41,8 +41,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the index, FAQ, or data source to get a list of
-        /// tags for.
+        /// The Amazon Resource Name (ARN) of the index, FAQ, data source, or other resource to
+        /// get a list of tags for. For example, the ARN of an index is constructed as follows:
+        /// <i>arn:aws:kendra:your-region:your-account-id:index/index-id</i> For information on
+        /// how to construct an ARN for all types of Amazon Kendra resources, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonkendra.html#amazonkendra-resources-for-iam-policies">Resource
+        /// types</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

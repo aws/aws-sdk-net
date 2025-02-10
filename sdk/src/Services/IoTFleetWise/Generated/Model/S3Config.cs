@@ -94,9 +94,9 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// (Optional) Enter an S3 bucket prefix. The prefix is the string of characters after
-        /// the bucket name and before the object name. You can use the prefix to organize data
-        /// stored in Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
+        /// Enter an S3 bucket prefix. The prefix is the string of characters after the bucket
+        /// name and before the object name. You can use the prefix to organize data stored in
+        /// Amazon S3 buckets. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing
         /// objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.
         /// </para>
         ///  

@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OTAUpdateInfo Object
     /// </summary>  
-    public class OTAUpdateInfoUnmarshaller : IUnmarshaller<OTAUpdateInfo, XmlUnmarshallerContext>, IUnmarshaller<OTAUpdateInfo, JsonUnmarshallerContext>
+    public class OTAUpdateInfoUnmarshaller : IJsonUnmarshaller<OTAUpdateInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OTAUpdateInfo IUnmarshaller<OTAUpdateInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OTAUpdateInfo Unmarshall(JsonUnmarshallerContext context)
+        public OTAUpdateInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OTAUpdateInfo unmarshalledObject = new OTAUpdateInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalParameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsIotJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsIotJobArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsIotJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsIotJobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsIotJobId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsIotJobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsJobExecutionsRolloutConfig", targetDepth))
                 {
                     var unmarshaller = AwsJobExecutionsRolloutConfigUnmarshaller.Instance;
-                    unmarshalledObject.AwsJobExecutionsRolloutConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsJobExecutionsRolloutConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("awsJobPresignedUrlConfig", targetDepth))
                 {
                     var unmarshaller = AwsJobPresignedUrlConfigUnmarshaller.Instance;
-                    unmarshalledObject.AwsJobPresignedUrlConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsJobPresignedUrlConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("creationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errorInfo", targetDepth))
                 {
                     var unmarshaller = ErrorInfoUnmarshaller.Instance;
-                    unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastModifiedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("otaUpdateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OtaUpdateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OtaUpdateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("otaUpdateFiles", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<OTAUpdateFile, OTAUpdateFileUnmarshaller>(OTAUpdateFileUnmarshaller.Instance);
-                    unmarshalledObject.OtaUpdateFiles = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<OTAUpdateFile, OTAUpdateFileUnmarshaller>(OTAUpdateFileUnmarshaller.Instance);
+                    unmarshalledObject.OtaUpdateFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("otaUpdateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OtaUpdateId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OtaUpdateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("otaUpdateStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OtaUpdateStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OtaUpdateStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("protocols", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Protocols = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targets", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Targets = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Targets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetSelection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetSelection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetSelection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

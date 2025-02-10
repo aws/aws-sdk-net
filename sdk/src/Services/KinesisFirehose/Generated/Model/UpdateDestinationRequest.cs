@@ -31,15 +31,15 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDestination operation.
-    /// Updates the specified destination of the specified delivery stream.
+    /// Updates the specified destination of the specified Firehose stream.
     /// 
     ///  
     /// <para>
     /// Use this operation to change the destination type (for example, to replace the Amazon
     /// S3 destination with Amazon Redshift) or change the parameters associated with a destination
     /// (for example, to change the bucket name of the Amazon S3 destination). The update
-    /// might not occur immediately. The target delivery stream remains active while the configurations
-    /// are updated, so data writes to the delivery stream can continue during this process.
+    /// might not occur immediately. The target Firehose stream remains active while the configurations
+    /// are updated, so data writes to the Firehose stream can continue during this process.
     /// The updated configurations are usually effective within a few minutes.
     /// </para>
     ///  
@@ -150,7 +150,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream.
+        /// The name of the Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -188,7 +188,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchDestinationUpdate. 
         /// <para>
-        /// Describes an update for a destination in Amazon ES.
+        /// Describes an update for a destination in Amazon OpenSearch Service.
         /// </para>
         /// </summary>
         public ElasticsearchDestinationUpdate ElasticsearchDestinationUpdate
@@ -243,10 +243,6 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property IcebergDestinationUpdate. 
         /// <para>
         ///  Describes an update for a destination in Apache Iceberg Tables. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
         /// </para>
         /// </summary>
         public IcebergDestinationUpdate IcebergDestinationUpdate

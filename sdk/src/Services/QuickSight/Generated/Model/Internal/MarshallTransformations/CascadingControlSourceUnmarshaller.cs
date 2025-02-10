@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CascadingControlSource Object
     /// </summary>  
-    public class CascadingControlSourceUnmarshaller : IUnmarshaller<CascadingControlSource, XmlUnmarshallerContext>, IUnmarshaller<CascadingControlSource, JsonUnmarshallerContext>
+    public class CascadingControlSourceUnmarshaller : IJsonUnmarshaller<CascadingControlSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CascadingControlSource IUnmarshaller<CascadingControlSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CascadingControlSource Unmarshall(JsonUnmarshallerContext context)
+        public CascadingControlSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CascadingControlSource unmarshalledObject = new CascadingControlSource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ColumnToMatch", targetDepth))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.ColumnToMatch = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnToMatch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceSheetControlId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceSheetControlId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceSheetControlId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

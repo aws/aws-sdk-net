@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMeasureName())
             {
                 context.Writer.WritePropertyName("MeasureName");
-                context.Writer.Write(requestObject.MeasureName);
+                context.Writer.WriteStringValue(requestObject.MeasureName);
             }
 
             if(requestObject.IsSetMeasureValue())
             {
                 context.Writer.WritePropertyName("MeasureValue");
-                context.Writer.Write(requestObject.MeasureValue);
+                context.Writer.WriteStringValue(requestObject.MeasureValue);
             }
 
             if(requestObject.IsSetMeasureValueType())
             {
                 context.Writer.WritePropertyName("MeasureValueType");
-                context.Writer.Write(requestObject.MeasureValueType);
+                context.Writer.WriteStringValue(requestObject.MeasureValueType);
             }
 
         }

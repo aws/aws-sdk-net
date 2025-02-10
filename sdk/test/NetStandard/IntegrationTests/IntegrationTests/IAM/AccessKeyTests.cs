@@ -30,7 +30,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
                     CreateAccessKeyResponse response =
                         await Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username });
                     keyId = response.AccessKey.AccessKeyId;
-                    Assert.True(response.AccessKey.CreateDate.Value.Date.CompareTo(DateTime.Now.Date) == 0);
+                    Assert.True(response.AccessKey.CreateDate.Value.Date.CompareTo(DateTime.UtcNow.Date) == 0);
                 }
                 finally
                 {
@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         //[ExpectedException(typeof(NoSuchEntityException))]
         public async Task TestCreateAccessKeyNonExistentUserException()
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
             await AssertExtensions.ExpectExceptionAsync<NoSuchEntityException>(Client.CreateAccessKeyAsync(new CreateAccessKeyRequest() { UserName = username }));
         }
 

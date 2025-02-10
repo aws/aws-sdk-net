@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfusionMatrix Object
     /// </summary>  
-    public class ConfusionMatrixUnmarshaller : IUnmarshaller<ConfusionMatrix, XmlUnmarshallerContext>, IUnmarshaller<ConfusionMatrix, JsonUnmarshallerContext>
+    public class ConfusionMatrixUnmarshaller : IJsonUnmarshaller<ConfusionMatrix, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfusionMatrix IUnmarshaller<ConfusionMatrix, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfusionMatrix Unmarshall(JsonUnmarshallerContext context)
+        public ConfusionMatrix Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfusionMatrix unmarshalledObject = new ConfusionMatrix();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("NumFalseNegatives", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumFalseNegatives = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumFalseNegatives = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumFalsePositives", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumFalsePositives = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumFalsePositives = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumTrueNegatives", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumTrueNegatives = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumTrueNegatives = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumTruePositives", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumTruePositives = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumTruePositives = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

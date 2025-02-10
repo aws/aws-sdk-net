@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -63,75 +66,80 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCheckoutMetadata())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("CheckoutMetadata");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCheckoutMetadataListValue in publicRequest.CheckoutMetadata)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCheckoutMetadata())
-                    {
-                        context.Writer.WritePropertyName("CheckoutMetadata");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCheckoutMetadataListValue in publicRequest.CheckoutMetadata)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = MetadataMarshaller.Instance;
-                            marshaller.Marshall(publicRequestCheckoutMetadataListValue, context);
+                    var marshaller = MetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCheckoutMetadataListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetDigitalSignatureMethod())
-                    {
-                        context.Writer.WritePropertyName("DigitalSignatureMethod");
-                        context.Writer.Write(publicRequest.DigitalSignatureMethod);
-                    }
-
-                    if(publicRequest.IsSetEntitlements())
-                    {
-                        context.Writer.WritePropertyName("Entitlements");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EntitlementDataMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEntitlementsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLicenseArn())
-                    {
-                        context.Writer.WritePropertyName("LicenseArn");
-                        context.Writer.Write(publicRequest.LicenseArn);
-                    }
-
-                    if(publicRequest.IsSetNodeId())
-                    {
-                        context.Writer.WritePropertyName("NodeId");
-                        context.Writer.Write(publicRequest.NodeId);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetDigitalSignatureMethod())
+            {
+                context.Writer.WritePropertyName("DigitalSignatureMethod");
+                context.Writer.WriteStringValue(publicRequest.DigitalSignatureMethod);
+            }
+
+            if(publicRequest.IsSetEntitlements())
+            {
+                context.Writer.WritePropertyName("Entitlements");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEntitlementsListValue in publicRequest.Entitlements)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EntitlementDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEntitlementsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLicenseArn())
+            {
+                context.Writer.WritePropertyName("LicenseArn");
+                context.Writer.WriteStringValue(publicRequest.LicenseArn);
+            }
+
+            if(publicRequest.IsSetNodeId())
+            {
+                context.Writer.WritePropertyName("NodeId");
+                context.Writer.WriteStringValue(publicRequest.NodeId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

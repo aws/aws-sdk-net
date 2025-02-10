@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExperimentTemplateTargetInputFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceArns())
             {
                 context.Writer.WritePropertyName("resourceArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceArnsListValue in requestObject.ResourceArns)
                 {
-                        context.Writer.Write(requestObjectResourceArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceTags())
             {
                 context.Writer.WritePropertyName("resourceTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectResourceTagsKvp in requestObject.ResourceTags)
                 {
                     context.Writer.WritePropertyName(requestObjectResourceTagsKvp.Key);
                     var requestObjectResourceTagsValue = requestObjectResourceTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectResourceTagsValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("resourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
             if(requestObject.IsSetSelectionMode())
             {
                 context.Writer.WritePropertyName("selectionMode");
-                context.Writer.Write(requestObject.SelectionMode);
+                context.Writer.WriteStringValue(requestObject.SelectionMode);
             }
 
         }

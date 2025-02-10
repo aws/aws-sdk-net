@@ -78,8 +78,8 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             {
                 var xDate = (DateTime)x;
                 var yDate = (DateTime)y;
-                xDate = xDate.Kind != DateTimeKind.Utc ? xDate.ToUniversalTime() : xDate;
-                yDate = yDate.Kind != DateTimeKind.Utc ? yDate.ToUniversalTime() : yDate;
+                xDate = xDate.Kind != DateTimeKind.Utc ? throw new Exception("xDate DateTime Kind is not UTC") : xDate;
+                yDate = yDate.Kind != DateTimeKind.Utc ? throw new Exception("yDate DateTime Kind is not UTC") : yDate;
 
                 Assert.IsTrue(xDate.Equals(yDate), "x is not equal to y. x={0} y={1}", xDate, yDate);
                 return;
@@ -475,7 +475,7 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
                 .AddMilliseconds((long)value);
 
             if (value.GetType() == typeof(string))
-                return DateTime.Parse((string)value, CultureInfo.InvariantCulture);
+                return DateTime.Parse((string)value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             throw new InvalidOperationException(string.Format("Could not convert {0} of type {1} to DateTime",
                 value, value.GetType()));

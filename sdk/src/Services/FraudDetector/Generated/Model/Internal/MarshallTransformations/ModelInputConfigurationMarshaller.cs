@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCsvInputTemplate())
             {
                 context.Writer.WritePropertyName("csvInputTemplate");
-                context.Writer.Write(requestObject.CsvInputTemplate);
+                context.Writer.WriteStringValue(requestObject.CsvInputTemplate);
             }
 
             if(requestObject.IsSetEventTypeName())
             {
                 context.Writer.WritePropertyName("eventTypeName");
-                context.Writer.Write(requestObject.EventTypeName);
+                context.Writer.WriteStringValue(requestObject.EventTypeName);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetJsonInputTemplate())
             {
                 context.Writer.WritePropertyName("jsonInputTemplate");
-                context.Writer.Write(requestObject.JsonInputTemplate);
+                context.Writer.WriteStringValue(requestObject.JsonInputTemplate);
             }
 
             if(requestObject.IsSetUseEventVariables())
             {
                 context.Writer.WritePropertyName("useEventVariables");
-                context.Writer.Write(requestObject.UseEventVariables.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseEventVariables.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryCapacityUnits())
             {
                 context.Writer.WritePropertyName("QueryCapacityUnits");
-                context.Writer.Write(requestObject.QueryCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.QueryCapacityUnits.Value);
             }
 
             if(requestObject.IsSetStorageCapacityUnits())
             {
                 context.Writer.WritePropertyName("StorageCapacityUnits");
-                context.Writer.Write(requestObject.StorageCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageCapacityUnits.Value);
             }
 
         }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReportOverrides Object
     /// </summary>  
-    public class ReportOverridesUnmarshaller : IUnmarshaller<ReportOverrides, XmlUnmarshallerContext>, IUnmarshaller<ReportOverrides, JsonUnmarshallerContext>
+    public class ReportOverridesUnmarshaller : IJsonUnmarshaller<ReportOverrides, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReportOverrides IUnmarshaller<ReportOverrides, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReportOverrides Unmarshall(JsonUnmarshallerContext context)
+        public ReportOverrides Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReportOverrides unmarshalledObject = new ReportOverrides();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Deleted", targetDepth))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Deleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Skipped", targetDepth))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Skipped = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Skipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Transferred", targetDepth))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Transferred = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Transferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Verified", targetDepth))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
-                    unmarshalledObject.Verified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Verified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -101,17 +101,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         internal static DateTime ToDateTime(string value)
         {
-            //return DateTime.ParseExact(value, AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
             DateTime result = (DateTime)Convert.ChangeType(value, typeof(DateTime), System.Globalization.CultureInfo.InvariantCulture);
             result = result.ToUniversalTime();
             return result;
         }
         internal static int ToInt(string value)
         {
-            //return int.Parse(value, CultureInfo.InvariantCulture);
             int result = Unmarshall<int>(value);
             return result;
         }
+        internal static long ToLong(string value)
+        {
+            long result = Unmarshall<long>(value);
+            return result;
+        }
+
         internal static string ToString(string value)
         {
             return value;

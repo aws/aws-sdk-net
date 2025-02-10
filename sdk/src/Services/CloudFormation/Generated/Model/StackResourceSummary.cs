@@ -48,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Information about whether the resource's actual configuration differs, or has <i>drifted</i>,
         /// from its expected configuration, as defined in the stack template and any values specified
-        /// as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+        /// unmanaged configuration changes to stacks and resources with drift detection</a>.
         /// </para>
         /// </summary>
         public StackResourceDriftInformationSummary DriftInformation
@@ -179,8 +179,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.)
+        /// Type of resource. (For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// Web Services resource and property types reference</a> in the <i>CloudFormation User
+        /// Guide</i>.)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

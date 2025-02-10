@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -61,68 +64,73 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/typedlink/attach";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Attributes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributes())
-                    {
-                        context.Writer.WritePropertyName("Attributes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AttributeNameAndValueMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAttributesListValue, context);
+                    var marshaller = AttributeNameAndValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttributesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceObjectReference())
-                    {
-                        context.Writer.WritePropertyName("SourceObjectReference");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ObjectReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceObjectReference, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTargetObjectReference())
-                    {
-                        context.Writer.WritePropertyName("TargetObjectReference");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ObjectReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TargetObjectReference, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTypedLinkFacet())
-                    {
-                        context.Writer.WritePropertyName("TypedLinkFacet");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TypedLinkFacet, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetSourceObjectReference())
+            {
+                context.Writer.WritePropertyName("SourceObjectReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObjectReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceObjectReference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetObjectReference())
+            {
+                context.Writer.WritePropertyName("TargetObjectReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObjectReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetObjectReference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTypedLinkFacet())
+            {
+                context.Writer.WritePropertyName("TypedLinkFacet");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TypedLinkSchemaAndFacetNameMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TypedLinkFacet, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetDirectoryArn()) 

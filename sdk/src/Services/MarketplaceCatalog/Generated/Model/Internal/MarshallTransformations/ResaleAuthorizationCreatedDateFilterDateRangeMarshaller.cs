@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterValue())
             {
                 context.Writer.WritePropertyName("AfterValue");
-                context.Writer.Write(requestObject.AfterValue);
+                context.Writer.WriteStringValue(requestObject.AfterValue);
             }
 
             if(requestObject.IsSetBeforeValue())
             {
                 context.Writer.WritePropertyName("BeforeValue");
-                context.Writer.Write(requestObject.BeforeValue);
+                context.Writer.WriteStringValue(requestObject.BeforeValue);
             }
 
         }

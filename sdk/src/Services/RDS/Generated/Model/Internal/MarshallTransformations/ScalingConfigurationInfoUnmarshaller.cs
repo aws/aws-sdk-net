@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScalingConfigurationInfo Object
     /// </summary>  
-    public class ScalingConfigurationInfoUnmarshaller : IUnmarshaller<ScalingConfigurationInfo, XmlUnmarshallerContext>, IUnmarshaller<ScalingConfigurationInfo, JsonUnmarshallerContext>
+    public class ScalingConfigurationInfoUnmarshaller : IXmlUnmarshaller<ScalingConfigurationInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScalingConfigurationInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScalingConfigurationInfoUnmarshaller _instance = new ScalingConfigurationInfoUnmarshaller();        
 

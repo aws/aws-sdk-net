@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -64,80 +67,85 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/accounts/{AwsAccountId}/embed-url/anonymous-user";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowedDomains())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AllowedDomains");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowedDomains())
-                    {
-                        context.Writer.WritePropertyName("AllowedDomains");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedDomainsListValue in publicRequest.AllowedDomains)
-                        {
-                                context.Writer.Write(publicRequestAllowedDomainsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthorizedResourceArns())
-                    {
-                        context.Writer.WritePropertyName("AuthorizedResourceArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuthorizedResourceArnsListValue in publicRequest.AuthorizedResourceArns)
-                        {
-                                context.Writer.Write(publicRequestAuthorizedResourceArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetExperienceConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ExperienceConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AnonymousUserEmbeddingExperienceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNamespace())
-                    {
-                        context.Writer.WritePropertyName("Namespace");
-                        context.Writer.Write(publicRequest.Namespace);
-                    }
-
-                    if(publicRequest.IsSetSessionLifetimeInMinutes())
-                    {
-                        context.Writer.WritePropertyName("SessionLifetimeInMinutes");
-                        context.Writer.Write(publicRequest.SessionLifetimeInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetSessionTags())
-                    {
-                        context.Writer.WritePropertyName("SessionTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSessionTagsListValue in publicRequest.SessionTags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SessionTagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSessionTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAllowedDomainsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAuthorizedResourceArns())
+            {
+                context.Writer.WritePropertyName("AuthorizedResourceArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAuthorizedResourceArnsListValue in publicRequest.AuthorizedResourceArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestAuthorizedResourceArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetExperienceConfiguration())
+            {
+                context.Writer.WritePropertyName("ExperienceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnonymousUserEmbeddingExperienceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExperienceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNamespace())
+            {
+                context.Writer.WritePropertyName("Namespace");
+                context.Writer.WriteStringValue(publicRequest.Namespace);
+            }
+
+            if(publicRequest.IsSetSessionLifetimeInMinutes())
+            {
+                context.Writer.WritePropertyName("SessionLifetimeInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.SessionLifetimeInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetSessionTags())
+            {
+                context.Writer.WritePropertyName("SessionTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSessionTagsListValue in publicRequest.SessionTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SessionTagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSessionTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeCredit())
             {
                 context.Writer.WritePropertyName("IncludeCredit");
-                context.Writer.Write(requestObject.IncludeCredit.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeCredit.Value);
             }
 
             if(requestObject.IsSetIncludeDiscount())
             {
                 context.Writer.WritePropertyName("IncludeDiscount");
-                context.Writer.Write(requestObject.IncludeDiscount.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeDiscount.Value);
             }
 
             if(requestObject.IsSetIncludeOtherSubscription())
             {
                 context.Writer.WritePropertyName("IncludeOtherSubscription");
-                context.Writer.Write(requestObject.IncludeOtherSubscription.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeOtherSubscription.Value);
             }
 
             if(requestObject.IsSetIncludeRecurring())
             {
                 context.Writer.WritePropertyName("IncludeRecurring");
-                context.Writer.Write(requestObject.IncludeRecurring.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeRecurring.Value);
             }
 
             if(requestObject.IsSetIncludeRefund())
             {
                 context.Writer.WritePropertyName("IncludeRefund");
-                context.Writer.Write(requestObject.IncludeRefund.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeRefund.Value);
             }
 
             if(requestObject.IsSetIncludeSubscription())
             {
                 context.Writer.WritePropertyName("IncludeSubscription");
-                context.Writer.Write(requestObject.IncludeSubscription.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeSubscription.Value);
             }
 
             if(requestObject.IsSetIncludeSupport())
             {
                 context.Writer.WritePropertyName("IncludeSupport");
-                context.Writer.Write(requestObject.IncludeSupport.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeSupport.Value);
             }
 
             if(requestObject.IsSetIncludeTax())
             {
                 context.Writer.WritePropertyName("IncludeTax");
-                context.Writer.Write(requestObject.IncludeTax.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeTax.Value);
             }
 
             if(requestObject.IsSetIncludeUpfront())
             {
                 context.Writer.WritePropertyName("IncludeUpfront");
-                context.Writer.Write(requestObject.IncludeUpfront.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeUpfront.Value);
             }
 
             if(requestObject.IsSetUseAmortized())
             {
                 context.Writer.WritePropertyName("UseAmortized");
-                context.Writer.Write(requestObject.UseAmortized.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseAmortized.Value);
             }
 
             if(requestObject.IsSetUseBlended())
             {
                 context.Writer.WritePropertyName("UseBlended");
-                context.Writer.Write(requestObject.UseBlended.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseBlended.Value);
             }
 
         }

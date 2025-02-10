@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -63,91 +66,96 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultValue())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultValue())
-                    {
-                        context.Writer.WritePropertyName("DefaultValue");
-                        context.Writer.Write(publicRequest.DefaultValue);
-                    }
-
-                    if(publicRequest.IsSetEffectiveStart())
-                    {
-                        context.Writer.WritePropertyName("EffectiveStart");
-                        context.Writer.Write(publicRequest.EffectiveStart);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetResourceTags())
-                    {
-                        context.Writer.WritePropertyName("ResourceTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ResourceTagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestResourceTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRules())
-                    {
-                        context.Writer.WritePropertyName("Rules");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRulesListValue in publicRequest.Rules)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CostCategoryRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRulesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRuleVersion())
-                    {
-                        context.Writer.WritePropertyName("RuleVersion");
-                        context.Writer.Write(publicRequest.RuleVersion);
-                    }
-
-                    if(publicRequest.IsSetSplitChargeRules())
-                    {
-                        context.Writer.WritePropertyName("SplitChargeRules");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSplitChargeRulesListValue in publicRequest.SplitChargeRules)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CostCategorySplitChargeRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSplitChargeRulesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DefaultValue");
+                context.Writer.WriteStringValue(publicRequest.DefaultValue);
             }
+
+            if(publicRequest.IsSetEffectiveStart())
+            {
+                context.Writer.WritePropertyName("EffectiveStart");
+                context.Writer.WriteStringValue(publicRequest.EffectiveStart);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetResourceTags())
+            {
+                context.Writer.WritePropertyName("ResourceTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceTagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRules())
+            {
+                context.Writer.WritePropertyName("Rules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRulesListValue in publicRequest.Rules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CostCategoryRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRuleVersion())
+            {
+                context.Writer.WritePropertyName("RuleVersion");
+                context.Writer.WriteStringValue(publicRequest.RuleVersion);
+            }
+
+            if(publicRequest.IsSetSplitChargeRules())
+            {
+                context.Writer.WritePropertyName("SplitChargeRules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSplitChargeRulesListValue in publicRequest.SplitChargeRules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CostCategorySplitChargeRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSplitChargeRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFeaturizationMethodName())
             {
                 context.Writer.WritePropertyName("FeaturizationMethodName");
-                context.Writer.Write(requestObject.FeaturizationMethodName);
+                context.Writer.WriteStringValue(requestObject.FeaturizationMethodName);
             }
 
             if(requestObject.IsSetFeaturizationMethodParameters())
             {
                 context.Writer.WritePropertyName("FeaturizationMethodParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFeaturizationMethodParametersKvp in requestObject.FeaturizationMethodParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectFeaturizationMethodParametersKvp.Key);
                     var requestObjectFeaturizationMethodParametersValue = requestObjectFeaturizationMethodParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectFeaturizationMethodParametersValue);
+                        context.Writer.WriteStringValue(requestObjectFeaturizationMethodParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

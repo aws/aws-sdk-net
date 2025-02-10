@@ -44,6 +44,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (listBucketsRequest.IsSetMaxBuckets())
                 request.Parameters.Add("max-buckets", StringUtils.FromInt(listBucketsRequest.MaxBuckets));
 
+            if (listBucketsRequest.IsSetPrefix())
+                request.Parameters.Add("prefix", StringUtils.FromString(listBucketsRequest.Prefix));
+
+            if (listBucketsRequest.IsSetBucketRegion())
+                request.Parameters.Add("bucket-region", StringUtils.FromString(listBucketsRequest.BucketRegion));
+
             request.ResourcePath = "/";
             request.UseQueryString = true;
 

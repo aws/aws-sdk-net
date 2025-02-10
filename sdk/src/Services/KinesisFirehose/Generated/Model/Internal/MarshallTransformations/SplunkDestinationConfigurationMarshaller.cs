@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SplunkBufferingHintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BufferingHints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHECAcknowledgmentTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("HECAcknowledgmentTimeoutInSeconds");
-                context.Writer.Write(requestObject.HECAcknowledgmentTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.HECAcknowledgmentTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetHECEndpoint())
             {
                 context.Writer.WritePropertyName("HECEndpoint");
-                context.Writer.Write(requestObject.HECEndpoint);
+                context.Writer.WriteStringValue(requestObject.HECEndpoint);
             }
 
             if(requestObject.IsSetHECEndpointType())
             {
                 context.Writer.WritePropertyName("HECEndpointType");
-                context.Writer.Write(requestObject.HECEndpointType);
+                context.Writer.WriteStringValue(requestObject.HECEndpointType);
             }
 
             if(requestObject.IsSetHECToken())
             {
                 context.Writer.WritePropertyName("HECToken");
-                context.Writer.Write(requestObject.HECToken);
+                context.Writer.WriteStringValue(requestObject.HECToken);
             }
 
             if(requestObject.IsSetProcessingConfiguration())
             {
                 context.Writer.WritePropertyName("ProcessingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryOptions())
             {
                 context.Writer.WritePropertyName("RetryOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SplunkRetryOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3BackupMode())
             {
                 context.Writer.WritePropertyName("S3BackupMode");
-                context.Writer.Write(requestObject.S3BackupMode);
+                context.Writer.WriteStringValue(requestObject.S3BackupMode);
             }
 
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretsManagerConfiguration())
             {
                 context.Writer.WritePropertyName("SecretsManagerConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SecretsManagerConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecretsManagerConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -44,7 +44,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Redis OSS engine. 
+        /// The engine. 
         /// </para>
         /// </summary>
         public string Engine

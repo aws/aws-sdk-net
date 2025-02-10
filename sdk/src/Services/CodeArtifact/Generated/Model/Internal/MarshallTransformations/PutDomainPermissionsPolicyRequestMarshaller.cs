@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
@@ -61,43 +64,48 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v1/domain/permissions/policy";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDomain())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDomain())
-                    {
-                        context.Writer.WritePropertyName("domain");
-                        context.Writer.Write(publicRequest.Domain);
-                    }
-
-                    if(publicRequest.IsSetDomainOwner())
-                    {
-                        context.Writer.WritePropertyName("domainOwner");
-                        context.Writer.Write(publicRequest.DomainOwner);
-                    }
-
-                    if(publicRequest.IsSetPolicyDocument())
-                    {
-                        context.Writer.WritePropertyName("policyDocument");
-                        context.Writer.Write(publicRequest.PolicyDocument);
-                    }
-
-                    if(publicRequest.IsSetPolicyRevision())
-                    {
-                        context.Writer.WritePropertyName("policyRevision");
-                        context.Writer.Write(publicRequest.PolicyRevision);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("domain");
+                context.Writer.WriteStringValue(publicRequest.Domain);
             }
+
+            if(publicRequest.IsSetDomainOwner())
+            {
+                context.Writer.WritePropertyName("domainOwner");
+                context.Writer.WriteStringValue(publicRequest.DomainOwner);
+            }
+
+            if(publicRequest.IsSetPolicyDocument())
+            {
+                context.Writer.WritePropertyName("policyDocument");
+                context.Writer.WriteStringValue(publicRequest.PolicyDocument);
+            }
+
+            if(publicRequest.IsSetPolicyRevision())
+            {
+                context.Writer.WritePropertyName("policyRevision");
+                context.Writer.WriteStringValue(publicRequest.PolicyRevision);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

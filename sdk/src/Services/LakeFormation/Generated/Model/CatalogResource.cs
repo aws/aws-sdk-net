@@ -34,6 +34,26 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class CatalogResource
     {
+        private string _id;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// An identifier for the catalog resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
     }
 }

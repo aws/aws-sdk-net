@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSelectedColumns())
             {
                 context.Writer.WritePropertyName("SelectedColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedColumnsListValue in requestObject.SelectedColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnIdentifierMarshaller.Instance;
                     marshaller.Marshall(requestObjectSelectedColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelectedFieldOptions())
             {
                 context.Writer.WritePropertyName("SelectedFieldOptions");
-                context.Writer.Write(requestObject.SelectedFieldOptions);
+                context.Writer.WriteStringValue(requestObject.SelectedFieldOptions);
             }
 
             if(requestObject.IsSetSelectedFields())
             {
                 context.Writer.WritePropertyName("SelectedFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedFieldsListValue in requestObject.SelectedFields)
                 {
-                        context.Writer.Write(requestObjectSelectedFieldsListValue);
+                        context.Writer.WriteStringValue(requestObjectSelectedFieldsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

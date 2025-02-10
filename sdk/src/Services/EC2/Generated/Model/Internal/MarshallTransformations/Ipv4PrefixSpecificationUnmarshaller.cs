@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ipv4PrefixSpecification Object
     /// </summary>  
-    public class Ipv4PrefixSpecificationUnmarshaller : IUnmarshaller<Ipv4PrefixSpecification, XmlUnmarshallerContext>, IUnmarshaller<Ipv4PrefixSpecification, JsonUnmarshallerContext>
+    public class Ipv4PrefixSpecificationUnmarshaller : IXmlUnmarshaller<Ipv4PrefixSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Ipv4PrefixSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Ipv4PrefixSpecificationUnmarshaller _instance = new Ipv4PrefixSpecificationUnmarshaller();        
 

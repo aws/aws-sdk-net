@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplyNormalization())
             {
                 context.Writer.WritePropertyName("applyNormalization");
-                context.Writer.Write(requestObject.ApplyNormalization.Value);
+                context.Writer.WriteBooleanValue(requestObject.ApplyNormalization.Value);
             }
 
             if(requestObject.IsSetInputSourceARN())
             {
                 context.Writer.WritePropertyName("inputSourceARN");
-                context.Writer.Write(requestObject.InputSourceARN);
+                context.Writer.WriteStringValue(requestObject.InputSourceARN);
             }
 
             if(requestObject.IsSetSchemaName())
             {
                 context.Writer.WritePropertyName("schemaName");
-                context.Writer.Write(requestObject.SchemaName);
+                context.Writer.WriteStringValue(requestObject.SchemaName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDailyCap())
             {
                 context.Writer.WritePropertyName("DailyCap");
-                context.Writer.Write(requestObject.DailyCap.Value);
+                context.Writer.WriteNumberValue(requestObject.DailyCap.Value);
             }
 
             if(requestObject.IsSetEndpointReentryCap())
             {
                 context.Writer.WritePropertyName("EndpointReentryCap");
-                context.Writer.Write(requestObject.EndpointReentryCap.Value);
+                context.Writer.WriteNumberValue(requestObject.EndpointReentryCap.Value);
             }
 
             if(requestObject.IsSetEndpointReentryInterval())
             {
                 context.Writer.WritePropertyName("EndpointReentryInterval");
-                context.Writer.Write(requestObject.EndpointReentryInterval);
+                context.Writer.WriteStringValue(requestObject.EndpointReentryInterval);
             }
 
             if(requestObject.IsSetMessagesPerSecond())
             {
                 context.Writer.WritePropertyName("MessagesPerSecond");
-                context.Writer.Write(requestObject.MessagesPerSecond.Value);
+                context.Writer.WriteNumberValue(requestObject.MessagesPerSecond.Value);
             }
 
             if(requestObject.IsSetTimeframeCap())
             {
                 context.Writer.WritePropertyName("TimeframeCap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JourneyTimeframeCapMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeframeCap, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTotalCap())
             {
                 context.Writer.WritePropertyName("TotalCap");
-                context.Writer.Write(requestObject.TotalCap.Value);
+                context.Writer.WriteNumberValue(requestObject.TotalCap.Value);
             }
 
         }

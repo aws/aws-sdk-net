@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOCSPUrl())
             {
                 context.Writer.WritePropertyName("OCSPUrl");
-                context.Writer.Write(requestObject.OCSPUrl);
+                context.Writer.WriteStringValue(requestObject.OCSPUrl);
             }
 
         }

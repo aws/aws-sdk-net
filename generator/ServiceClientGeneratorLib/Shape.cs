@@ -402,20 +402,6 @@ namespace ServiceClientGenerator
             }
         }
 
-        public bool IsEventStream
-        {
-            get
-            {
-                var isEventStream = data[EventStreamKey];
-                if (isEventStream != null && isEventStream.IsBoolean)
-                {
-                    return (bool)isEventStream;
-                }
-
-                return false;
-            }
-        }
-
         /// <summary>
         /// If this shape is a primitive type this returns true so that the request can show if the member has been set or not
         /// </summary>
@@ -438,7 +424,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Determines if the shape's type is a timestamp
         /// </summary>
-        public bool IsDateTime
+        public bool IsTimeStamp
         {
             get { return this.Type == "timestamp"; }
         }
@@ -818,7 +804,7 @@ namespace ServiceClientGenerator
         /// </summary>
         public string PrimitiveMarshaller(MarshallLocation marshallLocation)
         {
-            if (this.IsDateTime)
+            if (this.IsTimeStamp)
             {
                 var timestampFormat = GetTimestampFormat(marshallLocation);
                 string formatAppend = string.Empty;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceLastModifiedDate())
             {
                 context.Writer.WritePropertyName("DeviceLastModifiedDate");
-                context.Writer.Write(requestObject.DeviceLastModifiedDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DeviceLastModifiedDate.Value)));
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetOp())
             {
                 context.Writer.WritePropertyName("Op");
-                context.Writer.Write(requestObject.Op);
+                context.Writer.WriteStringValue(requestObject.Op);
             }
 
             if(requestObject.IsSetSyncCount())
             {
                 context.Writer.WritePropertyName("SyncCount");
-                context.Writer.Write(requestObject.SyncCount.Value);
+                context.Writer.WriteNumberValue(requestObject.SyncCount.Value);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

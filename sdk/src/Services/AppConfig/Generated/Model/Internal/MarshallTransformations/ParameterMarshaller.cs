@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDynamic())
             {
                 context.Writer.WritePropertyName("Dynamic");
-                context.Writer.Write(requestObject.Dynamic.Value);
+                context.Writer.WriteBooleanValue(requestObject.Dynamic.Value);
             }
 
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("Required");
-                context.Writer.Write(requestObject.Required.Value);
+                context.Writer.WriteBooleanValue(requestObject.Required.Value);
             }
 
         }

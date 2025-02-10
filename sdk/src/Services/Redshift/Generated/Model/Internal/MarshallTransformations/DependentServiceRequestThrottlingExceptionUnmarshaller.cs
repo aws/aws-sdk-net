@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DependentServiceRequestThrottlingException operation
     /// </summary>  
-    public class DependentServiceRequestThrottlingExceptionUnmarshaller : IErrorResponseUnmarshaller<DependentServiceRequestThrottlingException, XmlUnmarshallerContext>
+    public class DependentServiceRequestThrottlingExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DependentServiceRequestThrottlingException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

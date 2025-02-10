@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstantInitializationVector())
             {
                 context.Writer.WritePropertyName("ConstantInitializationVector");
-                context.Writer.Write(requestObject.ConstantInitializationVector);
+                context.Writer.WriteStringValue(requestObject.ConstantInitializationVector);
             }
 
             if(requestObject.IsSetEncryptionMethod())
             {
                 context.Writer.WritePropertyName("EncryptionMethod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMethodMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionMethod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeyRotationIntervalSeconds())
             {
                 context.Writer.WritePropertyName("KeyRotationIntervalSeconds");
-                context.Writer.Write(requestObject.KeyRotationIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.KeyRotationIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetSpekeKeyProvider())
             {
                 context.Writer.WritePropertyName("SpekeKeyProvider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpekeKeyProviderMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpekeKeyProvider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

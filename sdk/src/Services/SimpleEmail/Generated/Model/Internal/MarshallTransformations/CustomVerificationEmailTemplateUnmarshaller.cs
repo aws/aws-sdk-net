@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomVerificationEmailTemplate Object
     /// </summary>  
-    public class CustomVerificationEmailTemplateUnmarshaller : IUnmarshaller<CustomVerificationEmailTemplate, XmlUnmarshallerContext>, IUnmarshaller<CustomVerificationEmailTemplate, JsonUnmarshallerContext>
+    public class CustomVerificationEmailTemplateUnmarshaller : IXmlUnmarshaller<CustomVerificationEmailTemplate, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CustomVerificationEmailTemplate Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CustomVerificationEmailTemplateUnmarshaller _instance = new CustomVerificationEmailTemplateUnmarshaller();        
 

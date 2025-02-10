@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,63 +66,68 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCsvClassifier())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCsvClassifier())
-                    {
-                        context.Writer.WritePropertyName("CsvClassifier");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("CsvClassifier");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CreateCsvClassifierRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CsvClassifier, context);
+                var marshaller = CreateCsvClassifierRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CsvClassifier, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGrokClassifier())
-                    {
-                        context.Writer.WritePropertyName("GrokClassifier");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreateGrokClassifierRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GrokClassifier, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJsonClassifier())
-                    {
-                        context.Writer.WritePropertyName("JsonClassifier");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreateJsonClassifierRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JsonClassifier, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetXMLClassifier())
-                    {
-                        context.Writer.WritePropertyName("XMLClassifier");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreateXMLClassifierRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.XMLClassifier, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetGrokClassifier())
+            {
+                context.Writer.WritePropertyName("GrokClassifier");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateGrokClassifierRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GrokClassifier, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJsonClassifier())
+            {
+                context.Writer.WritePropertyName("JsonClassifier");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateJsonClassifierRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JsonClassifier, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetXMLClassifier())
+            {
+                context.Writer.WritePropertyName("XMLClassifier");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateXMLClassifierRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.XMLClassifier, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

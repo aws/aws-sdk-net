@@ -40,6 +40,7 @@ namespace Amazon.EventBridge.Model
         private ConnectionState _connectionState;
         private DateTime? _creationTime;
         private string _description;
+        private DescribeConnectionConnectivityParameters _invocationConnectivityParameters;
         private DateTime? _lastAuthorizedTime;
         private DateTime? _lastModifiedTime;
         private string _name;
@@ -154,6 +155,30 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationConnectivityParameters. 
+        /// <para>
+        /// For connections to private resource endpoints. The parameters EventBridge uses to
+        /// invoke the resource endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting
+        /// to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public DescribeConnectionConnectivityParameters InvocationConnectivityParameters
+        {
+            get { return this._invocationConnectivityParameters; }
+            set { this._invocationConnectivityParameters = value; }
+        }
+
+        // Check to see if InvocationConnectivityParameters property is set
+        internal bool IsSetInvocationConnectivityParameters()
+        {
+            return this._invocationConnectivityParameters != null;
         }
 
         /// <summary>

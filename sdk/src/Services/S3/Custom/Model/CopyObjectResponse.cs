@@ -28,8 +28,10 @@ namespace Amazon.S3.Model
         private string lastModified;
         private string _checksumCRC32;
         private string _checksumCRC32C;
+        private string _checksumCRC64NVME;
         private string _checksumSHA1;
         private string _checksumSHA256;
+        private ChecksumType checksumType;
 
         private Expiration expiration;
         private string srcVersionId;
@@ -133,7 +135,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// <para>
         /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object encryption. 
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
+        /// The value of this header is a Base64 encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -185,7 +187,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
-        /// The base64-encoded, 32-bit CRC32 checksum of the object.
+        /// The Base64 encoded, 32-bit <c>CRC-32</c> checksum of the object. This checksum is only present
+        /// if it was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC32
@@ -203,7 +207,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
-        /// The base64-encoded, 32-bit CRC32C checksum of the object.
+        /// The Base64 encoded, 32-bit <c>CRC-32C</c> checksum of the object. This checksum is only present
+        /// if it was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC32C
@@ -219,9 +225,33 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumCRC64NVME. 
+        /// <para>
+        /// he Base64 encoded, 64-bit <c>CRC-64NVME</c> checksum of the object. This checksum is present if 
+        /// the object being copied was uploaded with the <c>CRC-64NVME</c> checksum algorithm, or if the 
+        /// object was uploaded without a checksum (and Amazon S3 added the default checksum, <c>CRC-64NVME</c>, 
+        /// to the uploaded object). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public string ChecksumCRC64NVME
+        {
+            get { return this._checksumCRC64NVME; }
+            set { this._checksumCRC64NVME = value; }
+        }
+
+        // Check to see if ChecksumCRC64NVME property is set
+        internal bool IsSetChecksumCRC64NVME()
+        {
+            return this._checksumCRC64NVME != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
-        /// The base64-encoded, 160-bit SHA-1 digest of the object.
+        /// The Base64 encoded, 160-bit <c>SHA-1</c> digest of the object. This will only be present 
+        /// if it was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA1
@@ -239,7 +269,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
-        /// The base64-encoded, 256-bit SHA-256 digest of the object.
+        /// The Base64 encoded, 256-bit <c>SHA-256</c> checksum of the object. This checksum is only present
+        /// if it was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA256
@@ -252,6 +284,29 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumSHA256()
         {
             return this._checksumSHA256 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChecksumType.
+        /// <para>
+        /// The checksum type that is used to calculate the object's checksum value.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// Checking object integrity in the Amazon S3 User Guide</a>.
+        /// </para>
+        /// </summary>
+        public ChecksumType ChecksumType
+        {
+            get { return this.checksumType; }
+            set { this.checksumType = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ChecksumType is set.
+        /// </summary>
+        /// <returns>true, if ChecksumType property is set.</returns>
+        internal bool IsSetChecksumType()
+        {
+            return checksumType != null;
         }
     }
 }

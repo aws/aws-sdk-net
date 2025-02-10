@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MediaStreamAttributesRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.Attributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClockRate())
             {
                 context.Writer.WritePropertyName("clockRate");
-                context.Writer.Write(requestObject.ClockRate.Value);
+                context.Writer.WriteNumberValue(requestObject.ClockRate.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetMediaStreamId())
             {
                 context.Writer.WritePropertyName("mediaStreamId");
-                context.Writer.Write(requestObject.MediaStreamId.Value);
+                context.Writer.WriteNumberValue(requestObject.MediaStreamId.Value);
             }
 
             if(requestObject.IsSetMediaStreamName())
             {
                 context.Writer.WritePropertyName("mediaStreamName");
-                context.Writer.Write(requestObject.MediaStreamName);
+                context.Writer.WriteStringValue(requestObject.MediaStreamName);
             }
 
             if(requestObject.IsSetMediaStreamType())
             {
                 context.Writer.WritePropertyName("mediaStreamType");
-                context.Writer.Write(requestObject.MediaStreamType);
+                context.Writer.WriteStringValue(requestObject.MediaStreamType);
             }
 
             if(requestObject.IsSetVideoFormat())
             {
                 context.Writer.WritePropertyName("videoFormat");
-                context.Writer.Write(requestObject.VideoFormat);
+                context.Writer.WriteStringValue(requestObject.VideoFormat);
             }
 
         }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Xavc4kProfileSettings Object
     /// </summary>  
-    public class Xavc4kProfileSettingsUnmarshaller : IUnmarshaller<Xavc4kProfileSettings, XmlUnmarshallerContext>, IUnmarshaller<Xavc4kProfileSettings, JsonUnmarshallerContext>
+    public class Xavc4kProfileSettingsUnmarshaller : IJsonUnmarshaller<Xavc4kProfileSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Xavc4kProfileSettings IUnmarshaller<Xavc4kProfileSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Xavc4kProfileSettings Unmarshall(JsonUnmarshallerContext context)
+        public Xavc4kProfileSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Xavc4kProfileSettings unmarshalledObject = new Xavc4kProfileSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bitrateClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BitrateClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BitrateClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codecProfile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CodecProfile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodecProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("flickerAdaptiveQuantization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlickerAdaptiveQuantization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlickerAdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gopBReference", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GopBReference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GopBReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("gopClosedCadence", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.GopClosedCadence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GopClosedCadence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hrdBufferSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HrdBufferSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HrdBufferSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("qualityTuningLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QualityTuningLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QualityTuningLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slices", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Slices = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Slices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

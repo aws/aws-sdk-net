@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -62,12 +65,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
+            
+            if (publicRequest.IsSetThingPrincipalType())
+                request.Parameters.Add("thingPrincipalType", StringUtils.FromString(publicRequest.ThingPrincipalType));
             request.ResourcePath = "/things/{thingName}/principals";
         
             if (publicRequest.IsSetPrincipal()) 
             {
                 request.Headers["x-amzn-principal"] = publicRequest.Principal;
             }
+            request.UseQueryString = true;
 
             return request;
         }

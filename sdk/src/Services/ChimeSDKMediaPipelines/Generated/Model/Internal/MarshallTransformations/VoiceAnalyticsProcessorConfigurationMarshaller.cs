@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpeakerSearchStatus())
             {
                 context.Writer.WritePropertyName("SpeakerSearchStatus");
-                context.Writer.Write(requestObject.SpeakerSearchStatus);
+                context.Writer.WriteStringValue(requestObject.SpeakerSearchStatus);
             }
 
             if(requestObject.IsSetVoiceToneAnalysisStatus())
             {
                 context.Writer.WritePropertyName("VoiceToneAnalysisStatus");
-                context.Writer.Write(requestObject.VoiceToneAnalysisStatus);
+                context.Writer.WriteStringValue(requestObject.VoiceToneAnalysisStatus);
             }
 
         }

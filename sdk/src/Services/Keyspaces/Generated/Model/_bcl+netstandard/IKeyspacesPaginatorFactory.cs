@@ -40,5 +40,10 @@ namespace Amazon.Keyspaces.Model
         /// Paginator for ListTagsForResource operation
         ///</summary>
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Paginator for ListTypes operation
+        ///</summary>
+        IListTypesPaginator ListTypes(ListTypesRequest request);
     }
 }

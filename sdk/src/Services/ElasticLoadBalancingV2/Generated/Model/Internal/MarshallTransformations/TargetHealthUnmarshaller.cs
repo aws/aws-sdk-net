@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetHealth Object
     /// </summary>  
-    public class TargetHealthUnmarshaller : IUnmarshaller<TargetHealth, XmlUnmarshallerContext>, IUnmarshaller<TargetHealth, JsonUnmarshallerContext>
+    public class TargetHealthUnmarshaller : IXmlUnmarshaller<TargetHealth, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetHealth Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetHealthUnmarshaller _instance = new TargetHealthUnmarshaller();        
 

@@ -38,8 +38,28 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class KnowledgeBaseFlowNodeConfiguration
     {
+        private GuardrailConfiguration _guardrailConfiguration;
         private string _knowledgeBaseId;
         private string _modelId;
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// Contains configurations for a guardrail to apply during query and response generation
+        /// for the knowledge base in this configuration.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 

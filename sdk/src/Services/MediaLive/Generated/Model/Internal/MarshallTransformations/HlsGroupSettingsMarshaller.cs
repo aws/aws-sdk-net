@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,289 +49,289 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdMarkersListValue in requestObject.AdMarkers)
                 {
-                        context.Writer.Write(requestObjectAdMarkersListValue);
+                        context.Writer.WriteStringValue(requestObjectAdMarkersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBaseUrlContent())
             {
                 context.Writer.WritePropertyName("baseUrlContent");
-                context.Writer.Write(requestObject.BaseUrlContent);
+                context.Writer.WriteStringValue(requestObject.BaseUrlContent);
             }
 
             if(requestObject.IsSetBaseUrlContent1())
             {
                 context.Writer.WritePropertyName("baseUrlContent1");
-                context.Writer.Write(requestObject.BaseUrlContent1);
+                context.Writer.WriteStringValue(requestObject.BaseUrlContent1);
             }
 
             if(requestObject.IsSetBaseUrlManifest())
             {
                 context.Writer.WritePropertyName("baseUrlManifest");
-                context.Writer.Write(requestObject.BaseUrlManifest);
+                context.Writer.WriteStringValue(requestObject.BaseUrlManifest);
             }
 
             if(requestObject.IsSetBaseUrlManifest1())
             {
                 context.Writer.WritePropertyName("baseUrlManifest1");
-                context.Writer.Write(requestObject.BaseUrlManifest1);
+                context.Writer.WriteStringValue(requestObject.BaseUrlManifest1);
             }
 
             if(requestObject.IsSetCaptionLanguageMappings())
             {
                 context.Writer.WritePropertyName("captionLanguageMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionLanguageMappingsListValue in requestObject.CaptionLanguageMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptionLanguageMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionLanguageMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptionLanguageSetting())
             {
                 context.Writer.WritePropertyName("captionLanguageSetting");
-                context.Writer.Write(requestObject.CaptionLanguageSetting);
+                context.Writer.WriteStringValue(requestObject.CaptionLanguageSetting);
             }
 
             if(requestObject.IsSetClientCache())
             {
                 context.Writer.WritePropertyName("clientCache");
-                context.Writer.Write(requestObject.ClientCache);
+                context.Writer.WriteStringValue(requestObject.ClientCache);
             }
 
             if(requestObject.IsSetCodecSpecification())
             {
                 context.Writer.WritePropertyName("codecSpecification");
-                context.Writer.Write(requestObject.CodecSpecification);
+                context.Writer.WriteStringValue(requestObject.CodecSpecification);
             }
 
             if(requestObject.IsSetConstantIv())
             {
                 context.Writer.WritePropertyName("constantIv");
-                context.Writer.Write(requestObject.ConstantIv);
+                context.Writer.WriteStringValue(requestObject.ConstantIv);
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDirectoryStructure())
             {
                 context.Writer.WritePropertyName("directoryStructure");
-                context.Writer.Write(requestObject.DirectoryStructure);
+                context.Writer.WriteStringValue(requestObject.DirectoryStructure);
             }
 
             if(requestObject.IsSetDiscontinuityTags())
             {
                 context.Writer.WritePropertyName("discontinuityTags");
-                context.Writer.Write(requestObject.DiscontinuityTags);
+                context.Writer.WriteStringValue(requestObject.DiscontinuityTags);
             }
 
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("encryptionType");
-                context.Writer.Write(requestObject.EncryptionType);
+                context.Writer.WriteStringValue(requestObject.EncryptionType);
             }
 
             if(requestObject.IsSetHlsCdnSettings())
             {
                 context.Writer.WritePropertyName("hlsCdnSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsCdnSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsCdnSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsId3SegmentTagging())
             {
                 context.Writer.WritePropertyName("hlsId3SegmentTagging");
-                context.Writer.Write(requestObject.HlsId3SegmentTagging);
+                context.Writer.WriteStringValue(requestObject.HlsId3SegmentTagging);
             }
 
             if(requestObject.IsSetIFrameOnlyPlaylists())
             {
                 context.Writer.WritePropertyName("iFrameOnlyPlaylists");
-                context.Writer.Write(requestObject.IFrameOnlyPlaylists);
+                context.Writer.WriteStringValue(requestObject.IFrameOnlyPlaylists);
             }
 
             if(requestObject.IsSetIncompleteSegmentBehavior())
             {
                 context.Writer.WritePropertyName("incompleteSegmentBehavior");
-                context.Writer.Write(requestObject.IncompleteSegmentBehavior);
+                context.Writer.WriteStringValue(requestObject.IncompleteSegmentBehavior);
             }
 
             if(requestObject.IsSetIndexNSegments())
             {
                 context.Writer.WritePropertyName("indexNSegments");
-                context.Writer.Write(requestObject.IndexNSegments.Value);
+                context.Writer.WriteNumberValue(requestObject.IndexNSegments.Value);
             }
 
             if(requestObject.IsSetInputLossAction())
             {
                 context.Writer.WritePropertyName("inputLossAction");
-                context.Writer.Write(requestObject.InputLossAction);
+                context.Writer.WriteStringValue(requestObject.InputLossAction);
             }
 
             if(requestObject.IsSetIvInManifest())
             {
                 context.Writer.WritePropertyName("ivInManifest");
-                context.Writer.Write(requestObject.IvInManifest);
+                context.Writer.WriteStringValue(requestObject.IvInManifest);
             }
 
             if(requestObject.IsSetIvSource())
             {
                 context.Writer.WritePropertyName("ivSource");
-                context.Writer.Write(requestObject.IvSource);
+                context.Writer.WriteStringValue(requestObject.IvSource);
             }
 
             if(requestObject.IsSetKeepSegments())
             {
                 context.Writer.WritePropertyName("keepSegments");
-                context.Writer.Write(requestObject.KeepSegments.Value);
+                context.Writer.WriteNumberValue(requestObject.KeepSegments.Value);
             }
 
             if(requestObject.IsSetKeyFormat())
             {
                 context.Writer.WritePropertyName("keyFormat");
-                context.Writer.Write(requestObject.KeyFormat);
+                context.Writer.WriteStringValue(requestObject.KeyFormat);
             }
 
             if(requestObject.IsSetKeyFormatVersions())
             {
                 context.Writer.WritePropertyName("keyFormatVersions");
-                context.Writer.Write(requestObject.KeyFormatVersions);
+                context.Writer.WriteStringValue(requestObject.KeyFormatVersions);
             }
 
             if(requestObject.IsSetKeyProviderSettings())
             {
                 context.Writer.WritePropertyName("keyProviderSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyProviderSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyProviderSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManifestCompression())
             {
                 context.Writer.WritePropertyName("manifestCompression");
-                context.Writer.Write(requestObject.ManifestCompression);
+                context.Writer.WriteStringValue(requestObject.ManifestCompression);
             }
 
             if(requestObject.IsSetManifestDurationFormat())
             {
                 context.Writer.WritePropertyName("manifestDurationFormat");
-                context.Writer.Write(requestObject.ManifestDurationFormat);
+                context.Writer.WriteStringValue(requestObject.ManifestDurationFormat);
             }
 
             if(requestObject.IsSetMinSegmentLength())
             {
                 context.Writer.WritePropertyName("minSegmentLength");
-                context.Writer.Write(requestObject.MinSegmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MinSegmentLength.Value);
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetOutputSelection())
             {
                 context.Writer.WritePropertyName("outputSelection");
-                context.Writer.Write(requestObject.OutputSelection);
+                context.Writer.WriteStringValue(requestObject.OutputSelection);
             }
 
             if(requestObject.IsSetProgramDateTime())
             {
                 context.Writer.WritePropertyName("programDateTime");
-                context.Writer.Write(requestObject.ProgramDateTime);
+                context.Writer.WriteStringValue(requestObject.ProgramDateTime);
             }
 
             if(requestObject.IsSetProgramDateTimeClock())
             {
                 context.Writer.WritePropertyName("programDateTimeClock");
-                context.Writer.Write(requestObject.ProgramDateTimeClock);
+                context.Writer.WriteStringValue(requestObject.ProgramDateTimeClock);
             }
 
             if(requestObject.IsSetProgramDateTimePeriod())
             {
                 context.Writer.WritePropertyName("programDateTimePeriod");
-                context.Writer.Write(requestObject.ProgramDateTimePeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramDateTimePeriod.Value);
             }
 
             if(requestObject.IsSetRedundantManifest())
             {
                 context.Writer.WritePropertyName("redundantManifest");
-                context.Writer.Write(requestObject.RedundantManifest);
+                context.Writer.WriteStringValue(requestObject.RedundantManifest);
             }
 
             if(requestObject.IsSetSegmentationMode())
             {
                 context.Writer.WritePropertyName("segmentationMode");
-                context.Writer.Write(requestObject.SegmentationMode);
+                context.Writer.WriteStringValue(requestObject.SegmentationMode);
             }
 
             if(requestObject.IsSetSegmentLength())
             {
                 context.Writer.WritePropertyName("segmentLength");
-                context.Writer.Write(requestObject.SegmentLength.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentLength.Value);
             }
 
             if(requestObject.IsSetSegmentsPerSubdirectory())
             {
                 context.Writer.WritePropertyName("segmentsPerSubdirectory");
-                context.Writer.Write(requestObject.SegmentsPerSubdirectory.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentsPerSubdirectory.Value);
             }
 
             if(requestObject.IsSetStreamInfResolution())
             {
                 context.Writer.WritePropertyName("streamInfResolution");
-                context.Writer.Write(requestObject.StreamInfResolution);
+                context.Writer.WriteStringValue(requestObject.StreamInfResolution);
             }
 
             if(requestObject.IsSetTimedMetadataId3Frame())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Frame");
-                context.Writer.Write(requestObject.TimedMetadataId3Frame);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataId3Frame);
             }
 
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period.Value);
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataId3Period.Value);
             }
 
             if(requestObject.IsSetTimestampDeltaMilliseconds())
             {
                 context.Writer.WritePropertyName("timestampDeltaMilliseconds");
-                context.Writer.Write(requestObject.TimestampDeltaMilliseconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TimestampDeltaMilliseconds.Value);
             }
 
             if(requestObject.IsSetTsFileMode())
             {
                 context.Writer.WritePropertyName("tsFileMode");
-                context.Writer.Write(requestObject.TsFileMode);
+                context.Writer.WriteStringValue(requestObject.TsFileMode);
             }
 
         }

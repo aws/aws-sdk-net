@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
@@ -64,107 +67,123 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 throw new AmazonFISException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/experimentTemplates/{id}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("actions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestActionsKvp in publicRequest.Actions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActions())
-                    {
-                        context.Writer.WritePropertyName("actions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestActionsKvp in publicRequest.Actions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestActionsKvp.Key);
-                            var publicRequestActionsValue = publicRequestActionsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestActionsKvp.Key);
+                    var publicRequestActionsValue = publicRequestActionsKvp.Value;
 
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = UpdateExperimentTemplateActionInputItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestActionsValue, context);
+                    var marshaller = UpdateExperimentTemplateActionInputItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActionsValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetExperimentOptions())
-                    {
-                        context.Writer.WritePropertyName("experimentOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateExperimentTemplateExperimentOptionsInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExperimentOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogConfiguration())
-                    {
-                        context.Writer.WritePropertyName("logConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateExperimentTemplateLogConfigurationInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetStopConditions())
-                    {
-                        context.Writer.WritePropertyName("stopConditions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStopConditionsListValue in publicRequest.StopConditions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = UpdateExperimentTemplateStopConditionInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestStopConditionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTargets())
-                    {
-                        context.Writer.WritePropertyName("targets");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTargetsKvp in publicRequest.Targets)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTargetsKvp.Key);
-                            var publicRequestTargetsValue = publicRequestTargetsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = UpdateExperimentTemplateTargetInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTargetsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetExperimentOptions())
+            {
+                context.Writer.WritePropertyName("experimentOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateExperimentTemplateExperimentOptionsInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExperimentOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExperimentReportConfiguration())
+            {
+                context.Writer.WritePropertyName("experimentReportConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateExperimentTemplateReportConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExperimentReportConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLogConfiguration())
+            {
+                context.Writer.WritePropertyName("logConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateExperimentTemplateLogConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetStopConditions())
+            {
+                context.Writer.WritePropertyName("stopConditions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStopConditionsListValue in publicRequest.StopConditions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UpdateExperimentTemplateStopConditionInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestStopConditionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTargets())
+            {
+                context.Writer.WritePropertyName("targets");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTargetsKvp in publicRequest.Targets)
+                {
+                    context.Writer.WritePropertyName(publicRequestTargetsKvp.Key);
+                    var publicRequestTargetsValue = publicRequestTargetsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = UpdateExperimentTemplateTargetInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

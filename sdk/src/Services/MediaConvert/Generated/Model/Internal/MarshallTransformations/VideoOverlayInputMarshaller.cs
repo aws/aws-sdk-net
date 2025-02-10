@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileInput())
             {
                 context.Writer.WritePropertyName("fileInput");
-                context.Writer.Write(requestObject.FileInput);
+                context.Writer.WriteStringValue(requestObject.FileInput);
             }
 
             if(requestObject.IsSetInputClippings())
             {
                 context.Writer.WritePropertyName("inputClippings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputClippingsListValue in requestObject.InputClippings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VideoOverlayInputClippingMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputClippingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTimecodeSource())
             {
                 context.Writer.WritePropertyName("timecodeSource");
-                context.Writer.Write(requestObject.TimecodeSource);
+                context.Writer.WriteStringValue(requestObject.TimecodeSource);
             }
 
             if(requestObject.IsSetTimecodeStart())
             {
                 context.Writer.WritePropertyName("timecodeStart");
-                context.Writer.Write(requestObject.TimecodeStart);
+                context.Writer.WriteStringValue(requestObject.TimecodeStart);
             }
 
         }

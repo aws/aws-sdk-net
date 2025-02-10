@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides details about an Amazon SageMaker notebook instance.
+    /// Provides details about an Amazon SageMaker AI notebook instance.
     /// </summary>
     public partial class AwsSageMakerNotebookInstanceDetails
     {
@@ -83,8 +83,8 @@ namespace Amazon.SecurityHub.Model
         /// the URL of Git repositories in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a>
         /// or in any other Git repository. These repositories are cloned at the same level as
         /// the default repository of your notebook instance. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker
-        /// Developer Guide</i>. 
+        /// Git repositories with SageMaker AI notebook instances</a> in the <i>Amazon SageMaker
+        /// AI Developer Guide</i>. 
         /// </para>
         /// </summary>
         public List<string> AdditionalCodeRepositories
@@ -107,8 +107,8 @@ namespace Amazon.SecurityHub.Model
         /// or the URL of a Git repository in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit</a>
         /// or in any other Git repository. When you open a notebook instance, it opens in the
         /// directory that contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-        /// Git repositories with SageMaker notebook instances</a> in the <i>Amazon SageMaker
-        /// Developer Guide</i>. 
+        /// Git repositories with SageMaker AI notebook instances</a> in the <i>Amazon SageMaker
+        /// AI Developer Guide</i>. 
         /// </para>
         /// </summary>
         public string DefaultCodeRepository
@@ -126,9 +126,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DirectInternetAccess. 
         /// <para>
-        ///  Sets whether SageMaker provides internet access to the notebook instance. If you
+        ///  Sets whether SageMaker AI provides internet access to the notebook instance. If you
         /// set this to <c>Disabled</c>, this notebook instance is able to access resources only
-        /// in your VPC, and is not be able to connect to SageMaker training and endpoint services
+        /// in your VPC, and is not be able to connect to SageMaker AI training and endpoint services
         /// unless you configure a Network Address Translation (NAT) Gateway in your VPC. 
         /// </para>
         /// </summary>
@@ -203,8 +203,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of an Key Management Service (KMS) key that SageMaker
-        /// uses to encrypt data on the storage volume attached to your notebook instance. The
-        /// KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+        /// AI uses to encrypt data on the storage volume attached to your notebook instance.
+        /// The KMS key you provide must be enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
         /// and disabling keys</a> in the <i>Key Management Service Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -223,7 +223,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
-        ///  The network interface ID that SageMaker created when the instance was created. 
+        ///  The network interface ID that SageMaker AI created when the instance was created.
+        /// 
         /// </para>
         /// </summary>
         public string NetworkInterfaceId

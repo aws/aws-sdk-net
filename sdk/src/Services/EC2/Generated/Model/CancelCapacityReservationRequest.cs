@@ -36,6 +36,30 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// You can cancel a Capacity Reservation that is in the following states:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>assessing</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>active</c> and there is no commitment duration or the commitment duration has
+    /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
+    /// duration.
+    /// </para>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// You can't modify or cancel a Capacity Block. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-blocks.html">Capacity
+    /// Blocks for ML</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
+    /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
+    /// </para>
+    ///  
+    /// <para>
     /// Instances running in the reserved capacity continue running until you stop them. Stopped
     /// instances that target the Capacity Reservation can no longer launch. Modify these
     /// instances to either target a different Capacity Reservation, launch On-Demand Instance

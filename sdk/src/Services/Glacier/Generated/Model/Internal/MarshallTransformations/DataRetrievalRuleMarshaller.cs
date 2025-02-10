@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBytesPerHour())
             {
                 context.Writer.WritePropertyName("BytesPerHour");
-                context.Writer.Write(requestObject.BytesPerHour.Value);
+                context.Writer.WriteNumberValue(requestObject.BytesPerHour.Value);
             }
 
             if(requestObject.IsSetStrategy())
             {
                 context.Writer.WritePropertyName("Strategy");
-                context.Writer.Write(requestObject.Strategy);
+                context.Writer.WriteStringValue(requestObject.Strategy);
             }
 
         }

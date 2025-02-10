@@ -300,6 +300,61 @@ namespace Amazon.MediaPackageV2
         #endregion
 
 
+        #region  CancelHarvestJob
+
+        internal virtual CancelHarvestJobResponse CancelHarvestJob(CancelHarvestJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelHarvestJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelHarvestJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels an in-progress harvest job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelHarvestJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelHarvestJob service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CancelHarvestJob">REST API Reference for CancelHarvestJob Operation</seealso>
+        public virtual Task<CancelHarvestJobResponse> CancelHarvestJobAsync(CancelHarvestJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelHarvestJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelHarvestJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateChannel
 
         internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
@@ -422,6 +477,65 @@ namespace Amazon.MediaPackageV2
             options.ResponseUnmarshaller = CreateChannelGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateChannelGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateHarvestJob
+
+        internal virtual CreateHarvestJobResponse CreateHarvestJob(CreateHarvestJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarvestJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHarvestJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new harvest job to export content from a MediaPackage v2 channel to an S3
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHarvestJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHarvestJob service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ServiceQuotaExceededException">
+        /// The request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/CreateHarvestJob">REST API Reference for CreateHarvestJob Operation</seealso>
+        public virtual Task<CreateHarvestJobResponse> CreateHarvestJobAsync(CreateHarvestJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHarvestJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHarvestJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -911,6 +1025,58 @@ namespace Amazon.MediaPackageV2
 
         #endregion
         
+        #region  GetHarvestJob
+
+        internal virtual GetHarvestJobResponse GetHarvestJob(GetHarvestJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHarvestJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetHarvestJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific harvest job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHarvestJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHarvestJob service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/GetHarvestJob">REST API Reference for GetHarvestJob Operation</seealso>
+        public virtual Task<GetHarvestJobResponse> GetHarvestJobAsync(GetHarvestJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetHarvestJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHarvestJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHarvestJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetOriginEndpoint
 
         internal virtual GetOriginEndpointResponse GetOriginEndpoint(GetOriginEndpointRequest request)
@@ -1117,6 +1283,58 @@ namespace Amazon.MediaPackageV2
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChannelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHarvestJobs
+
+        internal virtual ListHarvestJobsResponse ListHarvestJobs(ListHarvestJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHarvestJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarvestJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListHarvestJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of harvest jobs that match the specified criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHarvestJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHarvestJobs service method, as returned by MediaPackageV2.</returns>
+        /// <exception cref="Amazon.MediaPackageV2.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions. For more information, see Access Management in the
+        /// IAM User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.InternalServerException">
+        /// Indicates that an error from the service occurred while trying to process a request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ThrottlingException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.MediaPackageV2.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediapackagev2-2022-12-25/ListHarvestJobs">REST API Reference for ListHarvestJobs Operation</seealso>
+        public virtual Task<ListHarvestJobsResponse> ListHarvestJobsAsync(ListHarvestJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHarvestJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHarvestJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHarvestJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion

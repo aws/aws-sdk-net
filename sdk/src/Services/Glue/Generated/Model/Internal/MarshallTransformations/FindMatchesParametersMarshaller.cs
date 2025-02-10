@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
+                    context.Writer.WriteNumberValue(requestObject.AccuracyCostTradeoff.Value);
                 }
             }
 
             if(requestObject.IsSetEnforceProvidedLabels())
             {
                 context.Writer.WritePropertyName("EnforceProvidedLabels");
-                context.Writer.Write(requestObject.EnforceProvidedLabels.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnforceProvidedLabels.Value);
             }
 
             if(requestObject.IsSetPrecisionRecallTradeoff())
@@ -72,18 +70,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PrecisionRecallTradeoff");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
+                    context.Writer.WriteNumberValue(requestObject.PrecisionRecallTradeoff.Value);
                 }
             }
 
             if(requestObject.IsSetPrimaryKeyColumnName())
             {
                 context.Writer.WritePropertyName("PrimaryKeyColumnName");
-                context.Writer.Write(requestObject.PrimaryKeyColumnName);
+                context.Writer.WriteStringValue(requestObject.PrimaryKeyColumnName);
             }
 
         }

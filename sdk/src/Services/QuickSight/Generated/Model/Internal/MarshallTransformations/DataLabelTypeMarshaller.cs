@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataPathLabelType())
             {
                 context.Writer.WritePropertyName("DataPathLabelType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataPathLabelTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataPathLabelType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFieldLabelType())
             {
                 context.Writer.WritePropertyName("FieldLabelType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldLabelTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldLabelType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumLabelType())
             {
                 context.Writer.WritePropertyName("MaximumLabelType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MaximumLabelTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaximumLabelType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinimumLabelType())
             {
                 context.Writer.WritePropertyName("MinimumLabelType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MinimumLabelTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MinimumLabelType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRangeEndsLabelType())
             {
                 context.Writer.WritePropertyName("RangeEndsLabelType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RangeEndsLabelTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RangeEndsLabelType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataAnalysisEndTime())
             {
                 context.Writer.WritePropertyName("DataAnalysisEndTime");
-                context.Writer.Write(requestObject.DataAnalysisEndTime);
+                context.Writer.WriteStringValue(requestObject.DataAnalysisEndTime);
             }
 
             if(requestObject.IsSetDataAnalysisStartTime())
             {
                 context.Writer.WritePropertyName("DataAnalysisStartTime");
-                context.Writer.Write(requestObject.DataAnalysisStartTime);
+                context.Writer.WriteStringValue(requestObject.DataAnalysisStartTime);
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
         }

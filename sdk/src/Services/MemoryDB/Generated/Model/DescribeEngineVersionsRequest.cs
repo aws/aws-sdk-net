@@ -36,6 +36,7 @@ namespace Amazon.MemoryDB.Model
     public partial class DescribeEngineVersionsRequest : AmazonMemoryDBRequest
     {
         private bool? _defaultOnly;
+        private string _engine;
         private string _engineVersion;
         private int? _maxResults;
         private string _nextToken;
@@ -58,6 +59,24 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetDefaultOnly()
         {
             return this._defaultOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the engine for which to list available versions.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>

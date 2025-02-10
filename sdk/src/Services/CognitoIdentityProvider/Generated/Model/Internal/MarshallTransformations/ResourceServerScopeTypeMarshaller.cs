@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScopeDescription())
             {
                 context.Writer.WritePropertyName("ScopeDescription");
-                context.Writer.Write(requestObject.ScopeDescription);
+                context.Writer.WriteStringValue(requestObject.ScopeDescription);
             }
 
             if(requestObject.IsSetScopeName())
             {
                 context.Writer.WritePropertyName("ScopeName");
-                context.Writer.Write(requestObject.ScopeName);
+                context.Writer.WriteStringValue(requestObject.ScopeName);
             }
 
         }

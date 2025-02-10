@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,86 +49,125 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAthenaProperties())
             {
                 context.Writer.WritePropertyName("AthenaProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAthenaPropertiesKvp in requestObject.AthenaProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectAthenaPropertiesKvp.Key);
                     var requestObjectAthenaPropertiesValue = requestObjectAthenaPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectAthenaPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectAthenaPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("AuthenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthenticationConfigurationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionProperties())
             {
                 context.Writer.WritePropertyName("ConnectionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectConnectionPropertiesKvp in requestObject.ConnectionProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectConnectionPropertiesKvp.Key);
                     var requestObjectConnectionPropertiesValue = requestObjectConnectionPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectConnectionPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectConnectionPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionType())
             {
                 context.Writer.WritePropertyName("ConnectionType");
-                context.Writer.Write(requestObject.ConnectionType);
+                context.Writer.WriteStringValue(requestObject.ConnectionType);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetMatchCriteria())
             {
                 context.Writer.WritePropertyName("MatchCriteria");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchCriteriaListValue in requestObject.MatchCriteria)
                 {
-                        context.Writer.Write(requestObjectMatchCriteriaListValue);
+                        context.Writer.WriteStringValue(requestObjectMatchCriteriaListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPhysicalConnectionRequirements())
             {
                 context.Writer.WritePropertyName("PhysicalConnectionRequirements");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PhysicalConnectionRequirementsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PhysicalConnectionRequirements, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPythonProperties())
+            {
+                context.Writer.WritePropertyName("PythonProperties");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectPythonPropertiesKvp in requestObject.PythonProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectPythonPropertiesKvp.Key);
+                    var requestObjectPythonPropertiesValue = requestObjectPythonPropertiesKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectPythonPropertiesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSparkProperties())
+            {
+                context.Writer.WritePropertyName("SparkProperties");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectSparkPropertiesKvp in requestObject.SparkProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectSparkPropertiesKvp.Key);
+                    var requestObjectSparkPropertiesValue = requestObjectSparkPropertiesKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectSparkPropertiesValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidateCredentials())
             {
                 context.Writer.WritePropertyName("ValidateCredentials");
-                context.Writer.Write(requestObject.ValidateCredentials.Value);
+                context.Writer.WriteBooleanValue(requestObject.ValidateCredentials.Value);
+            }
+
+            if(requestObject.IsSetValidateForComputeEnvironments())
+            {
+                context.Writer.WritePropertyName("ValidateForComputeEnvironments");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectValidateForComputeEnvironmentsListValue in requestObject.ValidateForComputeEnvironments)
+                {
+                        context.Writer.WriteStringValue(requestObjectValidateForComputeEnvironmentsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }

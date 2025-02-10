@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotMemberAliasId())
             {
                 context.Writer.WritePropertyName("botMemberAliasId");
-                context.Writer.Write(requestObject.BotMemberAliasId);
+                context.Writer.WriteStringValue(requestObject.BotMemberAliasId);
             }
 
             if(requestObject.IsSetBotMemberAliasName())
             {
                 context.Writer.WritePropertyName("botMemberAliasName");
-                context.Writer.Write(requestObject.BotMemberAliasName);
+                context.Writer.WriteStringValue(requestObject.BotMemberAliasName);
             }
 
             if(requestObject.IsSetBotMemberId())
             {
                 context.Writer.WritePropertyName("botMemberId");
-                context.Writer.Write(requestObject.BotMemberId);
+                context.Writer.WriteStringValue(requestObject.BotMemberId);
             }
 
             if(requestObject.IsSetBotMemberName())
             {
                 context.Writer.WritePropertyName("botMemberName");
-                context.Writer.Write(requestObject.BotMemberName);
+                context.Writer.WriteStringValue(requestObject.BotMemberName);
             }
 
             if(requestObject.IsSetBotMemberVersion())
             {
                 context.Writer.WritePropertyName("botMemberVersion");
-                context.Writer.Write(requestObject.BotMemberVersion);
+                context.Writer.WriteStringValue(requestObject.BotMemberVersion);
             }
 
         }

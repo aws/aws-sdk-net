@@ -41,10 +41,12 @@ namespace Amazon.MemoryDB.Model
         private Endpoint _clusterEndpoint;
         private DataTieringStatus _dataTiering;
         private string _description;
+        private string _engine;
         private string _enginePatchVersion;
         private string _engineVersion;
         private string _kmsKeyId;
         private string _maintenanceWindow;
+        private string _multiRegionClusterName;
         private string _name;
         private string _nodeType;
         private int? _numberOfShards;
@@ -193,6 +195,24 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the engine used by the cluster.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnginePatchVersion. 
         /// <para>
         /// The Redis OSS engine patch version used by the cluster
@@ -264,6 +284,24 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetMaintenanceWindow()
         {
             return this._maintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionClusterName. 
+        /// <para>
+        /// The name of the multi-Region cluster that this cluster belongs to.
+        /// </para>
+        /// </summary>
+        public string MultiRegionClusterName
+        {
+            get { return this._multiRegionClusterName; }
+            set { this._multiRegionClusterName = value; }
+        }
+
+        // Check to see if MultiRegionClusterName property is set
+        internal bool IsSetMultiRegionClusterName()
+        {
+            return this._multiRegionClusterName != null;
         }
 
         /// <summary>

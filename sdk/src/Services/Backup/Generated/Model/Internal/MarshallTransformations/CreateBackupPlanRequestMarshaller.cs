@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -61,50 +64,55 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/backup/plans/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBackupPlan())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBackupPlan())
-                    {
-                        context.Writer.WritePropertyName("BackupPlan");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("BackupPlan");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BackupPlanInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BackupPlan, context);
+                var marshaller = BackupPlanInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BackupPlan, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBackupPlanTags())
-                    {
-                        context.Writer.WritePropertyName("BackupPlanTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestBackupPlanTagsKvp in publicRequest.BackupPlanTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestBackupPlanTagsKvp.Key);
-                            var publicRequestBackupPlanTagsValue = publicRequestBackupPlanTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestBackupPlanTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCreatorRequestId())
-                    {
-                        context.Writer.WritePropertyName("CreatorRequestId");
-                        context.Writer.Write(publicRequest.CreatorRequestId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetBackupPlanTags())
+            {
+                context.Writer.WritePropertyName("BackupPlanTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestBackupPlanTagsKvp in publicRequest.BackupPlanTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestBackupPlanTagsKvp.Key);
+                    var publicRequestBackupPlanTagsValue = publicRequestBackupPlanTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestBackupPlanTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCreatorRequestId())
+            {
+                context.Writer.WritePropertyName("CreatorRequestId");
+                context.Writer.WriteStringValue(publicRequest.CreatorRequestId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

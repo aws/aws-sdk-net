@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBudgetAdjustmentPeriod())
             {
                 context.Writer.WritePropertyName("BudgetAdjustmentPeriod");
-                context.Writer.Write(requestObject.BudgetAdjustmentPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.BudgetAdjustmentPeriod.Value);
             }
 
             if(requestObject.IsSetLookBackAvailablePeriods())
             {
                 context.Writer.WritePropertyName("LookBackAvailablePeriods");
-                context.Writer.Write(requestObject.LookBackAvailablePeriods.Value);
+                context.Writer.WriteNumberValue(requestObject.LookBackAvailablePeriods.Value);
             }
 
         }

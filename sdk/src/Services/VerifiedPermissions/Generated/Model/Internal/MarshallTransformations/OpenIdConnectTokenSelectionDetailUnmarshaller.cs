@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenIdConnectTokenSelectionDetail Object
     /// </summary>  
-    public class OpenIdConnectTokenSelectionDetailUnmarshaller : IUnmarshaller<OpenIdConnectTokenSelectionDetail, XmlUnmarshallerContext>, IUnmarshaller<OpenIdConnectTokenSelectionDetail, JsonUnmarshallerContext>
+    public class OpenIdConnectTokenSelectionDetailUnmarshaller : IJsonUnmarshaller<OpenIdConnectTokenSelectionDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenIdConnectTokenSelectionDetail IUnmarshaller<OpenIdConnectTokenSelectionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenIdConnectTokenSelectionDetail Unmarshall(JsonUnmarshallerContext context)
+        public OpenIdConnectTokenSelectionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenIdConnectTokenSelectionDetail unmarshalledObject = new OpenIdConnectTokenSelectionDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accessTokenOnly", targetDepth))
                 {
                     var unmarshaller = OpenIdConnectAccessTokenConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.AccessTokenOnly = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessTokenOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("identityTokenOnly", targetDepth))
                 {
                     var unmarshaller = OpenIdConnectIdentityTokenConfigurationDetailUnmarshaller.Instance;
-                    unmarshalledObject.IdentityTokenOnly = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityTokenOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

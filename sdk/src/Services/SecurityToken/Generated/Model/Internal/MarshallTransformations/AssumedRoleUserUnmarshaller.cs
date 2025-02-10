@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AssumedRoleUser Object
     /// </summary>  
-    public class AssumedRoleUserUnmarshaller : IUnmarshaller<AssumedRoleUser, XmlUnmarshallerContext>, IUnmarshaller<AssumedRoleUser, JsonUnmarshallerContext>
+    public class AssumedRoleUserUnmarshaller : IXmlUnmarshaller<AssumedRoleUser, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AssumedRoleUser Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AssumedRoleUserUnmarshaller _instance = new AssumedRoleUserUnmarshaller();        
 

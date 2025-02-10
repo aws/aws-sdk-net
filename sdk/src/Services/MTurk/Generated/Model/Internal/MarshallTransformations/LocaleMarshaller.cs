@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetSubdivision())
             {
                 context.Writer.WritePropertyName("Subdivision");
-                context.Writer.Write(requestObject.Subdivision);
+                context.Writer.WriteStringValue(requestObject.Subdivision);
             }
 
         }

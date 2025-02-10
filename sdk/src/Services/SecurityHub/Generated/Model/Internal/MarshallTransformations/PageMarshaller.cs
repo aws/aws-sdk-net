@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLineRange())
             {
                 context.Writer.WritePropertyName("LineRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.LineRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOffsetRange())
             {
                 context.Writer.WritePropertyName("OffsetRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.OffsetRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPageNumber())
             {
                 context.Writer.WritePropertyName("PageNumber");
-                context.Writer.Write(requestObject.PageNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.PageNumber.Value);
             }
 
         }

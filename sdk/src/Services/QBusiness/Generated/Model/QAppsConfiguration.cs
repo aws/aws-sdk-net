@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Configuration information about Amazon Q Apps. (preview feature)
+    /// Configuration information about Amazon Q Apps.
     /// </summary>
     public partial class QAppsConfiguration
     {

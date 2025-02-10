@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -63,12 +66,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainIdentifier())
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
-            
-            if (publicRequest.IsSetClientToken())
-                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
-            else            
-                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
-                
             request.ResourcePath = "/v2/domains/{domainIdentifier}/lineage/events";
             request.ContentStream =  publicRequest.Event ?? new MemoryStream();
             if(request.ContentStream.CanSeek)
@@ -78,7 +75,11 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
             request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
-            request.UseQueryString = true;
+        
+            if (publicRequest.IsSetClientToken()) 
+            {
+                request.Headers["Client-Token"] = publicRequest.ClientToken;
+            }
 
             return request;
         }

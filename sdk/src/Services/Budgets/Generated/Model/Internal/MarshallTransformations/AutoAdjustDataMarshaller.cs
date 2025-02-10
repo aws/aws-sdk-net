@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoAdjustType())
             {
                 context.Writer.WritePropertyName("AutoAdjustType");
-                context.Writer.Write(requestObject.AutoAdjustType);
+                context.Writer.WriteStringValue(requestObject.AutoAdjustType);
             }
 
             if(requestObject.IsSetHistoricalOptions())
             {
                 context.Writer.WritePropertyName("HistoricalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HistoricalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HistoricalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastAutoAdjustTime())
             {
                 context.Writer.WritePropertyName("LastAutoAdjustTime");
-                context.Writer.Write(requestObject.LastAutoAdjustTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastAutoAdjustTime.Value)));
             }
 
         }

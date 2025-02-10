@@ -641,6 +641,56 @@ namespace Amazon.Transfer
 
 
     /// <summary>
+    /// Constants used for properties of type EnforceMessageSigningType.
+    /// </summary>
+    public class EnforceMessageSigningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for EnforceMessageSigningType
+        /// </summary>
+        public static readonly EnforceMessageSigningType DISABLED = new EnforceMessageSigningType("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for EnforceMessageSigningType
+        /// </summary>
+        public static readonly EnforceMessageSigningType ENABLED = new EnforceMessageSigningType("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnforceMessageSigningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnforceMessageSigningType FindValue(string value)
+        {
+            return FindValue<EnforceMessageSigningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnforceMessageSigningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExecutionErrorType.
     /// </summary>
     public class ExecutionErrorType : ConstantClass
@@ -1090,6 +1140,106 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OverwriteExisting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreserveContentType.
+    /// </summary>
+    public class PreserveContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for PreserveContentType
+        /// </summary>
+        public static readonly PreserveContentType DISABLED = new PreserveContentType("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for PreserveContentType
+        /// </summary>
+        public static readonly PreserveContentType ENABLED = new PreserveContentType("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreserveContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreserveContentType FindValue(string value)
+        {
+            return FindValue<PreserveContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreserveContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreserveFilenameType.
+    /// </summary>
+    public class PreserveFilenameType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for PreserveFilenameType
+        /// </summary>
+        public static readonly PreserveFilenameType DISABLED = new PreserveFilenameType("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for PreserveFilenameType
+        /// </summary>
+        public static readonly PreserveFilenameType ENABLED = new PreserveFilenameType("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreserveFilenameType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreserveFilenameType FindValue(string value)
+        {
+            return FindValue<PreserveFilenameType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreserveFilenameType(string value)
         {
             return FindValue(value);
         }
@@ -1588,6 +1738,64 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TlsSessionResumptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransferTableStatus.
+    /// </summary>
+    public class TransferTableStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for TransferTableStatus
+        /// </summary>
+        public static readonly TransferTableStatus COMPLETED = new TransferTableStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for TransferTableStatus
+        /// </summary>
+        public static readonly TransferTableStatus FAILED = new TransferTableStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for TransferTableStatus
+        /// </summary>
+        public static readonly TransferTableStatus IN_PROGRESS = new TransferTableStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for TransferTableStatus
+        /// </summary>
+        public static readonly TransferTableStatus QUEUED = new TransferTableStatus("QUEUED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransferTableStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransferTableStatus FindValue(string value)
+        {
+            return FindValue<TransferTableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransferTableStatus(string value)
         {
             return FindValue(value);
         }

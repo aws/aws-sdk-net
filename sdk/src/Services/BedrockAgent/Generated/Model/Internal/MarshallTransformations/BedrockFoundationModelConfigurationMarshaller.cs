@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,24 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetModelArn())
             {
                 context.Writer.WritePropertyName("modelArn");
-                context.Writer.Write(requestObject.ModelArn);
+                context.Writer.WriteStringValue(requestObject.ModelArn);
+            }
+
+            if(requestObject.IsSetParsingModality())
+            {
+                context.Writer.WritePropertyName("parsingModality");
+                context.Writer.WriteStringValue(requestObject.ParsingModality);
             }
 
             if(requestObject.IsSetParsingPrompt())
             {
                 context.Writer.WritePropertyName("parsingPrompt");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParsingPromptMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParsingPrompt, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

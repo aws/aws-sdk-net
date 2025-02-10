@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// The requested endpoint was not valid.
+    /// The requested endpoint is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

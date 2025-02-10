@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,166 +49,166 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAndStatement())
             {
                 context.Writer.WritePropertyName("AndStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AndStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.AndStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetByteMatchStatement())
             {
                 context.Writer.WritePropertyName("ByteMatchStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ByteMatchStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.ByteMatchStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeoMatchStatement())
             {
                 context.Writer.WritePropertyName("GeoMatchStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeoMatchStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.GeoMatchStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIPSetReferenceStatement())
             {
                 context.Writer.WritePropertyName("IPSetReferenceStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IPSetReferenceStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.IPSetReferenceStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabelMatchStatement())
             {
                 context.Writer.WritePropertyName("LabelMatchStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LabelMatchStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.LabelMatchStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManagedRuleGroupStatement())
             {
                 context.Writer.WritePropertyName("ManagedRuleGroupStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ManagedRuleGroupStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedRuleGroupStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotStatement())
             {
                 context.Writer.WritePropertyName("NotStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrStatement())
             {
                 context.Writer.WritePropertyName("OrStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OrStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.OrStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRateBasedStatement())
             {
                 context.Writer.WritePropertyName("RateBasedStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RateBasedStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.RateBasedStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegexMatchStatement())
             {
                 context.Writer.WritePropertyName("RegexMatchStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegexMatchStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.RegexMatchStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegexPatternSetReferenceStatement())
             {
                 context.Writer.WritePropertyName("RegexPatternSetReferenceStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RegexPatternSetReferenceStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.RegexPatternSetReferenceStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleGroupReferenceStatement())
             {
                 context.Writer.WritePropertyName("RuleGroupReferenceStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleGroupReferenceStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleGroupReferenceStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSizeConstraintStatement())
             {
                 context.Writer.WritePropertyName("SizeConstraintStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SizeConstraintStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.SizeConstraintStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqliMatchStatement())
             {
                 context.Writer.WritePropertyName("SqliMatchStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqliMatchStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqliMatchStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXssMatchStatement())
             {
                 context.Writer.WritePropertyName("XssMatchStatement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = XssMatchStatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.XssMatchStatement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

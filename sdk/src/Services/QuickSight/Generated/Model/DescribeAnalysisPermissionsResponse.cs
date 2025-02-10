@@ -84,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> Permissions
         {
             get { return this._permissions; }

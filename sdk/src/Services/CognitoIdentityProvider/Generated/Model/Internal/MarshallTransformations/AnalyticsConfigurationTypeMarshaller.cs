@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationArn())
             {
                 context.Writer.WritePropertyName("ApplicationArn");
-                context.Writer.Write(requestObject.ApplicationArn);
+                context.Writer.WriteStringValue(requestObject.ApplicationArn);
             }
 
             if(requestObject.IsSetApplicationId())
             {
                 context.Writer.WritePropertyName("ApplicationId");
-                context.Writer.Write(requestObject.ApplicationId);
+                context.Writer.WriteStringValue(requestObject.ApplicationId);
             }
 
             if(requestObject.IsSetExternalId())
             {
                 context.Writer.WritePropertyName("ExternalId");
-                context.Writer.Write(requestObject.ExternalId);
+                context.Writer.WriteStringValue(requestObject.ExternalId);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetUserDataShared())
             {
                 context.Writer.WritePropertyName("UserDataShared");
-                context.Writer.Write(requestObject.UserDataShared.Value);
+                context.Writer.WriteBooleanValue(requestObject.UserDataShared.Value);
             }
 
         }

@@ -43,7 +43,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This object is currently limited to one element.
+        /// This object is currently limited to one task element. However, the task element can
+        /// run up to 10 containers.
         /// </para>
         ///  </note>
         /// </summary>

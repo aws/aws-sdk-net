@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,96 +49,96 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("containers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainersListValue in requestObject.Containers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TaskContainerPropertiesMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEphemeralStorage())
             {
                 context.Writer.WritePropertyName("ephemeralStorage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EphemeralStorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.EphemeralStorage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("executionRoleArn");
-                context.Writer.Write(requestObject.ExecutionRoleArn);
+                context.Writer.WriteStringValue(requestObject.ExecutionRoleArn);
             }
 
             if(requestObject.IsSetIpcMode())
             {
                 context.Writer.WritePropertyName("ipcMode");
-                context.Writer.Write(requestObject.IpcMode);
+                context.Writer.WriteStringValue(requestObject.IpcMode);
             }
 
             if(requestObject.IsSetNetworkConfiguration())
             {
                 context.Writer.WritePropertyName("networkConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPidMode())
             {
                 context.Writer.WritePropertyName("pidMode");
-                context.Writer.Write(requestObject.PidMode);
+                context.Writer.WriteStringValue(requestObject.PidMode);
             }
 
             if(requestObject.IsSetPlatformVersion())
             {
                 context.Writer.WritePropertyName("platformVersion");
-                context.Writer.Write(requestObject.PlatformVersion);
+                context.Writer.WriteStringValue(requestObject.PlatformVersion);
             }
 
             if(requestObject.IsSetRuntimePlatform())
             {
                 context.Writer.WritePropertyName("runtimePlatform");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuntimePlatformMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuntimePlatform, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskRoleArn())
             {
                 context.Writer.WritePropertyName("taskRoleArn");
-                context.Writer.Write(requestObject.TaskRoleArn);
+                context.Writer.WriteStringValue(requestObject.TaskRoleArn);
             }
 
             if(requestObject.IsSetVolumes())
             {
                 context.Writer.WritePropertyName("volumes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVolumesListValue in requestObject.Volumes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VolumeMarshaller.Instance;
                     marshaller.Marshall(requestObjectVolumesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

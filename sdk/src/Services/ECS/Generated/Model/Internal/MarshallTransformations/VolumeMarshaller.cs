@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfiguredAtLaunch())
             {
                 context.Writer.WritePropertyName("configuredAtLaunch");
-                context.Writer.Write(requestObject.ConfiguredAtLaunch.Value);
+                context.Writer.WriteBooleanValue(requestObject.ConfiguredAtLaunch.Value);
             }
 
             if(requestObject.IsSetDockerVolumeConfiguration())
             {
                 context.Writer.WritePropertyName("dockerVolumeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DockerVolumeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DockerVolumeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEfsVolumeConfiguration())
             {
                 context.Writer.WritePropertyName("efsVolumeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EFSVolumeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EfsVolumeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFsxWindowsFileServerVolumeConfiguration())
             {
                 context.Writer.WritePropertyName("fsxWindowsFileServerVolumeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FSxWindowsFileServerVolumeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FsxWindowsFileServerVolumeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("host");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HostVolumePropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Host, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

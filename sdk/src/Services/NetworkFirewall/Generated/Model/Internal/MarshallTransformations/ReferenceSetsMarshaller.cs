@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,20 +49,20 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIPSetReferences())
             {
                 context.Writer.WritePropertyName("IPSetReferences");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectIPSetReferencesKvp in requestObject.IPSetReferences)
                 {
                     context.Writer.WritePropertyName(requestObjectIPSetReferencesKvp.Key);
                     var requestObjectIPSetReferencesValue = requestObjectIPSetReferencesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IPSetReferenceMarshaller.Instance;
                     marshaller.Marshall(requestObjectIPSetReferencesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

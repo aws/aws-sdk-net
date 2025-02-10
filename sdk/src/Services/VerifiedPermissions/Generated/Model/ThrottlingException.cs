@@ -145,7 +145,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the Amazon Web Service that owns the quota.
+        /// The code for the Amazon Web Services service that owns the quota.
         /// </para>
         /// </summary>
         public string ServiceCode

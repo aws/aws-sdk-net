@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigUri())
             {
                 context.Writer.WritePropertyName("ConfigUri");
-                context.Writer.Write(requestObject.ConfigUri);
+                context.Writer.WriteStringValue(requestObject.ConfigUri);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
                     var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("ImageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WriteStringValue(requestObject.ImageUri);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -48,86 +46,97 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConversationHistory())
+            {
+                context.Writer.WritePropertyName("conversationHistory");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConversationHistoryMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConversationHistory, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetFiles())
             {
                 context.Writer.WritePropertyName("files");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFilesListValue in requestObject.Files)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputFileMarshaller.Instance;
                     marshaller.Marshall(requestObjectFilesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInvocationId())
             {
                 context.Writer.WritePropertyName("invocationId");
-                context.Writer.Write(requestObject.InvocationId);
+                context.Writer.WriteStringValue(requestObject.InvocationId);
             }
 
             if(requestObject.IsSetKnowledgeBaseConfigurations())
             {
                 context.Writer.WritePropertyName("knowledgeBaseConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKnowledgeBaseConfigurationsListValue in requestObject.KnowledgeBaseConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KnowledgeBaseConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectKnowledgeBaseConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPromptSessionAttributes())
             {
                 context.Writer.WritePropertyName("promptSessionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPromptSessionAttributesKvp in requestObject.PromptSessionAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectPromptSessionAttributesKvp.Key);
                     var requestObjectPromptSessionAttributesValue = requestObjectPromptSessionAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectPromptSessionAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectPromptSessionAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReturnControlInvocationResults())
             {
                 context.Writer.WritePropertyName("returnControlInvocationResults");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectReturnControlInvocationResultsListValue in requestObject.ReturnControlInvocationResults)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InvocationResultMemberMarshaller.Instance;
                     marshaller.Marshall(requestObjectReturnControlInvocationResultsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSessionAttributes())
             {
                 context.Writer.WritePropertyName("sessionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSessionAttributesKvp in requestObject.SessionAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectSessionAttributesKvp.Key);
                     var requestObjectSessionAttributesValue = requestObjectSessionAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectSessionAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectSessionAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

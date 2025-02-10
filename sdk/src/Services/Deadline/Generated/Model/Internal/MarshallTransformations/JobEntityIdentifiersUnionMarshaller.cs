@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnvironmentDetails())
             {
                 context.Writer.WritePropertyName("environmentDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EnvironmentDetailsIdentifiersMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnvironmentDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobAttachmentDetails())
             {
                 context.Writer.WritePropertyName("jobAttachmentDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobAttachmentDetailsIdentifiersMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobAttachmentDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobDetails())
             {
                 context.Writer.WritePropertyName("jobDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobDetailsIdentifiersMarshaller.Instance;
                 marshaller.Marshall(requestObject.JobDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStepDetails())
             {
                 context.Writer.WritePropertyName("stepDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StepDetailsIdentifiersMarshaller.Instance;
                 marshaller.Marshall(requestObject.StepDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

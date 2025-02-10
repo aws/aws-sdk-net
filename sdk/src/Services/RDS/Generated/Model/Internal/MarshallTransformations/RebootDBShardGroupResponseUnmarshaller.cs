@@ -142,6 +142,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         response.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.TagList == null)
+                        {
+                            response.TagList = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.TagList.Add(item);
+                        continue;
+                    }
                 } 
            }
 
@@ -158,7 +169,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

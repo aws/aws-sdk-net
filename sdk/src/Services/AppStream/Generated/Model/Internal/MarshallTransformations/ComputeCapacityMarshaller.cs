@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredInstances())
             {
                 context.Writer.WritePropertyName("DesiredInstances");
-                context.Writer.Write(requestObject.DesiredInstances.Value);
+                context.Writer.WriteNumberValue(requestObject.DesiredInstances.Value);
             }
 
             if(requestObject.IsSetDesiredSessions())
             {
                 context.Writer.WritePropertyName("DesiredSessions");
-                context.Writer.Write(requestObject.DesiredSessions.Value);
+                context.Writer.WriteNumberValue(requestObject.DesiredSessions.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCritical())
             {
                 context.Writer.WritePropertyName("Critical");
-                context.Writer.Write(requestObject.Critical.Value);
+                context.Writer.WriteBooleanValue(requestObject.Critical.Value);
             }
 
             if(requestObject.IsSetObjectIdentifier())
             {
                 context.Writer.WritePropertyName("ObjectIdentifier");
-                context.Writer.Write(requestObject.ObjectIdentifier);
+                context.Writer.WriteStringValue(requestObject.ObjectIdentifier);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

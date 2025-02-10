@@ -65,8 +65,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             // wait until all are verified, maximum wait time of two minutes
             bool allVerified = true;
-            DateTime latest = DateTime.Now + TimeSpan.FromMinutes(2);
-            while(DateTime.Now < latest)
+            DateTime latest = DateTime.UtcNow + TimeSpan.FromMinutes(2);
+            while(DateTime.UtcNow < latest)
             {
                 // get verification status for all emails
                 var verificationAttributes = Client.GetIdentityVerificationAttributes(new GetIdentityVerificationAttributesRequest

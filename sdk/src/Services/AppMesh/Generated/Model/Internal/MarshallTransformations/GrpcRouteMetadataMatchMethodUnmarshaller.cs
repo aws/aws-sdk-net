@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GrpcRouteMetadataMatchMethod Object
     /// </summary>  
-    public class GrpcRouteMetadataMatchMethodUnmarshaller : IUnmarshaller<GrpcRouteMetadataMatchMethod, XmlUnmarshallerContext>, IUnmarshaller<GrpcRouteMetadataMatchMethod, JsonUnmarshallerContext>
+    public class GrpcRouteMetadataMatchMethodUnmarshaller : IJsonUnmarshaller<GrpcRouteMetadataMatchMethod, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GrpcRouteMetadataMatchMethod IUnmarshaller<GrpcRouteMetadataMatchMethod, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GrpcRouteMetadataMatchMethod Unmarshall(JsonUnmarshallerContext context)
+        public GrpcRouteMetadataMatchMethod Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GrpcRouteMetadataMatchMethod unmarshalledObject = new GrpcRouteMetadataMatchMethod();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("exact", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Exact = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Exact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("range", targetDepth))
                 {
                     var unmarshaller = MatchRangeUnmarshaller.Instance;
-                    unmarshalledObject.Range = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Range = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("regex", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Regex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Regex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("suffix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

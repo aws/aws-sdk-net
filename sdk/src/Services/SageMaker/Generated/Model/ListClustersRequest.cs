@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private string _nextToken;
         private ClusterSortBy _sortBy;
         private SortOrder _sortOrder;
+        private string _trainingPlanArn;
 
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
@@ -205,6 +206,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSortOrder()
         {
             return this._sortOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan to filter clusters by. For more
+        /// information about reserving GPU capacity for your SageMaker HyperPod clusters using
+        /// Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
     }

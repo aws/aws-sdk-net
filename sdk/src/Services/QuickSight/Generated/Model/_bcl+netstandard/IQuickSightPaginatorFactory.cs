@@ -52,6 +52,16 @@ namespace Amazon.QuickSight.Model
         IListAssetBundleImportJobsPaginator ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListBrands operation
+        ///</summary>
+        IListBrandsPaginator ListBrands(ListBrandsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomPermissions operation
+        ///</summary>
+        IListCustomPermissionsPaginator ListCustomPermissions(ListCustomPermissionsRequest request);
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
@@ -195,5 +205,10 @@ namespace Amazon.QuickSight.Model
         /// Paginator for SearchGroups operation
         ///</summary>
         ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchTopics operation
+        ///</summary>
+        ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request);
     }
 }

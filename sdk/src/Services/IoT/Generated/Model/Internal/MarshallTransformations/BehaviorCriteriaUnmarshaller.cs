@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BehaviorCriteria Object
     /// </summary>  
-    public class BehaviorCriteriaUnmarshaller : IUnmarshaller<BehaviorCriteria, XmlUnmarshallerContext>, IUnmarshaller<BehaviorCriteria, JsonUnmarshallerContext>
+    public class BehaviorCriteriaUnmarshaller : IJsonUnmarshaller<BehaviorCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BehaviorCriteria IUnmarshaller<BehaviorCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BehaviorCriteria Unmarshall(JsonUnmarshallerContext context)
+        public BehaviorCriteria Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BehaviorCriteria unmarshalledObject = new BehaviorCriteria();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("comparisonOperator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("consecutiveDatapointsToAlarm", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConsecutiveDatapointsToAlarm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConsecutiveDatapointsToAlarm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("consecutiveDatapointsToClear", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConsecutiveDatapointsToClear = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConsecutiveDatapointsToClear = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("durationSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mlDetectionConfig", targetDepth))
                 {
                     var unmarshaller = MachineLearningDetectionConfigUnmarshaller.Instance;
-                    unmarshalledObject.MlDetectionConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MlDetectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("statisticalThreshold", targetDepth))
                 {
                     var unmarshaller = StatisticalThresholdUnmarshaller.Instance;
-                    unmarshalledObject.StatisticalThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatisticalThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = MetricValueUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

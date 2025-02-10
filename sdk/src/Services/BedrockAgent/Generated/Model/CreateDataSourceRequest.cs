@@ -31,7 +31,8 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Creates a data source connector for a knowledge base.
+    /// Connects a knowledge base to a data source. You specify the configuration for the
+    /// specific data source service in the <c>dataSourceConfiguration</c> field.
     /// 
     ///  <important> 
     /// <para>

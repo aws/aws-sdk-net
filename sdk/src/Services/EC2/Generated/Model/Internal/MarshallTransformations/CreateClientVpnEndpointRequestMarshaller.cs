@@ -154,6 +154,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDisconnectOnSessionTimeout())
+                {
+                    request.Parameters.Add("DisconnectOnSessionTimeout", StringUtils.FromBool(publicRequest.DisconnectOnSessionTimeout));
+                }
                 if(publicRequest.IsSetDnsServers())
                 {
                     if (publicRequest.DnsServers.Count == 0)

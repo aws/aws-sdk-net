@@ -870,6 +870,74 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  CreateRunCache
+
+        internal virtual CreateRunCacheResponse CreateRunCache(CreateRunCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRunCacheResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRunCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// You can create a run cache to save the task outputs from completed tasks in a run
+        /// for a private workflow. Subsequent runs use the task outputs from the cache, rather
+        /// than computing the task outputs again. You specify an Amazon S3 location where HealthOmics
+        /// saves the cached data. This data must be immediately accessible (not in an archived
+        /// state).
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html">Creating
+        /// a run cache</a> in the AWS HealthOmics User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRunCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRunCache service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">REST API Reference for CreateRunCache Operation</seealso>
+        public virtual Task<CreateRunCacheResponse> CreateRunCacheAsync(CreateRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRunCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRunCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateRunGroup
 
         internal virtual CreateRunGroupResponse CreateRunGroup(CreateRunGroupRequest request)
@@ -1441,6 +1509,73 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  DeleteRunCache
+
+        internal virtual DeleteRunCacheResponse DeleteRunCache(DeleteRunCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRunCacheResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRunCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a run cache. This action removes the cache metadata stored in the service account,
+        /// but doesn't delete the data in Amazon S3. You can access the cache data in Amazon
+        /// S3, for inspection or to troubleshoot issues. You can remove old cache data using
+        /// standard S3 <c>Delete</c> operations. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html">Deleting
+        /// a run cache</a> in the AWS HealthOmics User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRunCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRunCache service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">REST API Reference for DeleteRunCache Operation</seealso>
+        public virtual Task<DeleteRunCacheResponse> DeleteRunCacheAsync(DeleteRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRunCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRunCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRunGroup
 
         internal virtual DeleteRunGroupResponse DeleteRunGroup(DeleteRunGroupRequest request)
@@ -1495,6 +1630,61 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = DeleteRunGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRunGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteS3AccessPolicy
+
+        internal virtual DeleteS3AccessPolicyResponse DeleteS3AccessPolicy(DeleteS3AccessPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteS3AccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteS3AccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteS3AccessPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an access policy for the specified store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteS3AccessPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteS3AccessPolicy service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
+        public virtual Task<DeleteS3AccessPolicyResponse> DeleteS3AccessPolicyAsync(DeleteS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteS3AccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteS3AccessPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteS3AccessPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2365,6 +2555,13 @@ namespace Amazon.Omics
         /// <para>
         /// If a workflow is shared with you, you cannot export information about the run.
         /// </para>
+        ///  
+        /// <para>
+        /// HealthOmics stores a fixed number of runs that are available to the console and API.
+        /// If GetRun doesn't return the requested run, you can find run logs for all runs in
+        /// the CloudWatch logs. For more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+        /// logs</a> in the <i>AWS HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRun service method.</param>
         /// <param name="cancellationToken">
@@ -2404,6 +2601,70 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = GetRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRunCache
+
+        internal virtual GetRunCacheResponse GetRunCache(GetRunCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRunCacheResponseUnmarshaller.Instance;
+
+            return Invoke<GetRunCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve the details for the specified run cache.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
+        /// caching for HealthOmics runs</a> in the AWS HealthOmics User Guide.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRunCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRunCache service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">REST API Reference for GetRunCache Operation</seealso>
+        public virtual Task<GetRunCacheResponse> GetRunCacheAsync(GetRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRunCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRunCacheResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2520,6 +2781,64 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = GetRunTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRunTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetS3AccessPolicy
+
+        internal virtual GetS3AccessPolicyResponse GetS3AccessPolicy(GetS3AccessPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetS3AccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetS3AccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetS3AccessPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about an access policy on a given store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetS3AccessPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetS3AccessPolicy service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
+        public virtual Task<GetS3AccessPolicyResponse> GetS3AccessPolicyAsync(GetS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetS3AccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetS3AccessPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetS3AccessPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3418,6 +3737,64 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  ListRunCaches
+
+        internal virtual ListRunCachesResponse ListRunCaches(ListRunCachesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRunCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRunCachesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRunCachesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of your run caches.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRunCaches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRunCaches service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">REST API Reference for ListRunCaches Operation</seealso>
+        public virtual Task<ListRunCachesResponse> ListRunCachesAsync(ListRunCachesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRunCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRunCachesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRunCachesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRunGroups
 
         internal virtual ListRunGroupsResponse ListRunGroups(ListRunGroupsRequest request)
@@ -3491,6 +3868,15 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Retrieves a list of runs.
+        /// 
+        ///  
+        /// <para>
+        /// HealthOmics stores a fixed number of runs that are available to the console and API.
+        /// If the ListRuns response doesn't include specific runs that you expected, you can
+        /// find run logs for all runs in the CloudWatch logs. For more information about viewing
+        /// the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
+        /// logs</a> in the <i>AWS HealthOmics User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuns service method.</param>
         /// <param name="cancellationToken">
@@ -3911,6 +4297,61 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  PutS3AccessPolicy
+
+        internal virtual PutS3AccessPolicyResponse PutS3AccessPolicy(PutS3AccessPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutS3AccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutS3AccessPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutS3AccessPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds an access policy to the specified store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutS3AccessPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutS3AccessPolicy service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
+        public virtual Task<PutS3AccessPolicyResponse> PutS3AccessPolicyAsync(PutS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutS3AccessPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutS3AccessPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutS3AccessPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartAnnotationImportJob
 
         internal virtual StartAnnotationImportJobResponse StartAnnotationImportJob(StartAnnotationImportJobRequest request)
@@ -4207,9 +4648,10 @@ namespace Amazon.Omics
         /// </para>
         ///  
         /// <para>
-        /// The total number of runs in your account is subject to a quota per Region. To avoid
-        /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
-        /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+        /// HealthOmics stores a fixed number of runs that are available to the console and API.
+        /// By default, HealthOmics doesn't any remove any runs. If HealthOmics reaches the maximum
+        /// number of runs, you must manually remove runs. To have older runs removed automatically,
+        /// set the retention mode to <c>REMOVE</c>.
         /// </para>
         ///  
         /// <para>
@@ -4528,6 +4970,64 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  UpdateRunCache
+
+        internal virtual UpdateRunCacheResponse UpdateRunCache(UpdateRunCacheRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRunCacheResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRunCacheResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a run cache.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRunCache service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRunCache service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">REST API Reference for UpdateRunCache Operation</seealso>
+        public virtual Task<UpdateRunCacheResponse> UpdateRunCacheAsync(UpdateRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRunCacheRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRunCacheResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRunCacheResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateRunGroup
 
         internal virtual UpdateRunGroupResponse UpdateRunGroup(UpdateRunGroupRequest request)
@@ -4582,6 +5082,61 @@ namespace Amazon.Omics
             options.ResponseUnmarshaller = UpdateRunGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateRunGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSequenceStore
+
+        internal virtual UpdateSequenceStoreResponse UpdateSequenceStore(UpdateSequenceStoreRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSequenceStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSequenceStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSequenceStoreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update one or more parameters for the sequence store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSequenceStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSequenceStore service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
+        public virtual Task<UpdateSequenceStoreResponse> UpdateSequenceStoreAsync(UpdateSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSequenceStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSequenceStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSequenceStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion

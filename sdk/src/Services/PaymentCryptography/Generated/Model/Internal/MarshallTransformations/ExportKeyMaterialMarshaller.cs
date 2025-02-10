@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyCryptogram())
             {
                 context.Writer.WritePropertyName("KeyCryptogram");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportKeyCryptogramMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyCryptogram, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTr31KeyBlock())
             {
                 context.Writer.WritePropertyName("Tr31KeyBlock");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportTr31KeyBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tr31KeyBlock, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTr34KeyBlock())
             {
                 context.Writer.WritePropertyName("Tr34KeyBlock");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExportTr34KeyBlockMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tr34KeyBlock, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

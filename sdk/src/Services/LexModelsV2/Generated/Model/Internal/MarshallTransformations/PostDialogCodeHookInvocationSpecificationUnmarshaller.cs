@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PostDialogCodeHookInvocationSpecification Object
     /// </summary>  
-    public class PostDialogCodeHookInvocationSpecificationUnmarshaller : IUnmarshaller<PostDialogCodeHookInvocationSpecification, XmlUnmarshallerContext>, IUnmarshaller<PostDialogCodeHookInvocationSpecification, JsonUnmarshallerContext>
+    public class PostDialogCodeHookInvocationSpecificationUnmarshaller : IJsonUnmarshaller<PostDialogCodeHookInvocationSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PostDialogCodeHookInvocationSpecification IUnmarshaller<PostDialogCodeHookInvocationSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PostDialogCodeHookInvocationSpecification Unmarshall(JsonUnmarshallerContext context)
+        public PostDialogCodeHookInvocationSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PostDialogCodeHookInvocationSpecification unmarshalledObject = new PostDialogCodeHookInvocationSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("failureConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("successConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.SuccessConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuccessConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("successNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.SuccessNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuccessNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("successResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.SuccessResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuccessResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

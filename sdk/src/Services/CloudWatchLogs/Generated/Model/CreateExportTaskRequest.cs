@@ -62,6 +62,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <note> 
     /// <para>
+    /// We recommend that you don't regularly export to Amazon S3 as a way to continuously
+    /// archive your logs. For that use case, we instaed recommend that you use subscriptions.
+    /// For more information about subscriptions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html">Real-time
+    /// processing of log data with subscriptions</a>.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
     /// Time-based sorting on chunks of log data inside an exported file is not guaranteed.
     /// You can sort the exported log field data by using Linux utilities.
     /// </para>
@@ -102,6 +109,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The prefix used as the start of the key for every object exported. If you don't specify
         /// a value, the default is <c>exportedlogs</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The length of this parameter must comply with the S3 object key name length limits.
+        /// The object key name is a sequence of Unicode characters with UTF-8 encoding, and can
+        /// be up to 1,024 bytes.
         /// </para>
         /// </summary>
         public string DestinationPrefix

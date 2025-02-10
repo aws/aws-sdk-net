@@ -37,6 +37,8 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private string _capacityRegion;
         private NamespaceStatus _creationStatus;
+        private string _iamIdentityCenterApplicationArn;
+        private string _iamIdentityCenterInstanceArn;
         private IdentityStore _identityStore;
         private string _name;
         private NamespaceError _namespaceError;
@@ -93,6 +95,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreationStatus()
         {
             return this._creationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamIdentityCenterApplicationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM Identity Center application.
+        /// </para>
+        /// </summary>
+        public string IamIdentityCenterApplicationArn
+        {
+            get { return this._iamIdentityCenterApplicationArn; }
+            set { this._iamIdentityCenterApplicationArn = value; }
+        }
+
+        // Check to see if IamIdentityCenterApplicationArn property is set
+        internal bool IsSetIamIdentityCenterApplicationArn()
+        {
+            return this._iamIdentityCenterApplicationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamIdentityCenterInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+        /// </para>
+        /// </summary>
+        public string IamIdentityCenterInstanceArn
+        {
+            get { return this._iamIdentityCenterInstanceArn; }
+            set { this._iamIdentityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IamIdentityCenterInstanceArn property is set
+        internal bool IsSetIamIdentityCenterInstanceArn()
+        {
+            return this._iamIdentityCenterInstanceArn != null;
         }
 
         /// <summary>

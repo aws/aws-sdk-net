@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,125 +49,125 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessLogSettings())
             {
                 context.Writer.WritePropertyName("AccessLogSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiGatewayAccessLogSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessLogSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCacheClusterEnabled())
             {
                 context.Writer.WritePropertyName("CacheClusterEnabled");
-                context.Writer.Write(requestObject.CacheClusterEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CacheClusterEnabled.Value);
             }
 
             if(requestObject.IsSetCacheClusterSize())
             {
                 context.Writer.WritePropertyName("CacheClusterSize");
-                context.Writer.Write(requestObject.CacheClusterSize);
+                context.Writer.WriteStringValue(requestObject.CacheClusterSize);
             }
 
             if(requestObject.IsSetCacheClusterStatus())
             {
                 context.Writer.WritePropertyName("CacheClusterStatus");
-                context.Writer.Write(requestObject.CacheClusterStatus);
+                context.Writer.WriteStringValue(requestObject.CacheClusterStatus);
             }
 
             if(requestObject.IsSetCanarySettings())
             {
                 context.Writer.WritePropertyName("CanarySettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiGatewayCanarySettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CanarySettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClientCertificateId())
             {
                 context.Writer.WritePropertyName("ClientCertificateId");
-                context.Writer.Write(requestObject.ClientCertificateId);
+                context.Writer.WriteStringValue(requestObject.ClientCertificateId);
             }
 
             if(requestObject.IsSetCreatedDate())
             {
                 context.Writer.WritePropertyName("CreatedDate");
-                context.Writer.Write(requestObject.CreatedDate);
+                context.Writer.WriteStringValue(requestObject.CreatedDate);
             }
 
             if(requestObject.IsSetDeploymentId())
             {
                 context.Writer.WritePropertyName("DeploymentId");
-                context.Writer.Write(requestObject.DeploymentId);
+                context.Writer.WriteStringValue(requestObject.DeploymentId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDocumentationVersion())
             {
                 context.Writer.WritePropertyName("DocumentationVersion");
-                context.Writer.Write(requestObject.DocumentationVersion);
+                context.Writer.WriteStringValue(requestObject.DocumentationVersion);
             }
 
             if(requestObject.IsSetLastUpdatedDate())
             {
                 context.Writer.WritePropertyName("LastUpdatedDate");
-                context.Writer.Write(requestObject.LastUpdatedDate);
+                context.Writer.WriteStringValue(requestObject.LastUpdatedDate);
             }
 
             if(requestObject.IsSetMethodSettings())
             {
                 context.Writer.WritePropertyName("MethodSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMethodSettingsListValue in requestObject.MethodSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsApiGatewayMethodSettingsMarshaller.Instance;
                     marshaller.Marshall(requestObjectMethodSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStageName())
             {
                 context.Writer.WritePropertyName("StageName");
-                context.Writer.Write(requestObject.StageName);
+                context.Writer.WriteStringValue(requestObject.StageName);
             }
 
             if(requestObject.IsSetTracingEnabled())
             {
                 context.Writer.WritePropertyName("TracingEnabled");
-                context.Writer.Write(requestObject.TracingEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.TracingEnabled.Value);
             }
 
             if(requestObject.IsSetVariables())
             {
                 context.Writer.WritePropertyName("Variables");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectVariablesKvp in requestObject.Variables)
                 {
                     context.Writer.WritePropertyName(requestObjectVariablesKvp.Key);
                     var requestObjectVariablesValue = requestObjectVariablesKvp.Value;
 
-                        context.Writer.Write(requestObjectVariablesValue);
+                        context.Writer.WriteStringValue(requestObjectVariablesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWebAclArn())
             {
                 context.Writer.WritePropertyName("WebAclArn");
-                context.Writer.Write(requestObject.WebAclArn);
+                context.Writer.WriteStringValue(requestObject.WebAclArn);
             }
 
         }

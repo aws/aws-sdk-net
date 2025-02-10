@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlatInvocations())
             {
                 context.Writer.WritePropertyName("FlatInvocations");
-                context.Writer.Write(requestObject.FlatInvocations);
+                context.Writer.WriteStringValue(requestObject.FlatInvocations);
             }
 
             if(requestObject.IsSetMaxInvocations())
             {
                 context.Writer.WritePropertyName("MaxInvocations");
-                context.Writer.Write(requestObject.MaxInvocations.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxInvocations.Value);
             }
 
             if(requestObject.IsSetModelLatencyThresholds())
             {
                 context.Writer.WritePropertyName("ModelLatencyThresholds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectModelLatencyThresholdsListValue in requestObject.ModelLatencyThresholds)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ModelLatencyThresholdMarshaller.Instance;
                     marshaller.Marshall(requestObjectModelLatencyThresholdsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GradientColor Object
     /// </summary>  
-    public class GradientColorUnmarshaller : IUnmarshaller<GradientColor, XmlUnmarshallerContext>, IUnmarshaller<GradientColor, JsonUnmarshallerContext>
+    public class GradientColorUnmarshaller : IJsonUnmarshaller<GradientColor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GradientColor IUnmarshaller<GradientColor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GradientColor Unmarshall(JsonUnmarshallerContext context)
+        public GradientColor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GradientColor unmarshalledObject = new GradientColor();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Stops", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GradientStop, GradientStopUnmarshaller>(GradientStopUnmarshaller.Instance);
-                    unmarshalledObject.Stops = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GradientStop, GradientStopUnmarshaller>(GradientStopUnmarshaller.Instance);
+                    unmarshalledObject.Stops = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOutboundCallerIdName())
             {
                 context.Writer.WritePropertyName("OutboundCallerIdName");
-                context.Writer.Write(requestObject.OutboundCallerIdName);
+                context.Writer.WriteStringValue(requestObject.OutboundCallerIdName);
             }
 
             if(requestObject.IsSetOutboundCallerIdNumberId())
             {
                 context.Writer.WritePropertyName("OutboundCallerIdNumberId");
-                context.Writer.Write(requestObject.OutboundCallerIdNumberId);
+                context.Writer.WriteStringValue(requestObject.OutboundCallerIdNumberId);
             }
 
             if(requestObject.IsSetOutboundFlowId())
             {
                 context.Writer.WritePropertyName("OutboundFlowId");
-                context.Writer.Write(requestObject.OutboundFlowId);
+                context.Writer.WriteStringValue(requestObject.OutboundFlowId);
             }
 
         }

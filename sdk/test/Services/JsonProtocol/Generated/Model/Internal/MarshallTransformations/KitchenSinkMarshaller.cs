@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlob())
             {
                 context.Writer.WritePropertyName("Blob");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Blob));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Blob));
             }
 
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("Boolean");
-                context.Writer.Write(requestObject.Boolean.Value);
+                context.Writer.WriteBooleanValue(requestObject.Boolean.Value);
             }
 
             if(requestObject.IsSetDouble())
@@ -65,23 +63,23 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Double");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Double.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Double.Value);
+                    context.Writer.WriteNumberValue(requestObject.Double.Value);
                 }
             }
 
             if(requestObject.IsSetEmptyStruct())
             {
                 context.Writer.WritePropertyName("EmptyStruct");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmptyStructMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmptyStruct, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFloat())
@@ -89,264 +87,264 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Float");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Float.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Float.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Float.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Float.Value);
+                    context.Writer.WriteNumberValue(requestObject.Float.Value);
                 }
             }
 
             if(requestObject.IsSetHttpdateTimestamp())
             {
                 context.Writer.WritePropertyName("HttpdateTimestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToRFC822(requestObject.HttpdateTimestamp));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822(requestObject.HttpdateTimestamp));
             }
 
             if(requestObject.IsSetInteger())
             {
                 context.Writer.WritePropertyName("Integer");
-                context.Writer.Write(requestObject.Integer.Value);
+                context.Writer.WriteNumberValue(requestObject.Integer.Value);
             }
 
             if(requestObject.IsSetIso8601Timestamp())
             {
                 context.Writer.WritePropertyName("Iso8601Timestamp");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.Iso8601Timestamp));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.Iso8601Timestamp));
             }
 
             if(requestObject.IsSetJsonValue())
             {
                 context.Writer.WritePropertyName("JsonValue");
-                context.Writer.Write(requestObject.JsonValue);
+                context.Writer.WriteStringValue(requestObject.JsonValue);
             }
 
             if(requestObject.IsSetListOfLists())
             {
                 context.Writer.WritePropertyName("ListOfLists");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListOfListsListValue in requestObject.ListOfLists)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectListOfListsListValueListValue in requestObjectListOfListsListValue)
                     {
-                            context.Writer.Write(requestObjectListOfListsListValueListValue);
+                            context.Writer.WriteStringValue(requestObjectListOfListsListValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetListOfMapsOfStrings())
             {
                 context.Writer.WritePropertyName("ListOfMapsOfStrings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListOfMapsOfStringsListValue in requestObject.ListOfMapsOfStrings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectListOfMapsOfStringsListValueKvp in requestObjectListOfMapsOfStringsListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectListOfMapsOfStringsListValueKvp.Key);
                         var requestObjectListOfMapsOfStringsListValueValue = requestObjectListOfMapsOfStringsListValueKvp.Value;
 
-                            context.Writer.Write(requestObjectListOfMapsOfStringsListValueValue);
+                            context.Writer.WriteStringValue(requestObjectListOfMapsOfStringsListValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetListOfStrings())
             {
                 context.Writer.WritePropertyName("ListOfStrings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListOfStringsListValue in requestObject.ListOfStrings)
                 {
-                        context.Writer.Write(requestObjectListOfStringsListValue);
+                        context.Writer.WriteStringValue(requestObjectListOfStringsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetListOfStructs())
             {
                 context.Writer.WritePropertyName("ListOfStructs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectListOfStructsListValue in requestObject.ListOfStructs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SimpleStructMarshaller.Instance;
                     marshaller.Marshall(requestObjectListOfStructsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLong())
             {
                 context.Writer.WritePropertyName("Long");
-                context.Writer.Write(requestObject.Long.Value);
+                context.Writer.WriteNumberValue(requestObject.Long.Value);
             }
 
             if(requestObject.IsSetMapOfListsOfStrings())
             {
                 context.Writer.WritePropertyName("MapOfListsOfStrings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapOfListsOfStringsKvp in requestObject.MapOfListsOfStrings)
                 {
                     context.Writer.WritePropertyName(requestObjectMapOfListsOfStringsKvp.Key);
                     var requestObjectMapOfListsOfStringsValue = requestObjectMapOfListsOfStringsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectMapOfListsOfStringsValueListValue in requestObjectMapOfListsOfStringsValue)
                     {
-                            context.Writer.Write(requestObjectMapOfListsOfStringsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectMapOfListsOfStringsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMapOfMaps())
             {
                 context.Writer.WritePropertyName("MapOfMaps");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapOfMapsKvp in requestObject.MapOfMaps)
                 {
                     context.Writer.WritePropertyName(requestObjectMapOfMapsKvp.Key);
                     var requestObjectMapOfMapsValue = requestObjectMapOfMapsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectMapOfMapsValueKvp in requestObjectMapOfMapsValue)
                     {
                         context.Writer.WritePropertyName(requestObjectMapOfMapsValueKvp.Key);
                         var requestObjectMapOfMapsValueValue = requestObjectMapOfMapsValueKvp.Value;
 
-                            context.Writer.Write(requestObjectMapOfMapsValueValue);
+                            context.Writer.WriteStringValue(requestObjectMapOfMapsValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMapOfStrings())
             {
                 context.Writer.WritePropertyName("MapOfStrings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapOfStringsKvp in requestObject.MapOfStrings)
                 {
                     context.Writer.WritePropertyName(requestObjectMapOfStringsKvp.Key);
                     var requestObjectMapOfStringsValue = requestObjectMapOfStringsKvp.Value;
 
-                        context.Writer.Write(requestObjectMapOfStringsValue);
+                        context.Writer.WriteStringValue(requestObjectMapOfStringsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMapOfStructs())
             {
                 context.Writer.WritePropertyName("MapOfStructs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMapOfStructsKvp in requestObject.MapOfStructs)
                 {
                     context.Writer.WritePropertyName(requestObjectMapOfStructsKvp.Key);
                     var requestObjectMapOfStructsValue = requestObjectMapOfStructsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SimpleStructMarshaller.Instance;
                     marshaller.Marshall(requestObjectMapOfStructsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecursiveList())
             {
                 context.Writer.WritePropertyName("RecursiveList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecursiveListListValue in requestObject.RecursiveList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KitchenSinkMarshaller.Instance;
                     marshaller.Marshall(requestObjectRecursiveListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecursiveMap())
             {
                 context.Writer.WritePropertyName("RecursiveMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRecursiveMapKvp in requestObject.RecursiveMap)
                 {
                     context.Writer.WritePropertyName(requestObjectRecursiveMapKvp.Key);
                     var requestObjectRecursiveMapValue = requestObjectRecursiveMapKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KitchenSinkMarshaller.Instance;
                     marshaller.Marshall(requestObjectRecursiveMapValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRecursiveStruct())
             {
                 context.Writer.WritePropertyName("RecursiveStruct");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KitchenSinkMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecursiveStruct, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSimpleStruct())
             {
                 context.Writer.WritePropertyName("SimpleStruct");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SimpleStructMarshaller.Instance;
                 marshaller.Marshall(requestObject.SimpleStruct, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("String");
-                context.Writer.Write(requestObject.String);
+                context.Writer.WriteStringValue(requestObject.String);
             }
 
             if(requestObject.IsSetStructWithJsonName())
             {
                 context.Writer.WritePropertyName("StructWithJsonName");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StructWithJsonNameMarshaller.Instance;
                 marshaller.Marshall(requestObject.StructWithJsonName, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Timestamp.Value)));
             }
 
             if(requestObject.IsSetUnixTimestamp())
             {
                 context.Writer.WritePropertyName("UnixTimestamp");
-                context.Writer.Write(requestObject.UnixTimestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.UnixTimestamp.Value)));
             }
 
         }

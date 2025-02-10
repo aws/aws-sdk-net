@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnits())
             {
                 context.Writer.WritePropertyName("units");
-                context.Writer.Write(requestObject.Units);
+                context.Writer.WriteStringValue(requestObject.Units);
             }
 
             if(requestObject.IsSetValue())
@@ -59,11 +57,11 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("value");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Value.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Value.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Value.Value);
+                    context.Writer.WriteNumberValue(requestObject.Value.Value);
                 }
             }
 

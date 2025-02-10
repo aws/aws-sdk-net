@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentRedaction())
             {
                 context.Writer.WritePropertyName("ContentRedaction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContentRedactionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContentRedaction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLanguageIdSettings())
             {
                 context.Writer.WritePropertyName("LanguageIdSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLanguageIdSettingsKvp in requestObject.LanguageIdSettings)
                 {
                     context.Writer.WritePropertyName(requestObjectLanguageIdSettingsKvp.Key);
                     var requestObjectLanguageIdSettingsValue = requestObjectLanguageIdSettingsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LanguageIdSettingsMarshaller.Instance;
                     marshaller.Marshall(requestObjectLanguageIdSettingsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLanguageModelName())
             {
                 context.Writer.WritePropertyName("LanguageModelName");
-                context.Writer.Write(requestObject.LanguageModelName);
+                context.Writer.WriteStringValue(requestObject.LanguageModelName);
             }
 
             if(requestObject.IsSetLanguageOptions())
             {
                 context.Writer.WritePropertyName("LanguageOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLanguageOptionsListValue in requestObject.LanguageOptions)
                 {
-                        context.Writer.Write(requestObjectLanguageOptionsListValue);
+                        context.Writer.WriteStringValue(requestObjectLanguageOptionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSummarization())
             {
                 context.Writer.WritePropertyName("Summarization");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SummarizationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Summarization, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVocabularyFilterMethod())
             {
                 context.Writer.WritePropertyName("VocabularyFilterMethod");
-                context.Writer.Write(requestObject.VocabularyFilterMethod);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterMethod);
             }
 
             if(requestObject.IsSetVocabularyFilterName())
             {
                 context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.Write(requestObject.VocabularyFilterName);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
             }
 
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.Write(requestObject.VocabularyName);
+                context.Writer.WriteStringValue(requestObject.VocabularyName);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,124 +66,129 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetJobDefinitionName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetJobDefinitionName())
-                    {
-                        context.Writer.WritePropertyName("JobDefinitionName");
-                        context.Writer.Write(publicRequest.JobDefinitionName);
-                    }
-
-                    if(publicRequest.IsSetJobResources())
-                    {
-                        context.Writer.WritePropertyName("JobResources");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitoringResourcesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobResources, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetModelExplainabilityAppSpecification())
-                    {
-                        context.Writer.WritePropertyName("ModelExplainabilityAppSpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelExplainabilityAppSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ModelExplainabilityAppSpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetModelExplainabilityBaselineConfig())
-                    {
-                        context.Writer.WritePropertyName("ModelExplainabilityBaselineConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelExplainabilityBaselineConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ModelExplainabilityBaselineConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetModelExplainabilityJobInput())
-                    {
-                        context.Writer.WritePropertyName("ModelExplainabilityJobInput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelExplainabilityJobInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ModelExplainabilityJobInput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetModelExplainabilityJobOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("ModelExplainabilityJobOutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitoringOutputConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ModelExplainabilityJobOutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNetworkConfig())
-                    {
-                        context.Writer.WritePropertyName("NetworkConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitoringNetworkConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NetworkConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetStoppingCondition())
-                    {
-                        context.Writer.WritePropertyName("StoppingCondition");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitoringStoppingConditionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StoppingCondition, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("JobDefinitionName");
+                context.Writer.WriteStringValue(publicRequest.JobDefinitionName);
             }
+
+            if(publicRequest.IsSetJobResources())
+            {
+                context.Writer.WritePropertyName("JobResources");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringResourcesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobResources, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetModelExplainabilityAppSpecification())
+            {
+                context.Writer.WritePropertyName("ModelExplainabilityAppSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelExplainabilityAppSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ModelExplainabilityAppSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetModelExplainabilityBaselineConfig())
+            {
+                context.Writer.WritePropertyName("ModelExplainabilityBaselineConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelExplainabilityBaselineConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ModelExplainabilityBaselineConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetModelExplainabilityJobInput())
+            {
+                context.Writer.WritePropertyName("ModelExplainabilityJobInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelExplainabilityJobInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ModelExplainabilityJobInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetModelExplainabilityJobOutputConfig())
+            {
+                context.Writer.WritePropertyName("ModelExplainabilityJobOutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringOutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ModelExplainabilityJobOutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNetworkConfig())
+            {
+                context.Writer.WritePropertyName("NetworkConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringNetworkConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetStoppingCondition())
+            {
+                context.Writer.WritePropertyName("StoppingCondition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringStoppingConditionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StoppingCondition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

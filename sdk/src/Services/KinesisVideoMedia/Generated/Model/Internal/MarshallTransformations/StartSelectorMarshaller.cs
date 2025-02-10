@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.KinesisVideoMedia.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfterFragmentNumber())
             {
                 context.Writer.WritePropertyName("AfterFragmentNumber");
-                context.Writer.Write(requestObject.AfterFragmentNumber);
+                context.Writer.WriteStringValue(requestObject.AfterFragmentNumber);
             }
 
             if(requestObject.IsSetContinuationToken())
             {
                 context.Writer.WritePropertyName("ContinuationToken");
-                context.Writer.Write(requestObject.ContinuationToken);
+                context.Writer.WriteStringValue(requestObject.ContinuationToken);
             }
 
             if(requestObject.IsSetStartSelectorType())
             {
                 context.Writer.WritePropertyName("StartSelectorType");
-                context.Writer.Write(requestObject.StartSelectorType);
+                context.Writer.WriteStringValue(requestObject.StartSelectorType);
             }
 
             if(requestObject.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("StartTimestamp");
-                context.Writer.Write(requestObject.StartTimestamp.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTimestamp.Value)));
             }
 
         }

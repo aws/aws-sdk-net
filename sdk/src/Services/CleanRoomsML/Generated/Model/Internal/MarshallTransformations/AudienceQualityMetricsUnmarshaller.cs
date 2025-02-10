@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudienceQualityMetrics Object
     /// </summary>  
-    public class AudienceQualityMetricsUnmarshaller : IUnmarshaller<AudienceQualityMetrics, XmlUnmarshallerContext>, IUnmarshaller<AudienceQualityMetrics, JsonUnmarshallerContext>
+    public class AudienceQualityMetricsUnmarshaller : IJsonUnmarshaller<AudienceQualityMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudienceQualityMetrics IUnmarshaller<AudienceQualityMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudienceQualityMetrics Unmarshall(JsonUnmarshallerContext context)
+        public AudienceQualityMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudienceQualityMetrics unmarshalledObject = new AudienceQualityMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("recallMetric", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.RecallMetric = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecallMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("relevanceMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RelevanceMetric, RelevanceMetricUnmarshaller>(RelevanceMetricUnmarshaller.Instance);
-                    unmarshalledObject.RelevanceMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RelevanceMetric, RelevanceMetricUnmarshaller>(RelevanceMetricUnmarshaller.Instance);
+                    unmarshalledObject.RelevanceMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

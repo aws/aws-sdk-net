@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AccessPolicyStats Object
     /// </summary>  
-    public class AccessPolicyStatsUnmarshaller : IUnmarshaller<AccessPolicyStats, XmlUnmarshallerContext>, IUnmarshaller<AccessPolicyStats, JsonUnmarshallerContext>
+    public class AccessPolicyStatsUnmarshaller : IJsonUnmarshaller<AccessPolicyStats, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AccessPolicyStats IUnmarshaller<AccessPolicyStats, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccessPolicyStats Unmarshall(JsonUnmarshallerContext context)
+        public AccessPolicyStats Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AccessPolicyStats unmarshalledObject = new AccessPolicyStats();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataPolicyCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DataPolicyCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataPolicyCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

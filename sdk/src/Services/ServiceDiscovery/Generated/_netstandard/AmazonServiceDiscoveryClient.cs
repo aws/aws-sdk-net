@@ -621,8 +621,8 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Deletes a specified service. If the service still contains one or more registered
-        /// instances, the request fails.
+        /// Deletes a specified service and all associated service attributes. If the service
+        /// still contains one or more registered instances, the request fails.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteService service method.</param>
         /// <param name="cancellationToken">
@@ -650,6 +650,48 @@ namespace Amazon.ServiceDiscovery
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceAttributes
+
+        internal virtual DeleteServiceAttributesResponse DeleteServiceAttributes(DeleteServiceAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes specific attributes associated with a service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceAttributes service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeleteServiceAttributes">REST API Reference for DeleteServiceAttributes Operation</seealso>
+        public virtual Task<DeleteServiceAttributesResponse> DeleteServiceAttributesAsync(DeleteServiceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1041,6 +1083,48 @@ namespace Amazon.ServiceDiscovery
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetServiceAttributes
+
+        internal virtual GetServiceAttributesResponse GetServiceAttributes(GetServiceAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the attributes associated with a specified service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceAttributes service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetServiceAttributes">REST API Reference for GetServiceAttributes Operation</seealso>
+        public virtual Task<GetServiceAttributesResponse> GetServiceAttributesAsync(GetServiceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetServiceAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1723,6 +1807,52 @@ namespace Amazon.ServiceDiscovery
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceAttributes
+
+        internal virtual UpdateServiceAttributesResponse UpdateServiceAttributes(UpdateServiceAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Submits a request to update a specified service to add service-level attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceAttributes service method, as returned by ServiceDiscovery.</returns>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.InvalidInputException">
+        /// One or more specified values aren't valid. For example, a required value might be
+        /// missing, a numeric value might be outside the allowed range, or a string value might
+        /// exceed length constraints.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceAttributesLimitExceededException">
+        /// The attribute can't be added to the service because you've exceeded the quota for
+        /// the number of attributes you can add to a service.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
+        /// No service exists with the specified ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateServiceAttributes">REST API Reference for UpdateServiceAttributes Operation</seealso>
+        public virtual Task<UpdateServiceAttributesResponse> UpdateServiceAttributesAsync(UpdateServiceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -45,6 +45,7 @@ namespace Amazon.VPCLattice.Model
         private AuthType _authType;
         private string _clientToken;
         private string _name;
+        private SharingConfig _sharingConfig;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -116,6 +117,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingConfig. 
+        /// <para>
+        /// Specify if the service network should be enabled for sharing.
+        /// </para>
+        /// </summary>
+        public SharingConfig SharingConfig
+        {
+            get { return this._sharingConfig; }
+            set { this._sharingConfig = value; }
+        }
+
+        // Check to see if SharingConfig property is set
+        internal bool IsSetSharingConfig()
+        {
+            return this._sharingConfig != null;
         }
 
         /// <summary>

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -61,52 +64,57 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/gateways";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEgressCidrBlocks())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("egressCidrBlocks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEgressCidrBlocksListValue in publicRequest.EgressCidrBlocks)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEgressCidrBlocks())
-                    {
-                        context.Writer.WritePropertyName("egressCidrBlocks");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEgressCidrBlocksListValue in publicRequest.EgressCidrBlocks)
-                        {
-                                context.Writer.Write(publicRequestEgressCidrBlocksListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNetworks())
-                    {
-                        context.Writer.WritePropertyName("networks");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNetworksListValue in publicRequest.Networks)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GatewayNetworkMarshaller.Instance;
-                            marshaller.Marshall(publicRequestNetworksListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestEgressCidrBlocksListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNetworks())
+            {
+                context.Writer.WritePropertyName("networks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNetworksListValue in publicRequest.Networks)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GatewayNetworkMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNetworksListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

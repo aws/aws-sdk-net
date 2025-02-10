@@ -38,7 +38,9 @@ namespace Amazon.CloudHSMV2.Model
         private string _clusterId;
         private string _eniId;
         private string _eniIp;
+        private string _eniIpV6;
         private string _hsmId;
+        private string _hsmType;
         private HsmState _state;
         private string _stateMessage;
         private string _subnetId;
@@ -116,6 +118,25 @@ namespace Amazon.CloudHSMV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EniIpV6. 
+        /// <para>
+        /// The IPv6 address (if any) of the HSM's elastic network interface (ENI).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string EniIpV6
+        {
+            get { return this._eniIpV6; }
+            set { this._eniIpV6 = value; }
+        }
+
+        // Check to see if EniIpV6 property is set
+        internal bool IsSetEniIpV6()
+        {
+            return this._eniIpV6 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HsmId. 
         /// <para>
         /// The HSM's identifier (ID).
@@ -132,6 +153,25 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetHsmId()
         {
             return this._hsmId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HsmType. 
+        /// <para>
+        /// The type of HSM.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string HsmType
+        {
+            get { return this._hsmType; }
+            set { this._hsmType = value; }
+        }
+
+        // Check to see if HsmType property is set
+        internal bool IsSetHsmType()
+        {
+            return this._hsmType != null;
         }
 
         /// <summary>

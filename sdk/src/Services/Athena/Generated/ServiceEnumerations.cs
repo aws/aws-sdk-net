@@ -329,22 +329,6 @@ namespace Amazon.Athena
         /// </summary>
         public static readonly ConnectionType BIGQUERY = new ConnectionType("BIGQUERY");
         /// <summary>
-        /// Constant CLOUDERAHIVE for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType CLOUDERAHIVE = new ConnectionType("CLOUDERAHIVE");
-        /// <summary>
-        /// Constant CLOUDERAIMPALA for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType CLOUDERAIMPALA = new ConnectionType("CLOUDERAIMPALA");
-        /// <summary>
-        /// Constant CLOUDWATCH for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType CLOUDWATCH = new ConnectionType("CLOUDWATCH");
-        /// <summary>
-        /// Constant CLOUDWATCHMETRICS for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType CLOUDWATCHMETRICS = new ConnectionType("CLOUDWATCHMETRICS");
-        /// <summary>
         /// Constant CMDB for ConnectionType
         /// </summary>
         public static readonly ConnectionType CMDB = new ConnectionType("CMDB");
@@ -377,21 +361,9 @@ namespace Amazon.Athena
         /// </summary>
         public static readonly ConnectionType HBASE = new ConnectionType("HBASE");
         /// <summary>
-        /// Constant HORTONWORKSHIVE for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType HORTONWORKSHIVE = new ConnectionType("HORTONWORKSHIVE");
-        /// <summary>
-        /// Constant MSK for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType MSK = new ConnectionType("MSK");
-        /// <summary>
         /// Constant MYSQL for ConnectionType
         /// </summary>
         public static readonly ConnectionType MYSQL = new ConnectionType("MYSQL");
-        /// <summary>
-        /// Constant NEPTUNE for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType NEPTUNE = new ConnectionType("NEPTUNE");
         /// <summary>
         /// Constant OPENSEARCH for ConnectionType
         /// </summary>
@@ -404,10 +376,6 @@ namespace Amazon.Athena
         /// Constant POSTGRESQL for ConnectionType
         /// </summary>
         public static readonly ConnectionType POSTGRESQL = new ConnectionType("POSTGRESQL");
-        /// <summary>
-        /// Constant REDIS for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType REDIS = new ConnectionType("REDIS");
         /// <summary>
         /// Constant REDSHIFT for ConnectionType
         /// </summary>
@@ -429,10 +397,6 @@ namespace Amazon.Athena
         /// </summary>
         public static readonly ConnectionType SYNAPSE = new ConnectionType("SYNAPSE");
         /// <summary>
-        /// Constant TERADATA for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType TERADATA = new ConnectionType("TERADATA");
-        /// <summary>
         /// Constant TIMESTREAM for ConnectionType
         /// </summary>
         public static readonly ConnectionType TIMESTREAM = new ConnectionType("TIMESTREAM");
@@ -440,10 +404,6 @@ namespace Amazon.Athena
         /// Constant TPCDS for ConnectionType
         /// </summary>
         public static readonly ConnectionType TPCDS = new ConnectionType("TPCDS");
-        /// <summary>
-        /// Constant VERTICA for ConnectionType
-        /// </summary>
-        public static readonly ConnectionType VERTICA = new ConnectionType("VERTICA");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AppInputSource Object
     /// </summary>  
-    public class AppInputSourceUnmarshaller : IUnmarshaller<AppInputSource, XmlUnmarshallerContext>, IUnmarshaller<AppInputSource, JsonUnmarshallerContext>
+    public class AppInputSourceUnmarshaller : IJsonUnmarshaller<AppInputSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AppInputSource IUnmarshaller<AppInputSource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AppInputSource Unmarshall(JsonUnmarshallerContext context)
+        public AppInputSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AppInputSource unmarshalledObject = new AppInputSource();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("eksSourceClusterNamespace", targetDepth))
                 {
                     var unmarshaller = EksSourceClusterNamespaceUnmarshaller.Instance;
-                    unmarshalledObject.EksSourceClusterNamespace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EksSourceClusterNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("importType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImportType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImportType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ResourceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("terraformSource", targetDepth))
                 {
                     var unmarshaller = TerraformSourceUnmarshaller.Instance;
-                    unmarshalledObject.TerraformSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TerraformSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

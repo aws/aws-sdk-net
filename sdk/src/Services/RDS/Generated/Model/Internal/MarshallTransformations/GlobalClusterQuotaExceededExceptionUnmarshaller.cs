@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GlobalClusterQuotaExceededException operation
     /// </summary>  
-    public class GlobalClusterQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<GlobalClusterQuotaExceededException, XmlUnmarshallerContext>
+    public class GlobalClusterQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<GlobalClusterQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SliderControlDisplayOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DisplayOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumValue())
@@ -64,11 +62,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MaximumValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MaximumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaximumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaximumValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaximumValue.Value);
                 }
             }
 
@@ -77,11 +75,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinimumValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MinimumValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinimumValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinimumValue.Value);
                 }
             }
 
@@ -90,18 +88,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("StepSize");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.StepSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StepSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StepSize.Value);
+                    context.Writer.WriteNumberValue(requestObject.StepSize.Value);
                 }
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

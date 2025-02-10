@@ -56,26 +56,25 @@ namespace Amazon.SimpleSystemsManagement
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For information about each of the capabilities that comprise Systems Manager, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
-    /// Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// For information about each of the tools that comprise Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html">Using
+    /// Systems Manager tools</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For details about predefined runbooks for Automation, a capability of Amazon Web Services
+    /// For details about predefined runbooks for Automation, a tool in Amazon Web Services
     /// Systems Manager, see the <i> <a href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html">Systems
     /// Manager Automation runbook reference</a> </i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about AppConfig, a capability of Systems Manager, see the <i> <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig
+    /// For information about AppConfig, a tool in Systems Manager, see the <i> <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig
     /// User Guide</a> </i> and the <i> <a href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig
     /// API Reference</a> </i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For information about Incident Manager, a capability of Systems Manager, see the <i>
-    /// <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems Manager
+    /// For information about Incident Manager, a tool in Systems Manager, see the <i> <a
+    /// href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems Manager
     /// Incident Manager User Guide</a> </i> and the <i> <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems
     /// Manager Incident Manager API Reference</a> </i>.
     /// </para>
@@ -483,7 +482,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you
         /// can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager
-        /// and OpsCenter are capabilities of Amazon Web Services Systems Manager.
+        /// and OpsCenter are tools in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateOpsItemRelatedItem service method.</param>
         /// 
@@ -521,7 +520,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you
         /// can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager
-        /// and OpsCenter are capabilities of Amazon Web Services Systems Manager.
+        /// and OpsCenter are tools in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateOpsItemRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -955,9 +954,9 @@ namespace Amazon.SimpleSystemsManagement
         /// Generates an activation code and activation ID you can use to register your on-premises
         /// servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager.
         /// Registering these machines with Systems Manager makes it possible to manage them using
-        /// Systems Manager capabilities. You use the activation code and ID when installing SSM
-        /// Agent on machines in your hybrid environment. For more information about requirements
-        /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
+        /// Systems Manager tools. You use the activation code and ID when installing SSM Agent
+        /// on machines in your hybrid environment. For more information about requirements for
+        /// managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
         /// Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// 
@@ -995,9 +994,9 @@ namespace Amazon.SimpleSystemsManagement
         /// Generates an activation code and activation ID you can use to register your on-premises
         /// servers, edge devices, or virtual machine (VM) with Amazon Web Services Systems Manager.
         /// Registering these machines with Systems Manager makes it possible to manage them using
-        /// Systems Manager capabilities. You use the activation code and ID when installing SSM
-        /// Agent on machines in your hybrid environment. For more information about requirements
-        /// for managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
+        /// Systems Manager tools. You use the activation code and ID when installing SSM Agent
+        /// on machines in your hybrid environment. For more information about requirements for
+        /// managing on-premises machines using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-hybrid-multicloud.html">Using
         /// Amazon Web Services Systems Manager in hybrid and multicloud environments</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>. 
         /// 
@@ -1044,12 +1043,12 @@ namespace Amazon.SimpleSystemsManagement
         /// and running on your managed nodes, or that certain ports must be closed. For static
         /// targets, the association specifies a schedule for when the configuration is reapplied.
         /// For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web
-        /// Services autoscaling group, State Manager, a capability of Amazon Web Services Systems
-        /// Manager applies the configuration when new managed nodes are added to the group. The
-        /// association also specifies actions to take when applying the configuration. For example,
-        /// an association for anti-virus software might run once a day. If the software isn't
-        /// installed, then State Manager installs it. If the software is installed, but the service
-        /// isn't running, then the association might instruct State Manager to start the service.
+        /// Services autoscaling group, State Manager, a tool in Amazon Web Services Systems Manager
+        /// applies the configuration when new managed nodes are added to the group. The association
+        /// also specifies actions to take when applying the configuration. For example, an association
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
+        /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="instanceId">The managed node ID. <note>  <c>InstanceId</c> has been deprecated. To specify a managed node ID for an association, use the <c>Targets</c> parameter. Requests that include the parameter <c>InstanceID</c> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <c>InstanceId</c>, you can't use the parameters <c>AssociationName</c>, <c>DocumentVersion</c>, <c>MaxErrors</c>, <c>MaxConcurrency</c>, <c>OutputLocation</c>, or <c>ScheduleExpression</c>. To use these parameters, you must use the <c>Targets</c> parameter. </note></param>
         /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <c>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </c>  For example:  <c>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</c>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <c>AWS-ApplyPatchBaseline</c> or <c>My-Document</c>.</param>
@@ -1135,12 +1134,12 @@ namespace Amazon.SimpleSystemsManagement
         /// and running on your managed nodes, or that certain ports must be closed. For static
         /// targets, the association specifies a schedule for when the configuration is reapplied.
         /// For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web
-        /// Services autoscaling group, State Manager, a capability of Amazon Web Services Systems
-        /// Manager applies the configuration when new managed nodes are added to the group. The
-        /// association also specifies actions to take when applying the configuration. For example,
-        /// an association for anti-virus software might run once a day. If the software isn't
-        /// installed, then State Manager installs it. If the software is installed, but the service
-        /// isn't running, then the association might instruct State Manager to start the service.
+        /// Services autoscaling group, State Manager, a tool in Amazon Web Services Systems Manager
+        /// applies the configuration when new managed nodes are added to the group. The association
+        /// also specifies actions to take when applying the configuration. For example, an association
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
+        /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
         /// 
@@ -1226,12 +1225,12 @@ namespace Amazon.SimpleSystemsManagement
         /// and running on your managed nodes, or that certain ports must be closed. For static
         /// targets, the association specifies a schedule for when the configuration is reapplied.
         /// For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web
-        /// Services autoscaling group, State Manager, a capability of Amazon Web Services Systems
-        /// Manager applies the configuration when new managed nodes are added to the group. The
-        /// association also specifies actions to take when applying the configuration. For example,
-        /// an association for anti-virus software might run once a day. If the software isn't
-        /// installed, then State Manager installs it. If the software is installed, but the service
-        /// isn't running, then the association might instruct State Manager to start the service.
+        /// Services autoscaling group, State Manager, a tool in Amazon Web Services Systems Manager
+        /// applies the configuration when new managed nodes are added to the group. The association
+        /// also specifies actions to take when applying the configuration. For example, an association
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
+        /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="instanceId">The managed node ID. <note>  <c>InstanceId</c> has been deprecated. To specify a managed node ID for an association, use the <c>Targets</c> parameter. Requests that include the parameter <c>InstanceID</c> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <c>InstanceId</c>, you can't use the parameters <c>AssociationName</c>, <c>DocumentVersion</c>, <c>MaxErrors</c>, <c>MaxConcurrency</c>, <c>OutputLocation</c>, or <c>ScheduleExpression</c>. To use these parameters, you must use the <c>Targets</c> parameter. </note></param>
         /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <c>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </c>  For example:  <c>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</c>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <c>AWS-ApplyPatchBaseline</c> or <c>My-Document</c>.</param>
@@ -1320,12 +1319,12 @@ namespace Amazon.SimpleSystemsManagement
         /// and running on your managed nodes, or that certain ports must be closed. For static
         /// targets, the association specifies a schedule for when the configuration is reapplied.
         /// For dynamic targets, such as an Amazon Web Services resource group or an Amazon Web
-        /// Services autoscaling group, State Manager, a capability of Amazon Web Services Systems
-        /// Manager applies the configuration when new managed nodes are added to the group. The
-        /// association also specifies actions to take when applying the configuration. For example,
-        /// an association for anti-virus software might run once a day. If the software isn't
-        /// installed, then State Manager installs it. If the software is installed, but the service
-        /// isn't running, then the association might instruct State Manager to start the service.
+        /// Services autoscaling group, State Manager, a tool in Amazon Web Services Systems Manager
+        /// applies the configuration when new managed nodes are added to the group. The association
+        /// also specifies actions to take when applying the configuration. For example, an association
+        /// for anti-virus software might run once a day. If the software isn't installed, then
+        /// State Manager installs it. If the software is installed, but the service isn't running,
+        /// then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2144,7 +2143,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// You can configure Systems Manager Inventory to use the <c>SyncToDestination</c> type
         /// to synchronize Inventory data from multiple Amazon Web Services Regions to a single
-        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creating
         /// a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </para>
@@ -2208,7 +2207,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// You can configure Systems Manager Inventory to use the <c>SyncToDestination</c> type
         /// to synchronize Inventory data from multiple Amazon Web Services Regions to a single
-        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creatinga
+        /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/inventory-create-resource-data-sync.html">Creating
         /// a resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </para>
@@ -2287,7 +2286,7 @@ namespace Amazon.SimpleSystemsManagement
         /// and the ActivationCode don't match.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -2324,7 +2323,7 @@ namespace Amazon.SimpleSystemsManagement
         /// and the ActivationCode don't match.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
@@ -3715,7 +3714,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -3747,7 +3746,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -5096,7 +5095,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -5150,7 +5149,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -5258,7 +5257,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -5288,7 +5287,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -5319,7 +5318,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
@@ -5383,7 +5382,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidActivationIdException">
-        /// The activation ID isn't valid. Verify the you entered the correct ActivationId or
+        /// The activation ID isn't valid. Verify that you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
@@ -6558,7 +6557,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Deletes the association between an OpsItem and a related item. For example, this API
         /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager
-        /// is a capability of Amazon Web Services Systems Manager.
+        /// is a tool in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpsItemRelatedItem service method.</param>
         /// 
@@ -6594,7 +6593,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Deletes the association between an OpsItem and a related item. For example, this API
         /// operation can delete an Incident Manager incident from an OpsItem. Incident Manager
-        /// is a capability of Amazon Web Services Systems Manager.
+        /// is a tool in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpsItemRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -6705,7 +6704,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about Change Calendar, a capability of Amazon Web Services Systems
+        /// For more information about Change Calendar, a tool in Amazon Web Services Systems
         /// Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
         /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
@@ -6754,7 +6753,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </para>
         ///  
         /// <para>
-        /// For more information about Change Calendar, a capability of Amazon Web Services Systems
+        /// For more information about Change Calendar, a tool in Amazon Web Services Systems
         /// Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon
         /// Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
@@ -7055,9 +7054,9 @@ namespace Amazon.SimpleSystemsManagement
         /// If you run the command locally, such as with the Command Line Interface (CLI), the
         /// system attempts to use your local Amazon Web Services credentials and the operation
         /// fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager
-        /// console. Use Run Command, a capability of Amazon Web Services Systems Manager, with
-        /// an SSM document that enables you to target a managed node with a script or command.
-        /// For example, run the command using the <c>AWS-RunShellScript</c> document or the <c>AWS-RunPowerShellScript</c>
+        /// console. Use Run Command, a tool in Amazon Web Services Systems Manager, with an SSM
+        /// document that enables you to target a managed node with a script or command. For example,
+        /// run the command using the <c>AWS-RunShellScript</c> document or the <c>AWS-RunPowerShellScript</c>
         /// document.
         /// </para>
         ///  </note>
@@ -7101,9 +7100,9 @@ namespace Amazon.SimpleSystemsManagement
         /// If you run the command locally, such as with the Command Line Interface (CLI), the
         /// system attempts to use your local Amazon Web Services credentials and the operation
         /// fails. To avoid this, you can run the command in the Amazon Web Services Systems Manager
-        /// console. Use Run Command, a capability of Amazon Web Services Systems Manager, with
-        /// an SSM document that enables you to target a managed node with a script or command.
-        /// For example, run the command using the <c>AWS-RunShellScript</c> document or the <c>AWS-RunPowerShellScript</c>
+        /// console. Use Run Command, a tool in Amazon Web Services Systems Manager, with an SSM
+        /// document that enables you to target a managed node with a script or command. For example,
+        /// run the command using the <c>AWS-RunShellScript</c> document or the <c>AWS-RunPowerShellScript</c>
         /// document.
         /// </para>
         ///  </note>
@@ -7255,6 +7254,61 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  GetExecutionPreview
+
+
+        /// <summary>
+        /// Initiates the process of retrieving an existing preview that shows the effects that
+        /// running a specified Automation runbook would have on the targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExecutionPreview service method.</param>
+        /// 
+        /// <returns>The response from the GetExecutionPreview service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetExecutionPreview">REST API Reference for GetExecutionPreview Operation</seealso>
+        public virtual GetExecutionPreviewResponse GetExecutionPreview(GetExecutionPreviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExecutionPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<GetExecutionPreviewResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the process of retrieving an existing preview that shows the effects that
+        /// running a specified Automation runbook would have on the targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExecutionPreview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExecutionPreview service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetExecutionPreview">REST API Reference for GetExecutionPreview Operation</seealso>
+        public virtual Task<GetExecutionPreviewResponse> GetExecutionPreviewAsync(GetExecutionPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExecutionPreviewResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetExecutionPreviewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetInventory
 
 
@@ -7269,11 +7323,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-        /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryGroupException">
         /// The specified inventory group isn't valid.
@@ -7312,11 +7366,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-        /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInventoryGroupException">
         /// The specified inventory group isn't valid.
@@ -7937,11 +7991,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-        /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -7980,11 +8034,11 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
-        /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-        /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -8240,7 +8294,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieve information about one or more parameters in a specific hierarchy. 
+        /// Retrieve information about one or more parameters under a specified level in a hierarchy.
+        /// 
         /// 
         ///  
         /// <para>
@@ -8286,7 +8341,8 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Retrieve information about one or more parameters in a specific hierarchy. 
+        /// Retrieve information about one or more parameters under a specified level in a hierarchy.
+        /// 
         /// 
         ///  
         /// <para>
@@ -8788,8 +8844,8 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Returns all State Manager associations in the current Amazon Web Services account
         /// and Amazon Web Services Region. You can limit the results to a specific State Manager
-        /// association document or managed node by specifying a filter. State Manager is a capability
-        /// of Amazon Web Services Systems Manager.
+        /// association document or managed node by specifying a filter. State Manager is a tool
+        /// in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// 
@@ -8814,8 +8870,8 @@ namespace Amazon.SimpleSystemsManagement
         /// <summary>
         /// Returns all State Manager associations in the current Amazon Web Services account
         /// and Amazon Web Services Region. You can limit the results to a specific State Manager
-        /// association document or managed node by specifying a filter. State Manager is a capability
-        /// of Amazon Web Services Systems Manager.
+        /// association document or managed node by specifying a filter. State Manager is a tool
+        /// in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -9571,7 +9627,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -9609,7 +9665,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -9648,7 +9704,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -9679,7 +9735,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -9944,7 +10000,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -10000,7 +10056,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
         /// The following problems can cause this exception:
@@ -10040,6 +10096,162 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListInventoryEntriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNodes
+
+
+        /// <summary>
+        /// Takes in filters and returns a list of managed nodes matching the filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodes service method.</param>
+        /// 
+        /// <returns>The response from the ListNodes service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperationException">
+        /// This operation is not supported for the current account. You must first enable the
+        /// Systems Manager integrated experience in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodes">REST API Reference for ListNodes Operation</seealso>
+        public virtual ListNodesResponse ListNodes(ListNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
+
+            return Invoke<ListNodesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Takes in filters and returns a list of managed nodes matching the filter criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNodes service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperationException">
+        /// This operation is not supported for the current account. You must first enable the
+        /// Systems Manager integrated experience in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodes">REST API Reference for ListNodes Operation</seealso>
+        public virtual Task<ListNodesResponse> ListNodesAsync(ListNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNodesSummary
+
+
+        /// <summary>
+        /// Generates a summary of managed instance/node metadata based on the filters and aggregators
+        /// you specify. Results are grouped by the input aggregator you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodesSummary service method.</param>
+        /// 
+        /// <returns>The response from the ListNodesSummary service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperationException">
+        /// This operation is not supported for the current account. You must first enable the
+        /// Systems Manager integrated experience in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodesSummary">REST API Reference for ListNodesSummary Operation</seealso>
+        public virtual ListNodesSummaryResponse ListNodesSummary(ListNodesSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<ListNodesSummaryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates a summary of managed instance/node metadata based on the filters and aggregators
+        /// you specify. Results are grouped by the input aggregator you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNodesSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNodesSummary service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAggregatorException">
+        /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+        /// you provided is supported.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceDataSyncNotFoundException">
+        /// The specified sync name wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedOperationException">
+        /// This operation is not supported for the current account. You must first enable the
+        /// Systems Manager integrated experience in your account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListNodesSummary">REST API Reference for ListNodesSummary Operation</seealso>
+        public virtual Task<ListNodesSummaryResponse> ListNodesSummaryAsync(ListNodesSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListNodesSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNodesSummaryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNodesSummaryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10120,7 +10332,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem.
-        /// OpsCenter is a capability of Amazon Web Services Systems Manager.
+        /// OpsCenter is a tool in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemRelatedItems service method.</param>
         /// 
@@ -10145,7 +10357,7 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem.
-        /// OpsCenter is a capability of Amazon Web Services Systems Manager.
+        /// OpsCenter is a tool in Amazon Web Services Systems Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOpsItemRelatedItems service method.</param>
         /// <param name="cancellationToken">
@@ -10242,7 +10454,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -10273,7 +10485,7 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
-        /// The filter name isn't valid. Verify the you entered the correct name and try again.
+        /// The filter name isn't valid. Verify that you entered the correct name and try again.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token isn't valid.
@@ -12618,6 +12830,63 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = StartChangeRequestExecutionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartChangeRequestExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExecutionPreview
+
+
+        /// <summary>
+        /// Initiates the process of creating a preview showing the effects that running a specified
+        /// Automation runbook would have on the targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExecutionPreview service method.</param>
+        /// 
+        /// <returns>The response from the StartExecutionPreview service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartExecutionPreview">REST API Reference for StartExecutionPreview Operation</seealso>
+        public virtual StartExecutionPreviewResponse StartExecutionPreview(StartExecutionPreviewRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExecutionPreviewResponseUnmarshaller.Instance;
+
+            return Invoke<StartExecutionPreviewResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the process of creating a preview showing the effects that running a specified
+        /// Automation runbook would have on the targeted resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExecutionPreview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExecutionPreview service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ValidationException">
+        /// The request isn't valid. Verify that you entered valid contents for the command and
+        /// try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartExecutionPreview">REST API Reference for StartExecutionPreview Operation</seealso>
+        public virtual Task<StartExecutionPreviewResponse> StartExecutionPreviewAsync(StartExecutionPreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExecutionPreviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExecutionPreviewResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartExecutionPreviewResponse>(request, options, cancellationToken);
         }
 
         #endregion

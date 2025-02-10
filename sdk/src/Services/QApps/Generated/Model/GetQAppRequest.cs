@@ -37,6 +37,7 @@ namespace Amazon.QApps.Model
     public partial class GetQAppRequest : AmazonQAppsRequest
     {
         private string _appId;
+        private int? _appVersion;
         private string _instanceId;
 
         /// <summary>
@@ -56,6 +57,25 @@ namespace Amazon.QApps.Model
         internal bool IsSetAppId()
         {
             return this._appId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppVersion. 
+        /// <para>
+        /// The version of the Q App.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2147483647)]
+        public int? AppVersion
+        {
+            get { return this._appVersion; }
+            set { this._appVersion = value; }
+        }
+
+        // Check to see if AppVersion property is set
+        internal bool IsSetAppVersion()
+        {
+            return this._appVersion.HasValue; 
         }
 
         /// <summary>

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEndTime())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEndTime())
-                    {
-                        context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime.Value));
-                    }
-
-                    if(publicRequest.IsSetLimit())
-                    {
-                        context.Writer.WritePropertyName("limit");
-                        context.Writer.Write(publicRequest.Limit.Value);
-                    }
-
-                    if(publicRequest.IsSetLogGroupIdentifier())
-                    {
-                        context.Writer.WritePropertyName("logGroupIdentifier");
-                        context.Writer.Write(publicRequest.LogGroupIdentifier);
-                    }
-
-                    if(publicRequest.IsSetLogGroupName())
-                    {
-                        context.Writer.WritePropertyName("logGroupName");
-                        context.Writer.Write(publicRequest.LogGroupName);
-                    }
-
-                    if(publicRequest.IsSetLogStreamName())
-                    {
-                        context.Writer.WritePropertyName("logStreamName");
-                        context.Writer.Write(publicRequest.LogStreamName);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetStartFromHead())
-                    {
-                        context.Writer.WritePropertyName("startFromHead");
-                        context.Writer.Write(publicRequest.StartFromHead.Value);
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime.Value));
-                    }
-
-                    if(publicRequest.IsSetUnmask())
-                    {
-                        context.Writer.WritePropertyName("unmask");
-                        context.Writer.Write(publicRequest.Unmask.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(publicRequest.EndTime.Value));
             }
+
+            if(publicRequest.IsSetLimit())
+            {
+                context.Writer.WritePropertyName("limit");
+                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
+            }
+
+            if(publicRequest.IsSetLogGroupIdentifier())
+            {
+                context.Writer.WritePropertyName("logGroupIdentifier");
+                context.Writer.WriteStringValue(publicRequest.LogGroupIdentifier);
+            }
+
+            if(publicRequest.IsSetLogGroupName())
+            {
+                context.Writer.WritePropertyName("logGroupName");
+                context.Writer.WriteStringValue(publicRequest.LogGroupName);
+            }
+
+            if(publicRequest.IsSetLogStreamName())
+            {
+                context.Writer.WritePropertyName("logStreamName");
+                context.Writer.WriteStringValue(publicRequest.LogStreamName);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetStartFromHead())
+            {
+                context.Writer.WritePropertyName("startFromHead");
+                context.Writer.WriteBooleanValue(publicRequest.StartFromHead.Value);
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(publicRequest.StartTime.Value));
+            }
+
+            if(publicRequest.IsSetUnmask())
+            {
+                context.Writer.WritePropertyName("unmask");
+                context.Writer.WriteBooleanValue(publicRequest.Unmask.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

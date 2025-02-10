@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationReference())
             {
                 context.Writer.WritePropertyName("destinationReference");
-                context.Writer.Write(requestObject.DestinationReference);
+                context.Writer.WriteStringValue(requestObject.DestinationReference);
             }
 
             if(requestObject.IsSetRepositoryName())
             {
                 context.Writer.WritePropertyName("repositoryName");
-                context.Writer.Write(requestObject.RepositoryName);
+                context.Writer.WriteStringValue(requestObject.RepositoryName);
             }
 
             if(requestObject.IsSetSourceReference())
             {
                 context.Writer.WritePropertyName("sourceReference");
-                context.Writer.Write(requestObject.SourceReference);
+                context.Writer.WriteStringValue(requestObject.SourceReference);
             }
 
         }

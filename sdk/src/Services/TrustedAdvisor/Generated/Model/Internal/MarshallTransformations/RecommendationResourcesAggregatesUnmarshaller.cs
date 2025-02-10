@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecommendationResourcesAggregates Object
     /// </summary>  
-    public class RecommendationResourcesAggregatesUnmarshaller : IUnmarshaller<RecommendationResourcesAggregates, XmlUnmarshallerContext>, IUnmarshaller<RecommendationResourcesAggregates, JsonUnmarshallerContext>
+    public class RecommendationResourcesAggregatesUnmarshaller : IJsonUnmarshaller<RecommendationResourcesAggregates, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecommendationResourcesAggregates IUnmarshaller<RecommendationResourcesAggregates, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommendationResourcesAggregates Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationResourcesAggregates Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecommendationResourcesAggregates unmarshalledObject = new RecommendationResourcesAggregates();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("errorCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("okCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.OkCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OkCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("warningCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.WarningCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WarningCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

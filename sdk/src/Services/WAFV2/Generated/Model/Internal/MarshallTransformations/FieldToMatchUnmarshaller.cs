@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FieldToMatch Object
     /// </summary>  
-    public class FieldToMatchUnmarshaller : IUnmarshaller<FieldToMatch, XmlUnmarshallerContext>, IUnmarshaller<FieldToMatch, JsonUnmarshallerContext>
+    public class FieldToMatchUnmarshaller : IJsonUnmarshaller<FieldToMatch, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FieldToMatch IUnmarshaller<FieldToMatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FieldToMatch Unmarshall(JsonUnmarshallerContext context)
+        public FieldToMatch Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FieldToMatch unmarshalledObject = new FieldToMatch();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AllQueryArguments", targetDepth))
                 {
                     var unmarshaller = AllQueryArgumentsUnmarshaller.Instance;
-                    unmarshalledObject.AllQueryArguments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllQueryArguments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Body", targetDepth))
                 {
                     var unmarshaller = BodyUnmarshaller.Instance;
-                    unmarshalledObject.Body = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Body = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Cookies", targetDepth))
                 {
                     var unmarshaller = CookiesUnmarshaller.Instance;
-                    unmarshalledObject.Cookies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cookies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HeaderOrder", targetDepth))
                 {
                     var unmarshaller = HeaderOrderUnmarshaller.Instance;
-                    unmarshalledObject.HeaderOrder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeaderOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Headers", targetDepth))
                 {
                     var unmarshaller = HeadersUnmarshaller.Instance;
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JA3Fingerprint", targetDepth))
                 {
                     var unmarshaller = JA3FingerprintUnmarshaller.Instance;
-                    unmarshalledObject.JA3Fingerprint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JA3Fingerprint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JsonBody", targetDepth))
                 {
                     var unmarshaller = JsonBodyUnmarshaller.Instance;
-                    unmarshalledObject.JsonBody = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JsonBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Method", targetDepth))
                 {
                     var unmarshaller = MethodUnmarshaller.Instance;
-                    unmarshalledObject.Method = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryString", targetDepth))
                 {
                     var unmarshaller = QueryStringUnmarshaller.Instance;
-                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SingleHeader", targetDepth))
                 {
                     var unmarshaller = SingleHeaderUnmarshaller.Instance;
-                    unmarshalledObject.SingleHeader = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SingleHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SingleQueryArgument", targetDepth))
                 {
                     var unmarshaller = SingleQueryArgumentUnmarshaller.Instance;
-                    unmarshalledObject.SingleQueryArgument = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SingleQueryArgument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UriPath", targetDepth))
                 {
                     var unmarshaller = UriPathUnmarshaller.Instance;
-                    unmarshalledObject.UriPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UriPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

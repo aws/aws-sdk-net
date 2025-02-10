@@ -286,9 +286,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "SpotInstanceType", StringUtils.FromString(publicRequest.InstanceMarketOptions.SpotOptions.SpotInstanceType));
                         }
-                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntilUtc())
+                        if(publicRequest.InstanceMarketOptions.SpotOptions.IsSetValidUntil())
                         {
-                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntilUtc));
+                            request.Parameters.Add("InstanceMarketOptions" + "." + "SpotOptions" + "." + "ValidUntil", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.InstanceMarketOptions.SpotOptions.ValidUntil));
                         }
                     }
                 }
@@ -593,6 +593,20 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             }
                              publicRequestlistValueIndex++;
                          }
+                    }
+                }
+                if(publicRequest.IsSetNetworkPerformanceOptions())
+                {
+                    if(publicRequest.NetworkPerformanceOptions.IsSetBandwidthWeighting())
+                    {
+                        request.Parameters.Add("NetworkPerformanceOptions" + "." + "BandwidthWeighting", StringUtils.FromString(publicRequest.NetworkPerformanceOptions.BandwidthWeighting));
+                    }
+                }
+                if(publicRequest.IsSetOperator())
+                {
+                    if(publicRequest.Operator.IsSetPrincipal())
+                    {
+                        request.Parameters.Add("Operator" + "." + "Principal", StringUtils.FromString(publicRequest.Operator.Principal));
                     }
                 }
                 if(publicRequest.IsSetPlacement())

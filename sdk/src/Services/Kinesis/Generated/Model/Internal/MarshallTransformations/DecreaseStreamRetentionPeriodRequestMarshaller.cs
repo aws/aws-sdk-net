@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
@@ -63,37 +66,42 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetRetentionPeriodHours())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetRetentionPeriodHours())
-                    {
-                        context.Writer.WritePropertyName("RetentionPeriodHours");
-                        context.Writer.Write(publicRequest.RetentionPeriodHours.Value);
-                    }
-
-                    if(publicRequest.IsSetStreamARN())
-                    {
-                        context.Writer.WritePropertyName("StreamARN");
-                        context.Writer.Write(publicRequest.StreamARN);
-                    }
-
-                    if(publicRequest.IsSetStreamName())
-                    {
-                        context.Writer.WritePropertyName("StreamName");
-                        context.Writer.Write(publicRequest.StreamName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("RetentionPeriodHours");
+                context.Writer.WriteNumberValue(publicRequest.RetentionPeriodHours.Value);
             }
+
+            if(publicRequest.IsSetStreamARN())
+            {
+                context.Writer.WritePropertyName("StreamARN");
+                context.Writer.WriteStringValue(publicRequest.StreamARN);
+            }
+
+            if(publicRequest.IsSetStreamName())
+            {
+                context.Writer.WritePropertyName("StreamName");
+                context.Writer.WriteStringValue(publicRequest.StreamName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

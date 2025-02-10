@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -63,69 +66,74 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDomain())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDomain())
-                    {
-                        context.Writer.WritePropertyName("domain");
-                        context.Writer.Write(publicRequest.Domain);
-                    }
-
-                    if(publicRequest.IsSetExecutionFilter())
-                    {
-                        context.Writer.WritePropertyName("executionFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WorkflowExecutionFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExecutionFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStartTimeFilter())
-                    {
-                        context.Writer.WritePropertyName("startTimeFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExecutionTimeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StartTimeFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTagFilter())
-                    {
-                        context.Writer.WritePropertyName("tagFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TagFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTypeFilter())
-                    {
-                        context.Writer.WritePropertyName("typeFilter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WorkflowTypeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TypeFilter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("domain");
+                context.Writer.WriteStringValue(publicRequest.Domain);
             }
+
+            if(publicRequest.IsSetExecutionFilter())
+            {
+                context.Writer.WritePropertyName("executionFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowExecutionFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExecutionFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStartTimeFilter())
+            {
+                context.Writer.WritePropertyName("startTimeFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExecutionTimeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StartTimeFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTagFilter())
+            {
+                context.Writer.WritePropertyName("tagFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TagFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TagFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTypeFilter())
+            {
+                context.Writer.WritePropertyName("typeFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowTypeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TypeFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

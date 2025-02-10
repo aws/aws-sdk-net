@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -61,210 +64,215 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/applications";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArchitecture())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArchitecture())
-                    {
-                        context.Writer.WritePropertyName("architecture");
-                        context.Writer.Write(publicRequest.Architecture);
-                    }
-
-                    if(publicRequest.IsSetAutoStartConfiguration())
-                    {
-                        context.Writer.WritePropertyName("autoStartConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoStartConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoStartConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoStopConfiguration())
-                    {
-                        context.Writer.WritePropertyName("autoStopConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoStopConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoStopConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetImageConfiguration())
-                    {
-                        context.Writer.WritePropertyName("imageConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImageConfigurationInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ImageConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInitialCapacity())
-                    {
-                        context.Writer.WritePropertyName("initialCapacity");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestInitialCapacityKvp in publicRequest.InitialCapacity)
-                        {
-                            context.Writer.WritePropertyName(publicRequestInitialCapacityKvp.Key);
-                            var publicRequestInitialCapacityValue = publicRequestInitialCapacityKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InitialCapacityConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInitialCapacityValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInteractiveConfiguration())
-                    {
-                        context.Writer.WritePropertyName("interactiveConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InteractiveConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InteractiveConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaximumCapacity())
-                    {
-                        context.Writer.WritePropertyName("maximumCapacity");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MaximumAllowedResourcesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MaximumCapacity, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMonitoringConfiguration())
-                    {
-                        context.Writer.WritePropertyName("monitoringConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitoringConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MonitoringConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNetworkConfiguration())
-                    {
-                        context.Writer.WritePropertyName("networkConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NetworkConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NetworkConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReleaseLabel())
-                    {
-                        context.Writer.WritePropertyName("releaseLabel");
-                        context.Writer.Write(publicRequest.ReleaseLabel);
-                    }
-
-                    if(publicRequest.IsSetRuntimeConfiguration())
-                    {
-                        context.Writer.WritePropertyName("runtimeConfiguration");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRuntimeConfigurationListValue in publicRequest.RuntimeConfiguration)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRuntimeConfigurationListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSchedulerConfiguration())
-                    {
-                        context.Writer.WritePropertyName("schedulerConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SchedulerConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    if(publicRequest.IsSetWorkerTypeSpecifications())
-                    {
-                        context.Writer.WritePropertyName("workerTypeSpecifications");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestWorkerTypeSpecificationsKvp in publicRequest.WorkerTypeSpecifications)
-                        {
-                            context.Writer.WritePropertyName(publicRequestWorkerTypeSpecificationsKvp.Key);
-                            var publicRequestWorkerTypeSpecificationsValue = publicRequestWorkerTypeSpecificationsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = WorkerTypeSpecificationInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestWorkerTypeSpecificationsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("architecture");
+                context.Writer.WriteStringValue(publicRequest.Architecture);
             }
+
+            if(publicRequest.IsSetAutoStartConfiguration())
+            {
+                context.Writer.WritePropertyName("autoStartConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoStartConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoStartConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAutoStopConfiguration())
+            {
+                context.Writer.WritePropertyName("autoStopConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoStopConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoStopConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetImageConfiguration())
+            {
+                context.Writer.WritePropertyName("imageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImageConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ImageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInitialCapacity())
+            {
+                context.Writer.WritePropertyName("initialCapacity");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestInitialCapacityKvp in publicRequest.InitialCapacity)
+                {
+                    context.Writer.WritePropertyName(publicRequestInitialCapacityKvp.Key);
+                    var publicRequestInitialCapacityValue = publicRequestInitialCapacityKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InitialCapacityConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInitialCapacityValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInteractiveConfiguration())
+            {
+                context.Writer.WritePropertyName("interactiveConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InteractiveConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InteractiveConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaximumCapacity())
+            {
+                context.Writer.WritePropertyName("maximumCapacity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MaximumAllowedResourcesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MaximumCapacity, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("monitoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MonitoringConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("networkConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NetworkConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReleaseLabel())
+            {
+                context.Writer.WritePropertyName("releaseLabel");
+                context.Writer.WriteStringValue(publicRequest.ReleaseLabel);
+            }
+
+            if(publicRequest.IsSetRuntimeConfiguration())
+            {
+                context.Writer.WritePropertyName("runtimeConfiguration");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRuntimeConfigurationListValue in publicRequest.RuntimeConfiguration)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRuntimeConfigurationListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSchedulerConfiguration())
+            {
+                context.Writer.WritePropertyName("schedulerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulerConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            if(publicRequest.IsSetWorkerTypeSpecifications())
+            {
+                context.Writer.WritePropertyName("workerTypeSpecifications");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestWorkerTypeSpecificationsKvp in publicRequest.WorkerTypeSpecifications)
+                {
+                    context.Writer.WritePropertyName(publicRequestWorkerTypeSpecificationsKvp.Key);
+                    var publicRequestWorkerTypeSpecificationsValue = publicRequestWorkerTypeSpecificationsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WorkerTypeSpecificationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestWorkerTypeSpecificationsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

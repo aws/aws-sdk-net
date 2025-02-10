@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,109 +49,109 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.Write(requestObject.Address);
+                context.Writer.WriteStringValue(requestObject.Address);
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectAttributesValueListValue in requestObjectAttributesValue)
                     {
-                            context.Writer.Write(requestObjectAttributesValueListValue);
+                            context.Writer.WriteStringValue(requestObjectAttributesValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetChannelType())
             {
                 context.Writer.WritePropertyName("ChannelType");
-                context.Writer.Write(requestObject.ChannelType);
+                context.Writer.WriteStringValue(requestObject.ChannelType);
             }
 
             if(requestObject.IsSetDemographic())
             {
                 context.Writer.WritePropertyName("Demographic");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EndpointDemographicMarshaller.Instance;
                 marshaller.Marshall(requestObject.Demographic, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEffectiveDate())
             {
                 context.Writer.WritePropertyName("EffectiveDate");
-                context.Writer.Write(requestObject.EffectiveDate);
+                context.Writer.WriteStringValue(requestObject.EffectiveDate);
             }
 
             if(requestObject.IsSetEndpointStatus())
             {
                 context.Writer.WritePropertyName("EndpointStatus");
-                context.Writer.Write(requestObject.EndpointStatus);
+                context.Writer.WriteStringValue(requestObject.EndpointStatus);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EndpointLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetrics())
             {
                 context.Writer.WritePropertyName("Metrics");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMetricsKvp in requestObject.Metrics)
                 {
                     context.Writer.WritePropertyName(requestObjectMetricsKvp.Key);
                     var requestObjectMetricsValue = requestObjectMetricsKvp.Value;
 
-                        context.Writer.Write(requestObjectMetricsValue);
+                        context.Writer.WriteNumberValue(requestObjectMetricsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOptOut())
             {
                 context.Writer.WritePropertyName("OptOut");
-                context.Writer.Write(requestObject.OptOut);
+                context.Writer.WriteStringValue(requestObject.OptOut);
             }
 
             if(requestObject.IsSetRequestId())
             {
                 context.Writer.WritePropertyName("RequestId");
-                context.Writer.Write(requestObject.RequestId);
+                context.Writer.WriteStringValue(requestObject.RequestId);
             }
 
             if(requestObject.IsSetUser())
             {
                 context.Writer.WritePropertyName("User");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EndpointUserMarshaller.Instance;
                 marshaller.Marshall(requestObject.User, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

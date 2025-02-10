@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationType())
             {
                 context.Writer.WritePropertyName("aggregationType");
-                context.Writer.Write(requestObject.AggregationType);
+                context.Writer.WriteStringValue(requestObject.AggregationType);
             }
 
             if(requestObject.IsSetTargetFileSize())
             {
                 context.Writer.WritePropertyName("targetFileSize");
-                context.Writer.Write(requestObject.TargetFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetFileSize.Value);
             }
 
         }

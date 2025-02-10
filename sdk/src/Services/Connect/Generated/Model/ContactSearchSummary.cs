@@ -45,6 +45,7 @@ namespace Amazon.Connect.Model
         private string _previousContactId;
         private ContactSearchSummaryQueueInfo _queueInfo;
         private DateTime? _scheduledTimestamp;
+        private Dictionary<string, ContactSearchSummarySegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, ContactSearchSummarySegmentAttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -251,6 +252,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTimestamp()
         {
             return this._scheduledTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// Set of segment attributes for a contact.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, ContactSearchSummarySegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

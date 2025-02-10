@@ -31,8 +31,14 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLocationHdfs operation.
-    /// Updates some parameters of a previously created location for a Hadoop Distributed
-    /// File System cluster.
+    /// Modifies the following configuration parameters of the Hadoop Distributed File System
+    /// (HDFS) transfer location that you're using with DataSync.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-hdfs-location.html">Configuring
+    /// DataSync transfers with an HDFS cluster</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateLocationHdfsRequest : AmazonDataSyncRequest
     {
@@ -53,7 +59,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The ARNs of the agents that are used to connect to the HDFS cluster. 
+        /// The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS
+        /// cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]

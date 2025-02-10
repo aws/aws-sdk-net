@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 using System.Text;
 using System.Diagnostics.CodeAnalysis;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Util.Internal
 {
@@ -143,16 +144,13 @@ namespace Amazon.Util.Internal
         }
 
         #endregion
-#if NET8_0_OR_GREATER
-        public static void ApplyValuesV2<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)] T>(T target, IDictionary<string, object> propertyValues)
-#else
-        public static void ApplyValuesV2<T>(T target, IDictionary<string, object> propertyValues)
-#endif
+        [Obsolete("This method is not AOT safe and is no longer used in the SDK. Please use ApplyValuesV2 for AOT compatibility. This method is left here for backwards compatibility purposes")]
+        public static void ApplyValues(object target, IDictionary<string, object> propertyValues)
         {
             if (propertyValues == null || propertyValues.Count == 0)
                 return;
 
-            var targetType = typeof(T);
+            var targetType = target.GetType();
             
             foreach(var kvp in propertyValues)
             {
@@ -174,6 +172,37 @@ namespace Amazon.Util.Internal
                     }                    
                 }
                 catch(Exception e)
+                {
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to set property {0} on type {1}: {2}", kvp.Key, targetType.FullName, e.Message));
+                }
+            }
+        }
+
+        public static void ApplyValuesV2<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)] T>(T target, IDictionary<string, object> propertyValues)
+        {
+            if (propertyValues == null || propertyValues.Count == 0)
+                return;
+            var targetType = typeof(T);
+            foreach (var kvp in propertyValues)
+            {
+                var property = targetType.GetProperty(kvp.Key);
+                if (property == null)
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to find property {0} on type {1}.", kvp.Key, targetType.FullName));
+
+                try
+                {
+                    var propertyTypeInfo = property.PropertyType;
+                    if (propertyTypeInfo.IsEnum)
+                    {
+                        var enumValue = Enum.Parse(propertyTypeInfo, kvp.Value.ToString(), true);
+                        property.SetValue(target, enumValue, null);
+                    }
+                    else
+                    {
+                        property.SetValue(target, kvp.Value, null);
+                    }
+                }
+                catch (Exception e)
                 {
                     throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to set property {0} on type {1}: {2}", kvp.Key, targetType.FullName, e.Message));
                 }

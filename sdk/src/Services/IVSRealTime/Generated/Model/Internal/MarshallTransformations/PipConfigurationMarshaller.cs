@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFeaturedParticipantAttribute())
             {
                 context.Writer.WritePropertyName("featuredParticipantAttribute");
-                context.Writer.Write(requestObject.FeaturedParticipantAttribute);
+                context.Writer.WriteStringValue(requestObject.FeaturedParticipantAttribute);
             }
 
             if(requestObject.IsSetGridGap())
             {
                 context.Writer.WritePropertyName("gridGap");
-                context.Writer.Write(requestObject.GridGap.Value);
+                context.Writer.WriteNumberValue(requestObject.GridGap.Value);
             }
 
             if(requestObject.IsSetOmitStoppedVideo())
             {
                 context.Writer.WritePropertyName("omitStoppedVideo");
-                context.Writer.Write(requestObject.OmitStoppedVideo.Value);
+                context.Writer.WriteBooleanValue(requestObject.OmitStoppedVideo.Value);
             }
 
             if(requestObject.IsSetPipBehavior())
             {
                 context.Writer.WritePropertyName("pipBehavior");
-                context.Writer.Write(requestObject.PipBehavior);
+                context.Writer.WriteStringValue(requestObject.PipBehavior);
             }
 
             if(requestObject.IsSetPipHeight())
             {
                 context.Writer.WritePropertyName("pipHeight");
-                context.Writer.Write(requestObject.PipHeight.Value);
+                context.Writer.WriteNumberValue(requestObject.PipHeight.Value);
             }
 
             if(requestObject.IsSetPipOffset())
             {
                 context.Writer.WritePropertyName("pipOffset");
-                context.Writer.Write(requestObject.PipOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.PipOffset.Value);
             }
 
             if(requestObject.IsSetPipParticipantAttribute())
             {
                 context.Writer.WritePropertyName("pipParticipantAttribute");
-                context.Writer.Write(requestObject.PipParticipantAttribute);
+                context.Writer.WriteStringValue(requestObject.PipParticipantAttribute);
             }
 
             if(requestObject.IsSetPipPosition())
             {
                 context.Writer.WritePropertyName("pipPosition");
-                context.Writer.Write(requestObject.PipPosition);
+                context.Writer.WriteStringValue(requestObject.PipPosition);
             }
 
             if(requestObject.IsSetPipWidth())
             {
                 context.Writer.WritePropertyName("pipWidth");
-                context.Writer.Write(requestObject.PipWidth.Value);
+                context.Writer.WriteNumberValue(requestObject.PipWidth.Value);
             }
 
             if(requestObject.IsSetVideoFillMode())
             {
                 context.Writer.WritePropertyName("videoFillMode");
-                context.Writer.Write(requestObject.VideoFillMode);
+                context.Writer.WriteStringValue(requestObject.VideoFillMode);
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PathOptions Object
     /// </summary>  
-    public class PathOptionsUnmarshaller : IUnmarshaller<PathOptions, XmlUnmarshallerContext>, IUnmarshaller<PathOptions, JsonUnmarshallerContext>
+    public class PathOptionsUnmarshaller : IJsonUnmarshaller<PathOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PathOptions IUnmarshaller<PathOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PathOptions Unmarshall(JsonUnmarshallerContext context)
+        public PathOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PathOptions unmarshalledObject = new PathOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FilesLimit", targetDepth))
                 {
                     var unmarshaller = FilesLimitUnmarshaller.Instance;
-                    unmarshalledObject.FilesLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilesLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedDateCondition", targetDepth))
                 {
                     var unmarshaller = FilterExpressionUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDateCondition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModifiedDateCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Parameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, DatasetParameter, StringUnmarshaller, DatasetParameterUnmarshaller>(StringUnmarshaller.Instance, DatasetParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, DatasetParameter, StringUnmarshaller, DatasetParameterUnmarshaller>(StringUnmarshaller.Instance, DatasetParameterUnmarshaller.Instance);
+                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

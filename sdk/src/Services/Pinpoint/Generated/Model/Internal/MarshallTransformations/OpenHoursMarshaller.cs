@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,121 +49,121 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCUSTOM())
             {
                 context.Writer.WritePropertyName("CUSTOM");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCUSTOMKvp in requestObject.CUSTOM)
                 {
                     context.Writer.WritePropertyName(requestObjectCUSTOMKvp.Key);
                     var requestObjectCUSTOMValue = requestObjectCUSTOMKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectCUSTOMValueListValue in requestObjectCUSTOMValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = OpenHoursRuleMarshaller.Instance;
                         marshaller.Marshall(requestObjectCUSTOMValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEMAIL())
             {
                 context.Writer.WritePropertyName("EMAIL");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEMAILKvp in requestObject.EMAIL)
                 {
                     context.Writer.WritePropertyName(requestObjectEMAILKvp.Key);
                     var requestObjectEMAILValue = requestObjectEMAILKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectEMAILValueListValue in requestObjectEMAILValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = OpenHoursRuleMarshaller.Instance;
                         marshaller.Marshall(requestObjectEMAILValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPUSH())
             {
                 context.Writer.WritePropertyName("PUSH");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPUSHKvp in requestObject.PUSH)
                 {
                     context.Writer.WritePropertyName(requestObjectPUSHKvp.Key);
                     var requestObjectPUSHValue = requestObjectPUSHKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectPUSHValueListValue in requestObjectPUSHValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = OpenHoursRuleMarshaller.Instance;
                         marshaller.Marshall(requestObjectPUSHValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSMS())
             {
                 context.Writer.WritePropertyName("SMS");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSMSKvp in requestObject.SMS)
                 {
                     context.Writer.WritePropertyName(requestObjectSMSKvp.Key);
                     var requestObjectSMSValue = requestObjectSMSKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectSMSValueListValue in requestObjectSMSValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = OpenHoursRuleMarshaller.Instance;
                         marshaller.Marshall(requestObjectSMSValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVOICE())
             {
                 context.Writer.WritePropertyName("VOICE");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectVOICEKvp in requestObject.VOICE)
                 {
                     context.Writer.WritePropertyName(requestObjectVOICEKvp.Key);
                     var requestObjectVOICEValue = requestObjectVOICEKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectVOICEValueListValue in requestObjectVOICEValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = OpenHoursRuleMarshaller.Instance;
                         marshaller.Marshall(requestObjectVOICEValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

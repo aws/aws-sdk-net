@@ -48,6 +48,7 @@ namespace Amazon.OpenSearchService.Model
         private EBSOptions _ebsOptions;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private string _engineVersion;
+        private IdentityCenterOptionsInput _identityCenterOptions;
         private IPAddressType _ipAddressType;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
@@ -317,6 +318,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterOptions. 
+        /// <para>
+        /// Options for IAM Identity Center Option control for the domain.
+        /// </para>
+        /// </summary>
+        public IdentityCenterOptionsInput IdentityCenterOptions
+        {
+            get { return this._identityCenterOptions; }
+            set { this._identityCenterOptions = value; }
+        }
+
+        // Check to see if IdentityCenterOptions property is set
+        internal bool IsSetIdentityCenterOptions()
+        {
+            return this._identityCenterOptions != null;
         }
 
         /// <summary>

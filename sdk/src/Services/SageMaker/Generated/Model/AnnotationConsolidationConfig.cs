@@ -44,11 +44,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required for all labeling jobs. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
+        /// For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
         /// task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function
         /// ARNs for <c>AnnotationConsolidationLambdaArn</c>. For custom labeling workflows, see
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation
-        /// Lambda</a>. 
+        /// Lambda</a>.
         /// </para>
         ///  
         /// <para>

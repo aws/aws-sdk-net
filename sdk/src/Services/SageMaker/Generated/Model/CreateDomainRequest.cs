@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// SageMaker uses the Amazon Web Services Key Management Service (Amazon Web Services
+    /// SageMaker AI uses the Amazon Web Services Key Management Service (Amazon Web Services
     /// KMS) to encrypt the EFS volume attached to the domain with an Amazon Web Services
     /// managed key by default. For more control, you can specify a customer managed key.
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model
     ///  <ul> <li> 
     /// <para>
     ///  <c>PublicInternetOnly</c> - Non-EFS traffic goes through a VPC managed by Amazon
-    /// SageMaker, which allows internet access. This is the default value.
+    /// SageMaker AI, which allows internet access. This is the default value.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,20 +77,20 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// When internet access is disabled, you won't be able to run a Amazon SageMaker Studio
+    /// When internet access is disabled, you won't be able to run a Amazon SageMaker AI Studio
     /// notebook or to train or host models unless your VPC has an interface endpoint to the
-    /// SageMaker API and runtime or a NAT gateway and your security groups allow outbound
+    /// SageMaker AI API and runtime or a NAT gateway and your security groups allow outbound
     /// connections.
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
     /// NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound
-    /// rules in order to launch a Amazon SageMaker Studio app successfully.
+    /// rules in order to launch a Amazon SageMaker AI Studio app successfully.
     /// </para>
     ///  </important> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect
-    /// Amazon SageMaker Studio Notebooks to Resources in a VPC</a>.
+    /// Amazon SageMaker AI Studio Notebooks to Resources in a VPC</a>.
     /// </para>
     /// </summary>
     public partial class CreateDomainRequest : AmazonSageMakerRequest
@@ -116,8 +116,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
-        /// which allows direct internet access
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker
+        /// AI, which allows direct internet access
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -181,7 +181,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultSpaceSettings. 
         /// <para>
-        /// The default settings used to create a space.
+        /// The default settings for shared spaces that users create in the domain.
         /// </para>
         /// </summary>
         public DefaultSpaceSettings DefaultSpaceSettings
@@ -282,9 +282,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to
-        /// the domain with an Amazon Web Services managed key by default. For more control, specify
-        /// a customer managed key.
+        /// SageMaker AI uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached
+        /// to the domain with an Amazon Web Services managed key by default. For more control,
+        /// specify a customer managed key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

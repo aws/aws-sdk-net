@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackupPlan())
             {
                 context.Writer.WritePropertyName("BackupPlan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsBackupBackupPlanBackupPlanDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BackupPlan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBackupPlanArn())
             {
                 context.Writer.WritePropertyName("BackupPlanArn");
-                context.Writer.Write(requestObject.BackupPlanArn);
+                context.Writer.WriteStringValue(requestObject.BackupPlanArn);
             }
 
             if(requestObject.IsSetBackupPlanId())
             {
                 context.Writer.WritePropertyName("BackupPlanId");
-                context.Writer.Write(requestObject.BackupPlanId);
+                context.Writer.WriteStringValue(requestObject.BackupPlanId);
             }
 
             if(requestObject.IsSetVersionId())
             {
                 context.Writer.WritePropertyName("VersionId");
-                context.Writer.Write(requestObject.VersionId);
+                context.Writer.WriteStringValue(requestObject.VersionId);
             }
 
         }

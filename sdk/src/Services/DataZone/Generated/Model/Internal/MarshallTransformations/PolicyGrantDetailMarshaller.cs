@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,144 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddToProjectMemberPool())
             {
                 context.Writer.WritePropertyName("addToProjectMemberPool");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddToProjectMemberPoolPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddToProjectMemberPool, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateAssetType())
             {
                 context.Writer.WritePropertyName("createAssetType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateAssetTypePolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateAssetType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateDomainUnit())
             {
                 context.Writer.WritePropertyName("createDomainUnit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateDomainUnitPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateDomainUnit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateEnvironment())
             {
                 context.Writer.WritePropertyName("createEnvironment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UnitMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateEnvironment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetCreateEnvironmentFromBlueprint())
+            {
+                context.Writer.WritePropertyName("createEnvironmentFromBlueprint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UnitMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateEnvironmentFromBlueprint, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateEnvironmentProfile())
             {
                 context.Writer.WritePropertyName("createEnvironmentProfile");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateEnvironmentProfilePolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateEnvironmentProfile, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateFormType())
             {
                 context.Writer.WritePropertyName("createFormType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateFormTypePolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateFormType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateGlossary())
             {
                 context.Writer.WritePropertyName("createGlossary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateGlossaryPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateGlossary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateProject())
             {
                 context.Writer.WritePropertyName("createProject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateProjectPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateProject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetCreateProjectFromProjectProfile())
+            {
+                context.Writer.WritePropertyName("createProjectFromProjectProfile");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateProjectFromProjectProfilePolicyGrantDetailMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateProjectFromProjectProfile, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDelegateCreateEnvironmentProfile())
             {
                 context.Writer.WritePropertyName("delegateCreateEnvironmentProfile");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UnitMarshaller.Instance;
                 marshaller.Marshall(requestObject.DelegateCreateEnvironmentProfile, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOverrideDomainUnitOwners())
             {
                 context.Writer.WritePropertyName("overrideDomainUnitOwners");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OverrideDomainUnitOwnersPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.OverrideDomainUnitOwners, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOverrideProjectOwners())
             {
                 context.Writer.WritePropertyName("overrideProjectOwners");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OverrideProjectOwnersPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.OverrideProjectOwners, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

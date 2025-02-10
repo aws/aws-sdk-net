@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSamplingPercentage())
             {
                 context.Writer.WritePropertyName("SamplingPercentage");
-                context.Writer.Write(requestObject.SamplingPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.SamplingPercentage.Value);
             }
 
             if(requestObject.IsSetShadowModelVariantName())
             {
                 context.Writer.WritePropertyName("ShadowModelVariantName");
-                context.Writer.Write(requestObject.ShadowModelVariantName);
+                context.Writer.WriteStringValue(requestObject.ShadowModelVariantName);
             }
 
         }

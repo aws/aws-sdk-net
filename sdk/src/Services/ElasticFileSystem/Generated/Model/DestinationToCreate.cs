@@ -31,6 +31,39 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Describes the new or existing destination file system for the replication configuration.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// If you want to replicate to a new file system, do not specify the File System ID for
+    /// the destination file system. Amazon EFS creates a new, empty file system. For One
+    /// Zone storage, specify the Availability Zone to create the file system in. To use an
+    /// Key Management Service key other than the default KMS key, then specify it. For more
+    /// information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/create-replication.html">Configuring
+    /// replication to new Amazon EFS file system</a> in the <i>Amazon EFS User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// After the file system is created, you cannot change the KMS key or the performance
+    /// mode.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    /// If you want to replicate to an existing file system that's in the same account as
+    /// the source file system, then you need to provide the ID or Amazon Resource Name (ARN)
+    /// of the file system to which to replicate. The file system's replication overwrite
+    /// protection must be disabled. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication#replicate-existing-destination">Replicating
+    /// to an existing file system</a> in the <i>Amazon EFS User Guide</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you are replicating the file system to a file system that's in a different account
+    /// than the source file system (cross-account replication), you need to provide the ARN
+    /// for the file system and the IAM role that allows Amazon EFS to perform replication
+    /// on the destination account. The file system's replication overwrite protection must
+    /// be disabled. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/cross-account-replication.html">Replicating
+    /// across Amazon Web Services accounts</a> in the <i>Amazon EFS User Guide</i>.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DestinationToCreate
     {
@@ -38,6 +71,7 @@ namespace Amazon.ElasticFileSystem.Model
         private string _fileSystemId;
         private string _kmsKeyId;
         private string _region;
+        private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneName. 
@@ -62,9 +96,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system to use for the destination. The file system's replication
-        /// overwrite replication must be disabled. If you do not provide an ID, then EFS creates
-        /// a new file system for the replication destination.
+        /// The ID or ARN of the file system to use for the destination. For cross-account replication,
+        /// this must be an ARN. The file system's replication overwrite replication must be disabled.
+        /// If no ID or ARN is specified, then a new file system is created. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -94,7 +128,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN - The Amazon Resource Name (ARN) for the key, for example <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
+        /// ARN - The ARN for the key, for example <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -123,7 +157,11 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// To create a file system that uses Regional storage, specify the Amazon Web Services
-        /// Region in which to create the destination file system.
+        /// Region in which to create the destination file system. The Region must be enabled
+        /// for the Amazon Web Services account that owns the source file system. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
+        /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Reference
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -137,6 +175,27 @@ namespace Amazon.ElasticFileSystem.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) of the IAM role in the source account that allows Amazon
+        /// EFS to perform replication on its behalf. This is optional for same-account replication
+        /// and required for cross-account replication.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
     }

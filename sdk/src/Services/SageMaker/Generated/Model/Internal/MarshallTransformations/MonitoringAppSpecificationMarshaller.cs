@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerArguments())
             {
                 context.Writer.WritePropertyName("ContainerArguments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerArgumentsListValue in requestObject.ContainerArguments)
                 {
-                        context.Writer.Write(requestObjectContainerArgumentsListValue);
+                        context.Writer.WriteStringValue(requestObjectContainerArgumentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContainerEntrypoint())
             {
                 context.Writer.WritePropertyName("ContainerEntrypoint");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainerEntrypointListValue in requestObject.ContainerEntrypoint)
                 {
-                        context.Writer.Write(requestObjectContainerEntrypointListValue);
+                        context.Writer.WriteStringValue(requestObjectContainerEntrypointListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("ImageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WriteStringValue(requestObject.ImageUri);
             }
 
             if(requestObject.IsSetPostAnalyticsProcessorSourceUri())
             {
                 context.Writer.WritePropertyName("PostAnalyticsProcessorSourceUri");
-                context.Writer.Write(requestObject.PostAnalyticsProcessorSourceUri);
+                context.Writer.WriteStringValue(requestObject.PostAnalyticsProcessorSourceUri);
             }
 
             if(requestObject.IsSetRecordPreprocessorSourceUri())
             {
                 context.Writer.WritePropertyName("RecordPreprocessorSourceUri");
-                context.Writer.Write(requestObject.RecordPreprocessorSourceUri);
+                context.Writer.WriteStringValue(requestObject.RecordPreprocessorSourceUri);
             }
 
         }

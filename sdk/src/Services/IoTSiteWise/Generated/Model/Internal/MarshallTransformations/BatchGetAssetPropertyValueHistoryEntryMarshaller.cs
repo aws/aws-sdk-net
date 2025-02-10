@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssetId())
             {
                 context.Writer.WritePropertyName("assetId");
-                context.Writer.Write(requestObject.AssetId);
+                context.Writer.WriteStringValue(requestObject.AssetId);
             }
 
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("endDate");
-                context.Writer.Write(requestObject.EndDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDate.Value)));
             }
 
             if(requestObject.IsSetEntryId())
             {
                 context.Writer.WritePropertyName("entryId");
-                context.Writer.Write(requestObject.EntryId);
+                context.Writer.WriteStringValue(requestObject.EntryId);
             }
 
             if(requestObject.IsSetPropertyAlias())
             {
                 context.Writer.WritePropertyName("propertyAlias");
-                context.Writer.Write(requestObject.PropertyAlias);
+                context.Writer.WriteStringValue(requestObject.PropertyAlias);
             }
 
             if(requestObject.IsSetPropertyId())
             {
                 context.Writer.WritePropertyName("propertyId");
-                context.Writer.Write(requestObject.PropertyId);
+                context.Writer.WriteStringValue(requestObject.PropertyId);
             }
 
             if(requestObject.IsSetQualities())
             {
                 context.Writer.WritePropertyName("qualities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQualitiesListValue in requestObject.Qualities)
                 {
-                        context.Writer.Write(requestObjectQualitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectQualitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("startDate");
-                context.Writer.Write(requestObject.StartDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartDate.Value)));
             }
 
             if(requestObject.IsSetTimeOrdering())
             {
                 context.Writer.WritePropertyName("timeOrdering");
-                context.Writer.Write(requestObject.TimeOrdering);
+                context.Writer.WriteStringValue(requestObject.TimeOrdering);
             }
 
         }

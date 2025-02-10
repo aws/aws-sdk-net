@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationState())
             {
                 context.Writer.WritePropertyName("AssociationState");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AssociationStateDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AssociationState, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGatewayId())
             {
                 context.Writer.WritePropertyName("GatewayId");
-                context.Writer.Write(requestObject.GatewayId);
+                context.Writer.WriteStringValue(requestObject.GatewayId);
             }
 
             if(requestObject.IsSetMain())
             {
                 context.Writer.WritePropertyName("Main");
-                context.Writer.Write(requestObject.Main.Value);
+                context.Writer.WriteBooleanValue(requestObject.Main.Value);
             }
 
             if(requestObject.IsSetRouteTableAssociationId())
             {
                 context.Writer.WritePropertyName("RouteTableAssociationId");
-                context.Writer.Write(requestObject.RouteTableAssociationId);
+                context.Writer.WriteStringValue(requestObject.RouteTableAssociationId);
             }
 
             if(requestObject.IsSetRouteTableId())
             {
                 context.Writer.WritePropertyName("RouteTableId");
-                context.Writer.Write(requestObject.RouteTableId);
+                context.Writer.WriteStringValue(requestObject.RouteTableId);
             }
 
             if(requestObject.IsSetSubnetId())
             {
                 context.Writer.WritePropertyName("SubnetId");
-                context.Writer.Write(requestObject.SubnetId);
+                context.Writer.WriteStringValue(requestObject.SubnetId);
             }
 
         }

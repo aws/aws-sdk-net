@@ -29,167 +29,157 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TraceSummary Object
     /// </summary>  
-    public class TraceSummaryUnmarshaller : IUnmarshaller<TraceSummary, XmlUnmarshallerContext>, IUnmarshaller<TraceSummary, JsonUnmarshallerContext>
+    public class TraceSummaryUnmarshaller : IJsonUnmarshaller<TraceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TraceSummary IUnmarshaller<TraceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TraceSummary Unmarshall(JsonUnmarshallerContext context)
+        public TraceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TraceSummary unmarshalledObject = new TraceSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Annotations", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, List<ValueWithServiceIds>, StringUnmarshaller, ListUnmarshaller<ValueWithServiceIds, ValueWithServiceIdsUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<ValueWithServiceIds, ValueWithServiceIdsUnmarshaller>(ValueWithServiceIdsUnmarshaller.Instance));
-                    unmarshalledObject.Annotations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ValueWithServiceIds>, StringUnmarshaller, JsonListUnmarshaller<ValueWithServiceIds,ValueWithServiceIdsUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ValueWithServiceIds, ValueWithServiceIdsUnmarshaller>(ValueWithServiceIdsUnmarshaller.Instance));
+                    unmarshalledObject.Annotations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailabilityZones", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AvailabilityZoneDetail, AvailabilityZoneDetailUnmarshaller>(AvailabilityZoneDetailUnmarshaller.Instance);
-                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AvailabilityZoneDetail, AvailabilityZoneDetailUnmarshaller>(AvailabilityZoneDetailUnmarshaller.Instance);
+                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Duration", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntryPoint", targetDepth))
                 {
                     var unmarshaller = ServiceIdUnmarshaller.Instance;
-                    unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ErrorRootCauses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ErrorRootCause, ErrorRootCauseUnmarshaller>(ErrorRootCauseUnmarshaller.Instance);
-                    unmarshalledObject.ErrorRootCauses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ErrorRootCause, ErrorRootCauseUnmarshaller>(ErrorRootCauseUnmarshaller.Instance);
+                    unmarshalledObject.ErrorRootCauses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FaultRootCauses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FaultRootCause, FaultRootCauseUnmarshaller>(FaultRootCauseUnmarshaller.Instance);
-                    unmarshalledObject.FaultRootCauses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FaultRootCause, FaultRootCauseUnmarshaller>(FaultRootCauseUnmarshaller.Instance);
+                    unmarshalledObject.FaultRootCauses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HasError", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HasError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HasError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HasFault", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HasFault = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HasFault = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HasThrottle", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HasThrottle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HasThrottle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Http", targetDepth))
                 {
                     var unmarshaller = HttpUnmarshaller.Instance;
-                    unmarshalledObject.Http = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InstanceIdDetail, InstanceIdDetailUnmarshaller>(InstanceIdDetailUnmarshaller.Instance);
-                    unmarshalledObject.InstanceIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InstanceIdDetail, InstanceIdDetailUnmarshaller>(InstanceIdDetailUnmarshaller.Instance);
+                    unmarshalledObject.InstanceIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IsPartial", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsPartial = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsPartial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MatchedEventTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.MatchedEventTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MatchedEventTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceARNs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResourceARNDetail, ResourceARNDetailUnmarshaller>(ResourceARNDetailUnmarshaller.Instance);
-                    unmarshalledObject.ResourceARNs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResourceARNDetail, ResourceARNDetailUnmarshaller>(ResourceARNDetailUnmarshaller.Instance);
+                    unmarshalledObject.ResourceARNs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResponseTime", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ResponseTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResponseTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResponseTimeRootCauses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResponseTimeRootCause, ResponseTimeRootCauseUnmarshaller>(ResponseTimeRootCauseUnmarshaller.Instance);
-                    unmarshalledObject.ResponseTimeRootCauses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ResponseTimeRootCause, ResponseTimeRootCauseUnmarshaller>(ResponseTimeRootCauseUnmarshaller.Instance);
+                    unmarshalledObject.ResponseTimeRootCauses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Revision", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceIds", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ServiceId, ServiceIdUnmarshaller>(ServiceIdUnmarshaller.Instance);
-                    unmarshalledObject.ServiceIds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ServiceId, ServiceIdUnmarshaller>(ServiceIdUnmarshaller.Instance);
+                    unmarshalledObject.ServiceIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Users", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TraceUser, TraceUserUnmarshaller>(TraceUserUnmarshaller.Instance);
-                    unmarshalledObject.Users = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TraceUser, TraceUserUnmarshaller>(TraceUserUnmarshaller.Instance);
+                    unmarshalledObject.Users = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

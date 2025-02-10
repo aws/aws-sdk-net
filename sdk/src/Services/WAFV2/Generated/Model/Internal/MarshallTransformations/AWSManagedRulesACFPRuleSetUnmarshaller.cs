@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AWSManagedRulesACFPRuleSet Object
     /// </summary>  
-    public class AWSManagedRulesACFPRuleSetUnmarshaller : IUnmarshaller<AWSManagedRulesACFPRuleSet, XmlUnmarshallerContext>, IUnmarshaller<AWSManagedRulesACFPRuleSet, JsonUnmarshallerContext>
+    public class AWSManagedRulesACFPRuleSetUnmarshaller : IJsonUnmarshaller<AWSManagedRulesACFPRuleSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AWSManagedRulesACFPRuleSet IUnmarshaller<AWSManagedRulesACFPRuleSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AWSManagedRulesACFPRuleSet Unmarshall(JsonUnmarshallerContext context)
+        public AWSManagedRulesACFPRuleSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AWSManagedRulesACFPRuleSet unmarshalledObject = new AWSManagedRulesACFPRuleSet();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreationPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableRegexInPath", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableRegexInPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableRegexInPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrationPagePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationPagePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistrationPagePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestInspection", targetDepth))
                 {
                     var unmarshaller = RequestInspectionACFPUnmarshaller.Instance;
-                    unmarshalledObject.RequestInspection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestInspection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResponseInspection", targetDepth))
                 {
                     var unmarshaller = ResponseInspectionUnmarshaller.Instance;
-                    unmarshalledObject.ResponseInspection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResponseInspection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpv4Prefix())
             {
                 context.Writer.WritePropertyName("Ipv4Prefix");
-                context.Writer.Write(requestObject.Ipv4Prefix);
+                context.Writer.WriteStringValue(requestObject.Ipv4Prefix);
             }
 
         }

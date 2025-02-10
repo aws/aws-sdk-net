@@ -30,7 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the association between an instance and an elastic inference accelerator.
+    /// <note> 
+    /// <para>
+    /// Amazon Elastic Inference is no longer available.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  Describes the association between an instance and an elastic inference accelerator.
+    /// 
+    /// </para>
     /// </summary>
     public partial class ElasticInferenceAcceleratorAssociation
     {

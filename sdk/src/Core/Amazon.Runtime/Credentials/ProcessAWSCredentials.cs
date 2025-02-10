@@ -176,6 +176,15 @@ namespace Amazon.Runtime
                         try
                         {
                             processCredentialDataV1 = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(processInfo.StandardOutput, ProcessCredentialVersion1JsonSerializerContexts.Default);
+                            if (processCredentialDataV1.Expiration == DateTime.MaxValue && processCredentialDataV1.Expiration.Kind != DateTimeKind.Utc)
+                            {
+                                processCredentialDataV1.Expiration = DateTime.SpecifyKind(processCredentialDataV1.Expiration, DateTimeKind.Utc);
+                            }
+                            else
+                            {
+                                processCredentialDataV1.Expiration = processCredentialDataV1.Expiration.ToUniversalTime();
+                            }
+                            
                         }
                         catch (Exception e)
                         {

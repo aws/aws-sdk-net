@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
@@ -61,64 +64,69 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/associateresourceshare";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetPrincipals())
-                    {
-                        context.Writer.WritePropertyName("principals");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
-                        {
-                                context.Writer.Write(publicRequestPrincipalsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceArns())
-                    {
-                        context.Writer.WritePropertyName("resourceArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
-                        {
-                                context.Writer.Write(publicRequestResourceArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceShareArn())
-                    {
-                        context.Writer.WritePropertyName("resourceShareArn");
-                        context.Writer.Write(publicRequest.ResourceShareArn);
-                    }
-
-                    if(publicRequest.IsSetSources())
-                    {
-                        context.Writer.WritePropertyName("sources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                        {
-                                context.Writer.Write(publicRequestSourcesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            if(publicRequest.IsSetPrincipals())
+            {
+                context.Writer.WritePropertyName("principals");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPrincipalsListValue in publicRequest.Principals)
+                {
+                        context.Writer.WriteStringValue(publicRequestPrincipalsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceArns())
+            {
+                context.Writer.WritePropertyName("resourceArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceArnsListValue in publicRequest.ResourceArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetResourceShareArn())
+            {
+                context.Writer.WritePropertyName("resourceShareArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceShareArn);
+            }
+
+            if(publicRequest.IsSetSources())
+            {
+                context.Writer.WritePropertyName("sources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                {
+                        context.Writer.WriteStringValue(publicRequestSourcesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

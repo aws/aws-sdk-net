@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("createdAfter");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedAfter));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedAfter));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("createdBefore");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedBefore));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CreatedBefore));
             }
 
             if(requestObject.IsSetCreationType())
             {
                 context.Writer.WritePropertyName("creationType");
-                context.Writer.Write(requestObject.CreationType);
+                context.Writer.WriteStringValue(requestObject.CreationType);
             }
 
             if(requestObject.IsSetGeneratedFrom())
             {
                 context.Writer.WritePropertyName("generatedFrom");
-                context.Writer.Write(requestObject.GeneratedFrom);
+                context.Writer.WriteStringValue(requestObject.GeneratedFrom);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetReferenceArn())
             {
                 context.Writer.WritePropertyName("referenceArn");
-                context.Writer.Write(requestObject.ReferenceArn);
+                context.Writer.WriteStringValue(requestObject.ReferenceArn);
             }
 
             if(requestObject.IsSetSampleId())
             {
                 context.Writer.WritePropertyName("sampleId");
-                context.Writer.Write(requestObject.SampleId);
+                context.Writer.WriteStringValue(requestObject.SampleId);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetSubjectId())
             {
                 context.Writer.WritePropertyName("subjectId");
-                context.Writer.Write(requestObject.SubjectId);
+                context.Writer.WriteStringValue(requestObject.SubjectId);
             }
 
         }

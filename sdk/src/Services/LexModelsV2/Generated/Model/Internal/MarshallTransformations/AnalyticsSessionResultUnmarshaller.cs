@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AnalyticsSessionResult Object
     /// </summary>  
-    public class AnalyticsSessionResultUnmarshaller : IUnmarshaller<AnalyticsSessionResult, XmlUnmarshallerContext>, IUnmarshaller<AnalyticsSessionResult, JsonUnmarshallerContext>
+    public class AnalyticsSessionResultUnmarshaller : IJsonUnmarshaller<AnalyticsSessionResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AnalyticsSessionResult IUnmarshaller<AnalyticsSessionResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalyticsSessionResult Unmarshall(JsonUnmarshallerContext context)
+        public AnalyticsSessionResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AnalyticsSessionResult unmarshalledObject = new AnalyticsSessionResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("binKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AnalyticsBinKey, AnalyticsBinKeyUnmarshaller>(AnalyticsBinKeyUnmarshaller.Instance);
-                    unmarshalledObject.BinKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AnalyticsBinKey, AnalyticsBinKeyUnmarshaller>(AnalyticsBinKeyUnmarshaller.Instance);
+                    unmarshalledObject.BinKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("groupByKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AnalyticsSessionGroupByKey, AnalyticsSessionGroupByKeyUnmarshaller>(AnalyticsSessionGroupByKeyUnmarshaller.Instance);
-                    unmarshalledObject.GroupByKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AnalyticsSessionGroupByKey, AnalyticsSessionGroupByKeyUnmarshaller>(AnalyticsSessionGroupByKeyUnmarshaller.Instance);
+                    unmarshalledObject.GroupByKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metricsResults", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AnalyticsSessionMetricResult, AnalyticsSessionMetricResultUnmarshaller>(AnalyticsSessionMetricResultUnmarshaller.Instance);
-                    unmarshalledObject.MetricsResults = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AnalyticsSessionMetricResult, AnalyticsSessionMetricResultUnmarshaller>(AnalyticsSessionMetricResultUnmarshaller.Instance);
+                    unmarshalledObject.MetricsResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

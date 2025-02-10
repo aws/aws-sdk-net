@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StopAction Object
     /// </summary>  
-    public class StopActionUnmarshaller : IUnmarshaller<StopAction, XmlUnmarshallerContext>, IUnmarshaller<StopAction, JsonUnmarshallerContext>
+    public class StopActionUnmarshaller : IXmlUnmarshaller<StopAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StopAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StopActionUnmarshaller _instance = new StopActionUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMatchType())
             {
                 context.Writer.WritePropertyName("MatchType");
-                context.Writer.Write(requestObject.MatchType);
+                context.Writer.WriteStringValue(requestObject.MatchType);
             }
 
             if(requestObject.IsSetParticipantRole())
             {
                 context.Writer.WritePropertyName("ParticipantRole");
-                context.Writer.Write(requestObject.ParticipantRole);
+                context.Writer.WriteStringValue(requestObject.ParticipantRole);
             }
 
             if(requestObject.IsSetSearchText())
             {
                 context.Writer.WritePropertyName("SearchText");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSearchTextListValue in requestObject.SearchText)
                 {
-                        context.Writer.Write(requestObjectSearchTextListValue);
+                        context.Writer.WriteStringValue(requestObjectSearchTextListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

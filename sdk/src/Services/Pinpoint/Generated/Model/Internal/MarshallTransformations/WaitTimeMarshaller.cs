@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWaitFor())
             {
                 context.Writer.WritePropertyName("WaitFor");
-                context.Writer.Write(requestObject.WaitFor);
+                context.Writer.WriteStringValue(requestObject.WaitFor);
             }
 
             if(requestObject.IsSetWaitUntil())
             {
                 context.Writer.WritePropertyName("WaitUntil");
-                context.Writer.Write(requestObject.WaitUntil);
+                context.Writer.WriteStringValue(requestObject.WaitUntil);
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BodySectionDynamicNumericDimensionConfiguration Object
     /// </summary>  
-    public class BodySectionDynamicNumericDimensionConfigurationUnmarshaller : IUnmarshaller<BodySectionDynamicNumericDimensionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BodySectionDynamicNumericDimensionConfiguration, JsonUnmarshallerContext>
+    public class BodySectionDynamicNumericDimensionConfigurationUnmarshaller : IJsonUnmarshaller<BodySectionDynamicNumericDimensionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BodySectionDynamicNumericDimensionConfiguration IUnmarshaller<BodySectionDynamicNumericDimensionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BodySectionDynamicNumericDimensionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public BodySectionDynamicNumericDimensionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BodySectionDynamicNumericDimensionConfiguration unmarshalledObject = new BodySectionDynamicNumericDimensionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Column", targetDepth))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.Column = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Limit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Limit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortByMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ColumnSort, ColumnSortUnmarshaller>(ColumnSortUnmarshaller.Instance);
-                    unmarshalledObject.SortByMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ColumnSort, ColumnSortUnmarshaller>(ColumnSortUnmarshaller.Instance);
+                    unmarshalledObject.SortByMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

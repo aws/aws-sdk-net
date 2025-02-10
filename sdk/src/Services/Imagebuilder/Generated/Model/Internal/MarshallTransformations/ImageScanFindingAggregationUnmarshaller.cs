@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImageScanFindingAggregation Object
     /// </summary>  
-    public class ImageScanFindingAggregationUnmarshaller : IUnmarshaller<ImageScanFindingAggregation, XmlUnmarshallerContext>, IUnmarshaller<ImageScanFindingAggregation, JsonUnmarshallerContext>
+    public class ImageScanFindingAggregationUnmarshaller : IJsonUnmarshaller<ImageScanFindingAggregation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImageScanFindingAggregation IUnmarshaller<ImageScanFindingAggregation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImageScanFindingAggregation Unmarshall(JsonUnmarshallerContext context)
+        public ImageScanFindingAggregation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImageScanFindingAggregation unmarshalledObject = new ImageScanFindingAggregation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountAggregation", targetDepth))
                 {
                     var unmarshaller = AccountAggregationUnmarshaller.Instance;
-                    unmarshalledObject.AccountAggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageAggregation", targetDepth))
                 {
                     var unmarshaller = ImageAggregationUnmarshaller.Instance;
-                    unmarshalledObject.ImageAggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imagePipelineAggregation", targetDepth))
                 {
                     var unmarshaller = ImagePipelineAggregationUnmarshaller.Instance;
-                    unmarshalledObject.ImagePipelineAggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImagePipelineAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vulnerabilityIdAggregation", targetDepth))
                 {
                     var unmarshaller = VulnerabilityIdAggregationUnmarshaller.Instance;
-                    unmarshalledObject.VulnerabilityIdAggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VulnerabilityIdAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

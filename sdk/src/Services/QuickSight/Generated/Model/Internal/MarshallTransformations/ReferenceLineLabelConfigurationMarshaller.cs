@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomLabelConfiguration())
             {
                 context.Writer.WritePropertyName("CustomLabelConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReferenceLineCustomLabelConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomLabelConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFontColor())
             {
                 context.Writer.WritePropertyName("FontColor");
-                context.Writer.Write(requestObject.FontColor);
+                context.Writer.WriteStringValue(requestObject.FontColor);
             }
 
             if(requestObject.IsSetFontConfiguration())
             {
                 context.Writer.WritePropertyName("FontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHorizontalPosition())
             {
                 context.Writer.WritePropertyName("HorizontalPosition");
-                context.Writer.Write(requestObject.HorizontalPosition);
+                context.Writer.WriteStringValue(requestObject.HorizontalPosition);
             }
 
             if(requestObject.IsSetValueLabelConfiguration())
             {
                 context.Writer.WritePropertyName("ValueLabelConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReferenceLineValueLabelConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValueLabelConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVerticalPosition())
             {
                 context.Writer.WritePropertyName("VerticalPosition");
-                context.Writer.Write(requestObject.VerticalPosition);
+                context.Writer.WriteStringValue(requestObject.VerticalPosition);
             }
 
         }

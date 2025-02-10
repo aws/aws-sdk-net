@@ -29,89 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RegistrationVersionStatusHistory Object
     /// </summary>  
-    public class RegistrationVersionStatusHistoryUnmarshaller : IUnmarshaller<RegistrationVersionStatusHistory, XmlUnmarshallerContext>, IUnmarshaller<RegistrationVersionStatusHistory, JsonUnmarshallerContext>
+    public class RegistrationVersionStatusHistoryUnmarshaller : IJsonUnmarshaller<RegistrationVersionStatusHistory, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RegistrationVersionStatusHistory IUnmarshaller<RegistrationVersionStatusHistory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RegistrationVersionStatusHistory Unmarshall(JsonUnmarshallerContext context)
+        public RegistrationVersionStatusHistory Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RegistrationVersionStatusHistory unmarshalledObject = new RegistrationVersionStatusHistory();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApprovedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ApprovedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApprovedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ArchivedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ArchivedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeniedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeniedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeniedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DiscardedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DiscardedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DiscardedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DraftTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DraftTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DraftTimestamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RequiresAuthenticationTimestamp", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RequiresAuthenticationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReviewingTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReviewingTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReviewingTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RevokedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RevokedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevokedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubmittedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubmittedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubmittedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

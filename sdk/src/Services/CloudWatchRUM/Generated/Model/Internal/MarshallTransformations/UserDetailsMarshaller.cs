@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionId())
             {
                 context.Writer.WritePropertyName("sessionId");
-                context.Writer.Write(requestObject.SessionId);
+                context.Writer.WriteStringValue(requestObject.SessionId);
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("userId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
         }

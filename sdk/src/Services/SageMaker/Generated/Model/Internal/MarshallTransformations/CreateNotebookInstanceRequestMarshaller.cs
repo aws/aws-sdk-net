@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,145 +66,150 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceleratorTypes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AcceleratorTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceleratorTypes())
-                    {
-                        context.Writer.WritePropertyName("AcceleratorTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
-                        {
-                                context.Writer.Write(publicRequestAcceleratorTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAdditionalCodeRepositories())
-                    {
-                        context.Writer.WritePropertyName("AdditionalCodeRepositories");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalCodeRepositoriesListValue in publicRequest.AdditionalCodeRepositories)
-                        {
-                                context.Writer.Write(publicRequestAdditionalCodeRepositoriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultCodeRepository())
-                    {
-                        context.Writer.WritePropertyName("DefaultCodeRepository");
-                        context.Writer.Write(publicRequest.DefaultCodeRepository);
-                    }
-
-                    if(publicRequest.IsSetDirectInternetAccess())
-                    {
-                        context.Writer.WritePropertyName("DirectInternetAccess");
-                        context.Writer.Write(publicRequest.DirectInternetAccess);
-                    }
-
-                    if(publicRequest.IsSetInstanceMetadataServiceConfiguration())
-                    {
-                        context.Writer.WritePropertyName("InstanceMetadataServiceConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceMetadataServiceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InstanceMetadataServiceConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInstanceType())
-                    {
-                        context.Writer.WritePropertyName("InstanceType");
-                        context.Writer.Write(publicRequest.InstanceType);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyId");
-                        context.Writer.Write(publicRequest.KmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetLifecycleConfigName())
-                    {
-                        context.Writer.WritePropertyName("LifecycleConfigName");
-                        context.Writer.Write(publicRequest.LifecycleConfigName);
-                    }
-
-                    if(publicRequest.IsSetNotebookInstanceName())
-                    {
-                        context.Writer.WritePropertyName("NotebookInstanceName");
-                        context.Writer.Write(publicRequest.NotebookInstanceName);
-                    }
-
-                    if(publicRequest.IsSetPlatformIdentifier())
-                    {
-                        context.Writer.WritePropertyName("PlatformIdentifier");
-                        context.Writer.Write(publicRequest.PlatformIdentifier);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetRootAccess())
-                    {
-                        context.Writer.WritePropertyName("RootAccess");
-                        context.Writer.Write(publicRequest.RootAccess);
-                    }
-
-                    if(publicRequest.IsSetSecurityGroupIds())
-                    {
-                        context.Writer.WritePropertyName("SecurityGroupIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
-                        {
-                                context.Writer.Write(publicRequestSecurityGroupIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnetId())
-                    {
-                        context.Writer.WritePropertyName("SubnetId");
-                        context.Writer.Write(publicRequest.SubnetId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVolumeSizeInGB())
-                    {
-                        context.Writer.WritePropertyName("VolumeSizeInGB");
-                        context.Writer.Write(publicRequest.VolumeSizeInGB.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAcceleratorTypesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAdditionalCodeRepositories())
+            {
+                context.Writer.WritePropertyName("AdditionalCodeRepositories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalCodeRepositoriesListValue in publicRequest.AdditionalCodeRepositories)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdditionalCodeRepositoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDefaultCodeRepository())
+            {
+                context.Writer.WritePropertyName("DefaultCodeRepository");
+                context.Writer.WriteStringValue(publicRequest.DefaultCodeRepository);
+            }
+
+            if(publicRequest.IsSetDirectInternetAccess())
+            {
+                context.Writer.WritePropertyName("DirectInternetAccess");
+                context.Writer.WriteStringValue(publicRequest.DirectInternetAccess);
+            }
+
+            if(publicRequest.IsSetInstanceMetadataServiceConfiguration())
+            {
+                context.Writer.WritePropertyName("InstanceMetadataServiceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InstanceMetadataServiceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InstanceMetadataServiceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("InstanceType");
+                context.Writer.WriteStringValue(publicRequest.InstanceType);
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
+            if(publicRequest.IsSetLifecycleConfigName())
+            {
+                context.Writer.WritePropertyName("LifecycleConfigName");
+                context.Writer.WriteStringValue(publicRequest.LifecycleConfigName);
+            }
+
+            if(publicRequest.IsSetNotebookInstanceName())
+            {
+                context.Writer.WritePropertyName("NotebookInstanceName");
+                context.Writer.WriteStringValue(publicRequest.NotebookInstanceName);
+            }
+
+            if(publicRequest.IsSetPlatformIdentifier())
+            {
+                context.Writer.WritePropertyName("PlatformIdentifier");
+                context.Writer.WriteStringValue(publicRequest.PlatformIdentifier);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetRootAccess())
+            {
+                context.Writer.WritePropertyName("RootAccess");
+                context.Writer.WriteStringValue(publicRequest.RootAccess);
+            }
+
+            if(publicRequest.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("SecurityGroupIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSecurityGroupIdsListValue in publicRequest.SecurityGroupIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubnetId())
+            {
+                context.Writer.WritePropertyName("SubnetId");
+                context.Writer.WriteStringValue(publicRequest.SubnetId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVolumeSizeInGB())
+            {
+                context.Writer.WritePropertyName("VolumeSizeInGB");
+                context.Writer.WriteNumberValue(publicRequest.VolumeSizeInGB.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

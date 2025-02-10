@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EntityRecognitionConfig Object
     /// </summary>  
-    public class EntityRecognitionConfigUnmarshaller : IUnmarshaller<EntityRecognitionConfig, XmlUnmarshallerContext>, IUnmarshaller<EntityRecognitionConfig, JsonUnmarshallerContext>
+    public class EntityRecognitionConfigUnmarshaller : IJsonUnmarshaller<EntityRecognitionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EntityRecognitionConfig IUnmarshaller<EntityRecognitionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EntityRecognitionConfig Unmarshall(JsonUnmarshallerContext context)
+        public EntityRecognitionConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EntityRecognitionConfig unmarshalledObject = new EntityRecognitionConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EntityTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EntityTypesListItem, EntityTypesListItemUnmarshaller>(EntityTypesListItemUnmarshaller.Instance);
-                    unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EntityTypesListItem, EntityTypesListItemUnmarshaller>(EntityTypesListItemUnmarshaller.Instance);
+                    unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

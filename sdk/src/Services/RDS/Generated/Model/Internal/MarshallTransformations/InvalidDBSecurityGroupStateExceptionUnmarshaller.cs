@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBSecurityGroupStateException operation
     /// </summary>  
-    public class InvalidDBSecurityGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBSecurityGroupStateException, XmlUnmarshallerContext>
+    public class InvalidDBSecurityGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBSecurityGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

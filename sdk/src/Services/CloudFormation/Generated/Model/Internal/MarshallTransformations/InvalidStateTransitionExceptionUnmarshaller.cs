@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidStateTransitionException operation
     /// </summary>  
-    public class InvalidStateTransitionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidStateTransitionException, XmlUnmarshallerContext>
+    public class InvalidStateTransitionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidStateTransitionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

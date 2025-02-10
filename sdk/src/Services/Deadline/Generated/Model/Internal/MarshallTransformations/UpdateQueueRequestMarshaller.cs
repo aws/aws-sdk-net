@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -67,109 +70,114 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 throw new AmazonDeadlineException("Request object does not have required field QueueId set");
             request.AddPathResource("{queueId}", StringUtils.FromString(publicRequest.QueueId));
             request.ResourcePath = "/2023-10-12/farms/{farmId}/queues/{queueId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowedStorageProfileIdsToAdd())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("allowedStorageProfileIdsToAdd");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedStorageProfileIdsToAddListValue in publicRequest.AllowedStorageProfileIdsToAdd)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowedStorageProfileIdsToAdd())
-                    {
-                        context.Writer.WritePropertyName("allowedStorageProfileIdsToAdd");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedStorageProfileIdsToAddListValue in publicRequest.AllowedStorageProfileIdsToAdd)
-                        {
-                                context.Writer.Write(publicRequestAllowedStorageProfileIdsToAddListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAllowedStorageProfileIdsToRemove())
-                    {
-                        context.Writer.WritePropertyName("allowedStorageProfileIdsToRemove");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedStorageProfileIdsToRemoveListValue in publicRequest.AllowedStorageProfileIdsToRemove)
-                        {
-                                context.Writer.Write(publicRequestAllowedStorageProfileIdsToRemoveListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultBudgetAction())
-                    {
-                        context.Writer.WritePropertyName("defaultBudgetAction");
-                        context.Writer.Write(publicRequest.DefaultBudgetAction);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDisplayName())
-                    {
-                        context.Writer.WritePropertyName("displayName");
-                        context.Writer.Write(publicRequest.DisplayName);
-                    }
-
-                    if(publicRequest.IsSetJobAttachmentSettings())
-                    {
-                        context.Writer.WritePropertyName("jobAttachmentSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobAttachmentSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobAttachmentSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobRunAsUser())
-                    {
-                        context.Writer.WritePropertyName("jobRunAsUser");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobRunAsUserMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobRunAsUser, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRequiredFileSystemLocationNamesToAdd())
-                    {
-                        context.Writer.WritePropertyName("requiredFileSystemLocationNamesToAdd");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRequiredFileSystemLocationNamesToAddListValue in publicRequest.RequiredFileSystemLocationNamesToAdd)
-                        {
-                                context.Writer.Write(publicRequestRequiredFileSystemLocationNamesToAddListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRequiredFileSystemLocationNamesToRemove())
-                    {
-                        context.Writer.WritePropertyName("requiredFileSystemLocationNamesToRemove");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRequiredFileSystemLocationNamesToRemoveListValue in publicRequest.RequiredFileSystemLocationNamesToRemove)
-                        {
-                                context.Writer.Write(publicRequestRequiredFileSystemLocationNamesToRemoveListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAllowedStorageProfileIdsToAddListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAllowedStorageProfileIdsToRemove())
+            {
+                context.Writer.WritePropertyName("allowedStorageProfileIdsToRemove");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedStorageProfileIdsToRemoveListValue in publicRequest.AllowedStorageProfileIdsToRemove)
+                {
+                        context.Writer.WriteStringValue(publicRequestAllowedStorageProfileIdsToRemoveListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDefaultBudgetAction())
+            {
+                context.Writer.WritePropertyName("defaultBudgetAction");
+                context.Writer.WriteStringValue(publicRequest.DefaultBudgetAction);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDisplayName())
+            {
+                context.Writer.WritePropertyName("displayName");
+                context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetJobAttachmentSettings())
+            {
+                context.Writer.WritePropertyName("jobAttachmentSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobAttachmentSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobAttachmentSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobRunAsUser())
+            {
+                context.Writer.WritePropertyName("jobRunAsUser");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobRunAsUserMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobRunAsUser, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRequiredFileSystemLocationNamesToAdd())
+            {
+                context.Writer.WritePropertyName("requiredFileSystemLocationNamesToAdd");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequiredFileSystemLocationNamesToAddListValue in publicRequest.RequiredFileSystemLocationNamesToAdd)
+                {
+                        context.Writer.WriteStringValue(publicRequestRequiredFileSystemLocationNamesToAddListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRequiredFileSystemLocationNamesToRemove())
+            {
+                context.Writer.WritePropertyName("requiredFileSystemLocationNamesToRemove");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequiredFileSystemLocationNamesToRemoveListValue in publicRequest.RequiredFileSystemLocationNamesToRemove)
+                {
+                        context.Writer.WriteStringValue(publicRequestRequiredFileSystemLocationNamesToRemoveListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientToken()) 

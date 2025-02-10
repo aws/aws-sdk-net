@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StepAutomationConfiguration Object
     /// </summary>  
-    public class StepAutomationConfigurationUnmarshaller : IUnmarshaller<StepAutomationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StepAutomationConfiguration, JsonUnmarshallerContext>
+    public class StepAutomationConfigurationUnmarshaller : IJsonUnmarshaller<StepAutomationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StepAutomationConfiguration IUnmarshaller<StepAutomationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StepAutomationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public StepAutomationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StepAutomationConfiguration unmarshalledObject = new StepAutomationConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("command", targetDepth))
                 {
                     var unmarshaller = PlatformCommandUnmarshaller.Instance;
-                    unmarshalledObject.Command = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("runEnvironment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunEnvironment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scriptLocationS3Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScriptLocationS3Bucket = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScriptLocationS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scriptLocationS3Key", targetDepth))
                 {
                     var unmarshaller = PlatformScriptKeyUnmarshaller.Instance;
-                    unmarshalledObject.ScriptLocationS3Key = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScriptLocationS3Key = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

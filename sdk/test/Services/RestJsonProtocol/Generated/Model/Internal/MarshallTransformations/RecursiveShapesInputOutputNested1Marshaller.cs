@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFoo())
             {
                 context.Writer.WritePropertyName("foo");
-                context.Writer.Write(requestObject.Foo);
+                context.Writer.WriteStringValue(requestObject.Foo);
             }
 
             if(requestObject.IsSetNested())
             {
                 context.Writer.WritePropertyName("nested");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecursiveShapesInputOutputNested2Marshaller.Instance;
                 marshaller.Marshall(requestObject.Nested, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNetwork())
             {
                 context.Writer.WritePropertyName("network");
-                context.Writer.Write(requestObject.Network);
+                context.Writer.WriteStringValue(requestObject.Network);
             }
 
             if(requestObject.IsSetNetworkRoutes())
             {
                 context.Writer.WritePropertyName("networkRoutes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNetworkRoutesListValue in requestObject.NetworkRoutes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputRequestDestinationRouteMarshaller.Instance;
                     marshaller.Marshall(requestObjectNetworkRoutesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStaticIpAddress())
             {
                 context.Writer.WritePropertyName("staticIpAddress");
-                context.Writer.Write(requestObject.StaticIpAddress);
+                context.Writer.WriteStringValue(requestObject.StaticIpAddress);
             }
 
             if(requestObject.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("streamName");
-                context.Writer.Write(requestObject.StreamName);
+                context.Writer.WriteStringValue(requestObject.StreamName);
             }
 
         }

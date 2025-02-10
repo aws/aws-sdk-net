@@ -86,7 +86,7 @@ namespace Amazon.Bedrock.Model
         ///  
         /// <para>
         /// An individual's age, including the quantity and unit of time. For example, in the
-        /// phrase "I am 40 years old," Guarrails recognizes "40 years" as an age. 
+        /// phrase "I am 40 years old," Guardrails recognizes "40 years" as an age. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -170,7 +170,7 @@ namespace Amazon.Bedrock.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>REDIT_DEBIT_CARD_CVV</b> 
+        ///  <b>CREDIT_DEBIT_CARD_CVV</b> 
         /// </para>
         ///  
         /// <para>

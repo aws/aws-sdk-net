@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessUrl())
             {
                 context.Writer.WritePropertyName("AccessUrl");
-                context.Writer.Write(requestObject.AccessUrl);
+                context.Writer.WriteStringValue(requestObject.AccessUrl);
             }
 
             if(requestObject.IsSetApprovedOrigins())
             {
                 context.Writer.WritePropertyName("ApprovedOrigins");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectApprovedOriginsListValue in requestObject.ApprovedOrigins)
                 {
-                        context.Writer.Write(requestObjectApprovedOriginsListValue);
+                        context.Writer.WriteStringValue(requestObjectApprovedOriginsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

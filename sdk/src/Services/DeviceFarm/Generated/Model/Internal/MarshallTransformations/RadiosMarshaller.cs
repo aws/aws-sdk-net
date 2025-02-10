@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBluetooth())
             {
                 context.Writer.WritePropertyName("bluetooth");
-                context.Writer.Write(requestObject.Bluetooth.Value);
+                context.Writer.WriteBooleanValue(requestObject.Bluetooth.Value);
             }
 
             if(requestObject.IsSetGps())
             {
                 context.Writer.WritePropertyName("gps");
-                context.Writer.Write(requestObject.Gps.Value);
+                context.Writer.WriteBooleanValue(requestObject.Gps.Value);
             }
 
             if(requestObject.IsSetNfc())
             {
                 context.Writer.WritePropertyName("nfc");
-                context.Writer.Write(requestObject.Nfc.Value);
+                context.Writer.WriteBooleanValue(requestObject.Nfc.Value);
             }
 
             if(requestObject.IsSetWifi())
             {
                 context.Writer.WritePropertyName("wifi");
-                context.Writer.Write(requestObject.Wifi.Value);
+                context.Writer.WriteBooleanValue(requestObject.Wifi.Value);
             }
 
         }

@@ -25,6 +25,64 @@ namespace Amazon.Deadline
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceleratorName.
+    /// </summary>
+    public class AcceleratorName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A10g for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName A10g = new AcceleratorName("a10g");
+        /// <summary>
+        /// Constant L4 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L4 = new AcceleratorName("l4");
+        /// <summary>
+        /// Constant L40s for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L40s = new AcceleratorName("l40s");
+        /// <summary>
+        /// Constant T4 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName T4 = new AcceleratorName("t4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceleratorName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceleratorName FindValue(string value)
+        {
+            return FindValue<AcceleratorName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceleratorName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AcceleratorType.
     /// </summary>
     public class AcceleratorType : ConstantClass
@@ -1723,6 +1781,64 @@ namespace Amazon.Deadline
 
 
     /// <summary>
+    /// Constants used for properties of type QueueLimitAssociationStatus.
+    /// </summary>
+    public class QueueLimitAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for QueueLimitAssociationStatus
+        /// </summary>
+        public static readonly QueueLimitAssociationStatus ACTIVE = new QueueLimitAssociationStatus("ACTIVE");
+        /// <summary>
+        /// Constant STOP_LIMIT_USAGE_AND_CANCEL_TASKS for QueueLimitAssociationStatus
+        /// </summary>
+        public static readonly QueueLimitAssociationStatus STOP_LIMIT_USAGE_AND_CANCEL_TASKS = new QueueLimitAssociationStatus("STOP_LIMIT_USAGE_AND_CANCEL_TASKS");
+        /// <summary>
+        /// Constant STOP_LIMIT_USAGE_AND_COMPLETE_TASKS for QueueLimitAssociationStatus
+        /// </summary>
+        public static readonly QueueLimitAssociationStatus STOP_LIMIT_USAGE_AND_COMPLETE_TASKS = new QueueLimitAssociationStatus("STOP_LIMIT_USAGE_AND_COMPLETE_TASKS");
+        /// <summary>
+        /// Constant STOPPED for QueueLimitAssociationStatus
+        /// </summary>
+        public static readonly QueueLimitAssociationStatus STOPPED = new QueueLimitAssociationStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueueLimitAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueueLimitAssociationStatus FindValue(string value)
+        {
+            return FindValue<QueueLimitAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueueLimitAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueueStatus.
     /// </summary>
     public class QueueStatus : ConstantClass
@@ -2768,6 +2884,60 @@ namespace Amazon.Deadline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UpdateQueueFleetAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateQueueLimitAssociationStatus.
+    /// </summary>
+    public class UpdateQueueLimitAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for UpdateQueueLimitAssociationStatus
+        /// </summary>
+        public static readonly UpdateQueueLimitAssociationStatus ACTIVE = new UpdateQueueLimitAssociationStatus("ACTIVE");
+        /// <summary>
+        /// Constant STOP_LIMIT_USAGE_AND_CANCEL_TASKS for UpdateQueueLimitAssociationStatus
+        /// </summary>
+        public static readonly UpdateQueueLimitAssociationStatus STOP_LIMIT_USAGE_AND_CANCEL_TASKS = new UpdateQueueLimitAssociationStatus("STOP_LIMIT_USAGE_AND_CANCEL_TASKS");
+        /// <summary>
+        /// Constant STOP_LIMIT_USAGE_AND_COMPLETE_TASKS for UpdateQueueLimitAssociationStatus
+        /// </summary>
+        public static readonly UpdateQueueLimitAssociationStatus STOP_LIMIT_USAGE_AND_COMPLETE_TASKS = new UpdateQueueLimitAssociationStatus("STOP_LIMIT_USAGE_AND_COMPLETE_TASKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateQueueLimitAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateQueueLimitAssociationStatus FindValue(string value)
+        {
+            return FindValue<UpdateQueueLimitAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateQueueLimitAssociationStatus(string value)
         {
             return FindValue(value);
         }

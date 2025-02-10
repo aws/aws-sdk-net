@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -63,14 +66,14 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ChannelName set");
             request.AddPathResource("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
             
-            if (publicRequest.IsSetEndTimeUtc())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
+            if (publicRequest.IsSetEndTime())
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetMaxMessages())
                 request.Parameters.Add("maxMessages", StringUtils.FromInt(publicRequest.MaxMessages));
             
-            if (publicRequest.IsSetStartTimeUtc())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
+            if (publicRequest.IsSetStartTime())
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             request.ResourcePath = "/channels/{channelName}/sample";
             request.UseQueryString = true;
 

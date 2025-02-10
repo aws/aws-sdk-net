@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsAppSyncGraphQlApiLogConfigDetails Object
     /// </summary>  
-    public class AwsAppSyncGraphQlApiLogConfigDetailsUnmarshaller : IUnmarshaller<AwsAppSyncGraphQlApiLogConfigDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsAppSyncGraphQlApiLogConfigDetails, JsonUnmarshallerContext>
+    public class AwsAppSyncGraphQlApiLogConfigDetailsUnmarshaller : IJsonUnmarshaller<AwsAppSyncGraphQlApiLogConfigDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsAppSyncGraphQlApiLogConfigDetails IUnmarshaller<AwsAppSyncGraphQlApiLogConfigDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsAppSyncGraphQlApiLogConfigDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsAppSyncGraphQlApiLogConfigDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsAppSyncGraphQlApiLogConfigDetails unmarshalledObject = new AwsAppSyncGraphQlApiLogConfigDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CloudWatchLogsRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogsRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudWatchLogsRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExcludeVerboseContent", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ExcludeVerboseContent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExcludeVerboseContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldLogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FieldLogLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldLogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

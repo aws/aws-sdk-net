@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DevEnvironmentSummary Object
     /// </summary>  
-    public class DevEnvironmentSummaryUnmarshaller : IUnmarshaller<DevEnvironmentSummary, XmlUnmarshallerContext>, IUnmarshaller<DevEnvironmentSummary, JsonUnmarshallerContext>
+    public class DevEnvironmentSummaryUnmarshaller : IJsonUnmarshaller<DevEnvironmentSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DevEnvironmentSummary IUnmarshaller<DevEnvironmentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DevEnvironmentSummary Unmarshall(JsonUnmarshallerContext context)
+        public DevEnvironmentSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DevEnvironmentSummary unmarshalledObject = new DevEnvironmentSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("alias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("creatorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ides", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Ide, IdeUnmarshaller>(IdeUnmarshaller.Instance);
-                    unmarshalledObject.Ides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Ide, IdeUnmarshaller>(IdeUnmarshaller.Instance);
+                    unmarshalledObject.Ides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inactivityTimeoutMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InactivityTimeoutMinutes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InactivityTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("persistentStorage", targetDepth))
                 {
                     var unmarshaller = PersistentStorageUnmarshaller.Instance;
-                    unmarshalledObject.PersistentStorage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PersistentStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("projectName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProjectName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("repositories", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DevEnvironmentRepositorySummary, DevEnvironmentRepositorySummaryUnmarshaller>(DevEnvironmentRepositorySummaryUnmarshaller.Instance);
-                    unmarshalledObject.Repositories = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DevEnvironmentRepositorySummary, DevEnvironmentRepositorySummaryUnmarshaller>(DevEnvironmentRepositorySummaryUnmarshaller.Instance);
+                    unmarshalledObject.Repositories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("spaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("statusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vpcConnectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcConnectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

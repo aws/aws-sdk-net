@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -48,10 +46,21 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnalysisRule())
+            {
+                context.Writer.WritePropertyName("analysisRule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalysisRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.AnalysisRule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetUnusedAccessAge())
             {
                 context.Writer.WritePropertyName("unusedAccessAge");
-                context.Writer.Write(requestObject.UnusedAccessAge.Value);
+                context.Writer.WriteNumberValue(requestObject.UnusedAccessAge.Value);
             }
 
         }

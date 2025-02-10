@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetNotificationConfig())
             {
                 context.Writer.WritePropertyName("NotificationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AsyncInferenceNotificationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotificationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3FailurePath())
             {
                 context.Writer.WritePropertyName("S3FailurePath");
-                context.Writer.Write(requestObject.S3FailurePath);
+                context.Writer.WriteStringValue(requestObject.S3FailurePath);
             }
 
             if(requestObject.IsSetS3OutputPath())
             {
                 context.Writer.WritePropertyName("S3OutputPath");
-                context.Writer.Write(requestObject.S3OutputPath);
+                context.Writer.WriteStringValue(requestObject.S3OutputPath);
             }
 
         }

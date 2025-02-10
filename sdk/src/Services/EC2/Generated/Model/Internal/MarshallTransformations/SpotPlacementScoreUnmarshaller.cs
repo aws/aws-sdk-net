@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SpotPlacementScore Object
     /// </summary>  
-    public class SpotPlacementScoreUnmarshaller : IUnmarshaller<SpotPlacementScore, XmlUnmarshallerContext>, IUnmarshaller<SpotPlacementScore, JsonUnmarshallerContext>
+    public class SpotPlacementScoreUnmarshaller : IXmlUnmarshaller<SpotPlacementScore, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SpotPlacementScore Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SpotPlacementScoreUnmarshaller _instance = new SpotPlacementScoreUnmarshaller();        
 

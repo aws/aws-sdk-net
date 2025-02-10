@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicIRGroupBy Object
     /// </summary>  
-    public class TopicIRGroupByUnmarshaller : IUnmarshaller<TopicIRGroupBy, XmlUnmarshallerContext>, IUnmarshaller<TopicIRGroupBy, JsonUnmarshallerContext>
+    public class TopicIRGroupByUnmarshaller : IJsonUnmarshaller<TopicIRGroupBy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicIRGroupBy IUnmarshaller<TopicIRGroupBy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicIRGroupBy Unmarshall(JsonUnmarshallerContext context)
+        public TopicIRGroupBy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicIRGroupBy unmarshalledObject = new TopicIRGroupBy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DisplayFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DisplayFormatOptions", targetDepth))
                 {
                     var unmarshaller = DisplayFormatOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DisplayFormatOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayFormatOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldName", targetDepth))
                 {
                     var unmarshaller = IdentifierUnmarshaller.Instance;
-                    unmarshalledObject.FieldName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NamedEntity", targetDepth))
                 {
                     var unmarshaller = NamedEntityRefUnmarshaller.Instance;
-                    unmarshalledObject.NamedEntity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamedEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sort", targetDepth))
                 {
                     var unmarshaller = TopicSortClauseUnmarshaller.Instance;
-                    unmarshalledObject.Sort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeGranularity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

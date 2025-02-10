@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitializationVector())
             {
                 context.Writer.WritePropertyName("InitializationVector");
-                context.Writer.Write(requestObject.InitializationVector);
+                context.Writer.WriteStringValue(requestObject.InitializationVector);
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetPaddingType())
             {
                 context.Writer.WritePropertyName("PaddingType");
-                context.Writer.Write(requestObject.PaddingType);
+                context.Writer.WriteStringValue(requestObject.PaddingType);
             }
 
         }
