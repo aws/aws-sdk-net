@@ -3037,7 +3037,8 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// For internal use only
+        /// Returns a list of upcoming maintenance events for replication instances in your account
+        /// in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// 
@@ -3051,7 +3052,8 @@ namespace Amazon.DatabaseMigrationService
 
 
         /// <summary>
-        /// For internal use only
+        /// Returns a list of upcoming maintenance events for replication instances in your account
+        /// in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePendingMaintenanceActions service method.</param>
         /// <param name="cancellationToken">
