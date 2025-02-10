@@ -11,7 +11,7 @@ namespace Amazon.Runtime.Logging
     {
         bool IsEnabled(SdkLogLevel level);
 
-        void Log(SdkLogLevel level, string message, params string[] parameters);
+        void Log(SdkLogLevel level, string message, Exception ex, params string[] parameters);
     }
 
     public interface IAdaptorLoggerFactory

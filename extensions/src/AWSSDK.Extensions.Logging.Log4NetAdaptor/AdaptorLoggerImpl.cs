@@ -34,7 +34,7 @@ namespace AWSSDK.Extensions.Logging.Log4NetAdaptor
             }
         }
 
-        public void Log(SdkLogLevel level, string message, params string[] parameters)
+        public void Log(SdkLogLevel level, string message, Exception ex, params string[] parameters)
         {
             switch(level)
             {
