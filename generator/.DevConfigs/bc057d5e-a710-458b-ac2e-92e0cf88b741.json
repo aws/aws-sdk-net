@@ -4,7 +4,7 @@
       "serviceName": "DynamoDBv2",
       "type": "patch",
       "changeLogMessages": [
-        "Implement DynamoDBDerivedTypeAttribute for polymorphism support on save and load data."
+        "Implement DynamoDBDerivedTypeAttribute to enable polymorphism support for nested items on save and load data."
       ]
     }
   ]
