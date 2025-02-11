@@ -163,8 +163,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If the value is <c>true</c>, you can't terminate the instance using the Amazon EC2
-        /// console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.
+        /// Enable or disable termination protection for the instance. If the value is <c>true</c>,
+        /// you can't terminate the instance using the Amazon EC2 console, command line interface,
+        /// or API. You can't enable termination protection for Spot Instances.
         /// </para>
         /// </summary>
         public bool DisableApiTermination

@@ -86,10 +86,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>group-name</c> - For Availability Zones, use the Region name. For Local Zones,
-        /// use the name of the group associated with the Local Zone (for example, <c>us-west-2-lax-1</c>)
-        /// For Wavelength Zones, use the name of the group associated with the Wavelength Zone
-        /// (for example, <c>us-east-1-wl1</c>).
+        ///  <c>group-name</c> - The name of the zone group for the Availability Zone (for example,
+        /// <c>us-east-1-zg-1</c>), the Local Zone (for example, <c>us-west-2-lax-1</c>), or the
+        /// Wavelength Zone (for example, <c>us-east-1-wl1</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

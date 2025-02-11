@@ -73,8 +73,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiStop. 
         /// <para>
-        /// To enable the instance for Amazon Web Services Stop Protection, set this parameter
-        /// to <c>true</c>; otherwise, set it to <c>false</c>.
+        /// Indicates whether stop protection is enabled for the instance.
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -92,8 +91,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If the value is <c>true</c>, you can't terminate the instance through the Amazon EC2
-        /// console, CLI, or API; otherwise, you can.
+        /// Indicates whether termination protection is enabled. If the value is <c>true</c>,
+        /// you can't terminate the instance using the Amazon EC2 console, command line tools,
+        /// or API.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -147,8 +147,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
-        /// To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter
-        /// to <c>true</c>; otherwise, set it to <c>false</c>.
+        /// Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.
         /// </para>
         /// </summary>
         public EnclaveOptions EnclaveOptions
@@ -257,7 +256,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ProductCodes. 
         /// <para>
-        /// A list of product codes.
+        /// The product codes.
         /// </para>
         /// </summary>
         public List<ProductCode> ProductCodes
@@ -311,11 +310,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
-        /// Enable or disable source/destination checks, which ensure that the instance is either
-        /// the source or the destination of any traffic that it receives. If the value is <c>true</c>,
-        /// source/destination checks are enabled; otherwise, they are disabled. The default value
-        /// is <c>true</c>. You must disable source/destination checks if the instance runs services
-        /// such as network address translation, routing, or firewalls.
+        /// Indicates whether source/destination checks are enabled.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

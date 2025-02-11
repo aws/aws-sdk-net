@@ -173,11 +173,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the
-        /// Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after
-        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-        /// Alternatively, if you set <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>,
-        /// you can terminate the instance by running the shutdown command from the instance.
+        /// Indicates whether termination protection is enabled for the instance. The default
+        /// is <c>false</c>, which means that you can terminate the instance using the Amazon
+        /// EC2 console, command line tools, or API. You can enable termination protection when
+        /// you launch an instance, while the instance is running, or while the instance is stopped.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
