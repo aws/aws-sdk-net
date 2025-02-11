@@ -729,7 +729,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             // 
             foreach (var hashKeyPropertyName in itemStorageConfig.HashKeyPropertyNames)
             {
-                var property = itemStorageConfig.GetPropertyStorage(hashKeyPropertyName);
+                var property = itemStorageConfig.BaseTypeConfig.GetPropertyStorage(hashKeyPropertyName);
                 var primitiveType = GetPrimitiveEntryTypeForProperty(property, flatConfig);
 
                 table.HashKeys.Add(property.AttributeName);
@@ -748,7 +748,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             //
             foreach (var rangeKeyPropertyName in itemStorageConfig.RangeKeyPropertyNames)
             {
-                var property = itemStorageConfig.GetPropertyStorage(rangeKeyPropertyName);
+                var property = itemStorageConfig.BaseTypeConfig.GetPropertyStorage(rangeKeyPropertyName);
                 var primitiveType = GetPrimitiveEntryTypeForProperty(property, flatConfig);
 
                 table.RangeKeys.Add(property.AttributeName);
@@ -784,7 +784,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 foreach (var lsiRangePropertyName in itemStorageConfig.IndexNameToLSIRangePropertiesMapping[lsiIndexName])
                 {
-                    var lsiRangeProperty = itemStorageConfig.GetPropertyStorage(lsiRangePropertyName);
+                    var lsiRangeProperty = itemStorageConfig.BaseTypeConfig.GetPropertyStorage(lsiRangePropertyName);
                     var primitiveType = GetPrimitiveEntryTypeForProperty(lsiRangeProperty, flatConfig);
 
                     indexDescription.KeySchema.Add(new KeySchemaElement
@@ -818,7 +818,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     indexDescription.KeySchema = new List<KeySchemaElement>();
                 }
 
-                var hashKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
+                var hashKeyProperty = itemStorageConfig.BaseTypeConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
                 indexDescription.KeySchema.Add(new KeySchemaElement()
                 {
                     AttributeName = hashKeyProperty.AttributeName,
@@ -827,7 +827,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 if (!string.IsNullOrEmpty(gsi.RangeKeyPropertyName))
                 {
-                    var rangeKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
+                    var rangeKeyProperty = itemStorageConfig.BaseTypeConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
                     indexDescription.KeySchema.Add(new KeySchemaElement()
                     {
                         AttributeName = rangeKeyProperty.AttributeName,
