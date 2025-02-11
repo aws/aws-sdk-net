@@ -53,6 +53,10 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>db.execution_plan</c> (Amazon RDS and Aurora only)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db.lock_snapshot</c> (Aurora only)
         /// </para>
         ///  </li> <li> 
@@ -86,6 +90,11 @@ namespace Amazon.PI.Model
         /// are valid:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>db.execution_plan.id</c> for dimension group <c>db.execution_plan</c> (Aurora
+        /// and RDS only)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>db.sql.id</c> for dimension group <c>db.sql</c> (Aurora and RDS only)
         /// </para>
@@ -146,7 +155,13 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>db.lock_trees</c> - Specify the dimension name <c>db.lock_trees</c>. (Aurora only)
+        ///  <c>db.execution_plan</c> - Specify the dimension name <c>db.execution_plan.raw_plan</c>
+        /// or the short dimension name <c>raw_plan</c> (Amazon RDS and Aurora only)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>db.lock_snapshot</c> - Specify the dimension name <c>db.lock_snapshot.lock_trees</c>
+        /// or the short dimension name <c>lock_trees</c>. (Aurora only)
         /// </para>
         ///  </li> <li> 
         /// <para>
