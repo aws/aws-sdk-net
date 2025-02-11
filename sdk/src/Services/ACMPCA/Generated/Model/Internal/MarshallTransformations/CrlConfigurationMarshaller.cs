@@ -59,10 +59,22 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCrlType())
+            {
+                context.Writer.WritePropertyName("CrlType");
+                context.Writer.Write(requestObject.CrlType);
+            }
+
             if(requestObject.IsSetCustomCname())
             {
                 context.Writer.WritePropertyName("CustomCname");
                 context.Writer.Write(requestObject.CustomCname);
+            }
+
+            if(requestObject.IsSetCustomPath())
+            {
+                context.Writer.WritePropertyName("CustomPath");
+                context.Writer.Write(requestObject.CustomPath);
             }
 
             if(requestObject.IsSetEnabled())
