@@ -487,33 +487,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CleanupTables();
             TableCache.Clear();
 
-            var a1 = new A { Name = "A1", MyPropA = 1};
-            var b1 = new B { Name = "B1", MyPropA = 2,MyPropB = 3};
+            var model = CreateNestedTypeItem(out var id);
 
-            Guid id = Guid.NewGuid();
-
-            var model = new ModelA
-            {
-                Id = id,
-                MyType = b1,
-                MyClasses = new List<A> { a1, b1 },
-                DictionaryClasses = new Dictionary<string, A>()
-                {
-                    {"A",a1},
-                    {"B",b1}
-                }
-            };
-            
             await Context.SaveAsync(model);
 
             var storedModel = await Context.LoadAsync<ModelA>(id);
             Assert.AreEqual(model.Id, storedModel.Id);
-            Assert.AreEqual(model.MyType.GetType(), storedModel.MyType.GetType());
-            Assert.AreEqual(model.MyClasses.Count, storedModel.MyClasses.Count);
-            Assert.AreEqual(model.MyClasses[0].GetType(), storedModel.MyClasses[0].GetType());
-            Assert.AreEqual(model.MyClasses[1].GetType(), storedModel.MyClasses[1].GetType());
-            Assert.AreEqual(model.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
-            Assert.AreEqual(model.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
+            Assert.AreEqual(model.GetType(), storedModel.GetType());
+            var myType = model as ModelA1;
+            var myStoredModel = storedModel as ModelA1;
+            Assert.AreEqual(myType.MyType.GetType(), myStoredModel.MyType.GetType());
+            Assert.AreEqual(myType.MyType.MyPropA, myStoredModel.MyType.MyPropA);
+            Assert.AreEqual(myType.MyType.Name, myStoredModel.MyType.Name);
+            Assert.AreEqual(((B)myType.MyType).MyPropB, ((B)myStoredModel.MyType).MyPropB);
+
+            Assert.AreEqual(myType.MyClasses.Count, myStoredModel.MyClasses.Count);
+            Assert.AreEqual(myType.MyClasses[0].GetType(), myStoredModel.MyClasses[0].GetType());
+            Assert.AreEqual(myType.MyClasses[1].GetType(), myStoredModel.MyClasses[1].GetType());
         }
 
         /// <summary>
@@ -527,22 +517,187 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             CleanupTables();
             TableCache.Clear();
 
-            var model = CreateNestedTypeItem(out var id);
+            var model1 = CreateNestedTypeItem(out var id);
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "A1", MyPropA = 1 },
+                DictionaryClasses = new Dictionary<string, A>()
+                {
+                    {"A", new A{ Name = "A1", MyPropA = 1 }},
+                    {"B", new B{ Name = "A1", MyPropA = 1, MyPropB = 2}}
+                }
+            };
 
             var transactWrite = Context.CreateTransactWrite<ModelA>();
-            transactWrite.AddSaveItem(model);
+            transactWrite.AddSaveItems(new []{ model1 , model2});
             await transactWrite.ExecuteAsync();
 
-            var storedModel = await Context.LoadAsync<ModelA>(id);
-            Assert.AreEqual(model.Id, storedModel.Id);
-            Assert.AreEqual(model.MyType.GetType(), storedModel.MyType.GetType());
-            Assert.AreEqual(model.MyClasses.Count, storedModel.MyClasses.Count);
-            Assert.AreEqual(model.MyClasses[0].GetType(), storedModel.MyClasses[0].GetType());
-            Assert.AreEqual(model.MyClasses[1].GetType(), storedModel.MyClasses[1].GetType());
-            Assert.AreEqual(model.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
-            Assert.AreEqual(model.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
+            var storedModel1 = await Context.LoadAsync<ModelA>(id);
+            var storedModel2 = await Context.LoadAsync<ModelA>(model2.Id);
+            Assert.AreEqual(model1.Id, storedModel1.Id);
+            Assert.AreEqual(model1.GetType(), storedModel1.GetType());
+            Assert.AreEqual(model2.Id, storedModel2.Id);
+            Assert.AreEqual(model2.GetType(), storedModel2.GetType());
+
         }
 
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_TransactWriteAndLoad_WithLocalSecondaryIndexRangeKey()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var model = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "AType", MyPropA = 5 },
+                DictionaryClasses = new Dictionary<string, A>
+                {
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "B1", MyPropA = 2, MyPropB = 3 } }
+                },
+                ManagerName = "TestManager"
+            };
+
+            var transactWrite = Context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model});
+            await transactWrite.ExecuteAsync();
+
+            var storedModel = await Context.LoadAsync<ModelA>(model.Id);
+            Assert.AreEqual(model.Id, storedModel.Id);
+            Assert.AreEqual(model.GetType(), storedModel.GetType());
+            var myStoredModel = storedModel as ModelA2;
+            Assert.AreEqual(model.MyType.GetType(), myStoredModel.MyType.GetType());
+            Assert.AreEqual(model.DictionaryClasses.Count, myStoredModel.DictionaryClasses.Count);
+            Assert.AreEqual(model.DictionaryClasses["A"].GetType(), myStoredModel.DictionaryClasses["A"].GetType());
+            Assert.AreEqual(model.DictionaryClasses["B"].GetType(), myStoredModel.DictionaryClasses["B"].GetType());
+            Assert.AreEqual(((B)model.DictionaryClasses["B"]).MyPropB, ((B)myStoredModel.DictionaryClasses["B"]).MyPropB);
+            Assert.AreEqual(model.ManagerName, myStoredModel.ManagerName);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_SaveAndScan_WithGlobalSecondaryIndexRangeKey()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var model1 = new ModelA1
+            {
+                Id = Guid.NewGuid(),
+                MyType = new B { Name = "BType1", MyPropA = 5, MyPropB = 10 },
+                MyClasses = new List<A>
+                {
+                    new A { Name = "A1", MyPropA = 1 },
+                    new B { Name = "B1", MyPropA = 2, MyPropB = 3 }
+                },
+                CompanyName = "TestCompany",
+                Price = 100
+            };
+
+            var model2 = new ModelA1
+            {
+                Id = Guid.NewGuid(),
+                MyType = new B { Name = "BType2", MyPropA = 6, MyPropB = 12 },
+                MyClasses = new List<A>
+                {
+                    new A { Name = "A2", MyPropA = 2 },
+                    new B { Name = "B2", MyPropA = 3, MyPropB = 4 }
+                },
+                CompanyName = "TestCompany",
+                Price = 200
+            };
+
+            var transactWrite = Context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var scanConditions = new[]
+            {
+                new ScanCondition("CompanyName", ScanOperator.Equal, "TestCompany")
+            };
+
+            var results = Context.Scan<ModelA>(scanConditions).ToList();
+            Assert.AreEqual(2, results.Count);
+
+            var storedModel1 = results.FirstOrDefault(m => m.Id == model1.Id) as ModelA1;
+            var storedModel2 = results.FirstOrDefault(m => m.Id == model2.Id) as ModelA1;
+
+            Assert.IsNotNull(storedModel1);
+            Assert.IsNotNull(storedModel2);
+
+            Assert.AreEqual(model1.Id, storedModel1.Id);
+            Assert.AreEqual(model1.MyType.GetType(), storedModel1.MyType.GetType());
+            Assert.AreEqual(((B)model1.MyType).MyPropB, ((B)storedModel1.MyType).MyPropB);
+            Assert.AreEqual(model1.MyClasses.Count, storedModel1.MyClasses.Count);
+            Assert.AreEqual(model1.CompanyName, storedModel1.CompanyName);
+            Assert.AreEqual(model1.Price, storedModel1.Price);
+
+            Assert.AreEqual(model2.Id, storedModel2.Id);
+            Assert.AreEqual(model2.MyType.GetType(), storedModel2.MyType.GetType());
+            Assert.AreEqual(((B)model2.MyType).MyPropB, ((B)storedModel2.MyType).MyPropB);
+            Assert.AreEqual(model2.MyClasses.Count, storedModel2.MyClasses.Count);
+            Assert.AreEqual(model2.CompanyName, storedModel2.CompanyName);
+            Assert.AreEqual(model2.Price, storedModel2.Price);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_SaveAndScan_WithLocalSecondaryIndexRangeKey()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var model1 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "AType1", MyPropA = 5 },
+                DictionaryClasses = new Dictionary<string, A>
+                {
+                    { "A", new A { Name = "A1", MyPropA = 1 } },
+                    { "B", new B { Name = "B1", MyPropA = 2, MyPropB = 3 } }
+                },
+                ManagerName = "Manager1"
+            };
+
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = new A { Name = "AType2", MyPropA = 6 },
+                DictionaryClasses = new Dictionary<string, A>
+                {
+                    { "A", new A { Name = "A2", MyPropA = 2 } },
+                    { "B", new B { Name = "B2", MyPropA = 3, MyPropB = 4 } }
+                },
+                ManagerName = "Manager2"
+            };
+
+            var transactWrite = Context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItems(new[] { model1, model2 });
+            await transactWrite.ExecuteAsync();
+
+            var scanConditions = new[]
+            {
+                new ScanCondition("ManagerName", ScanOperator.Equal, "Manager1")
+            };
+
+            var results = Context.Scan<ModelA>(scanConditions).ToList();
+            Assert.AreEqual(1, results.Count);
+
+            var storedModel = results.FirstOrDefault(m => m.Id == model1.Id) as ModelA2;
+
+            Assert.IsNotNull(storedModel);
+            Assert.AreEqual(model1.Id, storedModel.Id);
+            Assert.AreEqual(model1.MyType.GetType(), storedModel.MyType.GetType());
+            Assert.AreEqual(model1.DictionaryClasses.Count, storedModel.DictionaryClasses.Count);
+            Assert.AreEqual(model1.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
+            Assert.AreEqual(model1.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
+            Assert.AreEqual(((B)model1.DictionaryClasses["B"]).MyPropB, ((B)storedModel.DictionaryClasses["B"]).MyPropB);
+            Assert.AreEqual(model1.ManagerName, storedModel.ManagerName);
+        }
 
         /// <summary>
         /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,
@@ -2325,16 +2480,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             id = Guid.NewGuid();
 
-            var model = new ModelA
+            var model = new ModelA1
             {
                 Id = id,
                 MyType = b1,
-                MyClasses = new List<A> { a1, b1 },
-                DictionaryClasses = new Dictionary<string, A>()
-                {
-                    {"A",a1},
-                    {"B",b1}
-                }
+                MyClasses = new List<A> { a1, b1 }
             };
             return model;
         }
@@ -2779,22 +2929,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         [DynamoDBTable("NestedTable")]
+        [DynamoDBPolymorphicType("A1", typeof(ModelA1))]
+        [DynamoDBPolymorphicType("A2", typeof(ModelA2))]
         public class ModelA
         {
-            [DynamoDBHashKey]
-            public Guid Id { get; set; }
+            [DynamoDBHashKey] public Guid Id { get; set; }
 
-            [DynamoDBDerivedType("B", typeof(B))]
             public A MyType { get; set; }
 
-            [DynamoDBDerivedType("B", typeof(B))]
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
+            public string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public int Price { get; set; }
+
+            [DynamoDBLocalSecondaryIndexRangeKey("LocalIndex", AttributeName = "Manager")]
+            public string ManagerName { get; set; }
+        }
+
+        public class ModelA1 : ModelA
+        {
+            [DynamoDBPolymorphicProperty("B", typeof(B))]
+            public new A MyType { get; set; }
+
+            [DynamoDBPolymorphicProperty("B", typeof(B))]
             [DynamoDBProperty("test")]
             public List<A> MyClasses { get; set; }
-
-
-            [DynamoDBDerivedType("B", typeof(B))]
-            public Dictionary<string,A> DictionaryClasses { get; set; }
         }
+
+        public class ModelA2 : ModelA
+        {
+            [DynamoDBPolymorphicProperty("B", typeof(B))]
+            public Dictionary<string, A> DictionaryClasses { get; set; }
+        }
+
         #endregion
     }
 }

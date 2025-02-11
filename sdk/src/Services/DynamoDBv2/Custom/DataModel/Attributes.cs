@@ -72,6 +72,38 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
+    /// DynamoDB attribute that marks a class for polymorphism support.
+    /// 
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = true, AllowMultiple = true)]
+    public sealed class DynamoDBPolymorphicTypeAttribute : DynamoDBAttribute
+    {
+        /// <summary>
+        /// Unique name discriminator of the derived type.
+        /// </summary>
+        public string TypeDiscriminator { get; }
+
+        /// <summary>
+        /// Derived type of the Property type.
+        /// Type must be a subclass of the Property type.
+        /// </summary>
+        [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)]
+        public Type DerivedType { get; }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBPolymorphicTypeAttribute
+        /// </summary>
+        /// <param name="typeDiscriminator"></param>
+        /// <param name="derivedType"></param>
+        public DynamoDBPolymorphicTypeAttribute(string typeDiscriminator,
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type derivedType)
+        {
+            TypeDiscriminator = typeDiscriminator;
+            DerivedType = derivedType;
+        }
+
+    }
+    /// <summary>
     /// DynamoDB attribute that directs the specified attribute not to
     /// be included when saving or loading objects.
     /// </summary>
@@ -244,11 +276,11 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
-    /// DynamoDB attribute that marks a class for polymorphism support.
+    /// DynamoDB Polymorphic Property Attribute that marks up current member for polymorphism support.
     /// Specifies the field name to be used as the type discriminator and the derived types.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
-    public sealed class DynamoDBDerivedTypeAttribute : DynamoDBPropertyAttribute
+    public sealed class DynamoDBPolymorphicPropertyAttribute : DynamoDBPropertyAttribute
     {
         /// <summary>
         /// Unique name discriminator of the derived type.
@@ -262,11 +294,11 @@ namespace Amazon.DynamoDBv2.DataModel
         public Type DerivedType{ get; }
 
         /// <summary>
-        /// Construct an instance of DynamoDBPolymorphicAttribute
+        /// Construct an instance of DynamoDBPolymorphicPropertyAttribute
         /// </summary>
         /// <param name="typeDiscriminator">Name of the field to be used as the type discriminator.</param>
         /// <param name="derivedType">Derived type names and their corresponding types.</param>
-        public DynamoDBDerivedTypeAttribute(string typeDiscriminator, Type derivedType)
+        public DynamoDBPolymorphicPropertyAttribute(string typeDiscriminator, Type derivedType)
         {
             TypeDiscriminator = typeDiscriminator;
             DerivedType = derivedType;
