@@ -1,3 +1,16 @@
+### 3.7.980.0 (2025-02-11 19:58 UTC)
+* ACMPCA (3.7.401.0)
+	* Private Certificate Authority service now supports Partitioned CRL as a revocation configuration option.
+* AppSync (3.7.406.0)
+	* Add support for operation level caching
+* EC2 (3.7.430.0)
+	* Adding support for the new fullSnapshotSizeInBytes field in the response of the EC2 EBS DescribeSnapshots API. This field represents the size of all the blocks that were written to the source volume at the time the snapshot was created.
+* PI (3.7.401.2)
+	* Documentation only update for RDS Performance Insights dimensions for execution plans and locking analysis.
+* Core 3.7.401.13
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.979.0 (2025-02-10 19:36 UTC)
 * ApiGatewayV2 (3.7.401.0)
 	* Documentation updates for Amazon API Gateway
