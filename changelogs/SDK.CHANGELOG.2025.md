@@ -1,3 +1,25 @@
+### 3.7.981.0 (2025-02-12 19:25 UTC)
+* B2bi (3.7.404.0)
+	* Allow spaces in the following fields in the Partnership resource: ISA 06 - Sender ID, ISA 08 - Receiver ID, GS 02 - Application Sender Code, GS 03 - Application Receiver Code
+* BedrockAgent (3.7.417.0)
+	* This releases adds the additionalModelRequestFields field to the CreateAgent and UpdateAgent operations. Use additionalModelRequestFields to specify  additional inference parameters for a model beyond the base inference parameters.
+* BedrockAgentRuntime (3.7.419.0)
+	* This releases adds the additionalModelRequestFields field to the InvokeInlineAgent operation. Use additionalModelRequestFields to specify  additional inference parameters for a model beyond the base inference parameters.
+* CodeBuild (3.7.409.8)
+	* Add note for the RUNNER_BUILDKITE_BUILD buildType.
+* FSx (3.7.403.0)
+	* Support for in-place Lustre version upgrades
+* MediaLive (3.7.410.0)
+	* Adds a RequestId parameter to all MediaLive Workflow Monitor create operations.  The RequestId parameter allows idempotent operations.
+* OpenSearchServerless (3.7.403.0)
+	* Custom OpenSearchServerless Entity ID for SAML Config.
+* Polly (3.7.402.0)
+	* Added support for the new voice - Jasmine (en-SG). Jasmine is available as a Neural voice only.
+* Core 3.7.402.0
+	* Add support for calculating `CRC64-NVME` checksums when the AWS Common Runtime (CRT) is available as a dependency
+	* Added check following double-checked locking optimization to validate _awsSigV4AProvider is not initialized after acquiring initial lock in AWS4aSignerCRTWrapper constructor.
+	* All services packages updated to require new Core
+
 ### 3.7.980.0 (2025-02-11 19:58 UTC)
 * ACMPCA (3.7.401.0)
 	* Private Certificate Authority service now supports Partitioned CRL as a revocation configuration option.
