@@ -33,6 +33,12 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:cloudwatch-alarm-template:.+$</pattern>
   </property-value-rule>
@@ -88,6 +94,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:cloudwatch-alarm-template-group:.+$</pattern>
   </property-value-rule>
@@ -122,6 +134,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateResponse.Arn</property>
@@ -162,6 +180,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupResponse.Arn</property>
     <pattern>^arn:.+:medialive:.+:eventbridge-rule-template-group:.+$</pattern>
   </property-value-rule>
@@ -197,6 +221,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateSignalMapRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateSignalMapResponse.Arn</property>
@@ -527,6 +557,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StartMonitorDeploymentRequest.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StartMonitorDeploymentResponse.Arn</property>
@@ -1028,6 +1064,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateGroupResponseContent.Arn</property>
     <pattern>^arn:.+:medialive:.+:cloudwatch-alarm-template-group:.+$</pattern>
   </property-value-rule>
@@ -1079,6 +1121,12 @@
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateRequestContent.Period</property>
     <min>10</min>
     <max>86400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateCloudWatchAlarmTemplateResponseContent.Arn</property>
@@ -1136,6 +1184,12 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateGroupResponseContent.Arn</property>
     <pattern>^arn:.+:medialive:.+:eventbridge-rule-template-group:.+$</pattern>
   </property-value-rule>
@@ -1170,6 +1224,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateEventBridgeRuleTemplateResponseContent.Arn</property>
@@ -1213,6 +1273,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.CreateSignalMapRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.CreateSignalMapResponseContent.Arn</property>
@@ -2358,6 +2424,12 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.StartMonitorDeploymentRequestContent.RequestId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StartMonitorDeploymentResponseContent.Arn</property>

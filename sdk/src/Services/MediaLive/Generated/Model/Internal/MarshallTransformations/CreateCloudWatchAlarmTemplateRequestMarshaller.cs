@@ -115,6 +115,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Period);
                 }
 
+                if(publicRequest.IsSetRequestId())
+                {
+                    context.Writer.WritePropertyName("requestId");
+                    context.Writer.Write(publicRequest.RequestId);
+                }
+
+                else if(!(publicRequest.IsSetRequestId()))
+                {
+                    context.Writer.WritePropertyName("requestId");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetStatistic())
                 {
                     context.Writer.WritePropertyName("statistic");

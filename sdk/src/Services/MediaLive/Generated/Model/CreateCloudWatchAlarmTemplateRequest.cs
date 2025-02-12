@@ -44,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private string _metricName;
         private string _name;
         private int? _period;
+        private string _requestId;
         private CloudWatchAlarmTemplateStatistic _statistic;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CloudWatchAlarmTemplateTargetResourceType _targetResourceType;
@@ -182,6 +183,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetPeriod()
         {
             return this._period.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestId. An ID that you assign to a create request. This
+        /// ID ensures idempotency when creating resources.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
         }
 
         /// <summary>
