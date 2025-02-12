@@ -32,7 +32,7 @@ using Amazon.Util;
 namespace Amazon.S3.Util
 {
     /// <summary>
-    /// Parameters for uploading to Amazon S3 a file using HTTP POS
+    /// Parameters for uploading to Amazon S3 a file using HTTP POST.
     /// </summary>
     /// <remarks>
     /// <para>

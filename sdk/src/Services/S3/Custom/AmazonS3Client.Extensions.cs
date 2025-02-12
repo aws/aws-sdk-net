@@ -48,8 +48,7 @@ namespace Amazon.S3
     {
         /// <summary>
         /// A hardcoded list for regions that support SigV2 for S3 endpoints to preserve legacy behavior. 
-        /// New regions shouldn't support SigV2 as it is a deprecated signature version. This is a copy
-        /// of the same private member in RegionEndpoint.
+        /// New regions shouldn't support SigV2 as it is a deprecated signature version.
         /// </summary>
         private static readonly HashSet<string> _sigV2SupportedRegions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {

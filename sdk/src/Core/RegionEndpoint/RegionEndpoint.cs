@@ -36,22 +36,6 @@ namespace Amazon
     {
         #region Statics
 
-        /// <summary>
-        /// A hardcoded list for regions that support SigV2 for S3 endpoints to preserve legacy behavior. 
-        /// New regions shouldn't support SigV2 as it is a deprecated signature version.
-        /// </summary>
-        private static readonly HashSet<string> _sigV2SupportedRegions = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            "ap-northeast-1",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "eu-west-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-west-1",
-            "us-west-2",
-        };
-
         private static Dictionary<string, RegionEndpoint> _hashBySystemName = new Dictionary<string, RegionEndpoint>(StringComparer.OrdinalIgnoreCase);
         private static ReaderWriterLockSlim _readerWriterLock = new ReaderWriterLockSlim();
 
