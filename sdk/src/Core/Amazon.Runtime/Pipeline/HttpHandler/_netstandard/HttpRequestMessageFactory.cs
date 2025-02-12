@@ -625,10 +625,13 @@ namespace Amazon.Runtime
             if ((isChunkedUploadWrapperStreamWithLength || isTrailingHeadersWrapperStreamWithLength || isCompressionWrapperStreamWithLength)
                 || (chunkedUploadWrapperStream == null && trailingHeadersWrapperStream == null && compressionWrapperStream == null))
             {
-                long position;
+                long position = 0;
                 try
                 {
-                    position = contentStream.Position;
+                    if (contentStream.CanSeek)
+                    {
+                        position = contentStream.Position;
+                    }
                 }
                 catch (NotSupportedException)
                 {

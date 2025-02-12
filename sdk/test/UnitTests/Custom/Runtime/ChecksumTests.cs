@@ -44,6 +44,9 @@ namespace AWSSDK.UnitTests
         [DataRow(CoreChecksumAlgorithm.CRC32C, "", "AAAAAA==")]
         [DataRow(CoreChecksumAlgorithm.CRC32C, "abc", "Nks/tw==")]
         [DataRow(CoreChecksumAlgorithm.CRC32C, "Hello world", "crUfeA==")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "", "AAAAAAAAAAA=")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "abc", "BeXKuz/B+us=")]
+        [DataRow(CoreChecksumAlgorithm.CRC64NVME, "Hello world", "OOJZ0D8xKts=")]
         [DataTestMethod]
         public void CalculateChecksumTest(CoreChecksumAlgorithm algorithm, string content, string expectedBase64Checksum)
         {
@@ -191,10 +194,10 @@ namespace AWSSDK.UnitTests
             var responseData = new WebResponseData();
             responseData.Headers = new Dictionary<string, string>
             {
-                { "x-amz-checksum-crc64", "checksum" }
+                { "x-amz-checksum-nonsupported", "checksum" }
             };
 
-            // CRC64 is not currently supported by the SDK
+            // Validation is skipped if the SDK doesn't support the returned checksum.
             Assert.AreEqual(CoreChecksumAlgorithm.NONE,
                 ChecksumUtils.SelectChecksumForResponseValidation(operationSupportedChecksums, responseData));
         }

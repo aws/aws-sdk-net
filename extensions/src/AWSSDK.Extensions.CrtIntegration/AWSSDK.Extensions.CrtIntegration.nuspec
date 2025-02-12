@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.Extensions.CrtIntegration</id>
     <title>AWSSDK - Extensions for AWS Common Runtime Integration</title>
-    <version>3.7.300.3</version>
+    <version>3.7.400</version>
     <authors>Amazon Web Services</authors>
     <description>Extensions for the AWS SDK for .NET to integrate with the AWS Common Runtime</description>
     <language>en-US</language>
@@ -13,22 +13,21 @@
     <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net35">
-        <dependency id="AWSSDK.Core" version="3.7.300" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSSDK.Core" version="3.7.402" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
       <group targetFramework="net45">
-        <dependency id="AWSSDK.Core" version="3.7.300" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSSDK.Core" version="3.7.402" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="3.7.300" />
-        <dependency id="AWSCRT-AUTH" version="0.4.4" />
-        <dependency id="AWSCRT-CHECKSUMS" version="0.4.4" />
+        <dependency id="AWSSDK.Core" version="3.7.402" />
+        <dependency id="AWSCRT-AUTH" version="0.5.2" />
+        <dependency id="AWSCRT-CHECKSUMS" version="0.5.2" />
       </group>
     </dependencies>
-
   </metadata> 
   <files>
     <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />

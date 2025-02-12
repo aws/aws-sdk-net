@@ -32,6 +32,7 @@ namespace Amazon.Util
         private const int SHA1_BASE64_LENGTH = 28;
         private const int SHA56_BASE64_LENGTH = 44;
         private const int CRC32_BASE64_LENGTH = 8;
+        private const int CRC64NVME_BASE64_LENGTH = 12;
 
         static CryptoUtil util = new CryptoUtil();
 
@@ -64,6 +65,9 @@ namespace Amazon.Util
                 case CoreChecksumAlgorithm.CRC32C:
                     return new CrtCrc32c();
 
+                case CoreChecksumAlgorithm.CRC64NVME:
+                    return new CrtCrc64NVME();
+
                 default:
                     throw new AmazonClientException($"Unable to instantiate checksum algorithm {algorithm}");
             }
@@ -85,6 +89,8 @@ namespace Amazon.Util
                 case CoreChecksumAlgorithm.CRC32:
                 case CoreChecksumAlgorithm.CRC32C:
                     return CRC32_BASE64_LENGTH;
+                case CoreChecksumAlgorithm.CRC64NVME:
+                    return CRC64NVME_BASE64_LENGTH;
                 default:
                     throw new AmazonClientException($"Unable to determine the base64-encoded length of {algorithm}");
             }
@@ -204,6 +210,16 @@ namespace Amazon.Util
             public string ComputeCRC32CHash(byte[] data)
             {
                 return ChecksumCRTWrapper.Crc32C(data);
+            }
+
+            /// <summary>
+            /// Computes a CRC64NVME hash
+            /// </summary>
+            /// <param name="data">Data to hash</param>
+            /// <returns>CRC64NVME hash as a base64-encoded string</returns>
+            public string ComputeCRC64NVMEHash(byte[] data)
+            {
+                return ChecksumCRTWrapper.Crc64NVME(data);
             }
         }
     }
