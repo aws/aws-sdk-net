@@ -78,15 +78,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestSingleUploadsHelper(Client);
         }
 
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestSingleUploadsSigV2()
-        {
-            var client = new AmazonS3Client(new AmazonS3Config { SignatureVersion = "2" });
-            TestSingleUploadsHelper(client);
-            client.Dispose();
-        }
-
         public void TestSingleUploadsHelper(AmazonS3Client client)
         {
             // Test simple PutObject upload
@@ -144,17 +135,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void TestSingleUploadWithUnicodeMetadata()
         {
             TestSingleUploadWithUnicodeMetadataHelper(Client);
-        }
-
-        /// <summary>
-        /// Ensure that when escaped, a SigV2 request with unicode metadata succeeds
-        /// </summary>
-        [TestMethod]
-        public void TestSingleUploadWithUnicodeMetadataSigV2()
-        {
-            var client = new AmazonS3Client(new AmazonS3Config { SignatureVersion = "2" });
-            TestSingleUploadWithUnicodeMetadataHelper(client);
-            client.Dispose();
         }
 
         public void TestSingleUploadWithUnicodeMetadataHelper(AmazonS3Client client)

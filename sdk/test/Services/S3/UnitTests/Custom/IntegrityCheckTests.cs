@@ -47,7 +47,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void TestS3Signer_Https_Request_DisablePayloadSigning_Is_True()
         {
-            var request = TestS3Signer(s3Config.SignatureVersion, true, true, "https://does_not_matter.com");
+            var request = TestS3Signer(true, "https://does_not_matter.com");
         }
 
         [TestMethod]
@@ -57,7 +57,7 @@ namespace AWSSDK.UnitTests
         {
             try
             {
-                var request = TestS3Signer(s3Config.SignatureVersion, true, true, "http://does_not_matter.com");
+                var request = TestS3Signer(true, "http://does_not_matter.com");
             }
             catch(AmazonClientException e)
             {
@@ -137,19 +137,17 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(internalRequest.DisablePayloadSigning.Value);
         }
 
-        private IRequest TestS3Signer(string clientConfigSignatureVersion, bool useSigV4, bool? disablePayloadSigning, string url)
+        private IRequest TestS3Signer(bool? disablePayloadSigning, string url)
         {
             var signer = new Amazon.S3.Internal.S3Signer();
             var uploadPartRequest = new UploadPartRequest();
             var request = new DefaultRequest(uploadPartRequest, "s3")
             {
-                SignatureVersion = SignatureVersion.SigV4,
                 Endpoint = new System.Uri(url),
                 DisablePayloadSigning = disablePayloadSigning
             };
             var config = new AmazonS3Config
             {
-                SignatureVersion = clientConfigSignatureVersion,
                 RegionEndpoint = RegionEndpoint.USWest1
             };
 
