@@ -345,9 +345,9 @@ namespace Amazon.S3
             var secondsUntilExpiration = GetSecondsUntilExpiration(config, request, SignatureVersion.SigV4);
 
             //If DetermineSignatureVersionToUse forced SigV2 due to a long expiration, we need to throw an exception because S3Express needs to use SigV4.
-            if (signatureVersion == SignatureVersion.SigV2 && secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
+            if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
-                throw new AmazonS3Exception("S3 Express only works with SIGV4 which does not allow expiration greater than 7 days. Please create a presignedUrl that" +
+                throw new AmazonS3Exception("S3 Express only works with SigV4 which does not allow expiration greater than 7 days. Please create a presignedUrl that" +
                     "is shorter than 7 days.");
             }
             

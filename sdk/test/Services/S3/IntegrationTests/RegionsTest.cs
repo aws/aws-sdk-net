@@ -61,11 +61,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        //S3PostUploadSignedPolicy.GetSignedPolicyV4 isn't working as expected in either AWS SDK for
-        //.NET v3 or v4. This test was orginally for S3PostUploadSignedPolicy.GetSignedPolicy which
-        //uses SigV2. Ignore this test until S3PostUploadSignedPolicy.GetSignedPolicyV4 can be
-        //Corrected.
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         
@@ -86,14 +81,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var credentials = GetCredentials(client);
                 try
                 {
-                    var response = testPost("foo/bar/content.txt", bucketName, testContentStream("Line one\nLine two\nLine three\n"), "", credentials, region);
+                    var response = TestPost("foo/bar/content.txt", bucketName, TestContentStream("Line one\nLine two\nLine three\n"), "", credentials, region);
                     Assert.IsNotNull(response.RequestId);
                     Assert.IsNotNull(response.HostId);
                     Assert.AreEqual(HttpStatusCode.NoContent, response.StatusCode);
                 }
                 finally
                 {
-                    //AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
+                    AmazonS3Util.DeleteS3BucketWithObjects(client, bucketName);
                 }
             }
         }
@@ -176,19 +171,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return credentials;
         }
         
-        //static string policy_tmpl = @"{ ""expiration"": ""EXPIRATIONDATE"",  ""conditions"": [{ ""bucket"": ""BUCKETNAME"" }, { ""acl"": ""public-read"" }, [""eq"", ""$Content-Type"", ""text/plain""], [""starts-with"", ""$key"", ""foo/bar/""]MOARCONDITIONS]}";
-        private S3PostUploadResponse testPost(string key, string bucketName, Stream contentStream, string extraConditions, AWSCredentials credentials, RegionEndpoint region)
+        private S3PostUploadResponse TestPost(string key, string bucketName, Stream contentStream, string extraConditions, AWSCredentials credentials, RegionEndpoint region)
         {
-            /*
-            {""x-amz-credential"": ""CREDENTIAL""},
-                    {""x-amz-algorithm"": ""AWS4-HMAC-SHA256""},
-                    {""x-amz-date"": """"}
-            */
             const string policy_tmpl = @"{
                 ""expiration"": ""EXPIRATIONDATE"",
                 ""conditions"": [
                     { ""bucket"": ""BUCKETNAME"" },
-                    { ""acl"": ""public-read"" },
+                    { ""acl"": ""public-read"" },                    
                     [""eq"", ""$Content-Type"", ""text/plain""],
                     [""starts-with"", ""$key"", ""foo/bar/""],                    
                     MOARCONDITIONS
@@ -201,12 +190,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                     .Replace("BUCKETNAME", bucketName)
                                     .Replace("MOARCONDITIONS", extraConditions);
 
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicyV4(policy, credentials, region);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, credentials, region);
 
             var req = new S3PostUploadRequest
             {
                 Key = key,
                 Bucket = bucketName,
+                ContentType = "text/plain",
                 CannedACL = S3CannedACL.PublicRead,
                 InputStream = contentStream,
                 SignedPolicy = signedPolicy,
@@ -215,7 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             return AmazonS3Util.PostUpload(req);
         }
-        private Stream testContentStream(string content)
+        private Stream TestContentStream(string content)
         {
             return new MemoryStream(Encoding.UTF8.GetBytes(content), false);
         }

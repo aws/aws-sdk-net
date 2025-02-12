@@ -52,7 +52,7 @@ namespace Amazon.S3.Util
         /// <param name="credentials">Credentials to sign the policy with</param>
         /// <param name="region">Service region endpoint.</param>
         /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        public static S3PostUploadSignedPolicy GetSignedPolicyV4(string policy, AWSCredentials credentials, RegionEndpoint region)
+        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
         {
             var signedAt = AWSSDKUtils.CorrectedUtcNow;
 
@@ -83,7 +83,6 @@ namespace Amazon.S3.Util
                 Signature = signature,
                 AccessKeyId = iCreds.AccessKey,
                 SecurityToken = iCreds.Token,
-                SignatureVersion = "4",
                 Algorithm = algorithm,
                 Date = dateTimeStamp,
                 Credential = credentialString
@@ -121,36 +120,7 @@ namespace Amazon.S3.Util
             }
             return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
         }
-
-        private static byte[] addTokenToPolicy(string policy, string token)
-        {
-            var json = JsonMapper.ToObject(new JsonReader(policy));
-            var found = false;
-            var conditions = json["conditions"];
-            if (conditions != null && conditions.IsArray)
-            {
-                for (int i = 0; i < conditions.Count; i++)
-                {
-                    JsonData cond = conditions[i];
-                    if (cond.IsObject && cond[S3Constants.PostFormDataSecurityToken] != null)
-                    {
-                        cond[S3Constants.PostFormDataSecurityToken] = token;
-                        found = true;
-                    }
-                }
-
-                if (!found)
-                {
-                    var tokenCondition = new JsonData();
-                    tokenCondition.SetJsonType(ThirdParty.Json.LitJson.JsonType.Object);
-                    tokenCondition[S3Constants.PostFormDataSecurityToken] = token;
-                    conditions.Add(tokenCondition);
-                }
-            }
-
-            return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
-        }
-
+        
         /// <summary>
         /// The policy document which governs what uploads can be done.
         /// </summary>
@@ -170,12 +140,7 @@ namespace Amazon.S3.Util
         /// The security token from session or instance credentials.
         /// </summary>
         public string SecurityToken { get; set; }
-
-        /// <summary>
-        /// The signature version usedd. Either "2" or "4".
-        /// </summary>
-        public string SignatureVersion { get; set; }
-
+        
         /// <summary>
         /// The signing algorithm used. Required as a field in the post Amazon
         /// S3 can re-calculate the signature.
