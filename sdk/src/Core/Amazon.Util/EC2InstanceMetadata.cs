@@ -665,6 +665,7 @@ namespace Amazon.Util
             {
                 if (!IsIMDSEnabled || useNullToken)
                 {
+                    Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("IsIMDSEnabled is {0}, useNullToken is {1}", IsIMDSEnabled, useNullToken);
                     return null;
                 }
 
@@ -690,6 +691,8 @@ namespace Amazon.Util
                         {
                             throw new InvalidOperationException("Unable to retrieve token for use in IMDSv2 call and IMDSv1 has been disabled.");
                         }
+                        
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Status code is {0}. Using null token.", httpStatusCode.GetValueOrDefault());
 
                         useNullToken = true;
                         return null;
@@ -718,9 +721,11 @@ namespace Amazon.Util
 
                         if (httpStatusCode == null)
                         {
+                            Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Status code is null. Using null token.");
                             useNullToken = true;
                         }
 
+                        Logger.GetLogger(typeof(EC2InstanceMetadata)).DebugFormat("Return null to fallback to the IMDS flow without using a token.");
                         //Return null to fallback to the IMDS flow without using a token.                    
                         return null;
                     }
