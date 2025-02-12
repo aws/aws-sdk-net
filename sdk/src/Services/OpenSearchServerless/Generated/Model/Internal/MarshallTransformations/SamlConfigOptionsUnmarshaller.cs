@@ -78,6 +78,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("openSearchServerlessEntityId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OpenSearchServerlessEntityId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionTimeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

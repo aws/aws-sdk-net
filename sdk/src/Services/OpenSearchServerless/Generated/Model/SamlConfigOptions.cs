@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchServerless.Model
     {
         private string _groupAttribute;
         private string _metadata;
+        private string _openSearchServerlessEntityId;
         private int? _sessionTimeout;
         private string _userAttribute;
 
@@ -76,6 +77,25 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OpenSearchServerlessEntityId. 
+        /// <para>
+        /// Custom entity id attribute to override default entity id for this saml integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string OpenSearchServerlessEntityId
+        {
+            get { return this._openSearchServerlessEntityId; }
+            set { this._openSearchServerlessEntityId = value; }
+        }
+
+        // Check to see if OpenSearchServerlessEntityId property is set
+        internal bool IsSetOpenSearchServerlessEntityId()
+        {
+            return this._openSearchServerlessEntityId != null;
         }
 
         /// <summary>
