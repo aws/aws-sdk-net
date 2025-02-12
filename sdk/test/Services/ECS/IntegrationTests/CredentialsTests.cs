@@ -27,39 +27,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 AWSCredentials credentials = sts.GetSessionToken().Credentials;
 
-                var originalS3Signature = AWSConfigsS3.UseSignatureVersion4;
-                AWSConfigsS3.UseSignatureVersion4 = true;
-                try
+                using (var ec2 = new Amazon.EC2.AmazonEC2Client(credentials))
                 {
-
-                    using (var ec2 = new Amazon.EC2.AmazonEC2Client(credentials))
-                    {
-                        var regions = ec2.DescribeRegions().Regions;
-                        Console.WriteLine(regions.Count);
-                    }
-
-                    using (var s3 = new Amazon.S3.AmazonS3Client(credentials))
-                    {
-                        var buckets = s3.ListBuckets().Buckets;
-                        Console.WriteLine(buckets.Count);
-                    }
-
-                    using (var swf = new Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient(credentials))
-                    {
-                        var domains = swf.ListDomains(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).DomainInfos;
-                        Console.WriteLine(domains.Infos.Count);
-                    }
-
-
-                    using (var swf = new Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient(credentials, new Amazon.SimpleWorkflow.AmazonSimpleWorkflowConfig { SignatureVersion = "4" }))
-                    {
-                        var domains = swf.ListDomains(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).DomainInfos;
-                        Console.WriteLine(domains.Infos.Count);
-                    }
+                    var regions = ec2.DescribeRegions().Regions;
+                    Console.WriteLine(regions.Count);
                 }
-                finally
+
+                using (var s3 = new Amazon.S3.AmazonS3Client(credentials))
                 {
-                    AWSConfigsS3.UseSignatureVersion4 = originalS3Signature;
+                    var buckets = s3.ListBuckets().Buckets;
+                    Console.WriteLine(buckets.Count);
+                }
+
+                using (var swf = new Amazon.SimpleWorkflow.AmazonSimpleWorkflowClient(credentials))
+                {
+                    var domains = swf.ListDomains(new Amazon.SimpleWorkflow.Model.ListDomainsRequest { RegistrationStatus = "REGISTERED" }).DomainInfos;
+                    Console.WriteLine(domains.Infos.Count);
                 }
             }
         }

@@ -94,7 +94,6 @@ namespace AWSSDK.UnitTests
             };
             var config = new AmazonS3ControlConfig
             {
-                SignatureVersion = "4",
                 UseArnRegion = true,
                 RegionEndpoint = RegionEndpoint.USWest2
             };

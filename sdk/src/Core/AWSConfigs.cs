@@ -42,7 +42,6 @@ namespace Amazon
     /// &lt;/configSections&gt;
     /// &lt;aws region="us-west-2"&gt;
     ///   &lt;logging logTo="Log4Net, SystemDiagnostics" logResponses="Always" logMetrics="true" /&gt;
-    ///   &lt;s3 useSignatureVersion4="true" /&gt;
     ///   &lt;proxy host="localhost" port="8888" username="1" password="1" /&gt;
     ///   
     ///   &lt;dynamoDB&gt;

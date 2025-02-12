@@ -17,27 +17,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         [TestMethod]
         [TestCategory("S3")]
-        public void HappyCaseSigV2()
-        {
-            // make sure we're not using the cache with SigV2 requests
-            using (var runner = new BucketRegionTestRunner(false))
-            {
-                if (runner.TestBucketIsReady)
-                {
-                    runner.USEast1Client.PutObject(runner.PutObjectRequest);
-                    RegionEndpoint cachedRegion;
-                    Assert.IsFalse(BucketRegionDetector.BucketRegionCache.TryGetValue(runner.BucketName, out cachedRegion));
-                    Assert.AreEqual(null, cachedRegion);
-                }
-            }
-        }
-
-        [TestMethod]
-        [TestCategory("S3")]
         public void HappyCaseSigV4()
         {
             // make sure the cache works when it gets the region from the response body
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -54,7 +37,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void HappyCaseGetObjectMetedata()
         {
             // make sure the cache works when it gets the region from a HEAD bucket request
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -75,7 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void GetObjectMetedataSessionCredentials()
         {
             // make sure the cache works when it gets the region from a HEAD bucket request
-            using (var runner = new BucketRegionTestRunner(true, setupClientWithSessionCredentials: true))
+            using (var runner = new BucketRegionTestRunner(setupClientWithSessionCredentials: true))
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -95,7 +78,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void HappyCaseDoesS3BucketExist()
         {
             // make sure the cache works when it gets the region from the x-amz-bucket-region header
-            using (var runner = new BucketRegionTestRunner(true, true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -112,7 +95,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void BucketRecreatedInDifferentRegion()
         {
             // make sure the cache gets refreshed when it should
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -127,35 +110,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void GetPreSignedUrlSigV2()
+        public void GetPreSignedUrlUSEast1SigV2()
         {
-            using (var runner = new BucketRegionTestRunner(false))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
-                    Assert.AreEqual(HttpStatusCode.OK, GetHttpStatusCode(runner.USEast1Client.GetPreSignedURL(runner.PreSignedUrlRequest)));
+                    Assert.AreEqual(HttpStatusCode.OK, GetHttpStatusCode(runner.USEast1Client.GetPreSignedURL(runner.PreSignedUrlRequestExtendedExpiration)));
                 }
             }
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void GetPreSignedUrlSigV4ImplicitlySet()
+        public void GetPreSignedUrlUSWest1SigV2()
         {
-            using (var runner = new BucketRegionTestRunner(true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
-                    Assert.AreEqual(HttpStatusCode.OK, GetHttpStatusCode(runner.USEast1Client.GetPreSignedURL(runner.PreSignedUrlRequest)));
+                    Assert.AreEqual(HttpStatusCode.OK, GetHttpStatusCode(runner.USWest1Client.GetPreSignedURL(runner.PreSignedUrlRequestExtendedExpiration)));
                 }
             }
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void GetPreSignedUrlSigV4ExplicitlySet()
+        public void GetPreSignedUrlSigV4USWest1ClientUSWest2BucketOk()
         {
-            using (var runner = new BucketRegionTestRunner(true, true))
+            using (var runner = new BucketRegionTestRunner())
+            {
+                if (runner.TestBucketIsReady)
+                {
+                    Assert.AreEqual(HttpStatusCode.OK, GetHttpStatusCode(runner.USWest1Client.GetPreSignedURL(runner.PreSignedUrlRequest)));
+                }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetPreSignedUrlSigV4USEast1ClientUSWest2BucketFail()
+        {
+            using (var runner = new BucketRegionTestRunner())
             {
                 if (runner.TestBucketIsReady)
                 {
@@ -184,7 +180,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void DeleteBucketUsingS3RegionUSEast1Enum()
         {
-            using (var runner = new BucketRegionTestRunner(true, true))
+            using (var runner = new BucketRegionTestRunner())
             {
                 var bucketName = S3TestUtils.CreateBucketWithWait(runner.USEast1Client);
 

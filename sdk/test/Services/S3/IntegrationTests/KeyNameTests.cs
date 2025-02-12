@@ -49,48 +49,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             IAmazonS3 s3Client = new AmazonS3Client();
             AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
         }
-
-        [TestCategory("S3")]
-        [TestMethod]
-        public void TestKeyNameWithAwkwardChars_AWS2Signing()
-        {
-            var original = AWSConfigsS3.UseSignatureVersion4;
-            AWSConfigsS3.UseSignatureVersion4 = false;
-            try
-            {
-                IAmazonS3 s3Client = new AmazonS3Client();
-
-                foreach (var k in AwkwardKeyNameBases)
-                {
-                    var keyName = k + ".SigV2.AWS2.CLRv" + Environment.Version;
-                    S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
-                }
-            }
-            finally
-            {
-                AWSConfigsS3.UseSignatureVersion4 = original;
-            }
-        }
-
+                
         [TestCategory("S3")]
         [TestMethod]
         public void TestKeyNameWithAwkwardChars_AWS4Signing()
         {
-            var original = AWSConfigsS3.UseSignatureVersion4;
-            AWSConfigsS3.UseSignatureVersion4 = true;
-            try
-            {
-                IAmazonS3 s3Client = new AmazonS3Client();
+            IAmazonS3 s3Client = new AmazonS3Client();
 
-                foreach (var k in AwkwardKeyNameBases)
-                {
-                    var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
-                    S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
-                }
-            }
-            finally
+            foreach (var k in AwkwardKeyNameBases)
             {
-                AWSConfigsS3.UseSignatureVersion4 = original;
+                var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
+                S3TestUtils.PutAndGetObjectTestHelper(s3Client, bucketName, keyName);
             }
         }
     }

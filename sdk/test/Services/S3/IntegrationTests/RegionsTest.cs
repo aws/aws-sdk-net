@@ -63,6 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
+        
         public void TestPostUpload()
         {
             var region = RegionEndpoint.USWest1;
@@ -80,7 +81,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var credentials = GetCredentials(client);
                 try
                 {
-                    var response = testPost("foo/bar/content.txt", bucketName, testContentStream("Line one\nLine two\nLine three\n"), "", credentials, region);
+                    var response = TestPost("foo/bar/content.txt", bucketName, TestContentStream("Line one\nLine two\nLine three\n"), "", credentials, region);
                     Assert.IsNotNull(response.RequestId);
                     Assert.IsNotNull(response.HostId);
                     Assert.AreEqual(HttpStatusCode.NoContent, response.StatusCode);
@@ -169,21 +170,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             var credentials = property.GetValue(client, null) as AWSCredentials;
             return credentials;
         }
-        static string policy_tmpl = @"{ ""expiration"": ""EXPIRATIONDATE"",  ""conditions"": [{ ""bucket"": ""BUCKETNAME"" }, { ""acl"": ""public-read"" }, [""eq"", ""$Content-Type"", ""text/plain""], [""starts-with"", ""$key"", ""foo/bar/""]MOARCONDITIONS]}";
-        private S3PostUploadResponse testPost(string key, string bucketName, Stream contentStream, string extraConditions, AWSCredentials credentials, RegionEndpoint region)
+        
+        private S3PostUploadResponse TestPost(string key, string bucketName, Stream contentStream, string extraConditions, AWSCredentials credentials, RegionEndpoint region)
         {
+            const string policy_tmpl = @"{
+                ""expiration"": ""EXPIRATIONDATE"",
+                ""conditions"": [
+                    { ""bucket"": ""BUCKETNAME"" },
+                    { ""acl"": ""public-read"" },                    
+                    [""eq"", ""$Content-Type"", ""text/plain""],
+                    [""starts-with"", ""$key"", ""foo/bar/""],                    
+                    MOARCONDITIONS
+                ]
+            }";
+
             var expDate = DateTime.UtcNow.AddMinutes(5).ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
 
             var policy = policy_tmpl.Replace("EXPIRATIONDATE", expDate)
                                     .Replace("BUCKETNAME", bucketName)
                                     .Replace("MOARCONDITIONS", extraConditions);
 
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, credentials);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, credentials, region);
 
             var req = new S3PostUploadRequest
             {
                 Key = key,
                 Bucket = bucketName,
+                ContentType = "text/plain",
                 CannedACL = S3CannedACL.PublicRead,
                 InputStream = contentStream,
                 SignedPolicy = signedPolicy,
@@ -192,7 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             return AmazonS3Util.PostUpload(req);
         }
-        private Stream testContentStream(string content)
+        private Stream TestContentStream(string content)
         {
             return new MemoryStream(Encoding.UTF8.GetBytes(content), false);
         }

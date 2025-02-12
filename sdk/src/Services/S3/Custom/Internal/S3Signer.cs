@@ -35,7 +35,7 @@ namespace Amazon.S3.Internal
 
         public S3Signer()
         {
-            _s3Signer = new Amazon.Runtime.Internal.Auth.S3Signer(AWSConfigsS3.UseSignatureVersion4, RegionDetectionUpdater);
+            _s3Signer = new Amazon.Runtime.Internal.Auth.S3Signer(RegionDetectionUpdater);
         }
 
         public override ClientProtocol Protocol

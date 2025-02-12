@@ -383,7 +383,6 @@ namespace Amazon.S3.Transfer.Internal
                 !initRequest.IsSetChecksumAlgorithm() &&
                 !AWSConfigsS3.DisableDefaultChecksumValidation &&
                 !this._fileTransporterRequest.DisableDefaultChecksumValidation.GetValueOrDefault() &&
-                (_s3Client.Config.SignatureVersion != "2") &&
                 (_s3Client.Config.RequestChecksumCalculation == RequestChecksumCalculation.WHEN_SUPPORTED);
         }
 

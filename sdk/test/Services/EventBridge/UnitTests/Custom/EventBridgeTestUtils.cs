@@ -47,7 +47,7 @@ namespace AWSSDK.UnitTests
                 new Marshaller()
             };
 
-            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, new EventBridgeSigner());
+            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, new AWSEndpointAuthSchemeSigner());
         }
     }
 }

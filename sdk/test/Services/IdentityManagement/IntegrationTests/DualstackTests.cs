@@ -26,30 +26,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         /// <summary>
         /// Verifies that the SDK computes and successfully calls the correct dualstack 
-        /// endpoint for a handful of regions when using S3 V2 signing protocol, using
-        /// calls that result in both virtual host and path style addressing.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("S3")]
-        public void TestSomeRegionsResolveV2Signing()
-        {
-            foreach (var testRegion in testRegions)
-            {
-                var config = new AmazonS3Config
-                {
-                    RegionEndpoint = testRegion,
-                    UseDualstackEndpoint = true,
-                    SignatureVersion = "2"
-                };
-
-                executeSomeBucketOperations(config);
-            }
-        }
-
-        /// <summary>
-        /// Verifies that the SDK computes and successfully calls the correct dualstack 
-        /// endpoint for a handful of regions when using S3 V2 signing protocol, using
-        /// calls that result in both virtual host and path style addressing.
+        /// endpoint for a handful of regions when using S3 is using calls that result in 
+        /// both virtual host and path style addressing.
         /// </summary>
         [TestMethod]
         [TestCategory("S3")]
@@ -60,8 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 var config = new AmazonS3Config
                 {
                     RegionEndpoint = testRegion,
-                    UseDualstackEndpoint = true,
-                    SignatureVersion = "4"
+                    UseDualstackEndpoint = true
                 };
                 
                 executeSomeBucketOperations(config);

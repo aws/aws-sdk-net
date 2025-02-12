@@ -55,15 +55,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public void BucketAnalyticsConfigurationsTestWithSigV4()
         {
-            AWSConfigsS3.UseSignatureVersion4 = true;         
-            BucketInventoryConfigurationsAndFilterTest();
-        }
-
-        [TestCategory("S3")]
-        [TestMethod]
-        public void BucketAnalyticsConfigurationsTestWithS3SigV2()
-        {
-            AWSConfigsS3.UseSignatureVersion4 = false;            
             BucketInventoryConfigurationsAndFilterTest();
         }
 

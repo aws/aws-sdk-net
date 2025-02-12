@@ -255,8 +255,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {            
             var s3Client = new AmazonS3Client(new AmazonS3Config
             {
-                ServiceURL = "https://s3-external-1.amazonaws.com",
-                SignatureVersion = "4"
+                ServiceURL = "https://s3-external-1.amazonaws.com"
             });
             var testBucketName = "aws-net-sdk-external" + random.Next();
             var key = "testKey";
@@ -286,24 +285,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void PutObjectWithLeadingSlash()
         {
-            foreach(var useV4 in new bool[] { false, true })
+            using(var client = new AmazonS3Client())
             {
-                AWSConfigsS3.UseSignatureVersion4 = useV4;
-                using(var client = new AmazonS3Client())
+                PutObjectRequest request = new PutObjectRequest()
                 {
-                    PutObjectRequest request = new PutObjectRequest()
-                    {
-                        BucketName = bucketName,
-                        Key = "/contentBodyPut" + random.Next(),
-                        ContentBody = "This is the content body!",
-                        CannedACL = S3CannedACL.AuthenticatedRead
-                    };
-                    request.Metadata.Add("Subject", "Content-As-Object");
-                    PutObjectResponse response = client.PutObject(request);
+                    BucketName = bucketName,
+                    Key = "/contentBodyPut" + random.Next(),
+                    ContentBody = "This is the content body!",
+                    CannedACL = S3CannedACL.AuthenticatedRead
+                };
+                request.Metadata.Add("Subject", "Content-As-Object");
+                PutObjectResponse response = client.PutObject(request);
 
-                    Console.WriteLine("S3 generated ETag: {0}", response.ETag);
-                    Assert.IsTrue(response.ETag.Length > 0);
-                }
+                Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+                Assert.IsTrue(response.ETag.Length > 0);
             }
         }
 
@@ -351,32 +346,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void PutObject_SigV4()
         {
-            var oldS3SigV4 = AWSConfigsS3.UseSignatureVersion4;
-            AWSConfigsS3.UseSignatureVersion4 = true;
-
-            try
+            using (var client = new AmazonS3Client())
             {
-                using (var client = new AmazonS3Client())
+                RetryUtilities.ConfigureClient(client);
+
+                PutObjectRequest request = new PutObjectRequest()
                 {
-                    RetryUtilities.ConfigureClient(client);
+                    BucketName = bucketName,
+                    Key = "contentBodyPut" + random.Next(),
+                    ContentBody = "This is the content body!",
+                    CannedACL = S3CannedACL.AuthenticatedRead
+                };
+                request.Metadata.Add("Subject", "Content-As-Object");
+                PutObjectResponse response = client.PutObject(request);
 
-                    PutObjectRequest request = new PutObjectRequest()
-                    {
-                        BucketName = bucketName,
-                        Key = "contentBodyPut" + random.Next(),
-                        ContentBody = "This is the content body!",
-                        CannedACL = S3CannedACL.AuthenticatedRead
-                    };
-                    request.Metadata.Add("Subject", "Content-As-Object");
-                    PutObjectResponse response = client.PutObject(request);
-
-                    Console.WriteLine("S3 generated ETag: {0}", response.ETag);
-                    Assert.IsTrue(response.ETag.Length > 0);
-                }
-            }
-            finally
-            {
-                AWSConfigsS3.UseSignatureVersion4 = oldS3SigV4;
+                Console.WriteLine("S3 generated ETag: {0}", response.ETag);
+                Assert.IsTrue(response.ETag.Length > 0);
             }
         }
 
@@ -533,9 +518,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TemporaryRedirectForS3OperationsWithSigV4()
         {
-            AWSConfigsS3.UseSignatureVersion4 = true;
             TemporaryRedirectForS3Operations();
-            AWSConfigsS3.UseSignatureVersion4 = false;
         }
 
         [Ignore("Excluding tests that need IAM Write/Permissions management.")]
@@ -634,14 +617,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void PutObjectWithContentEncodingTests()
         {
-            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncoding, useSigV4: true);
-            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncoding, useSigV4: false);
-
-            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncodingIdentity, useSigV4: true);
-            S3TestUtils.TestWithVariableSigV4(PutObjectWithContentEncodingIdentity, useSigV4: false);
-
-            S3TestUtils.TestWithVariableSigV4(PutObjectWithoutContentEncoding, useSigV4: true);
-            S3TestUtils.TestWithVariableSigV4(PutObjectWithoutContentEncoding, useSigV4: false);
+            PutObjectWithContentEncoding();
+            PutObjectWithContentEncodingIdentity();
+            PutObjectWithoutContentEncoding();
         }
 
         private void PutObjectWithContentEncoding()

@@ -23,14 +23,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     /// </summary>
     public class BucketRegionTestRunner : IDisposable
     {
+        private bool _disposedValue;
         private const string TestObjectKey = "test.txt";
         private const string TestContent = "some stuff";
         private const int TemporaryRedirectMaxExpirationHours = 5;
 
         private string BucketPrefix = "s3-region-bucket-tests-";
-        private bool originalUseSignatureVersion4;
-        private bool originalUseSigV4SetExplicitly;
-
+        
         public AmazonS3Client USEast1ClientWithSessionCredentials { get; private set; }
         public AmazonS3Client USEast1Client { get; private set; }
         public AmazonS3Client USWest1Client { get; private set; }
@@ -39,6 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public GetObjectMetadataRequest GetObjectMetadataRequest { get; private set; }
         public PutObjectRequest PutObjectRequest { get; private set; }
         public GetPreSignedUrlRequest PreSignedUrlRequest { get; private set; }
+        public GetPreSignedUrlRequest PreSignedUrlRequestExtendedExpiration { get; private set; }
         public string BucketName
         {
             get
@@ -47,16 +47,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        public BucketRegionTestRunner(bool useSigV4, bool useSigV4SetExplicitly = false, bool setupClientWithSessionCredentials = false)
+        public BucketRegionTestRunner(bool setupClientWithSessionCredentials = false)
         {
-            originalUseSignatureVersion4 = AWSConfigsS3.UseSignatureVersion4;
-            originalUseSigV4SetExplicitly = GetAWSConfigsS3InternalProperty();
-            AWSConfigsS3.UseSignatureVersion4 = useSigV4;
-            SetAWSConfigsS3InternalProperty(useSigV4SetExplicitly);
-
             var usEast1ClientConfig = new AmazonS3Config()
             {
-                SignatureVersion = useSigV4 ? "4" : "2",
                 RegionEndpoint = RegionEndpoint.USEast1,
                 USEast1RegionalEndpointValue = S3UsEast1RegionalEndpointValue.Legacy,
             };
@@ -70,7 +64,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             USWest1Client = new AmazonS3Client(new AmazonS3Config()
             {
-                SignatureVersion = useSigV4 ? "4" : "2",
                 RegionEndpoint = RegionEndpoint.USWest1
             });
 
@@ -95,6 +88,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Key = BucketRegionTestRunner.TestObjectKey,
                     Expires = DateTime.UtcNow.AddHours(1)
                 };
+                PreSignedUrlRequestExtendedExpiration = new GetPreSignedUrlRequest
+                {
+                    BucketName = BucketName,
+                    Key = BucketRegionTestRunner.TestObjectKey,
+                    Expires = DateTime.UtcNow.AddDays(8) // Greater than 7 days will force a SigV2 presigned URL.
+                };
             }
         }
 
@@ -111,7 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // If the bucket is ready the next time this test runs we'll test then.
                 USWest1Client.PutBucket(new PutBucketRequest()
                 {
-                    BucketRegion = S3Region.USW1,
+                    BucketRegion = S3Region.USWest1,
                     BucketName = bucketName,
                 });
             }
@@ -124,25 +123,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         public void Dispose()
         {
-            AWSConfigsS3.UseSignatureVersion4 = originalUseSignatureVersion4;
-            SetAWSConfigsS3InternalProperty(originalUseSigV4SetExplicitly);
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
-        #region Reflection for test purposes
-        private void SetAWSConfigsS3InternalProperty(bool value)
+        protected virtual void Dispose(bool disposing)
         {
-            GetUseSigV4SetExplicitlyProperty().SetValue(null, value, null);
-        }
+            if (!_disposedValue)
+            {
+                if (disposing)
+                {
+                    USEast1ClientWithSessionCredentials?.Dispose();
+                    USEast1ClientWithSessionCredentials = null;
+                    USEast1Client?.Dispose();
+                    USEast1Client = null;
+                    USWest1Client?.Dispose();
+                    USWest1Client = null;
+                }
 
-        private bool GetAWSConfigsS3InternalProperty()
-        {
-            return (bool)GetUseSigV4SetExplicitlyProperty().GetValue(null, null);
+                _disposedValue = true;
+            }
         }
-
-        private PropertyInfo GetUseSigV4SetExplicitlyProperty()
-        {
-            return typeof(AWSConfigsS3).GetProperty("UseSigV4SetExplicitly", BindingFlags.NonPublic | BindingFlags.Static);
-        }
-        #endregion
     }
 }

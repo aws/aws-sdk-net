@@ -27,24 +27,21 @@ namespace Amazon.Runtime.Internal.Auth
     public class S3Signer : AbstractAWSSigner
     {
         public delegate void RegionDetectionUpdater(IRequest request);
-
-        private readonly bool _useSigV4;
         private readonly RegionDetectionUpdater _regionDetector;
 
         /// <summary>
         /// S3 signer constructor
         /// </summary>
         public S3Signer() :
-            this(true, null)
+            this(null)
         {
         }
 
         /// <summary>
         /// S3 signer constructor
         /// </summary>
-        public S3Signer(bool useSigV4, RegionDetectionUpdater regionDetector)
+        public S3Signer(RegionDetectionUpdater regionDetector)
         {
-            _useSigV4 = useSigV4;
             _regionDetector = regionDetector;
         }
 
@@ -60,7 +57,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
         {
-            var signer = SelectSigner(this, _useSigV4, request, clientConfig);
+            var signer = SelectSigner(this, true, request, clientConfig);
             var aws4Signer = signer as AWS4Signer;
             var aws4aSigner = signer as AWS4aSignerCRTWrapper;
             var useV4 = aws4Signer != null;

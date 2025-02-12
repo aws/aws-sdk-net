@@ -55,35 +55,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void RequesterPaysFromOwningAccountSigV2()
         {
-            TestRequesterPays(OwningProfileName, RequestPayer.Requester, false);
+            TestRequesterPays(OwningProfileName, RequestPayer.Requester, (int)TimeSpan.FromDays(8).TotalMinutes);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void RequesterPaysFromOtherAccountSigV2()
         {
-            TestRequesterPays(OtherProfileName, RequestPayer.Requester, false);
+            TestRequesterPays(OtherProfileName, RequestPayer.Requester, (int)TimeSpan.FromDays(8).TotalMinutes);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void RequesterPaysFromOwningAccountSigV4()
         {
-            TestRequesterPays(OwningProfileName, RequestPayer.Requester, true);
+            TestRequesterPays(OwningProfileName, RequestPayer.Requester);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void RequesterPaysFromOtherAccountSigV4()
         {
-            TestRequesterPays(OtherProfileName, RequestPayer.Requester, true);
+            TestRequesterPays(OtherProfileName, RequestPayer.Requester);
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void MissingRequesterPaysFromOwningAccountSigV2()
         {
-            TestRequesterPays(OwningProfileName, null, false);
+            TestRequesterPays(OwningProfileName, null, (int)TimeSpan.FromDays(8).TotalMinutes);
         }
 
         [TestMethod]
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AssertExtensions.ExpectException(() =>
             {
-                TestRequesterPays(OtherProfileName, null, false);
+                TestRequesterPays(OtherProfileName, null, (int)TimeSpan.FromDays(8).TotalMinutes);
             }, typeof(WebException), "The remote server returned an error: (403) Forbidden.");
         }
 
@@ -100,7 +100,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void MissingRequesterPaysFromOwningAccountSigV4()
         {
-            TestRequesterPays(OwningProfileName, null, true);
+            TestRequesterPays(OwningProfileName, null);
         }
 
         [TestMethod]
@@ -109,43 +109,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             AssertExtensions.ExpectException(() =>
             {
-                TestRequesterPays(OtherProfileName, null, true);
+                TestRequesterPays(OtherProfileName, null);
             }, typeof(WebException), "The remote server returned an error: (403) Forbidden.");
         }
 
-        private void TestRequesterPays(string profileName, RequestPayer requestPayer, bool useSigV4)
+        private void TestRequesterPays(string profileName, RequestPayer requestPayer, int expirationMinutes = 20)
         {
-            var originalUseSigV4 = AWSConfigsS3.UseSignatureVersion4;
-            try
+            CredentialProfile profile;
+            var credsFile = new CredentialProfileStoreChain();
+            if (credsFile.TryGetProfile(profileName, out profile))
             {
-                AWSConfigsS3.UseSignatureVersion4 = useSigV4;
+                var credentials = AWSCredentialsFactory.GetAWSCredentials(profile, credsFile);
 
-                CredentialProfile profile;
-                var credsFile = new CredentialProfileStoreChain();
-                if (credsFile.TryGetProfile(profileName, out profile))
+                var client = new AmazonS3Client(credentials, Region);
+                var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
                 {
-                    var credentials = AWSCredentialsFactory.GetAWSCredentials(profile, credsFile);
+                    BucketName = BucketName,
+                    Key = Key,
+                    Expires = DateTime.UtcNow.AddMinutes(expirationMinutes),
+                    RequestPayer = requestPayer
+                });
 
-                    var client = new AmazonS3Client(credentials, Region);
-                    var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
-                    {
-                        BucketName = BucketName,
-                        Key = Key,
-                        Expires = DateTime.UtcNow.AddMinutes(20),
-                        RequestPayer = requestPayer
-                    });
-
-                    var wc = new WebClient();
-                    Assert.AreEqual(wc.DownloadString(url), Content);
-                }
-                else
-                {
-                    throw new ArgumentException("The profile " + profileName + "does not exist.");
-                }
+                var wc = new WebClient();
+                Assert.AreEqual(wc.DownloadString(url), Content);
             }
-            finally
+            else
             {
-                AWSConfigsS3.UseSignatureVersion4 = originalUseSigV4;
+                throw new ArgumentException("The profile " + profileName + "does not exist.");
             }
         }
     }

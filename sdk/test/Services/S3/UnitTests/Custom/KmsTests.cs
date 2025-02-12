@@ -28,17 +28,13 @@ namespace AWSSDK.UnitTests.S3
         [TestCategory("S3")]
         public void KmsHeaderSetsSigV4()
         {
-            var config = new AmazonS3Config
-            {
-                SignatureVersion = "2"
-            };
             var request = new PutObjectRequest
             {
                 BucketName = "bucket",
                 Key = "key",
                 ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMS
             };
-            var internalRequest = S3TestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            var internalRequest = S3TestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance);
             Assert.AreEqual(ServerSideEncryptionMethod.AWSKMS.Value, internalRequest.Headers[HeaderKeys.XAmzServerSideEncryptionHeader]);
             Assert.AreEqual(SignatureVersion.SigV4, internalRequest.SignatureVersion);
         }
@@ -46,15 +42,13 @@ namespace AWSSDK.UnitTests.S3
         [TestCategory("S3")]
         public void KmsHeaderDSSESetSigV4()
         {
-            var config = new AmazonS3Config
-            { SignatureVersion = "2" };
             var request = new PutObjectRequest
             {
                 BucketName = "bucket",
                 Key = "key",
                 ServerSideEncryptionMethod = ServerSideEncryptionMethod.AWSKMSDSSE
             };
-            var internalRequest = S3TestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance, config);
+            var internalRequest = S3TestUtils.RunMockRequest(request, PutObjectRequestMarshaller.Instance);
             Assert.AreEqual(ServerSideEncryptionMethod.AWSKMSDSSE.Value, internalRequest.Headers[HeaderKeys.XAmzServerSideEncryptionHeader]);
             Assert.AreEqual(SignatureVersion.SigV4, internalRequest.SignatureVersion);
         }

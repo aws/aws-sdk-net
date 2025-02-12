@@ -389,34 +389,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(testContent, content);
             }
         }
-
-        public static IDisposable UseSignatureVersion4(bool newValue)
-        {
-            return new SigV4Disposable(newValue);
-        }
-
-        public static void TestWithVariableSigV4(Action action, bool useSigV4)
-        {
-            using (var sigv4 = UseSignatureVersion4(useSigV4))
-            {
-                action();
-            }
-        }
-
-
-        private class SigV4Disposable : IDisposable
-        {
-            private bool OldSigV4;
-            public SigV4Disposable(bool newSigV4)
-            {
-                OldSigV4 = AWSConfigsS3.UseSignatureVersion4;
-                AWSConfigsS3.UseSignatureVersion4 = newSigV4;
-            }
-
-            public void Dispose()
-            {
-                AWSConfigsS3.UseSignatureVersion4 = OldSigV4;
-            }
-        }
     }
 }

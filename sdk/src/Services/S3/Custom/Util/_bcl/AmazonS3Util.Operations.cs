@@ -366,12 +366,10 @@ namespace Amazon.S3.Util
         public static S3PostUploadResponse PostUpload(S3PostUploadRequest request)
         {
             string url;
-            string subdomain = (request.Region.Equals(RegionEndpoint.USEast1) || request.Region?.SystemName == RegionEndpoint.USEast1.SystemName) ? "s3" : "s3-" + request.Region.SystemName;
-
             if (request.Bucket.IndexOf('.') > -1)
-                url = string.Format(CultureInfo.InvariantCulture, "https://{0}.amazonaws.com/{1}/", subdomain, request.Bucket);
+                url = string.Format(CultureInfo.InvariantCulture, "https://s3.{0}.amazonaws.com/{1}/", request.Region.SystemName, request.Bucket);
             else
-                url = string.Format(CultureInfo.InvariantCulture, "https://{0}.{1}.amazonaws.com", request.Bucket, subdomain);
+                url = string.Format(CultureInfo.InvariantCulture, "https://{0}.s3.{1}.amazonaws.com", request.Bucket, request.Region.SystemName);
             Uri uri = new Uri(url);
 
             HttpWebRequest webRequest = WebRequest.Create(uri) as HttpWebRequest;

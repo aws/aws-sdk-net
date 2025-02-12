@@ -140,7 +140,7 @@ namespace Amazon.S3.Util
                 var endpoint = s3Client.Config.DetermineServiceOperationEndpoint(parameters);
                 request.Expires = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL).AddDays(1);
 
-                return s3Client.GetPreSignedURLInternal(request, false);
+                return s3Client.GetPreSignedURLInternal(request);
             }
         }
 

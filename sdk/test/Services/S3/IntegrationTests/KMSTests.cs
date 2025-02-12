@@ -317,9 +317,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         public void TestPresignedUrls(string keyId, ServerSideEncryptionMethod serverSideEncryptionMethod)
         {
-            var oldSigV4 = AWSConfigsS3.UseSignatureVersion4;
-            AWSConfigsS3.UseSignatureVersion4 = true;
-
             using (var newClient = new AmazonS3Client())
             {
                 var bucketName = S3TestUtils.CreateBucketWithWait(newClient);
@@ -344,7 +341,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 finally
                 {
                     AmazonS3Util.DeleteS3BucketWithObjects(newClient, bucketName);
-                    AWSConfigsS3.UseSignatureVersion4 = oldSigV4;
                 }
             }
         }

@@ -115,14 +115,6 @@ namespace Amazon.Runtime
         SigningAlgorithm SignatureMethod { get; }
 
         /// <summary>
-        /// Gets the SignatureVersion property.
-        ///
-        /// Note: This property exists for backward compatibility but is no longer
-        /// used by any service other than S3.
-        /// </summary>
-        string SignatureVersion { get; }
-
-        /// <summary>
         /// Gets the AuthenticationRegion property.
         /// Used in AWS4 request signing, this is an optional property; 
         /// change it only if the region cannot be determined from the 

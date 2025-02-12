@@ -64,16 +64,5 @@ namespace AWSSDK_NetStandard.UnitTests
             Assert.Equal("Unknown", RegionEndpoint.GetBySystemName("us-gov-10").DisplayName);
             Assert.Equal("China (Unknown)", RegionEndpoint.GetBySystemName("cn-east-10").DisplayName);
         }
-
-        [Fact]
-        [Trait("Category", "Core")]
-        public void S3SignatureTest()
-        {
-            Assert.Null(RegionEndpoint.APNortheast2.GetEndpointForService("s3").SignatureVersionOverride);
-            Assert.Null(RegionEndpoint.CNNorth1.GetEndpointForService("s3").SignatureVersionOverride);
-            Assert.Equal("2", RegionEndpoint.SAEast1.GetEndpointForService("s3").SignatureVersionOverride);
-            Assert.Equal("2", RegionEndpoint.USEast1.GetEndpointForService("s3").SignatureVersionOverride);
-            Assert.Equal("2", RegionEndpoint.EUWest1.GetEndpointForService("s3").SignatureVersionOverride);
-        }
     }
 }

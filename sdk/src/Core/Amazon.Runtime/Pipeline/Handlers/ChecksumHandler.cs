@@ -73,12 +73,6 @@ namespace Amazon.Runtime.Internal
                 return;
             }
 
-            // Do not attempt to set checksum when using SigV2 (only applicable to S3).
-            if (clientConfig.SignatureVersion == "2")
-            {
-                return;
-            }
-
             ChecksumUtils.SetRequestChecksumV2(request, clientConfig);
         }
     }

@@ -40,13 +40,6 @@ namespace <#=Config.Namespace#>.Internal
                 // SigV2 support, CanonicalResourcePrefix required for proper signing
                 executionContext.RequestContext.Request.CanonicalResourcePrefix = "/" + parameters["Bucket"];
             }
-
-            // Special handling of SigV2
-            if (executionContext.RequestContext.ClientConfig.SignatureVersion == "2")
-            {
-                executionContext.RequestContext.Request.SignatureVersion = SignatureVersion.SigV2;
-            }
-
             // If the marshalled request has the SSE header and it is set to KMS, force SigV4 for this request.
             // Current operations that may set this header: CopyObject, CopyPart, InitiateMultipart, PutObject
             string sseHeaderValue;

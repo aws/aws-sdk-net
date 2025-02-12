@@ -134,7 +134,7 @@ namespace Amazon.Runtime.Internal.Auth
         public abstract ClientProtocol Protocol { get; }
 
         /// <summary>
-        /// Inspects the supplied evidence to determine if sigv4 or sigv2 signing should be used
+        /// Inspects the supplied evidence to determine if sigv4 signing should be used.
         /// </summary>
         /// <param name="useSigV4Setting">Global setting for the service</param>
         /// <param name="request">The request.</param>
@@ -142,16 +142,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// <returns>True if signature v4 request signing should be used, false if v2 signing should be used</returns>
         protected static bool UseV4Signing(bool useSigV4Setting, IRequest request, IClientConfig config)
         {
-            if (request.SignatureVersion == SignatureVersion.SigV4 ||
-                config.SignatureVersion == "4" ||
-                (useSigV4Setting && config.SignatureVersion != "2"))
+            if (request.SignatureVersion == SignatureVersion.SigV4 || useSigV4Setting)
             {
                 return true;
             }
             else
             {
                 // do a cascading series of checks to try and arrive at whether we have
-                // a recognisable region; this is required to use the AWS4 signer
+                // a recognizable region; this is required to use the AWS4 signer
                 RegionEndpoint r = null;
                 if (!string.IsNullOrEmpty(request.AuthenticationRegion))
                     r = RegionEndpoint.GetBySystemName(request.AuthenticationRegion);
@@ -168,18 +166,13 @@ namespace Amazon.Runtime.Internal.Auth
 
                 if (r != null)
                 {
-#pragma warning disable CS0612,CS0618
-                    var endpoint = r.GetEndpointForService(config.RegionEndpointServiceName, config.ToGetEndpointForServiceOptions());
-#pragma warning restore CS0612,CS0618
-                    if (endpoint != null && (endpoint.SignatureVersionOverride == "4" || string.IsNullOrEmpty(endpoint.SignatureVersionOverride)))
-                        return true;
+                    return true;
                 }
 
                 return false;
             }
         }
 
-        
         protected AbstractAWSSigner SelectSigner(IRequest request, IClientConfig config)
         {
             return SelectSigner(this, useSigV4Setting: false, request: request, config: config);
