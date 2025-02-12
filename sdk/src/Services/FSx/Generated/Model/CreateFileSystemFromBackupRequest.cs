@@ -136,10 +136,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// You don't need to specify <c>FileSystemTypeVersion</c> because it will be applied
-        /// using the backup's <c>FileSystemTypeVersion</c> setting. If you choose to specify
-        /// <c>FileSystemTypeVersion</c> when creating from backup, the value must match the backup's
-        /// <c>FileSystemTypeVersion</c> setting.
+        /// You can enter a Lustre version that is newer than the backup's <c>FileSystemTypeVersion</c>
+        /// setting. If you don't enter a newer Lustre version, it defaults to the backup's setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -238,7 +236,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// If used to create a file system other than OpenZFS, you must provide a value that
         /// matches the backup's <c>StorageCapacity</c> value. If you provide any other value,
-        /// Amazon FSx responds with with an HTTP status code 400 Bad Request. 
+        /// Amazon FSx responds with an HTTP status code 400 Bad Request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]

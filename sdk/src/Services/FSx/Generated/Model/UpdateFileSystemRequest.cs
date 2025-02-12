@@ -96,6 +96,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>FileSystemTypeVersion</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>LogConfiguration</c> 
     /// </para>
     ///  </li> <li> 
@@ -220,6 +224,7 @@ namespace Amazon.FSx.Model
     {
         private string _clientRequestToken;
         private string _fileSystemId;
+        private string _fileSystemTypeVersion;
         private UpdateFileSystemLustreConfiguration _lustreConfiguration;
         private UpdateFileSystemOntapConfiguration _ontapConfiguration;
         private UpdateFileSystemOpenZFSConfiguration _openZFSConfiguration;
@@ -265,6 +270,27 @@ namespace Amazon.FSx.Model
         internal bool IsSetFileSystemId()
         {
             return this._fileSystemId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileSystemTypeVersion. 
+        /// <para>
+        /// The Lustre version you are updating an FSx for Lustre file system to. Valid values
+        /// are <c>2.12</c> and <c>2.15</c>. The value you choose must be newer than the file
+        /// system's current Lustre version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public string FileSystemTypeVersion
+        {
+            get { return this._fileSystemTypeVersion; }
+            set { this._fileSystemTypeVersion = value; }
+        }
+
+        // Check to see if FileSystemTypeVersion property is set
+        internal bool IsSetFileSystemTypeVersion()
+        {
+            return this._fileSystemTypeVersion != null;
         }
 
         /// <summary>
