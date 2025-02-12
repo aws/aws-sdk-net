@@ -203,6 +203,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode EnNZ = new LanguageCode("en-NZ");
         /// <summary>
+        /// Constant EnSG for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnSG = new LanguageCode("en-SG");
+        /// <summary>
         /// Constant EnUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EnUS = new LanguageCode("en-US");
@@ -736,6 +740,10 @@ namespace Amazon.Polly
         /// Constant Jan for VoiceId
         /// </summary>
         public static readonly VoiceId Jan = new VoiceId("Jan");
+        /// <summary>
+        /// Constant Jasmine for VoiceId
+        /// </summary>
+        public static readonly VoiceId Jasmine = new VoiceId("Jasmine");
         /// <summary>
         /// Constant Jitka for VoiceId
         /// </summary>
