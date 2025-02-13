@@ -34,6 +34,42 @@ namespace Amazon.ECS.Model
     /// a container defined in the task definition. For more detailed information about these
     /// Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
     /// Linux manual page.
+    /// 
+    ///  
+    /// <para>
+    /// The following describes how Docker processes the Linux capabilities specified in the
+    /// <c>add</c> and <c>drop</c> request parameters. For information about the latest behavior,
+    /// see <a href="https://forums.docker.com/t/docker-compose-order-of-cap-drop-and-cap-add/97136/1">Docker
+    /// Compose: order of cap_drop and cap_add</a> in the Docker Community Forum.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// When the container is a privleged container, the container capabilities are all of
+    /// the default Docker capabilities. The capabilities specified in the <c>add</c> request
+    /// parameter, and the <c>drop</c> request parameter are ignored.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When the <c>add</c> request parameter is set to ALL, the container capabilities are
+    /// all of the default Docker capabilities, excluding those specified in the <c>drop</c>
+    /// request parameter.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When the <c>drop</c> request parameter is set to ALL, the container capabilities are
+    /// the capabilities specified in the <c>add</c> request parameter.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When the <c>add</c> request parameter and the <c>drop</c> request parameter are both
+    /// empty, the capabilities the container capabilities are all of the default Docker capabilities.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The default is to first drop the capabilities specified in the <c>drop</c> request
+    /// parameter, and then add the capabilities specified in the <c>add</c> request parameter.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KernelCapabilities
     {

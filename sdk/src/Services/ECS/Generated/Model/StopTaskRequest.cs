@@ -107,7 +107,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Task. 
         /// <para>
-        /// The task ID of the task to stop.
+        /// Thefull Amazon Resource Name (ARN) of the task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

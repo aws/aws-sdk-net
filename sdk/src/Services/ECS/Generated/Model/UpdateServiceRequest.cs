@@ -238,8 +238,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
-        /// an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container
-        /// Service Developer Guide</i>.
+        /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
+        /// Service Developer Guide</i> </i>.
         /// </para>
         /// </summary>
         public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
