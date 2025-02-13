@@ -46,14 +46,15 @@ namespace Amazon.S3.Util
     [XmlRootAttribute(IsNullable = false)]
     public class S3PostUploadSignedPolicy
     {
-        /// <summary>
-        ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
-        /// </summary>
-        /// <param name="policy">JSON string representing the policy to sign</param>
-        /// <param name="credentials">Credentials to sign the policy with</param>
-        /// <param name="region">Service region endpoint.</param>
-        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
+        private static JsonDocumentOptions options = new JsonDocumentOptions { AllowTrailingCommas = true };
+    /// <summary>
+    ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
+    /// </summary>
+    /// <param name="policy">JSON string representing the policy to sign</param>
+    /// <param name="credentials">Credentials to sign the policy with</param>
+    /// <param name="region">Service region endpoint.</param>
+    /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
+    public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
         {
             var signedAt = AWSSDKUtils.CorrectedUtcNow;
 
@@ -92,7 +93,7 @@ namespace Amazon.S3.Util
 
         private static byte[] addConditionsToPolicy(string policy, Dictionary<string, string> newConditions)
         {
-            var json = JsonNode.Parse(policy) as JsonObject;
+            var json = JsonNode.Parse(policy, null, options) as JsonObject;
             var jsonConditions = json["conditions"] as JsonArray;
 
             if (jsonConditions != null)
