@@ -111,14 +111,15 @@ namespace Amazon.S3.Util
 
                     if (!found)
                     {
-                        var jsonCond = new JsonData();
-                        jsonCond.SetJsonType(ThirdParty.Json.LitJson.JsonType.Object);
-                        jsonCond[newCond.Key] = newCond.Value;
-                        jsonConditions.Add(jsonCond);
+                        var newCondition = new JsonObject
+                        {
+                            [newCond.Key] = newCond.Value
+                        };
+                        jsonConditions.Add(newCondition);
                     }
                 }
             }
-            return Encoding.UTF8.GetBytes(JsonMapper.ToJson(json).Trim());
+            return Encoding.UTF8.GetBytes(json.ToJsonString().Trim());
         }
         
         /// <summary>
