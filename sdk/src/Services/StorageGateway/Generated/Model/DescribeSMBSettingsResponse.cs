@@ -47,7 +47,13 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// Indicates the status of a gateway that is a member of the Active Directory domain.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// This field is only used as part of a <c>JoinDomain</c> request. It is not affected
+        /// by Active Directory connectivity changes that occur after the <c>JoinDomain</c> request
+        /// succeeds.
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         ///  <c>ACCESS_DENIED</c>: Indicates that the <c>JoinDomain</c> operation failed due to
         /// an authentication error.
