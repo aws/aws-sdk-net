@@ -62,7 +62,6 @@ namespace Amazon.Runtime
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
-        private string signatureVersion = "4";
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool logResponse = false;
@@ -204,18 +203,6 @@ namespace Amazon.Runtime
         {
             get { return this.signatureMethod; }
             set { this.signatureMethod = value; }
-        }
-
-        /// <summary>
-        /// Gets and sets of the SignatureVersion property.
-        ///
-        /// Note: This property exists for backward compatibility but is no longer
-        /// used by any service other than S3.
-        /// </summary>
-        public string SignatureVersion
-        {
-            get { return this.signatureVersion; }
-            set { this.signatureVersion = value; }
         }
 
         /// <summary>
