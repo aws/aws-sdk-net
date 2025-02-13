@@ -167,12 +167,39 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// CUDA version: 12.2
+        /// </para>
+        ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-2-1</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 535.54.03
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// CUDA driver version: 12.2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Supported instance types: ml.g4dn.*, ml.g5.*, ml.g6.*, ml.p3.*, ml.p4d.*, ml.p4de.*,
-        /// ml.p5.*
+        /// CUDA Container Toolkit with disabled CUDA-compat mounting
+        /// </para>
+        ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-gpu-3-1</dt> <dd> <ul> <li> 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 550.144.01
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUDA version: 12.4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Container Toolkit with disabled CUDA-compat mounting
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>

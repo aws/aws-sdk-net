@@ -13678,6 +13678,14 @@ namespace Amazon.SageMaker
         /// Constant Al2AmiSagemakerInferenceGpu2 for ProductionVariantInferenceAmiVersion
         /// </summary>
         public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu2 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-2");
+        /// <summary>
+        /// Constant Al2AmiSagemakerInferenceGpu21 for ProductionVariantInferenceAmiVersion
+        /// </summary>
+        public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu21 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-2-1");
+        /// <summary>
+        /// Constant Al2AmiSagemakerInferenceGpu31 for ProductionVariantInferenceAmiVersion
+        /// </summary>
+        public static readonly ProductionVariantInferenceAmiVersion Al2AmiSagemakerInferenceGpu31 = new ProductionVariantInferenceAmiVersion("al2-ami-sagemaker-inference-gpu-3-1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
