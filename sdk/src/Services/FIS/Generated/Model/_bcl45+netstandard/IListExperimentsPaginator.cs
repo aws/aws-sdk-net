@@ -30,5 +30,10 @@ namespace Amazon.FIS.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListExperimentsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Experiments
+        /// </summary>
+        IPaginatedEnumerable<ExperimentSummary> Experiments { get; }
     }
 }

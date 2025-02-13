@@ -30,5 +30,10 @@ namespace Amazon.FIS.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListTargetResourceTypesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TargetResourceTypes
+        /// </summary>
+        IPaginatedEnumerable<TargetResourceTypeSummary> TargetResourceTypes { get; }
     }
 }

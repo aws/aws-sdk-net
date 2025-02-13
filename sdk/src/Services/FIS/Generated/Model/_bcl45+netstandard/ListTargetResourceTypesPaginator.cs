@@ -42,6 +42,12 @@ namespace Amazon.FIS.Model
         /// </summary>
         public IPaginatedEnumerable<ListTargetResourceTypesResponse> Responses => new PaginatedResponse<ListTargetResourceTypesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TargetResourceTypes
+        /// </summary>
+        public IPaginatedEnumerable<TargetResourceTypeSummary> TargetResourceTypes => 
+            new PaginatedResultKeyResponse<ListTargetResourceTypesResponse, TargetResourceTypeSummary>(this, (i) => i.TargetResourceTypes ?? new List<TargetResourceTypeSummary>());
+
         internal ListTargetResourceTypesPaginator(IAmazonFIS client, ListTargetResourceTypesRequest request)
         {
             this._client = client;
