@@ -32,7 +32,7 @@ namespace Amazon.GeoPlaces
     public partial class AmazonGeoPlacesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Geo Places", "3.7.400.51");
+            InternalSDKUtils.BuildUserAgentString("Geo Places", "3.7.400.52");
 
         private string _userAgent = UserAgentString;
         ///<summary>

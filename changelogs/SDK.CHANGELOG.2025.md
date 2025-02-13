@@ -1,3 +1,20 @@
+### 3.7.982.0 (2025-02-13 19:21 UTC)
+* AccessAnalyzer (3.7.403.0)
+	* This release introduces the getFindingsStatistics API, enabling users to retrieve aggregated finding statistics for IAM Access Analyzer's external access and unused access analysis features. Updated service API and documentation.
+* ACMPCA (3.7.401.2)
+	* Private Certificate Authority (PCA) documentation updates
+* ECS (3.7.408.30)
+	* This is a documentation only release to support migrating Amazon ECS service ARNs to the long ARN format.
+* FIS (3.7.404.0)
+	* Adds auto-pagination for the following operations: ListActions, ListExperimentTemplates, ListTargetAccountConfigurations, ListExperiments, ListExperimentResolvedTargets, ListTargetResourceTypes. Reduces length constraints of prefixes for logConfiguration and experimentReportConfiguration.
+* SageMaker (3.7.423.0)
+	* Adds additional values to the InferenceAmiVersion parameter in the ProductionVariant data type.
+* StorageGateway (3.7.402.0)
+	* This release adds support for generating cache reports on S3 File Gateways for files that fail to upload.
+* Core 3.7.402.1
+	* Add debug logging for EC2InstanceMetadata
+	* All services packages updated to require new Core
+
 ### 3.7.981.0 (2025-02-12 19:25 UTC)
 * B2bi (3.7.404.0)
 	* Allow spaces in the following fields in the Partnership resource: ISA 06 - Sender ID, ISA 08 - Receiver ID, GS 02 - Application Sender Code, GS 03 - Application Receiver Code
