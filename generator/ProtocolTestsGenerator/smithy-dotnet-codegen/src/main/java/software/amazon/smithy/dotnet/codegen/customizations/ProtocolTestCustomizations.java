@@ -99,20 +99,10 @@ public final class ProtocolTestCustomizations {
             "QueryNoInputAndOutput"
     );
     public static final List<String> VNextTests = Arrays.asList(
-            // These tests are not actually breaking change but have their own backlog item to be addressed.
-            // To avoid creating yet another list to check we'll add these here so they have an ignore flag.
-            "XmlMapsXmlName",
-            "FlattenedXmlMapWithXmlName",
-            "RestXmlFlattenedXmlMapWithXmlNamespace",
-            "QueryQueryXmlMapsXmlName",
-            "QueryQueryFlattenedXmlMapWithXmlName",
-            "QueryQueryFlattenedXmlMapWithXmlNamespace",
-            "RestXmlXmlMapWithXmlNamespace",
             //These are the tests that are failing in v4 after updating to 1.54.0 and artifacts 1.0.3004.0. Each one needs to be investigated.
             "RestJsonStringPayloadRequest",
             "RestJsonNullAndEmptyHeaders",
             "RestJsonSerializesSparseNullMapValues",
-            "NestedXmlMapWithXmlNameDeserializes",
             "NullAndEmptyHeaders"
     );
 }
