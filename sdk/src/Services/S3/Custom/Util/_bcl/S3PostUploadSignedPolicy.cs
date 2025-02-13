@@ -148,34 +148,6 @@ namespace Amazon.S3.Util
             return Encoding.UTF8.GetBytes(json.ToJsonString().Trim());
         }
 
-        private static byte[] addTokenToPolicy(string policy, string token)
-        {
-            var json = JsonNode.Parse(policy) as JsonObject;
-            var found = false;
-            var conditions = json["conditions"] as JsonArray;
-            if (conditions != null)
-            {
-                for (int i = 0; i < conditions.Count; i++)
-                {
-                    if (conditions[i] is JsonObject obj && obj.ContainsKey(S3Constants.PostFormDataSecurityToken))
-                    {
-                        obj[S3Constants.PostFormDataSecurityToken] = token;
-                        found = true;
-                    }
-                }
-
-                if (!found)
-                {
-                    var tokenCondition = new JsonObject
-                    {
-                        [S3Constants.PostFormDataSecurityToken] = token
-                    };
-                    conditions.Add(tokenCondition);
-                }
-            }
-
-            return Encoding.UTF8.GetBytes(json.ToJsonString().Trim());
-        }
 
         /// <summary>
         /// The policy document which governs what uploads can be done.

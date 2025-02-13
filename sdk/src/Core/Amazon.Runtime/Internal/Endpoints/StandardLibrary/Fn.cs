@@ -367,10 +367,9 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string InterpolateJson(string json, Dictionary<string, object> refs)
         {
-            JsonDocument doc = null;
             try
             {
-                doc = JsonDocument.Parse(json);
+                using JsonDocument doc = JsonDocument.Parse(json);
                 var element = doc.RootElement;
                 using var stream = new MemoryStream();
                 using var writer = new Utf8JsonWriter(stream);
@@ -383,10 +382,6 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             catch (JsonException)
             {
                 return "";
-            }
-            finally
-            {
-                doc?.Dispose();
             }
         }
 

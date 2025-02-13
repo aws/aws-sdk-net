@@ -72,7 +72,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
         public void PresignedUrlWithSpeechMarks()
         {
             var data = AssertPreSignedUrl(SynthesizeSpeechUtil.GeneratePresignedUrl(RegionEndpoint.USWest2, GetSpeechMarkRequest()));
-            /*{\"time\":0,\"type\":\"sentence\",\"start\":0,\"end\":5,\"value\":\"Hello\"}\n{\"time\":6,\"type\":\"word\",\"start\":0,\"end\":5,\"value\":\"Hello\"}\n"*/
             AssertSpeechMarks(Encoding.UTF8.GetString(data));
         }
 

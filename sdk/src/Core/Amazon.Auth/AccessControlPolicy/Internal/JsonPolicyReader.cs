@@ -28,7 +28,7 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
         public static Policy ReadJsonStringToPolicy(string jsonString)
         {
             Policy policy = new Policy();
-            JsonDocument doc = JsonDocument.Parse(jsonString);
+            using JsonDocument doc = JsonDocument.Parse(jsonString);
             JsonElement jPolicy = doc.RootElement;
 
             if (jPolicy.TryGetProperty(JsonDocumentFields.POLICY_ID, out JsonElement policyElement) && policyElement.ValueKind == JsonValueKind.String)
@@ -47,7 +47,6 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     }
                 }
             }
-            doc?.Dispose();
             return policy;
         }
 
@@ -207,10 +206,6 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                         statement.Conditions.Add(condition);
                     }
                 }
-            }
-            else
-            {
-                return;
             }
         }
     }

@@ -134,7 +134,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <param name="throwIfTokenInvalid">if set, throws exception of type AmazonClientException when the json doesn't have AccessToken and ExpiresAt properties.</param>
         public static SsoToken FromJson(string json, bool throwIfTokenInvalid)
         {
-            JsonDocument doc =  JsonDocument.Parse(json);
+            using JsonDocument doc =  JsonDocument.Parse(json);
             var jsonData = doc.RootElement;
 
             var token = new SsoToken();
@@ -183,7 +183,6 @@ namespace Amazon.Runtime.Credentials.Internal
             if (jsonData.TryGetProperty(JsonPropertyNames.StartUrl, out JsonElement startUrlElement))
                 token.StartUrl = startUrlElement.GetString();
 
-            doc?.Dispose();
             return token;
         }
 

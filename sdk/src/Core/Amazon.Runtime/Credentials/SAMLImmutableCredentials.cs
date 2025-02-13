@@ -148,10 +148,9 @@ namespace Amazon.Runtime
         /// <returns>Deserialized instance corresponding to the json data</returns>
         internal static SAMLImmutableCredentials FromJson(string json)
         {
-            JsonDocument doc = null;
             try
             {
-                doc = JsonDocument.Parse(json);
+                using JsonDocument doc = JsonDocument.Parse(json);
 
                 // get the expiry first - if the credentials have expired we can then
                 // ignore the data
@@ -172,10 +171,6 @@ namespace Amazon.Runtime
             catch (Exception e)
             {
                 Logger.GetLogger(typeof(SAMLImmutableCredentials)).Error(e, "Error during deserialization");
-            }
-            finally
-            {
-                doc?.Dispose();
             }
 
             return null;
