@@ -137,7 +137,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if Header property is set
         internal bool IsSetHeader()
         {
-            return !string.IsNullOrEmpty(this._header);
+            return this._header != null;
         }
 
         /// <summary>

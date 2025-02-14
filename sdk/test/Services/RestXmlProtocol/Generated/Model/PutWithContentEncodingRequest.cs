@@ -65,7 +65,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if Encoding property is set
         internal bool IsSetEncoding()
         {
-            return !string.IsNullOrEmpty(this._encoding);
+            return this._encoding != null;
         }
 
     }

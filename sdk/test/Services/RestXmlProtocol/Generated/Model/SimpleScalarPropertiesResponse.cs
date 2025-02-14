@@ -117,7 +117,7 @@ namespace Amazon.RestXmlProtocol.Model
         // Check to see if Foo property is set
         internal bool IsSetFoo()
         {
-            return !string.IsNullOrEmpty(this._foo);
+            return this._foo != null;
         }
 
         /// <summary>

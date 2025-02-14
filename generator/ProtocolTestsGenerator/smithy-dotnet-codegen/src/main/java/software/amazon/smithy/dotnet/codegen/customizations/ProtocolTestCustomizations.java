@@ -111,9 +111,7 @@ public final class ProtocolTestCustomizations {
             //These are the tests that are failing in v4 after updating to 1.54.0 and artifacts 1.0.3004.0. Each one needs to be investigated.
             "RestJsonEnumPayloadRequest",
             "RestJsonStringPayloadRequest",
-            "RestJsonNullAndEmptyHeaders",
             "RestJsonSerializesSparseNullMapValues",
-            "NestedXmlMapWithXmlNameDeserializes",
-            "NullAndEmptyHeaders"
+            "NestedXmlMapWithXmlNameDeserializes"
     );
 }

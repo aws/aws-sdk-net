@@ -50,7 +50,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if A property is set
         internal bool IsSetA()
         {
-            return !string.IsNullOrEmpty(this._a);
+            return this._a != null;
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if B property is set
         internal bool IsSetB()
         {
-            return !string.IsNullOrEmpty(this._b);
+            return this._b != null;
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Amazon.RestJsonProtocol.Model
         // Check to see if C property is set
         internal bool IsSetC()
         {
-            return this._c != null && this._c.Count > 0;
+            return this._c != null;
         }
 
     }
