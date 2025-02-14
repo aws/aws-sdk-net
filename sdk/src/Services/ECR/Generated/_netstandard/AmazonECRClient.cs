@@ -78,7 +78,7 @@ namespace Amazon.ECR
         ///
         /// </summary>
         public AmazonECRClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECRConfig()) { }
+            : base(new AmazonECRConfig()) { }
 
         /// <summary>
         /// Constructs AmazonECRClient with the credentials loaded from the application's
@@ -97,7 +97,7 @@ namespace Amazon.ECR
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonECRClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonECRConfig{RegionEndpoint = region}) { }
+            : base(new AmazonECRConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonECRClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.ECR
         /// </summary>
         /// <param name="config">The AmazonECRClient Configuration Object</param>
         public AmazonECRClient(AmazonECRConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -241,14 +241,6 @@ namespace Amazon.ECR
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -256,7 +248,9 @@ namespace Amazon.ECR
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECREndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonECRAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

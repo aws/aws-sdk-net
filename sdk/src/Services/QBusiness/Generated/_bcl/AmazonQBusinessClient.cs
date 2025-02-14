@@ -119,7 +119,7 @@ namespace Amazon.QBusiness
         ///
         /// </summary>
         public AmazonQBusinessClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQBusinessConfig()) { }
+            : base(new AmazonQBusinessConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQBusinessClient with the credentials loaded from the application's
@@ -138,7 +138,7 @@ namespace Amazon.QBusiness
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQBusinessClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQBusinessConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQBusinessConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQBusinessClient with the credentials loaded from the application's
@@ -157,7 +157,7 @@ namespace Amazon.QBusiness
         /// </summary>
         /// <param name="config">The AmazonQBusinessClient Configuration Object</param>
         public AmazonQBusinessClient(AmazonQBusinessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonQBusinessClient with AWS Credentials
@@ -260,15 +260,7 @@ namespace Amazon.QBusiness
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -278,7 +270,9 @@ namespace Amazon.QBusiness
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQBusinessEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQBusinessAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -82,7 +82,7 @@ namespace Amazon.DocDB
         ///
         /// </summary>
         public AmazonDocDBClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDocDBConfig()) { }
+            : base(new AmazonDocDBConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDocDBClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.DocDB
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDocDBClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDocDBConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDocDBConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDocDBClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.DocDB
         /// </summary>
         /// <param name="config">The AmazonDocDBClient Configuration Object</param>
         public AmazonDocDBClient(AmazonDocDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDocDBClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.DocDB
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,10 +231,12 @@ namespace Amazon.DocDB
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.DocDB.Internal.PreSignedUrlRequestHandler(this.Credentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.DocDB.Internal.PreSignedUrlRequestHandler(this.Config.DefaultAWSCredentials));
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocDBEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDocDBAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

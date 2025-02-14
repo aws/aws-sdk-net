@@ -77,7 +77,7 @@ namespace Amazon.BCMPricingCalculator
         ///
         /// </summary>
         public AmazonBCMPricingCalculatorClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBCMPricingCalculatorConfig()) { }
+            : base(new AmazonBCMPricingCalculatorConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBCMPricingCalculatorClient with the credentials loaded from the application's
@@ -96,7 +96,7 @@ namespace Amazon.BCMPricingCalculator
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBCMPricingCalculatorClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBCMPricingCalculatorConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBCMPricingCalculatorConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBCMPricingCalculatorClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.BCMPricingCalculator
         /// </summary>
         /// <param name="config">The AmazonBCMPricingCalculatorClient Configuration Object</param>
         public AmazonBCMPricingCalculatorClient(AmazonBCMPricingCalculatorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -240,14 +240,6 @@ namespace Amazon.BCMPricingCalculator
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -255,7 +247,9 @@ namespace Amazon.BCMPricingCalculator
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBCMPricingCalculatorEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBCMPricingCalculatorAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

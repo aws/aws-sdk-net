@@ -83,14 +83,6 @@ namespace Amazon.IoTJobsDataPlane
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -98,7 +90,9 @@ namespace Amazon.IoTJobsDataPlane
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTJobsDataPlaneEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTJobsDataPlaneAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

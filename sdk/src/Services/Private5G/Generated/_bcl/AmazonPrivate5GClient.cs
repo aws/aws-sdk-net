@@ -82,7 +82,7 @@ namespace Amazon.Private5G
         ///
         /// </summary>
         public AmazonPrivate5GClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPrivate5GConfig()) { }
+            : base(new AmazonPrivate5GConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPrivate5GClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.Private5G
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPrivate5GClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPrivate5GConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPrivate5GConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPrivate5GClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.Private5G
         /// </summary>
         /// <param name="config">The AmazonPrivate5GClient Configuration Object</param>
         public AmazonPrivate5GClient(AmazonPrivate5GConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPrivate5GClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.Private5G
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.Private5G
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPrivate5GEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPrivate5GAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

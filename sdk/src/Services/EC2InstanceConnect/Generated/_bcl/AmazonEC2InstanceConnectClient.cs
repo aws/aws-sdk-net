@@ -79,7 +79,7 @@ namespace Amazon.EC2InstanceConnect
         ///
         /// </summary>
         public AmazonEC2InstanceConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2InstanceConnectConfig()) { }
+            : base(new AmazonEC2InstanceConnectConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEC2InstanceConnectClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.EC2InstanceConnect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEC2InstanceConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2InstanceConnectConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEC2InstanceConnectConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEC2InstanceConnectClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.EC2InstanceConnect
         /// </summary>
         /// <param name="config">The AmazonEC2InstanceConnectClient Configuration Object</param>
         public AmazonEC2InstanceConnectClient(AmazonEC2InstanceConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonEC2InstanceConnectClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.EC2InstanceConnect
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.EC2InstanceConnect
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2InstanceConnectEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2InstanceConnectAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

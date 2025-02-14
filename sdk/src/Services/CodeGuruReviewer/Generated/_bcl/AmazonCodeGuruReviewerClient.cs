@@ -99,7 +99,7 @@ namespace Amazon.CodeGuruReviewer
         ///
         /// </summary>
         public AmazonCodeGuruReviewerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeGuruReviewerConfig()) { }
+            : base(new AmazonCodeGuruReviewerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeGuruReviewerClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.CodeGuruReviewer
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeGuruReviewerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCodeGuruReviewerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeGuruReviewerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeGuruReviewerClient with the credentials loaded from the application's
@@ -137,7 +137,7 @@ namespace Amazon.CodeGuruReviewer
         /// </summary>
         /// <param name="config">The AmazonCodeGuruReviewerClient Configuration Object</param>
         public AmazonCodeGuruReviewerClient(AmazonCodeGuruReviewerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCodeGuruReviewerClient with AWS Credentials
@@ -240,15 +240,7 @@ namespace Amazon.CodeGuruReviewer
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -258,7 +250,9 @@ namespace Amazon.CodeGuruReviewer
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeGuruReviewerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeGuruReviewerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

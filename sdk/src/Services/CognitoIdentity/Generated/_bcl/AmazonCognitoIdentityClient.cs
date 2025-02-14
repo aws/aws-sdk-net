@@ -105,7 +105,7 @@ namespace Amazon.CognitoIdentity
         ///
         /// </summary>
         public AmazonCognitoIdentityClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoIdentityConfig()) { }
+            : base(new AmazonCognitoIdentityConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCognitoIdentityClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCognitoIdentityConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCognitoIdentityConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with the credentials loaded from the application's
@@ -143,7 +143,7 @@ namespace Amazon.CognitoIdentity
         /// </summary>
         /// <param name="config">The AmazonCognitoIdentityClient Configuration Object</param>
         public AmazonCognitoIdentityClient(AmazonCognitoIdentityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCognitoIdentityClient with AWS Credentials
@@ -246,15 +246,7 @@ namespace Amazon.CognitoIdentity
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -264,7 +256,9 @@ namespace Amazon.CognitoIdentity
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCognitoIdentityEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCognitoIdentityAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

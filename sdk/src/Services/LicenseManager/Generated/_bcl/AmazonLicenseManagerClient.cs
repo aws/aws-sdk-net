@@ -64,7 +64,7 @@ namespace Amazon.LicenseManager
         ///
         /// </summary>
         public AmazonLicenseManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLicenseManagerConfig()) { }
+            : base(new AmazonLicenseManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.LicenseManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLicenseManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLicenseManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLicenseManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.LicenseManager
         /// </summary>
         /// <param name="config">The AmazonLicenseManagerClient Configuration Object</param>
         public AmazonLicenseManagerClient(AmazonLicenseManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerClient with AWS Credentials
@@ -205,15 +205,7 @@ namespace Amazon.LicenseManager
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -223,7 +215,9 @@ namespace Amazon.LicenseManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLicenseManagerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLicenseManagerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

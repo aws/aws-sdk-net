@@ -82,7 +82,7 @@ namespace Amazon.OSIS
         ///
         /// </summary>
         public AmazonOSISClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOSISConfig()) { }
+            : base(new AmazonOSISConfig()) { }
 
         /// <summary>
         /// Constructs AmazonOSISClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.OSIS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonOSISClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonOSISConfig{RegionEndpoint = region}) { }
+            : base(new AmazonOSISConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonOSISClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.OSIS
         /// </summary>
         /// <param name="config">The AmazonOSISClient Configuration Object</param>
         public AmazonOSISClient(AmazonOSISConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonOSISClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.OSIS
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.OSIS
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOSISEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonOSISAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

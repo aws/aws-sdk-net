@@ -96,7 +96,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///
         /// </summary>
         public AmazonMigrationHubRefactorSpacesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubRefactorSpacesConfig()) { }
+            : base(new AmazonMigrationHubRefactorSpacesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubRefactorSpacesClient with the credentials loaded from the application's
@@ -115,7 +115,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMigrationHubRefactorSpacesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMigrationHubRefactorSpacesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMigrationHubRefactorSpacesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubRefactorSpacesClient with the credentials loaded from the application's
@@ -134,7 +134,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </summary>
         /// <param name="config">The AmazonMigrationHubRefactorSpacesClient Configuration Object</param>
         public AmazonMigrationHubRefactorSpacesClient(AmazonMigrationHubRefactorSpacesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMigrationHubRefactorSpacesClient with AWS Credentials
@@ -237,15 +237,7 @@ namespace Amazon.MigrationHubRefactorSpaces
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -255,7 +247,9 @@ namespace Amazon.MigrationHubRefactorSpaces
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubRefactorSpacesEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMigrationHubRefactorSpacesAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

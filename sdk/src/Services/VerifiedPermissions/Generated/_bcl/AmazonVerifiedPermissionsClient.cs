@@ -161,7 +161,7 @@ namespace Amazon.VerifiedPermissions
         ///
         /// </summary>
         public AmazonVerifiedPermissionsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonVerifiedPermissionsConfig()) { }
+            : base(new AmazonVerifiedPermissionsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonVerifiedPermissionsClient with the credentials loaded from the application's
@@ -180,7 +180,7 @@ namespace Amazon.VerifiedPermissions
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonVerifiedPermissionsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonVerifiedPermissionsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonVerifiedPermissionsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonVerifiedPermissionsClient with the credentials loaded from the application's
@@ -199,7 +199,7 @@ namespace Amazon.VerifiedPermissions
         /// </summary>
         /// <param name="config">The AmazonVerifiedPermissionsClient Configuration Object</param>
         public AmazonVerifiedPermissionsClient(AmazonVerifiedPermissionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonVerifiedPermissionsClient with AWS Credentials
@@ -302,15 +302,7 @@ namespace Amazon.VerifiedPermissions
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -320,7 +312,9 @@ namespace Amazon.VerifiedPermissions
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonVerifiedPermissionsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonVerifiedPermissionsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -114,7 +114,7 @@ namespace Amazon.ResourceGroups
         ///
         /// </summary>
         public AmazonResourceGroupsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResourceGroupsConfig()) { }
+            : base(new AmazonResourceGroupsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonResourceGroupsClient with the credentials loaded from the application's
@@ -133,7 +133,7 @@ namespace Amazon.ResourceGroups
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonResourceGroupsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonResourceGroupsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonResourceGroupsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonResourceGroupsClient with the credentials loaded from the application's
@@ -152,7 +152,7 @@ namespace Amazon.ResourceGroups
         /// </summary>
         /// <param name="config">The AmazonResourceGroupsClient Configuration Object</param>
         public AmazonResourceGroupsClient(AmazonResourceGroupsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -277,14 +277,6 @@ namespace Amazon.ResourceGroups
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -292,7 +284,9 @@ namespace Amazon.ResourceGroups
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResourceGroupsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonResourceGroupsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

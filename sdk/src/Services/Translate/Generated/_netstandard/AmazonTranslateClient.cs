@@ -64,7 +64,7 @@ namespace Amazon.Translate
         ///
         /// </summary>
         public AmazonTranslateClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTranslateConfig()) { }
+            : base(new AmazonTranslateConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTranslateClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.Translate
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTranslateClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTranslateConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTranslateConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTranslateClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.Translate
         /// </summary>
         /// <param name="config">The AmazonTranslateClient Configuration Object</param>
         public AmazonTranslateClient(AmazonTranslateConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.Translate
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.Translate
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTranslateEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTranslateAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

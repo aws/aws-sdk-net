@@ -76,7 +76,7 @@ namespace Amazon.ObservabilityAdmin
         ///
         /// </summary>
         public AmazonObservabilityAdminClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonObservabilityAdminConfig()) { }
+            : base(new AmazonObservabilityAdminConfig()) { }
 
         /// <summary>
         /// Constructs AmazonObservabilityAdminClient with the credentials loaded from the application's
@@ -95,7 +95,7 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonObservabilityAdminClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonObservabilityAdminConfig{RegionEndpoint = region}) { }
+            : base(new AmazonObservabilityAdminConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonObservabilityAdminClient with the credentials loaded from the application's
@@ -114,7 +114,7 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         /// <param name="config">The AmazonObservabilityAdminClient Configuration Object</param>
         public AmazonObservabilityAdminClient(AmazonObservabilityAdminConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -239,14 +239,6 @@ namespace Amazon.ObservabilityAdmin
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -254,7 +246,9 @@ namespace Amazon.ObservabilityAdmin
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonObservabilityAdminEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonObservabilityAdminAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

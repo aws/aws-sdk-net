@@ -85,7 +85,7 @@ namespace Amazon.EntityResolution
         ///
         /// </summary>
         public AmazonEntityResolutionClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEntityResolutionConfig()) { }
+            : base(new AmazonEntityResolutionConfig()) { }
 
         /// <summary>
         /// Constructs AmazonEntityResolutionClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.EntityResolution
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEntityResolutionClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEntityResolutionConfig{RegionEndpoint = region}) { }
+            : base(new AmazonEntityResolutionConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEntityResolutionClient with the credentials loaded from the application's
@@ -123,7 +123,7 @@ namespace Amazon.EntityResolution
         /// </summary>
         /// <param name="config">The AmazonEntityResolutionClient Configuration Object</param>
         public AmazonEntityResolutionClient(AmazonEntityResolutionConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -248,14 +248,6 @@ namespace Amazon.EntityResolution
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -263,7 +255,9 @@ namespace Amazon.EntityResolution
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEntityResolutionEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEntityResolutionAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

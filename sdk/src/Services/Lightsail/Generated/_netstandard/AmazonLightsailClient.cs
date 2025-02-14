@@ -86,7 +86,7 @@ namespace Amazon.Lightsail
         ///
         /// </summary>
         public AmazonLightsailClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLightsailConfig()) { }
+            : base(new AmazonLightsailConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLightsailClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.Lightsail
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLightsailClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLightsailConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLightsailConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLightsailClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.Lightsail
         /// </summary>
         /// <param name="config">The AmazonLightsailClient Configuration Object</param>
         public AmazonLightsailClient(AmazonLightsailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -231,14 +231,6 @@ namespace Amazon.Lightsail
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -246,7 +238,9 @@ namespace Amazon.Lightsail
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLightsailEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLightsailAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

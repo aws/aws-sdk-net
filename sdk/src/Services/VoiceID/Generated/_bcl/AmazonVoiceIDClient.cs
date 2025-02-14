@@ -80,7 +80,7 @@ namespace Amazon.VoiceID
         ///
         /// </summary>
         public AmazonVoiceIDClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonVoiceIDConfig()) { }
+            : base(new AmazonVoiceIDConfig()) { }
 
         /// <summary>
         /// Constructs AmazonVoiceIDClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.VoiceID
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonVoiceIDClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonVoiceIDConfig{RegionEndpoint = region}) { }
+            : base(new AmazonVoiceIDConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonVoiceIDClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.VoiceID
         /// </summary>
         /// <param name="config">The AmazonVoiceIDClient Configuration Object</param>
         public AmazonVoiceIDClient(AmazonVoiceIDConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonVoiceIDClient with AWS Credentials
@@ -221,15 +221,7 @@ namespace Amazon.VoiceID
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,7 +231,9 @@ namespace Amazon.VoiceID
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonVoiceIDEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonVoiceIDAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

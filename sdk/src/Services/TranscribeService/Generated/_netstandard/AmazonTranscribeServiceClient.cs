@@ -83,7 +83,7 @@ namespace Amazon.TranscribeService
         ///
         /// </summary>
         public AmazonTranscribeServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTranscribeServiceConfig()) { }
+            : base(new AmazonTranscribeServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTranscribeServiceClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.TranscribeService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTranscribeServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTranscribeServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTranscribeServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTranscribeServiceClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.TranscribeService
         /// </summary>
         /// <param name="config">The AmazonTranscribeServiceClient Configuration Object</param>
         public AmazonTranscribeServiceClient(AmazonTranscribeServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -246,14 +246,6 @@ namespace Amazon.TranscribeService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -261,7 +253,9 @@ namespace Amazon.TranscribeService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTranscribeServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTranscribeServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

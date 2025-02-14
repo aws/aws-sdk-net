@@ -65,7 +65,7 @@ namespace Amazon.KendraRanking
         ///
         /// </summary>
         public AmazonKendraRankingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKendraRankingConfig()) { }
+            : base(new AmazonKendraRankingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKendraRankingClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.KendraRanking
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKendraRankingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKendraRankingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKendraRankingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKendraRankingClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.KendraRanking
         /// </summary>
         /// <param name="config">The AmazonKendraRankingClient Configuration Object</param>
         public AmazonKendraRankingClient(AmazonKendraRankingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -228,14 +228,6 @@ namespace Amazon.KendraRanking
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -243,7 +235,9 @@ namespace Amazon.KendraRanking
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKendraRankingEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKendraRankingAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

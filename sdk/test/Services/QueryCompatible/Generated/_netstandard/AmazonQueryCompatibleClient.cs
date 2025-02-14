@@ -64,7 +64,7 @@ namespace Amazon.QueryCompatible
         ///
         /// </summary>
         public AmazonQueryCompatibleClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQueryCompatibleConfig()) { }
+            : base(new AmazonQueryCompatibleConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQueryCompatibleClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.QueryCompatible
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQueryCompatibleClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQueryCompatibleConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQueryCompatibleConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQueryCompatibleClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.QueryCompatible
         /// </summary>
         /// <param name="config">The AmazonQueryCompatibleClient Configuration Object</param>
         public AmazonQueryCompatibleClient(AmazonQueryCompatibleConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,12 +209,13 @@ namespace Amazon.QueryCompatible
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQueryCompatibleAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

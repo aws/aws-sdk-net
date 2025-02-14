@@ -66,7 +66,7 @@ namespace Amazon.PersonalizeEvents
         ///
         /// </summary>
         public AmazonPersonalizeEventsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPersonalizeEventsConfig()) { }
+            : base(new AmazonPersonalizeEventsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPersonalizeEventsClient with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.PersonalizeEvents
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPersonalizeEventsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPersonalizeEventsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPersonalizeEventsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPersonalizeEventsClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.PersonalizeEvents
         /// </summary>
         /// <param name="config">The AmazonPersonalizeEventsClient Configuration Object</param>
         public AmazonPersonalizeEventsClient(AmazonPersonalizeEventsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPersonalizeEventsClient with AWS Credentials
@@ -207,15 +207,7 @@ namespace Amazon.PersonalizeEvents
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -225,7 +217,9 @@ namespace Amazon.PersonalizeEvents
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPersonalizeEventsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPersonalizeEventsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

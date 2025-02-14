@@ -99,7 +99,7 @@ namespace Amazon.AppMesh
         ///
         /// </summary>
         public AmazonAppMeshClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppMeshConfig()) { }
+            : base(new AmazonAppMeshConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAppMeshClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.AppMesh
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAppMeshClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAppMeshConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAppMeshConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAppMeshClient with the credentials loaded from the application's
@@ -137,7 +137,7 @@ namespace Amazon.AppMesh
         /// </summary>
         /// <param name="config">The AmazonAppMeshClient Configuration Object</param>
         public AmazonAppMeshClient(AmazonAppMeshConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAppMeshClient with AWS Credentials
@@ -240,15 +240,7 @@ namespace Amazon.AppMesh
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -258,7 +250,9 @@ namespace Amazon.AppMesh
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppMeshEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAppMeshAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

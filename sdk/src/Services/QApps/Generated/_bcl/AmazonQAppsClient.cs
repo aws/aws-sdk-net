@@ -99,7 +99,7 @@ namespace Amazon.QApps
         ///
         /// </summary>
         public AmazonQAppsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQAppsConfig()) { }
+            : base(new AmazonQAppsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonQAppsClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.QApps
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonQAppsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonQAppsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonQAppsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonQAppsClient with the credentials loaded from the application's
@@ -137,7 +137,7 @@ namespace Amazon.QApps
         /// </summary>
         /// <param name="config">The AmazonQAppsClient Configuration Object</param>
         public AmazonQAppsClient(AmazonQAppsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonQAppsClient with AWS Credentials
@@ -240,15 +240,7 @@ namespace Amazon.QApps
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -258,7 +250,9 @@ namespace Amazon.QApps
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQAppsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonQAppsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

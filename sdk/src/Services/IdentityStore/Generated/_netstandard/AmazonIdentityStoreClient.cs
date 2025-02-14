@@ -78,7 +78,7 @@ namespace Amazon.IdentityStore
         ///
         /// </summary>
         public AmazonIdentityStoreClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityStoreConfig()) { }
+            : base(new AmazonIdentityStoreConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIdentityStoreClient with the credentials loaded from the application's
@@ -97,7 +97,7 @@ namespace Amazon.IdentityStore
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIdentityStoreClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIdentityStoreConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIdentityStoreConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIdentityStoreClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.IdentityStore
         /// </summary>
         /// <param name="config">The AmazonIdentityStoreClient Configuration Object</param>
         public AmazonIdentityStoreClient(AmazonIdentityStoreConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -241,14 +241,6 @@ namespace Amazon.IdentityStore
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -256,7 +248,9 @@ namespace Amazon.IdentityStore
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIdentityStoreEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIdentityStoreAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

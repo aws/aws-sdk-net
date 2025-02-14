@@ -67,7 +67,7 @@ namespace Amazon.LakeFormation
         ///
         /// </summary>
         public AmazonLakeFormationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLakeFormationConfig()) { }
+            : base(new AmazonLakeFormationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLakeFormationClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.LakeFormation
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLakeFormationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLakeFormationConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLakeFormationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLakeFormationClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.LakeFormation
         /// </summary>
         /// <param name="config">The AmazonLakeFormationClient Configuration Object</param>
         public AmazonLakeFormationClient(AmazonLakeFormationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.LakeFormation
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.LakeFormation
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLakeFormationEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLakeFormationAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

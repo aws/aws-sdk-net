@@ -152,7 +152,7 @@ namespace Amazon.IVSRealTime
         ///
         /// </summary>
         public AmazonIVSRealTimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIVSRealTimeConfig()) { }
+            : base(new AmazonIVSRealTimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIVSRealTimeClient with the credentials loaded from the application's
@@ -171,7 +171,7 @@ namespace Amazon.IVSRealTime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIVSRealTimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIVSRealTimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIVSRealTimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIVSRealTimeClient with the credentials loaded from the application's
@@ -190,7 +190,7 @@ namespace Amazon.IVSRealTime
         /// </summary>
         /// <param name="config">The AmazonIVSRealTimeClient Configuration Object</param>
         public AmazonIVSRealTimeClient(AmazonIVSRealTimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIVSRealTimeClient with AWS Credentials
@@ -293,15 +293,7 @@ namespace Amazon.IVSRealTime
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -311,7 +303,9 @@ namespace Amazon.IVSRealTime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIVSRealTimeEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIVSRealTimeAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -64,7 +64,7 @@ namespace Amazon.PaginatorsTest
         ///
         /// </summary>
         public AmazonPaginatorsTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPaginatorsTestConfig()) { }
+            : base(new AmazonPaginatorsTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPaginatorsTestClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.PaginatorsTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPaginatorsTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPaginatorsTestConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPaginatorsTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPaginatorsTestClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.PaginatorsTest
         /// </summary>
         /// <param name="config">The AmazonPaginatorsTestClient Configuration Object</param>
         public AmazonPaginatorsTestClient(AmazonPaginatorsTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,12 +227,13 @@ namespace Amazon.PaginatorsTest
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customizes the runtime pipeline.
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline">Runtime pipeline for the current client.</param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        } 
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPaginatorsTestAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

@@ -164,7 +164,7 @@ namespace Amazon.MWAA
         ///
         /// </summary>
         public AmazonMWAAClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMWAAConfig()) { }
+            : base(new AmazonMWAAConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMWAAClient with the credentials loaded from the application's
@@ -183,7 +183,7 @@ namespace Amazon.MWAA
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMWAAClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMWAAConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMWAAConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMWAAClient with the credentials loaded from the application's
@@ -202,7 +202,7 @@ namespace Amazon.MWAA
         /// </summary>
         /// <param name="config">The AmazonMWAAClient Configuration Object</param>
         public AmazonMWAAClient(AmazonMWAAConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMWAAClient with AWS Credentials
@@ -305,15 +305,7 @@ namespace Amazon.MWAA
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -323,7 +315,9 @@ namespace Amazon.MWAA
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMWAAEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMWAAAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

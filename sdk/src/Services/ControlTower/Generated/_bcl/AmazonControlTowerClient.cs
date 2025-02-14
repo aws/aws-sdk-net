@@ -494,7 +494,7 @@ namespace Amazon.ControlTower
         ///
         /// </summary>
         public AmazonControlTowerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonControlTowerConfig()) { }
+            : base(new AmazonControlTowerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonControlTowerClient with the credentials loaded from the application's
@@ -513,7 +513,7 @@ namespace Amazon.ControlTower
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonControlTowerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonControlTowerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonControlTowerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonControlTowerClient with the credentials loaded from the application's
@@ -532,7 +532,7 @@ namespace Amazon.ControlTower
         /// </summary>
         /// <param name="config">The AmazonControlTowerClient Configuration Object</param>
         public AmazonControlTowerClient(AmazonControlTowerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonControlTowerClient with AWS Credentials
@@ -635,15 +635,7 @@ namespace Amazon.ControlTower
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -653,7 +645,9 @@ namespace Amazon.ControlTower
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonControlTowerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonControlTowerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

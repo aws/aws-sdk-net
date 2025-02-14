@@ -71,7 +71,7 @@ namespace Amazon.ElasticInference
         ///
         /// </summary>
         public AmazonElasticInferenceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticInferenceConfig()) { }
+            : base(new AmazonElasticInferenceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticInferenceClient with the credentials loaded from the application's
@@ -90,7 +90,7 @@ namespace Amazon.ElasticInference
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticInferenceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticInferenceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticInferenceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticInferenceClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.ElasticInference
         /// </summary>
         /// <param name="config">The AmazonElasticInferenceClient Configuration Object</param>
         public AmazonElasticInferenceClient(AmazonElasticInferenceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -234,14 +234,6 @@ namespace Amazon.ElasticInference
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -249,7 +241,9 @@ namespace Amazon.ElasticInference
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticInferenceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticInferenceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
