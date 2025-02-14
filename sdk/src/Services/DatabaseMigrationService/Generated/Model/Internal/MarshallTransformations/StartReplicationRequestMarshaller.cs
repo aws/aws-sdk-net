@@ -87,6 +87,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CdcStopPosition);
                 }
 
+                if(publicRequest.IsSetPremigrationAssessmentSettings())
+                {
+                    context.Writer.WritePropertyName("PremigrationAssessmentSettings");
+                    context.Writer.Write(publicRequest.PremigrationAssessmentSettings);
+                }
+
                 if(publicRequest.IsSetReplicationConfigArn())
                 {
                     context.Writer.WritePropertyName("ReplicationConfigArn");
