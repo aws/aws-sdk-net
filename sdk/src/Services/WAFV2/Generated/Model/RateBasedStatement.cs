@@ -338,8 +338,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The limit on requests per 5-minute period for a single aggregation instance for the
-        /// rate-based rule. If the rate-based statement includes a <c>ScopeDownStatement</c>,
+        /// The limit on requests during the specified evaluation window for a single aggregation
+        /// instance for the rate-based rule. If the rate-based statement includes a <c>ScopeDownStatement</c>,
         /// this limit is applied only to the requests that match the statement.
         /// </para>
         ///  

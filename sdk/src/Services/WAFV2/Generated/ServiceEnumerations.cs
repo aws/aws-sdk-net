@@ -1315,6 +1315,56 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type DataProtectionAction.
+    /// </summary>
+    public class DataProtectionAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HASH for DataProtectionAction
+        /// </summary>
+        public static readonly DataProtectionAction HASH = new DataProtectionAction("HASH");
+        /// <summary>
+        /// Constant SUBSTITUTION for DataProtectionAction
+        /// </summary>
+        public static readonly DataProtectionAction SUBSTITUTION = new DataProtectionAction("SUBSTITUTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataProtectionAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataProtectionAction FindValue(string value)
+        {
+            return FindValue<DataProtectionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataProtectionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailureReason.
     /// </summary>
     public class FailureReason : ConstantClass
@@ -1416,6 +1466,68 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FallbackBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FieldToProtectType.
+    /// </summary>
+    public class FieldToProtectType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BODY for FieldToProtectType
+        /// </summary>
+        public static readonly FieldToProtectType BODY = new FieldToProtectType("BODY");
+        /// <summary>
+        /// Constant QUERY_STRING for FieldToProtectType
+        /// </summary>
+        public static readonly FieldToProtectType QUERY_STRING = new FieldToProtectType("QUERY_STRING");
+        /// <summary>
+        /// Constant SINGLE_COOKIE for FieldToProtectType
+        /// </summary>
+        public static readonly FieldToProtectType SINGLE_COOKIE = new FieldToProtectType("SINGLE_COOKIE");
+        /// <summary>
+        /// Constant SINGLE_HEADER for FieldToProtectType
+        /// </summary>
+        public static readonly FieldToProtectType SINGLE_HEADER = new FieldToProtectType("SINGLE_HEADER");
+        /// <summary>
+        /// Constant SINGLE_QUERY_ARGUMENT for FieldToProtectType
+        /// </summary>
+        public static readonly FieldToProtectType SINGLE_QUERY_ARGUMENT = new FieldToProtectType("SINGLE_QUERY_ARGUMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FieldToProtectType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FieldToProtectType FindValue(string value)
+        {
+            return FindValue<FieldToProtectType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FieldToProtectType(string value)
         {
             return FindValue(value);
         }
@@ -2046,6 +2158,10 @@ namespace Amazon.WAFV2
         /// Constant CUSTOM_RESPONSE_BODY for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField CUSTOM_RESPONSE_BODY = new ParameterExceptionField("CUSTOM_RESPONSE_BODY");
+        /// <summary>
+        /// Constant DATA_PROTECTION_CONFIG for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField DATA_PROTECTION_CONFIG = new ParameterExceptionField("DATA_PROTECTION_CONFIG");
         /// <summary>
         /// Constant DEFAULT_ACTION for ParameterExceptionField
         /// </summary>

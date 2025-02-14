@@ -102,6 +102,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomResponseBodies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataProtectionConfig", targetDepth))
+                {
+                    var unmarshaller = DataProtectionConfigUnmarshaller.Instance;
+                    unmarshalledObject.DataProtectionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultAction", targetDepth))
                 {
                     var unmarshaller = DefaultActionUnmarshaller.Instance;

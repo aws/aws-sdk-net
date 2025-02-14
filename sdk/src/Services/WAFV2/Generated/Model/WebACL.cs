@@ -36,10 +36,9 @@ namespace Amazon.WAFV2.Model
     /// a default action to take (allow, block) for any request that does not match any of
     /// the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>,
     /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
-    /// resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
-    /// API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-    /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
-    /// instance.
+    /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
+    /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+    /// user pool, App Runner service, and Amazon Web Services Verified Access instance.
     /// </summary>
     public partial class WebACL
     {
@@ -49,6 +48,7 @@ namespace Amazon.WAFV2.Model
         private CaptchaConfig _captchaConfig;
         private ChallengeConfig _challengeConfig;
         private Dictionary<string, CustomResponseBody> _customResponseBodies = AWSConfigs.InitializeCollections ? new Dictionary<string, CustomResponseBody>() : null;
+        private DataProtectionConfig _dataProtectionConfig;
         private DefaultAction _defaultAction;
         private string _description;
         private string _id;
@@ -218,6 +218,33 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCustomResponseBodies()
         {
             return this._customResponseBodies != null && (this._customResponseBodies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataProtectionConfig. 
+        /// <para>
+        /// Specifies data protection to apply to the web request data that WAF stores for the
+        /// web ACL. This is a web ACL level data protection option. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The data protection that you configure for the web ACL alters the data that's available
+        /// for any other data collection activity, including WAF logging, web ACL request sampling,
+        /// Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management.
+        /// Your other option for data protection is in the logging configuration, which only
+        /// affects logging. 
+        /// </para>
+        /// </summary>
+        public DataProtectionConfig DataProtectionConfig
+        {
+            get { return this._dataProtectionConfig; }
+            set { this._dataProtectionConfig = value; }
+        }
+
+        // Check to see if DataProtectionConfig property is set
+        internal bool IsSetDataProtectionConfig()
+        {
+            return this._dataProtectionConfig != null;
         }
 
         /// <summary>
