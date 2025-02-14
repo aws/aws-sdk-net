@@ -39,6 +39,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -46,6 +50,10 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateApprovedOriginRequest.Origin</property>
     <max>267</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateBotRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateBotRequest.InstanceId</property>
@@ -68,6 +76,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -78,6 +90,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateLambdaFunctionRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateLambdaFunctionRequest.FunctionArn</property>
     <min>1</min>
     <max>140</max>
@@ -86,6 +102,10 @@
     <property>Amazon.Connect.Model.AssociateLambdaFunctionRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateLexBotRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateLexBotRequest.InstanceId</property>
@@ -110,6 +130,10 @@
     <property>Amazon.Connect.Model.AssociateRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateSecurityKeyRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateSecurityKeyRequest.InstanceId</property>
@@ -925,6 +949,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteInstanceRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteInstanceRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1317,6 +1345,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1324,6 +1356,10 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateApprovedOriginRequest.Origin</property>
     <max>267</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateBotRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateBotRequest.InstanceId</property>
@@ -1341,9 +1377,17 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateLambdaFunctionRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLambdaFunctionRequest.FunctionArn</property>
@@ -1358,6 +1402,10 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.BotName</property>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateLexBotRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateLexBotRequest.InstanceId</property>
@@ -1387,6 +1435,10 @@
     <property>Amazon.Connect.Model.DisassociateSecurityKeyRequest.AssociationId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateSecurityKeyRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateSecurityKeyRequest.InstanceId</property>
@@ -1641,6 +1693,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListAnalyticsDataAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAnalyticsDataLakeDataSetsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListAnalyticsDataLakeDataSetsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -3483,6 +3545,10 @@
     <pattern>^[\P{C}\r\n\t]{1,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateInstanceAttributeRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceAttributeRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -3496,6 +3562,10 @@
     <property>Amazon.Connect.Model.UpdateInstanceStorageConfigRequest.AssociationId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateInstanceStorageConfigRequest.ClientToken</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateInstanceStorageConfigRequest.InstanceId</property>
@@ -3909,6 +3979,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AnalyticsDataAssociationResult.DataSetId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AnalyticsDataSetsResult.DataSetId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

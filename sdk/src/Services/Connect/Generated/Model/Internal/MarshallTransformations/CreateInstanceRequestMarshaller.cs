@@ -73,6 +73,11 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetDirectoryId())
                 {
                     context.Writer.WritePropertyName("DirectoryId");

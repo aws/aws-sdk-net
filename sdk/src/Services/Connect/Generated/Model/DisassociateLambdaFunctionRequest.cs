@@ -41,8 +41,31 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class DisassociateLambdaFunctionRequest : AmazonConnectRequest
     {
+        private string _clientToken;
         private string _functionArn;
         private string _instanceId;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=500)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FunctionArn. 

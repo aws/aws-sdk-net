@@ -3367,7 +3367,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -3411,13 +3411,18 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
-        /// Contact information remains available in Amazon Connect for 24 months from the InitiationTimestamp,
-        /// and then it is deleted. Only contact information that is available in Amazon Connect
-        /// is returned by this API
+        ///  <c>CustomerEndpoint</c> and <c>SystemEndpoint</c> are only populated for EMAIL contacts.
+        /// 
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information remains available in Amazon Connect for 24 months from the <c>InitiationTimestamp</c>,
+        /// and then it is deleted. Only contact information that is available in Amazon Connect
+        /// is returned by this API.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// <param name="cancellationToken">
@@ -5364,7 +5369,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
+        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
         /// 
         /// </para>
         /// </summary>
@@ -5468,6 +5473,40 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  ListAnalyticsDataLakeDataSets
+
+
+
+        /// <summary>
+        /// Lists the data lake datasets available to associate with for a given Amazon Connect
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataLakeDataSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnalyticsDataLakeDataSets service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAnalyticsDataLakeDataSets">REST API Reference for ListAnalyticsDataLakeDataSets Operation</seealso>
+        Task<ListAnalyticsDataLakeDataSetsResponse> ListAnalyticsDataLakeDataSetsAsync(ListAnalyticsDataLakeDataSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListApprovedOrigins
 
 
@@ -5546,7 +5585,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>
@@ -7318,7 +7357,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web Services Support.
+        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
         /// </para>
         ///  </important> 
         /// <para>
@@ -8304,7 +8343,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web Services Support. 
+        /// contact Amazon Web ServicesSupport. 
         /// </para>
         ///  
         /// <para>
@@ -9374,7 +9413,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web Services Support.
+        /// access to this API, contact Amazon Web ServicesSupport.
         /// 
         ///  
         /// <para>

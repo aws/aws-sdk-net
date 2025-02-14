@@ -30,41 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateSecurityKey operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
-    /// Associates a security key to the instance.
-    /// </para>
+    /// Container for the parameters to the ListAnalyticsDataLakeDataSets operation.
+    /// Lists the data lake datasets available to associate with for a given Amazon Connect
+    /// instance.
     /// </summary>
-    public partial class AssociateSecurityKeyRequest : AmazonConnectRequest
+    public partial class ListAnalyticsDataLakeDataSetsRequest : AmazonConnectRequest
     {
-        private string _clientToken;
         private string _instanceId;
-        private string _key;
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
-        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-        /// retries safe with idempotent APIs</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=500)]
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -87,22 +61,41 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A valid security key in PEM format as a String.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string Key
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._key != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

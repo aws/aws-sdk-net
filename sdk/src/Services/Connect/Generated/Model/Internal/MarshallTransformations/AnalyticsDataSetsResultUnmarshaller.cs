@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AnalyticsDataAssociationResult Object
+    /// Response Unmarshaller for AnalyticsDataSetsResult Object
     /// </summary>  
-    public class AnalyticsDataAssociationResultUnmarshaller : IUnmarshaller<AnalyticsDataAssociationResult, XmlUnmarshallerContext>, IUnmarshaller<AnalyticsDataAssociationResult, JsonUnmarshallerContext>
+    public class AnalyticsDataSetsResultUnmarshaller : IUnmarshaller<AnalyticsDataSetsResult, XmlUnmarshallerContext>, IUnmarshaller<AnalyticsDataSetsResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AnalyticsDataAssociationResult IUnmarshaller<AnalyticsDataAssociationResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AnalyticsDataSetsResult IUnmarshaller<AnalyticsDataSetsResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AnalyticsDataAssociationResult Unmarshall(JsonUnmarshallerContext context)
+        public AnalyticsDataSetsResult Unmarshall(JsonUnmarshallerContext context)
         {
-            AnalyticsDataAssociationResult unmarshalledObject = new AnalyticsDataAssociationResult();
+            AnalyticsDataSetsResult unmarshalledObject = new AnalyticsDataSetsResult();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,28 +72,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceShareArn", targetDepth))
+                if (context.TestExpression("DataSetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceShareId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceShareStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceShareStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AnalyticsDataAssociationResultUnmarshaller _instance = new AnalyticsDataAssociationResultUnmarshaller();        
+        private static AnalyticsDataSetsResultUnmarshaller _instance = new AnalyticsDataSetsResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AnalyticsDataAssociationResultUnmarshaller Instance
+        public static AnalyticsDataSetsResultUnmarshaller Instance
         {
             get
             {

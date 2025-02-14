@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DisassociateApprovedOrigin Request Marshaller
+    /// ListAnalyticsDataLakeDataSets Request Marshaller
     /// </summary>       
-    public class DisassociateApprovedOriginRequestMarshaller : IMarshaller<IRequest, DisassociateApprovedOriginRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAnalyticsDataLakeDataSetsRequestMarshaller : IMarshaller<IRequest, ListAnalyticsDataLakeDataSetsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DisassociateApprovedOriginRequest)input);
+            return this.Marshall((ListAnalyticsDataLakeDataSetsRequest)input);
         }
 
         /// <summary>
@@ -53,32 +53,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DisassociateApprovedOriginRequest publicRequest)
+        public IRequest Marshall(ListAnalyticsDataLakeDataSetsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
             
-            if (publicRequest.IsSetClientToken())
-                request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
-            else            
-                request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
-                
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
-            if (publicRequest.IsSetOrigin())
-                request.Parameters.Add("origin", StringUtils.FromString(publicRequest.Origin));
-            request.ResourcePath = "/instance/{InstanceId}/approved-origin";
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/analytics-data/instance/{InstanceId}/datasets";
             request.UseQueryString = true;
 
             return request;
         }
-        private static DisassociateApprovedOriginRequestMarshaller _instance = new DisassociateApprovedOriginRequestMarshaller();        
+        private static ListAnalyticsDataLakeDataSetsRequestMarshaller _instance = new ListAnalyticsDataLakeDataSetsRequestMarshaller();        
 
-        internal static DisassociateApprovedOriginRequestMarshaller GetInstance()
+        internal static ListAnalyticsDataLakeDataSetsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +83,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateApprovedOriginRequestMarshaller Instance
+        public static ListAnalyticsDataLakeDataSetsRequestMarshaller Instance
         {
             get
             {
