@@ -30,43 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
-    /// Data API request automatically resumes the DB instance. Wait a few seconds and try
-    /// again.
+    /// The resource is in an invalid state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class DatabaseResumingException : AmazonRDSDataServiceException
+    public partial class InvalidResourceStateException : AmazonRDSDataServiceException
     {
 
         /// <summary>
-        /// Constructs a new DatabaseResumingException with the specified error
+        /// Constructs a new InvalidResourceStateException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public DatabaseResumingException(string message) 
+        public InvalidResourceStateException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of DatabaseResumingException
+        /// Construct instance of InvalidResourceStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public DatabaseResumingException(string message, Exception innerException) 
+        public InvalidResourceStateException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of DatabaseResumingException
+        /// Construct instance of InvalidResourceStateException
         /// </summary>
         /// <param name="innerException"></param>
-        public DatabaseResumingException(Exception innerException) 
+        public InvalidResourceStateException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of DatabaseResumingException
+        /// Construct instance of InvalidResourceStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -74,30 +72,30 @@ namespace Amazon.RDSDataService.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public DatabaseResumingException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidResourceStateException(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of DatabaseResumingException
+        /// Construct instance of InvalidResourceStateException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public DatabaseResumingException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidResourceStateException(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the DatabaseResumingException class with serialized data.
+        /// Constructs a new instance of the InvalidResourceStateException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected DatabaseResumingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidResourceStateException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

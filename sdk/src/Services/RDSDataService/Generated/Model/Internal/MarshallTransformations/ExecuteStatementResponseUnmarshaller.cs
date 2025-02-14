@@ -141,6 +141,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidResourceStateException"))
+                {
+                    return InvalidResourceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSecretException"))
                 {
                     return InvalidSecretExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
