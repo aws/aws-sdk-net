@@ -1,3 +1,19 @@
+### 3.7.983.0 (2025-02-14 19:27 UTC)
+* CodeBuild (3.7.410.0)
+	* Added test suite names to test case metadata
+* Connect (3.7.418.0)
+	* Release Notes: 1) Analytics API enhancements: Added new ListAnalyticsDataLakeDataSets API. 2)  Onboarding API Idempotency: Adds ClientToken to instance creation and management APIs to support idempotency.
+* DatabaseMigrationService (3.7.406.0)
+	* Introduces premigration assessment feature to DMS Serverless API for start-replication and describe-replications
+* RDSDataService (3.7.402.0)
+	* Add support for Stop DB feature.
+* S3 (3.7.415.0)
+	* Added support for Content-Range header in HeadObject response.
+* WAFV2 (3.7.403.0)
+	* The WAFv2 API now supports configuring data protection in webACLs.
+* WorkSpacesThinClient (3.7.402.0)
+	* Update Environment and Device name field definitions
+
 ### 3.7.982.0 (2025-02-13 19:21 UTC)
 * AccessAnalyzer (3.7.403.0)
 	* This release introduces the getFindingsStatistics API, enabling users to retrieve aggregated finding statistics for IAM Access Analyzer's external access and unused access analysis features. Updated service API and documentation.
