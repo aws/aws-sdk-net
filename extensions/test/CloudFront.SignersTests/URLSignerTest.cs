@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
 using Amazon.CloudFront;
-using ThirdParty.Json.LitJson;
 using System.Collections.Generic;
 using Xunit;
+using System.Text.Json;
+using System.Linq;
 namespace AWSSDK_DotNet.UnitTests
 {
     public class URLSignerTest
@@ -68,26 +69,24 @@ namespace AWSSDK_DotNet.UnitTests
 
             foreach(var policy in new List<string> { policyWithEmptyString, policyWithNull })
             {
-                var jsonObject = JsonMapper.ToObject(policy);
+                using (var jsonObject = JsonDocument.Parse(policy))
+                {
+                    var statementList = jsonObject.RootElement.GetProperty("Statement");
+                    Assert.True(statementList.ValueKind == JsonValueKind.Array);
 
-                var statementList = jsonObject["Statement"];
-                Assert.True(statementList.IsArray);
+                    var statement = statementList.EnumerateArray().First();
 
-                var statement = statementList[0];
-                Assert.NotNull(statement);
+                    var resource = statement.GetProperty("Resource");
+                    Assert.Equal(resource.ToString(), resourcePath);
 
-                var resource = statement["Resource"];
-                Assert.Equal(resource.ToString(), resourcePath);
+                    var condition = statement.GetProperty("Condition");
+                    Assert.True(condition.ValueKind == JsonValueKind.Object);
 
-                var condition = statement["Condition"];
-                Assert.NotNull(condition);
-                Assert.True(condition.IsObject);
+                    Assert.False(condition.TryGetProperty("IpAddress", out _));
 
-                var IpAddress = condition["IpAddress"];
-                Assert.Null(IpAddress);
-
-                var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
-                Assert.Equal(1357034400, long.Parse(epochTime.ToString()));
+                    var epochTime = condition.GetProperty("DateLessThan").GetProperty("AWS:EpochTime");
+                    Assert.Equal(1357034400, long.Parse(epochTime.ToString()));
+                }
             }
         }
 
@@ -103,26 +102,25 @@ namespace AWSSDK_DotNet.UnitTests
                                     dateTime,
                                     ipRange);
 
-            var jsonObject = JsonMapper.ToObject(policyDocument);
+            using (var jsonObject = JsonDocument.Parse(policyDocument))
+            {
+                var statementList = jsonObject.RootElement.GetProperty("Statement");
+                Assert.True(statementList.ValueKind == JsonValueKind.Array);
 
-            var statementList = jsonObject["Statement"];
-            Assert.True(statementList.IsArray);
+                var statement = statementList.EnumerateArray().First();
 
-            var statement = statementList[0];
-            Assert.NotNull(statement);
+                var resource = statement.GetProperty("Resource");
+                Assert.Equal(resource.ToString(), resourcePath);
 
-            var resource = statement["Resource"];
-            Assert.Equal(resource.ToString(), resourcePath);
+                var condition = statement.GetProperty("Condition");
+                Assert.True(condition.ValueKind == JsonValueKind.Object);
 
-            var condition = statement["Condition"];
-            Assert.NotNull(condition);
-            Assert.True(condition.IsObject);
+                var sourceIp = condition.GetProperty("IpAddress").GetProperty("AWS:SourceIp");
+                Assert.Equal(ipRange, sourceIp.ToString());
 
-            var sourceIp = condition["IpAddress"]["AWS:SourceIp"];
-            Assert.Equal(ipRange, sourceIp.ToString());
-
-            var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
-            Assert.Equal(1357034400, long.Parse(epochTime.ToString()));
+                var epochTime = condition.GetProperty("DateLessThan").GetProperty("AWS:EpochTime");
+                Assert.Equal(1357034400, long.Parse(epochTime.ToString()));
+            }
         }
 
         /// <summary>

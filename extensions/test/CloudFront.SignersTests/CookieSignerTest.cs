@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 using Amazon.CloudFront;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 using Xunit;
 
 namespace AWSSDK_DotNet.UnitTests
@@ -111,11 +111,20 @@ namespace AWSSDK_DotNet.UnitTests
             
             string policyJson = Encoding.UTF8.GetString(
                 Convert.FromBase64String(cookies.Policy.Value.Replace('-', '+').Replace('_', '=').Replace('~', '/')));
-            
-            var policyData = JsonMapper.ToObject(policyJson);
-            var actualResourceUrl = policyData["Statement"][0]["Resource"].ToString();
 
-            Assert.Equal(expectedResourceUrl, actualResourceUrl);
+            using (JsonDocument doc = JsonDocument.Parse(policyJson))
+            {
+                JsonElement root = doc.RootElement;
+
+                // Extracting the "Resource" field from JSON
+                string actualResourceUrl = root
+                    .GetProperty("Statement")[0]
+                    .GetProperty("Resource")
+                    .GetString();
+
+                Assert.Equal(expectedResourceUrl, actualResourceUrl);
+            }
+
         }
     }
 }
