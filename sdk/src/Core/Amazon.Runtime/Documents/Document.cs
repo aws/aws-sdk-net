@@ -20,9 +20,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
-using ThirdParty.Json.LitJson;
 using ThirdParty.RuntimeBackports;
-
+using System.Text.Json;
 namespace Amazon.Runtime.Documents
 {
     /// <summary>
@@ -415,47 +414,50 @@ namespace Amazon.Runtime.Documents
         [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
         public static Document FromObject(object o)
         {
-            IJsonWrapper jsonData = JsonMapper.ToObject(JsonMapper.ToJson(o));
+        string jsonString = JsonSerializer.Serialize(o);
+        using JsonDocument jsonDoc = JsonDocument.Parse(jsonString);
 
-            return FromObject(jsonData);
+        return FromObject(jsonDoc.RootElement);
         }
 
         [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-        private static Document FromObject(IJsonWrapper jsonData)
+    private static Document FromObject(JsonElement jsonElement)
+    {
+        switch (jsonElement.ValueKind)
         {
-            switch (jsonData.GetJsonType())
-            {
-                case JsonType.None:
-                    return new Document();
-                case JsonType.Boolean:
-                    return new Document(jsonData.GetBoolean());
-                case JsonType.Double:
-                    return new Document(jsonData.GetDouble());
-                case JsonType.Int:
-                    return new Document(jsonData.GetInt());
-                case JsonType.Long:
-                    return new Document(jsonData.GetLong());
-                case JsonType.String:
-                    return new Document(jsonData.GetString());
-                case JsonType.Array:
-                    return new Document(jsonData.Cast<JsonData>().Select(FromObject).ToArray());
-                case JsonType.Object:
-                    var dictionary = new Dictionary<string, Document>();
-                    Copy(jsonData, dictionary);
-                    return new Document(dictionary);
-            }
-
-            throw new NotSupportedException($"Couldn't convert {jsonData.GetJsonType()}");
+            case JsonValueKind.Undefined:
+            case JsonValueKind.Null:
+                return new Document();
+            case JsonValueKind.False:
+            case JsonValueKind.True:
+                return new Document(jsonElement.GetBoolean());
+            case JsonValueKind.Number:
+                if (jsonElement.TryGetInt64(out long longValue))
+                    return new Document(longValue);
+                if (jsonElement.TryGetDouble(out double doubleValue))
+                    return new Document(doubleValue);
+                throw new NotSupportedException("Unsupported number format");
+            case JsonValueKind.String:
+                return new Document(jsonElement.GetString());
+            case JsonValueKind.Array:
+                return new Document(jsonElement.EnumerateArray().Select(FromObject).ToArray());
+            case JsonValueKind.Object:
+                var dictionary = new Dictionary<string, Document>();
+                Copy(jsonElement, dictionary);
+                return new Document(dictionary);
         }
+
+        throw new NotSupportedException($"Couldn't convert {jsonElement.ValueKind}");
+    }
 
         [RequiresUnreferencedCode("FromObject is not currently supported for Native AOT compilation due unbounded reflection required.")]
-        private static void Copy(IDictionary source, Dictionary<string, Document> target)
+    private static void Copy(JsonElement jsonElement, Dictionary<string, Document> target)
+    {
+        foreach (JsonProperty property in jsonElement.EnumerateObject())
         {
-            foreach (var key in source.Keys)
-            {
-                target[key.ToString()] = FromObject((IJsonWrapper)source[key]);
-            }
+            target[property.Name] = FromObject(property.Value);
         }
+    }
         #endregion
     }
 }
