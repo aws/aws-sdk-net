@@ -83,7 +83,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// The name of the device to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
