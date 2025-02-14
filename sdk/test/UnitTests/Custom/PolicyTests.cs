@@ -74,7 +74,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var json = policy.ToJson();
             Console.WriteLine(json);
-            Assert.IsTrue(json.Contains("\"Principal\" : \"*\""));
+            Assert.IsTrue(json.Contains("\"Principal\": \"*\""));
 
             var roundTripPolicy = Policy.FromJson(json);
 

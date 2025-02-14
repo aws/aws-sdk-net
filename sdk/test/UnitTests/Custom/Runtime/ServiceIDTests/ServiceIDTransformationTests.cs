@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Security.Cryptography;
 using System.IO;
@@ -52,29 +52,15 @@ namespace AWSSDK.UnitTests
         }
         private void PopulateServiceList(List<Service> services, string pathToJsonFile)
         {
-            JsonData ServiceIdArray;
             using (var reader = new StreamReader(pathToJsonFile))
             {
-                ServiceIdArray = JsonMapper.ToObject(reader);
-                foreach (var serviceId in ServiceIdArray)
+                JsonDocument data = JsonDocument.Parse(reader.ReadToEnd());
+                foreach (var serviceData in data.RootElement.EnumerateArray())
                 {
-                    JsonData serviceData = serviceId as JsonData;
                     Service service = new Service();
-                    foreach (var key in serviceData.PropertyNames)
-                    {
-                        switch (key)
-                        {
-                            case ServiceIdKey:
-                                service.ServiceId = serviceData[key].ToString();
-                                break;
-                            case ServiceSectionNameKey:
-                                service.ServicesSectionName = serviceData[key].ToString();
-                                break;
-                            case ServiceEnvVarNameKey:
-                                service.ServiceEnvVarName = serviceData[key].ToString();
-                                break;
-                        }
-                    }
+                    service.ServiceId = serviceData.GetProperty(ServiceIdKey).GetString();
+                    service.ServicesSectionName = serviceData.GetProperty(ServiceSectionNameKey).GetString();
+                    service.ServiceEnvVarName = serviceData.GetProperty(ServiceEnvVarNameKey).GetString();
                     services.Add(service);
                 }
             }

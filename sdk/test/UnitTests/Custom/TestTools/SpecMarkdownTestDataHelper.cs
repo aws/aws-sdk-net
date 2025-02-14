@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using ThirdParty.Json.LitJson;
-
 namespace AWSSDK.UnitTests
 {
     public static class SpecMarkdownTestDataHelper

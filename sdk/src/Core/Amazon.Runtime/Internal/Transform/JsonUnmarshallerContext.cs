@@ -288,7 +288,7 @@ namespace Amazon.Runtime.Internal.Transform
             return text;
         }
 
-#endregion
+        #endregion
 
         #region Public properties
 

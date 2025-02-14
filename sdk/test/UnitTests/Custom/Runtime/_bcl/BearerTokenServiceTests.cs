@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Amazon;
 using Amazon.BearerTokenAuthTest;
@@ -70,7 +71,7 @@ namespace AWSSDK.UnitTests.Runtime
             var mockFileSystem = new MockFileSystem();
             mockFileSystem.WriteAllText(
                 Path.Combine(FakeCacheDirectory, FakeFileUrl),
-                Json.LitJson.JsonMapper.ToJson(fakeToken));
+                JsonSerializer.Serialize(fakeToken));
 
             var config = BuildConfig(mockFileSystem);
 

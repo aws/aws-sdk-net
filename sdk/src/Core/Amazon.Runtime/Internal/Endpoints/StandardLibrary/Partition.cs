@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
-using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 {

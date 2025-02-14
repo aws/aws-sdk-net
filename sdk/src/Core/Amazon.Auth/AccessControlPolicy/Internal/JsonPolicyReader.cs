@@ -16,8 +16,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Text;
-
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Auth.AccessControlPolicy.Internal
 {
@@ -29,17 +28,17 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
         public static Policy ReadJsonStringToPolicy(string jsonString)
         {
             Policy policy = new Policy();
-            JsonData jPolicy = JsonMapper.ToObject(jsonString);
+            using JsonDocument doc = JsonDocument.Parse(jsonString);
+            JsonElement jPolicy = doc.RootElement;
 
-            if (jPolicy[JsonDocumentFields.POLICY_ID] != null && jPolicy[JsonDocumentFields.POLICY_ID].IsString)
+            if (jPolicy.TryGetProperty(JsonDocumentFields.POLICY_ID, out JsonElement policyElement) && policyElement.ValueKind == JsonValueKind.String)
             {
-                policy.Id = (string)jPolicy[JsonDocumentFields.POLICY_ID];
+                policy.Id = policyElement.GetString();
             }
 
-            JsonData jStatements = jPolicy[JsonDocumentFields.STATEMENT] as JsonData;
-            if (jStatements != null && jStatements.IsArray)
+            if (jPolicy.TryGetProperty(JsonDocumentFields.STATEMENT, out JsonElement jStatements) && jStatements.ValueKind == JsonValueKind.Array)
             {
-                foreach (JsonData jStatement in jStatements)
+                foreach (JsonElement jStatement in jStatements.EnumerateArray())
                 {
                     Statement statement = convertStatement(jStatement);
                     if (statement != null)
@@ -48,190 +47,164 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     }
                 }
             }
-
             return policy;
         }
 
-        private static Statement convertStatement(JsonData jStatement)
+        private static Statement convertStatement(JsonElement jStatement)
         {
-            if (jStatement[JsonDocumentFields.STATEMENT_EFFECT] == null || !jStatement[JsonDocumentFields.STATEMENT_EFFECT].IsString)
-                return null;
+            if (jStatement.TryGetProperty(JsonDocumentFields.STATEMENT_EFFECT, out JsonElement jEffect) && jEffect.ValueKind == JsonValueKind.String)
+            {
+                string jEffectValue = jEffect.GetString();
+                Statement.StatementEffect effect;
+                if (JsonDocumentFields.EFFECT_VALUE_ALLOW.Equals(jEffectValue))
+                    effect = Statement.StatementEffect.Allow;
+                else
+                    effect = Statement.StatementEffect.Deny;
 
+                Statement statement = new Statement(effect);
 
-            string jEffect = (string)jStatement[JsonDocumentFields.STATEMENT_EFFECT];
-            Statement.StatementEffect effect;
-            if (JsonDocumentFields.EFFECT_VALUE_ALLOW.Equals(jEffect))
-                effect = Statement.StatementEffect.Allow;
+                if (jStatement.TryGetProperty(JsonDocumentFields.STATEMENT_ID, out JsonElement statementId) && statementId.ValueKind == JsonValueKind.String)
+                    statement.Id = statementId.GetString();
+
+                convertActions(statement, jStatement);
+                convertResources(statement, jStatement);
+                convertCondition(statement, jStatement);
+                convertPrincipals(statement, jStatement);
+                return statement;
+            }
             else
-                effect = Statement.StatementEffect.Deny;
-
-            Statement statement = new Statement(effect);
-
-            if (jStatement[JsonDocumentFields.STATEMENT_ID] != null && jStatement[JsonDocumentFields.STATEMENT_ID].IsString)
-                statement.Id = (string)jStatement[JsonDocumentFields.STATEMENT_ID];
-
-            convertActions(statement, jStatement);
-            convertResources(statement, jStatement);
-            convertCondition(statement, jStatement);
-            convertPrincipals(statement, jStatement);
-
-            return statement;
-        }
-
-        private static void convertPrincipals(Statement statement, JsonData jStatement)
-        {
-            JsonData jPrincipals = jStatement[JsonDocumentFields.PRINCIPAL];
-            if (jPrincipals == null)
             {
-                return;
-            }
-
-            if (jPrincipals.IsObject)
-            {
-                convertPrincipalRecord(statement, jPrincipals);
-            }
-            else if (jPrincipals.IsArray)
-            {
-                foreach (JsonData jPrincipal in jPrincipals)
-                {
-                    convertPrincipalRecord(statement, jPrincipal);
-                }
-            }
-            else if (jPrincipals.IsString && jPrincipals.Equals("*"))
-            {
-                statement.Principals.Add(Principal.Anonymous);
+                return null;
             }
         }
 
-        private static void convertPrincipalRecord(Statement statement, JsonData jPrincipal)
+        private static void convertPrincipals(Statement statement, JsonElement jStatement)
         {
-            foreach (KeyValuePair<string, JsonData> kvp in jPrincipal)
+            if (jStatement.TryGetProperty(JsonDocumentFields.PRINCIPAL, out JsonElement jPrincipals))
             {
-                if (kvp.Value == null)
+                // if the principal's value is a string and not an object then it can only be "*".
+                // do not try to enumerate the object and return.
+                if (jPrincipals.ValueKind == JsonValueKind.String)
                 {
-                    continue;
-                }
-
-                if (kvp.Value.IsArray)
-                {
-                    foreach (JsonData tok in kvp.Value)
+                    if (jPrincipals.GetString().Equals("*"))
                     {
-                        if (tok.IsString)
+                        statement.Principals.Add(Principal.Anonymous);
+                        return;
+                    }
+                }
+
+                foreach (JsonProperty jPrincipal in jPrincipals.EnumerateObject())
+                {
+                    if (jPrincipal.Value.ValueKind == JsonValueKind.String)
+                    {
+                        if (jPrincipal.Value.GetString().Equals("*"))
+                        {
+                            statement.Principals.Add(Principal.Anonymous);
+                        }
+                        else
                         {
                             // Don't strip '-' and assume the policy being deserialized is already valid.
-                            Principal principal = new Principal(kvp.Key, (string)tok, false);
-                            statement.Principals.Add(principal);
+                            Principal principal = new Principal(jPrincipal.Name, jPrincipal.Value.GetString());
                         }
                     }
-                }
-                else if(kvp.Value.IsString)
-                {
-                    // Don't strip '-' and assume the policy being deserialized is already valid.
-                    Principal principal = new Principal(kvp.Key, (string)kvp.Value, false);
-                    statement.Principals.Add(principal);
-                }
-            }
-        }
-
-        private static void convertActions(Statement statement, JsonData jStatement)
-        {
-            JsonData jActions = jStatement[JsonDocumentFields.ACTION];
-            if (jActions == null)
-            {
-                return;
-            }
-
-            if (jActions.IsString)
-            {
-                statement.Actions.Add(new ActionIdentifier((string)jActions));
-            }
-            else if (jActions.IsArray)
-            {
-                foreach (JsonData jActionValue in jActions)
-                {
-                    if (jActionValue.IsString)
+                    else if (jPrincipal.Value.ValueKind == JsonValueKind.Array)
                     {
-                        statement.Actions.Add(new ActionIdentifier((string)jActionValue));
-                    }
-                }
-            }
-        }
-
-        private static void convertResources(Statement statement, JsonData jStatement)
-        {
-            JsonData jResources = jStatement[JsonDocumentFields.RESOURCE];
-            if (jResources == null)
-            {
-                return;
-            }
-
-            if (jResources.IsString)
-            {
-                statement.Resources.Add(new Resource((string)jResources));
-            }
-            else if (jResources.IsArray)
-            {
-                foreach (JsonData jResourceValue in jResources)
-                {
-                    if (jResourceValue.IsString)
-                    {
-                        statement.Resources.Add(new Resource((string)jResourceValue));
-                    }
-                }
-            }
-        }
-
-        private static void convertCondition(Statement statement, JsonData jStatement)
-        {
-            JsonData jConditions = jStatement[JsonDocumentFields.CONDITION];
-            if (jConditions == null)
-            {
-                return;
-            }
-
-            if (jConditions.IsObject)
-            {
-                convertConditionRecord(statement, jConditions);
-            }
-            else if (jConditions.IsArray)
-            {
-                foreach (JsonData jCondition in jConditions)
-                {
-                    convertConditionRecord(statement, jCondition);
-                }
-            }
-        }
-
-        private static void convertConditionRecord(Statement statement, JsonData jCondition)
-        {
-            foreach (KeyValuePair<string, JsonData> kvp1 in jCondition)
-            {
-                string type = kvp1.Key;
-                JsonData comparisons = kvp1.Value;
-                foreach (KeyValuePair<string, JsonData> kvp2 in comparisons)
-                {
-                    string key = kvp2.Key;
-                    List<string> values = new List<string>();
-                    if (kvp2.Value != null)
-                    {
-                        if (kvp2.Value.IsString)
+                        foreach (JsonElement arrayElement in jPrincipals.EnumerateArray())
                         {
-                            values.Add((string)kvp2.Value);
-                        }
-                        else if (kvp2.Value.IsArray)
-                        {
-                            foreach (JsonData jValue in kvp2.Value)
+                            if (arrayElement.ValueKind == JsonValueKind.String)
                             {
-                                if (jValue.IsString)
-                                {
-                                    values.Add((string)jValue);
-                                }
+                                // Don't strip '-' and assume the policy being deserialized is already valid.
+                                Principal principal = new Principal(jPrincipal.Name, arrayElement.GetString(), false);
                             }
                         }
                     }
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
 
-                    Condition condition = new Condition(type, key, values.ToArray());
-                    statement.Conditions.Add(condition);
+        private static void convertActions(Statement statement, JsonElement jStatement)
+        {
+            if (jStatement.TryGetProperty(JsonDocumentFields.ACTION, out JsonElement jActionsElement))
+            {
+                if (jActionsElement.ValueKind == JsonValueKind.String)
+                {
+                    statement.Actions.Add(new ActionIdentifier(jActionsElement.GetString()));
+                }
+                else if (jActionsElement.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (JsonElement jActionValue in jActionsElement.EnumerateArray())
+                    {
+                        if (jActionValue.ValueKind == JsonValueKind.String)
+                        {
+                            statement.Actions.Add(new ActionIdentifier(jActionValue.GetString()));
+                        }
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private static void convertResources(Statement statement, JsonElement jStatement)
+        {
+            if (jStatement.TryGetProperty(JsonDocumentFields.RESOURCE, out JsonElement jResourceElement))
+            {
+                if (jResourceElement.ValueKind == JsonValueKind.String)
+                {
+                    statement.Resources.Add(new Resource(jResourceElement.GetString()));
+                }
+                else if (jResourceElement.ValueKind == JsonValueKind.Array)
+                {
+                    foreach (JsonElement jResourceValue in jResourceElement.EnumerateArray())
+                    {
+                        if (jResourceValue.ValueKind == JsonValueKind.String)
+                        {
+                            statement.Resources.Add(new Resource(jResourceValue.GetString()));
+                        }
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private static void convertCondition(Statement statement, JsonElement jStatement)
+        {
+            if (jStatement.TryGetProperty(JsonDocumentFields.CONDITION, out JsonElement jCondition))
+            {
+                foreach (JsonProperty jConditionProperty in jCondition.EnumerateObject())
+                {
+                    string type = jConditionProperty.Name;
+                    JsonElement comparisons = jConditionProperty.Value;
+                    foreach (JsonProperty jComparison in comparisons.EnumerateObject())
+                    {
+                        string key = jComparison.Name;
+                        List<string> values = new List<string>();
+                        if (jComparison.Value.ValueKind == JsonValueKind.String)
+                        {
+                            values.Add(jComparison.Value.GetString());
+                        }
+                        else if (jComparison.Value.ValueKind == JsonValueKind.Array)
+                        {
+                            foreach (JsonElement jValue in jComparison.Value.EnumerateArray())
+                            {
+                                if (jValue.ValueKind == JsonValueKind.String)
+                                {
+                                    values.Add(jValue.GetString());
+                                }
+                            }
+                        }
+                        Condition condition = new Condition(type, key, values.ToArray());
+                        statement.Conditions.Add(condition);
+                    }
                 }
             }
         }

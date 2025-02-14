@@ -21,12 +21,12 @@ using System.Net;
 using System.Threading;
 
 using Amazon.Runtime;
-using ThirdParty.Json.LitJson;
 using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK.Runtime.Internal.Util;
 using Amazon.Runtime.Internal;
 using Amazon.Util.Internal;
+using System.Text.Json;
 
 namespace Amazon.Util
 {
@@ -309,10 +309,10 @@ namespace Amazon.Util
                 {
                     try
                     {
-                        var jsonDocument = JsonMapper.ToObject(identityDocument.ToString());
-                        var regionName = jsonDocument["region"];
-                        if (regionName != null)
-                            return RegionEndpoint.GetBySystemName(regionName.ToString());
+                        using JsonDocument doc = JsonDocument.Parse(identityDocument.ToString());
+                        JsonElement rootElement = doc.RootElement;
+                        if (rootElement.TryGetProperty("region", out JsonElement value))
+                            return RegionEndpoint.GetBySystemName(value.GetString());
                     }
                     catch (Exception e)
                     {

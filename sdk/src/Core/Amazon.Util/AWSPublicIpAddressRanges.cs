@@ -4,8 +4,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.Json;
 using Amazon.Runtime;
-using ThirdParty.Json.LitJson;
 
 namespace Amazon.Util
 {
@@ -160,13 +160,13 @@ namespace Amazon.Util
             try
             {
                 var instance = new AWSPublicIpAddressRanges();
-
-                var json = JsonMapper.ToObject(new JsonReader(fileContent));
-
+                using JsonDocument doc = JsonDocument.Parse(fileContent);
+                JsonElement json = doc.RootElement;
                 DateTime? creationDateTime = null;
+
                 try
                 {
-                    var createdAt = (string) json[createDateKey];
+                    var createdAt =  json.GetProperty(createDateKey).GetString();
                     creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                 }
                 catch (FormatException)
@@ -181,9 +181,9 @@ namespace Amazon.Util
                 // ipv4 and v6 addresses occupy different keys in the data file and can't easily be merged
                 // so process each subset separately
                 var parsedRanges = new List<AWSPublicIpAddressRange>();
-                var ipv4Ranges = json[ipv4PrefixesKey];
-                var ipv6Ranges = json[ipv6PrefixesKey];
-                if (!ipv4Ranges.IsArray || !ipv6Ranges.IsArray)
+                var ipv4Ranges = json.GetProperty(ipv4PrefixesKey);
+                var ipv6Ranges = json.GetProperty(ipv6PrefixesKey);
+                if (ipv4Ranges.ValueKind != JsonValueKind.Array || ipv6Ranges.ValueKind != JsonValueKind.Array)
                     throw new InvalidDataException("Expected array content for ip_prefixes and/or ipv6_prefixes keys.");
 
                 parsedRanges.AddRange(ParseRange(ipv4Ranges, AWSPublicIpAddressRange.AddressFormat.Ipv4));
@@ -198,7 +198,7 @@ namespace Amazon.Util
             }
         }
 
-        private static IEnumerable<AWSPublicIpAddressRange> ParseRange(JsonData ranges,
+        private static IEnumerable<AWSPublicIpAddressRange> ParseRange(JsonElement ranges,
             AWSPublicIpAddressRange.AddressFormat addressFormat)
         {
             var prefixKey = addressFormat == AWSPublicIpAddressRange.AddressFormat.Ipv4
@@ -206,15 +206,18 @@ namespace Amazon.Util
                 : ipv6PrefixKey;
 
             var parsedRanges = new List<AWSPublicIpAddressRange>();
-            parsedRanges.AddRange(from JsonData range in ranges
-                select new AWSPublicIpAddressRange
+
+            foreach (var range in ranges.EnumerateArray())
+            {
+                parsedRanges.Add(new AWSPublicIpAddressRange
                 {
                     IpAddressFormat = addressFormat,
-                    IpPrefix = (string) range[prefixKey],
-                    Region = (string) range[regionKey],
-                    Service = (string) range[serviceKey],
-                    NetworkBorderGroup = (string) range[networkBorderGroupKey]
+                    IpPrefix = range.GetProperty(prefixKey).GetString(),
+                    Region = range.GetProperty(regionKey).GetString(),
+                    Service = range.GetProperty(serviceKey).GetString(),
+                    NetworkBorderGroup = range.GetProperty(networkBorderGroupKey).GetString()
                 });
+            }
             return parsedRanges;
         }
 
