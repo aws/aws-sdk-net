@@ -1,20 +1,16 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon;
+﻿using Amazon;
+using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
-using Amazon.Runtime;
-using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Globalization;
-using System.Threading;
-using System.Collections.Generic;
-using Amazon.Runtime.Credentials.Internal;
+using System.IO;
+using System.Net;
+using System.Text;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -51,7 +47,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         {
                             Assert.AreEqual(location, returnedLocation);
                         }
-                        
                     }
                     finally
                     {
@@ -64,7 +59,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        
         public void TestPostUpload()
         {
             var region = RegionEndpoint.USWest1;
@@ -164,10 +158,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        static string policy_tmpl = @"{ ""expiration"": ""EXPIRATIONDATE"",  ""conditions"": [{ ""bucket"": ""BUCKETNAME"" }, { ""acl"": ""public-read"" }, [""eq"", ""$Content-Type"", ""text/plain""], [""starts-with"", ""$key"", ""foo/bar/""]MOARCONDITIONS]}";
-
         private S3PostUploadResponse TestPost(string key, string bucketName, Stream contentStream, string extraConditions, AWSCredentials credentials, RegionEndpoint region)
         {
+            const string policy_tmpl = @"{
+                ""expiration"": ""EXPIRATIONDATE"",
+                ""conditions"": [
+                    { ""bucket"": ""BUCKETNAME"" },
+                    { ""acl"": ""public-read"" },
+                    [""eq"", ""$Content-Type"", ""text/plain""],
+                    [""starts-with"", ""$key"", ""foo/bar/""],
+                    MOARCONDITIONS
+                ]
+            }";
+
             var expDate = DateTime.UtcNow.AddMinutes(5).ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
 
             var policy = policy_tmpl.Replace("EXPIRATIONDATE", expDate)

@@ -47,14 +47,15 @@ namespace Amazon.S3.Util
     public class S3PostUploadSignedPolicy
     {
         private static JsonDocumentOptions options = new JsonDocumentOptions { AllowTrailingCommas = true };
-    /// <summary>
-    ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
-    /// </summary>
-    /// <param name="policy">JSON string representing the policy to sign</param>
-    /// <param name="credentials">Credentials to sign the policy with</param>
-    /// <param name="region">Service region endpoint.</param>
-    /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
-    public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
+
+        /// <summary>
+        ///  Given a policy and AWS credentials, produce a S3PostUploadSignedPolicy.
+        /// </summary>
+        /// <param name="policy">JSON string representing the policy to sign</param>
+        /// <param name="credentials">Credentials to sign the policy with</param>
+        /// <param name="region">Service region endpoint.</param>
+        /// <returns>A signed policy object for use with an S3PostUploadRequest.</returns>
+        public static S3PostUploadSignedPolicy GetSignedPolicy(string policy, AWSCredentials credentials, RegionEndpoint region)
         {
             var signedAt = AWSSDKUtils.CorrectedUtcNow;
 
