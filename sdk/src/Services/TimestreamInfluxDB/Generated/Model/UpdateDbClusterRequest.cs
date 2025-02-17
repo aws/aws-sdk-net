@@ -30,43 +30,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateDbInstance operation.
-    /// Updates a Timestream for InfluxDB DB instance.
+    /// Container for the parameters to the UpdateDbCluster operation.
+    /// Updates a Timestream for InfluxDB cluster.
     /// </summary>
-    public partial class UpdateDbInstanceRequest : AmazonTimestreamInfluxDBRequest
+    public partial class UpdateDbClusterRequest : AmazonTimestreamInfluxDBRequest
     {
-        private int? _allocatedStorage;
+        private string _dbClusterId;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
-        private DbStorageType _dbStorageType;
-        private DeploymentType _deploymentType;
-        private string _identifier;
+        private FailoverMode _failoverMode;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private int? _port;
 
         /// <summary>
-        /// Gets and sets the property AllocatedStorage. 
+        /// Gets and sets the property DbClusterId. 
         /// <para>
-        /// The amount of storage to allocate for your DB storage type (in gibibytes).
+        /// Service-generated unique identifier of the DB cluster to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=15360)]
-        public int AllocatedStorage
+        [AWSProperty(Required=true, Min=3, Max=64)]
+        public string DbClusterId
         {
-            get { return this._allocatedStorage.GetValueOrDefault(); }
-            set { this._allocatedStorage = value; }
+            get { return this._dbClusterId; }
+            set { this._dbClusterId = value; }
         }
 
-        // Check to see if AllocatedStorage property is set
-        internal bool IsSetAllocatedStorage()
+        // Check to see if DbClusterId property is set
+        internal bool IsSetDbClusterId()
         {
-            return this._allocatedStorage.HasValue; 
+            return this._dbClusterId != null;
         }
 
         /// <summary>
         /// Gets and sets the property DbInstanceType. 
         /// <para>
-        /// The Timestream for InfluxDB DB instance type to run InfluxDB on.
+        /// Update the DB cluster to use the specified DB instance Type.
         /// </para>
         /// </summary>
         public DbInstanceType DbInstanceType
@@ -84,9 +82,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DbParameterGroupIdentifier. 
         /// <para>
-        /// The id of the DB parameter group to assign to your DB instance. DB parameter groups
-        /// specify how the database is configured. For example, DB parameter groups can specify
-        /// the limit for query concurrency.
+        /// Update the DB cluster to use the specified DB parameter group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=64)]
@@ -103,65 +99,27 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbStorageType. 
+        /// Gets and sets the property FailoverMode. 
         /// <para>
-        /// The Timestream for InfluxDB DB storage type that InfluxDB stores data on.
+        /// Update the DB cluster's failover behavior.
         /// </para>
         /// </summary>
-        public DbStorageType DbStorageType
+        public FailoverMode FailoverMode
         {
-            get { return this._dbStorageType; }
-            set { this._dbStorageType = value; }
+            get { return this._failoverMode; }
+            set { this._failoverMode = value; }
         }
 
-        // Check to see if DbStorageType property is set
-        internal bool IsSetDbStorageType()
+        // Check to see if FailoverMode property is set
+        internal bool IsSetFailoverMode()
         {
-            return this._dbStorageType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeploymentType. 
-        /// <para>
-        /// Specifies whether the DB instance will be deployed as a standalone instance or with
-        /// a Multi-AZ standby for high availability.
-        /// </para>
-        /// </summary>
-        public DeploymentType DeploymentType
-        {
-            get { return this._deploymentType; }
-            set { this._deploymentType = value; }
-        }
-
-        // Check to see if DeploymentType property is set
-        internal bool IsSetDeploymentType()
-        {
-            return this._deploymentType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Identifier. 
-        /// <para>
-        /// The id of the DB instance.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=64)]
-        public string Identifier
-        {
-            get { return this._identifier; }
-            set { this._identifier = value; }
-        }
-
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
-        {
-            return this._identifier != null;
+            return this._failoverMode != null;
         }
 
         /// <summary>
         /// Gets and sets the property LogDeliveryConfiguration. 
         /// <para>
-        /// Configuration for sending InfluxDB engine logs to send to specified S3 bucket.
+        /// The log delivery configuration to apply to the DB cluster.
         /// </para>
         /// </summary>
         public LogDeliveryConfiguration LogDeliveryConfiguration
@@ -179,23 +137,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which InfluxDB accepts connections.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you change the Port value, your database restarts immediately.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: 1024-65535
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 8086
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680
+        /// Update the DB cluster to use the specified port.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1024, Max=65535)]

@@ -268,6 +268,81 @@ namespace Amazon.TimestreamInfluxDB
         #endregion
 
 
+        #region  CreateDbCluster
+
+        /// <summary>
+        /// Creates a new Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">REST API Reference for CreateDbCluster Operation</seealso>
+        public virtual CreateDbClusterResponse CreateDbCluster(CreateDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDbClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDbCluster operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDbCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">REST API Reference for CreateDbCluster Operation</seealso>
+        public virtual IAsyncResult BeginCreateDbCluster(CreateDbClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDbClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDbCluster.</param>
+        /// 
+        /// <returns>Returns a  CreateDbClusterResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbCluster">REST API Reference for CreateDbCluster Operation</seealso>
+        public virtual CreateDbClusterResponse EndCreateDbCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDbClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDbInstance
 
         /// <summary>
@@ -418,6 +493,78 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
         
+        #region  DeleteDbCluster
+
+        /// <summary>
+        /// Deletes a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">REST API Reference for DeleteDbCluster Operation</seealso>
+        public virtual DeleteDbClusterResponse DeleteDbCluster(DeleteDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDbClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDbCluster operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDbCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">REST API Reference for DeleteDbCluster Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDbCluster(DeleteDbClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDbClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDbCluster.</param>
+        /// 
+        /// <returns>Returns a  DeleteDbClusterResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbCluster">REST API Reference for DeleteDbCluster Operation</seealso>
+        public virtual DeleteDbClusterResponse EndDeleteDbCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDbClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDbInstance
 
         /// <summary>
@@ -486,6 +633,75 @@ namespace Amazon.TimestreamInfluxDB
         public virtual DeleteDbInstanceResponse EndDeleteDbInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDbInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDbCluster
+
+        /// <summary>
+        /// Retrieves information about a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the GetDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">REST API Reference for GetDbCluster Operation</seealso>
+        public virtual GetDbClusterResponse GetDbCluster(GetDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<GetDbClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDbCluster operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDbCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">REST API Reference for GetDbCluster Operation</seealso>
+        public virtual IAsyncResult BeginGetDbCluster(GetDbClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDbClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDbCluster.</param>
+        /// 
+        /// <returns>Returns a  GetDbClusterResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbCluster">REST API Reference for GetDbCluster Operation</seealso>
+        public virtual GetDbClusterResponse EndGetDbCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDbClusterResponse>(asyncResult);
         }
 
         #endregion
@@ -628,6 +844,75 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
         
+        #region  ListDbClusters
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB DB clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbClusters service method.</param>
+        /// 
+        /// <returns>The response from the ListDbClusters service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">REST API Reference for ListDbClusters Operation</seealso>
+        public virtual ListDbClustersResponse ListDbClusters(ListDbClustersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListDbClustersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDbClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDbClusters operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDbClusters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">REST API Reference for ListDbClusters Operation</seealso>
+        public virtual IAsyncResult BeginListDbClusters(ListDbClustersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbClustersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDbClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDbClusters.</param>
+        /// 
+        /// <returns>Returns a  ListDbClustersResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbClusters">REST API Reference for ListDbClusters Operation</seealso>
+        public virtual ListDbClustersResponse EndListDbClusters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDbClustersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDbInstances
 
         /// <summary>
@@ -693,6 +978,75 @@ namespace Amazon.TimestreamInfluxDB
         public virtual ListDbInstancesResponse EndListDbInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDbInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDbInstancesForCluster
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbInstancesForCluster service method.</param>
+        /// 
+        /// <returns>The response from the ListDbInstancesForCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">REST API Reference for ListDbInstancesForCluster Operation</seealso>
+        public virtual ListDbInstancesForClusterResponse ListDbInstancesForCluster(ListDbInstancesForClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbInstancesForClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbInstancesForClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ListDbInstancesForClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDbInstancesForCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDbInstancesForCluster operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDbInstancesForCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">REST API Reference for ListDbInstancesForCluster Operation</seealso>
+        public virtual IAsyncResult BeginListDbInstancesForCluster(ListDbInstancesForClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDbInstancesForClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbInstancesForClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDbInstancesForCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDbInstancesForCluster.</param>
+        /// 
+        /// <returns>Returns a  ListDbInstancesForClusterResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbInstancesForCluster">REST API Reference for ListDbInstancesForCluster Operation</seealso>
+        public virtual ListDbInstancesForClusterResponse EndListDbInstancesForCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDbInstancesForClusterResponse>(asyncResult);
         }
 
         #endregion
@@ -937,6 +1291,78 @@ namespace Amazon.TimestreamInfluxDB
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDbCluster
+
+        /// <summary>
+        /// Updates a Timestream for InfluxDB cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDbCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDbCluster service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">REST API Reference for UpdateDbCluster Operation</seealso>
+        public virtual UpdateDbClusterResponse UpdateDbCluster(UpdateDbClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDbClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDbClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDbCluster operation on AmazonTimestreamInfluxDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDbCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">REST API Reference for UpdateDbCluster Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDbCluster(UpdateDbClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDbClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDbClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDbCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDbCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateDbClusterResult from TimestreamInfluxDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/UpdateDbCluster">REST API Reference for UpdateDbCluster Operation</seealso>
+        public virtual UpdateDbClusterResponse EndUpdateDbCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDbClusterResponse>(asyncResult);
         }
 
         #endregion

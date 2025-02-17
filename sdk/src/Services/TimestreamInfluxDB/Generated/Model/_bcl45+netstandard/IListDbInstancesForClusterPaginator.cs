@@ -16,34 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the timestream-influxdb-2023-01-27.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// Paginators for the TimestreamInfluxDB service
+    /// Paginator for the ListDbInstancesForCluster operation
     ///</summary>
-    public interface ITimestreamInfluxDBPaginatorFactory
+    public interface IListDbInstancesForClusterPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListDbInstancesForClusterResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListDbClusters operation
-        ///</summary>
-        IListDbClustersPaginator ListDbClusters(ListDbClustersRequest request);
-
-        /// <summary>
-        /// Paginator for ListDbInstances operation
-        ///</summary>
-        IListDbInstancesPaginator ListDbInstances(ListDbInstancesRequest request);
-
-        /// <summary>
-        /// Paginator for ListDbInstancesForCluster operation
-        ///</summary>
-        IListDbInstancesForClusterPaginator ListDbInstancesForCluster(ListDbInstancesForClusterRequest request);
-
-        /// <summary>
-        /// Paginator for ListDbParameterGroups operation
-        ///</summary>
-        IListDbParameterGroupsPaginator ListDbParameterGroups(ListDbParameterGroupsRequest request);
+        /// Enumerable containing all of the Items
+        /// </summary>
+        IPaginatedEnumerable<DbInstanceForClusterSummary> Items { get; }
     }
 }

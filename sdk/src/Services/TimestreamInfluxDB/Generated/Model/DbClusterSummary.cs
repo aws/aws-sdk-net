@@ -30,26 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// Contains a summary of a DB instance.
+    /// Describes a summary of a Timestream for InfluxDB cluster.
     /// </summary>
-    public partial class DbInstanceSummary
+    public partial class DbClusterSummary
     {
         private int? _allocatedStorage;
         private string _arn;
         private DbInstanceType _dbInstanceType;
         private DbStorageType _dbStorageType;
-        private DeploymentType _deploymentType;
+        private ClusterDeploymentType _deploymentType;
         private string _endpoint;
         private string _id;
         private string _name;
         private NetworkType _networkType;
         private int? _port;
-        private Status _status;
+        private string _readerEndpoint;
+        private ClusterStatus _status;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The amount of storage to allocate for your DbStorageType in GiB (gibibytes).
+        /// The amount of storage allocated for your DB storage type (in gibibytes).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=15360)]
@@ -68,7 +69,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the DB instance.
+        /// The Amazon Resource Name (ARN) of the DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -87,7 +88,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DbInstanceType. 
         /// <para>
-        /// The Timestream for InfluxDB instance type to run InfluxDB on.
+        /// The Timestream for InfluxDB DB instance type that InfluxDB runs on.
         /// </para>
         /// </summary>
         public DbInstanceType DbInstanceType
@@ -105,7 +106,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DbStorageType. 
         /// <para>
-        /// The storage type for your DB instance.
+        /// The Timestream for InfluxDB DB storage type that InfluxDB stores data on.
         /// </para>
         /// </summary>
         public DbStorageType DbStorageType
@@ -123,10 +124,10 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Single-Instance or with a MultiAZ Standby for High availability.
+        /// Deployment type of the DB cluster
         /// </para>
         /// </summary>
-        public DeploymentType DeploymentType
+        public ClusterDeploymentType DeploymentType
         {
             get { return this._deploymentType; }
             set { this._deploymentType = value; }
@@ -141,7 +142,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.
+        /// The endpoint used to connect to the Timestream for InfluxDB cluster for write and
+        /// read operations.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -159,7 +161,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The service-generated unique identifier of the DB instance.
+        /// Service-generated unique identifier of the DB cluster to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=64)]
@@ -178,8 +180,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// This customer-supplied name uniquely identifies the DB instance when interacting with
-        /// the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.
+        /// Customer supplied name of the Timestream for InfluxDB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=40)]
@@ -198,7 +199,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4,
+        /// Specifies whether the network type of the Timestream for InfluxDB Cluster is IPv4,
         /// which can communicate over IPv4 protocol only, or DUAL, which can communicate over
         /// both IPv4 and IPv6 protocols.
         /// </para>
@@ -235,12 +236,31 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property ReaderEndpoint. 
         /// <para>
-        /// The status of the DB instance.
+        /// The endpoint used to connect to the Timestream for InfluxDB cluster for read-only
+        /// operations.
         /// </para>
         /// </summary>
-        public Status Status
+        public string ReaderEndpoint
+        {
+            get { return this._readerEndpoint; }
+            set { this._readerEndpoint = value; }
+        }
+
+        // Check to see if ReaderEndpoint property is set
+        internal bool IsSetReaderEndpoint()
+        {
+            return this._readerEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the DB cluster.
+        /// </para>
+        /// </summary>
+        public ClusterStatus Status
         {
             get { return this._status; }
             set { this._status = value; }

@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDbInstance operation
+    /// Response Unmarshaller for GetDbCluster operation
     /// </summary>  
-    public class DeleteDbInstanceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDbClusterResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteDbInstanceResponse response = new DeleteDbInstanceResponse();
+            GetDbClusterResponse response = new GetDbClusterResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -62,18 +62,6 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("availabilityZone", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AvailabilityZone = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dbClusterId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DbClusterId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("dbInstanceType", targetDepth))
@@ -106,6 +94,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     response.Endpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failoverMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailoverMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,12 +110,6 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InfluxAuthParametersSecretArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("logDeliveryConfiguration", targetDepth))
@@ -154,10 +142,10 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     response.PubliclyAccessible = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("secondaryAvailabilityZone", targetDepth))
+                if (context.TestExpression("readerEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SecondaryAvailabilityZone = unmarshaller.Unmarshall(context);
+                    response.ReaderEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -205,10 +193,6 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -229,9 +213,9 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             return new AmazonTimestreamInfluxDBException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteDbInstanceResponseUnmarshaller _instance = new DeleteDbInstanceResponseUnmarshaller();        
+        private static GetDbClusterResponseUnmarshaller _instance = new GetDbClusterResponseUnmarshaller();        
 
-        internal static DeleteDbInstanceResponseUnmarshaller GetInstance()
+        internal static GetDbClusterResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -239,7 +223,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDbInstanceResponseUnmarshaller Instance
+        public static GetDbClusterResponseUnmarshaller Instance
         {
             get
             {

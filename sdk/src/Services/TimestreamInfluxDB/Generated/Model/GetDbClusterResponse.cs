@@ -30,29 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// This is the response object from the CreateDbInstance operation.
+    /// This is the response object from the GetDbCluster operation.
     /// </summary>
-    public partial class CreateDbInstanceResponse : AmazonWebServiceResponse
+    public partial class GetDbClusterResponse : AmazonWebServiceResponse
     {
         private int? _allocatedStorage;
         private string _arn;
-        private string _availabilityZone;
-        private string _dbClusterId;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
-        private DeploymentType _deploymentType;
+        private ClusterDeploymentType _deploymentType;
         private string _endpoint;
+        private FailoverMode _failoverMode;
         private string _id;
         private string _influxAuthParametersSecretArn;
-        private InstanceMode _instanceMode;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
         private NetworkType _networkType;
         private int? _port;
         private bool? _publiclyAccessible;
-        private string _secondaryAvailabilityZone;
-        private Status _status;
+        private string _readerEndpoint;
+        private ClusterStatus _status;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _vpcSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -78,7 +76,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the DB instance.
+        /// The Amazon Resource Name (ARN) of the DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -92,43 +90,6 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property AvailabilityZone. 
-        /// <para>
-        /// The Availability Zone in which the DB instance resides.
-        /// </para>
-        /// </summary>
-        public string AvailabilityZone
-        {
-            get { return this._availabilityZone; }
-            set { this._availabilityZone = value; }
-        }
-
-        // Check to see if AvailabilityZone property is set
-        internal bool IsSetAvailabilityZone()
-        {
-            return this._availabilityZone != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DbClusterId. 
-        /// <para>
-        /// Specifies the DbCluster to which this DbInstance belongs to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=3, Max=64)]
-        public string DbClusterId
-        {
-            get { return this._dbClusterId; }
-            set { this._dbClusterId = value; }
-        }
-
-        // Check to see if DbClusterId property is set
-        internal bool IsSetDbClusterId()
-        {
-            return this._dbClusterId != null;
         }
 
         /// <summary>
@@ -152,7 +113,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DbParameterGroupIdentifier. 
         /// <para>
-        /// The id of the DB parameter group assigned to your DB instance.
+        /// The ID of the DB parameter group assigned to your DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=64)]
@@ -189,11 +150,10 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Specifies whether the Timestream for InfluxDB is deployed as Single-AZ or with a MultiAZ
-        /// Standby for High availability.
+        /// Deployment type of the DB cluster.
         /// </para>
         /// </summary>
-        public DeploymentType DeploymentType
+        public ClusterDeploymentType DeploymentType
         {
             get { return this._deploymentType; }
             set { this._deploymentType = value; }
@@ -208,7 +168,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The endpoint used to connect to InfluxDB. The default InfluxDB port is 8086.
+        /// The endpoint used to connect to the Timestream for InfluxDB cluster for write and
+        /// read operations.
         /// </para>
         /// </summary>
         public string Endpoint
@@ -224,9 +185,27 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FailoverMode. 
+        /// <para>
+        /// The configured failover mode for the DB cluster.
+        /// </para>
+        /// </summary>
+        public FailoverMode FailoverMode
+        {
+            get { return this._failoverMode; }
+            set { this._failoverMode = value; }
+        }
+
+        // Check to see if FailoverMode property is set
+        internal bool IsSetFailoverMode()
+        {
+            return this._failoverMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A service-generated unique identifier.
+        /// Service-generated unique identifier of the DB cluster to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=64)]
@@ -264,24 +243,6 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceMode. 
-        /// <para>
-        /// Specifies the DbInstance's role in the cluster.
-        /// </para>
-        /// </summary>
-        public InstanceMode InstanceMode
-        {
-            get { return this._instanceMode; }
-            set { this._instanceMode = value; }
-        }
-
-        // Check to see if InstanceMode property is set
-        internal bool IsSetInstanceMode()
-        {
-            return this._instanceMode != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property LogDeliveryConfiguration. 
         /// <para>
         /// Configuration for sending InfluxDB engine logs to send to specified S3 bucket.
@@ -302,8 +263,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The customer-supplied name that uniquely identifies the DB instance when interacting
-        /// with the Amazon Timestream for InfluxDB API and CLI commands.
+        /// Customer-supplied name of the Timestream for InfluxDB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=40)]
@@ -322,7 +282,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4,
+        /// Specifies whether the network type of the Timestream for InfluxDB cluster is IPv4,
         /// which can communicate over IPv4 protocol only, or DUAL, which can communicate over
         /// both IPv4 and IPv6 protocols.
         /// </para>
@@ -342,7 +302,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number on which InfluxDB accepts connections. The default value is 8086.
+        /// The port number on which InfluxDB accepts connections.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1024, Max=65535)]
@@ -361,7 +321,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Indicates if the DB instance has a public IP to facilitate access.
+        /// Indicates if the DB cluster has a public IP to facilitate access from outside the
+        /// VPC.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -377,31 +338,31 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecondaryAvailabilityZone. 
+        /// Gets and sets the property ReaderEndpoint. 
         /// <para>
-        /// The Availability Zone in which the standby instance is located when deploying with
-        /// a MultiAZ standby instance.
+        /// The endpoint used to connect to the Timestream for InfluxDB cluster for read-only
+        /// operations.
         /// </para>
         /// </summary>
-        public string SecondaryAvailabilityZone
+        public string ReaderEndpoint
         {
-            get { return this._secondaryAvailabilityZone; }
-            set { this._secondaryAvailabilityZone = value; }
+            get { return this._readerEndpoint; }
+            set { this._readerEndpoint = value; }
         }
 
-        // Check to see if SecondaryAvailabilityZone property is set
-        internal bool IsSetSecondaryAvailabilityZone()
+        // Check to see if ReaderEndpoint property is set
+        internal bool IsSetReaderEndpoint()
         {
-            return this._secondaryAvailabilityZone != null;
+            return this._readerEndpoint != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the DB instance.
+        /// The status of the DB cluster.
         /// </para>
         /// </summary>
-        public Status Status
+        public ClusterStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -416,7 +377,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of VPC security group IDs associated with the DB instance.
+        /// A list of VPC security group IDs associated with the DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -435,10 +396,10 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property VpcSubnetIds. 
         /// <para>
-        /// A list of VPC subnet IDs associated with the DB instance.
+        /// A list of VPC subnet IDs associated with the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> VpcSubnetIds
         {
             get { return this._vpcSubnetIds; }

@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamInfluxDB.Model
 {
     /// <summary>
-    /// Contains a summary of a DB instance.
+    /// Contains a summary of a DB instance belonging to a DB cluster.
     /// </summary>
-    public partial class DbInstanceSummary
+    public partial class DbInstanceForClusterSummary
     {
         private int? _allocatedStorage;
         private string _arn;
@@ -41,6 +41,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private DeploymentType _deploymentType;
         private string _endpoint;
         private string _id;
+        private InstanceMode _instanceMode;
         private string _name;
         private NetworkType _networkType;
         private int? _port;
@@ -49,7 +50,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The amount of storage to allocate for your DbStorageType in GiB (gibibytes).
+        /// The amount of storage allocated for your DB storage type in GiB (gibibytes).
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=15360)]
@@ -123,7 +124,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Single-Instance or with a MultiAZ Standby for High availability.
+        /// Specifies the deployment type if applicable.
         /// </para>
         /// </summary>
         public DeploymentType DeploymentType
@@ -176,10 +177,28 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceMode. 
+        /// <para>
+        /// Specifies the DB instance's role in the cluster.
+        /// </para>
+        /// </summary>
+        public InstanceMode InstanceMode
+        {
+            get { return this._instanceMode; }
+            set { this._instanceMode = value; }
+        }
+
+        // Check to see if InstanceMode property is set
+        internal bool IsSetInstanceMode()
+        {
+            return this._instanceMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// This customer-supplied name uniquely identifies the DB instance when interacting with
-        /// the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.
+        /// A service-generated name for the DB instance based on the customer-supplied name for
+        /// the DB cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=40)]
@@ -198,7 +217,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4,
+        /// Specifies whether the network type of the Timestream for InfluxDB instance is IPv4,
         /// which can communicate over IPv4 protocol only, or DUAL, which can communicate over
         /// both IPv4 and IPv6 protocols.
         /// </para>
