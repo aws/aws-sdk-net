@@ -284,7 +284,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 var dateTime = entry.AsDateTime();
-				epochSecondsAsString = AWSSDKUtils.ConvertToUnixEpochSecondsString(dateTime);
+                epochSecondsAsString = AWSSDKUtils.ConvertToUnixEpochSecondsString(dateTime);
             }
             catch (Exception e)
             {
@@ -292,6 +292,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 logger.InfoFormat(
                     "Encountered error attempting to convert '{0}' with value '{1}' to epoch seconds: {1}",
                     attributeName, entry, e);
+
+                // To prevent the data from being (de)serialized incorrectly, we choose to throw the exception instead
+                // of swallowing it.
+                throw;
             }
 
             if (epochSecondsAsString != null)
