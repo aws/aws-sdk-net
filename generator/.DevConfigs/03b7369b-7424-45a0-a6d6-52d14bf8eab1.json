@@ -1,7 +1,8 @@
 {
     "core": {
       "changeLogMessages": [
-        "Update integration test utility function, GenerateName, to use ticks instead of Random.Next."
+        "Update integration test utility function, GenerateName, to use ticks instead of Random.Next.",
+        "Update other integration test utility functions to use UTC for ticks."
       ],
       "type": "patch",
       "updateMinimum": true
