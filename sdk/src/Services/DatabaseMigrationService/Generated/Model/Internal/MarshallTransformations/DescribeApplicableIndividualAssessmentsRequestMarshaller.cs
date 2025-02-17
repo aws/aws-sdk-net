@@ -87,6 +87,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MigrationType);
                 }
 
+                if(publicRequest.IsSetReplicationConfigArn())
+                {
+                    context.Writer.WritePropertyName("ReplicationConfigArn");
+                    context.Writer.Write(publicRequest.ReplicationConfigArn);
+                }
+
                 if(publicRequest.IsSetReplicationInstanceArn())
                 {
                     context.Writer.WritePropertyName("ReplicationInstanceArn");
