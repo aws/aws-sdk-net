@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -58,7 +58,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
         /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         public TableBuilder(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode? metadataCachingMode)
-            : this (ddbClient, new TableConfig(tableName, conversion, Table.DynamoDBConsumer.DocumentModel, null, isEmptyStringValueEnabled, metadataCachingMode))
+            : this(ddbClient, new TableConfig(tableName, conversion, Table.DynamoDBConsumer.DocumentModel, null, null, isEmptyStringValueEnabled, metadataCachingMode))
         {
         }
 
