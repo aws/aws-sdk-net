@@ -793,7 +793,9 @@ namespace Amazon.DynamoDBv2.DataModel
                     DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
                     if (propertyAttribute != null)
                     {
+#pragma warning disable CS0618 // Type or member is obsolete
                         propertyStorage.StoreAsEpoch = propertyAttribute.StoreAsEpoch;
+#pragma warning restore CS0618 // Type or member is obsolete
                         propertyStorage.StoreAsEpochLong = propertyAttribute.StoreAsEpochLong;
 
                         if (propertyAttribute.Converter != null)
