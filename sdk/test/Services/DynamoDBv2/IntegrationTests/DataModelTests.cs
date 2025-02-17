@@ -494,12 +494,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var storedModel = await Context.LoadAsync<ModelA>(id);
             Assert.AreEqual(model.Id, storedModel.Id);
             Assert.AreEqual(model.GetType(), storedModel.GetType());
+
             var myType = model as ModelA1;
             var myStoredModel = storedModel as ModelA1;
+
             Assert.AreEqual(myType.MyType.GetType(), myStoredModel.MyType.GetType());
             Assert.AreEqual(myType.MyType.MyPropA, myStoredModel.MyType.MyPropA);
             Assert.AreEqual(myType.MyType.Name, myStoredModel.MyType.Name);
             Assert.AreEqual(((B)myType.MyType).MyPropB, ((B)myStoredModel.MyType).MyPropB);
+
+            Assert.AreEqual(myType.MyInterface.GetType(), myStoredModel.MyInterface.GetType());
+
+            var myInterface = myType.MyInterface as InterfaceA;
+            var storedInterface = myStoredModel.MyInterface as InterfaceA;
+
+            Assert.AreEqual(myInterface.S3, storedInterface.S3);
 
             Assert.AreEqual(myType.MyClasses.Count, myStoredModel.MyClasses.Count);
             Assert.AreEqual(myType.MyClasses[0].GetType(), myStoredModel.MyClasses[0].GetType());
@@ -522,6 +531,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 Id = Guid.NewGuid(),
                 MyType = new A { Name = "A1", MyPropA = 1 },
+                MyInterface = new InterfaceB()
+                {
+                    S2 = 2,
+                    S1 = "s1",
+                    S4 = "s4"
+                },
                 DictionaryClasses = new Dictionary<string, A>()
                 {
                     {"A", new A{ Name = "A1", MyPropA = 1 }},
@@ -539,6 +554,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(model1.GetType(), storedModel1.GetType());
             Assert.AreEqual(model2.Id, storedModel2.Id);
             Assert.AreEqual(model2.GetType(), storedModel2.GetType());
+
+            var myInterface = model2.MyInterface as InterfaceB;
+            var storedInterface = model2.MyInterface as InterfaceB;
+
+            Assert.AreEqual(myInterface.S4, storedInterface.S4);
 
         }
 
@@ -654,7 +674,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var model1 = new ModelA2
             {
                 Id = Guid.NewGuid(),
-                MyType = new A { Name = "AType1", MyPropA = 5 },
+                MyType = new C { Name = "AType1", MyPropA = 5, MyPropC = "test"},
                 DictionaryClasses = new Dictionary<string, A>
                 {
                     { "A", new A { Name = "A1", MyPropA = 1 } },
@@ -2484,6 +2504,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             {
                 Id = id,
                 MyType = b1,
+                MyInterface = new InterfaceA()
+                {
+                    S1 = "s1",
+                    S2 = 2,
+                    S3 = 3
+                },
                 MyClasses = new List<A> { a1, b1 }
             };
             return model;
@@ -2916,6 +2942,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+
+        [DynamoDBPolymorphicType("B1", typeof(B))]
+        [DynamoDBPolymorphicType("C", typeof(C))]
         public class A
         {
             public string Name { get; set; }
@@ -2923,9 +2952,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public int MyPropA { get; set; }
         }
 
+        public interface IInterface
+        {
+             string S1 { get; set; }
+             int S2 { get; set; }
+        }
+
+        public class InterfaceA : IInterface
+        {
+            public string S1 { get; set; }
+            public int S2 { get; set; }
+
+            public int S3 { get; set; }
+        }
+
+        public class InterfaceB : IInterface
+        {
+            public string S1 { get; set; }
+            public int S2 { get; set; }
+            public string S4 { get; set; }
+        }
+
         public class B : A
         {
             public int MyPropB { get; set; }
+        }
+
+        public class C : A
+        {
+            public string MyPropC { get; set; }
         }
 
         [DynamoDBTable("NestedTable")]
@@ -2936,6 +2991,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             [DynamoDBHashKey] public Guid Id { get; set; }
 
             public A MyType { get; set; }
+            
+            [DynamoDBPolymorphicType("I1", typeof(InterfaceA))]
+            [DynamoDBPolymorphicType("I2", typeof(InterfaceB))]
+            public IInterface MyInterface { get; set; }
 
             [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex", AttributeName = "Company")]
             public string CompanyName { get; set; }
@@ -2949,17 +3008,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public class ModelA1 : ModelA
         {
-            [DynamoDBPolymorphicProperty("B", typeof(B))]
+            [DynamoDBPolymorphicType("B", typeof(B))]
             public new A MyType { get; set; }
 
-            [DynamoDBPolymorphicProperty("B", typeof(B))]
+            [DynamoDBPolymorphicType("B", typeof(B))]
             [DynamoDBProperty("test")]
             public List<A> MyClasses { get; set; }
         }
 
         public class ModelA2 : ModelA
         {
-            [DynamoDBPolymorphicProperty("B", typeof(B))]
+            [DynamoDBPolymorphicType("B", typeof(B))]
             public Dictionary<string, A> DictionaryClasses { get; set; }
         }
 

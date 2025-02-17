@@ -72,37 +72,90 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
-    /// DynamoDB attribute that marks a class for polymorphism support.
-    /// 
+    /// DynamoDB attribute that marks a class or property for polymorphism support.
+    /// This allows DynamoDB to store and retrieve instances of derived types 
+    /// while preserving their original types during serialization and deserialization.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, Inherited = true, AllowMultiple = true)]
+    /// <remarks>
+    /// To enable polymorphic serialization, this attribute should be applied multiple times, 
+    /// once for each possible subtype. The <see cref="TypeDiscriminator"/> serves as a unique
+    /// identifier used in the database to distinguish between different derived types.
+    ///
+    /// The name of the stored discriminator attribute in DynamoDB can be configured via
+    /// <see cref="DynamoDBContextConfig.DerivedTypeAttributeName"/>.
+    /// If not explicitly set, the SDK will use a default attribute name for the discriminator.
+    /// </remarks>
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
     public sealed class DynamoDBPolymorphicTypeAttribute : DynamoDBAttribute
     {
         /// <summary>
         /// Unique name discriminator of the derived type.
         /// </summary>
+        /// <remarks>
+        /// The <see cref="TypeDiscriminator"/> is stored in DynamoDB and is used to 
+        /// determine the actual type of the object when deserializing. 
+        /// It should be unique among all declared polymorphic types for a given base type.
+        ///
+        /// The attribute name under which this discriminator is stored in DynamoDB
+        /// is configurable via <see cref="DynamoDBContextConfig.DerivedTypeAttributeName"/>.
+        ///
+        /// Example:
+        /// <code>
+        /// [DynamoDBPolymorphicType("dog", typeof(Dog))]
+        /// [DynamoDBPolymorphicType("cat", typeof(Cat))]
+        /// public class Animal { }
+        /// </code>
+        ///
+        /// When retrieving an item, DynamoDB will use this discriminator value to 
+        /// deserialize into the appropriate derived type.
+        /// </remarks>
         public string TypeDiscriminator { get; }
 
         /// <summary>
-        /// Derived type of the Property type.
-        /// Type must be a subclass of the Property type.
+        /// The specific derived type that corresponds to this polymorphic entry.
         /// </summary>
+        /// <remarks>
+        /// This should be a subclass of the property type where the attribute is applied. 
+        /// When an instance of this type is stored in DynamoDB, the <see cref="TypeDiscriminator"/> 
+        /// will be saved along with it, allowing correct type resolution during deserialization.
+        /// </remarks>
         [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)]
         public Type DerivedType { get; }
 
         /// <summary>
-        /// Construct an instance of DynamoDBPolymorphicTypeAttribute
+        /// Constructs an instance of <see cref="DynamoDBPolymorphicTypeAttribute"/>.
         /// </summary>
-        /// <param name="typeDiscriminator"></param>
-        /// <param name="derivedType"></param>
+        /// <param name="typeDiscriminator">
+        /// A unique string identifier representing this derived type.
+        /// This value is stored in DynamoDB and used for deserialization.
+        /// </param>
+        /// <param name="derivedType">
+        /// The actual derived type that this attribute represents.
+        /// Must be a subclass of the property type to which it is applied.
+        /// </param>
+        /// <example>
+        /// Usage for a polymorphic property:
+        /// <code>
+        /// public class Zoo
+        /// {
+        ///     [DynamoDBPolymorphicType("dog", typeof(Dog))]
+        ///     [DynamoDBPolymorphicType("cat", typeof(Cat))]
+        ///     public Animal Resident { get; set; }
+        /// }
+        /// </code>
+        /// 
+        /// In this example, when a `Dog` instance is stored, DynamoDB will save `"dog"` as its discriminator
+        /// under the attribute name configured in <see cref="DynamoDBContextConfig.DerivedTypeAttributeName"/>.
+        /// When retrieved, the stored discriminator ensures that the value is deserialized as a `Dog` instance.
+        /// </example>
         public DynamoDBPolymorphicTypeAttribute(string typeDiscriminator,
             [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type derivedType)
         {
             TypeDiscriminator = typeDiscriminator;
             DerivedType = derivedType;
         }
-
     }
+
     /// <summary>
     /// DynamoDB attribute that directs the specified attribute not to
     /// be included when saving or loading objects.
@@ -273,36 +326,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Cannot be set at the same time as Converter.
         /// </summary>
         public bool StoreAsEpoch { get; set; }
-    }
-
-    /// <summary>
-    /// DynamoDB Polymorphic Property Attribute that marks up current member for polymorphism support.
-    /// Specifies the field name to be used as the type discriminator and the derived types.
-    /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
-    public sealed class DynamoDBPolymorphicPropertyAttribute : DynamoDBPropertyAttribute
-    {
-        /// <summary>
-        /// Unique name discriminator of the derived type.
-        /// </summary>
-        public string TypeDiscriminator { get; }
-
-        /// <summary>
-        /// Derived type of the Property type.
-        /// Type must be a subclass of the Property type.
-        /// </summary>
-        public Type DerivedType{ get; }
-
-        /// <summary>
-        /// Construct an instance of DynamoDBPolymorphicPropertyAttribute
-        /// </summary>
-        /// <param name="typeDiscriminator">Name of the field to be used as the type discriminator.</param>
-        /// <param name="derivedType">Derived type names and their corresponding types.</param>
-        public DynamoDBPolymorphicPropertyAttribute(string typeDiscriminator, Type derivedType)
-        {
-            TypeDiscriminator = typeDiscriminator;
-            DerivedType = derivedType;
-        }
     }
 
     /// <summary>

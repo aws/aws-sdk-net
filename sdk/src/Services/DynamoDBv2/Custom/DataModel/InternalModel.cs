@@ -71,25 +71,25 @@ namespace Amazon.DynamoDBv2.DataModel
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2072",
             Justification = "The user's type has been annotated with DynamicallyAccessedMemberTypes.All with the public API into the library. At this point the type will not be trimmed.")]
-        public SimplePropertyStorage(MemberInfo member)
+        internal SimplePropertyStorage(MemberInfo member)
             : this(Utils.GetType(member))
         {
             Member = member;
             PropertyName = member.Name;
         }
 
-        public SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType)
+        internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType)
         {
             MemberType = memberType;
             DerivedTypesDictionary = new Dictionary<Type, string>();
             DerivedTypeKeysDictionary = new Dictionary<string,Type>();
         }
-        public SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, Dictionary<Type, string> derivedTypesDictionary)
+        internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, Dictionary<Type, string> derivedTypesDictionary)
         {
             MemberType = memberType;
             DerivedTypesDictionary = derivedTypesDictionary;
         }
-        public SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, Dictionary<string, Type> derivedTypeKeysDictionary)
+        internal SimplePropertyStorage([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type memberType, Dictionary<string, Type> derivedTypeKeysDictionary)
         {
             MemberType = memberType;
             DerivedTypeKeysDictionary = derivedTypeKeysDictionary;
@@ -378,9 +378,9 @@ namespace Amazon.DynamoDBv2.DataModel
         // table
         public string TableName { get; set; }
 
-        public StorageConfig BaseTypeConfig { get; private set; }
+        public StorageConfig BaseTypeStorageConfig { get; private set; }
 
-        public Dictionary<string, StorageConfig> PolymorphicTypesConfig { get; private set; }
+        public Dictionary<string, StorageConfig> PolymorphicTypesStorageConfig { get; private set; }
 
         public Dictionary<Type,string> PolymorphicConfig { get; private set; }
 
@@ -408,7 +408,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public Dictionary<string, GSIConfig> IndexNameToGSIMapping { get; set; }
 
 
-        public bool StorePolymorphicTypes => this.PolymorphicTypesConfig.Any();
+        public bool StorePolymorphicTypes => this.PolymorphicTypesStorageConfig.Any();
 
         //public void RemovePropertyStorage(string propertyName)
         //{
@@ -482,7 +482,7 @@ namespace Amazon.DynamoDBv2.DataModel
             get
             {
                 if (!HasVersion) throw new InvalidOperationException("No version field defined for this type");
-                return this.BaseTypeConfig.GetPropertyStorage(VersionPropertyName);
+                return this.BaseTypeStorageConfig.GetPropertyStorage(VersionPropertyName);
             }
         }
 
@@ -491,13 +491,13 @@ namespace Amazon.DynamoDBv2.DataModel
             // analyze all PropertyStorage configs and denormalize data into other properties
             // all data must exist in PropertyStorage objects prior to denormalization
 
-            foreach (var property in this.BaseTypeConfig.Properties)
+            foreach (var property in this.BaseTypeStorageConfig.Properties)
             {
                 // only add non-ignored properties
                 if (property.IsIgnored) continue;
 
                 property.Validate(context);
-                AddPropertyStorage(property, this.BaseTypeConfig);
+                AddPropertyStorage(property, this.BaseTypeStorageConfig);
 
                 string propertyName = property.PropertyName;
 
@@ -515,7 +515,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
 
-            foreach (var polymorphicTypesProperty in this.PolymorphicTypesConfig)
+            foreach (var polymorphicTypesProperty in this.PolymorphicTypesStorageConfig)
             {
                 foreach (var polymorphicProperty in polymorphicTypesProperty.Value.Properties)
                 {
@@ -541,7 +541,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
 
-            if (PolymorphicTypesConfig.Any())
+            if (PolymorphicTypesStorageConfig.Any())
             {
                 AttributesToGet.Add(derivedTypeAttributeName);
             }
@@ -549,15 +549,15 @@ namespace Amazon.DynamoDBv2.DataModel
             //if (this.HashKeyPropertyNames.Count == 0)
             //    throw new InvalidOperationException("No hash key configured for type " + TargetTypeInfo.FullName);
 
-            if (this.BaseTypeConfig.Properties.Count == 0)
+            if (this.BaseTypeStorageConfig.Properties.Count == 0)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                    "Type {0} is unsupported, it has no supported members", this.BaseTypeConfig.TargetType.FullName));
+                    "Type {0} is unsupported, it has no supported members", this.BaseTypeStorageConfig.TargetType.FullName));
         }
 
 
         public void AddPolymorphicPropertyStorageConfiguration(string typeDiscriminator, Type derivedType, StorageConfig polymorphicStorageConfig)
         {
-            this.PolymorphicTypesConfig.Add(typeDiscriminator, polymorphicStorageConfig);
+            this.PolymorphicTypesStorageConfig.Add(typeDiscriminator, polymorphicStorageConfig);
             this.PolymorphicConfig.Add(derivedType, typeDiscriminator);
         }
 
@@ -634,12 +634,11 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-
         // constructor
         internal ItemStorageConfig([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType)
         {
-            BaseTypeConfig = new StorageConfig(targetType);
-            PolymorphicTypesConfig = new Dictionary<string, StorageConfig>();
+            BaseTypeStorageConfig = new StorageConfig(targetType);
+            PolymorphicTypesStorageConfig = new Dictionary<string, StorageConfig>();
             PolymorphicConfig= new Dictionary<Type, string>();
             AttributeToIndexesNameMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
@@ -847,7 +846,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 var propertyStorage = MemberInfoToPropertyStorage(config, member);
 
-                config.BaseTypeConfig.Properties.Add(propertyStorage);
+                config.BaseTypeStorageConfig.Properties.Add(propertyStorage);
             }
 
             DynamoDBPolymorphicTypeAttribute[] polymorphicTypeAttribute = Utils.GetPolymorphicTypesAttribute(type);
@@ -942,13 +941,13 @@ namespace Amazon.DynamoDBv2.DataModel
                         propertyStorage.IsLSIRangeKey = true;
                         propertyStorage.AddIndex(lsiRangeKeyAttribute);
                     }
+                }
 
-                    DynamoDBPolymorphicPropertyAttribute polymorphicAttribute = attribute as DynamoDBPolymorphicPropertyAttribute;
-                    if (polymorphicAttribute != null)
-                    {
-                        propertyStorage.PolymorphicProperty = true;
-                        propertyStorage.AddDerivedType(polymorphicAttribute.TypeDiscriminator, polymorphicAttribute.DerivedType);
-                    }
+                DynamoDBPolymorphicTypeAttribute polymorphicAttribute = attribute as DynamoDBPolymorphicTypeAttribute;
+                if (polymorphicAttribute != null)
+                {
+                    propertyStorage.PolymorphicProperty = true;
+                    propertyStorage.AddDerivedType(polymorphicAttribute.TypeDiscriminator, polymorphicAttribute.DerivedType);
                 }
             }
 
@@ -1022,7 +1021,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         private static void PopulateConfigFromMappings(ItemStorageConfig config, Dictionary<Type, TypeMapping> typeMappings)
         {
-            var baseType = config.BaseTypeConfig.TargetType;
+            var baseType = config.BaseTypeStorageConfig.TargetType;
             TypeMapping typeMapping;
             if (typeMappings.TryGetValue(baseType, out typeMapping))
             {
@@ -1037,7 +1036,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     string propertyName = propertyConfig.Name;
 
                     PropertyStorage propertyStorage;
-                    if (!config.BaseTypeConfig.FindPropertyByPropertyName(propertyName, out propertyStorage))
+                    if (!config.BaseTypeStorageConfig.FindPropertyByPropertyName(propertyName, out propertyStorage))
                         throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                             "No matching property {0} on type {1}", propertyName, baseType.FullName));
 
@@ -1060,21 +1059,21 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             PropertyStorage property = null;
 
-            bool exists = config.BaseTypeConfig.FindSinglePropertyByAttributeName(attributeName, out property);
+            bool exists = config.BaseTypeStorageConfig.FindSinglePropertyByAttributeName(attributeName, out property);
             if (!exists)
             {
                 // property storage doesn't exist yet, create and populate
                 MemberInfo member;
 
                 // for optional properties/attributes, a null MemberInfo is OK
-                Validate(config.BaseTypeConfig.TargetTypeMembers.TryGetValue(attributeName, out member) || optional,
+                Validate(config.BaseTypeStorageConfig.TargetTypeMembers.TryGetValue(attributeName, out member) || optional,
                     "Unable to locate property for key attribute {0}", attributeName);
 
                 if (member != null)
                 {
                     property = new PropertyStorage(member);
                     property.AttributeName = attributeName;
-                    config.BaseTypeConfig.Properties.Add(property);
+                    config.BaseTypeStorageConfig.Properties.Add(property);
                 }
             }
 
