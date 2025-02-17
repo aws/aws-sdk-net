@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Improved error message when searching for AWS credentials and no credentials were found."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
