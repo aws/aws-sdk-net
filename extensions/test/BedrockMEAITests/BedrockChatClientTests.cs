@@ -23,8 +23,8 @@ public class BedrockChatClientTests
         IChatClient client = runtime.AsChatClient(modelId);
 
         Assert.NotNull(client);
-        Assert.Equal("aws.bedrock", client.Metadata.ProviderName);
-        Assert.Equal(modelId, client.Metadata.ModelId);
+        Assert.Equal("aws.bedrock", client.GetService<ChatClientMetadata>()?.ProviderName);
+        Assert.Equal(modelId, client.GetService<ChatClientMetadata>()?.ModelId);
     }
 
     [Fact]
