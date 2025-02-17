@@ -1,3 +1,14 @@
+### 3.7.984.0 (2025-02-17 19:18 UTC)
+* Amplify (3.7.404.0)
+	* Add ComputeRoleArn to CreateApp, UpdateApp, CreateBranch, and UpdateBranch, allowing caller to specify a role to be assumed by Amplify Hosting for server-side rendered applications.
+* DatabaseMigrationService (3.7.407.0)
+	* Support replicationConfigArn in DMS DescribeApplicableIndividualAssessments API.
+* TimestreamInfluxDB (3.7.406.0)
+	* This release introduces APIs to manage DbClusters and adds support for read replicas
+* Core 3.7.402.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.983.0 (2025-02-14 19:27 UTC)
 * CodeBuild (3.7.410.0)
 	* Added test suite names to test case metadata
