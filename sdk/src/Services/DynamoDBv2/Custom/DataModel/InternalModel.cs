@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -94,6 +94,9 @@ namespace Amazon.DynamoDBv2.DataModel
         // whether to store DateTime as epoch seconds integer
         public bool StoreAsEpoch { get; set; }
 
+        // whether to store DateTime as epoch seconds integer (with support for dates AFTER 2038)
+        public bool StoreAsEpochLong { get; set; }
+
         // corresponding IndexNames, if applicable
         public List<string> IndexNames { get; set; }
 
@@ -164,8 +167,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (ConverterType != null)
             {
-                if (StoreAsEpoch)
-                    throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as StoreAsEpoch is set to true");
+                if (StoreAsEpoch || StoreAsEpochLong)
+                    throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as StoreAsEpoch or StoreAsEpochLong is set to true");
 
                 if (!Utils.CanInstantiateConverter(ConverterType) || !Utils.ImplementsInterface(ConverterType, typeof(IPropertyConverter)))
                     throw new InvalidOperationException("Converter for " + PropertyName + " must be instantiable with no parameters and must implement IPropertyConverter");
@@ -350,6 +353,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableName { get; set; }
         public bool LowerCamelCaseProperties { get; set; }
         public HashSet<string> AttributesToStoreAsEpoch { get; set; }
+        public HashSet<string> AttributesToStoreAsEpochLong { get; set; }
 
         // keys
         public List<string> HashKeyPropertyNames { get; private set; }
@@ -492,6 +496,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 AttributesToGet.Add(attributeName);
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
+            if (value.StoreAsEpochLong)
+                AttributesToStoreAsEpochLong.Add(attributeName);
 
             if (value.IsLSIRangeKey || value.IsGSIKey)
             {
@@ -563,6 +569,7 @@ namespace Amazon.DynamoDBv2.DataModel
             HashKeyPropertyNames = new List<string>();
             RangeKeyPropertyNames = new List<string>();
             AttributesToStoreAsEpoch = new HashSet<string>();
+            AttributesToStoreAsEpochLong = new HashSet<string>();
         }
     }
 
@@ -730,7 +737,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     actualTableName = DynamoDBContext.GetTableName(config.TableName, flatConfig);
                 }
                 var emptyConfig = new TableConfig(actualTableName, conversion: null, consumer: Table.DynamoDBConsumer.DataModel,
-                    storeAsEpoch: null, isEmptyStringValueEnabled: false, metadataCachingMode: flatConfig.MetadataCachingMode);
+                    storeAsEpoch: null, storeAsEpochLong: null, isEmptyStringValueEnabled: false, metadataCachingMode: flatConfig.MetadataCachingMode);
                 var table = Table.CreateTableFromItemStorageConfig(Context.Client, emptyConfig, config, flatConfig);
 
                 // The table info must be cached under the actual table name exactly how it exists in the DynamoDB service.
@@ -787,6 +794,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (propertyAttribute != null)
                     {
                         propertyStorage.StoreAsEpoch = propertyAttribute.StoreAsEpoch;
+                        propertyStorage.StoreAsEpochLong = propertyAttribute.StoreAsEpochLong;
 
                         if (propertyAttribute.Converter != null)
                             propertyStorage.ConverterType = propertyAttribute.Converter;
@@ -822,7 +830,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         }
                     }
                 }
-                
+
                 config.Properties.Add(propertyStorage);
             }
         }
